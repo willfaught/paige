@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ if or .Title .Description }}
+<div class="row text-center">
+    <div class="col">
+        {{ if .Title }}
+        <h1 class="display-1 fw-bold">{{ .Title | markdownify }}</h1>
+        {{ end }}
+        {{ if .Description }}
+        <p class="lead">{{ .Description | markdownify }}</p>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+<div class="row py-3">
+    <div class="col">
+        <div class="rounded-4" style="background-image: url('/cover.jpg'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
+    </div>
+</div>
+<div class="d-flex justify-content-center py-3 row">
+    <div class="col-12 col-xl-10">
+        <div class="d-flex justify-content-evenly align-items-center row">
+            <div class="col-12 col-md-6">
+                <p class="display-5 fw-bold lh-1">{{ .Params.greeting | markdownify }}</p>
+                <p class="lead">{{ .Params.blurb | markdownify }}</p>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+                <img alt="Avatar" class="img-fluid rounded-4" src="/avatar.jpg" style="max-height:20rem">
+            </div>
+        </div>
+    </div>
+</div>
+{{ if .Site.Social }}
+<div class="py-3 row">
+    <div class="col text-center">
+        {{ range $k, $v := .Site.Social }}
+        <a href="{{ $v }}"><i class="bi bi-{{ $k }} display-6 px-2"></i></a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}

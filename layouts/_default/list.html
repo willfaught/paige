@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{ if not (or .Title .Description .Content .Pages) }}
+<section>
+    <h1 class="display-5 fw-bold text-center">Nothing Here</h1>
+</section>
+{{ else }}
+<section>
+    {{ if or .Title .Description }}
+    <header>
+        <div class="row text-center justify-content-center">
+            <div class="col" style="max-width:100ch">
+                {{ if .Title }}
+                <h1 class="display-5 fw-bold">
+                    {{ if .Params.link }}
+                    <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
+                    {{ else }}
+                    {{ .Title | markdownify }}
+                    {{ end }}
+                </h1>
+                {{ end }}
+                {{ if .Description }}
+                <p class="lead">{{ .Description | markdownify }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </header>
+    {{ end }}
+    {{ if .Content }}
+    <div class="row">
+        <div class="col">
+            <div class="mx-auto" style="max-width:66ch">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+    {{ if .Pages }}
+    {{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
+    <section>
+        <div class="row">
+            <div class="col">
+                <div class="mx-auto text-center" style="max-width:100ch">
+                    {{ range $p.PageGroups }}
+                    <h5>{{ .Key }}</h5>
+                    {{ range .Pages }}
+                    <p>
+                        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+                        {{ if .Description }}
+                        <br />{{ .Description | markdownify }}
+                        {{ end }}
+                    </p>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ if or $p.HasPrev $p.HasNext }}
+    <footer>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center pt-3">
+                    {{ partial "pagination" . }}
+                </div>
+            </div>
+        </div>
+    </footer>
+    {{ end }}
+    {{ end }}
+</section>
+{{ end }}
+{{ end }}

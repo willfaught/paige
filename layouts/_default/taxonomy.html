@@ -1,0 +1,40 @@
+{{ define "main" }}
+{{ if not (or .Title .Pages) }}
+<section>
+    <h1 class="display-5 fw-bold text-center">Nothing Here</h1>
+</section>
+{{ else }}
+<section>
+    {{ if .Title }}
+    <header>
+        <div class="row text-center">
+            <div class="col">
+                <h1 class="display-5 fw-bold" style="max-width:100ch">
+                    {{ if .Params.link }}
+                    <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
+                    {{ else }}
+                    {{ .Title | markdownify }}
+                    {{ end }}
+                </h1>
+            </div>
+        </div>
+    </header>
+    {{ end }}
+    {{ if .Pages }}
+    <div class="row">
+        <div class="col">
+            <div class="mx-auto text-center" style="max-width:66ch">
+                <ul class="list-inline">
+                    {{ range (sort .Pages "Title") }}
+                    <li class="list-inline-item">
+                        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</section>
+{{ end }}
+{{ end }}
