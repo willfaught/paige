@@ -63,6 +63,8 @@ parameters from `content/_index.md`, the `avatar.png` and `cover.png`
 images at the site root, and linked icons for all the social sites
 configured in `config.yaml`.
 
+Taxonomy pages are an inline, unordered, sorted list of links to terms.
+
 The 404 page has a Not Found header, and no body.
 
 An empty list has a Nothing Here header, and no body.
