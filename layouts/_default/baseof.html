@@ -38,8 +38,11 @@
                         <nav class="d-flex justify-content-center my-3">
                             <ul class="nav nav-pills">
                                 {{ $p := . }}
+                                {{ $basePath := path.Clean (urls.Parse .Site.BaseURL).Path }}
                                 {{ range .Site.Menus.main }}
-                                {{ $active := or (and (eq .URL `/`) (eq $p.RelPermalink `/`)) (and (ne .URL `/`) (hasPrefix $p.RelPermalink .URL)) }}
+                                {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
+                                {{ $menuPath := strings.TrimPrefix $basePath .URL }}
+                                {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
                                 <li class="nav-item"><a href="{{ .URL }}" class="nav-link{{if $active }} active{{ end }}">{{ .Name }}</a></li>
                                 {{ end }}
                             </ul>
