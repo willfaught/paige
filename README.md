@@ -22,7 +22,7 @@ A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 ## Design
 
 Page metadata is embedded automatically. Author is the site author.
-Description is the site description. Keywords are a union of the page's
+Description is the site description. Keywords is a union of the page's
 keywords, tags, and categories. There are special affordances for
 Facebook and Twitter sharing. Google Analytics is included at the bottom
 of the body, if configured. You must create favicons yourself.
