@@ -2,6 +2,8 @@
 
 A simple Hugo theme.
 
+<img src="images/screenshot.png" style="width: 100%">
+
 ## Features
 
 - Blog
@@ -18,8 +20,6 @@ A simple Hugo theme.
 - Twitter sharing support
 
 ## Design
-
-<img src="images/screenshot.png" style="width: 100%">
 
 Page metadata is embedded automatically. Author is the site author.
 Description is the site description. Keywords are a union of the page's
