@@ -32,6 +32,7 @@
     </head>
     <body class="d-flex flex-column">
         <div class="container flex-fill">
+            {{ if .Site.Menus.main }}
             <header>
                 <div class="row">
                     <div class="col">
@@ -50,14 +51,17 @@
                     </div>
                 </div>
             </header>
+            {{ end }}
             <main>
                 {{ block "main" . }}{{ end }}
             </main>
+            {{ if .Site.Copyright }}
             <footer>
                 <div class="pb-3 row">
                     <div class="col text-center text-muted">{{ .Site.Copyright | markdownify }}</div>
                 </div>
             </footer>
+            {{ end }}
         </div>
         <script crossorigin="anonymous" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         {{ if .Site.GoogleAnalytics }}
