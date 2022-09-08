@@ -49,11 +49,8 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo \
-            --minify \
-            --baseURL https://willfaught.github.io/paige \
-            --source exampleSite \
-            --themesDir ..
+          cd exampleSite
+          hugo --minify --baseURL https://willfaught.github.io/paige --themesDir ../..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
