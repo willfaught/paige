@@ -1,3 +1,3 @@
 # paige
 
-Bootstrap theme for Hugo.
+Simple theme for Hugo.
