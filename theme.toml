@@ -1,4 +1,4 @@
-demosite = "https://willfaught.github.io/paige"
+demosite = "https://willfaught.com/paige"
 description = "A simple Hugo theme"
 features = ["blog", "landing page", "responsive", "single column", "menus", "social links"]
 homepage = "https://github.com/willfaught/paige"
