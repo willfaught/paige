@@ -53,7 +53,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --source exampleSite \
-            --themesDir .
+            --themesDir ..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
