@@ -72,5 +72,5 @@ See the example site directory for an example configuration.
 
 ## Credits
 
-- Cover photo by [Kamran Sabir](https://www.pexels.com/photo/green-lake-surrounded-by-mountain-127753/)
 - Avatar photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
+- Cover photo by [Kamran Sabir](https://www.pexels.com/photo/green-lake-surrounded-by-mountain-127753/)
