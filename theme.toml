@@ -1,0 +1,12 @@
+demosite = "https://willfaught.github.io/paige"
+description = "Simple theme for Hugo"
+features = ["blog", "landing page", "responsive", "single column", "menus", "social links"]
+homepage = "https://github.com/willfaught/paige"
+license = "Apache-2.0"
+licenselink = "https://www.apache.org/licenses/LICENSE-2.0"
+name = "Paige"
+tags = ["articles", "blog", "bootstrap", "landing", "light", "minimal", "personal", "projects", "responsive", "social"]
+
+[author]
+  homepage = "https://willfaught.com"
+  name = "Will Faught"
