@@ -54,14 +54,18 @@ the current page. Pages directly under `content` match the section path
 If a page has a `link` parameter, it's used as the reference for an
 anchor around the page title, if any.
 
+If `partials/head.html` exists in the site, it is included at the end of
+the head tag. If `partials/body.html` exists in the site, it is included
+at the end of the body tag.
+
 The home page shows the `blurb`, `description`, `greeting`, and `title`
 parameters from `content/_index.md`, the `avatar.png` and `cover.png`
 images at the site root, and linked icons for all the social sites
 configured in `config.yaml`.
 
-If `partials/head.html` exists in the site, it is included at the end of
-the head tag. If `partials/body.html` exists in the site, it is included
-at the end of the body tag.
+The 404 page has a Not Found header, and no body.
+
+An empty list has a Nothing Here header, and no body.
 
 Stock Bootstrap 5.2 and Bootstrap Icons 1.9.1 are used for style and
 icons. They're loaded from the Bootstrap CDN for every page.
