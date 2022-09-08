@@ -1,0 +1,61 @@
+author:
+  email: example@example.com
+  name: George Michael
+baseurl: https://willfaught.com/paige
+copyright: © George Michael
+languagecode: en-us
+enablerobotstxt: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: vs
+menu:
+  main:
+  - identifier: home
+    name: Home
+    weight: 10
+    url: /
+  - identifier: about
+    name: About
+    weight: 20
+    url: /about/
+  - identifier: blog
+    name: Blog
+    weight: 30
+    url: /blog/
+  - identifier: articles
+    name: Articles
+    weight: 40
+    url: /articles/
+  - identifier: projects
+    name: Projects
+    weight: 50
+    url: /projects/
+  - identifier: categories
+    name: Categories
+    weight: 60
+    url: /categories/
+  - identifier: tags
+    name: Tags
+    weight: 70
+    url: /tags/
+paginate: 50
+permalinks:
+  blog: /blog/:year/:month/:day/:title/
+social:
+  envelope: mailto:example@example.com
+  discord: http://discord.com/users/example
+  github: https://github.com/example
+  facebook: https://facebook.com/example
+  instagram: https://instagram.com/example
+  linkedin: https://www.linkedin.com/in/example
+  reddit: https://reddit.com/u/example
+  twitch: https://www.twitch.tv/example
+  twitter: https://twitter.com/example
+  youtube: https://www.youtube.com/user/example
+theme: paige
+timezone: America/Los_Angeles
+title: No Borders, No Limits
+titlecasestyle: Go
