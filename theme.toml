@@ -1,5 +1,5 @@
 demosite = "https://willfaught.github.io/paige"
-description = "Simple theme for Hugo"
+description = "A simple Hugo theme"
 features = ["blog", "landing page", "responsive", "single column", "menus", "social links"]
 homepage = "https://github.com/willfaught/paige"
 license = "Apache-2.0"
