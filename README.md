@@ -1,6 +1,6 @@
 # paige
 
-A simple Hugo theme.
+A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
 <img src="images/screenshot.png" style="width: 100%">
 
