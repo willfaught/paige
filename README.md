@@ -2,7 +2,7 @@
 
 A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
-<img src="images/screenshot.png" style="width: 100%">
+<img src="https://github.com/willfaught/paige/raw/master/images/screenshot.png" style="width: 100%">
 
 ## Features
 
