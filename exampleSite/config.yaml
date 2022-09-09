@@ -1,7 +1,7 @@
 author:
   email: example@example.com
   name: Michael Bluth
-baseurl: https://example.com/paige
+baseurl: https://example.com
 copyright: © Michael Bluth
 languagecode: en-us
 enablerobotstxt: true
