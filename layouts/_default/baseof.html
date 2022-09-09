@@ -40,6 +40,9 @@
                             <ul class="nav nav-pills">
                                 {{ $p := . }}
                                 {{ $basePath := path.Clean (urls.Parse .Site.BaseURL).Path }}
+                                {{ if eq $basePath "/" }}
+                                {{ $basePath = "" }}
+                                {{ end }}
                                 {{ range .Site.Menus.main }}
                                 {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
                                 {{ $menuPath := strings.TrimPrefix $basePath .URL }}
