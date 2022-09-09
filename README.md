@@ -27,7 +27,7 @@ keywords, tags, and categories. There are special affordances for
 Facebook and Twitter sharing. Google Analytics is included at the bottom
 of the body, if configured. You must create favicons yourself.
 
-The page title is the page's title followed by a mid dot, followed by
+The page title is the page's title, followed by a mid dot, followed by
 the site title. If one is missing, the other is used without the mid
 dot. If both are the same, only one is used without the mid dot.
 
