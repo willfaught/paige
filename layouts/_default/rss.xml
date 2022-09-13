@@ -1,0 +1,76 @@
+{{ $pctx := . }}
+{{ if .IsHome }}{{ $pctx = .Site }}{{ end }}
+{{ $pages := slice }}
+{{ if or $.IsHome $.IsSection }}
+{{ $pages = $pctx.RegularPages }}
+{{ else }}
+{{ $pages = $pctx.Pages }}
+{{ end }}
+{{ $limit := .Site.Config.Services.RSS.Limit }}
+{{ if ge $limit 1 }}
+{{ $pages = $pages | first $limit }}
+{{ end }}
+{{ $title := "" }}
+{{ if or .Title .Site.Title }}
+{{ if and .Title .Site.Title }}
+{{ if eq .Title .Site.Title }}
+{{ $title = .Title }}
+{{ else }}
+{{ $title = printf "%s · %s" .Title .Site.Title }}
+{{ end }}
+{{ else if .Title }}
+{{ $title = .Title }}
+{{ else }}
+{{ $title = .Site.Title }}
+{{ end }}
+{{ end }}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    {{ with $title }}
+    <title>{{ . }}</title>
+    {{ end }}
+    <link>{{ .Permalink }}</link>
+    <description>Recent content{{ with $title }} in {{ . }}{{ end }}</description>
+    {{ with .Site.LanguageCode }}
+    <language>{{ . }}</language>
+    {{ end }}
+    {{ with .Site.Author.email }}
+    <managingEditor>{{ . }}</managingEditor>
+    <webMaster>{{ . }}</webMaster>
+    {{ end }}
+    {{ with .Site.Copyright }}
+    <copyright>{{ . }}</copyright>
+    {{ end }}
+    {{ if and .Date (not .Date.IsZero) }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q/>" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+    {{ range $pages }}
+    <item>
+      {{ with .Title }}
+      <title>{{ . }}</title>
+      {{ end }}
+      {{ with .Permalink }}
+      <link>{{ . }}</link>
+      <guid>{{ . }}</guid>
+      {{ end }}
+      {{ with .Date }}
+      <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ end }}
+      {{ with .Site.Author.email }}
+      <author>{{ . }}</author>
+      {{ end }}
+      {{ if .Content }}
+      <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
+      {{ else if .Summary }}
+      <description>{{ .Summary | html }}</description>
+      {{ else if .Description }}
+      <description>{{ .Description | html }}</description>
+      {{ end }}
+    </item>
+    {{ end }}
+  </channel>
+</rss>
