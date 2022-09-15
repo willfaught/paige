@@ -45,9 +45,10 @@
                     {{ range .Pages }}
                     <p>
                         <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-                        {{ if .Description }}
-                        <br />{{ .Description | markdownify }}
-                        {{ end }}
+                        {{- if .Description -}}
+                        <br/>
+                        {{- .Description | markdownify -}}
+                        {{- end -}}
                     </p>
                     {{ end }}
                     {{ end }}
