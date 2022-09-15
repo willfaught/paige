@@ -60,8 +60,10 @@
             </main>
             {{ if .Site.Copyright }}
             <footer>
-                <div class="justify-content-center pb-3 row text-center">
-                    <div class="col text-muted" style="max-width:100ch">{{ .Site.Copyright | markdownify }}</div>
+                <div class="justify-content-center row">
+                    <div class="col col-auto">
+                        <p class="text-muted" style="max-width:100ch">{{ .Site.Copyright | markdownify }}</p>
+                    </div>
                 </div>
             </footer>
             {{ end }}
