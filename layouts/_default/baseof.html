@@ -29,6 +29,11 @@
         {{ if templates.Exists "partials/head.html" }}
         {{ partial "head" . }}
         {{ end }}
+        <style>
+            #content div {
+                margin-bottom: 1rem;
+            }
+        </style>
     </head>
     <body class="d-flex flex-column">
         <div class="container flex-fill">
