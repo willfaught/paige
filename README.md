@@ -39,12 +39,12 @@ footer has the copyright notice, if any.
 The page date is the publish date, if it exists; otherwise, it's the
 creation date.
 
-Everything is stacked vertically in one column, and aligned to the
-center. The width of the header and footer is limited to 100 characters.
-The width of the body is limited to 66 characters. List items are
-centered, with the page description underneath the page title, grouped
-by month and year, and sorted in descending order. List length is
-configured in `config.yaml`.
+Everything is stacked vertically in one column and aligned to the
+center.
+
+List page items are the page title with the page description underneath,
+grouped by month and year, and sorted in descending order. Page list
+length is configured in `config.yaml`.
 
 The section menus in the header are activated if their section matches
 the current page. Pages directly under `content` match the section path
