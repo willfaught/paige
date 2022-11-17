@@ -9,7 +9,7 @@
     <header>
         <div class="row text-center">
             <div class="col">
-                <h1 class="display-5 fw-bold" style="max-width: 100ch">
+                <h1 class="display-5 fw-bold">
                     {{ if .Params.link }}
                     <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
                     {{ else }}
@@ -23,7 +23,7 @@
     {{ if .Pages }}
     <div class="row">
         <div class="col">
-            <div class="mx-auto text-center" style="max-width: 66ch">
+            <div class="mx-auto text-center">
                 <ul class="list-inline">
                     {{ range (sort .Pages "Title") }}
                     <li class="list-inline-item">

@@ -9,23 +9,21 @@
     <header>
         <div class="justify-content-center row">
             <div class="col col-auto text-center">
-                <div style="max-width: 100ch">
-                    {{ if .Title }}
-                    <h1 class="display-5 fw-bold">
-                        {{ if .Params.link }}
-                        <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
-                        {{ else }}
-                        {{ .Title | markdownify }}
-                        {{ end }}
-                    </h1>
+                {{ if .Title }}
+                <h1 class="display-5 fw-bold">
+                    {{ if .Params.link }}
+                    <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
+                    {{ else }}
+                    {{ .Title | markdownify }}
                     {{ end }}
-                    {{ if .Description }}
-                    <p class="lead">{{ .Description | markdownify }}</p>
-                    {{ end }}
-                    {{ if .PublishDate }}
-                    <p class="text-muted"><time datetime="{{ .PublishDate.Format `2006-01-02` }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
-                    {{ end }}
-                </div>
+                </h1>
+                {{ end }}
+                {{ if .Description }}
+                <p class="lead">{{ .Description | markdownify }}</p>
+                {{ end }}
+                {{ if .PublishDate }}
+                <p class="text-muted"><time datetime="{{ .PublishDate.Format `2006-01-02` }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
+                {{ end }}
             </div>
         </div>
     </header>
@@ -33,9 +31,7 @@
     {{ if .Content }}
     <div class="justify-content-center row">
         <div class="col col-auto" id="content">
-            <div style="max-width:66ch">
-                {{ .Content }}
-            </div>
+            {{ .Content }}
         </div>
     </div>
     {{ end }}
