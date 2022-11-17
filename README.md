@@ -21,11 +21,12 @@ A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
 ## Design
 
-Page metadata is embedded automatically. Author is the site author.
-Description is the site description. Keywords is a union of the page's
-keywords, tags, and categories. There are special affordances for
-Facebook and Twitter sharing. Google Analytics is included at the bottom
-of the body, if configured. You must create favicons yourself.
+HTML metadata is embedded automatically. The HTML author is the site
+author. The HTML description is the page description. The HTML keywords
+is a sorted union of the page keywords, tags, and categories. Enhanced
+Facebook and Twitter sharing is enabled. Google Analytics is included at
+the bottom of the body, if configured. You must create favicons
+yourself.
 
 The page title is the page's title, followed by a mid dot, followed by
 the site title. If one is missing, the other is used without the mid
