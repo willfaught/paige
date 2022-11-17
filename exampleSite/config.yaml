@@ -46,7 +46,7 @@ permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
   envelope: mailto:example@example.com
-  discord: http://discord.com/users/example
+  discord: https://discord.com/users/example
   github: https://github.com/example
   facebook: https://facebook.com/example
   instagram: https://instagram.com/example
