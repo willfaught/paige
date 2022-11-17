@@ -8,7 +8,7 @@
     {{ if or .Title .Description }}
     <header>
         <div class="row text-center justify-content-center">
-            <div class="col" style="max-width:100ch">
+            <div class="col" style="max-width: 100ch">
                 {{ if .Title }}
                 <h1 class="display-5 fw-bold">
                     {{ if .Params.link }}
@@ -28,7 +28,7 @@
     {{ if .Content }}
     <div class="row">
         <div class="col">
-            <div class="mx-auto" style="max-width:66ch">
+            <div class="mx-auto" style="max-width: 66ch">
                 {{ .Content }}
             </div>
         </div>
@@ -39,7 +39,7 @@
     <section>
         <div class="row">
             <div class="col">
-                <div class="mx-auto text-center" style="max-width:100ch">
+                <div class="mx-auto text-center" style="max-width: 100ch">
                     {{ range $p.PageGroups }}
                     <h5>{{ .Key }}</h5>
                     {{ range .Pages }}
