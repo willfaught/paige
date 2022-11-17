@@ -71,7 +71,7 @@ The 404 page has a "Not Found" header, and no body.
 
 An empty list has a "Nothing Here" header, and no body.
 
-Stock Bootstrap 5.2.2 and Bootstrap Icons 1.9.1 are used for style and
+Stock Bootstrap 5.2.2 and Bootstrap Icons 1.10.2 are used for style and
 icons. They're loaded from the Bootstrap CDN for every page.
 
 ## Configuration
