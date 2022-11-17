@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col">
                         <nav class="d-flex justify-content-center my-3">
-                            <ul class="nav nav-pills">
+                            <ul class="justify-content-center nav nav-pills">
                                 {{ $p := . }}
                                 {{ $basePath := path.Clean (urls.Parse .Site.BaseURL).Path }}
                                 {{ if eq $basePath "/" }}
