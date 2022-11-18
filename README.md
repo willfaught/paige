@@ -28,10 +28,9 @@ Facebook and Twitter sharing is enabled. Google Analytics is included at
 the bottom of the body, if configured. You must create favicons
 yourself.
 
-The page title is the page's title, followed by a middle dot, followed
-by the site title. If one is missing, the other is used without the
-middle dot. If both are the same, only one is used without the middle
-dot.
+The HTML title is the page title, followed by a middle dot, followed by
+the site title. If one is missing, the other is used without the middle
+dot. If both are the same, only one is used without the middle dot.
 
 Every page can have a header, a body, and a footer. The header has the
 section menus, if any; the page title, if any; the page description, if
