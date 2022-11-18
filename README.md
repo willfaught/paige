@@ -49,7 +49,7 @@ Everything is stacked vertically in one column and aligned to the
 center.
 
 The home page shows the `blurb`, `description`, `greeting`, and `title`
-parameters from `content/_index.md`, the `avatar.png` and `cover.png`
+parameters from `content/_index.md`, the `avatar.jpg` and `cover.jpg`
 images at the site root, and linked icons for all the social sites
 configured in `config.yaml`.
 
