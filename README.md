@@ -34,8 +34,8 @@ dot. If both are the same, only one is used without the middle dot.
 
 The HTML body can have a header, a body, and a footer. The header has
 the section menus, if any; the page title, if any; the page description,
-if any; and the page date, if any. The body has the content, if any. The
-footer has the copyright notice, if any.
+if any; and the page date, if any. The body has the page content, if
+any. The footer has the copyright notice, if any.
 
 The page date is the publish date, if it exists; otherwise, it's the
 creation date.
