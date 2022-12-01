@@ -3,7 +3,7 @@ categories:
 - bluth
 - ipsum
 date: 2022-09-07T12:45:03-07:00
-description: Helpful dummy text from Arrested Development
+description: Helpful dummy text from Arrested Development.
 tags:
 - bluth
 - ipsum
