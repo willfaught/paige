@@ -1,9 +1,4 @@
 {{ define "main" }}
-{{ if not (or .Title .Description .Content .Pages) }}
-<section>
-    <h1 class="display-5 fw-bold text-center">Nothing Here</h1>
-</section>
-{{ else }}
 <section>
     {{ if or .Title .Description }}
     <header>
@@ -68,6 +63,8 @@
     </footer>
     {{ end }}
     {{ end }}
+    {{ if not (or .Content .Pages) }}
+    <p class="lead text-center">Nothing here</p>
+    {{ end }}
 </section>
-{{ end }}
 {{ end }}

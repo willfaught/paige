@@ -57,8 +57,7 @@ Single pages use the `link` front matter parameter, if any, as the
 reference for an anchor around the page title, if any.
 
 List and term pages show page titles and descriptions per month and year
-in descending order. An empty list has a "Nothing Here" header, and no
-body.
+in descending order. An empty list has a "Nothing here" body.
 
 Taxonomy pages list term links in an inline, unordered, sorted list.
 
