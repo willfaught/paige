@@ -83,9 +83,7 @@ any. The footer has the site copyright notice, if any.
 
 The section menus are activated if their path matches the current page.
 Pages in the directory `content/` match the section path `/`. Pages in
-the directory `content/foo/` match the section path `/foo/`. The section
-menu identifiers, names, weights, paths, and order are configured in
-`config.yaml`.
+the directory `content/foo/` match the section path `/foo/`.
 
 The page date is the publish date, if any; otherwise, it's the creation
 date.
