@@ -68,8 +68,7 @@ Emoji support example:
 
 HTML metadata is set automatically. The HTML author is the site author.
 The HTML description is the page description. The HTML keywords is a
-union of the page keywords, tags, and categories. You must create
-favicons yourself.
+union of the page keywords, tags, and categories.
 
 The HTML title is the page title, followed by a middle dot, followed by
 the site title. If one is missing, the other is used without the middle
