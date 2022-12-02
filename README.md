@@ -55,6 +55,7 @@ Emoji support example:
 - Google Analytics support
 - Landing page
 - Light color scheme
+- Math typesetting support
 - Menu navigation
 - Minimal design
 - Responsive, mobile-first layout
@@ -98,7 +99,9 @@ images at the site root, and linked icons for all the social sites
 configured in `config.yaml`.
 
 Single pages use the `link` front matter parameter, if any, as the
-reference for an anchor around the page title, if any.
+reference for an anchor around the page title, if any. If the `math`
+parameter is set to true in the page or site parameters, math
+typesetting is enabled with KaTeX.
 
 List and term pages show page titles and descriptions per month and year
 in descending order. An empty list has a "Nothing here" body.
