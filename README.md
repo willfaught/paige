@@ -2,7 +2,51 @@
 
 A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
-<img src="https://github.com/willfaught/paige/raw/master/images/screenshot.png" style="width: 100%">
+## Screenshots
+
+Home page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/home.jpg">
+
+Single page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/about.jpg">
+
+List page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/blog.jpg">
+
+Taxonomy page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/tags.jpg">
+
+Term page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/term.jpg">
+
+404 page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/404.jpg">
+
+Markdown example:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/markdown.jpg">
+
+Rich content example:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/rich.jpg">
+
+Placeholder text example:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/placeholder.jpg">
+
+Math typesetting example:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/math.jpg">
+
+Emoji support example:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/emoji.jpg">
 
 ## Features
 
