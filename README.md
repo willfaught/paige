@@ -97,13 +97,6 @@ Single pages use the `link` page parameter, if any, as the reference for
 an anchor around the page title, if any. If the page or site parameter
 `math` is set to true, math typesetting is enabled with KaTeX.
 
-List and term pages show page titles and descriptions per month and year
-in descending order. An empty list has a "Nothing here" body.
-
-Taxonomy pages list term links in an inline, unordered, sorted list.
-
-The 404 page has a "Not Found" header, and no body.
-
 If `partials/head.html` exists in the site, it is included at the end of
 the head tag. If `partials/body.html` exists in the site, it is included
 at the end of the body tag.
