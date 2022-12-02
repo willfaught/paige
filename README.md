@@ -68,11 +68,10 @@ Emoji support example:
 
 The HTML metadata is set automatically. The HTML author is the site
 author. The HTML description is the page description. The HTML keywords
-is a union of the page keywords, tags, and categories.
-
-The HTML title is the page title, followed by a middle dot, followed by
-the site title. If one is missing, the other is used without the middle
-dot. If both are the same, only one is used without the middle dot.
+is a union of the page keywords, tags, and categories. The HTML title is
+the page title, followed by a middle dot, followed by the site title. If
+one is missing, the other is used without the middle dot. If both are
+the same, only one is used without the middle dot.
 
 The HTML body can have a header, a body, and a footer. The header has
 the section menus, if any; the page title, if any; the page description,
