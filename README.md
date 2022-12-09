@@ -118,5 +118,5 @@ See the example site directory for an example configuration.
 
 ## Credits
 
-- Avatar photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
-- Cover photo by [Kamran Sabir](https://www.pexels.com/photo/green-lake-surrounded-by-mountain-127753/)
+- Center photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
+- Stretch photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI)
