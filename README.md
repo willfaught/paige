@@ -79,7 +79,7 @@ dot. If both are the same, only one is used without the middle dot.
 The HTML body can have a header, a body, and a footer. The header has
 the section menus, if any; the page title, if any; the page description,
 if any; and the page date, if any. The body has the page content, if
-any. The footer has the site copyright notice, if any.
+any. The footer has the copyright notice, if any.
 
 A section menu is highlighted if its path is a prefix of the path of the
 current page. For example, the section menu path `/foo/` matches the
@@ -90,10 +90,12 @@ page `content/_index.md`.
 The page date is the publish date, if any; otherwise, it's the creation
 date.
 
-The home page shows the `blurb`, `description`, `greeting`, and `title`
-parameters from `content/_index.md`, the `avatar.jpg` and `cover.jpg`
-images at the site root, and linked icons for all the social sites
-configured in `config.yaml`.
+The home page body has the `stretch`, `center`, `greeting`, and `blurb`
+parameters from `content/_index.md`, if any; the page content, if any;
+and linked icons for the social sites configured in `config.yaml`, if
+any. `stretch` is an image that is stretched fully horizontally with
+`background-position: center` and `background-size: cover`. `center` is
+an image that is centered.
 
 Single pages use the `link` page parameter, if any, as the reference for
 an anchor around the page title, if any. If the page or site parameter
