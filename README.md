@@ -109,9 +109,8 @@ If `partials/head.html` exists in the site, it is included at the end of
 the head tag. If `partials/body.html` exists in the site, it is included
 at the end of the body tag.
 
-Stock Bootstrap 5.2.2 CSS and JavaScript, and Bootstrap Icons 1.10.2,
-are used for style, functionality, and icons. They're loaded from the
-Bootstrap CDN for every page.
+Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded
+from the Bootstrap CDN for every page.
 
 ## Configuration
 
