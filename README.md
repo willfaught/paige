@@ -6,7 +6,9 @@ A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
 Home page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/home.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/home1.jpg">
+
+<img src="https://github.com/willfaught/paige/raw/master/images/home2.jpg">
 
 Single page:
 
@@ -14,11 +16,9 @@ Single page:
 
 List page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/list.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/list1.jpg">
 
-Empty list page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/emptylist.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/list2.jpg">
 
 Taxonomy page:
 
