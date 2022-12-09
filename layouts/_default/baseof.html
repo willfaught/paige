@@ -29,9 +29,6 @@
         {{ range .AlternativeOutputFormats }}
         <link href="{{ .Permalink }}" rel="{{ .Rel }}" title="{{ $.Site.Title }}" type="{{ .MediaType.Type }}">
         {{ end }}
-        {{ if templates.Exists "partials/head.html" }}
-        {{ partial "head" . }}
-        {{ end }}
         <style>
             blockquote {
                 padding: 0.5rem 1rem;
@@ -47,6 +44,9 @@
                 margin-bottom: 1rem;
             }
         </style>
+        {{ if templates.Exists "partials/head.html" }}
+        {{ partial "head" . }}
+        {{ end }}
     </head>
     <body class="d-flex flex-column">
         <div class="container flex-fill">
