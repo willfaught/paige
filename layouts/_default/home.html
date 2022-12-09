@@ -35,7 +35,7 @@
 {{ if .Params.blurb }}
 <div class="row">
     <div class="col col-lg-6 mx-auto text-center">
-        <div class="lead">{{ .Params.blurb | markdownify }}</div>
+        <p class="lead">{{ .Params.blurb | markdownify }}</p>
     </div>
 </div>
 {{ end }}
