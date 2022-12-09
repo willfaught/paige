@@ -10,15 +10,19 @@ Home page:
 
 Single page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/about.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/single.jpg">
 
 List page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/blog.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/list.jpg">
+
+Empty list page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/emptylist.jpg">
 
 Taxonomy page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/tags.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/taxonomy.jpg">
 
 Term page:
 
