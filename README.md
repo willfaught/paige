@@ -32,26 +32,6 @@ Term page:
 
 <img src="https://github.com/willfaught/paige/raw/master/images/404.jpg">
 
-Markdown example:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/markdown.jpg">
-
-Rich content example:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/rich.jpg">
-
-Placeholder text example:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/placeholder.jpg">
-
-Math typesetting example:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/math.jpg">
-
-Emoji support example:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/emoji.jpg">
-
 ## Features
 
 - Blog
