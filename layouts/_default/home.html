@@ -14,14 +14,14 @@
 {{ if .Params.stretch }}
 <div class="row">
     <div class="col pb-3 text-center">
-        <div class="rounded-4" style="background-image: url('{{ relURL .Params.stretch }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
+        <div class="rounded-4 shadow" style="background-image: url('{{ relURL .Params.stretch }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
     </div>
 </div>
 {{ end }}
 {{ if .Params.center }}
 <div class="row">
     <div class="col pb-3 text-center">
-        <img alt="Avatar" class="rounded-4" src="{{ relURL .Params.center }}" style="max-height: 20rem; max-width: 100%">
+        <img alt="Avatar" class="rounded-4 shadow" src="{{ relURL .Params.center }}" style="max-height: 20rem; max-width: 100%">
     </div>
 </div>
 {{ end }}
