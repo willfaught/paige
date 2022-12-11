@@ -1,0 +1,22 @@
+{{ if .Pages }}
+<section>
+    {{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
+    {{ range $p.PageGroups }}
+    <h5 class="text-center">{{ .Key }}</h5>
+    {{ range .Pages }}
+    <p class="text-center">
+        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+        {{ if .Description }}
+        <br>
+        {{ .Description | markdownify }}
+        {{ end }}
+    </p>
+    {{ end }}
+    {{ end }}
+    {{ if or $p.HasPrev $p.HasNext }}
+    <div class="d-flex justify-content-center pt-3">
+        {{ partial "pagination.html" . }}
+    </div>
+    {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,15 @@
+<nav class="d-flex justify-content-center py-3">
+    <ul class="justify-content-center nav nav-pills">
+        {{ $p := . }}
+        {{ $basePath := path.Clean (urls.Parse .Site.BaseURL).Path }}
+        {{ if eq $basePath "/" }}
+        {{ $basePath = "" }}
+        {{ end }}
+        {{ range .Site.Menus.main }}
+        {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
+        {{ $menuPath := strings.TrimPrefix $basePath .URL }}
+        {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
+        <li class="nav-item"><a href="{{ .URL }}" class="nav-link{{if $active }} active{{ end }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+</nav>
