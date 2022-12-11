@@ -38,6 +38,7 @@ Term page:
 - Bootstrap support
 - Facebook sharing support
 - Google Analytics support
+- Header links
 - Landing page
 - Light color scheme
 - Math typesetting support
