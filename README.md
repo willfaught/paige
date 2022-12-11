@@ -98,7 +98,7 @@ the site, it is included at the end of the body tag.
 To hide the theme link, set the site parameter `paigehidethemelink` to
 true. To hide the theme comment, set the site parameter
 `paigehidethemecomment` to true. If you hide either of these, please
-credit this project and its author in a post so others may find it.
+credit this project in a post so others may find it.
 
 Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded
 from the Bootstrap CDN for every page. To load local assets instead, set
