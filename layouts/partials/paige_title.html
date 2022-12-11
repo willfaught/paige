@@ -1,0 +1,7 @@
+{{ if and (and .Title .Site.Title) (or (not (eq .Title .Site.Title)) (not .IsHome)) }}
+<title>{{ .Title | markdownify | plainify | htmlUnescape }} &middot; {{ .Site.Title | markdownify | plainify | htmlUnescape }}</title>
+{{ else if .Title }}
+<title>{{ .Title | markdownify | plainify | htmlUnescape }}</title>
+{{ else if .Site.Title }}
+<title>{{ .Site.Title | markdownify | plainify | htmlUnescape }}</title>
+{{ end }}

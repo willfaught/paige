@@ -85,9 +85,9 @@ Single pages use the `link` page parameter, if any, as the reference for
 an anchor around the page title, if any. If the page or site parameter
 `math` is set to true, math typesetting is enabled with KaTeX.
 
-If `partials/head.html` exists in the site, it is included at the end of
-the head tag. If `partials/body.html` exists in the site, it is included
-at the end of the body tag.
+If `partials/paige_head_last.html` exists in the site, it is included at
+the end of the head tag. If `partials/paige_body_last.html` exists in
+the site, it is included at the end of the body tag.
 
 Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded
 from the Bootstrap CDN for every page.

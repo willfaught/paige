@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+{{ if .Site.Author.name }}
+<meta content="{{ .Site.Author.name }}" name="author">
+{{ end }}
+{{ if .Description }}
+<meta content="{{ .Description }}" name="description">
+{{ end }}
+{{ if or .Keywords .Params.tags .Params.categories }}
+<meta content="{{ delimit (sort (union (union .Keywords .Params.tags) .Params.categories)) `, ` }}" name="keywords">
+{{ end }}
+<meta content="width=device-width, initial-scale=1" name="viewport">
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
