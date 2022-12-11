@@ -25,14 +25,6 @@ menu:
     name: Blog
     weight: 30
     url: /blog/
-  - identifier: articles
-    name: Articles
-    weight: 40
-    url: /articles/
-  - identifier: projects
-    name: Projects
-    weight: 50
-    url: /projects/
   - identifier: categories
     name: Categories
     weight: 60
