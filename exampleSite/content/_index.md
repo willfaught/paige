@@ -3,7 +3,6 @@ blurb: There's a new daddy in town. A discipline daddy. If I make this comeback,
 description: Go ahead, touch the Cornballer
 greeting: You know [best](https://www.youtube.com/watch?v=1WDW8XKEGgU)
 stretch: stretch.jpg
-title: No Borders, No Limits
 ---
 
 <p class="lead text-center">

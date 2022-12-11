@@ -60,7 +60,8 @@ The HTML keywords is a union of the page keywords, tags, and categories.
 
 The HTML title is the page title, followed by a middle dot, followed by
 the site title. If one is missing, the other is used without the middle
-dot. If both are the same, only one is used without the middle dot.
+dot. If both are the same for the home page, the title is the page
+title.
 
 The HTML body can have a header, a body, and a footer. The header has
 the section menus, if any; the page title, if any; the page description,

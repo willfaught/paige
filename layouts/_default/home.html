@@ -1,10 +1,14 @@
 {{ define "main" }}
-{{ if .Title }}
+{{ $title := .Title }}
+{{ if not $title }}
+{{ $title = .Site.Title }}
+{{ end }}
+{{ if $title }}
 <h1 class="display-1 fw-bold text-center">
     {{ if .Params.link }}
-    <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
+    <a href="{{ .Params.link }}">{{ $title | markdownify }}</a>
     {{ else }}
-    {{ .Title | markdownify }}
+    {{ $title | markdownify }}
     {{ end }}
 </h1>
 {{ end }}

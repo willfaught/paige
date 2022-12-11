@@ -1,7 +1,15 @@
-{{ if and (and .Title .Site.Title) (or (not (eq .Title .Site.Title)) (not .IsHome)) }}
-<title>{{ .Title | markdownify | plainify | htmlUnescape }} &middot; {{ .Site.Title | markdownify | plainify | htmlUnescape }}</title>
-{{ else if .Title }}
-<title>{{ .Title | markdownify | plainify | htmlUnescape }}</title>
-{{ else if .Site.Title }}
-<title>{{ .Site.Title | markdownify | plainify | htmlUnescape }}</title>
+{{ $title := "" }}
+{{ $pageTitle := .Title | markdownify | plainify | htmlUnescape }}
+{{ $siteTitle := .Site.Title | markdownify | plainify | htmlUnescape }}
+{{ if and .Title .Site.Title }}
+{{ if .IsHome }}
+{{ $title = $pageTitle }}
+{{ else }}
+{{ $title = printf "%s · %s" $pageTitle $siteTitle }}
 {{ end }}
+{{ else if .Title }}
+{{ $title = $pageTitle }}
+{{ else if .Site.Title }}
+{{ $title = $siteTitle }}
+{{ end }}
+{{ return $title }}
