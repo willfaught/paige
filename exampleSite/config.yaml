@@ -34,6 +34,9 @@ menu:
     weight: 70
     url: /tags/
 paginate: 50
+params:
+  paigehidethemecomment: true
+  paigehidethemelink: true
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:

@@ -21,3 +21,6 @@
         {{ end }}
     </body>
 </html>
+{{ if not .Site.Params.paigehidethemecomment }}
+{{ printf "<!-- Paige theme from https://github.com/willfaught/paige -->" | safeHTML }}
+{{ end }}
