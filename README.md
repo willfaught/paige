@@ -35,6 +35,7 @@ Term page:
 ## Features
 
 - Blog
+- Bootstrap support
 - Facebook sharing support
 - Google Analytics support
 - Landing page
