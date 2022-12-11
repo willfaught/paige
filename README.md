@@ -44,6 +44,7 @@ Term page:
 - Menu navigation
 - Minimal design
 - Responsive, mobile-first layout
+- Safari and Firefox Reader View support
 - Sections for other kinds of content
 - Single column presentation
 - Social links
