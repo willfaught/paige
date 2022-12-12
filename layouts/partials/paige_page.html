@@ -1,16 +1,4 @@
-{{ if .Title }}
-<h1 class="display-5 fw-bold text-center">
-    {{ if .Params.link }}
-    <a href="{{ .Params.link }}">{{ .Title | markdownify }}</a>
-    {{ else }}
-    {{ .Title | markdownify }}
-    {{ end }}
-</h1>
-{{ end }}
-{{ if .Description }}
-<p class="lead text-center">{{ .Description | markdownify }}</p>
-{{ end }}
-{{ if .PublishDate }}
-<p class="text-center text-muted"><time datetime="{{ .PublishDate.Format `2006-01-02` }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
-{{ end }}
+{{ partial "paige_title_content.html" . }}
+{{ partial "paige_description.html" . }}
+{{ partial "paige_date.html" . }}
 {{ partial "paige_content.html" . }}
