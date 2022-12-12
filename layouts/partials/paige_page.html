@@ -13,6 +13,4 @@
 {{ if .PublishDate }}
 <p class="text-center text-muted"><time datetime="{{ .PublishDate.Format `2006-01-02` }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
 {{ end }}
-{{ if .Content }}
-{{ .Content | replaceRE `(<h[1-9] id="([^"]+)".+)(</h[1-9]+>)` `${1}<a class="headerlink" href="#${2}"><i class="bi bi-link-45deg small"></i></a>${3}` | safeHTML }}
-{{ end }}
+{{ partial "paige_content.html" . }}

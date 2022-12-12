@@ -36,9 +36,7 @@
     </div>
 </section>
 {{ end }}
-{{ if .Content }}
-{{ .Content }}
-{{ end }}
+{{ partial "paige_content.html" . }}
 {{ if .Site.Social }}
 <section>
     <div class="pb-3 text-center">
