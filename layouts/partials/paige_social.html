@@ -1,0 +1,9 @@
+{{ if .Site.Social }}
+<section>
+    <div class="pb-3 text-center">
+        {{ range $k, $v := .Site.Social }}
+        <a href="{{ $v }}"><i class="bi bi-{{ $k }} lead px-2"></i></a>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
