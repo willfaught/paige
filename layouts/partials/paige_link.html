@@ -1,5 +1,13 @@
+{{ if .Site.Params.paigebootstrapcss }}
+<link href="{{ relURL .Site.Params.paigebootstrapcss }}" rel="stylesheet">
+{{ else }}
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+{{ end }}
+{{ if .Site.Params.paigebootstrapicons }}
+<link href="{{ relURL .Site.Params.paigebootstrapicons }}" rel="stylesheet">
+{{ else }}
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet">
+{{ end }}
 {{ if or .Site.Params.math .Params.math }}
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" integrity="sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" rel="stylesheet">
 {{ end }}

@@ -99,7 +99,9 @@ true. To hide the theme comment, set the site parameter
 credit this project and its author in a post so others may find it.
 
 Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded
-from the Bootstrap CDN for every page.
+from the Bootstrap CDN for every page. To load local assets instead, set
+the site parameters `paigebootstrapcss`, `paigebootstrapicons`, and
+`paigebootstrapjs` to the asset paths.
 
 ## Configuration
 
