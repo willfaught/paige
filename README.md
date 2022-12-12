@@ -34,6 +34,7 @@ Term page:
 
 ## Features
 
+- Accessibility support
 - Blog
 - Bootstrap support
 - Facebook sharing support
