@@ -34,23 +34,24 @@ Term page:
 
 ## Features
 
-- Accessibility support
+- Accessibility
 - Blog
-- Bootstrap support
-- Facebook sharing support
-- Google Analytics support
+- Bootstrap
+- Customizable
+- Facebook sharing
+- Google Analytics
 - Header links
 - Landing page
 - Light color scheme
-- Math typesetting support
+- Math typesetting
 - Menu navigation
 - Minimal design
-- Responsive, mobile-first layout
+- Responsive
 - Safari and Firefox Reader View support
-- Sections for other kinds of content
-- Single column presentation
+- Sections
+- Single column
 - Social links
-- Twitter sharing support
+- Twitter sharing
 
 ## Design
 
