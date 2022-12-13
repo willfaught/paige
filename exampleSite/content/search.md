@@ -1,4 +1,4 @@
 ---
-layout: paige_search
+layout: paige-search
 title: Search
 ---

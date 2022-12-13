@@ -1,0 +1,9 @@
+<head>
+    {{ partial "paige-meta.html" . }}
+    <title>{{ partial "paige-titles.html" . }}</title>
+    {{ partial "paige-link.html" . }}
+    {{ partial "paige-style.html" . }}
+    {{ if templates.Exists "partials/paige-head-last.html" }}
+    {{ partial "paige-head-last.html" . }}
+    {{ end }}
+</head>

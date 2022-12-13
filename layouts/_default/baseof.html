@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="{{ .Site.LanguageCode }}">
-    {{ partial "paige_head.html" . }}
+    {{ partial "paige-head.html" . }}
     <body class="d-flex flex-column">
         <div class="container flex-fill">
             <div class="row">
                 <div class="col">
-                    {{ partial "paige_header.html" . }}
+                    {{ partial "paige-header.html" . }}
                     <main>
                         <article>
                             {{ block "main" . }}{{ end }}
                         </article>
                     </main>
-                    {{ partial "paige_footer.html" . }}
+                    {{ partial "paige-footer.html" . }}
                 </div>
             </div>
         </div>
-        {{ partial "paige_script.html" . }}
-        {{ if templates.Exists "partials/paige_body_last.html" }}
-        {{ partial "paige_body_last.html" . }}
+        {{ partial "paige-script.html" . }}
+        {{ if templates.Exists "partials/paige-body-last.html" }}
+        {{ partial "paige-body-last.html" . }}
         {{ end }}
     </body>
 </html>

@@ -1,7 +1,7 @@
 {{ define "main" }}
-{{ partial "paige_title.html" . }}
-{{ partial "paige_description.html" . }}
-{{ partial "paige_date.html" . }}
+{{ partial "paige-title.html" . }}
+{{ partial "paige-description.html" . }}
+{{ partial "paige-date.html" . }}
 {{ if .Params.stretch }}
 <div class="rounded-4 shadow" style="background-image: url('{{ relURL .Params.stretch }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
 {{ end }}
@@ -20,6 +20,6 @@
     </div>
 </section>
 {{ end }}
-{{ partial "paige_content.html" . }}
-{{ partial "paige_social.html" . }}
+{{ partial "paige-content.html" . }}
+{{ partial "paige-social.html" . }}
 {{ end }}
