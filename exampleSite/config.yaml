@@ -27,15 +27,15 @@ menu:
     url: /blog/
   - identifier: categories
     name: Categories
-    weight: 60
+    weight: 40
     url: /categories/
   - identifier: tags
     name: Tags
-    weight: 70
+    weight: 50
     url: /tags/
   - identifier: search
     name: Search
-    weight: 80
+    weight: 60
     url: /search/
 outputs:
   home:
