@@ -1,6 +1,26 @@
 demosite = "https://willfaught.com/paige"
 description = "A simple Hugo theme"
-features = ["blog", "landing page", "responsive", "single column", "menus", "social links"]
+features = [
+  "accessibility",
+  "blog",
+  "bootstrap",
+  "customizable",
+  "facebook sharing",
+  "google analytics",
+  "header links",
+  "landing page",
+  "light color scheme",
+  "math typesetting",
+  "menus",
+  "minimal design",
+  "responsive",
+  "safari and firefox reader view",
+  "search",
+  "sections",
+  "single column",
+  "social links",
+  "twitter sharing"
+]
 homepage = "https://github.com/willfaught/paige"
 license = "Apache-2.0"
 licenselink = "https://www.apache.org/licenses/LICENSE-2.0"
