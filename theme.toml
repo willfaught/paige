@@ -8,5 +8,5 @@ name = "Paige"
 tags = ["blog", "bootstrap", "landing", "light", "minimal", "personal", "responsive"]
 
 [author]
-  homepage = "https://willfaught.com"
-  name = "Will Faught"
+homepage = "https://willfaught.com"
+name = "Will Faught"
