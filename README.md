@@ -16,9 +16,7 @@ Single page:
 
 List page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/list1.jpg">
-
-<img src="https://github.com/willfaught/paige/raw/master/images/list2.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/list.jpg">
 
 Taxonomy page:
 
@@ -31,6 +29,10 @@ Term page:
 404 page:
 
 <img src="https://github.com/willfaught/paige/raw/master/images/404.jpg">
+
+Search page:
+
+<img src="https://github.com/willfaught/paige/raw/master/images/search.jpg">
 
 ## Features
 
