@@ -5,7 +5,7 @@ homepage = "https://github.com/willfaught/paige"
 license = "Apache-2.0"
 licenselink = "https://www.apache.org/licenses/LICENSE-2.0"
 name = "Paige"
-tags = ["articles", "blog", "bootstrap", "landing", "light", "minimal", "personal", "projects", "responsive", "social"]
+tags = ["blog", "bootstrap", "landing", "light", "minimal", "personal", "responsive"]
 
 [author]
   homepage = "https://willfaught.com"
