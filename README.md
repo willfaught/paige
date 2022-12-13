@@ -48,6 +48,7 @@ Term page:
 - Minimal design
 - Responsive
 - Safari and Firefox Reader View support
+- Search
 - Sections
 - Single column
 - Social links
@@ -90,6 +91,9 @@ an image that is centered.
 Single pages use the `link` page parameter, if any, as the reference for
 an anchor around the page title, if any. If the page or site parameter
 `math` is set to true, math typesetting is enabled with KaTeX.
+
+The `paige_search` layout provides full site search. It requires setting
+`outputs.home` to `["html", "json", "rss"]` in `config.yaml`.
 
 If `partials/paige_head_last.html` exists in the site, it is included at
 the end of the head tag. If `partials/paige_body_last.html` exists in

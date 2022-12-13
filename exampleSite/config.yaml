@@ -33,6 +33,15 @@ menu:
     name: Tags
     weight: 70
     url: /tags/
+  - identifier: search
+    name: Search
+    weight: 80
+    url: /search/
+outputs:
+  home:
+  - html
+  - json
+  - rss
 paginate: 50
 params:
   paigehidethemecomment: true

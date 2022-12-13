@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range .Site.RegularPages -}}
+{{- $.Scratch.Add "index" (dict "title" (.Title | markdownify | plainify | htmlUnescape) "description" (.Description  | markdownify | plainify | htmlUnescape) "date" .PublishDate "categories" .Params.categories "tags" .Params.tags "keywords" .Params.keywords "text" (strings.TrimRight " " (replace (.Plain | htmlUnescape) "\n" " ")) "link" .RelPermalink) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

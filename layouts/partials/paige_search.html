@@ -1,0 +1,108 @@
+<div class="container-fluid">
+    <form action="{{ .Page.RelPermalink }}" method="get">
+        <div class="justify-content-center row mb-3">
+            <div class="col col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-4">
+                <input aria-label="Query" class="form-control" id="query" name="q" type="search" placeholder="Query">
+            </div>
+        </div>
+        <div class="justify-content-center row">
+            <div class="col-auto">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="paige-error" style="display: none">
+    <p class="lead text-center text-danger">Error</p>
+</div>
+<div id="paige-searching" style="display: none">
+    <p class="lead text-center">Searching...</p>
+</div>
+<div id="paige-nothing" style="display: none">
+    <p class="lead text-center">Found nothing</p>
+</div>
+<div id="paige-something" style="display: none">
+    <p class="lead text-center">Found something</p>
+</div>
+<script crossorigin="anonymous" defer integrity="sha384-1LalyFI+BycKouEClZE5CoFnlLr+Kx8Wslc45o5NATVo+c2mEh02i8HNaaT7XOdQ" referrerpolicy="no-referrer" src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+<script>
+var errorElement = document.getElementById("paige-error");
+var nothingElement = document.getElementById("paige-nothing");
+var queryElement = document.getElementById("query");
+var searchingElement = document.getElementById("paige-searching")
+var somethingElement = document.getElementById("paige-something");
+
+if (queryElement !== null) {
+    var queryText = decodeURIComponent((location.search.split("q=")[1] || "").split("&")[0]).replace(/\+/g, " ");
+    if (queryText) {
+        queryElement.value = queryText;
+        search(queryText);
+    }
+}
+
+function search(queryText) {
+    show(searchingElement);
+    fetch("/index.json").then(function (response) {
+        if (response.status !== 200) {
+            console.log("Cannot load /index.json", response);
+            hide(searchingElement);
+            show(errorElement);
+            return;
+        }
+        response.json().then(function (pages) {
+            var index = new FlexSearch.Document({
+                document: {
+                    id: "link",
+                    index: ["categories", "description", "keywords", "tags", "text", "title"]
+                }
+            });
+            var pathPage = {};
+            pages.forEach(function (page) {
+                index.add(page);
+                pathPage[page.link] = page;
+            });
+            var results = index.search(queryText, {limit: 50});
+            hide(searchingElement);
+            var shown = false;
+            var done = {};
+            results.forEach(function (result) {
+                result.result.forEach(function (path) {
+                    if (path === "{{ .RelPermalink }}" || done[path]) {
+                        return;
+                    }
+                    if (!shown) {
+                        shown = true;
+                        show(somethingElement);
+                    }
+                    done[path] = true;
+                    var page = pathPage[path];
+                    var link = document.createElement("a");
+                    link.href = page.link;
+                    link.innerText = page.title;
+                    var result = document.createElement("p");
+                    result.classList = "text-center";
+                    result.appendChild(link);
+                    if (page.description) {
+                        result.appendChild(document.createElement("br"));
+                        result.innerHTML += page.description;
+                    }
+                    somethingElement.appendChild(result);
+                });
+            });
+            if (!shown) {
+                show(nothingElement);
+            }
+        }).catch(function (error) {
+            console.log("Cannot search /index.json", error);
+        });
+    });
+}
+
+function hide(element) {
+    element.style.display = "none";
+}
+
+function show(element) {
+    element.style.display = "block";
+}
+</script>
