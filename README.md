@@ -46,7 +46,7 @@ Search page:
 - Landing page
 - Light color scheme
 - Math typesetting
-- Menu navigation
+- Menus
 - Minimal design
 - Responsive
 - Safari and Firefox Reader View support
