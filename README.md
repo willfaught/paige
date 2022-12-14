@@ -81,6 +81,8 @@ matches the pages `content/foo/_index.md`, `content/foo/bar.md`, and
 `content/foo/bar/_index.md`. The section menu item path `/` only matches
 the page `content/_index.md`.
 
+The section menu uses the `main` identifier.
+
 The page date is the publish date, if any; otherwise, it's the creation
 date. To change the date format displayed, set the site parameter
 `paigedateformat` to a Hugo date format.
