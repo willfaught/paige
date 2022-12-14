@@ -48,6 +48,7 @@ Search page:
 - Math typesetting
 - Menus
 - Minimal design
+- RSS with full content
 - Responsive
 - Safari and Firefox Reader View support
 - Search
