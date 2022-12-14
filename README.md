@@ -71,15 +71,15 @@ dot. If both are the same for the home page, the title is the page
 title.
 
 The HTML body can have a header, a body, and a footer. The header has
-the section menus, if any; the page title, if any; the page description,
+the section menu, if any; the page title, if any; the page description,
 if any; and the page date, if any. The body has the page content, if
 any. The footer has the copyright notice, if any.
 
-A section menu is highlighted if its path is a prefix of the path of the
-current page. For example, the section menu path `/foo/` matches the
-pages `content/foo/_index.md`, `content/foo/bar.md`, and
-`content/foo/bar/_index.md`. The section menu path `/` only matches the
-page `content/_index.md`.
+A section menu item is highlighted if its path is a prefix of the path
+of the current page. For example, the section menu item path `/foo/`
+matches the pages `content/foo/_index.md`, `content/foo/bar.md`, and
+`content/foo/bar/_index.md`. The section menu item path `/` only matches
+the page `content/_index.md`.
 
 The page date is the publish date, if any; otherwise, it's the creation
 date. To change the date format displayed, set the site parameter
