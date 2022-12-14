@@ -1,10 +1,10 @@
-{{ $pctx := . }}
-{{ if .IsHome }}{{ $pctx = .Site }}{{ end }}
+{{ $item := . }}
+{{ if .IsHome }}{{ $item = .Site }}{{ end }}
 {{ $pages := slice }}
 {{ if or $.IsHome $.IsSection }}
-{{ $pages = $pctx.RegularPages }}
+{{ $pages = $item.RegularPages }}
 {{ else }}
-{{ $pages = $pctx.Pages }}
+{{ $pages = $item.Pages }}
 {{ end }}
 {{ $limit := .Site.Config.Services.RSS.Limit }}
 {{ if ge $limit 1 }}
