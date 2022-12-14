@@ -10,20 +10,7 @@
 {{ if ge $limit 1 }}
 {{ $pages = $pages | first $limit }}
 {{ end }}
-{{ $title := "" }}
-{{ if or .Title .Site.Title }}
-{{ if and .Title .Site.Title }}
-{{ if eq .Title .Site.Title }}
-{{ $title = .Title }}
-{{ else }}
-{{ $title = printf "%s · %s" .Title .Site.Title }}
-{{ end }}
-{{ else if .Title }}
-{{ $title = .Title }}
-{{ else }}
-{{ $title = .Site.Title }}
-{{ end }}
-{{ end }}
+{{ $title := partial "paige-titles.html" . }}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
