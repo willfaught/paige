@@ -81,7 +81,7 @@ current page. For example, the menu item path `/foo/` matches the pages
 `content/foo/bar/_index.md`. The menu item path `/` only matches the
 page `content/_index.md`.
 
-The menu uses the `main` identifier.
+The menu is configured with `menu.main` in `config.yaml`.
 
 To show full pages instead of just the page title and description in a
 list page, set the list page parameter `paigeshowfullpages` to true.
