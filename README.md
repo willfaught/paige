@@ -83,6 +83,9 @@ the page `content/_index.md`.
 
 The section menu uses the `main` identifier.
 
+To show full pages instead of just the page title and description in a
+list page, set the list page parameter `paigeshowfullpages` to true.
+
 The page date is the publish date, if any; otherwise, it's the creation
 date. To change the date format displayed, set the site parameter
 `paigedateformat` to a Hugo date format.
