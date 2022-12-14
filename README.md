@@ -71,17 +71,17 @@ dot. If both are the same for the home page, the title is the page
 title.
 
 The HTML body can have a header, a body, and a footer. The header has
-the section menu, if any; the page title, if any; the page description,
-if any; and the page date, if any. The body has the page content, if
-any. The footer has the copyright notice, if any.
+the menu, if any; the page title, if any; the page description, if any;
+and the page date, if any. The body has the page content, if any. The
+footer has the copyright notice, if any.
 
-A section menu item is highlighted if its path is a prefix of the path
-of the current page. For example, the section menu item path `/foo/`
-matches the pages `content/foo/_index.md`, `content/foo/bar.md`, and
-`content/foo/bar/_index.md`. The section menu item path `/` only matches
-the page `content/_index.md`.
+A menu item is highlighted if its path is a prefix of the path of the
+current page. For example, the menu item path `/foo/` matches the pages
+`content/foo/_index.md`, `content/foo/bar.md`, and
+`content/foo/bar/_index.md`. The menu item path `/` only matches the
+page `content/_index.md`.
 
-The section menu uses the `main` identifier.
+The menu uses the `main` identifier.
 
 To show full pages instead of just the page title and description in a
 list page, set the list page parameter `paigeshowfullpages` to true.
