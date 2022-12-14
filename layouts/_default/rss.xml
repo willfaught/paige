@@ -1,5 +1,7 @@
 {{ $item := . }}
-{{ if .IsHome }}{{ $item = .Site }}{{ end }}
+{{ if .IsHome }}
+{{ $item = .Site }}
+{{ end }}
 {{ $pages := slice }}
 {{ if or $.IsHome $.IsSection }}
 {{ $pages = $item.RegularPages }}
