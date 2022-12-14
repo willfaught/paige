@@ -14,39 +14,31 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    {{ with $title }}
-    <title>{{ . }}</title>
-    {{ end }}
-    <link>{{ .Permalink }}</link>
-    <description>Recent content{{ with $title }} in {{ . }}{{ end }}</description>
-    {{ with .Site.LanguageCode }}
-    <language>{{ . }}</language>
-    {{ end }}
-    {{ with .Site.Author.email }}
-    <managingEditor>{{ . }}</managingEditor>
-    <webMaster>{{ . }}</webMaster>
+    {{ with .OutputFormats.Get "RSS" }}
+    {{ printf `<atom:link href="%s" rel="self" type="%s"/>` .Permalink .MediaType | safeHTML }}
     {{ end }}
     {{ with .Site.Copyright }}
     <copyright>{{ . }}</copyright>
     {{ end }}
+    <description>Recent content{{ with $title }} in {{ . }}{{ end }}</description>
+    {{ with .Site.LanguageCode }}
+    <language>{{ . }}</language>
+    {{ end }}
     {{ if and .Date (not .Date.IsZero) }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     {{ end }}
-    {{ with .OutputFormats.Get "RSS" }}
-    {{ printf `<atom:link href="%s" rel="self" type="%s"/>` .Permalink .MediaType | safeHTML }}
+    <link>{{ .Permalink }}</link>
+    {{ with .Site.Author.email }}
+    <managingEditor>{{ . }}</managingEditor>
+    {{ end }}
+    {{ with $title }}
+    <title>{{ . }}</title>
+    {{ end }}
+    {{ with .Site.Author.email }}
+    <webMaster>{{ . }}</webMaster>
     {{ end }}
     {{ range $pages }}
     <item>
-      {{ with .Title }}
-      <title>{{ . }}</title>
-      {{ end }}
-      {{ with .Permalink }}
-      <link>{{ . }}</link>
-      <guid>{{ . }}</guid>
-      {{ end }}
-      {{ with .Date }}
-      <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{ end }}
       {{ with .Site.Author.email }}
       <author>{{ . }}</author>
       {{ end }}
@@ -55,7 +47,17 @@
       {{ else if .Summary }}
       <description>{{ .Summary | html }}</description>
       {{ else if .Description }}
-      <description>{{ .Description | markdown | html }}</description>
+      <description>{{ .Description | markdownify | html }}</description>
+      {{ end }}
+      {{ with .Permalink }}
+      <guid>{{ . }}</guid>
+      <link>{{ . }}</link>
+      {{ end }}
+      {{ with .Date }}
+      <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ end }}
+      {{ with .Title }}
+      <title>{{ . }}</title>
       {{ end }}
     </item>
     {{ end }}
