@@ -55,7 +55,7 @@
       {{ else if .Summary }}
       <description>{{ .Summary | html }}</description>
       {{ else if .Description }}
-      <description>{{ .Description | html }}</description>
+      <description>{{ .Description | markdown | html }}</description>
       {{ end }}
     </item>
     {{ end }}
