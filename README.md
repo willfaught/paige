@@ -73,7 +73,7 @@ title.
 The HTML body can have a header, a body, and a footer. The header has
 the menu, if any; the page title, if any; the page description, if any;
 and the page date, if any. The body has the page content, if any. The
-footer has the copyright notice, if any.
+footer has the copyright notice, if any, and the theme link, if any.
 
 A menu item is highlighted if its path is a prefix of the path of the
 current page. For example, the menu item path `/foo/` matches the pages
