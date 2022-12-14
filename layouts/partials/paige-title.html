@@ -8,8 +8,8 @@
 {{ end }}
 {{ if $title }}
 <h1 class="{{ $class }} fw-bold text-center">
-    {{ if .Params.link }}
-    <a href="{{ .Params.link }}">{{ $title | markdownify }}</a>
+    {{ with .Params.link }}
+    <a href="{{ . }}">{{ $title | markdownify }}</a>
     {{ else }}
     {{ $title | markdownify }}
     {{ end }}

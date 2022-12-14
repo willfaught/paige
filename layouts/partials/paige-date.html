@@ -1,3 +1,3 @@
-{{ if .PublishDate }}
-<p class="text-center text-muted"><time datetime="{{ .PublishDate.Format `2006-01-02` }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
+{{ with .PublishDate }}
+<p class="text-center text-muted"><time datetime="{{ .Format `2006-01-02` }}">{{ .Format "January 2, 2006" }}</time></p>
 {{ end }}

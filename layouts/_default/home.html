@@ -2,21 +2,21 @@
 {{ partial "paige-title.html" . }}
 {{ partial "paige-description.html" . }}
 {{ partial "paige-date.html" . }}
-{{ if .Params.stretch }}
-<div class="rounded-4 shadow" style="background-image: url('{{ relURL .Params.stretch }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
+{{ with .Params.stretch }}
+<div class="rounded-4 shadow" style="background-image: url('{{ relURL . }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
 {{ end }}
-{{ if .Params.center }}
+{{ with .Params.center }}
 <p class="text-center">
-    <img class="rounded-4 shadow" src="{{ relURL .Params.center }}" style="max-height: 20rem; max-width: 100%">
+    <img class="rounded-4 shadow" src="{{ relURL . }}" style="max-height: 20rem; max-width: 100%">
 </p>
 {{ end }}
-{{ if .Params.greeting }}
-<h2 class="display-5 fw-bold text-center">{{ .Params.greeting | markdownify }}</h2>
+{{ with .Params.greeting }}
+<h2 class="display-5 fw-bold text-center">{{ . | markdownify }}</h2>
 {{ end }}
-{{ if .Params.blurb }}
+{{ with .Params.blurb }}
 <section>
     <div class="col col-lg-7 mx-auto">
-        <p class="lead text-center">{{ .Params.blurb | markdownify }}</p>
+        <p class="lead text-center">{{ . | markdownify }}</p>
     </div>
 </section>
 {{ end }}

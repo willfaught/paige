@@ -6,15 +6,15 @@
     {{ range .Pages }}
     <p class="text-center">
         <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-        {{ if .Description }}
+        {{ with .Description }}
         <br>
-        {{ .Description | markdownify }}
+        {{ . | markdownify }}
         {{ end }}
     </p>
     {{ end }}
     {{ end }}
     {{ if or $p.HasPrev $p.HasNext }}
-    <div class="d-flex justify-content-center pt-3">
+    <div class="d-flex justify-content-center">
         {{ partial "paige-pagination.html" . }}
     </div>
     {{ end }}
