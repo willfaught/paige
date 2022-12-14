@@ -82,7 +82,8 @@ pages `content/foo/_index.md`, `content/foo/bar.md`, and
 page `content/_index.md`.
 
 The page date is the publish date, if any; otherwise, it's the creation
-date.
+date. To change the date format displayed, set the site parameter
+`paigedateformat` to a Hugo date format.
 
 The home page body has the `stretch`, `center`, `greeting`, and `blurb`
 parameters from `content/_index.md`, if any; the page content, if any;
