@@ -98,6 +98,9 @@ an anchor around the page title, if any. If the page or site parameter
 The `paige-search` layout provides full site search. It requires setting
 `outputs.home` to `["html", "json", "rss"]` in `config.yaml`.
 
+Set page parameter `excluderss` to true to exclude it from RSS. Doing so
+for a list page excludes the entire directory.
+
 If `partials/paige-head-last.html` exists in the site, it is included at
 the end of the head tag. If `partials/paige-body-last.html` exists in
 the site, it is included at the end of the body tag.

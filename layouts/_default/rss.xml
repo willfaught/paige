@@ -2,6 +2,7 @@
 {{ if .IsHome }}
 {{ $item = .Site }}
 {{ end }}
+{{ if not .Params.excluderss }}
 {{ $pages := slice }}
 {{ if or $.IsHome $.IsSection }}
 {{ $pages = $item.RegularPages }}
@@ -12,6 +13,7 @@
 {{ if ge $limit 1 }}
 {{ $pages = $pages | first $limit }}
 {{ end }}
+{{ $pages = where $pages "Params.excluderss" "ne" true }}
 {{ $title := partial "paige-titles.html" . }}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -65,3 +67,4 @@
     {{ end }}
   </channel>
 </rss>
+{{ end }}
