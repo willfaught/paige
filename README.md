@@ -336,6 +336,8 @@ The page date is the publish date, if any; otherwise, it's the creation date.
 
 Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded from the Bootstrap CDN for every page unless local Bootstrap assets are used instead.
 
+Parameter names, file names, CSS names, and JavaScript names beginning with "paige" are reserved.
+
 ## Credits
 
 - Center photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
