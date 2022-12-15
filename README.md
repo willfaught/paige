@@ -176,8 +176,8 @@ paigebootstrapstyles: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap st
 paigebootstrapicons: "/my-assets/my-bootstrap-icons.css" # Use local Bootstrap icons
 paigebootstrapscripts: "/my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
 paigedateformat: "2006 January 2" # Hugo date format for page dates
-paigehidethemecomment: true # Don't put a link to the project in a code comment
-paigehidethemelink: true # Don't put a link to the project in the footer
+paigehidethemecomment: true # Don't put a link to this project in a code comment
+paigehidethemelink: true # Don't put a link to this project in the footer
 ```
 
 If you set either `paigehidethemecomment` or `paigehidethemelink`, please credit this project in a post so others may find it.
