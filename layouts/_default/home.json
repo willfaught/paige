@@ -1,7 +1,11 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.Pages "Params.excludesearch" "ne" true -}}
+{{- $title := .Title | markdownify | plainify | htmlUnescape -}}
+{{- if and (not $title) .IsHome }}
+{{- $title = site.Title }}
+{{- end -}}
 {{- $.Scratch.Add "index" (dict
-    "title" (.Title | markdownify | plainify | htmlUnescape)
+    "title" $title
     "description" (.Description  | markdownify | plainify | htmlUnescape)
     "date" .PublishDate
     "categories" .Params.categories
