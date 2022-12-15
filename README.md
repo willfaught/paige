@@ -343,7 +343,7 @@ Parameter names, file names, CSS names, and JavaScript names beginning with "pai
 Get started by [starring](https://github.com/willfaught/paige/stargazers)
 and [following](https://github.com/willfaught/paige/watchers) the project.
 
-If you find an issue, please [report it](https://github.com/willfaught/paige/issues/new).
+If you find an issue, please [create an issue](https://github.com/willfaught/paige/issues/new).
 If you have fixes or improvements, please [create a pull request](https://github.com/willfaught/paige/compare).
 Feedback is encouraged and appreciated.
 
