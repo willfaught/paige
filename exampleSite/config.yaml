@@ -15,28 +15,28 @@ menu:
   main:
   - identifier: home
     name: Home
-    weight: 10
     url: /
+    weight: 10
   - identifier: about
     name: About
-    weight: 20
     url: /about/
+    weight: 20
   - identifier: blog
     name: Blog
-    weight: 30
     url: /blog/
+    weight: 30
   - identifier: categories
     name: Categories
-    weight: 40
     url: /categories/
+    weight: 40
   - identifier: tags
     name: Tags
-    weight: 50
     url: /tags/
+    weight: 50
   - identifier: search
     name: Search
-    weight: 60
     url: /search/
+    weight: 60
 outputs:
   home:
   - html
