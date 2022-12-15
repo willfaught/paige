@@ -208,7 +208,7 @@ paigeshowfullpages: true # Show full page content in list pages
 Additional optional single page parameters:
 
 ```yaml
-excluderss: true # Don't include this page in RSS feeds
+paigeexcluderss: true # Don't include this page in RSS feeds
 ```
 
 Example `config.yaml`:
