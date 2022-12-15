@@ -1,5 +1,5 @@
 {{- $.Scratch.Add "index" slice -}}
-{{- range where .Site.RegularPages "Params.excludesearch" "ne" true -}}
+{{- range where .Site.Pages "Params.excludesearch" "ne" true -}}
 {{- $.Scratch.Add "index" (dict
     "title" (.Title | markdownify | plainify | htmlUnescape)
     "description" (.Description  | markdownify | plainify | htmlUnescape)
