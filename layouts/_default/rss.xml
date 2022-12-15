@@ -47,8 +47,6 @@
       {{ end }}
       {{ if .Content }}
       <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
-      {{ else if .Summary }}
-      <description>{{ .Summary | html }}</description>
       {{ else if .Description }}
       <description>{{ .Description | markdownify | html }}</description>
       {{ end }}
