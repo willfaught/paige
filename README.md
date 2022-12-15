@@ -202,7 +202,7 @@ stretch: "my-stretch.jpg" # A 4x3 or panorama image that is stretched fully hori
 Additional optional list page parameters:
 
 ```yaml
-paigeshowfullpages: true # Show full page content in list pages
+paigeshowfullpages: true # Show full pages, not just page titles and descriptions
 ```
 
 Additional optional single page parameters:
