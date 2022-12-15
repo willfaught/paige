@@ -1,5 +1,5 @@
 {{- $.Scratch.Add "index" slice -}}
-{{- range where .Site.Pages "Params.paigeexcludesearch" "ne" true -}}
+{{- range where .Site.Pages "Params.paigehidesearch" "ne" true -}}
 {{- $title := .Title | markdownify | plainify | htmlUnescape -}}
 {{- if and (not $title) .IsHome }}
 {{- $title = site.Title }}

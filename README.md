@@ -187,7 +187,7 @@ Optional page parameters:
 ```yaml
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 math: true # Enable math typesetting with KaTeX
-paigeexcludesearch: true # Don't include this page in search results
+paigehidesearch: true # Don't include this page in search results
 ```
 
 Additional optional home page parameters:
@@ -208,7 +208,7 @@ paigeshowfullpages: true # Show full pages, not just page titles and description
 Additional optional single page parameters:
 
 ```yaml
-paigeexcluderss: true # Don't include this page in RSS feeds
+paigehiderss: true # Don't include this page in RSS feeds
 ```
 
 Example `config.yaml`:
