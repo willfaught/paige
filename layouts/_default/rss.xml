@@ -2,7 +2,6 @@
 {{ if .IsHome }}
 {{ $item = .Site }}
 {{ end }}
-{{ if not .Params.excluderss }}
 {{ $pages := slice }}
 {{ if or $.IsHome $.IsSection }}
 {{ $pages = $item.RegularPages }}
@@ -67,4 +66,3 @@
     {{ end }}
   </channel>
 </rss>
-{{ end }}
