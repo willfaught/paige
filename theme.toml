@@ -17,6 +17,7 @@ features = [
   "safari and firefox reader view",
   "search",
   "sections",
+  "seo",
   "single column",
   "social links",
   "twitter sharing"

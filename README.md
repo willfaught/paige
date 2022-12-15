@@ -50,6 +50,7 @@ Search page:
 - Minimal design
 - RSS with full content
 - Responsive
+- SEO
 - Safari and Firefox Reader View support
 - Search
 - Sections
