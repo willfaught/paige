@@ -185,9 +185,9 @@ If you set either `paigehidethemecomment` or `paigehidethemelink`, please credit
 Optional page parameters:
 
 ```yaml
-paigeexcludesearch: true # Don't include this page in search results
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 math: true # Enable math typesetting with KaTeX
+paigeexcludesearch: true # Don't include this page in search results
 ```
 
 Additional optional home page parameters:
