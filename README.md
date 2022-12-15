@@ -172,7 +172,7 @@ Optional site parameters:
 
 ```yaml
 math: true # Enable math typesetting with KaTeX
-paigebootstrapcss: "/my-assets/my-styles.css" # Use local Bootstrap styles
+paigebootstrapstyles: "/my-assets/my-styles.css" # Use local Bootstrap styles
 paigebootstrapicons: "/my-assets/my-icons.css" # Use local Bootstrap icons
 paigebootstrapjs: "/my-assets/my-scripts.js" # Use local Bootstrap scripts
 paigedateformat: "2006 January 2" # Format for page dates
