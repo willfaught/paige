@@ -338,11 +338,6 @@ Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded from th
 
 Parameter names, file names, CSS names, and JavaScript names beginning with "paige" are reserved.
 
-## Credits
-
-- Center photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
-- Stretch photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI)
-
 ## Community
 
 Get started by [starring](https://github.com/willfaught/paige/stargazers)
@@ -351,6 +346,11 @@ and [following](https://github.com/willfaught/paige/watchers) the project.
 If you find an issue, please [report it](https://github.com/willfaught/paige/issues/new).
 If you have fixes or improvements, please [create a pull request](https://github.com/willfaught/paige/compare).
 Feedback is encouraged and appreciated.
+
+## Credits
+
+- Center photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
+- Stretch photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI)
 
 ## Project
 
