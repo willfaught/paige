@@ -180,7 +180,7 @@ paige_hide_theme_comment: true # Don't put a link to this project in a code comm
 paige_hide_theme_link: true # Don't put a link to this project in the footer
 ```
 
-If you set either `paige_hide_theme_comment` or `paige_hide_theme_link`, please credit this project in a post so others may find it.
+If you set either `paige_hide_theme_comment` or `paige_hide_theme_link`, please credit this project in a post to help others find it.
 
 Optional page parameters:
 
