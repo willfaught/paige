@@ -330,7 +330,7 @@ The header has the menu, if any; the page title, if any; the page description, i
 The body has the page content, if any.
 The footer has the copyright notice, if any, and the theme link, if any.
 
-The page title and description can be Markdown. Markup is stripped for HTML titles.
+The page title and description can be Markdown. Markup is stripped for HTML and RSS titles.
 
 The page date is the publish date, if any; otherwise, it's the creation date.
 
