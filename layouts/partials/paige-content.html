@@ -1,3 +1,14 @@
-{{ with .Content }}
-{{ . | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paigeheaderlink" href="#${2}"><i class="bi bi-link-45deg small"></i></a>${3}` | safeHTML }}
+{{ if .Content }}
+{{ if and .Params.paige_toc (ne .TableOfContents `<nav id="TableOfContents"></nav>`) }}
+<section>
+    <div class="container-fluid mb-3">
+        <div class="justify-content-center row">
+            <div class="border col col-auto pe-3 ps-3 pt-3 rounded">
+                {{ .TableOfContents }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paigeheaderlink" href="#${2}"><i class="bi bi-link-45deg small"></i></a>${3}` | safeHTML }}
 {{ end }}
