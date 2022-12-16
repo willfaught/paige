@@ -172,9 +172,9 @@ Optional site parameters:
 
 ```yaml
 math: true # Enable math typesetting with KaTeX
-paige_bootstrap_styles: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
 paige_bootstrap_icons: "/my-assets/my-bootstrap-icons.css" # Use local Bootstrap icons
 paige_bootstrap_scripts: "/my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
+paige_bootstrap_styles: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
 paige_date_format: "2006 January 2" # Hugo date format for page dates
 paige_hide_theme_comment: true # Don't put a link to this project in a code comment
 paige_hide_theme_link: true # Don't put a link to this project in the footer
