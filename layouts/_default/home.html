@@ -3,11 +3,11 @@
 {{ partial "paige-description.html" . }}
 {{ partial "paige-date.html" . }}
 {{ with .Params.stretch }}
-<div class="rounded-4 shadow" style="background-image: url('{{ relURL . }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
+<div class="rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
 {{ end }}
 {{ with .Params.center }}
 <p class="text-center">
-    <img class="rounded-4 shadow" src="{{ relURL . }}" style="max-height: 20rem; max-width: 100%">
+    <img class="rounded-4 shadow" src="{{ relLangURL . }}" style="max-height: 20rem; max-width: 100%">
 </p>
 {{ end }}
 {{ with .Params.greeting }}
