@@ -1,13 +1,13 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.RegularPages "Params.paige_hide_search" "ne" true -}}
 {{- $.Scratch.Add "index" (dict
-    "title" (.Title | markdownify | plainify | htmlUnescape)
-    "description" (.Description  | markdownify | plainify | htmlUnescape)
-    "date" .PublishDate
     "categories" .Params.categories
-    "tags" .Params.tags
+    "date" .PublishDate
+    "description" (.Description  | markdownify | plainify | htmlUnescape)
     "keywords" .Params.keywords
+    "link" .RelPermalink
+    "tags" .Params.tags
     "text" (strings.TrimRight " " (replace (.Plain | htmlUnescape) "\n" " "))
-    "link" .RelPermalink) -}}
+    "title" (.Title | markdownify | plainify | htmlUnescape)) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
