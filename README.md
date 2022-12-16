@@ -172,22 +172,22 @@ Optional site parameters:
 
 ```yaml
 math: true # Enable math typesetting with KaTeX
-paigebootstrapstyles: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
-paigebootstrapicons: "/my-assets/my-bootstrap-icons.css" # Use local Bootstrap icons
-paigebootstrapscripts: "/my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
-paigedateformat: "2006 January 2" # Hugo date format for page dates
-paigehidethemecomment: true # Don't put a link to this project in a code comment
-paigehidethemelink: true # Don't put a link to this project in the footer
+paige_bootstrap_styles: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
+paige_bootstrap_icons: "/my-assets/my-bootstrap-icons.css" # Use local Bootstrap icons
+paige_bootstrap_scripts: "/my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
+paige_date_format: "2006 January 2" # Hugo date format for page dates
+paige_hide_theme_comment: true # Don't put a link to this project in a code comment
+paige_hide_theme_link: true # Don't put a link to this project in the footer
 ```
 
-If you set either `paigehidethemecomment` or `paigehidethemelink`, please credit this project in a post so others may find it.
+If you set either `paige_hide_theme_comment` or `paige_hide_theme_link`, please credit this project in a post so others may find it.
 
 Optional page parameters:
 
 ```yaml
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 math: true # Enable math typesetting with KaTeX
-paigehidesearch: true # Don't include this page in search results
+paige_hide_search: true # Don't include this page in search results
 ```
 
 Additional optional home page parameters:
@@ -202,13 +202,13 @@ stretch: "my-stretch.jpg" # A 4x3 or panorama image that is stretched fully hori
 Additional optional list page parameters:
 
 ```yaml
-paigeshowfullpages: true # Show full pages, not just page titles and descriptions
+paige_show_full_pages: true # Show full pages, not just page titles and descriptions
 ```
 
 Additional optional single page parameters:
 
 ```yaml
-paigehiderss: true # Don't include this page in RSS feeds
+paige_hide_rss: true # Don't include this page in RSS feeds
 ```
 
 Example `config.yaml`:

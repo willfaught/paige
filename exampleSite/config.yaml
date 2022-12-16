@@ -44,8 +44,8 @@ outputs:
   - rss
 paginate: 50
 params:
-  paigehidethemecomment: true
-  paigehidethemelink: true
+  paige_hide_theme_comment: true
+  paige_hide_theme_link: true
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
