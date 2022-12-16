@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode }}">
+<html{{ if eq .Language.LanguageDirection "rtl" }} dir="rtl"{{ end }} lang="{{ .Site.LanguageCode }}">
     {{ partial "paige-head.html" . }}
     <body class="d-flex flex-column">
         <div class="container flex-fill">

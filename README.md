@@ -52,6 +52,7 @@ Search page:
 - Minimal design
 - RSS with full content
 - Responsive
+- Right-to-left languages
 - SEO
 - Safari and Firefox Reader View support
 - Search
