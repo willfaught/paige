@@ -43,6 +43,7 @@ Search page:
 - Blog
 - Bootstrap
 - Customizable
+- E-mail protection
 - Facebook sharing
 - Header links
 - Landing page

@@ -2,7 +2,11 @@
 <section>
     <div class="mb-3 text-center">
         {{ range $k, $v := . }}
+        {{ if hasPrefix $v "mailto:" }}
+        <a href="#" data-a="{{ base64Encode (index (split $v `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $v `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)"><i class="bi bi-{{ $k }} display-6 mx-2"><span class="visually-hidden">{{ $k }}</span></i></a>
+        {{ else }}
         <a href="{{ $v }}"><i class="bi bi-{{ $k }} display-6 mx-2"><span class="visually-hidden">{{ $k }}</span></i></a>
+        {{ end }}
         {{ end }}
     </div>
 </section>
