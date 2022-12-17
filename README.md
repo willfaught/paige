@@ -59,6 +59,7 @@ Search page:
 - Sections
 - Single column
 - Social links
+- Table of contents
 - Twitter sharing
 
 Soon: Dark color scheme and dynamic color schemes, when Bootstrap 5.3 releases.
