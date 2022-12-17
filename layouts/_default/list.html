@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ if not .Params.paige_show_full_pages }}
 {{ partial "paige-main.html" . }}
+{{ end }}
 {{ partial "paige-pages.html" . }}
 {{ end }}

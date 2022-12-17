@@ -6,7 +6,7 @@
 {{ $title = .Site.Title }}
 {{ end }}
 {{ end }}
-{{ if and $title (not .Params.paige_show_full_pages) }}
+{{ if $title }}
 <h1 class="{{ $class }} fw-bold text-center">
     {{ with .Params.link }}
     <a href="{{ . }}">{{ $title | markdownify }}</a>
