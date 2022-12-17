@@ -16,9 +16,11 @@
 <p class="display-5 fw-bold h2 text-center">{{ . | markdownify }}</p>
 {{ end }}
 {{ with .Params.blurb }}
-<section>
-    <div class="col col-lg-7 mx-auto">
-        <p class="lead text-center">{{ . | markdownify }}</p>
+<div class="container-fluid">
+    <div class="justify-content-center row">
+        <div class="col col-auto col-lg-7 px-0">
+            <p class="lead text-center">{{ . | markdownify }}</p>
+        </div>
     </div>
 </section>
 {{ end }}
