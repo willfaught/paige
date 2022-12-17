@@ -8,9 +8,7 @@ A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
 Home page:
 
-<img src="https://github.com/willfaught/paige/raw/master/images/home1.jpg">
-
-<img src="https://github.com/willfaught/paige/raw/master/images/home2.jpg">
+<img src="https://github.com/willfaught/paige/raw/master/images/home.jpg">
 
 List page:
 
@@ -364,8 +362,7 @@ If you have a fix or improvement, please share it by [creating a pull request](h
 
 ## Credits
 
-- Center photo by [Yuvraj Singh](https://unsplash.com/photos/ljziSm0DXg8)
-- Stretch photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI)
+Photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI).
 
 ## Project
 
