@@ -3,9 +3,7 @@
 {{ partial "paige-description.html" . }}
 {{ partial "paige-date.html" . }}
 {{ with .Params.stretch }}
-<p>
-    <div class="mw-100 rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem"></div>
-</p>
+<div class="mb-3 mw-100 rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem"></div>
 {{ end }}
 {{ with .Params.center }}
 <p class="text-center">
