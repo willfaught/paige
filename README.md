@@ -230,38 +230,42 @@ baseurl: https://example.com
 copyright: © Michael Bluth
 enablerobotstxt: true
 languagecode: en-us
+languages:
+  en:
+    menu:
+      main:
+      - identifier: home
+        name: Home
+        url: /
+        weight: 10
+      - identifier: about
+        name: About
+        url: /about/
+        weight: 20
+      - identifier: blog
+        name: Blog
+        url: /blog/
+        weight: 30
+      - identifier: categories
+        name: Categories
+        url: /categories/
+        weight: 40
+      - identifier: tags
+        name: Tags
+        url: /tags/
+        weight: 50
+      - identifier: search
+        name: Search
+        url: /search/
+        weight: 60
+    title: No Borders, No Limits
+    weight: 1
 markup:
   goldmark:
     renderer:
       unsafe: true
   highlight:
     style: vs
-menu:
-  main:
-  - identifier: home
-    name: Home
-    url: /
-    weight: 10
-  - identifier: about
-    name: About
-    url: /about/
-    weight: 20
-  - identifier: blog
-    name: Blog
-    url: /blog/
-    weight: 30
-  - identifier: categories
-    name: Categories
-    url: /categories/
-    weight: 40
-  - identifier: tags
-    name: Tags
-    url: /tags/
-    weight: 50
-  - identifier: search
-    name: Search
-    url: /search/
-    weight: 60
 outputs:
   home:
   - html
@@ -283,7 +287,6 @@ social:
   youtube: https://www.youtube.com/user/example
 theme: paige
 timezone: America/Los_Angeles
-title: No Borders, No Limits
 titlecasestyle: Go
 ```
 
