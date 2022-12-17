@@ -21,8 +21,7 @@ In this example we will be using [KaTeX](https://katex.org/)
 {{ end }}
 ```
 
-- To enable KaTex globally set the parameter `paige_math` to `true` in a project's configuration
-- To enable KaTex on a per page basis include the parameter `paige_math: true` in content files
+To enable KaTex on a per page basis include the parameter `paige_math: true` in content files
 
 **Note:** Use the online reference of [Supported TeX Functions](https://katex.org/docs/supported.html)
 
