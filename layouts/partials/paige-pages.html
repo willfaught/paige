@@ -3,9 +3,6 @@
 {{ $page := . }}
 {{ $p := .Paginate .Pages }}
 {{ range $p.Pages }}
-{{ if .Params.math }}
-{{ $page.Scratch.Set "paigelistmath" true }}
-{{ end }}
 {{ partial "paige-article.html" . }}
 {{ end }}
 {{ if or $p.HasPrev $p.HasNext }}
