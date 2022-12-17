@@ -1,17 +1,13 @@
-{{ $title := .Title }}
 {{ $class := "display-5" }}
 {{ if .IsHome }}
 {{ $class = "display-1" }}
-{{ if not $title }}
-{{ $title = .Site.Title }}
 {{ end }}
-{{ end }}
-{{ if $title }}
+{{ if .Title }}
 <h1 class="{{ $class }} fw-bold text-center">
     {{ with .Params.link }}
-    <a href="{{ . }}">{{ $title | markdownify }}</a>
+    <a href="{{ . }}">{{ .Title | markdownify }}</a>
     {{ else }}
-    {{ $title | markdownify }}
+    {{ .Title | markdownify }}
     {{ end }}
 </h1>
 {{ end }}
