@@ -6,7 +6,7 @@
 {{ if .Params.math }}
 {{ $page.Scratch.Set "paigelistmath" true }}
 {{ end }}
-{{ partial "paige-main.html" . }}
+{{ partial "paige-article.html" . }}
 {{ end }}
 {{ if or $p.HasPrev $p.HasNext }}
 <section>
