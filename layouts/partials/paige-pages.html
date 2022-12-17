@@ -19,11 +19,7 @@
     <h5 class="text-center">{{ .Key }}</h5>
     {{ range .Pages }}
     <p class="text-center">
-        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-        {{ with .Description }}
-        <br>
-        {{ . | markdownify }}
-        {{ end }}
+        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ with .Description }}<br>{{ . | markdownify }}{{ end }}
     </p>
     {{ end }}
     {{ end }}
