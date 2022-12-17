@@ -337,7 +337,7 @@ The page title and description can be Markdown. Markup is stripped for HTML and 
 
 The page title is displayed in an `h1` tag, so page content headers must start with `h2`.
 
-The page date is the publish date, if any; otherwise, it's the creation date.
+The page date is the publish date, if any.
 
 Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded from the Bootstrap CDN for every page unless local Bootstrap assets are used instead.
 
