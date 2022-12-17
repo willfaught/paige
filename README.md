@@ -222,8 +222,8 @@ author:
   name: Michael Bluth
 baseurl: https://example.com
 copyright: © Michael Bluth
-languagecode: en-us
 enablerobotstxt: true
+languagecode: en-us
 markup:
   goldmark:
     renderer:
