@@ -50,6 +50,7 @@ Search page:
 - Math typesetting
 - Menus
 - Minimal design
+- Multiple languages
 - RSS with full content
 - Responsive
 - Right-to-left languages
