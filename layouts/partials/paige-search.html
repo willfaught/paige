@@ -2,16 +2,12 @@
     <form action="{{ .Page.RelPermalink }}" dir="auto" method="get">
         <div class="justify-content-center mb-3 row">
             <div class="col col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-4">
-                <input class="form-control" id="query" name="q" type="search">
+                <input class="form-control" id="query" name="q" placeholder="{{ i18n `paige_search_input` }}" type="search">
             </div>
         </div>
         <div class="justify-content-center mb-3 row">
             <div class="col col-auto">
-                <button class="btn btn-primary" type="submit">
-                    <i class="bi bi-search">
-                        <span class="visually-hidden">🔎</span>
-                    </i>
-                </button>
+                <button class="btn btn-primary" type="submit">{{ i18n `paige_search_button` }}</button>
             </div>
         </div>
     </form>
@@ -19,28 +15,28 @@
 <div id="paige-error" style="display: none">
     <p class="text-center">
         <i class="bi bi-exclamation-triangle display-6 text-danger">
-            <span class="visually-hidden">😨</span>
+            <span class="visually-hidden">{{ i18n `paige_search_error` }}</span>
         </i>
     </p>
 </div>
 <div id="paige-nothing" style="display: none">
     <p class="text-center">
         <i class="bi bi-x-circle display-6 text-danger">
-            <span class="visually-hidden">👎</span>
+            <span class="visually-hidden">{{ i18n `paige_search_nothing` }}</span>
         </i>
     </p>
 </div>
 <div id="paige-searching" style="display: none">
     <div class="mb-3 text-center">
         <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">👀</span>
+            <span class="visually-hidden">{{ i18n `paige_search_searching` }}</span>
         </div>
     </div>
 </div>
 <div id="paige-something" style="display: none">
     <p class="text-center">
         <i class="bi bi-check-circle display-6 text-success">
-            <span class="visually-hidden">👍</span>
+            <span class="visually-hidden">{{ i18n `paige_search_something` }}</span>
         </i>
     </p>
 </div>
