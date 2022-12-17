@@ -59,8 +59,8 @@ permalinks:
 social:
   envelope: mailto:example@example.com
   discord: https://discord.com/users/example
-  github: https://github.com/example
   facebook: https://facebook.com/example
+  github: https://github.com/example
   instagram: https://instagram.com/example
   linkedin: https://www.linkedin.com/in/example
   reddit: https://reddit.com/u/example
