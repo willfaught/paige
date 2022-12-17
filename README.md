@@ -39,11 +39,11 @@ Search page:
 ## Features
 
 - Accessibility
+- Analytics
 - Blog
 - Bootstrap
 - Customizable
 - Facebook sharing
-- Google Analytics
 - Header links
 - Landing page
 - Light color scheme
