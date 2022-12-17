@@ -188,8 +188,8 @@ Optional page parameters:
 
 ```yaml
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
-math: true # Enable math typesetting with KaTeX
 paige_hide_search: true # Don't include this page in search results
+paige_math: true # Enable math typesetting with KaTeX
 paige_toc: true # Show a table of contents if there are any headers
 ```
 
