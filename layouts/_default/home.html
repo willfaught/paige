@@ -3,7 +3,9 @@
 {{ partial "paige-description.html" . }}
 {{ partial "paige-date.html" . }}
 {{ with .Params.stretch }}
-<div class="rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
+<p>
+    <div class="rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem; max-width: 100%"></div>
+</p>
 {{ end }}
 {{ with .Params.center }}
 <p class="text-center">
