@@ -3,7 +3,7 @@
 {{ if eq $basePath "/" }}
 {{ $basePath = "" }}
 {{ end }}
-<nav class="justify-content-center nav nav-pills py-3">
+<nav class="justify-content-center my-3 nav nav-pills">
     {{ range .Site.Menus.main }}
     {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
     {{ $menuPath := strings.TrimPrefix $basePath .URL }}
