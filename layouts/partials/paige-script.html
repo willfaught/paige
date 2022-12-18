@@ -10,30 +10,30 @@
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
-{{ with .Site.Params.paige_fathom_id }}
-<script data-site="{{ . }}" defer src="https://cdn.usefathom.com/script.js"></script>
+{{ with .Site.Params.paige.analytics.fathom }}
+<script data-site="{{ .account_id }}" defer src="https://cdn.usefathom.com/script.js"></script>
 {{ end }}
-{{ if and .Site.Params.paige_matomo_id .Site.Params.paige_matomo_url }}
+{{ with .Site.Params.paige.analytics.matomo }}
 <script type="text/javascript">
 var _paq = window._paq = window._paq || [];
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-  var u="//{{ .Site.Params.paige_matomo_url }}/";
+  var u="//{{ .host_url }}/";
   _paq.push(['setTrackerUrl', u+'matomo.php']);
-  _paq.push(['setSiteId', '{{ .Site.Params.paige_matomo_id }}']);
+  _paq.push(['setSiteId', '{{ .account_id }}']);
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
   g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 })();
 </script>
 {{ end }}
-{{ with .Site.Params.paige_plausible_id }}
-<script data-domain="{{ . }}" defer src="https://plausible.io/js/script.js"></script>
+{{ with .Site.Params.paige.analytics.plausible }}
+<script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
 {{ end }}
-{{ with .Site.Params.paige_yandex_id }}
+{{ with .Site.Params.paige.analytics.yandex }}
 <script>
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-ym("{{ . }}", "init", {});
+ym("{{ .account_id }}", "init", {});
 </script>
 {{ end }}
