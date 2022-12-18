@@ -185,9 +185,9 @@ paige:
     yandex: # metrica.yandex.com
       account_id: "123456"
   bootstrap:
-    icons: "/my-assets/my-bootstrap-icons.css" # Use local Bootstrap icons
-    scripts: "/my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
-    styles: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
+    icons_path: "/my-assets/my-bootstrap-icons.css" # Use local Bootstrap icons
+    scripts_path: "/my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
+    styles_path: "/my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
   comments:
     cactus: # cactus.chat
       account_id: "123456"
