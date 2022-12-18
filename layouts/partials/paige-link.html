@@ -1,9 +1,9 @@
-{{ with .Site.Params.paige_bootstrap_styles }}
+{{ with .Site.Params.paige.bootstrap.styles }}
 <link href="{{ relLangURL . }}" rel="stylesheet">
 {{ else }}
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
 {{ end }}
-{{ with .Site.Params.paige_bootstrap_icons }}
+{{ with .Site.Params.paige.bootstrap.icons }}
 <link href="{{ relLangURL . }}" rel="stylesheet">
 {{ else }}
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" rel="stylesheet">
