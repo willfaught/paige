@@ -1,5 +1,5 @@
 {{ if .Pages }}
-{{ if .Params.paige_show_full_pages }}
+{{ if .Params.paige.show_full_pages }}
 {{ $p := .Paginate .Pages }}
 {{ range $p.Pages }}
 {{ .Scratch.Set "paige_show_full_pages" true }}
