@@ -173,9 +173,6 @@ $ hugo server -D
 Optional site parameters:
 
 ```yaml
-paige_hide_theme_comment: true # Don't put a link to this project in a code comment
-paige_hide_theme_link: true # Don't put a link to this project in the footer
-
 paige:
   analytics:
     fathom: # usefathom.com
@@ -210,9 +207,11 @@ paige:
     utterances: # utteranc.es
       github_repo: "example/foo"
   date_format: "2006 January 2" # Hugo date format for page dates
+  hide_theme_comment: true # Don't put a link to this project in a code comment
+  hide_theme_link: true # Don't put a link to this project in the footer
 ```
 
-If you set either `paige_hide_theme_comment` or `paige_hide_theme_link`, please credit this project in a post to help others find it.
+If you set either `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.
 
 Optional page parameters:
 

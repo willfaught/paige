@@ -1,10 +1,10 @@
-{{ if or .Site.Copyright (not .Site.Params.paige_hide_theme_link) }}
+{{ if or .Site.Copyright (not .Site.Params.paige.hide_theme_link) }}
 <footer>
-    {{ if and .Site.Copyright (not .Site.Params.paige_hide_theme_link) }}
+    {{ if and .Site.Copyright (not .Site.Params.paige.hide_theme_link) }}
     <p class="text-center text-muted">{{ .Site.Copyright | markdownify }} · <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
     {{ else if .Site.Copyright }}
     <p class="text-center text-muted">{{ .Site.Copyright | markdownify }}</p>
-    {{ else if not .Site.Params.paige_hide_theme_link }}
+    {{ else if not .Site.Params.paige.hide_theme_link }}
     <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
     {{ end }}
 </footer>
