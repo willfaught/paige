@@ -1,6 +1,6 @@
 {{ with .PublishDate }}
 {{ $format := ":date_long" }}
-{{ with site.Params.paige_date_format }}
+{{ with site.Params.paige.date_format }}
 {{ $format = . }}
 {{ end }}
 <p class="text-center text-muted"><time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $format . }}</time></p>

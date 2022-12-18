@@ -173,7 +173,6 @@ $ hugo server -D
 Optional site parameters:
 
 ```yaml
-paige_date_format: "2006 January 2" # Hugo date format for page dates
 paige_hide_theme_comment: true # Don't put a link to this project in a code comment
 paige_hide_theme_link: true # Don't put a link to this project in the footer
 
@@ -210,6 +209,7 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
+  date_format: "2006 January 2" # Hugo date format for page dates
 ```
 
 If you set either `paige_hide_theme_comment` or `paige_hide_theme_link`, please credit this project in a post to help others find it.
