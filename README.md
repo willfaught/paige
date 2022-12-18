@@ -40,6 +40,7 @@ Search page:
 - Analytics
 - Blog
 - Bootstrap
+- Comments
 - Customizable
 - E-mail protection
 - Facebook sharing
