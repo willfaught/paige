@@ -1,5 +1,5 @@
 {{ with .Site.Social }}
-<section>
+<nav>
     <div class="mb-3 text-center">
         {{ range $k, $v := . }}
         {{ if hasPrefix $v "mailto:" }}
@@ -9,5 +9,5 @@
         {{ end }}
         {{ end }}
     </div>
-</section>
+</nav>
 {{ end }}
