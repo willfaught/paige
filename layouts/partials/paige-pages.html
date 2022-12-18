@@ -2,6 +2,7 @@
 {{ if .Params.paige_show_full_pages }}
 {{ $p := .Paginate .Pages }}
 {{ range $p.Pages }}
+{{ .Scratch.Set "paige_show_full_pages" true }}
 {{ partial "paige-article.html" . }}
 {{ end }}
 {{ if or $p.HasPrev $p.HasNext }}
