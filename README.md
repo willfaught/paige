@@ -242,8 +242,9 @@ paige:
 Additional optional single page parameters:
 
 ```yaml
-paige_hide_rss: true # Don't include this page in RSS feeds
-paige_hide_search: true # Don't include this page in search results
+paige:
+  hide_rss: true # Don't include this page in RSS feeds
+  hide_search: true # Don't include this page in search results
 ```
 
 Example `config.yaml`:

@@ -12,7 +12,7 @@
 {{ if ge $limit 1 }}
 {{ $pages = $pages | first $limit }}
 {{ end }}
-{{ $pages = where $pages "Params.paige_hide_rss" "ne" true }}
+{{ $pages = where $pages "Params.paige.hide_rss" "ne" true }}
 {{ $title := partial "paige-titles.html" . }}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
