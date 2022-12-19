@@ -176,6 +176,8 @@ Optional site parameters:
 ```yaml
 paige:
   analytics:
+    clicky: # clicky.com
+      account_id: "123456"
     fathom: # usefathom.com
       account_id: "123456"
     matomo: # matomo.org
