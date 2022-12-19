@@ -302,14 +302,14 @@ paginate: 50
 params:
   paige:
     social:
-      email:
-        name: E-mail
-        icon: envelope
-        url: mailto:example@example.com
       discord:
         name: Discord
         icon: discord
         url: https://discord.com/users/example
+      email:
+        name: E-mail
+        icon: envelope
+        url: mailto:example@example.com
       facebook:
         name: Facebook
         icon: facebook
