@@ -48,7 +48,7 @@ Search page:
 - Landing page
 - Light color scheme
 - Math typesetting
-- Menus
+- Menu
 - Minimal design
 - Multiple languages
 - RSS with full content
