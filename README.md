@@ -299,19 +299,53 @@ outputs:
   - json
   - rss
 paginate: 50
+params:
+  paige:
+    social:
+      envelope:
+        name: E-mail
+        icon: envelope
+        url: mailto:example@example.com
+      discord:
+        name: Discord
+        icon: discord
+        url: https://discord.com/users/example
+      facebook:
+        name: Facebook
+        icon: facebook
+        url: https://facebook.com/example
+      github:
+        name: GitHub
+        icon: github
+        url: https://github.com/example
+      instagram:
+        name: Instagram
+        icon: instagram
+        url: https://instagram.com/example
+      linkedin:
+        name: LinkedIn
+        icon: linkedin
+        url: https://www.linkedin.com/in/example
+      reddit:
+        name: Reddit
+        icon: reddit
+        url: https://reddit.com/u/example
+      twitch:
+        name: Twitch
+        icon: twitch
+        url: https://www.twitch.tv/example
+      twitter:
+        name: Twitter
+        icon: twitter
+        url: https://twitter.com/example
+      youtube:
+        name: YouTube
+        icon: youtube
+        url: https://www.youtube.com/user/example
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
-  envelope: mailto:example@example.com
-  discord: https://discord.com/users/example
-  github: https://github.com/example
-  facebook: https://facebook.com/example
-  instagram: https://instagram.com/example
-  linkedin: https://www.linkedin.com/in/example
-  reddit: https://reddit.com/u/example
-  twitch: https://www.twitch.tv/example
-  twitter: https://twitter.com/example
-  youtube: https://www.youtube.com/user/example
+  twitter: example
 theme: paige
 timezone: America/Los_Angeles
 titlecasestyle: Go
