@@ -41,10 +41,10 @@ markup:
       unsafe: true
   highlight:
     style: vs
-  tableOfContents:
-    endLevel: 6
+  tableofcontents:
+    endlevel: 6
     ordered: true
-    startLevel: 2
+    startlevel: 2
 outputs:
   home:
   - html
