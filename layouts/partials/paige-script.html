@@ -54,6 +54,15 @@ _paq.push(['enableLinkTracking']);
 <script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
 <noscript>{{ i18n "paige_analytics_noscript" }}</noscript>
 {{ end }}
+{{ with .Site.Params.paige.analytics.woopra }}
+<script>
+!function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
+woopra.config({
+    domain: {{ .domain }}
+});
+woopra.track();
+</script>
+{{ end }}
 {{ with .Site.Params.paige.analytics.yandex }}
 <script>
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})

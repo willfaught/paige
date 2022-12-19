@@ -188,6 +188,8 @@ paige:
       host_url: "https://example.com"
     plausible: # plausible.io
       account_id: "123456"
+    woopra: # woopra.com
+      domain: "example.com"
     yandex: # metrica.yandex.com
       account_id: "123456"
   bootstrap:
