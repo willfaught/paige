@@ -39,7 +39,7 @@ clicky_site_ids.push({{ .account_id }});
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = '//static.getclicky.com/js';
+    s.src = 'https://static.getclicky.com/js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
 })();
 </script>
@@ -75,7 +75,7 @@ var _paq = window._paq = window._paq || [];
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-    var u="//{{ .host_url }}/";
+    var u="https://{{ .host_url }}/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '{{ .account_id }}']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
