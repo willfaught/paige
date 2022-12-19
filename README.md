@@ -302,7 +302,7 @@ paginate: 50
 params:
   paige:
     social:
-      envelope:
+      email:
         name: E-mail
         icon: envelope
         url: mailto:example@example.com
