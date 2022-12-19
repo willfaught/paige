@@ -176,6 +176,9 @@ Optional site parameters:
 ```yaml
 paige:
   analytics:
+    chartbeat: # chartbeat.com
+      account_id: "123456"
+      domain: "example.com"
     clicky: # clicky.com
       account_id: "123456"
     fathom: # usefathom.com
