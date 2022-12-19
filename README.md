@@ -186,6 +186,8 @@ paige:
     finteza: # finteza.com
       account_id: "123456"
       script_url: "https://example.com/script.js"
+    hotjar: # hotjar.com
+      account_id: "123456"
     matomo: # matomo.org
       account_id: "123456"
       host_url: "https://example.com"
