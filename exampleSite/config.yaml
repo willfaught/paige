@@ -56,7 +56,7 @@ params:
     hide_theme_comment: true
     hide_theme_link: true
     social:
-      envelope:
+      email:
         name: E-mail
         icon: envelope
         url: mailto:example@example.com
