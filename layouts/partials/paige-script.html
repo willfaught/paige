@@ -29,6 +29,7 @@
     loadChartbeat();
 })();
 </script>
+<noscript>{{ i18n "paige_analytics_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.clicky }}
 <script type="text/javascript">
@@ -95,6 +96,7 @@ woopra.config({
 });
 woopra.track();
 </script>
+<noscript>{{ i18n "paige_analytics_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.yandex }}
 <script>
