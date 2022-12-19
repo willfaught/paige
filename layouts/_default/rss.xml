@@ -24,7 +24,7 @@
     <copyright>{{ . }}</copyright>
     {{ end }}
     <description>Recent content{{ with $title }} in {{ . }}{{ end }}</description>
-    {{ with .Site.LanguageCode }}
+    {{ with .Site.LanguageCode | default .Site.Language.Lang }}
     <language>{{ . }}</language>
     {{ end }}
     {{ if and .Date (not .Date.IsZero) }}
