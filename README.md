@@ -325,7 +325,7 @@ params:
       linkedin:
         name: LinkedIn
         icon: linkedin
-        url: https://www.linkedin.com/in/example
+        url: https://linkedin.com/in/example
       reddit:
         name: Reddit
         icon: reddit
