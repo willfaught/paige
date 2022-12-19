@@ -341,7 +341,7 @@ params:
       youtube:
         name: YouTube
         icon: youtube
-        url: https://www.youtube.com/user/example
+        url: https://youtube.com/user/example
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
