@@ -219,8 +219,8 @@ Optional page parameters:
 ```yaml
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
-  toc: true # Show a table of contents if there are any headers
   math: true # Enable math typesetting with KaTeX
+  toc: true # Show a table of contents if there are any headers
 ```
 
 Additional optional home page parameters:
