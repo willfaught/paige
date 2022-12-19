@@ -333,7 +333,7 @@ params:
       twitch:
         name: Twitch
         icon: twitch
-        url: https://www.twitch.tv/example
+        url: https://twitch.tv/example
       twitter:
         name: Twitter
         icon: twitter
