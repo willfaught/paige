@@ -41,11 +41,11 @@ var _paq = window._paq = window._paq || [];
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-  var u="//{{ .host_url }}/";
-  _paq.push(['setTrackerUrl', u+'matomo.php']);
-  _paq.push(['setSiteId', '{{ .account_id }}']);
-  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    var u="//{{ .host_url }}/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '{{ .account_id }}']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 })();
 </script>
 <noscript>{{ i18n "paige_analytics_noscript" }}</noscript>
