@@ -180,6 +180,9 @@ paige:
       account_id: "123456"
     fathom: # usefathom.com
       account_id: "123456"
+    finteza: # finteza.com
+      account_id: "123456"
+      script_url: "https://example.com/script.js"
     matomo: # matomo.org
       account_id: "123456"
       host_url: "https://example.com"
