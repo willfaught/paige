@@ -231,6 +231,9 @@ paige:
   date_format: "2006 January 2" # Hugo date format for page dates
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
+  rss:
+    managing_editor: "Michael Bluth"
+    web_master: "Michael Bluth"
 ```
 
 If you set either `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.

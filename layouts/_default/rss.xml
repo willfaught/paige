@@ -31,13 +31,13 @@
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     {{ end }}
     <link>{{ .Permalink }}</link>
-    {{ with .Site.Author.email }}
+    {{ with .Site.Params.paige.rss.managing_editor }}
     <managingEditor>{{ . }}</managingEditor>
     {{ end }}
     {{ with $title }}
     <title>{{ . }}</title>
     {{ end }}
-    {{ with .Site.Author.email }}
+    {{ with .Site.Params.paige.rss.web_master }}
     <webMaster>{{ . }}</webMaster>
     {{ end }}
     {{ range $pages }}
