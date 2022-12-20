@@ -167,6 +167,7 @@ $ rm -rf themes/paige/.git
 ## Run
 
 ```sh
+$ cd yourproject
 $ hugo server -D
 ```
 
