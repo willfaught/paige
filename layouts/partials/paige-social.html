@@ -1,13 +1,15 @@
 {{ with .Site.Params.paige.social }}
-<nav>
-    <div class="mb-3 text-center">
-        {{ range $k, $v := . }}
-        {{ if hasPrefix $v.url "mailto:" }}
-        <a href="#" data-a="{{ base64Encode (index (split $v.url `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $v.url `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)"><i class="bi bi-{{ $v.icon }} display-6 mx-2"><span class="visually-hidden">{{ $v.name }}</span></i></a>
-        {{ else }}
-        <a href="{{ $v.url }}"><i class="bi bi-{{ $v.icon }} display-6 mx-2"><span class="visually-hidden">{{ $v.name }}</span></i></a>
-        {{ end }}
-        {{ end }}
-    </div>
-</nav>
+<section>
+    <nav>
+        <div class="mb-3 text-center">
+            {{ range $k, $v := . }}
+            {{ if hasPrefix $v.url "mailto:" }}
+            <a href="#" data-a="{{ base64Encode (index (split $v.url `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $v.url `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)"><i class="bi bi-{{ $v.icon }} display-6 mx-2"><span class="visually-hidden">{{ $v.name }}</span></i></a>
+            {{ else }}
+            <a href="{{ $v.url }}"><i class="bi bi-{{ $v.icon }} display-6 mx-2"><span class="visually-hidden">{{ $v.name }}</span></i></a>
+            {{ end }}
+            {{ end }}
+        </div>
+    </nav>
+</section>
 {{ end }}
