@@ -4,5 +4,5 @@
 {{ $class = "display-1" }}
 {{ end }}
 {{ $title := .Title | markdownify }}
-<h1 class="{{ $class }} fw-bold text-center">{{ if .Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if .Scratch.Get "paige_show_full_pages" }}<a class="paigeheaderlink" href="{{ .RelPermalink }}"><i class="bi bi-link-45deg small"><span class="visually-hidden"></span></i></a>{{ end }}</h1>
+<h1 class="{{ $class }} fw-bold text-center">{{ if .Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if .Scratch.Get "paige_show_full_pages" }}<a class="small paigeheaderlink" href="{{ .RelPermalink }}">#</a>{{ end }}</h1>
 {{ end }}
