@@ -236,7 +236,7 @@ paige:
     web_master: "Michael Bluth"
 ```
 
-If you set either `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.
+If you set `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.
 
 Optional page parameters:
 
