@@ -319,6 +319,9 @@ markup:
       unsafe: true
   highlight:
     style: vs
+module:
+  imports:
+  - path: "github.com/willfaught/paige"
 outputs:
   home:
   - html
@@ -372,7 +375,6 @@ permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
   twitter: example
-theme: paige
 timezone: America/Los_Angeles
 titlecasestyle: Go
 ```
