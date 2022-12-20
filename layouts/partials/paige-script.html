@@ -1,3 +1,22 @@
+<script>
+function resize() {
+    var e = document.querySelector("body > div.container > div.row > div.col");
+    var s = getComputedStyle(e);
+    var px = parseFloat(s.paddingLeft) + parseFloat(s.paddingRight);
+    var bx = parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth);
+    var w = e.offsetWidth - px - bx;
+    var es = document.querySelectorAll("article > div");
+    for (var i = 0; i < es.length; i++) {
+        var e = es[i];
+        if (e.offsetWidth !== w) {
+            e.style.width = w + "px";
+            console.log(e.style.width);
+        }
+    }
+}
+resize();
+addEventListener("resize", resize);
+</script>
 {{ with .Site.Params.paige.bootstrap.scripts_path }}
 <script defer src="{{ relLangURL . }}"></script>
 {{ else }}
