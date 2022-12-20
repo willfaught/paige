@@ -279,9 +279,6 @@ paige:
 Example `config.yaml`:
 
 ```yaml
-author:
-  email: example@example.com
-  name: Michael Bluth
 baseurl: https://example.com
 copyright: © Michael Bluth
 enablerobotstxt: true
