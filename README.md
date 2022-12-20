@@ -312,7 +312,7 @@ languages:
         url: /search/
         weight: 60
     title: No Borders, No Limits
-    weight: 1
+    weight: 10
 markup:
   goldmark:
     renderer:
