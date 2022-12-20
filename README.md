@@ -461,6 +461,6 @@ Photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI).
 
 ## Project
 
-Created by [Will Faught](https://github.com/willfaught).
+Created by [Will Faught](https://willfaught.com).
 Released under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 Hosted at https://github.com/willfaught/paige.
