@@ -420,11 +420,11 @@ then replace that use of `paige-title.html` with your own design.
 
 ## Design
 
-The HTML author is the site author.
+The HTML author is the page authors, if any.
 
-The HTML description is the page description.
+The HTML description is the page description, if any.
 
-The HTML keywords is a union of the page keywords, tags, and categories.
+The HTML keywords is a union of the page keywords, tags, and categories, if any.
 
 The HTML title is the page title, followed by a middle dot, followed by the site title.
 If one is missing, the other is used without the middle dot.
