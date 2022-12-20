@@ -407,11 +407,15 @@ If `partials/paige-body-last.html` exists in the site, it is included at the end
 Most code is in partial templates that are included by the default layouts.
 Elements can easily be added or changed by overriding the corresponding layout or partial template.
 
-For example, the default layouts `home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html` include `paige-article.html`,
-which includes `paige-title.html`, `paige-description.html`, `paige-metadata.html`, `paige-toc.html`, and `paige-content.html`.
+For example, the default layouts
+`home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html`
+include the partial template `paige-article.html`,
+which includes the partial templates
+`paige-title.html`, `paige-description.html`, `paige-metadata.html`, `paige-toc.html`, and `paige-content.html`.
 To change the page title for those default layouts, change `paige-title.html`.
 To change the page title for `single.html`,
-replace the use of `paige-article.html` in `single.html` with the use of `paige-title.html`, `paige-description.html`, `paige-date.html`, and `paige-content.html`,
+replace the use of `paige-article.html` in `single.html` with the use of
+`paige-title.html`, `paige-description.html`, `paige-metadata.html`, `paige-toc.html`, and `paige-content.html`,
 then replace that use of `paige-title.html` with your own design.
 
 ## Design
