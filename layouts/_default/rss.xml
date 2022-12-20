@@ -23,7 +23,7 @@
     {{ with .Site.Copyright }}
     <copyright>{{ . }}</copyright>
     {{ end }}
-    <description>Recent content{{ with $title }} in {{ . }}{{ end }}</description>
+    <description>{{ with $title }}{{ . }}{{ else }}Recent content{{ end }}</description>
     {{ with .Site.LanguageCode | default .Site.Language.Lang }}
     <language>{{ . }}</language>
     {{ end }}
