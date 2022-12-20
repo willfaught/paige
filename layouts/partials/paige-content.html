@@ -10,9 +10,15 @@
     </div>
 </section>
 {{ end }}
-<div class="container-fluid">
-    <div class="justify-content-center row">
-        <div class="col col-auto paige-content px-0">{{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paigeheaderlink" href="#${2}"><i class="bi bi-link-45deg small"></i></a>${3}` | safeHTML }}</div>
+<section>
+    <div class="container-fluid">
+        <div class="justify-content-center row">
+            <div class="col col-auto px-0">
+                <article>
+                    {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paigeheaderlink" href="#${2}"><i class="bi bi-link-45deg small"></i></a>${3}` | safeHTML }}
+                </article>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 {{ end }}
