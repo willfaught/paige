@@ -1,0 +1,120 @@
+{{ template "_internal/disqus.html" . }}
+{{ if .Site.Params.paige.comments.cactus }}
+<section class="mb-3">
+    <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+    <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+    <div id="comment-section"></div>
+    <script>
+    initComments({
+        node: document.getElementById("comment-section"),
+        defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+        serverName: "cactus.chat",
+        siteName: {{ .Site.Params.paige.comments.cactus.account_id }},
+        commentSectionId: {{ .RelPermalink }}
+    })
+    </script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ with .Site.Params.paige.comments.commento }}
+<section class="mb-3">
+    <div id="commento"></div>
+    <script defer src="{{ .script_url }}"></script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ if .Site.Params.paige.comments.graphcomment }}
+<section class="mb-3">
+    <div id="graphcomment"></div>
+    <script type="text/javascript">
+    var __semio__params = {
+        graphcommentId: {{ .Site.Params.paige.comments.graphcomment.account_id }},
+        behaviour: {
+            uid: {{ .RelPermalink }}
+        }
+    };
+    function __semio__onload() {
+        __semio__gc_graphlogin(__semio__params)
+    }
+    (function() {
+        var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+        gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+    </script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ if .Site.Params.paige.comments.hyvor }}
+<section class="mb-3">
+    <div id="hyvor-talk-view"></div>
+    <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = {{ .Site.Params.paige.comments.hyvor.account_id }};
+    var HYVOR_TALK_CONFIG = {
+        url: false,
+        id: {{ .RelPermalink }}
+    };
+    </script>
+    <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ if .Site.Params.paige.comments.intensedebate }}
+<section class="mb-3">
+    <script>
+    var idcomments_acct = {{ .Site.Params.paige.comments.intensedebate.account_id }};
+    var idcomments_post_id = {{ .RelPermalink }};
+    var idcomments_post_url = {{ .Permalink }};
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type="text/javascript" src="http://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ with .Site.Params.paige.comments.isso }}
+<section class="mb-3">
+    <script src="{{ .script_url }}"></script>
+    <section id="isso-thread">
+        <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    </section>
+</section>
+{{ end }}
+{{ with .Site.Params.paige.comments.muut }}
+<section class="mb-3">
+    <a href="https://muut.com/i/{{ .account_id }}/comments" class="muut" type="dynamic">Comments</a>
+    <script src="https://cdn.muut.com/1/moot.min.js"></script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ if .Site.Params.paige.comments.remark42 }}
+<section class="mb-3">
+    <div id="remark42"></div>
+    <script>
+    var remark_config = {
+        host: {{ .Site.Params.paige.comments.remark42.host_url }},
+        site_id: {{ .Site.Params.paige.comments.remark42.site_id | default "remark" }}
+    }
+    </script>
+    <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ if .Site.Params.paige.comments.replybox }}
+<section class="mb-3">
+    <div id="replybox"></div>
+    <script>
+    window.replybox = {
+        site: {{ .Site.Params.paige.comments.replybox.account_id }},
+        identifier: {{ .RelPermalink }}
+    };
+    </script>
+    <script src="https://cdn.getreplybox.com/js/embed.js"></script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
+{{ with .Site.Params.paige.comments.utterances }}
+<section class="mb-3">
+    <script src="https://utteranc.es/client.js" repo="{{ .github_repo }}" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
+    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+</section>
+{{ end }}
