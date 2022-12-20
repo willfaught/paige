@@ -177,10 +177,10 @@ Optional site parameters:
 ```yaml
 authors:
   michael_bluth:
-    name: Michael Bluth
+    name: "Michael Bluth"
     default: true # Credit this author in pages that have no authors parameter
   george_bluth:
-    name: George Bluth
+    name: "George Bluth"
 paige:
   analytics:
     chartbeat: # chartbeat.com
