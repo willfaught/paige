@@ -50,6 +50,7 @@ Search page:
 - Math typesetting
 - Menu
 - Minimal design
+- Multiple authors
 - Multiple languages
 - RSS with full content
 - Responsive
@@ -174,6 +175,12 @@ $ hugo server -D
 Optional site parameters:
 
 ```yaml
+authors:
+  michael_bluth:
+    name: Michael Bluth
+    default: true # Credit this author in pages that have no authors parameter
+  george_bluth:
+    name: George Bluth
 paige:
   analytics:
     chartbeat: # chartbeat.com
@@ -231,6 +238,10 @@ If you set either `hide_theme_comment` or `hide_theme_link`, please credit this 
 Optional page parameters:
 
 ```yaml
+authors: [
+  "Michael Bluth", # Credit this name exactly
+  "george_bluth" # Credit the corresponding author name in the site parameters
+]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
   math: true # Enable math typesetting with KaTeX

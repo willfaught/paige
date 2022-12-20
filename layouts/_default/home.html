@@ -2,7 +2,7 @@
 <article>
     {{ partial "paige-title.html" . }}
     {{ partial "paige-description.html" . }}
-    {{ partial "paige-date.html" . }}
+    {{ partial "paige-metadata.html" . }}
     {{ with .Params.stretch }}
     <div class="mb-3 mw-100 rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem"></div>
     {{ end }}

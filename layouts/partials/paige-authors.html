@@ -1,0 +1,17 @@
+{{ $result := "" }}
+{{ if .Params.authors }}
+    {{ $names := slice }}
+    {{ range .Params.authors }}
+        {{ $names = $names | append (index site.Params.authors . "name" | default .) }}
+    {{ end }}
+    {{ $result = delimit $names ", " }}
+{{ else if .Site.Params.authors }}
+    {{ $names := slice }}
+    {{ range $k, $v := .Site.Params.authors }}
+        {{ if eq $v.default true }}
+            {{ $names = $names | append $v.name }}
+        {{ end }}
+    {{ end }}
+    {{ $result = delimit $names ", " }}
+{{ end }}
+{{ return $result }}

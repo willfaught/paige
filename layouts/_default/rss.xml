@@ -42,7 +42,7 @@
     {{ end }}
     {{ range $pages }}
     <item>
-      {{ with .Site.Author.email }}
+      {{ with partial "paige-authors.html" . }}
       <author>{{ . }}</author>
       {{ end }}
       {{ if .Content }}
@@ -58,7 +58,7 @@
       <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ end }}
       {{ with .Title }}
-      <title>{{ . }}</title>
+      <title>{{ . | markdownify | plainify | htmlUnescape }}</title>
       {{ end }}
     </item>
     {{ end }}
