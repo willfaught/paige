@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-{{ with .Site.Author.name }}
+{{ with partial "paige-func-authors.html" . }}
 <meta content="{{ . }}" name="author">
 {{ end }}
 {{ with .Description }}
