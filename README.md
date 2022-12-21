@@ -330,7 +330,7 @@ markup:
     startlevel: 2
 module:
   imports:
-  - path: "github.com/willfaught/paige"
+  - path: github.com/willfaught/paige
 outputs:
   home:
   - html
