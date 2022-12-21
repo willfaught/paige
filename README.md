@@ -235,6 +235,11 @@ paige:
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
+  social: # Social links on the home page
+    examplesite:
+      icon: example-icon # Bootstrap icon name
+      link: https://example.com/username
+      name: Example Name # Used for screen readers
 ```
 
 If you set `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.
