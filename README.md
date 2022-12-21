@@ -342,43 +342,43 @@ params:
     social:
       discord:
         icon: discord
-        link: https://discord.com/users/example
+        link: https://discord.com/users/username
         name: Discord
       email:
         icon: envelope
-        link: mailto:example@example.com
+        link: mailto:username@example.com
         name: E-mail
       facebook:
         icon: facebook
-        link: https://facebook.com/example
+        link: https://facebook.com/username
         name: Facebook
       github:
         icon: github
-        link: https://github.com/example
+        link: https://github.com/username
         name: GitHub
       instagram:
         icon: instagram
-        link: https://instagram.com/example
+        link: https://instagram.com/username
         name: Instagram
       linkedin:
         icon: linkedin
-        link: https://linkedin.com/in/example
+        link: https://linkedin.com/in/username
         name: LinkedIn
       reddit:
         icon: reddit
-        link: https://reddit.com/u/example
+        link: https://reddit.com/u/username
         name: Reddit
       twitch:
         icon: twitch
-        link: https://twitch.tv/example
+        link: https://twitch.tv/username
         name: Twitch
       twitter:
         icon: twitter
-        link: https://twitter.com/example
+        link: https://twitter.com/username
         name: Twitter
       youtube:
         icon: youtube
-        link: https://youtube.com/user/example
+        link: https://youtube.com/user/username
         name: YouTube
 permalinks:
   blog: /blog/:year/:month/:day/:title/
