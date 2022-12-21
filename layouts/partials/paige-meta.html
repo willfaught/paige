@@ -9,6 +9,9 @@
 <meta content="{{ delimit (sort (union (union .Keywords .Params.tags) .Params.categories)) `, ` }}" name="keywords">
 {{ end }}
 <meta content="{{ .Site.Params.paige.color | default `#0d6efd` }}" name="msapplication-TileColor">
+{{ if ne (relLangURL "browserconfig.xml") "/browserconfig.xml" }}
+<meta content="{{ relLangURL `browserconfig.xml` }}" name="msapplication-config" >
+{{ end }}
 <meta content="{{ .Site.Params.paige.color | default `#0d6efd` }}" name="theme-color">
 <meta content="width=device-width, initial-scale=1" name="viewport">
 {{ template "_internal/opengraph.html" . }}

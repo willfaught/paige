@@ -1,6 +1,9 @@
 <link href="{{ relLangURL `apple-touch-icon.png` }}" rel="apple-touch-icon" sizes="180x180">
 <link href="{{ relLangURL `favicon-16x16.png` }}" rel="icon" sizes="16x16" type="image/png">
 <link href="{{ relLangURL `favicon-32x32.png` }}" rel="icon" sizes="32x32" type="image/png">
+{{ if ne (relLangURL "favicon.ico") "/favicon.ico" }}
+<link href="{{ relLangURL `favicon.ico` }}" rel="shortcut icon">
+{{ end }}
 <link href="{{ relLangURL `favicon.png` }}" rel="icon" type="image/png">
 <link href="{{ relLangURL `favicon.svg` }}" rel="icon" type="image/svg+xml">
 <link color="{{ .Site.Params.paige.color | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` }}" rel="mask-icon">
