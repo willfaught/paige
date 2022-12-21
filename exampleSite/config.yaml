@@ -79,7 +79,7 @@ params:
         name: Instagram
       linkedin:
         icon: linkedin
-        link: https://www.linkedin.com/in/username
+        link: https://linkedin.com/in/username
         name: LinkedIn
       medium:
         icon: medium
@@ -111,7 +111,7 @@ params:
         name: Strava
       twitch:
         icon: twitch
-        link: https://www.twitch.tv/username
+        link: https://twitch.tv/username
         name: Twitch
       twitter:
         icon: twitter
@@ -131,7 +131,7 @@ params:
         name: Yelp
       youtube:
         icon: youtube
-        link: https://www.youtube.com/user/username
+        link: https://youtube.com/user/username
         name: YouTube
 permalinks:
   blog: /blog/:year/:month/:day/:title/
