@@ -56,47 +56,47 @@ params:
       discord:
         name: Discord
         icon: discord
-        url: https://discord.com/users/example
+        url: https://discord.com/users/username
       email:
         name: E-mail
         icon: envelope
-        url: mailto:example@example.com
+        url: mailto:username@example.com
       facebook:
         name: Facebook
         icon: facebook
-        url: https://facebook.com/example
+        url: https://facebook.com/username
       github:
         name: GitHub
         icon: github
-        url: https://github.com/example
+        url: https://github.com/username
       instagram:
         name: Instagram
         icon: instagram
-        url: https://instagram.com/example
+        url: https://instagram.com/username
       linkedin:
         name: LinkedIn
         icon: linkedin
-        url: https://www.linkedin.com/in/example
+        url: https://www.linkedin.com/in/username
       reddit:
         name: Reddit
         icon: reddit
-        url: https://reddit.com/u/example
+        url: https://reddit.com/u/username
       twitch:
         name: Twitch
         icon: twitch
-        url: https://www.twitch.tv/example
+        url: https://www.twitch.tv/username
       twitter:
         name: Twitter
         icon: twitter
-        url: https://twitter.com/example
+        url: https://twitter.com/username
       youtube:
         name: YouTube
         icon: youtube
-        url: https://www.youtube.com/user/example
+        url: https://www.youtube.com/user/username
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
-  twitter: example
+  twitter: username
 theme: paige
 timezone: America/Los_Angeles
 titlecasestyle: Go
