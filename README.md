@@ -374,7 +374,7 @@ params:
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
-  twitter: example
+  twitter: username
 timezone: America/Los_Angeles
 titlecasestyle: Go
 ```
