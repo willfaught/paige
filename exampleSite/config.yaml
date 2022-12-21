@@ -54,45 +54,45 @@ params:
     hide_theme_link: true
     social:
       discord:
-        name: Discord
         icon: discord
         link: https://discord.com/users/username
+        name: Discord
       email:
-        name: E-mail
         icon: envelope
         link: mailto:username@example.com
+        name: E-mail
       facebook:
-        name: Facebook
         icon: facebook
         link: https://facebook.com/username
+        name: Facebook
       github:
-        name: GitHub
         icon: github
         link: https://github.com/username
+        name: GitHub
       instagram:
-        name: Instagram
         icon: instagram
         link: https://instagram.com/username
+        name: Instagram
       linkedin:
-        name: LinkedIn
         icon: linkedin
         link: https://www.linkedin.com/in/username
+        name: LinkedIn
       reddit:
-        name: Reddit
         icon: reddit
         link: https://reddit.com/u/username
+        name: Reddit
       twitch:
-        name: Twitch
         icon: twitch
         link: https://www.twitch.tv/username
+        name: Twitch
       twitter:
-        name: Twitter
         icon: twitter
         link: https://twitter.com/username
+        name: Twitter
       youtube:
-        name: YouTube
         icon: youtube
         link: https://www.youtube.com/user/username
+        name: YouTube
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
