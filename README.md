@@ -332,45 +332,45 @@ params:
   paige:
     social:
       discord:
-        name: Discord
         icon: discord
-        url: https://discord.com/users/example
+        link: https://discord.com/users/example
+        name: Discord
       email:
-        name: E-mail
         icon: envelope
-        url: mailto:example@example.com
+        link: mailto:example@example.com
+        name: E-mail
       facebook:
-        name: Facebook
         icon: facebook
-        url: https://facebook.com/example
+        link: https://facebook.com/example
+        name: Facebook
       github:
-        name: GitHub
         icon: github
-        url: https://github.com/example
+        link: https://github.com/example
+        name: GitHub
       instagram:
-        name: Instagram
         icon: instagram
-        url: https://instagram.com/example
+        link: https://instagram.com/example
+        name: Instagram
       linkedin:
-        name: LinkedIn
         icon: linkedin
-        url: https://linkedin.com/in/example
+        link: https://linkedin.com/in/example
+        name: LinkedIn
       reddit:
-        name: Reddit
         icon: reddit
-        url: https://reddit.com/u/example
+        link: https://reddit.com/u/example
+        name: Reddit
       twitch:
-        name: Twitch
         icon: twitch
-        url: https://twitch.tv/example
+        link: https://twitch.tv/example
+        name: Twitch
       twitter:
-        name: Twitter
         icon: twitter
-        url: https://twitter.com/example
+        link: https://twitter.com/example
+        name: Twitter
       youtube:
-        name: YouTube
         icon: youtube
-        url: https://youtube.com/user/example
+        link: https://youtube.com/user/example
+        name: YouTube
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
