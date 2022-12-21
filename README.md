@@ -319,6 +319,10 @@ markup:
       unsafe: true
   highlight:
     style: vs
+  tableofcontents:
+    endlevel: 6
+    ordered: true
+    startlevel: 2
 module:
   imports:
   - path: "github.com/willfaught/paige"
