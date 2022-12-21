@@ -56,43 +56,43 @@ params:
       discord:
         name: Discord
         icon: discord
-        url: https://discord.com/users/username
+        link: https://discord.com/users/username
       email:
         name: E-mail
         icon: envelope
-        url: mailto:username@example.com
+        link: mailto:username@example.com
       facebook:
         name: Facebook
         icon: facebook
-        url: https://facebook.com/username
+        link: https://facebook.com/username
       github:
         name: GitHub
         icon: github
-        url: https://github.com/username
+        link: https://github.com/username
       instagram:
         name: Instagram
         icon: instagram
-        url: https://instagram.com/username
+        link: https://instagram.com/username
       linkedin:
         name: LinkedIn
         icon: linkedin
-        url: https://www.linkedin.com/in/username
+        link: https://www.linkedin.com/in/username
       reddit:
         name: Reddit
         icon: reddit
-        url: https://reddit.com/u/username
+        link: https://reddit.com/u/username
       twitch:
         name: Twitch
         icon: twitch
-        url: https://www.twitch.tv/username
+        link: https://www.twitch.tv/username
       twitter:
         name: Twitter
         icon: twitter
-        url: https://twitter.com/username
+        link: https://twitter.com/username
       youtube:
         name: YouTube
         icon: youtube
-        url: https://www.youtube.com/user/username
+        link: https://www.youtube.com/user/username
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
