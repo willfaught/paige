@@ -429,7 +429,7 @@ timezone: America/Los_Angeles
 titlecasestyle: Go
 ```
 
-## Search
+## Layouts
 
 The `paige-search` layout provides full site search.
 
@@ -449,7 +449,7 @@ title: Search
 ---
 ```
 
-## Figures
+## Shortcodes
 
 The `paige/figure` shortcode provides a figure with a centered image and an optional centered caption.
 The image and caption can optionally be displayed inline instead of centered.
