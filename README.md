@@ -449,6 +449,33 @@ title: Search
 ---
 ```
 
+## Figures
+
+The `paige/figure` shortcode provides a figure with a centered image and an optional centered caption.
+The image and caption can optionally be displayed inline instead of centered.
+The image has optional alt, title, width, and height attributes,
+and can optionally be wrapped in an anchor. Only the image source parameter is required.
+
+These are the named parameters with positions, listed in the order of their positions:
+
+```go
+{{< paige/figure
+    src="https://imgs.xkcd.com/comics/sandwich.png"
+    link="https://xkcd.com/149"
+    caption="My caption"
+    alt="My alt"
+    title="My title" >}}
+```
+
+These are the rest of the named parameters:
+
+```go
+{{< paige/figure
+    height=500
+    inline=false
+    width=500 >}}
+```
+
 ## Customization
 
 If `partials/paige-head-last.html` exists in the site, it is included at the end of the head tag.

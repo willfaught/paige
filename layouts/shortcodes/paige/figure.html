@@ -1,0 +1,13 @@
+<figure {{ if eq (.Get `inline`) true }} class="figure"{{ else }} class="align-items-center d-flex flex-column"{{ end }}>
+    {{ $link := .Get 1 | default (.Get `link`) }}
+    {{ with $link }}
+    <a href="{{ . }}">
+    {{ end }}
+    <img{{ with (.Get 3 | default (.Get `alt`)) }} alt="{{ . }}"{{ end }} class="figure-img img-fluid"{{ with .Get `height` }} height="{{ . }}"{{ end }} src="{{ .Get 0 | default (.Get `src`) }}"{{ with (.Get 4 | default (.Get `title`)) }} title="{{ . }}"{{ end }}{{ with .Get `width` }} width="{{ . }}"{{ end }}>
+    {{ if $link }}
+    </a>
+    {{ end }}
+    {{ with (.Get 2 | default (.Get `caption`)) }}
+    <figcaption class="figure-caption">{{ . }}</figcaption>
+    {{ end }}
+</figure>
