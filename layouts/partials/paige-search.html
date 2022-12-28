@@ -45,28 +45,28 @@
 <article id="paige-results" style="display: none"></article>
 <script crossorigin="anonymous" defer integrity="sha384-1LalyFI+BycKouEClZE5CoFnlLr+Kx8Wslc45o5NATVo+c2mEh02i8HNaaT7XOdQ" referrerpolicy="no-referrer" src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
 <script>
-var errorElement = document.getElementById("paige-error");
-var nothingElement = document.getElementById("paige-nothing");
-var queryElement = document.getElementById("query");
-var searchingElement = document.getElementById("paige-searching")
-var somethingElement = document.getElementById("paige-something");
-var resultsElement = document.getElementById("paige-results");
+var paigeErrorElement = document.getElementById("paige-error");
+var paigeNothingElement = document.getElementById("paige-nothing");
+var paigeQueryElement = document.getElementById("query");
+var paigeSearchingElement = document.getElementById("paige-searching")
+var paigeSomethingElement = document.getElementById("paige-something");
+var paigeResultsElement = document.getElementById("paige-results");
 
-if (queryElement !== null) {
+if (paigeQueryElement !== null) {
     var queryText = decodeURIComponent((location.search.split("q=")[1] || "").split("&")[0]).replace(/\+/g, " ");
     if (queryText) {
-        queryElement.value = queryText;
-        search(queryText);
+        paigeQueryElement.value = queryText;
+        paigeSearch(queryText);
     }
 }
 
-function search(queryText) {
-    show(searchingElement);
+function paigeSearch(queryText) {
+    paigeShow(paigeSearchingElement);
     fetch("/index.json").then(function (response) {
         if (response.status !== 200) {
             console.log("Cannot load /index.json", response);
-            hide(searchingElement);
-            show(errorElement);
+            paigeHide(paigeSearchingElement);
+            paigeShow(paigeErrorElement);
             return;
         }
         response.json().then(function (pages) {
@@ -82,7 +82,7 @@ function search(queryText) {
                 pathPage[page.link] = page;
             });
             var results = index.search(queryText, {limit: 50});
-            hide(searchingElement);
+            paigeHide(paigeSearchingElement);
             var shown = false;
             var done = {};
             results.forEach(function (result) {
@@ -92,8 +92,8 @@ function search(queryText) {
                     }
                     if (!shown) {
                         shown = true;
-                        show(somethingElement);
-                        show(resultsElement);
+                        paigeShow(paigeSomethingElement);
+                        paigeShow(paigeResultsElement);
                     }
                     done[path] = true;
                     var page = pathPage[path];
@@ -107,11 +107,11 @@ function search(queryText) {
                         result.appendChild(document.createElement("br"));
                         result.innerHTML += page.description;
                     }
-                    resultsElement.appendChild(result);
+                    paigeResultsElement.appendChild(result);
                 });
             });
             if (!shown) {
-                show(nothingElement);
+                paigeShow(paigeNothingElement);
             }
         }).catch(function (error) {
             console.log("Cannot search /index.json", error);
@@ -119,11 +119,11 @@ function search(queryText) {
     });
 }
 
-function hide(element) {
+function paigeHide(element) {
     element.style.display = "none";
 }
 
-function show(element) {
+function paigeShow(element) {
     element.style.display = "block";
 }
 </script>
