@@ -482,7 +482,7 @@ If `partials/paige-head-last.html` exists in the site, it is included at the end
 If `partials/paige-body-last.html` exists in the site, it is included at the end of the body tag.
 
 Most code is in partial templates that are included by the default layouts.
-Elements can easily be added or changed by overriding the corresponding layout or partial template.
+Elements can easily be added, changed, or removed by overriding the corresponding default layout or partial template.
 
 For example, the default layouts
 `home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html`
