@@ -520,7 +520,8 @@ The page date is the publish date, if any.
 
 Bootstrap 5.2.2 CSS and JavaScript and Bootstrap Icons 1.10.2 are loaded from the Bootstrap CDN for every page unless local Bootstrap assets are used instead.
 
-Map keys, layout file names, partial template file names, CSS names, and JavaScript names beginning with "paige" capitalized in any way are reserved.
+Map keys, CSS names, JavaScript names, and file names under the layout directory
+that begin with "paige" capitalized in any way are reserved.
 
 ## Community
 
