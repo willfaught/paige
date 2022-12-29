@@ -455,6 +455,7 @@ The `paige/figure` shortcode provides a figure with a centered image and an opti
 The image and caption can optionally be displayed inline instead of centered.
 The image has optional alt, title, width, and height attributes,
 and can optionally be wrapped in an anchor. Only the image source parameter is required.
+If the image source is a relative path, it is assumed to be a page resource.
 
 These are the named parameters with positions, listed in the order of their positions:
 
