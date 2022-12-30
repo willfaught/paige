@@ -6,7 +6,7 @@
     {{ $src := .Get 0 | default (.Get `src`) }}
     {{ $url := urls.Parse $src }}
     {{ if and (not $url.IsAbs) (not (hasPrefix $url.Path "/")) }}
-    {{ with .Page.Resources.GetMatch $src }}
+    {{ with .Page.Resources.Get $src }}
     {{ $src = .RelPermalink }}
     {{ end }}
     {{ end }}
