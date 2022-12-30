@@ -1,4 +1,4 @@
-{{ $authors := partial "paige-func-authors.html" . }}
+{{ $authors := partial "paige/func-authors.html" . }}
 {{ if or $authors .PublishDate}}
 <p class="text-center text-muted">
     {{- with $authors }}{{ . }}{{ end -}}

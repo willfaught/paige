@@ -479,22 +479,22 @@ These are the rest of the named parameters:
 
 ## Customization
 
-If `partials/paige-head-last.html` exists in the site, it is included at the end of the head tag.
-If `partials/paige-body-last.html` exists in the site, it is included at the end of the body tag.
+If `partials/paige/head-last.html` exists in the site, it is included at the end of the head tag.
+If `partials/paige/body-last.html` exists in the site, it is included at the end of the body tag.
 
 Most code is in partial templates that are included by the default layouts.
-Elements can easily be added, changed, or removed by overriding the corresponding default layout or partial template.
+Elements can be added, changed, or removed easily by overriding the corresponding default layout or partial template.
 
 For example, the default layouts
 `home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html`
-include the partial template `paige-article.html`,
-which includes the partial templates
-`paige-title.html`, `paige-description.html`, `paige-metadata.html`, `paige-toc.html`, and `paige-content.html`.
-To change the page title for those default layouts, change `paige-title.html`.
+include the partial template `paige/article.html`.
+`paige/article.html` includes the partial templates `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`.
+`paige/metadata.html` includes the partial templates `paige/title.html`, `paige/description.html`, and `paige/other.html`.
+To change the page title for those default layouts, change `paige/title.html`.
 To change the page title for `single.html`,
-replace the use of `paige-article.html` in `single.html` with the use of
-`paige-title.html`, `paige-description.html`, `paige-metadata.html`, `paige-toc.html`, and `paige-content.html`,
-then replace that use of `paige-title.html` with your own design.
+replace the use of `paige/article.html` in `single.html` with the use of
+`paige/title.html`, `paige/description.html`, `paige/other.html`, `paige/toc.html`, and `paige/content.html`,
+then replace that use of `paige/title.html` with your own design.
 
 ## Design
 

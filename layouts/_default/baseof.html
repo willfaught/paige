@@ -2,22 +2,22 @@
 {{ $rtl := eq .Language.LanguageDirection "rtl" }}
 {{ $lang := .Site.LanguageCode | default .Site.Language.Lang }}
 <html{{ if $rtl }} dir="rtl"{{ end }}{{ with $lang }} lang="{{ . }}"{{ end }}>
-    {{ partial "paige-head.html" . }}
+    {{ partial "paige/head.html" . }}
     <body class="d-flex flex-column">
         <div class="container flex-fill">
             <div class="row">
                 <div class="col">
-                    {{ partial "paige-header.html" . }}
+                    {{ partial "paige/header.html" . }}
                     <main>
                         {{ block "main" . }}{{ end }}
                     </main>
-                    {{ partial "paige-footer.html" . }}
+                    {{ partial "paige/footer.html" . }}
                 </div>
             </div>
         </div>
-        {{ partial "paige-script.html" . }}
+        {{ partial "paige/script.html" . }}
         {{ if templates.Exists "partials/paige-body-last.html" }}
-        {{ partial "paige-body-last.html" . }}
+        {{ partial "paige/body-last.html" . }}
         {{ end }}
     </body>
 </html>
