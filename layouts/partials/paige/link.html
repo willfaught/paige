@@ -30,7 +30,7 @@
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" integrity="sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" rel="stylesheet">
 {{ end }}
 {{ if .AlternativeOutputFormats }}
-{{ $title := partial "paige/func-title.html" . }}
+{{ $title := partial "paige/func-title" . }}
 {{ range .AlternativeOutputFormats }}
 <link href="{{ .Permalink }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
 {{ end }}
