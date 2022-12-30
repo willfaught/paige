@@ -2,7 +2,15 @@
 {{ if .Params.authors }}
     {{ $names := slice }}
     {{ range .Params.authors }}
-        {{ $names = $names | append (index site.Params.authors . "name" | default .) }}
+        {{ if eq (printf "%T" .) "string" }}
+            {{ $names = $names | append (index site.Params.authors .).name }}
+        {{ else }}
+            {{ with .author }}
+                {{ $names = $names | append (index site.Params.authors .).name }}
+            {{ else }}
+                {{ $names = $names | append .name }}
+            {{ end }}
+        {{ end }}
     {{ end }}
     {{ $result = delimit $names ", " }}
 {{ else if .Site.Params.authors }}

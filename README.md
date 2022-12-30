@@ -249,8 +249,9 @@ Optional page parameters:
 
 ```yaml
 authors: [
-  "Michael Bluth", # Credit this name exactly
-  "george_bluth" # Credit the corresponding author name in the site parameters
+  "michael_bluth", # Credit the corresponding author name in the site parameters
+  {"author": "michael_bluth"}, # Credit the corresponding author name in the site parameters
+  {"name": "Lucille Bluth"} # Credit this author name
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
