@@ -1,5 +1,5 @@
 <figure {{ if eq (.Get `inline`) true }} class="figure"{{ else }} class="align-items-center d-flex flex-column"{{ end }}>
-    {{ $link := .Get 1 | default (.Get `link`) }}
+    {{ $link := .Get 2 | default (.Get `link`) }}
     {{ with $link }}
     <a href="{{ . }}">
     {{ end }}
@@ -14,7 +14,7 @@
     {{ if $link }}
     </a>
     {{ end }}
-    {{ with (.Get 2 | default (.Get `caption`)) }}
+    {{ with (.Get 1 | default (.Get `caption`)) }}
     <figcaption class="figure-caption">{{ . }}</figcaption>
     {{ end }}
 </figure>

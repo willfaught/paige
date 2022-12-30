@@ -462,8 +462,8 @@ These are the named parameters with positions, listed in the order of their posi
 ```go
 {{< paige/figure
     src="https://imgs.xkcd.com/comics/sandwich.png"
-    link="https://xkcd.com/149"
     caption="My caption"
+    link="https://xkcd.com/149"
     title="My title"
     alt="My alt" >}}
 ```
