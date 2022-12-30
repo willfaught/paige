@@ -16,7 +16,7 @@ In this example we will be using [KaTeX](https://katex.org/)
 - Within this partial reference the [Auto-render Extension](https://katex.org/docs/autorender.html) or host these scripts locally.
 - Include the partial in your templates like so:
 
-```bash
+```
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
