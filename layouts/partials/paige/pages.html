@@ -1,10 +1,12 @@
 {{ if .Pages }}
 {{ if .Params.paige.show_full_pages }}
 {{ $p := .Paginate .Pages }}
-{{ range $p.Pages }}
-{{ .Scratch.Set "paige_show_full_pages" true }}
-{{ partial "paige/article" . }}
-{{ end }}
+<section>
+    {{ range $p.Pages }}
+    {{ .Scratch.Set "paige_show_full_pages" true }}
+    {{ partial "paige/article" . }}
+    {{ end }}
+</section>
 {{ if or $p.HasPrev $p.HasNext }}
 <section>
     <div class="d-flex justify-content-center">
