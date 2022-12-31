@@ -435,7 +435,7 @@ titlecasestyle: Go
 
 ## Layouts
 
-The `paige-search` layout provides full site search.
+The `paige/search` layout provides full site search.
 
 Example `config.yaml`:
 
@@ -448,7 +448,7 @@ Example `content/search.md`:
 
 ```yaml
 ---
-layout: paige-search
+layout: paige/search
 title: Search
 ---
 ```
