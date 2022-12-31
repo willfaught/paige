@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ partial "paige/article" . }}
 {{ if .Pages }}
-<article>
+<section>
     <ul class="list-inline text-center">
         {{ range (sort .Pages "Title") }}
         <li class="list-inline-item">
@@ -9,6 +9,6 @@
         </li>
         {{ end }}
     </ul>
-</article>
+</section>
 {{ end }}
 {{ end }}
