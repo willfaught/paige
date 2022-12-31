@@ -3,11 +3,25 @@
 {{ if eq $basePath "/" }}
 {{ $basePath = "" }}
 {{ end }}
-<nav class="justify-content-center my-3 nav nav-pills">
+{{ $links := false }}
+{{ $pills := false }}
+{{ $tabs := false }}
+{{ with .Site.Params.paige.menu_style }}
+{{ if eq . `links` }}
+{{ $links = true }}
+{{ else if eq . `tabs` }}
+{{ $tabs = true }}
+{{ else }}
+{{ $pills = true }}
+{{ end }}
+{{ else }}
+{{ $pills = true }}
+{{ end }}
+<nav class="justify-content-center my-3 nav{{ if $pills }} nav-pills{{ else if $tabs }} nav-tabs{{ end }}">
     {{ range .Site.Menus.main }}
     {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
     {{ $menuPath := strings.TrimPrefix $basePath .URL }}
     {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
-    <a href="{{ .URL }}" class="nav-link{{ if $active }} active{{ end }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    <a href="{{ .URL }}" class="nav-link{{ if $active }} active{{ if $links }} link-secondary{{ end }}{{ end }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
     {{ end }}
 </nav>

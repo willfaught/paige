@@ -233,6 +233,7 @@ paige:
   date_format: "2006 January 2" # Hugo date format for page dates
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
+  menu_style: "links" # Menu is link list for "links", tab list for "tabs", or pill list if unset
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
