@@ -1,11 +1,7 @@
 {{ if and .Content .Params.paige.toc (ne .TableOfContents `<nav id="TableOfContents"></nav>`) }}
-<section>
-    <div class="container-fluid mb-3">
-        <div class="justify-content-center row">
-            <div class="border col col-auto pe-3 ps-3 pt-3 rounded">
-                {{ .TableOfContents }}
-            </div>
-        </div>
+<section class="paige-toc">
+    <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
+        {{ .TableOfContents }}
     </div>
 </section>
 {{ end }}

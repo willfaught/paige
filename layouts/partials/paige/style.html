@@ -1,8 +1,4 @@
 <style>
-article > div {
-    margin-bottom: 1rem;
-}
-
 body, html {
     height: 100%;
 }
@@ -20,6 +16,22 @@ blockquote p:last-of-type {
 h1:hover .paige-header-link, h2:hover .paige-header-link, h3:hover .paige-header-link, h4:hover .paige-header-link, h5:hover .paige-header-link, h6:hover .paige-header-link {
     display: inline;
 }
+
+section[class="paige-content"] > div {
+    margin-bottom: 1rem;
+}
+
+{{ with .Site.Params.paige.content_max_width }}
+section[class="paige-content"], section[class="paige-toc"] {
+    max-width: {{ . }};
+}
+{{ end }}
+
+{{ with .Site.Params.paige.metadata_max_width }}
+section[class="paige-metadata"] {
+    max-width: {{ . }};
+}
+{{ end }}
 
 .paige-header-link {
     display: none;

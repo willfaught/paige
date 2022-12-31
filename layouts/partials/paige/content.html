@@ -1,17 +1,9 @@
 {{ if .Content }}
-<section>
-    <div class="container-fluid">
-        <div class="justify-content-center row">
-            <div class="col col-auto px-0">
-                <article>
-                    {{ if .Scratch.Get "paige_show_full_pages" }}
-                    {{ .Content }}
-                    {{ else }}
-                    {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
-                    {{ end }}
-                </article>
-            </div>
-        </div>
-    </div>
+<section class="paige-content">
+    {{ if .Scratch.Get "paige_show_full_pages" }}
+    {{ .Content }}
+    {{ else }}
+    {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
+    {{ end }}
 </section>
 {{ end }}

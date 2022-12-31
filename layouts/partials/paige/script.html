@@ -1,11 +1,11 @@
 <script>
 function paigeResize() {
-    var e = document.querySelector("body > div.container > div.row > div.col");
+    var e = document.querySelector('body > div.container');
     var s = getComputedStyle(e);
     var px = parseFloat(s.paddingLeft) + parseFloat(s.paddingRight);
     var bx = parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth);
     var w = e.offsetWidth - px - bx;
-    var es = document.querySelectorAll("article > div");
+    var es = document.querySelectorAll('section[class="paige-content"] > div');
     for (var i = 0; i < es.length; i++) {
         var e = es[i];
         if (e.offsetWidth !== w) {

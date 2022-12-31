@@ -212,6 +212,7 @@ paige:
     scripts_path: "my-assets/my-bootstrap.bundle.min.js" # Use local Bootstrap scripts
     styles_path: "my-assets/my-bootstrap.min.css" # Use local Bootstrap styles
   color: "#123456" # Theme color for Safari and Windows
+  content_max_width: 66ch # Page table of contents and content max width
   comments:
     cactus: # cactus.chat
       account_id: "123456"
@@ -234,6 +235,7 @@ paige:
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
   menu_style: "links" # Menu is link list for "links", tab list for "tabs", or pill list if unset
+  metadata_max_width: 100ch # Page metadata max width
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
