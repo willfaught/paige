@@ -1,4 +1,4 @@
-{{ if and .Content .Params.paige.toc (ne .TableOfContents `<nav id="TableOfContents"></nav>`) }}
+{{ if and .Content .Params.paige.toc (not (eq (.Scratch.Get "paige_show_full_pages") true)) (ne .TableOfContents `<nav id="TableOfContents"></nav>`) }}
 <section class="paige-toc">
     <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
         {{ .TableOfContents }}
