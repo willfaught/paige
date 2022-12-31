@@ -53,7 +53,7 @@ addEventListener("resize", paigeResize);
     loadChartbeat();
 })();
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.clicky }}
 <script type="text/javascript">
@@ -67,18 +67,18 @@ clicky_site_ids.push({{ .account_id }});
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
 })();
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.fathom }}
 <script data-site="{{ .account_id }}" defer src="https://cdn.usefathom.com/script.js"></script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.finteza }}
 <script type="text/javascript">
 (function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&&d.parentNode&&d.parentNode.insertBefore(c,d))})(window,document,"script","{{ .script_url }}","fz");
 fz("register","website","{{ .account_id }}");
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.hotjar }}
 <script type="application/javascript">
@@ -91,7 +91,7 @@ fz("register","website","{{ .account_id }}");
     a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.matomo }}
 <script type="text/javascript">
@@ -106,7 +106,7 @@ _paq.push(['enableLinkTracking']);
     g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 })();
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.mixpanel }}
 <script type="text/javascript">
@@ -116,11 +116,11 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 mixpanel.init({{ .token }}, {});
 mixpanel.track('page view');
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.plausible }}
 <script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.woopra }}
 <script>
@@ -130,7 +130,7 @@ woopra.config({
 });
 woopra.track();
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.yandex }}
 <script>
@@ -138,5 +138,5 @@ woopra.track();
 (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 ym("{{ .account_id }}", "init", {});
 </script>
-<noscript>{{ i18n "paige_noscript_analytics" }}</noscript>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}

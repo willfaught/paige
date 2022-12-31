@@ -1,12 +1,6 @@
 paige_noscript:
   other: JavaScript is required.
 
-paige_noscript_analytics:
-  other: JavaScript is required for analytics.
-
-paige_noscript_comments:
-  other: JavaScript is required for comments.
-
 paige_search_button:
   other: Search
 
