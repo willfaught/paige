@@ -13,14 +13,14 @@
         commentSectionId: {{ .RelPermalink }}
     })
     </script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ with .Site.Params.paige.comments.commento }}
 <section class="mb-3">
     <div id="commento"></div>
     <script defer src="{{ .script_url }}"></script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ if .Site.Params.paige.comments.graphcomment }}
@@ -42,7 +42,7 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
     })();
     </script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ if .Site.Params.paige.comments.hyvor }}
@@ -56,7 +56,7 @@
     };
     </script>
     <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ if .Site.Params.paige.comments.intensedebate }}
@@ -68,14 +68,14 @@
     </script>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type="text/javascript" src="http://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ with .Site.Params.paige.comments.isso }}
 <section class="mb-3">
     <script src="{{ .script_url }}"></script>
     <section id="isso-thread">
-        <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+        <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
     </section>
 </section>
 {{ end }}
@@ -83,7 +83,7 @@
 <section class="mb-3">
     <a href="https://muut.com/i/{{ .account_id }}/comments" class="muut" type="dynamic">Comments</a>
     <script src="https://cdn.muut.com/1/moot.min.js"></script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ if .Site.Params.paige.comments.remark42 }}
@@ -96,7 +96,7 @@
     }
     </script>
     <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ if .Site.Params.paige.comments.replybox }}
@@ -109,12 +109,12 @@
     };
     </script>
     <script src="https://cdn.getreplybox.com/js/embed.js"></script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
 {{ with .Site.Params.paige.comments.utterances }}
 <section class="mb-3">
     <script src="https://utteranc.es/client.js" repo="{{ .github_repo }}" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
-    <noscript>{{ i18n "paige_comments_noscript" }}</noscript>
+    <noscript>{{ i18n "paige_noscript_comments" }}</noscript>
 </section>
 {{ end }}
