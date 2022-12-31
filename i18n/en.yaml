@@ -4,6 +4,9 @@ paige_analytics_noscript:
 paige_comments_noscript:
   other: JavaScript is required for comments.
 
+paige_noscript:
+  other: JavaScript is required.
+
 paige_search_button:
   other: Search
 

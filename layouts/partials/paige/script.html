@@ -17,6 +17,7 @@ function paigeResize() {
 paigeResize();
 addEventListener("resize", paigeResize);
 </script>
+<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ with .Site.Params.paige.bootstrap.scripts_path }}
 {{ with resources.Get (relLangURL .) }}
 <script defer src="{{ (. | minify | fingerprint).RelPermalink }}"></script>
