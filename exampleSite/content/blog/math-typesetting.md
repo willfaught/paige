@@ -17,7 +17,7 @@ In this example we will be using [KaTeX](https://katex.org/)
 - Include the partial in your templates like so:
 
 ```
-{{ if or .Params.math .Site.Params.math }}
+{{ if or .Params.paige.math .Site.Params.paige.math }}
 {{ partial "math.html" . }}
 {{ end }}
 ```
