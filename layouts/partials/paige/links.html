@@ -1,0 +1,30 @@
+<link href="{{ relLangURL `apple-touch-icon.png` }}" rel="apple-touch-icon" sizes="180x180">
+<link href="{{ relLangURL `favicon-16x16.png` }}" rel="icon" sizes="16x16" type="image/png">
+<link href="{{ relLangURL `favicon-32x32.png` }}" rel="icon" sizes="32x32" type="image/png">
+{{ if ne (relLangURL "favicon.ico") "/favicon.ico" }}
+<link href="{{ relLangURL `favicon.ico` }}" rel="shortcut icon">
+{{ end }}
+<link href="{{ relLangURL `favicon.png` }}" rel="icon" type="image/png">
+<link href="{{ relLangURL `favicon.svg` }}" rel="icon" type="image/svg+xml">
+<link color="{{ .Site.Params.paige.color | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` }}" rel="mask-icon">
+<link href="{{ relLangURL `site.webmanifest` }}" rel="manifest">
+{{ partial "paige/link" (dict
+    "href" (.Site.Params.paige.bootstrap.styles.link_href | default "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css")
+    "integrity" (.Site.Params.paige.bootstrap.styles.link_integrity | default "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi")
+) }}
+{{ partial "paige/link" (dict
+    "href" (.Site.Params.paige.bootstrap.icons.link_href | default "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css")
+    "integrity" (.Site.Params.paige.bootstrap.icons.link_integrity | default "sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e")
+) }}
+{{ if or .Params.paige.math (and .Params.paige.show_full_pages (where .Pages "Params.paige.math" "eq" true)) }}
+{{ partial "paige/link" (dict
+    "href" (.Site.Params.paige.math.styles.link_href | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
+    "integrity" (.Site.Params.paige.math.styles.link_integrity | default "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/")
+) }}
+{{ end }}
+{{ if .AlternativeOutputFormats }}
+{{ $title := partial "paige/func-title" . }}
+{{ range .AlternativeOutputFormats }}
+<link href="{{ .Permalink }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
+{{ end }}
+{{ end }}
