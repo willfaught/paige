@@ -1,5 +1,5 @@
 <figure class="align-items-center d-flex flex-column">
-    {{ highlight .Inner (.Get 0 | default (.Get "lang")) (.Get 2 | default (.Get "options")) }}
+    {{ highlight (.Inner | replaceRE "^\n" "") (.Get 0 | default (.Get "lang")) (.Get 2 | default (.Get "options")) }}
     {{ with (.Get 1 | default (.Get "caption")) }}
     <figcaption class="figure-caption">{{ . }}</figcaption>
     {{ end }}
