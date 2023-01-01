@@ -10,7 +10,7 @@
     {{ $src = .RelPermalink }}
     {{ end }}
     {{ end }}
-    <img{{ with (.Get 4 | default (.Get `alt`)) }} alt="{{ . }}"{{ end }} class="figure-img img-fluid"{{ with .Get `height` }} height="{{ . }}"{{ end }} src="{{ $src }}"{{ with (.Get 3 | default (.Get `title`)) }} title="{{ . }}"{{ end }}{{ with .Get `width` }} width="{{ . }}"{{ end }}>
+    <img{{ with (.Get 4 | default (.Get `alt`)) }} alt="{{ . }}"{{ end }} class="figure-img img-fluid"{{ with .Get `height` }} height="{{ . }}"{{ end }} loading="lazy" src="{{ $src }}"{{ with (.Get 3 | default (.Get `title`)) }} title="{{ . }}"{{ end }}{{ with .Get `width` }} width="{{ . }}"{{ end }}>
     {{ if $link }}
     </a>
     {{ end }}
