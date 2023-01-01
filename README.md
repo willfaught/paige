@@ -219,7 +219,7 @@ paige:
       link_integrity: "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" # File integrity hash
   color: "#123456" # Theme color for Safari and Windows
   color_scheme: "light" # Use the "light" or "dark" color scheme without automatic switching
-  content_max_width: 66ch # Page table of contents and content max width
+  content_max_width: "66ch" # Page table of contents and content max width
   comments:
     cactus: # cactus.chat
       account_id: "123456"
