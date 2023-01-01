@@ -3,7 +3,7 @@
 {{ $lang := .Site.LanguageCode | default .Site.Language.Lang }}
 <html{{ if eq .Site.Params.paige.color_scheme `dark` }} data-bs-theme="dark"{{ end }}{{ if $rtl }} dir="rtl"{{ end }}{{ with $lang }} lang="{{ . }}"{{ end }}>
     {{ partial "paige/head.html" . }}
-    <body class="d-flex flex-column">
+    {{ partial "paige/body.html" . }}
         <div class="container flex-fill">
             <div class="row">
                 <div class="col">
