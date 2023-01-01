@@ -553,7 +553,7 @@ The page title is displayed in an `h1` tag, so page content headers must start w
 
 The page date is the publish date, if any.
 
-Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are loaded from the Bootstrap CDN for every page unless local Bootstrap assets are used instead.
+Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are loaded from the Bootstrap CDN for every page unless overridden.
 
 Map keys, CSS names, JavaScript names, and file names under the layout directory
 that begin with "paige" capitalized in any way are reserved.
