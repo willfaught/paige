@@ -482,7 +482,7 @@ If the image source is a relative path, it is assumed to be a page resource.
 
 These are the named parameters with positions, listed in the order of their positions:
 
-```go
+```
 {{< paige/figure
     src="https://imgs.xkcd.com/comics/sandwich.png"
     caption="My caption"
@@ -493,7 +493,7 @@ These are the named parameters with positions, listed in the order of their posi
 
 These are the rest of the named parameters:
 
-```go
+```
 {{< paige/figure
     height=500
     inline=false
