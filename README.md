@@ -472,14 +472,11 @@ title: Search
 
 ## Shortcodes
 
-### Images
+### Image
 
-The `paige/image` shortcode provides a figure with a centered image and an optional centered caption.
-The image has optional alt, title, width, and height attributes,
-and can optionally be wrapped in an anchor. Only the image source parameter is required.
-If the image source is a relative path, it is assumed to be a page resource.
+The `paige/image` shortcode provides a figure with a centered image and an optional, centered caption.
 
-These are the named parameters with positions, listed in the order of their positions:
+These are the positions of the named parameters:
 
 ```
 {{< paige/image
@@ -490,20 +487,20 @@ These are the named parameters with positions, listed in the order of their posi
     alt="My alt" >}}
 ```
 
-These are the rest of the named parameters:
+Only the image source parameter is required.
+If the image source argument is a relative path, it must be a page resource.
+
+These are the named parameters without positions:
 
 ```
-{{< paige/image
-    height=500
-    inline=false
-    width=500 >}}
+{{< paige/image height=500 width=500 >}}
 ```
 
 ### Code
 
-The `paige/code` shortcode provides a figure with centered, highlighted code and an optional caption.
+The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
 
-These are the names and positions of the parameters:
+These are the positions of the named parameters:
 
 ```
 {{< paige/code lang="go" caption="My caption" options="linenos=true" >}}
