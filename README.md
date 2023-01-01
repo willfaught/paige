@@ -283,9 +283,9 @@ Additional optional home page parameters:
 
 ```yaml
 blurb: "There's a new daddy in town." # Displayed below the greeting
-center: "my-center.jpg" # An image that is centered
+center_url: "my-center.jpg" # An image that is centered
 greeting: "You know best" # Displayed below the center and stretch images
-stretch: "my-stretch.jpg" # A 4x3 or panorama image that is stretched fully horizontally
+stretch_url: "my-stretch.jpg" # A 4x3 or panorama image that is stretched fully horizontally
 ```
 
 Additional optional list page parameters:

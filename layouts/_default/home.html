@@ -2,10 +2,10 @@
 <article>
     {{ partial "paige/metadata.html" . }}
     <section>
-        {{ with .Params.stretch }}
+        {{ with .Params.stretch_url }}
         <div class="mb-3 mw-100 rounded-4 shadow" style="background-image: url('{{ partial `paige/func-url.html` . }}'); background-position: center; background-size: cover; height: 20rem"></div>
         {{ end }}
-        {{ with .Params.center }}
+        {{ with .Params.center_url }}
         <p class="text-center">
             <img class="mw-100 rounded-4 shadow" fetchpriority="high" referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` . }}" style="max-height: 20rem">
         </p>
