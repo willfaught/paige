@@ -1,11 +1,1 @@
-{{ $path := false }}
-{{ $src := .src }}
-{{ if eq $src (urls.Parse $src).Path }}
-    {{ $path = true }}
-    {{ with resources.Get (relLangURL $src) }}
-        {{ $src = (. | minify | fingerprint).RelPermalink }}
-    {{ else }}
-        {{ $src = relLangURL $src }}
-    {{ end }}
-{{ end }}
-<script{{ if not $path }} crossorigin="anonymous"{{ end }} defer integrity="{{ .integrity }}"{{ with .onload }} onload="{{ . | safeJS }}"{{ end }} referrerpolicy="no-referrer" src="{{ $src }}"></script>
+<script{{ if ne .href (urls.Parse .href).Path }} crossorigin="anonymous"{{ end }} defer integrity="{{ .integrity }}"{{ with .onload }} onload="{{ . | safeJS }}"{{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` .src }}"></script>

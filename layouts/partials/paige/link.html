@@ -1,11 +1,1 @@
-{{ $href := .href }}
-{{ $path := false }}
-{{ if eq $href (urls.Parse $href).Path }}
-    {{ $path = true }}
-    {{ with resources.Get (relLangURL $href) }}
-        {{ $href = (. | minify | fingerprint).RelPermalink }}
-    {{ else }}
-        {{ $href = relLangURL $href }}
-    {{ end }}
-{{ end }}
-<link{{ if not $path }} crossorigin="anonymous"{{ end }} href="{{ $href }}" integrity="{{ .integrity }}" rel="stylesheet">
+<link{{ if ne .href (urls.Parse .href).Path }} crossorigin="anonymous"{{ end }} href="{{ partial `paige/func-url.html` .href }}" integrity="{{ .integrity }}" rel="stylesheet">

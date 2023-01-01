@@ -1,0 +1,12 @@
+{{ $url := . }}
+{{ if eq $url (urls.Parse $url).Path }}
+    {{ with resources.Get (relLangURL $url) }}
+        {{ if ne .ResourceType "image" }}
+            {{ $url = $url | minify }}
+        {{ end }}
+        {{ $url = (. | fingerprint).RelPermalink }}
+    {{ else }}
+        {{ $url = relLangURL $url }}
+    {{ end }}
+{{ end }}
+{{ return $url }}
