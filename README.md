@@ -344,8 +344,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-  highlight:
-    style: vs
   tableofcontents:
     endlevel: 6
     ordered: true
