@@ -472,6 +472,8 @@ title: Search
 
 ## Shortcodes
 
+### Images
+
 The `paige/figure` shortcode provides a figure with a centered image and an optional centered caption.
 The image and caption can optionally be displayed inline instead of centered.
 The image has optional alt, title, width, and height attributes,
@@ -496,6 +498,23 @@ These are the rest of the named parameters:
     height=500
     inline=false
     width=500 >}}
+```
+
+### Code
+
+The `paige/code` shortcode provides a figure with centered, highlighted code and an optional caption.
+
+These are the names and positions of the parameters:
+
+```
+{{< paige/code lang="go" caption="My caption" options="linenos=true" >}}
+<!doctype html>
+<html lang="en">
+<body>
+  <p>Test</p>
+</body>
+</html>
+{{< /paige/code >}}
 ```
 
 ## Customization
