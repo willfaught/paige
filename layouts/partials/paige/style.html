@@ -5,8 +5,8 @@ body, html {
 
 blockquote {
     padding: 0.5rem 1rem;
-    border-left: 0.25rem solid #e9ecef;
-    border-right: 0.25rem solid white;
+    border-left: 0.25rem solid var(--bs-border-color);
+    padding-right: 0.25rem;
 }
 
 blockquote p:last-of-type {
@@ -38,4 +38,20 @@ section[class="paige-metadata"] {
     margin-left: 0.5ch;
     position: absolute;
 }
+
+{{ with .Site.Params.paige.color_scheme }}
+{{ if eq . "dark" }}
+{{ partial "paige/dark.css" . | safeCSS }}
+{{ else if eq . "light" }}
+{{ partial "paige/light.css" . | safeCSS }}
+{{ end }}
+{{ else }}
+@media (prefers-color-scheme: dark) {
+    {{ partial "paige/dark.css" . | safeCSS }}
+}
+
+@media (prefers-color-scheme: light) {
+    {{ partial "paige/light.css" . | safeCSS }}
+}
+{{ end }}
 </style>

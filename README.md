@@ -38,10 +38,12 @@ Search page:
 
 - Accessibility
 - Analytics
+- Automatic switching between light and dark color schemes
 - Blog
 - Bootstrap
 - Comments
 - Customizable
+- Dark color scheme
 - E-mail protection
 - Facebook sharing
 - Header links
@@ -63,8 +65,6 @@ Search page:
 - Social links
 - Table of contents
 - Twitter sharing
-
-Soon: Dark color scheme and dynamic color schemes, when Bootstrap 5.3 releases.
 
 ## Get started with Hugo
 
@@ -218,6 +218,7 @@ paige:
       link_href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" # Local or remote file
       link_integrity: "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" # File integrity hash
   color: "#123456" # Theme color for Safari and Windows
+  color_scheme: "light" # Use the "light" or "dark" color scheme without automatic switching
   content_max_width: 66ch # Page table of contents and content max width
   comments:
     cactus: # cactus.chat
@@ -539,7 +540,7 @@ The page title is displayed in an `h1` tag, so page content headers must start w
 
 The page date is the publish date, if any.
 
-Bootstrap 5.2.3 CSS and JavaScript and Bootstrap Icons 1.10.3 are loaded from the Bootstrap CDN for every page unless local Bootstrap assets are used instead.
+Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are loaded from the Bootstrap CDN for every page unless local Bootstrap assets are used instead.
 
 Map keys, CSS names, JavaScript names, and file names under the layout directory
 that begin with "paige" capitalized in any way are reserved.

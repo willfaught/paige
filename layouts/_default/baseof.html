@@ -1,7 +1,7 @@
 <!doctype html>
 {{ $rtl := eq .Language.LanguageDirection "rtl" }}
 {{ $lang := .Site.LanguageCode | default .Site.Language.Lang }}
-<html{{ if $rtl }} dir="rtl"{{ end }}{{ with $lang }} lang="{{ . }}"{{ end }}>
+<html{{ if eq .Site.Params.paige.color_scheme `dark` }} data-bs-theme="dark"{{ end }}{{ if $rtl }} dir="rtl"{{ end }}{{ with $lang }} lang="{{ . }}"{{ end }}>
     {{ partial "paige/head" . }}
     <body class="d-flex flex-column">
         <div class="container flex-fill">
