@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article>
-    {{ partial "paige/metadata" . }}
+    {{ partial "paige/metadata.html" . }}
     <section>
         {{ with .Params.stretch }}
         <div class="mb-3 mw-100 rounded-4 shadow" style="background-image: url('{{ relLangURL . }}'); background-position: center; background-size: cover; height: 20rem"></div>
@@ -23,8 +23,8 @@
         </div>
         {{ end }}
     </section>
-    {{ partial "paige/toc" . }}
-    {{ partial "paige/content" . }}
-    {{ partial "paige/social" . }}
+    {{ partial "paige/toc.html" . }}
+    {{ partial "paige/content.html" . }}
+    {{ partial "paige/social.html" . }}
 </article>
 {{ end }}

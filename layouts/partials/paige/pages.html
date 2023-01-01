@@ -4,13 +4,13 @@
 <section>
     {{ range $p.Pages }}
     {{ .Scratch.Set "paige_show_full_pages" true }}
-    {{ partial "paige/article" . }}
+    {{ partial "paige/article.html" . }}
     {{ end }}
 </section>
 {{ if or $p.HasPrev $p.HasNext }}
 <section>
     <div class="d-flex justify-content-center">
-        {{ partial "paige/pagination" . }}
+        {{ partial "paige/pagination.html" . }}
     </div>
 </section>
 {{ end }}
@@ -29,7 +29,7 @@
 {{ if or $p.HasPrev $p.HasNext }}
 <section>
     <div class="d-flex justify-content-center">
-        {{ partial "paige/pagination" . }}
+        {{ partial "paige/pagination.html" . }}
     </div>
 </section>
 {{ end }}

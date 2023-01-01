@@ -13,7 +13,7 @@
 {{ $pages = $pages | first $limit }}
 {{ end }}
 {{ $pages = where $pages "Params.paige.hide_rss" "ne" true }}
-{{ $title := partial "paige/func-title" . }}
+{{ $title := partial "paige/func-title.html" . }}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -42,7 +42,7 @@
     {{ end }}
     {{ range $pages }}
     <item>
-      {{ with partial "paige/func-authors" . }}
+      {{ with partial "paige/func-authors.html" . }}
       <author>{{ . }}</author>
       {{ end }}
       {{ if .Content }}
