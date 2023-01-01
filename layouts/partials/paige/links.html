@@ -9,8 +9,8 @@
 <link color="{{ .Site.Params.paige.color | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` }}" rel="mask-icon">
 <link href="{{ relLangURL `site.webmanifest` }}" rel="manifest">
 {{ partial "paige/link" (dict
-    "href" (.Site.Params.paige.bootstrap.styles.link_href | default "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css")
-    "integrity" (.Site.Params.paige.bootstrap.styles.link_integrity | default "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi")
+    "href" (.Site.Params.paige.bootstrap.style.link_href | default "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css")
+    "integrity" (.Site.Params.paige.bootstrap.style.link_integrity | default "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi")
 ) }}
 {{ partial "paige/link" (dict
     "href" (.Site.Params.paige.bootstrap.icons.link_href | default "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css")
@@ -18,8 +18,8 @@
 ) }}
 {{ if or .Params.paige.math (and .Params.paige.show_full_pages (where .Pages "Params.paige.math" "eq" true)) }}
 {{ partial "paige/link" (dict
-    "href" (.Site.Params.paige.math.styles.link_href | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
-    "integrity" (.Site.Params.paige.math.styles.link_integrity | default "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/")
+    "href" (.Site.Params.paige.math.style.link_href | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
+    "integrity" (.Site.Params.paige.math.style.link_integrity | default "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/")
 ) }}
 {{ end }}
 {{ if .AlternativeOutputFormats }}

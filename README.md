@@ -211,10 +211,10 @@ paige:
     icons:
       link_href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" # Local or remote file
       link_integrity: "sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" # File integrity hash
-    scripts:
+    script:
       script_integrity: "sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" # File integrity hash
       script_src: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" # Local or remote file
-    styles:
+    style:
       link_href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" # Local or remote file
       link_integrity: "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" # File integrity hash
   color: "#123456" # Theme color for Safari and Windows
@@ -244,10 +244,10 @@ paige:
     autorender:
       script_integrity: "sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" # File integrity hash
       script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" # Local or remote file
-    scripts:
+    script:
       script_integrity: "sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O" # File integrity hash
       script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js" # Local or remote file
-    styles:
+    style:
       link_href: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" # Local or remote file
       link_integrity: "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" # File integrity hash
   menu_style: "links" # Menu is link list for "links", tab list for "tabs", or pill list if unset
