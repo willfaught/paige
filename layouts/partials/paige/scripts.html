@@ -15,10 +15,17 @@ function paigeResize() {
     } else {
         w = parseFloat(mw.substring(0, mw.length - 2));
     }
-    var es = document.querySelectorAll('section[class="paige-content"] > div:not([class="footnotes"], [class="highlight"])');
+    var es = document.querySelectorAll('section[class="paige-content"] > div');
     for (var i = 0; i < es.length; i++) {
         var e = es[i];
-        if (e.offsetWidth !== w) {
+        var iframe = false;
+        for (var j = 0; j < e.children.length; j++) {
+            if (e.children.item(j).tagName.toLowerCase() === "iframe") {
+                iframe = true;
+                break;
+            }
+        }
+        if (iframe && e.offsetWidth !== w) {
             e.style.width = w + "px";
         }
     }
