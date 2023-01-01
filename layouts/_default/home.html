@@ -7,7 +7,7 @@
         {{ end }}
         {{ with .Params.center }}
         <p class="text-center">
-            <img class="mw-100 rounded-4 shadow" src="{{ relLangURL . }}" style="max-height: 20rem">
+            <img class="mw-100 rounded-4 shadow" fetchpriority="high" referrerpolicy="no-referrer" src="{{ relLangURL . }}" style="max-height: 20rem">
         </p>
         {{ end }}
         {{ with .Params.greeting }}
