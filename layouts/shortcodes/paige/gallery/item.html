@@ -1,0 +1,5 @@
+{{ $image := .Page.Resources.GetMatch (.Get 0 | default (.Get "image")) }}
+{{ $caption := .Get "caption" }}
+{{ $method := .Get "method" | default .Page.Params.paige.gallery.method | default .Page.Site.Params.paige.gallery.method | default "resize" }}
+{{ $options := .Get "options" | default .Page.Params.paige.gallery.options | default .Page.Site.Params.paige.gallery.options | default "550x webp picture Lanczos" }}
+{{ partial "paige/gallery-item.html" (dict "image" $image "caption" $caption "method" $method "options" $options) }}

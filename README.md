@@ -239,6 +239,10 @@ paige:
     utterances: # utteranc.es
       github_repo: "example/foo"
   date_format: "2006 January 2" # Hugo date format for page dates
+  gallery: # Inherited by the paige/gallery and paige/gallery/item shortcodes
+    display: "list" # Display images in a grid or list; values are "grid", "list"; default is "grid"
+    method: "resize" # Hugo image processing method; values are "crop", "fill", "fit", "resize"; default is "resize"
+    options: "550x webp picture Lanczos" # Hugo image processing options; default is "550x webp picture Lanczos"
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
   math:
@@ -275,6 +279,10 @@ authors: [
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
+  gallery: # Inherited by the paige/gallery and paige/gallery/item shortcodes
+    display: "list" # Display images in a grid or list; values are "grid", "list"; default is "grid"
+    method: "resize" # Hugo image processing method; values are "crop", "fill", "fit", "resize"; default is "resize"
+    options: "550x webp picture Lanczos" # Hugo image processing options; default is "550x webp picture Lanczos"
   math: true # Enable math typesetting with KaTeX
   toc: true # Show a table of contents if there are any headers
 ```
@@ -509,6 +517,62 @@ These are the the named parameters with positions:
 </body>
 </html>
 {{< /paige/code >}}
+```
+
+### Gallery
+
+The `paige/gallery` shortcode provides a figure with a set of images and an optional, centered caption.
+
+```
+{{< paige/gallery
+    
+    // Page resource image file name or pattern; optional; defaults to all images
+    images="birthday*.jpg"
+    
+    // Optional
+    caption="My caption"
+    
+    // Hugo image processing method; optional; values are "crop", "fill", "fit", "resize"; default is "resize"
+    method="resize"
+
+    // Hugo image processing options; optional; default is "550x webp picture Lanczos"
+    options="550x webp picture Lanczos"
+
+    // Display images in a grid or list; optional; values are "grid", "list"; default is "grid"
+    display="grid"
+
+/>}}
+```
+
+The `paige/gallery/item` shortcode is nested within the `paige/gallery` shortcode to provide a caption and customization per image.
+The display type is automatically list, and cannot be overridden.
+
+```
+{{< paige/gallery caption="My caption" method="resize" options="550x webp picture Lanczos" >}}
+
+    {{< paige/gallery/item
+    
+        // Page resource image file name or pattern
+        image="birthday1.jpg"
+        
+        // Optional
+        caption="My caption"
+        
+        // Optional
+        method="resize"
+        
+        // Optional
+        options="550x webp picture Lanczos"
+
+    >}}
+
+{{< /paige/gallery >}}
+```
+
+The `paige/gallery` shortcode must be self-closing if the `paige/gallery/item` shortcode is not used.
+
+```
+{{< paige/gallery />}}
 ```
 
 ## Customization

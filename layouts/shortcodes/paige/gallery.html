@@ -1,0 +1,58 @@
+{{ $images := .Get "images" }}
+{{ $caption := .Get "caption" }}
+{{ $method := .Get "method" | default .Page.Params.paige.gallery.method | default .Page.Site.Params.paige.gallery.method | default "resize" }}
+{{ $options := .Get "options" | default .Page.Params.paige.gallery.options | default .Page.Site.Params.paige.gallery.options | default "550x webp picture Lanczos" }}
+{{ $display := .Get "display" | default .Page.Params.paige.gallery.display | default .Page.Site.Params.paige.gallery.display | default "grid" }}
+
+{{ $inner := chomp .Inner }}
+
+{{ if $inner }}
+    {{ $display = "list" }}
+{{ end }}
+
+{{ $resources := slice }}
+{{ with $images }}
+    {{ $resources = $.Page.Resources.Match . }}
+{{ else }}
+    {{ $resources = .Page.Resources.ByType "image" }}
+{{ end }}
+
+{{ $cols := "col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2" }}
+{{ with len $resources }}
+    {{ if eq . 1 }}
+        {{ $cols = "col-12" }}
+    {{ else if eq . 2 }}
+        {{ $cols = "col-12 col-md-6" }}
+    {{ else if eq . 3 }}
+        {{ $cols = "col-12 col-md-6 col-lg-4" }}
+    {{ else if eq . 4 }}
+        {{ $cols = "col-12 col-md-6 col-lg-4 col-xl-3" }}
+    {{ end }}
+{{ end }}
+
+<figure class="align-items-center d-flex flex-column">
+    {{ if eq $display "grid" }}
+    <div class="container-fluid{{ if $caption }} figure-img{{ end }} px-0">
+        <div class="align-items-center gx-3 gy-3 justify-content-center row">
+            {{ range $resources }}
+            <div class="{{ $cols }}">
+                {{ partial "paige/gallery-item.html" (dict "image" . "method" $method "options" $options) }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ else if eq $display "list" }}
+    <div class="align-items-center column-gap-3 d-flex{{ if $caption }} figure-img{{ end }} flex-wrap justify-content-center row-gap-3">
+        {{ with $inner }}
+        {{ . }}
+        {{ else }}
+        {{ range $resources }}
+        {{ partial "paige/gallery-item.html" (dict "image" . "method" $method "options" $options) }}
+        {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+    {{ with $caption }}
+    <figcaption class="figure-caption">{{ . }}</figcaption>
+    {{ end }}
+</figure>
