@@ -35,7 +35,7 @@
     <div class="container-fluid{{ if $caption }} figure-img{{ end }} px-0">
         <div class="align-items-center gx-3 gy-3 justify-content-center row">
             {{ range $resources }}
-            <div class="{{ $cols }}">
+            <div class="{{ $cols }} d-flex justify-content-center">
                 {{ partial "paige/gallery-item.html" (dict "image" . "method" $method "options" $options) }}
             </div>
             {{ end }}
