@@ -1,0 +1,15 @@
+{{ $caption := .caption | markdownify }}
+{{ $captionclass := .captionclass | default "figure-caption" }}
+{{ $captionstyle := .captionstyle }}
+{{ $class := .class | default "align-items-center d-flex flex-column justify-content-center paige-figure" }}
+{{ $content := .content | markdownify }}
+{{ $contentclass := .contentclass }}
+{{ $contentstyle := .contentstyle }}
+{{ $style := .style | default .Page.Params.paige.figure.style | default .Page.Site.Params.paige.figure.style }}
+
+<figure {{ with $class }} class="{{ . }}" {{ end }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }}>
+    <div {{ with $contentclass }} class="{{ . }}" {{ end }} {{ with $contentstyle }} style="{{ . | safeCSS }}" {{ end }}>{{ $content }}</div>
+    {{ with $caption }}
+        <figcaption {{ with $captionclass }} class="{{ . }}" {{ end }} {{ with $captionstyle }} style="{{ . | safeCSS }}" {{ end }}>{{ . }}</figcaption>
+    {{ end }}
+</figure>

@@ -1,0 +1,55 @@
+{{ $alt := .alt }}
+{{ $caption := .caption }}
+{{ $captionclass := .captionclass }}
+{{ $captionstyle := .captionstyle }}
+{{ $class := .class }}
+{{ $contentclass := .contentclass }}
+{{ $contentstyle := .contentstyle }}
+{{ $height := .height }}
+{{ $imageclass := .imageclass | default "img-fluid" }}
+{{ $imagestyle := .imagestyle }}
+{{ $link := .link }}
+{{ $method := .method }}
+{{ $options := .options }}
+{{ $page := .page }}
+{{ $resource := .resource }}
+{{ $src := .src }}
+{{ $style := .style }}
+{{ $title := .title }}
+{{ $width := .width }}
+
+{{ if and (not $contentclass) $caption }}
+    {{ $contentclass = "figure-img" }}
+{{ end }}
+
+{{ $content := partial "paige/img.html" (dict
+    "alt" $alt
+    "class" $imageclass
+    "height" $height
+    "method" $method
+    "options" $options
+    "page" $page
+    "resource" $resource
+    "src" $src
+    "style" $imagestyle
+    "title" $title
+    "width" $width
+) }}
+
+{{ if $link }}
+    {{ $content = partial "paige/a.html" (dict
+        "content" $content
+        "href" $link
+    ) }}
+{{ end }}
+
+{{ partial "paige/figure.html" (dict
+    "caption" $caption
+    "captionclass" $captionclass
+    "captionstyle" $captionstyle
+    "class" $class
+    "content" $content
+    "contentclass" $contentclass
+    "contentstyle" $contentstyle
+    "style" $style
+) }}

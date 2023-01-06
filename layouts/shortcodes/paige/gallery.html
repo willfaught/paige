@@ -1,58 +1,120 @@
-{{ $images := .Get "images" }}
 {{ $caption := .Get "caption" }}
-{{ $method := .Get "method" | default .Page.Params.paige.gallery.method | default .Page.Site.Params.paige.gallery.method | default "resize" }}
-{{ $options := .Get "options" | default .Page.Params.paige.gallery.options | default .Page.Site.Params.paige.gallery.options | default "550x webp picture Lanczos" }}
-{{ $display := .Get "display" | default .Page.Params.paige.gallery.display | default .Page.Site.Params.paige.gallery.display | default "grid" }}
+{{ $captionclass := .Get "captionclass" }}
+{{ $captionstyle := .Get "captionstyle" }}
+{{ $class := .Get "class" }}
+{{ $contentclass := .Get "contentclass" }}
+{{ $contentstyle := .Get "contentstyle" }}
+{{ $image := .Get "image" }}
+{{ $imageclass := .Get "imageclass" }}
+{{ $images := .Get 0 | default (.Get "images") }}
+{{ $imagestyle := .Get "imagestyle" }}
+{{ $innercaptionclass := .Get "innercaptionclass" }}
+{{ $innercaptionstyle := .Get "innercaptionstyle" }}
+{{ $innerclass := .Get "innerclass" | default "d-table mb-0" }}
+{{ $innerstyle := .Get "innerstyle" }}
+{{ $method := .Get "method" | default "resize" }}
+{{ $options := .Get "options" | default "550x webp picture Lanczos" }}
+{{ $style := .Get "style" }}
+{{ $type := .Get "type" | default "rows" }}
 
-{{ $inner := chomp .Inner }}
+{{ if $image }}
+    {{ $captionclass = $captionclass | default "figure-caption text-center" }}
+    {{ $captionstyle = $captionstyle | default "caption-side: bottom; display: table-caption" }}
+    {{ $resource := partial "paige/func-resource.html" (dict
+        "page" .Page
+        "url" $image
+    ) }}
 
-{{ if $inner }}
-    {{ $display = "list" }}
-{{ end }}
-
-{{ $resources := slice }}
-{{ with $images }}
-    {{ $resources = $.Page.Resources.Match . }}
+    {{ partial "paige/image-figure.html" (dict
+        "caption" $caption
+        "captionclass" $captionclass
+        "captionstyle" $captionstyle
+        "class" $innerclass
+        "contentclass" $contentclass
+        "contentstyle" $contentstyle
+        "imageclass" $imageclass
+        "imagestyle" $imagestyle
+        "link" $resource.RelPermalink
+        "method" $method
+        "options" $options
+        "page" .Page
+        "resource" $resource
+        "src" $image
+        "style" $innerstyle
+    ) }}
 {{ else }}
-    {{ $resources = .Page.Resources.ByType "image" }}
-{{ end }}
+    {{ $inner := chomp .Inner }}
 
-{{ $cols := "col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2" }}
-{{ with len $resources }}
-    {{ if eq . 1 }}
-        {{ $cols = "col-12" }}
-    {{ else if eq . 2 }}
-        {{ $cols = "col-12 col-md-6" }}
-    {{ else if eq . 3 }}
-        {{ $cols = "col-12 col-md-6 col-lg-4" }}
-    {{ else if eq . 4 }}
-        {{ $cols = "col-12 col-md-6 col-lg-4 col-xl-3" }}
-    {{ end }}
-{{ end }}
-
-<figure class="align-items-center d-flex flex-column">
-    {{ if eq $display "grid" }}
-    <div class="container-fluid{{ if $caption }} figure-img{{ end }} px-0">
-        <div class="align-items-center gx-3 gy-3 justify-content-center row">
-            {{ range $resources }}
-            <div class="{{ $cols }} d-flex justify-content-center">
-                {{ partial "paige/gallery-item.html" (dict "image" . "method" $method "options" $options) }}
-            </div>
-            {{ end }}
-        </div>
-    </div>
-    {{ else if eq $display "list" }}
-    <div class="align-items-center column-gap-3 d-flex{{ if $caption }} figure-img{{ end }} flex-wrap justify-content-center row-gap-3">
-        {{ with $inner }}
-        {{ . }}
+    {{ $resources := slice }}
+    {{ with $images }}
+        {{ with $.Page.Resources.Match . }}
+            {{ $resources = . }}
         {{ else }}
-        {{ range $resources }}
-        {{ partial "paige/gallery-item.html" (dict "image" . "method" $method "options" $options) }}
+            {{ $resources = resources.Match . }}
         {{ end }}
+    {{ else }}
+        {{ with .Page.Resources.ByType "image" }}
+            {{ $resources = . }}
+        {{ else }}
+            {{ $resources = resources.ByType "image" }}
         {{ end }}
-    </div>
     {{ end }}
-    {{ with $caption }}
-    <figcaption class="figure-caption">{{ . }}</figcaption>
-    {{ end }}
-</figure>
+
+    <figure>
+        {{ if eq $type "grid" }}
+            <div class="container-fluid{{ if $caption }} figure-img{{ end }} px-0">
+                <div class="align-items-center gx-3 gy-3 justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
+                    {{ with $inner }}
+                        {{ . }}
+                    {{ else }}
+                        {{ range $resources }}
+                            {{ partial "paige/image-figure.html" (dict
+                                "captionclass" $captionclass
+                                "captionstyle" $captionstyle
+                                "class" $innerclass
+                                "contentclass" $contentclass
+                                "contentstyle" $contentstyle
+                                "imageclass" $imageclass
+                                "imagestyle" $imagestyle
+                                "link" .RelPermalink
+                                "method" $method
+                                "options" $options
+                                "resource" .
+                                "style" $innerstyle
+                            ) }}
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        {{ else if eq $type "rows" }}
+            {{ $imagestyle = $imagestyle | default "max-height: 10rem" }}
+            <div class="align-items-center column-gap-3 d-flex{{ with $caption }} figure-img{{ end }} flex-wrap justify-content-center row-gap-3">
+                {{ with $inner }}
+                    {{ . }}
+                {{ else }}
+                    {{ range $resources }}
+                        {{ partial "paige/image-figure.html" (dict
+                            "captionclass" $captionclass
+                            "captionstyle" $captionstyle
+                            "class" $innerclass
+                            "contentclass" $contentclass
+                            "contentstyle" $contentstyle
+                            "imageclass" $imageclass
+                            "imagestyle" $imagestyle
+                            "link" .RelPermalink
+                            "method" $method
+                            "options" $options
+                            "resource" .
+                            "style" $innerstyle
+                        ) }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        {{ else }}
+            {{ errorf "invalid type: %q" $type }}
+        {{ end }}
+        {{ with $caption }}
+            <figcaption class="figure-caption text-center">{{ . }}</figcaption>
+        {{ end }}
+    </figure>
+{{ end }}

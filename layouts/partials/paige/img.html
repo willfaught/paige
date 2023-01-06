@@ -1,0 +1,38 @@
+{{ $alt := .alt }}
+{{ $class := .class }}
+{{ $height := .height }}
+{{ $loading := .loading | default "lazy" }}
+{{ $method := .method }}
+{{ $options := .options }}
+{{ $page := .page }}
+{{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
+{{ $resource := .resource }}
+{{ $src := .src }}
+{{ $style := .style }}
+{{ $title := .title }}
+{{ $width := .width }}
+
+{{ if not $resource }}
+    {{ $resource = partial "paige/func-resource.html" (dict
+        "page" $page
+        "url" $src
+    ) }}
+{{ end }}
+
+{{ if and $method $options }}
+    {{ if eq $method "crop" }}
+        {{ $resource = $resource.Crop $options }}
+    {{ else if eq $method "fill" }}
+        {{ $resource = $resource.Fill $options }}
+    {{ else if eq $method "fit" }}
+        {{ $resource = $resource.Fit $options }}
+    {{ else if eq $method "resize" }}
+        {{ $resource = $resource.Resize $options }}
+    {{ else }}
+        {{ errorf "invalid method: %q" $method }}
+    {{ end }}    
+{{ end }}
+
+{{ $src = ($resource | fingerprint).RelPermalink }}
+
+<img {{ with $alt }} alt="{{ . }}" {{ end }} {{ with $class }} class="{{ . }}" {{ end }} {{ with $height }} height="{{ . }}" {{ end }} loading="{{ $loading }}" referrerpolicy="{{ $referrerpolicy }}" src="{{ $src }}" {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} {{ with $width }} width="{{ . }}" {{ end }}>
