@@ -1,0 +1,6 @@
+{{ $class := .class }}
+{{ $content := .content }}
+{{ $href := .href }}
+{{ $style := .style }}
+
+<a {{ with $class }} {{ . }} {{ end }} {{ with $href }} href="{{ . }}" {{ end }} {{ with $style }} {{ . | safeCSS }} {{ end }}>{{ $content }}</a>
