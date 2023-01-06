@@ -1,22 +1,20 @@
+{{ $alt := .Get "alt" }}
 {{ $caption := .Get "caption" }}
 {{ $captionclass := .Get "captionclass" }}
 {{ $captionstyle := .Get "captionstyle" }}
 {{ $class := .Get "class" }}
 {{ $contentclass := .Get "contentclass" }}
 {{ $contentstyle := .Get "contentstyle" }}
-{{ $style := .Get "style" }}
-
-{{ $alt := .Get "alt" }}
 {{ $height := .Get "height" }}
 {{ $imageclass := .Get "imageclass" }}
 {{ $imagestyle := .Get "imagestyle" }}
+{{ $link := .Get "link" }}
 {{ $method := .Get "method" }}
 {{ $options := .Get "options" }}
 {{ $src := .Get 0 | default (.Get "src") }}
+{{ $style := .Get "style" }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
-
-{{ $link := .Get "link" }}
 
 {{ partial "paige/image-figure.html" (dict
     "caption" $caption
