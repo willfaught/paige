@@ -4,10 +4,9 @@
 {{ $class := .Get "class" }}
 {{ $contentclass := .Get "contentclass" | default "mb-2" }}
 {{ $contentstyle := .Get "contentstyle" }}
-{{ $style := .Get "style" }}
-
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $options := .Get "options" }}
+{{ $style := .Get "style" }}
 
 {{ if $caption }}
     {{ $contentclass = $contentclass | default "mb-2" }}
