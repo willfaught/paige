@@ -6,7 +6,7 @@
 {{ $contentstyle := .Get "contentstyle" }}
 {{ $style := .Get "style" }}
 
-{{ $lang := .Get 0 | default (.Get "lang") }}
+{{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $options := .Get "options" }}
 
 {{ if $caption }}
