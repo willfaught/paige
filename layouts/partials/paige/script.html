@@ -1,5 +1,6 @@
 {{ $crossorigin := .crossorigin | default "anonymous" }}
 {{ $defer := .defer | default "defer" }}
+{{ $integrity := .integrity }}
 {{ $onload := .onload | safeJS }}
 {{ $page := .page }}
 {{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
@@ -10,7 +11,7 @@
     "url" $src
 )) | minify | fingerprint }}
 
-{{ $integrity := $resource.Data.Integrity }}
+{{ $integrity = $resource.Data.Integrity }}
 {{ $src = $resource.RelPermalink }}
 
 <script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src }}"></script>
