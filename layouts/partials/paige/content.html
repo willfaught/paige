@@ -1,9 +1,9 @@
 {{ if .Content }}
     <section class="paige-content">
         {{ if .Scratch.Get "paige_show_full_pages" }}
-        {{ .Content }}
+            {{ .Content }}
         {{ else }}
-        {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
+            {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
         {{ end }}
     </section>
 {{ end }}
