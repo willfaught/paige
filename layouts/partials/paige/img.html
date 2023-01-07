@@ -1,5 +1,6 @@
 {{ $alt := .alt }}
 {{ $class := .class }}
+{{ $crossorigin := .crossorigin | default "anonymous" }}
 {{ $fetchpriority := .fetchpriority }}
 {{ $height := .height }}
 {{ $loading := .loading | default "lazy" }}
@@ -39,4 +40,4 @@
     {{ $src = ($resource | fingerprint).RelPermalink }}
 {{ end }}
 
-<img {{ with $alt }} alt="{{ . }}" {{ end }} {{ with $class }} class="{{ . }}" {{ end }} {{ with $fetchpriority }} fetchpriority="{{ . }}" {{ end }} {{ with $height }} height="{{ . }}" {{ end }} loading="{{ $loading }}" referrerpolicy="{{ $referrerpolicy }}" src="{{ $src }}" {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} {{ with $width }} width="{{ . }}" {{ end }}>
+<img {{ with $alt }} alt="{{ . }}" {{ end }} {{ with $class }} class="{{ . }}" {{ end }} {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $fetchpriority }} fetchpriority="{{ . }}" {{ end }} {{ with $height }} height="{{ . }}" {{ end }} loading="{{ $loading }}" referrerpolicy="{{ $referrerpolicy }}" src="{{ $src }}" {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} {{ with $width }} width="{{ . }}" {{ end }}>
