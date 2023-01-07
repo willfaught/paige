@@ -53,124 +53,124 @@ paigeQuery.addEventListener("change", function (e) {
     "src" (.Site.Params.paige.bootstrap.script.script_src | default "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
 ) }}
 {{ if or .Params.paige.math (and .Params.paige.show_full_pages (where .Pages "Params.paige.math" "eq" true)) }}
-{{ partial "paige/script.html" (dict
-    "integrity" .Site.Params.paige.math.script.script_integrity
-    "remote" .Site.Params.paige.math.script.remote
-    "src" (.Site.Params.paige.math.script.script_src | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js")
-) }}
-{{ partial "paige/script.html" (dict
-    "integrity" .Site.Params.paige.math.autorender.script_integrity
-    "onload" "renderMathInElement(document.body);"
-    "remote" .Site.Params.paige.math.autorender.remote
-    "src" (.Site.Params.paige.math.autorender.script_src | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js")
-) }}
+    {{ partial "paige/script.html" (dict
+        "integrity" .Site.Params.paige.math.script.script_integrity
+        "remote" .Site.Params.paige.math.script.remote
+        "src" (.Site.Params.paige.math.script.script_src | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js")
+    ) }}
+    {{ partial "paige/script.html" (dict
+        "integrity" .Site.Params.paige.math.autorender.script_integrity
+        "onload" "renderMathInElement(document.body);"
+        "remote" .Site.Params.paige.math.autorender.remote
+        "src" (.Site.Params.paige.math.autorender.script_src | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js")
+    ) }}
 {{ end }}
 {{ if .Site.GoogleAnalytics }}
-{{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
 {{ end }}
 {{ with .Site.Params.paige.analytics.chartbeat }}
-<script type='text/javascript'>
-(function() {
-    var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
-    _sf_async_config.uid = {{ .account_id }};
-    _sf_async_config.domain = {{ .domain }};
-    _sf_async_config.useCanonical = true;
-    _sf_async_config.useCanonicalDomain = true;
-    function loadChartbeat() {
-        var e = document.createElement('script');
-        var n = document.getElementsByTagName('script')[0];
-        e.type = 'text/javascript';
-        e.async = true;
-        e.src = 'https://static.chartbeat.com/js/chartbeat.js';
-        n.parentNode.insertBefore(e, n);
-    }
-    loadChartbeat();
-})();
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script type='text/javascript'>
+    (function() {
+        var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+        _sf_async_config.uid = {{ .account_id }};
+        _sf_async_config.domain = {{ .domain }};
+        _sf_async_config.useCanonical = true;
+        _sf_async_config.useCanonicalDomain = true;
+        function loadChartbeat() {
+            var e = document.createElement('script');
+            var n = document.getElementsByTagName('script')[0];
+            e.type = 'text/javascript';
+            e.async = true;
+            e.src = 'https://static.chartbeat.com/js/chartbeat.js';
+            n.parentNode.insertBefore(e, n);
+        }
+        loadChartbeat();
+    })();
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.clicky }}
-<script type="text/javascript">
-var clicky_site_ids = clicky_site_ids || [];
-clicky_site_ids.push({{ .account_id }});
-(function() {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = 'https://static.getclicky.com/js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
-})();
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script type="text/javascript">
+    var clicky_site_ids = clicky_site_ids || [];
+    clicky_site_ids.push({{ .account_id }});
+    (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://static.getclicky.com/js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+    })();
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.fathom }}
-<script data-site="{{ .account_id }}" defer src="https://cdn.usefathom.com/script.js"></script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script data-site="{{ .account_id }}" defer src="https://cdn.usefathom.com/script.js"></script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.finteza }}
-<script type="text/javascript">
-(function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&&d.parentNode&&d.parentNode.insertBefore(c,d))})(window,document,"script","{{ .script_url }}","fz");
-fz("register","website","{{ .account_id }}");
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script type="text/javascript">
+    (function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&&d.parentNode&&d.parentNode.insertBefore(c,d))})(window,document,"script","{{ .script_url }}","fz");
+    fz("register","website","{{ .account_id }}");
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.hotjar }}
-<script type="application/javascript">
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:{{ .account_id }},hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script type="application/javascript">
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:{{ .account_id }},hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.matomo }}
-<script type="text/javascript">
-var _paq = window._paq = window._paq || [];
-_paq.push(['trackPageView']);
-_paq.push(['enableLinkTracking']);
-(function() {
-    var u="https://{{ .host_url }}/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '{{ .account_id }}']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-})();
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="https://{{ .host_url }}/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '{{ .account_id }}']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.mixpanel }}
-<script type="text/javascript">
-(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
-MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
-mixpanel.init({{ .token }}, {});
-mixpanel.track('page view');
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+    for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+    MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+    mixpanel.init({{ .token }}, {});
+    mixpanel.track('page view');
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.plausible }}
-<script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.woopra }}
-<script>
-!function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
-woopra.config({
-    domain: {{ .domain }}
-});
-woopra.track();
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script>
+    !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
+    woopra.config({
+        domain: {{ .domain }}
+    });
+    woopra.track();
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.yandex }}
-<script>
-(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-ym("{{ .account_id }}", "init", {});
-</script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
+    <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym("{{ .account_id }}", "init", {});
+    </script>
+    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}

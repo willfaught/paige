@@ -1,16 +1,16 @@
 <meta charset="utf-8">
 {{ with partial "paige/func-authors.html" . }}
-<meta content="{{ . }}" name="author">
+    <meta content="{{ . }}" name="author">
 {{ end }}
 {{ with .Description }}
-<meta content="{{ . }}" name="description">
+    <meta content="{{ . }}" name="description">
 {{ end }}
 {{ if or .Keywords .Params.tags .Params.categories }}
-<meta content="{{ delimit (sort (union (union .Keywords .Params.tags) .Params.categories)) `, ` }}" name="keywords">
+    <meta content="{{ delimit (sort (union (union .Keywords .Params.tags) .Params.categories)) `, ` }}" name="keywords">
 {{ end }}
 <meta content="{{ .Site.Params.paige.color | default `#0d6efd` }}" name="msapplication-TileColor">
 {{ if ne (relLangURL "browserconfig.xml") "/browserconfig.xml" }}
-<meta content="{{ relLangURL `browserconfig.xml` }}" name="msapplication-config" >
+    <meta content="{{ relLangURL `browserconfig.xml` }}" name="msapplication-config" >
 {{ end }}
 <meta content="{{ .Site.Params.paige.color | default `#0d6efd` }}" name="theme-color">
 <meta content="width=device-width, initial-scale=1" name="viewport">

@@ -1,8 +1,8 @@
 {{ $authors := partial "paige/func-authors.html" . }}
 {{ if or $authors .PublishDate}}
-<p class="text-center text-secondary">
-    {{- with $authors }}{{ . }}{{ end -}}
-    {{- if and $authors .PublishDate }}<br>{{ end -}}
-    {{- with .PublishDate }}<time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.date_format | default ":date_long") . }}</time>{{ end -}}
-</p>
+    <p class="text-center text-secondary">
+        {{- with $authors }}{{ . }}{{ end -}}
+        {{- if and $authors .PublishDate }}<br>{{ end -}}
+        {{- with .PublishDate }}<time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.date_format | default ":date_long") . }}</time>{{ end -}}
+    </p>
 {{ end }}

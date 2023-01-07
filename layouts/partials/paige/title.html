@@ -1,8 +1,8 @@
 {{ if .Title }}
-{{ $class := "display-5" }}
-{{ if .IsHome }}
-{{ $class = "display-1" }}
-{{ end }}
-{{ $title := .Title | markdownify }}
-<h1 class="{{ $class }} fw-bold text-center">{{ if .Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if .Scratch.Get "paige_show_full_pages" }}<a class="paige-header-link" href="{{ .RelPermalink }}">#</a>{{ end }}</h1>
+    {{ $class := "display-5" }}
+    {{ if .IsHome }}
+        {{ $class = "display-1" }}
+    {{ end }}
+    {{ $title := .Title | markdownify }}
+    <h1 class="{{ $class }} fw-bold text-center">{{ if .Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if .Scratch.Get "paige_show_full_pages" }}<a class="paige-header-link" href="{{ .RelPermalink }}">#</a>{{ end }}</h1>
 {{ end }}

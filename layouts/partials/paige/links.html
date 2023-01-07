@@ -2,7 +2,7 @@
 <link href="{{ relLangURL `favicon-16x16.png` }}" rel="icon" sizes="16x16" type="image/png">
 <link href="{{ relLangURL `favicon-32x32.png` }}" rel="icon" sizes="32x32" type="image/png">
 {{ if ne (relLangURL "favicon.ico") "/favicon.ico" }}
-<link href="{{ relLangURL `favicon.ico` }}" rel="shortcut icon">
+    <link href="{{ relLangURL `favicon.ico` }}" rel="shortcut icon">
 {{ end }}
 <link href="{{ relLangURL `favicon.png` }}" rel="icon" type="image/png">
 <link href="{{ relLangURL `favicon.svg` }}" rel="icon" type="image/svg+xml">
@@ -19,15 +19,15 @@
     "remote" .Site.Params.paige.bootstrap.style.remote
 ) }}
 {{ if or .Params.paige.math (and .Params.paige.show_full_pages (where .Pages "Params.paige.math" "eq" true)) }}
-{{ partial "paige/link.html" (dict
-    "href" (.Site.Params.paige.math.style.link_href | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
-    "integrity" (.Site.Params.paige.math.style.link_integrity | default "sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=")
-    "remote" true
-) }}
+    {{ partial "paige/link.html" (dict
+        "href" (.Site.Params.paige.math.style.link_href | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
+        "integrity" (.Site.Params.paige.math.style.link_integrity | default "sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=")
+        "remote" true
+    ) }}
 {{ end }}
 {{ if .AlternativeOutputFormats }}
-{{ $title := partial "paige/func-title.html" . }}
-{{ range .AlternativeOutputFormats }}
-<link href="{{ .Permalink }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
-{{ end }}
+    {{ $title := partial "paige/func-title.html" . }}
+    {{ range .AlternativeOutputFormats }}
+        <link href="{{ .Permalink }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
+    {{ end }}
 {{ end }}
