@@ -1,1 +1,19 @@
-<link{{ if ne .href (urls.Parse .href).Path }} crossorigin="anonymous"{{ end }} href="{{ partial `paige/func-url.html` .href }}" integrity="{{ .integrity }}" rel="stylesheet">
+{{ $crossorigin := .crossorigin | default "anonymous" }}
+{{ $href := .href }}
+{{ $integrity := .integrity }}
+{{ $page := .page }}
+{{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
+{{ $remote := .remote }}
+
+{{ if $remote }}
+    {{ $href = relLangURL $href }}
+{{ else }}
+    {{ $resource := (partial "paige/func-resource.html" (dict
+        "page" $page
+        "url" $href
+    )) | minify | fingerprint }}
+    {{ $href = $resource.RelPermalink }}
+    {{ $integrity = $resource.Data.Integrity }}
+{{ end }}
+
+<link {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} href="{{ $href }}" integrity="{{ $integrity }}" {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
