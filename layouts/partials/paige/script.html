@@ -1,4 +1,4 @@
-{{ $crossorigin := .crossorigin }}
+{{ $crossorigin := .crossorigin | default "anonymous" }}
 {{ $defer := .defer | default "defer" }}
 {{ $onload := .onload | safeJS }}
 {{ $page := .page }}
