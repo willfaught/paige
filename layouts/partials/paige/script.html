@@ -1,7 +1,8 @@
 {{ $crossorigin := .crossorigin | default "anonymous" }}
+{{ $defer := .defer | default "defer" }}
 {{ $href := .href }}
 {{ $integrity := .integrity }}
 {{ $onload := .onload | safeJS }}
 {{ $src := .src }}
 
-<script {{ if ne $href (urls.Parse $href).Path }} {{ with $crossorigin }} crossorigin="{{ $anonymous }}" {{ end }} defer integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
+<script {{ if ne $href (urls.Parse $href).Path }} {{ with $crossorigin }} crossorigin="{{ $anonymous }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
