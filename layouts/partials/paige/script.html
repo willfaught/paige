@@ -5,4 +5,4 @@
 {{ $onload := .onload | safeJS }}
 {{ $src := .src }}
 
-<script {{ if ne $href (urls.Parse $href).Path }} {{ with $crossorigin }} crossorigin="{{ $anonymous }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
+<script {{ if ne $href (urls.Parse $href).Path }} {{ with $crossorigin }} crossorigin="{{ $anonymous }}" {{ end }} {{ with $defer }} defer {{ end }} {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $onload }} onload="{{ . }}" {{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
