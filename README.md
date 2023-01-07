@@ -116,7 +116,27 @@ Update:
 $ hugo mod get -u
 ```
 
-### Option 2: Use a Git submodule
+### Option 2: Use a Git subtree
+
+Example `config.yaml`:
+
+```yaml
+theme: "paige"
+```
+
+Install:
+
+```sh
+$ git subtree add --prefix themes/paige --squash https://github.com/willfaught/paige.git master
+```
+
+Update:
+
+```sh
+$ git subtree pull --prefix themes/paige --squash https://github.com/willfaught/paige.git master
+```
+
+### Option 3: Use a Git submodule
 
 Example `config.yaml`:
 
@@ -139,7 +159,7 @@ $ cd yourproject
 $ git submodule update --recursive --remote
 ```
 
-### Option 3: Use a copy
+### Option 4: Use a copy
 
 Example `config.yaml`:
 
