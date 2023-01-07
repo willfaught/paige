@@ -1,7 +1,7 @@
 ---
 categories: [paige]
 date: "2023-01-02"
-description: Demonstration of the code shortcode.
+description: Demonstration of the Paige code shortcode.
 tags: [figures, shortcodes]
 title: Code Shortcode
 ---

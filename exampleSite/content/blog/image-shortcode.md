@@ -1,7 +1,7 @@
 ---
 categories: [paige]
 date: "2023-01-03"
-description: Demonstration of the image shortcode.
+description: Demonstration of the Paige image shortcode.
 tags: [figures, shortcodes]
 title: Image Shortcode
 ---
