@@ -106,6 +106,7 @@ module:
 Install:
 
 ```sh
+$ cd yourproject
 $ hugo mod init github.com/youraccount/yourproject
 $ hugo mod get github.com/willfaught/paige
 ```
@@ -113,6 +114,7 @@ $ hugo mod get github.com/willfaught/paige
 Update:
 
 ```sh
+$ cd yourproject
 $ hugo mod get -u
 ```
 
@@ -127,12 +129,14 @@ theme: "paige"
 Install:
 
 ```sh
+$ cd yourproject
 $ git subtree add --prefix themes/paige --squash https://github.com/willfaught/paige master
 ```
 
 Update:
 
 ```sh
+$ cd yourproject
 $ git subtree pull --prefix themes/paige --squash https://github.com/willfaught/paige master
 ```
 
