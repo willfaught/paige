@@ -3,4 +3,4 @@
 {{ $onload := .onload | safeJS }}
 {{ $src := .src }}
 
-<script{{ if ne $href (urls.Parse $href).Path }} crossorigin="anonymous"{{ end }} defer integrity="{{ $integrity }}"{{ with $onload }} onload="{{ . }}"{{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
+<script {{ if ne $href (urls.Parse $href).Path }} crossorigin="anonymous" {{ end }} defer integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
