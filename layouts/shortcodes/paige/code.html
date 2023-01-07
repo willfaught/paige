@@ -1,26 +1,10 @@
 {{ $caption := .Get "caption" }}
-{{ $captionclass := .Get "captionclass" }}
-{{ $captionstyle := .Get "captionstyle" }}
-{{ $class := .Get "class" }}
-{{ $contentclass := .Get "contentclass" | default "mb-2" }}
-{{ $contentstyle := .Get "contentstyle" }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $options := .Get "options" }}
-{{ $style := .Get "style" }}
-
-{{ if $caption }}
-    {{ $contentclass = $contentclass | default "mb-2" }}
-{{ end }}
 
 {{ $content := highlight (.Inner | replaceRE "^\n" "") $lang $options }}
 
 {{ partial "paige/figure.html" (dict
     "caption" $caption
-    "captionclass" $captionclass
-    "captionstyle" $captionstyle
-    "class" $class
     "content" $content
-    "contentclass" $contentclass
-    "contentstyle" $contentstyle
-    "style" $style
 ) }}

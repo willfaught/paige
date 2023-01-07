@@ -1,15 +1,9 @@
 {{ $caption := .caption | markdownify }}
-{{ $captionclass := .captionclass | default "figure-caption" }}
-{{ $captionstyle := .captionstyle }}
-{{ $class := .class | default "align-items-center d-flex flex-column justify-content-center paige-figure" }}
 {{ $content := .content | markdownify }}
-{{ $contentclass := .contentclass }}
-{{ $contentstyle := .contentstyle }}
-{{ $style := .style }}
 
-<figure {{ with $class }} class="{{ . }}" {{ end }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }}>
-    <div {{ with $contentclass }} class="{{ . }}" {{ end }} {{ with $contentstyle }} style="{{ . | safeCSS }}" {{ end }}>{{ $content }}</div>
+<figure class="align-items-center d-flex flex-column justify-content-center paige-figure">
+    <div {{ if $caption }} class="mb-2" {{ end }}>{{ $content }}</div>
     {{ with $caption }}
-        <figcaption {{ with $captionclass }} class="{{ . }}" {{ end }} {{ with $captionstyle }} style="{{ . | safeCSS }}" {{ end }}>{{ . }}</figcaption>
+        <figcaption class="figure-caption">{{ . }}</figcaption>
     {{ end }}
 </figure>

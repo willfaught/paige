@@ -1,25 +1,15 @@
+{{ $align := .Get "align" | default "center" }}
 {{ $caption := .Get "caption" }}
-{{ $captionclass := .Get "captionclass" }}
-{{ $captionstyle := .Get "captionstyle" }}
-{{ $class := .Get "class" }}
-{{ $contentclass := .Get "contentclass" }}
-{{ $contentstyle := .Get "contentstyle" }}
+{{ $height := .Get "height" }}
 {{ $image := .Get "image" }}
-{{ $imageclass := .Get "imageclass" }}
 {{ $images := .Get 0 | default (.Get "images") }}
-{{ $imagestyle := .Get "imagestyle" }}
-{{ $innercaptionclass := .Get "innercaptionclass" }}
-{{ $innercaptionstyle := .Get "innercaptionstyle" }}
-{{ $innerclass := .Get "innerclass" | default "d-table mb-0" }}
-{{ $innerstyle := .Get "innerstyle" }}
+{{ $justify := .Get "justify" | default "center" }}
 {{ $method := .Get "method" | default "resize" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
-{{ $style := .Get "style" }}
 {{ $type := .Get "type" | default "rows" }}
+{{ $width := .Get "width" }}
 
 {{ if $image }}
-    {{ $captionclass = $captionclass | default "figure-caption text-center" }}
-    {{ $captionstyle = $captionstyle | default "caption-side: bottom; display: table-caption" }}
     {{ $resource := partial "paige/func-resource.html" (dict
         "page" .Page
         "url" $image
@@ -27,20 +17,13 @@
 
     {{ partial "paige/image-figure.html" (dict
         "caption" $caption
-        "captionclass" $captionclass
-        "captionstyle" $captionstyle
-        "class" $innerclass
-        "contentclass" $contentclass
-        "contentstyle" $contentstyle
-        "imageclass" $imageclass
-        "imagestyle" $imagestyle
         "link" $resource.RelPermalink
         "method" $method
         "options" $options
         "page" .Page
         "resource" $resource
         "src" $image
-        "style" $innerstyle
+        "table" true
     ) }}
 {{ else }}
     {{ $inner := chomp .Inner }}
@@ -63,49 +46,35 @@
     <figure>
         {{ if eq $type "grid" }}
             <div class="container-fluid{{ if $caption }} figure-img{{ end }} px-0">
-                <div class="align-items-center gx-3 gy-3 justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
+                <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
                     {{ with $inner }}
                         {{ . }}
                     {{ else }}
                         {{ range $resources }}
                             {{ partial "paige/image-figure.html" (dict
-                                "captionclass" $captionclass
-                                "captionstyle" $captionstyle
-                                "class" $innerclass
-                                "contentclass" $contentclass
-                                "contentstyle" $contentstyle
-                                "imageclass" $imageclass
-                                "imagestyle" $imagestyle
                                 "link" .RelPermalink
                                 "method" $method
                                 "options" $options
                                 "resource" .
-                                "style" $innerstyle
+                                "table" true
                             ) }}
                         {{ end }}
                     {{ end }}
                 </div>
             </div>
         {{ else if eq $type "rows" }}
-            {{ $imagestyle = $imagestyle | default "max-height: 10rem" }}
-            <div class="align-items-center column-gap-3 d-flex{{ with $caption }} figure-img{{ end }} flex-wrap justify-content-center row-gap-3">
+            <div class="align-items-{{ $align }} column-gap-3 d-flex{{ with $caption }} figure-img{{ end }} flex-wrap justify-content-{{ $justify }} row-gap-3">
                 {{ with $inner }}
                     {{ . }}
                 {{ else }}
                     {{ range $resources }}
                         {{ partial "paige/image-figure.html" (dict
-                            "captionclass" $captionclass
-                            "captionstyle" $captionstyle
-                            "class" $innerclass
-                            "contentclass" $contentclass
-                            "contentstyle" $contentstyle
-                            "imageclass" $imageclass
-                            "imagestyle" $imagestyle
+                            "height" "10rem"
                             "link" .RelPermalink
                             "method" $method
                             "options" $options
                             "resource" .
-                            "style" $innerstyle
+                            "table" true
                         ) }}
                     {{ end }}
                 {{ end }}
