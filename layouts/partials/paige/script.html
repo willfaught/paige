@@ -3,6 +3,7 @@
 {{ $href := .href }}
 {{ $integrity := .integrity }}
 {{ $onload := .onload | safeJS }}
+{{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
 {{ $src := .src }}
 
-<script {{ if ne $href (urls.Parse $href).Path }} {{ with $crossorigin }} crossorigin="{{ $anonymous }}" {{ end }} {{ with $defer }} defer {{ end }} {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $onload }} onload="{{ . }}" {{ end }} referrerpolicy="no-referrer" src="{{ partial `paige/func-url.html` $src }}"></script>
+<script {{ if ne $href (urls.Parse $href).Path }} {{ with $crossorigin }} crossorigin="{{ $anonymous }}" {{ end }} {{ with $defer }} defer {{ end }} {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ partial `paige/func-url.html` $src }}"></script>
