@@ -127,13 +127,13 @@ theme: "paige"
 Install:
 
 ```sh
-$ git subtree add --prefix themes/paige --squash https://github.com/willfaught/paige.git master
+$ git subtree add --prefix themes/paige --squash https://github.com/willfaught/paige master
 ```
 
 Update:
 
 ```sh
-$ git subtree pull --prefix themes/paige --squash https://github.com/willfaught/paige.git master
+$ git subtree pull --prefix themes/paige --squash https://github.com/willfaught/paige master
 ```
 
 ### Option 3: Use a Git submodule
