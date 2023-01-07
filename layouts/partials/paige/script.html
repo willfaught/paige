@@ -4,14 +4,18 @@
 {{ $onload := .onload | safeJS }}
 {{ $page := .page }}
 {{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
+{{ $remote := .remote }}
 {{ $src := .src }}
 
-{{ $resource := (partial `paige/func-resource.html` (dict
-    "page" $page
-    "url" $src
-)) | minify | fingerprint }}
-
-{{ $integrity = $resource.Data.Integrity }}
-{{ $src = $resource.RelPermalink }}
+{{ if $remote }}
+    {{ $src = relLangURL $src }}
+{{ else }}
+    {{ $resource := (partial "paige/func-resource.html" (dict
+        "page" $page
+        "url" $src
+    )) | minify | fingerprint }}
+    {{ $integrity = $resource.Data.Integrity }}
+    {{ $src = $resource.RelPermalink }}
+{{ end }}
 
 <script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src }}"></script>
