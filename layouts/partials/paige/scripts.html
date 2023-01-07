@@ -46,7 +46,6 @@ paigeQuery.addEventListener("change", function (e) {
 });
 {{ end }}
 </script>
-<noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ partial "paige/script.html" (dict
     "integrity" .Site.Params.paige.bootstrap.script.script_integrity
     "remote" .Site.Params.paige.bootstrap.script.remote
@@ -87,7 +86,6 @@ paigeQuery.addEventListener("change", function (e) {
         loadChartbeat();
     })();
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.clicky }}
     <script type="text/javascript">
@@ -101,18 +99,15 @@ paigeQuery.addEventListener("change", function (e) {
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
     })();
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.fathom }}
     <script data-site="{{ .account_id }}" defer src="https://cdn.usefathom.com/script.js"></script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.finteza }}
     <script type="text/javascript">
     (function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&&d.parentNode&&d.parentNode.insertBefore(c,d))})(window,document,"script","{{ .script_url }}","fz");
     fz("register","website","{{ .account_id }}");
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.hotjar }}
     <script type="application/javascript">
@@ -125,7 +120,6 @@ paigeQuery.addEventListener("change", function (e) {
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.matomo }}
     <script type="text/javascript">
@@ -140,7 +134,6 @@ paigeQuery.addEventListener("change", function (e) {
         g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.mixpanel }}
     <script type="text/javascript">
@@ -150,11 +143,9 @@ paigeQuery.addEventListener("change", function (e) {
     mixpanel.init({{ .token }}, {});
     mixpanel.track('page view');
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.plausible }}
     <script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.woopra }}
     <script>
@@ -164,7 +155,6 @@ paigeQuery.addEventListener("change", function (e) {
     });
     woopra.track();
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
 {{ with .Site.Params.paige.analytics.yandex }}
     <script>
@@ -172,5 +162,5 @@ paigeQuery.addEventListener("change", function (e) {
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     ym("{{ .account_id }}", "init", {});
     </script>
-    <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ end }}
+<noscript>{{ i18n "paige_noscript" }}</noscript>
