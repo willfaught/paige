@@ -22,15 +22,15 @@ section[class="paige-content"] > div {
 }
 
 {{ with .Site.Params.paige.content_max_width }}
-section[class="paige-content"], section[class="paige-toc"] {
-    max-width: {{ . }};
-}
+    section[class="paige-content"], section[class="paige-toc"] {
+        max-width: {{ . }};
+    }
 {{ end }}
 
 {{ with .Site.Params.paige.metadata_max_width }}
-section[class="paige-metadata"] {
-    max-width: {{ . }};
-}
+    section[class="paige-metadata"] {
+        max-width: {{ . }};
+    }
 {{ end }}
 
 .paige-figure > div > div[class="highlight"] > pre, .paige-figure > div > :last-child {
@@ -49,18 +49,18 @@ section[class="paige-metadata"] {
 }
 
 {{ with .Site.Params.paige.color_scheme }}
-{{ if eq . "dark" }}
-{{ partial "paige/dark.css" . | safeCSS }}
-{{ else if eq . "light" }}
-{{ partial "paige/light.css" . | safeCSS }}
-{{ end }}
+    {{ if eq . "dark" }}
+        {{ partial "paige/dark.css" . | safeCSS }}
+    {{ else if eq . "light" }}
+        {{ partial "paige/light.css" . | safeCSS }}
+    {{ end }}
 {{ else }}
-@media (prefers-color-scheme: dark) {
-    {{ partial "paige/dark.css" . | safeCSS }}
-}
+    @media (prefers-color-scheme: dark) {
+        {{ partial "paige/dark.css" . | safeCSS }}
+    }
 
-@media (prefers-color-scheme: light) {
-    {{ partial "paige/light.css" . | safeCSS }}
-}
+    @media (prefers-color-scheme: light) {
+        {{ partial "paige/light.css" . | safeCSS }}
+    }
 {{ end }}
 </style>

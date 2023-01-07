@@ -1,37 +1,37 @@
 {{ if .Pages }}
-{{ if .Params.paige.show_full_pages }}
-{{ $p := .Paginate .Pages }}
-<section>
-    {{ range $p.Pages }}
-    {{ .Scratch.Set "paige_show_full_pages" true }}
-    {{ partial "paige/article.html" . }}
+    {{ if .Params.paige.show_full_pages }}
+        {{ $p := .Paginate .Pages }}
+        <section>
+            {{ range $p.Pages }}
+                {{ .Scratch.Set "paige_show_full_pages" true }}
+                {{ partial "paige/article.html" . }}
+            {{ end }}
+        </section>
+        {{ if or $p.HasPrev $p.HasNext }}
+            <section>
+                <div class="d-flex justify-content-center">
+                    {{ partial "paige/pagination.html" . }}
+                </div>
+            </section>
+        {{ end }}
+    {{ else }}
+        {{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
+        <section>
+            {{ range $p.PageGroups }}
+                <h5 class="text-center">{{ .Key }}</h5>
+                {{ range .Pages }}
+                    <p class="text-center">
+                        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ with .Description }}<br>{{ . | markdownify }}{{ end }}
+                    </p>
+                {{ end }}
+            {{ end }}
+        </section>
+        {{ if or $p.HasPrev $p.HasNext }}
+            <section>
+                <div class="d-flex justify-content-center">
+                    {{ partial "paige/pagination.html" . }}
+                </div>
+            </section>
+        {{ end }}
     {{ end }}
-</section>
-{{ if or $p.HasPrev $p.HasNext }}
-<section>
-    <div class="d-flex justify-content-center">
-        {{ partial "paige/pagination.html" . }}
-    </div>
-</section>
-{{ end }}
-{{ else }}
-{{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
-<section>
-    {{ range $p.PageGroups }}
-    <h5 class="text-center">{{ .Key }}</h5>
-    {{ range .Pages }}
-    <p class="text-center">
-        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ with .Description }}<br>{{ . | markdownify }}{{ end }}
-    </p>
-    {{ end }}
-    {{ end }}
-</section>
-{{ if or $p.HasPrev $p.HasNext }}
-<section>
-    <div class="d-flex justify-content-center">
-        {{ partial "paige/pagination.html" . }}
-    </div>
-</section>
-{{ end }}
-{{ end }}
 {{ end }}
