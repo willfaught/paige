@@ -48,14 +48,20 @@ paigeQuery.addEventListener("change", function (e) {
 </script>
 <noscript>{{ i18n "paige_noscript" }}</noscript>
 {{ partial "paige/script.html" (dict
+    "integrity" .Site.Params.paige.bootstrap.script.script_integrity
+    "remote" .Site.Params.paige.bootstrap.script.remote
     "src" (.Site.Params.paige.bootstrap.script.script_src | default "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
 ) }}
 {{ if or .Params.paige.math (and .Params.paige.show_full_pages (where .Pages "Params.paige.math" "eq" true)) }}
 {{ partial "paige/script.html" (dict
+    "integrity" .Site.Params.paige.math.script.script_integrity
+    "remote" .Site.Params.paige.math.script.remote
     "src" (.Site.Params.paige.math.script.script_src | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js")
 ) }}
 {{ partial "paige/script.html" (dict
+    "integrity" .Site.Params.paige.math.autorender.script_integrity
     "onload" "renderMathInElement(document.body);"
+    "remote" .Site.Params.paige.math.autorender.remote
     "src" (.Site.Params.paige.math.autorender.script_src | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js")
 ) }}
 {{ end }}
