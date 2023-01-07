@@ -1,0 +1,19 @@
+{{ $align := .Get "align" | default "center" }}
+{{ $caption := .Get "caption" }}
+{{ $cite := .Get 0 | default (.Get "cite") }}
+
+{{ $caption = $caption | markdownify }}
+{{ $cite = $cite | markdownify }}
+{{ $content := .Inner | markdownify }}
+
+<figure class="d-flex align-items-center flex-column paige-figure">
+    <div>
+        <blockquote class="blockquote {{ if $caption }} mb-2 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
+        {{ with $caption }}
+            <figcaption class="figure-caption text-center">{{ . }}</figcaption>
+        {{ end }}
+        {{ with $cite }}
+            <figcaption class="blockquote-footer figure-caption text-{{ $align }}">{{ . }}</figcaption>
+        {{ end }}
+    </div>
+</figure>
