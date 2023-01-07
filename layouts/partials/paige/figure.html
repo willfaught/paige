@@ -2,7 +2,7 @@
 {{ $content := .content | markdownify }}
 
 <figure class="align-items-center d-flex flex-column justify-content-center paige-figure">
-    <div {{ if $caption }} class="mb-2" {{ end }}>{{ $content }}</div>
+    <div class="{{ if $caption }} mb-2 {{ end }} mw-100">{{ $content }}</div>
     {{ with $caption }}
         <figcaption class="figure-caption">{{ . }}</figcaption>
     {{ end }}
