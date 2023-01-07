@@ -1,6 +1,6 @@
 ---
 categories: [paige]
-date: "2023-01-06"
+date: "2023-01-01"
 description: Demonstration of the figure shortcode.
 tags: [figures, shortcodes]
 title: Figure Shortcode
