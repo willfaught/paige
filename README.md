@@ -264,7 +264,7 @@ paige:
     examplesite:
       icon: example-icon # Bootstrap icon name
       link: https://example.com/username
-      name: Example Name # Used for screen readers
+      name: Example Site # Used for screen readers
 ```
 
 If you set `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.
