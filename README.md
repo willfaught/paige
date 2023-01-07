@@ -197,6 +197,9 @@ $ hugo server -D
 
 ## Configure
 
+All configuration settings have sensible defaults.
+No manual configuration is required.
+
 Optional site parameters:
 
 ```yaml
