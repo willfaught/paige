@@ -1,6 +1,6 @@
 ---
 date: "2023-01-04"
-description: Demonstration of the gallery shortcode.
+description: Demonstration of the Paige gallery shortcode.
 title: Gallery Shortcode
 ---
 
