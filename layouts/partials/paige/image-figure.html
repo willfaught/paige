@@ -1,37 +1,30 @@
 {{ $alt := .alt }}
 {{ $caption := .caption }}
-{{ $captionclass := .captionclass }}
-{{ $captionstyle := .captionstyle }}
-{{ $class := .class }}
-{{ $contentclass := .contentclass }}
-{{ $contentstyle := .contentstyle }}
 {{ $height := .height }}
-{{ $imageclass := .imageclass | default "img-fluid" }}
-{{ $imagestyle := .imagestyle }}
 {{ $link := .link }}
 {{ $method := .method }}
 {{ $options := .options }}
 {{ $page := .page }}
 {{ $resource := .resource }}
 {{ $src := .src }}
-{{ $style := .style }}
+{{ $table := .table }}
 {{ $title := .title }}
 {{ $width := .width }}
 
-{{ if and (not $contentclass) $caption }}
-    {{ $contentclass = "figure-img" }}
+{{ $class := "img-fluid" }}
+{{ if $caption }}
+    {{ $class = "figure-img img-fluid" }}
 {{ end }}
 
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt
-    "class" $imageclass
+    "class" $class
     "height" $height
     "method" $method
     "options" $options
     "page" $page
     "resource" $resource
     "src" $src
-    "style" $imagestyle
     "title" $title
     "width" $width
 ) }}
@@ -43,13 +36,9 @@
     ) }}
 {{ end }}
 
-{{ partial "paige/figure.html" (dict
-    "caption" $caption
-    "captionclass" $captionclass
-    "captionstyle" $captionstyle
-    "class" $class
-    "content" $content
-    "contentclass" $contentclass
-    "contentstyle" $contentstyle
-    "style" $style
-) }}
+<figure class="{{ if $table }} d-table mb-0 {{ end }} paige-figure text-center">
+    {{ $content }}
+    {{ with $caption }}
+        <figcaption class="figure-caption" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+    {{ end }}
+</figure>

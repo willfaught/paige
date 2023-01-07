@@ -3,4 +3,4 @@
 {{ $href := .href }}
 {{ $style := .style }}
 
-<a {{ with $class }} {{ . }} {{ end }} {{ with $href }} href="{{ . }}" {{ end }} {{ with $style }} {{ . | safeCSS }} {{ end }}>{{ $content }}</a>
+<a {{ with $class }} class="{{ . }}" {{ end }} {{ with $href }} href="{{ . }}" {{ end }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }}>{{ $content }}</a>
