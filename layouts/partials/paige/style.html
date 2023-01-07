@@ -47,9 +47,21 @@ section[class="paige-content"] > div {
 }
 
 .paige-header-link {
-    display: none;
     margin-left: 0.5ch;
+    opacity: 0;
     position: absolute;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .paige-header-link {
+        transition: none;
+    }
+}
+
+.paige-header-link:focus, .paige-header-link:hover, :hover > .paige-header-link, :target > .paige-header-link {
+    opacity: 1;
 }
 
 {{ with .Site.Params.paige.color_scheme }}
