@@ -2,27 +2,25 @@
 <article>
     {{ partial "paige/metadata.html" . }}
     <section>
-        {{ with .Params.stretch_url }}
-        <p>
-            {{ partial "paige/img.html" (dict
-                "class" "mw-100 rounded-4 shadow"
-                "fetchpriority" "high"
-                "loading" "eager"
-                "src" .
-                "style" "height: 20rem; object-fit: cover; width: 100%"
-            ) }}
-        </p>
-        {{ end }}
-        {{ with .Params.center_url }}
-        <p class="text-center">
-            {{ partial "paige/img.html" (dict
-                "class" "mw-100 rounded-4 shadow"
-                "fetchpriority" "high"
-                "loading" "eager"
-                "src" .
-                "style" "height: 20rem"
-            ) }}
-        </p>
+        {{ if .Params.image_url }}
+            {{ $class := "mw-100 rounded-4 shadow" }}
+            {{ if .Params.image_stretch }}
+                {{ $class = "rounded-4 shadow w-100" }}
+            {{ end }}
+            {{ $style := "height: 20rem" }}
+            {{ if .Params.image_stretch }}
+                {{ $style = "height: 20rem; object-fit: cover" }}
+            {{ end }}
+            <p {{ if not .Params.image_stretch }} class="text-center" {{ end }}>
+                {{ partial "paige/img.html" (dict
+                    "class" $class
+                    "fetchpriority" "high"
+                    "loading" "eager"
+                    "raw" .Params.image_raw
+                    "src" .Params.image_url
+                    "style" $style
+                ) }}
+            </p>
         {{ end }}
         {{ with .Params.greeting }}
         <p class="display-5 fw-bold h2 text-center">{{ . | markdownify }}</p>

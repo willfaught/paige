@@ -4,15 +4,15 @@
 {{ $onload := .onload | safeJS }}
 {{ $page := .page }}
 {{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
-{{ $remote := .remote }}
+{{ $raw := .raw }}
 {{ $src := .src }}
 
-{{ if $remote }}
+{{ if $raw }}
     {{ $src = relLangURL $src }}
 {{ else }}
     {{ $resource := (partial "paige/func-resource.html" (dict
         "page" $page
-        "url" $src
+        "url" (relLangURL $src)
     )) | minify | fingerprint }}
     {{ $integrity = $resource.Data.Integrity }}
     {{ $src = $resource.RelPermalink }}

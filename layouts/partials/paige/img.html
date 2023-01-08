@@ -2,26 +2,27 @@
 {{ $class := .class }}
 {{ $crossorigin := .crossorigin | default "anonymous" }}
 {{ $fetchpriority := .fetchpriority }}
+{{ $fingerprint := .fingerprint | default true }}
 {{ $height := .height }}
 {{ $loading := .loading | default "lazy" }}
 {{ $method := .method }}
 {{ $options := .options }}
 {{ $page := .page }}
+{{ $raw := .raw }}
 {{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
-{{ $remote := .remote }}
 {{ $resource := .resource }}
 {{ $src := .src }}
 {{ $style := .style }}
 {{ $title := .title }}
 {{ $width := .width }}
 
-{{ if $remote }}
+{{ if $raw }}
     {{ $src = relLangURL $src }}
 {{ else }}
     {{ if not $resource }}
         {{ $resource = partial "paige/func-resource.html" (dict
             "page" $page
-            "url" $src
+            "url" (relLangURL $src)
         ) }}
     {{ end }}
     {{ if and $method $options }}
@@ -37,7 +38,10 @@
             {{ errorf "invalid method: %q" $method }}
         {{ end }}
     {{ end }}
-    {{ $src = ($resource | fingerprint).RelPermalink }}
+    {{ if $fingerprint }}
+        {{ $resource = $resource | fingerprint }}
+    {{ end }}
+    {{ $src = $resource.RelPermalink }}
 {{ end }}
 
 <img {{ with $alt }} alt="{{ . }}" {{ end }} {{ with $class }} class="{{ . }}" {{ end }} {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $fetchpriority }} fetchpriority="{{ . }}" {{ end }} {{ with $height }} height="{{ . }}" {{ end }} loading="{{ $loading }}" referrerpolicy="{{ $referrerpolicy }}" src="{{ $src }}" {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} {{ with $width }} width="{{ . }}" {{ end }}>

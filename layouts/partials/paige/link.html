@@ -2,15 +2,15 @@
 {{ $href := .href }}
 {{ $integrity := .integrity }}
 {{ $page := .page }}
+{{ $raw := .raw }}
 {{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
-{{ $remote := .remote }}
 
-{{ if $remote }}
+{{ if $raw }}
     {{ $href = relLangURL $href }}
 {{ else }}
     {{ $resource := (partial "paige/func-resource.html" (dict
         "page" $page
-        "url" $href
+        "url" (relLangURL $href)
     )) | minify | fingerprint }}
     {{ $href = $resource.RelPermalink }}
     {{ $integrity = $resource.Data.Integrity }}
