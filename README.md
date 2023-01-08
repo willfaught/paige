@@ -506,6 +506,16 @@ title: Search
 
 ## Shortcodes
 
+### Figure
+
+The `paige/figure` shortcode provides a figure with centered content and an optional, centered caption.
+
+```
+{{< paige/figure caption="My caption" >}}
+My content
+{{< /paige/figure >}}
+```
+
 ### Code
 
 The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
