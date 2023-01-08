@@ -3,7 +3,7 @@
         {{ if .Scratch.Get "paige_show_full_pages" }}
             {{ .Content }}
         {{ else }}
-            {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
+            {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
         {{ end }}
     </section>
 {{ end }}
