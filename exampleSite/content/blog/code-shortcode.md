@@ -162,7 +162,7 @@ float Q_rsqrt( float number )
 
 Result:
 
-{{< paige/code lang="python" caption="Fast inverse square root" options="linenos=true,hl_lines=10" >}}
+{{< paige/code lang="c" caption="Fast inverse square root" options="linenos=true,hl_lines=10" >}}
 float Q_rsqrt( float number )
 {
 	long i;
