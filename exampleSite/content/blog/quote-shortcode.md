@@ -90,42 +90,35 @@ Code:
 
 ```go-text-template
 {{</* paige/quote caption="Hickory Dickory Dock" align="start" */>}}
-<pre class="paige-font-inherit">
-Hickory dickory dock.
+<div style="white-space: pre">Hickory dickory dock.
 The mouse ran up the clock.
 The clock struck one,
 The mouse ran down,
-Hickory dickory dock.
-</pre>
+Hickory dickory dock.</div>
 {{</* /paige/quote */>}}
 
 {{</* paige/quote cite="Hickory Dickory Dock" align="end" */>}}
-<pre class="paige-font-inherit">
-Humpty Dumpty sat on a wall,
-Humpty Dumpty had a great fall.
-All the king's horses and all the king's men
-Couldn't put Humpty together again.
-</pre>
+<div style="white-space: pre">Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.</div>
 {{</* /paige/quote */>}}
 ```
 
 Result:
 
 {{< paige/quote caption="Hickory Dickory Dock" align="start" >}}
-<pre class="paige-font-inherit">
-Hickory dickory dock.
+<div style="white-space: pre">Hickory dickory dock.
 The mouse ran up the clock.
 The clock struck one,
 The mouse ran down,
-Hickory dickory dock.
-</pre>
+Hickory dickory dock.</div>
 {{< /paige/quote >}}
 
 {{< paige/quote cite="Hickory Dickory Dock" align="end" >}}
-<pre class="paige-font-inherit">
-Humpty Dumpty sat on a wall,
+<div style="white-space: pre">Humpty Dumpty sat on a wall,
 Humpty Dumpty had a great fall.
 All the king's horses and all the king's men
-Couldn't put Humpty together again.
-</pre>
+Couldn't put Humpty together again.</div>
 {{< /paige/quote >}}
