@@ -516,6 +516,25 @@ My content
 {{< /paige/figure >}}
 ```
 
+### Quote
+
+The `paige/quote` shortcode provides a figure with centered content and an optional, centered caption.
+
+```
+{{< paige/quote align="center" caption="My caption" cite="My citation" >}}
+My content
+{{< /paige/quote >}}
+```
+
+<dl>
+    <dt><code>align</code></dt>
+    <dd>Optional. Aligns text horizontally. Must be <code>start</code>, <code>center</code>, or <code>end</code>.</dd>
+    <dt><code>caption</code></dt>
+    <dd>Optional. Markdown. Must not be used with <code>cite</code>.</dd>
+    <dt><code>cite</code></dt>
+    <dd>Optional. Markdown. Must not be used with <code>caption</code>.</dd>
+</dl>
+
 ### Code
 
 The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
