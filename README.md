@@ -506,6 +506,23 @@ title: Search
 
 ## Shortcodes
 
+### Code
+
+The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
+
+These are the the named parameters with positions:
+
+```
+{{< paige/code lang="go" caption="My caption" options="linenos=true" >}}
+<!doctype html>
+<html lang="en">
+<body>
+  <p>Test</p>
+</body>
+</html>
+{{< /paige/code >}}
+```
+
 ### Image
 
 The `paige/image` shortcode provides a figure with a centered image and an optional, centered caption.
@@ -528,23 +545,6 @@ These are the named parameters without positions:
 
 ```
 {{< paige/image height=500 width=500 >}}
-```
-
-### Code
-
-The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
-
-These are the the named parameters with positions:
-
-```
-{{< paige/code lang="go" caption="My caption" options="linenos=true" >}}
-<!doctype html>
-<html lang="en">
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /paige/code >}}
 ```
 
 ### Gallery
