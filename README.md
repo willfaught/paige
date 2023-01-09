@@ -226,7 +226,7 @@ paige:
     matomo: # matomo.org
       account_id: "123456"
       host_url: "https://example.com"
-    mixpanel:
+    mixpanel: # mixpanel.com
       token: "123456"
     plausible: # plausible.io
       account_id: "123456"
