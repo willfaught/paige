@@ -519,6 +519,8 @@ My content
 Parameters:
 
 <dl>
+    <dt><code>.Inner</code></dt>
+    <dd>Required. The inner content. Markdown.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. Unnamed argument. Descriptive text that appears centered below the content. Markdown.</dd>
 </dl>
@@ -536,6 +538,8 @@ My content
 Parameters:
 
 <dl>
+    <dt><code>.Inner</code></dt>
+    <dd>Required. The inner content. Markdown.</dd>
     <dt><code>align</code></dt>
     <dd>Optional. Aligns text horizontally. Must be <code>start</code>, <code>center</code>, or <code>end</code>.</dd>
     <dt><code>caption</code></dt>
@@ -562,6 +566,8 @@ The `paige/code` shortcode provides a figure with centered code.
 Parameters:
 
 <dl>
+    <dt><code>.Inner</code></dt>
+    <dd>Required. The inner content. Markdown.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. Descriptive text that appears centered below the code. Markdown.</dd>
     <dt><code>lang</code></dt>
@@ -630,6 +636,8 @@ The `paige/gallery` shortcode provides a figure with a centered list of images.
 Parameters:
 
 <dl>
+    <dt><code>.Inner</code></dt>
+    <dd>Optional. The inner content. Markdown. Must be other invocations of the same shortcode.</dd>
     <dt><code>align</code></dt>
     <dd>Optional. Flexbox cross axis alignment. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"><code>align-items</code></a>.</dd>
     <dt><code>caption</code></dt>
