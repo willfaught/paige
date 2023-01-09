@@ -520,7 +520,7 @@ Parameters:
 
 <dl>
     <dt><code>caption</code></dt>
-    <dd>Optional. First unnamed argument. Descriptive text that appears centered below the images. Markdown.</dd>
+    <dd>Optional. Unnamed argument. Descriptive text that appears centered below the content. Markdown.</dd>
 </dl>
 
 ### Quote
@@ -541,7 +541,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. Descriptive text that appears centered below the images. Markdown. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
-    <dd>Optional. First unnamed argument. Markdown. Must not be used with <code>caption</code>.</dd>
+    <dd>Optional. Unnamed argument. Markdown. Must not be used with <code>caption</code>.</dd>
 </dl>
 
 ### Code
@@ -565,7 +565,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
     <dt><code>lang</code></dt>
-    <dd>Required. First unnamed argument. Chroma language code. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
+    <dd>Required. Unnamed argument. Chroma language code. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">Hugo highlight options</a>.</dd>
 </dl>
@@ -595,7 +595,7 @@ Parameters:
     <dt><code>title</code></dt>
     <dd>Optional. Plain text. Image title.</dd>
     <dt><code>src</code></dt>
-    <dd>Required. First unnamed argument. URL. Image URL.</dd>
+    <dd>Required. Unnamed argument. URL. Image URL.</dd>
 </dl>
 
 ```
@@ -640,7 +640,7 @@ Parameters:
     <dt><code>image</code></dt>
     <dd>Optional. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
-    <dd>Optional. First unnamed argument. Page, site, or remote images glob. Defaults to all image page resources.</dd>
+    <dd>Optional. Unnamed argument. Page, site, or remote images glob. Defaults to all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
     <dt><code>method</code></dt>
