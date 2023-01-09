@@ -539,7 +539,7 @@ Parameters:
     <dt><code>align</code></dt>
     <dd>Optional. Aligns text horizontally. Must be <code>start</code>, <code>center</code>, or <code>end</code>.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. Descriptive text that appears centered below the images. Markdown. Must not be used with <code>cite</code>.</dd>
+    <dd>Optional. Descriptive text that appears centered below the quotation. Markdown. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
     <dd>Optional. Unnamed argument. Markdown. Must not be used with <code>caption</code>.</dd>
 </dl>
@@ -563,7 +563,7 @@ Parameters:
 
 <dl>
     <dt><code>caption</code></dt>
-    <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
+    <dd>Optional. Descriptive text that appears centered below the code. Markdown.</dd>
     <dt><code>lang</code></dt>
     <dd>Required. Unnamed argument. Chroma language code. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
@@ -589,7 +589,7 @@ Parameters:
     <dt><code>alt</code></dt>
     <dd>Optional. Plain text. Image alt.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
+    <dd>Optional. Descriptive text that appears centered below the image. Markdown.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. URL. Image link.</dd>
     <dt><code>title</code></dt>
