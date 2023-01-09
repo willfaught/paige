@@ -663,9 +663,9 @@ Parameters:
     <dt><code>justify</code></dt>
     <dd>Optional. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
     <dt><code>method</code></dt>
-    <dd>Optional. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
+    <dd>Optional. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
+    <dd>Optional. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. Type of layout. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
