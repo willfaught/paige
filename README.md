@@ -508,7 +508,7 @@ title: Search
 
 ### Figure
 
-The `paige/figure` shortcode provides a figure with centered content and an optional, centered caption.
+The `paige/figure` shortcode provides a figure with centered content.
 
 ```
 {{< paige/figure caption="My caption" >}}
@@ -525,7 +525,7 @@ Parameters:
 
 ### Quote
 
-The `paige/quote` shortcode provides a figure with centered content and an optional, centered caption.
+The `paige/quote` shortcode provides a figure with a centered quotation.
 
 ```
 {{< paige/quote align="center" caption="My caption" cite="My citation" >}}
@@ -546,7 +546,7 @@ Parameters:
 
 ### Code
 
-The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
+The `paige/code` shortcode provides a figure with centered code.
 
 ```
 {{< paige/code caption="My caption" lang="html" options="linenos=true" >}}
@@ -572,7 +572,7 @@ Parameters:
 
 ### Image
 
-The `paige/image` shortcode provides a figure with a centered image and an optional, centered caption.
+The `paige/image` shortcode provides a figure with a centered image.
 
 ```
 {{< paige/image
@@ -604,8 +604,7 @@ Parameters:
 
 ### Gallery
 
-The `paige/gallery` shortcode provides a figure with a set of images and an optional, centered caption.
-Since it can have inner content, it must always be closed or self-closed.
+The `paige/gallery` shortcode provides a figure with a centered list of images.
 
 ```
 {{< paige/gallery
