@@ -584,9 +584,13 @@ The `paige/image` shortcode provides a figure with a centered image.
 {{< paige/image
     alt="My alt" >}}
     caption="My caption"
-    link="https://xkcd.com/149"
-    src="https://imgs.xkcd.com/comics/sandwich.png"
+    height="10rem"
+    link="https://github.com/willfaught/paige"
+    method="resize"
+    options="550x webp picture Lanczos"
+    src="me.jpg"
     title="My title"
+    width="10rem" >}}
 ```
 
 Parameters:
@@ -596,12 +600,20 @@ Parameters:
     <dd>Optional. Plain text. Image alt.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. Descriptive text that appears centered below the image. Markdown.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. Image height in pixels.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. URL. Image link.</dd>
-    <dt><code>title</code></dt>
-    <dd>Optional. Plain text. Image title.</dd>
+    <dt><code>method</code></dt>
+    <dd>Optional. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
+    <dt><code>options</code></dt>
+    <dd>Optional. Hugo image processing options. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Unnamed argument. URL. Image URL.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. Plain text. Image title.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. Image width in pixels.</dd>
 </dl>
 
 ```
