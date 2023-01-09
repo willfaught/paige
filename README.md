@@ -516,6 +516,13 @@ My content
 {{< /paige/figure >}}
 ```
 
+Parameters:
+
+<dl>
+    <dt><code>caption</code></dt>
+    <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
+</dl>
+
 ### Quote
 
 The `paige/quote` shortcode provides a figure with centered content and an optional, centered caption.
@@ -526,11 +533,13 @@ My content
 {{< /paige/quote >}}
 ```
 
+Parameters:
+
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. Aligns text horizontally. Must be <code>start</code>, <code>center</code>, or <code>end</code>.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. Markdown. Must not be used with <code>cite</code>.</dd>
+    <dd>Optional. Descriptive text that appears centered below the images. Markdown. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
     <dd>Optional. Markdown. Must not be used with <code>caption</code>.</dd>
 </dl>
@@ -542,7 +551,7 @@ The `paige/code` shortcode provides a figure with centered, highlighted code and
 These are the the named parameters with positions:
 
 ```
-{{< paige/code lang="go" caption="My caption" options="linenos=true" >}}
+{{< paige/code caption="My caption" lang="html" options="linenos=true" >}}
 <!doctype html>
 <html lang="en">
 <body>
@@ -552,6 +561,17 @@ These are the the named parameters with positions:
 {{< /paige/code >}}
 ```
 
+Parameters:
+
+<dl>
+    <dt><code>caption</code></dt>
+    <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
+    <dt><code>lang</code></dt>
+    <dd>Required. <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">Chroma language code</a>.</dd>
+    <dt><code>options</code></dt>
+    <dd>Optional. <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">Hugo highlight options</a>.</dd>
+</dl>
+
 ### Image
 
 The `paige/image` shortcode provides a figure with a centered image and an optional, centered caption.
@@ -560,17 +580,27 @@ These are the the named parameters with positions:
 
 ```
 {{< paige/image
-    src="https://imgs.xkcd.com/comics/sandwich.png"
+    alt="My alt" >}}
     caption="My caption"
     link="https://xkcd.com/149"
     title="My title"
-    alt="My alt" >}}
+    src="https://imgs.xkcd.com/comics/sandwich.png"
 ```
 
-Only the image source parameter is required.
-If the image source argument is a relative path, it must be a page resource.
+Parameters:
 
-These are the named parameters without positions:
+<dl>
+    <dt><code>alt</code></dt>
+    <dd>Optional. Plain text. Image alt.</dd>
+    <dt><code>caption</code></dt>
+    <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
+    <dt><code>link</code></dt>
+    <dd>Optional. URL. Image link.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. Plain text. Image title.</dd>
+    <dt><code>src</code></dt>
+    <dd>Required. URL. Image URL.</dd>
+</dl>
 
 ```
 {{< paige/image height=500 width=500 >}}
@@ -579,58 +609,53 @@ These are the named parameters without positions:
 ### Gallery
 
 The `paige/gallery` shortcode provides a figure with a set of images and an optional, centered caption.
+Since it can have inner content, it must always be closed or self-closed.
 
 ```
 {{< paige/gallery
-    
-    // Page resource image file name or pattern; optional; defaults to all images
-    images="birthday*.jpg"
-    
-    // Optional
+    align="center"
     caption="My caption"
-    
-    // Hugo image processing method; optional; values are "crop", "fill", "fit", "resize"; default is "resize"
+    height="10rem"
+    images="*.jpg"
+    justify="center"
     method="resize"
-
-    // Hugo image processing options; optional; default is "550x webp picture Lanczos"
-    options="550x webp picture Lanczos"
-
-    // Display images in a grid or list; optional; values are "grid", "list"; default is "grid"
-    display="grid"
-
+    options="550x jpg picture Lanczos"
+    type="list"
+    width="10rem"
 />}}
-```
 
-The `paige/gallery/item` shortcode is nested within the `paige/gallery` shortcode to provide a caption and customization per image.
-The display type is automatically list, and cannot be overridden.
-
-```
-{{< paige/gallery caption="My caption" method="resize" options="550x webp picture Lanczos" >}}
-
-    {{< paige/gallery/item
-    
-        // Page resource image file name or pattern
-        image="birthday1.jpg"
-        
-        // Optional
+{{< paige/gallery >}}
+    {{< paige/gallery
+        image="me.jpg"
         caption="My caption"
-        
-        // Optional
-        method="resize"
-        
-        // Optional
-        options="550x webp picture Lanczos"
-
     >}}
-
 {{< /paige/gallery >}}
 ```
 
-The `paige/gallery` shortcode must be self-closing if the `paige/gallery/item` shortcode is not used.
+Parameters:
 
-```
-{{< paige/gallery />}}
-```
+<dl>
+    <dt><code>align</code></dt>
+    <dd>Optional. Flexbox cross axis alignment. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"><code>align-items</code></a>.</dd>
+    <dt><code>caption</code></dt>
+    <dd>Optional. Descriptive text that appears centered below the images. Markdown.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. Height of the image or images.</dd>
+    <dt><code>image</code></dt>
+    <dd>Optional. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
+    <dt><code>images</code></dt>
+    <dd>Optional. Page, site, or remote images glob. Defaults to all image page resources.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Optional. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
+    <dt><code>method</code></dt>
+    <dd>Optional. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
+    <dt><code>options</code></dt>
+    <dd>Optional. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
+    <dt><code>type</code></dt>
+    <dd>Optional. Type of layout. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. Width of the image or images.</dd>
+</dl>
 
 ## Customization
 
