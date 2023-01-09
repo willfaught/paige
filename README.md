@@ -632,7 +632,7 @@ The `paige/gallery` shortcode provides a figure with a centered list of images.
     images="*.jpg"
     justify="center"
     method="resize"
-    options="550x jpg picture Lanczos"
+    options="550x webp picture Lanczos"
     type="list"
     width="10rem"
 />}}
