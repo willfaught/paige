@@ -548,8 +548,6 @@ Parameters:
 
 The `paige/code` shortcode provides a figure with centered, highlighted code and an optional, centered caption.
 
-These are the the named parameters with positions:
-
 ```
 {{< paige/code caption="My caption" lang="html" options="linenos=true" >}}
 <!doctype html>
@@ -575,8 +573,6 @@ Parameters:
 ### Image
 
 The `paige/image` shortcode provides a figure with a centered image and an optional, centered caption.
-
-These are the the named parameters with positions:
 
 ```
 {{< paige/image
