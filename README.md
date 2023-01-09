@@ -579,8 +579,8 @@ The `paige/image` shortcode provides a figure with a centered image and an optio
     alt="My alt" >}}
     caption="My caption"
     link="https://xkcd.com/149"
-    title="My title"
     src="https://imgs.xkcd.com/comics/sandwich.png"
+    title="My title"
 ```
 
 Parameters:
