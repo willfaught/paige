@@ -51,4 +51,4 @@
     {{ $src = $resource.RelPermalink }}
 {{ end }}
 
-<img {{ with $alt }} alt="{{ . }}" {{ end }} {{ with $class }} class="{{ . }}" {{ end }} {{ with $crossorigin }} crossorigin="{{ . }}" {{end }} {{ with $fetchpriority }} fetchpriority="{{ . }}" {{ end }} {{ with $intrinsicheight }} height="{{ . }}" {{ end }} loading="{{ $loading }}" referrerpolicy="{{ $referrerpolicy }}" src="{{ $src }}" {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} {{ with $intrinsicwidth }} width="{{ . }}" {{ end }}>
+<img {{ with $alt }} alt="{{ . }}" {{ end }} {{ with $class }} class="{{ . }}" {{ end }} crossorigin="{{ $crossorigin }}" {{ with $fetchpriority }} fetchpriority="{{ . }}" {{ end }} {{ with $intrinsicheight }} height="{{ . }}" {{ end }} loading="{{ $loading }}" referrerpolicy="{{ $referrerpolicy }}" src="{{ $src }}" {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }} {{ with $intrinsicwidth }} width="{{ . }}" {{ end }}>
