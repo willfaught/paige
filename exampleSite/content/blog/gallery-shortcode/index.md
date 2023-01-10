@@ -19,7 +19,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="1*.jpg" caption="1 image" type="grid" />}}
+{{< paige/gallery images="1*.jpg" caption="1 image" />}}
 
 ---
 
@@ -31,7 +31,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="2*.jpg" caption="2 images" type="grid" />}}
+{{< paige/gallery images="2*.jpg" caption="2 images" />}}
 
 ---
 
@@ -43,7 +43,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="3*.jpg" caption="3 images" type="grid" />}}
+{{< paige/gallery images="3*.jpg" caption="3 images" />}}
 
 ---
 
@@ -55,7 +55,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="4*.jpg" caption="4 images" type="grid" />}}
+{{< paige/gallery images="4*.jpg" caption="4 images" />}}
 
 ---
 
@@ -67,7 +67,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="5*.jpg" caption="5 images" type="grid" />}}
+{{< paige/gallery images="5*.jpg" caption="5 images" />}}
 
 ---
 
@@ -79,7 +79,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="6*.jpg" caption="6 images" type="grid" />}}
+{{< paige/gallery images="6*.jpg" caption="6 images" />}}
 
 ---
 
@@ -91,7 +91,7 @@ Code:
 
 Result:
 
-{{< paige/gallery images="*.jpg" caption="All images" type="grid" />}}
+{{< paige/gallery images="*.jpg" caption="All images" />}}
 
 ## Grid layout
 
