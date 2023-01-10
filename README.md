@@ -573,7 +573,7 @@ Parameters:
     <dt><code>lang</code></dt>
     <dd>Required. Unnamed argument. Chroma language code. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">Hugo highlight options</a>.</dd>
+    <dd>Optional. Hugo highlight options. See <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
 </dl>
 
 ### Image
