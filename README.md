@@ -646,6 +646,10 @@ The `paige/gallery` shortcode provides a figure with a centered list of images.
         image="me.jpg"
         caption="My caption"
     >}}
+    {{< paige/gallery
+        image="you.jpg"
+        caption="My caption"
+    >}}
 {{< /paige/gallery >}}
 ```
 
