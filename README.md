@@ -571,7 +571,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the code.</dd>
     <dt><code>lang</code></dt>
-    <dd>Required. Unnamed argument. String. Chroma language code. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
+    <dd>Optional. Unnamed argument. String. Chroma language code. Defaults to <code>plaintext</code>. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo highlight options. See <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
 </dl>
