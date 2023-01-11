@@ -63,5 +63,3 @@ The mouse ran down,
 Hickory dickory dock.
 </pre>
 {{< /paige/figure >}}
-
-
