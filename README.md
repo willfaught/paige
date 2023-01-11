@@ -622,10 +622,6 @@ Parameters:
     <dd>Optional. Image width in pixels.</dd>
 </dl>
 
-```
-{{< paige/image height=500 width=500 >}}
-```
-
 ### Gallery
 
 The `paige/gallery` shortcode provides a figure with a centered list of images.
