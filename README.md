@@ -671,9 +671,9 @@ Parameters:
     <dt><code>justify</code></dt>
     <dd>Optional. String. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
     <dt><code>maxheight</code></dt>
-    <dd>Optional. String. Maximum height of the image or images.</dd>
+    <dd>Optional. String. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
-    <dd>Optional. String. Maximum width of the image or images.</dd>
+    <dd>Optional. String. Maximum image width.</dd>
     <dt><code>method</code></dt>
     <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
     <dt><code>options</code></dt>
