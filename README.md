@@ -522,7 +522,7 @@ Parameters:
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. Unnamed argument. String. Markdown. Descriptive text that appears centered below the content.</dd>
+    <dd>Optional. Position 0. String. Markdown. Descriptive text that appears centered below the content.</dd>
 </dl>
 
 ### Quote
@@ -545,7 +545,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the quotation. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
-    <dd>Optional. Unnamed argument. String. Markdown. Citation text that appears centered below the quotation. Must not be used with <code>caption</code>.</dd>
+    <dd>Optional. Position 0. String. Markdown. Citation text that appears centered below the quotation. Must not be used with <code>caption</code>.</dd>
 </dl>
 
 ### Code
@@ -571,7 +571,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the code.</dd>
     <dt><code>lang</code></dt>
-    <dd>Optional. Unnamed argument. String. Chroma language code. Defaults to <code>plaintext</code>. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
+    <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo highlight options. See <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
 </dl>
@@ -615,7 +615,7 @@ Parameters:
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
     <dt><code>src</code></dt>
-    <dd>Required. Unnamed argument. String. URL. Image URL.</dd>
+    <dd>Required. Position 0. String. URL. Image URL.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>
@@ -667,7 +667,7 @@ Parameters:
     <dt><code>image</code></dt>
     <dd>Optional. String. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
-    <dd>Optional. Unnamed argument. String. Page, site, or remote images glob. Defaults to all image page resources.</dd>
+    <dd>Optional. Position 0. String. Page, site, or remote images glob. Defaults to all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. String. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
     <dt><code>maxheight</code></dt>
