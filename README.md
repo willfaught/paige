@@ -603,7 +603,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the image.</dd>
     <dt><code>height</code></dt>
-    <dd>Optional. String. Image height in pixels.</dd>
+    <dd>Optional. String. Image height.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link.</dd>
     <dt><code>maxheight</code></dt>
@@ -619,7 +619,7 @@ Parameters:
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>
-    <dd>Optional. String. Image width in pixels.</dd>
+    <dd>Optional. String. Image width.</dd>
 </dl>
 
 ### Gallery
@@ -663,7 +663,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the images.</dd>
     <dt><code>height</code></dt>
-    <dd>Optional. String. Height of the image or images in pixels.</dd>
+    <dd>Optional. String. Image height.</dd>
     <dt><code>image</code></dt>
     <dd>Optional. String. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
@@ -681,7 +681,7 @@ Parameters:
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
-    <dd>Optional. String. Width of the image or images in pixels.</dd>
+    <dd>Optional. String. Image width.</dd>
 </dl>
 
 ## Customization
