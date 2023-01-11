@@ -30,6 +30,7 @@
             "url" (relLangURL $src)
         ) }}
     {{ end }}
+
     {{ if and $method $options }}
         {{ if eq $method "crop" }}
             {{ $resource = $resource.Crop $options }}
@@ -43,11 +44,14 @@
             {{ errorf "invalid method: %q" $method }}
         {{ end }}
     {{ end }}
+
     {{ $intrinsicheight = $resource.Height }}
     {{ $intrinsicwidth = $resource.Width }}
+
     {{ if $fingerprint }}
         {{ $resource = $resource | fingerprint }}
     {{ end }}
+
     {{ $src = $resource.RelPermalink }}
 {{ end }}
 
