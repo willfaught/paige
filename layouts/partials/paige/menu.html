@@ -17,11 +17,11 @@
 {{ else }}
     {{ $pills = true }}
 {{ end }}
-<nav class="justify-content-center my-3 nav{{ if $pills }} nav-pills{{ else if $tabs }} nav-tabs{{ end }}">
+<nav class="justify-content-center my-3 nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ end }}">
     {{ range .Site.Menus.main }}
         {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
         {{ $menuPath := strings.TrimPrefix $basePath .URL }}
         {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
-        <a href="{{ .URL }}" class="{{ if $active }}active {{ if $links }}link-secondary {{ end }}{{ end }}nav-link"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        <a href="{{ .URL }}" class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" {{ if $active }} aria-current="page" {{ end }}>{{ .Name }}</a>
     {{ end }}
 </nav>
