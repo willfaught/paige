@@ -586,6 +586,8 @@ The `paige/image` shortcode provides a figure with a centered image.
     caption="My caption"
     height="10rem"
     link="https://github.com/willfaught/paige"
+    maxheight="10rem"
+    maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
     src="me.jpg"
@@ -604,6 +606,10 @@ Parameters:
     <dd>Optional. Image height in pixels.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. URL. Image link.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. Maximum image height.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. Maximum image width.</dd>
     <dt><code>method</code></dt>
     <dd>Optional. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
     <dt><code>options</code></dt>
@@ -631,6 +637,8 @@ The `paige/gallery` shortcode provides a figure with a centered list of images.
     height="10rem"
     images="*.jpg"
     justify="center"
+    maxheight="10rem"
+    maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
     type="list"
@@ -655,13 +663,17 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. Markdown. Descriptive text that appears centered below the images.</dd>
     <dt><code>height</code></dt>
-    <dd>Optional. Height of the image or images.</dd>
+    <dd>Optional. Height of the image or images in pixels.</dd>
     <dt><code>image</code></dt>
     <dd>Optional. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
     <dd>Optional. Unnamed argument. Page, site, or remote images glob. Defaults to all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. Maximum height of the image or images.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. Maximum width of the image or images.</dd>
     <dt><code>method</code></dt>
     <dd>Optional. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
     <dt><code>options</code></dt>
@@ -669,7 +681,7 @@ Parameters:
     <dt><code>type</code></dt>
     <dd>Optional. Type of layout. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
-    <dd>Optional. Width of the image or images.</dd>
+    <dd>Optional. Width of the image or images in pixels.</dd>
 </dl>
 
 ## Customization

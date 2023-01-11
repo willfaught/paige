@@ -4,6 +4,8 @@
 {{ $image := .Get "image" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" | default "resize" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
 {{ $type := .Get "type" | default "rows" }}
@@ -17,13 +19,17 @@
 
     {{ partial "paige/image-figure.html" (dict
         "caption" $caption
+        "height" $height
         "link" $resource.RelPermalink
+        "maxheight" $maxheight
+        "maxwidth" $maxwidth
         "method" $method
         "options" $options
         "page" .Page
         "resource" $resource
         "src" $image
         "table" true
+        "width" $width
     ) }}
 {{ else }}
     {{ $inner := chomp .Inner }}
@@ -52,29 +58,39 @@
                     {{ else }}
                         {{ range $resources }}
                             {{ partial "paige/image-figure.html" (dict
+                                "height" $height
                                 "link" .RelPermalink
+                                "maxheight" $maxheight
+                                "maxwidth" $maxwidth
                                 "method" $method
                                 "options" $options
                                 "resource" .
                                 "table" true
+                                "width" $width
                             ) }}
                         {{ end }}
                     {{ end }}
                 </div>
             </div>
         {{ else if eq $type "rows" }}
+            {{ if not (or $height $maxheight) }}
+                {{ $maxheight = $maxheight | default "10rem" }}
+            {{ end }}
             <div class="align-items-{{ $align }} column-gap-3 d-flex{{ with $caption }} figure-img{{ end }} flex-wrap justify-content-{{ $justify }} row-gap-3">
                 {{ with $inner }}
                     {{ . }}
                 {{ else }}
                     {{ range $resources }}
                         {{ partial "paige/image-figure.html" (dict
-                            "height" "10rem"
+                            "height" $height
                             "link" .RelPermalink
+                            "maxheight" $maxheight
+                            "maxwidth" $maxwidth
                             "method" $method
                             "options" $options
                             "resource" .
                             "table" true
+                            "width" $width
                         ) }}
                     {{ end }}
                 {{ end }}

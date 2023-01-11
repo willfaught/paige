@@ -2,6 +2,8 @@
 {{ $caption := .Get "caption" }}
 {{ $height := .Get "height" }}
 {{ $link := .Get "link" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" }}
 {{ $options := .Get "options" }}
 {{ $src := .Get 0 | default (.Get "src") }}
@@ -13,6 +15,8 @@
     "caption" $caption
     "height" $height
     "link" $link
+    "maxheight" $maxheight
+    "maxwidth" $maxwidth
     "method" $method
     "options" $options
     "src" $src
