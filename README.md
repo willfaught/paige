@@ -545,7 +545,7 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the quotation. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
-    <dd>Optional. Unnamed argument. String. Markdown. Must not be used with <code>caption</code>.</dd>
+    <dd>Optional. Unnamed argument. String. Markdown. Citation text that appears centered below the quotation. Must not be used with <code>caption</code>.</dd>
 </dl>
 
 ### Code
