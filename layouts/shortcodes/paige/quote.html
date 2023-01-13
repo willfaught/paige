@@ -1,12 +1,24 @@
 {{ $align := .Get "align" | default "center" }}
 {{ $caption := .Get "caption" }}
 {{ $cite := .Get 0 | default (.Get "cite") }}
+{{ $float := .Get "float" }}
 
 {{ $caption = $caption | markdownify }}
 {{ $cite = $cite | markdownify }}
 {{ $content := .Inner | markdownify }}
 
-<figure class="d-flex align-items-center flex-column paige-figure">
+{{ $margins := "" }}
+{{ if $float }}
+    {{ if eq $float "start" }}
+        {{ $margins = "me-4" }}
+    {{ else if eq $float "end" }}
+        {{ $margins = "ms-4" }}
+    {{ else }}
+        {{ errorf "invalid float: %q" $float }}
+    {{ end }}
+{{ end }}
+
+<figure class="d-flex align-items-center flex-column {{ with $float }} float-{{ . }} {{ end }} {{ with $margins }} {{ . }} {{ end }} paige-figure">
     <div>
         <blockquote class="blockquote {{ if $caption }} mb-2 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
         {{ with $caption }}

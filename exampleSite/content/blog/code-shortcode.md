@@ -89,6 +89,26 @@ q = 'q = %s%s%s; print(q %% (chr(39), q, chr(39)))'; print(q % (chr(39), q, chr(
 Code:
 
 ```go-text-template
+{{</* paige/code caption="Python quine" float="end" */>}}
+q = 'q = %r; print(q %% q)'; print(q % q)
+{{</* /paige/code */>}}
+
+Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro. In addition to brunch, the restaurant was known for an item on the menu called the "Skip's Scramble", an omelet that contained everything on the menu. Do not order the Skip's Scramble. You might enjoy this. Oh. Em. Gee. That's amazing. It feels good to be back in a queen! I need a tea to give my dingle less tingle. Teamocil. Heyyyyyy Uncle Father Oscar. Do the right thing here. String this blind girl along so that dad doesn't have to pay his debt to society. Dead Dove DO NOT EAT. Come on, this is a Bluth family celebration. It's no place for children. If you didn't have adult onset diabetes, I wouldn't mind giving you a little sugar.
+```
+
+Result:
+
+{{< paige/code caption="Python quine" float="end" >}}
+q = 'q = %r; print(q %% q)'; print(q % q)
+{{< /paige/code >}}
+
+Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro. In addition to brunch, the restaurant was known for an item on the menu called the "Skip's Scramble", an omelet that contained everything on the menu. Do not order the Skip's Scramble. You might enjoy this. Oh. Em. Gee. That's amazing. It feels good to be back in a queen! I need a tea to give my dingle less tingle. Teamocil. Heyyyyyy Uncle Father Oscar. Do the right thing here. String this blind girl along so that dad doesn't have to pay his debt to society. Dead Dove DO NOT EAT. Come on, this is a Bluth family celebration. It's no place for children. If you didn't have adult onset diabetes, I wouldn't mind giving you a little sugar.
+
+---
+
+Code:
+
+```go-text-template
 {{</* paige/code caption="Who you gonna call?" */>}}
                        ---
                     -        --

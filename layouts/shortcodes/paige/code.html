@@ -1,4 +1,5 @@
 {{ $caption := .Get "caption" }}
+{{ $float := .Get "float" }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $options := .Get "options" }}
 
@@ -7,4 +8,5 @@
 {{ partial "paige/figure.html" (dict
     "caption" $caption
     "content" $content
+    "float" $float
 ) }}

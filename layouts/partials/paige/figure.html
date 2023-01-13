@@ -1,7 +1,19 @@
 {{ $caption := .caption | markdownify }}
 {{ $content := .content | markdownify }}
+{{ $float := .float }}
 
-<figure class="align-items-center d-flex flex-column justify-content-center paige-figure">
+{{ $margins := "" }}
+{{ if $float }}
+    {{ if eq $float "start" }}
+        {{ $margins = "me-4" }}
+    {{ else if eq $float "end" }}
+        {{ $margins = "ms-4" }}
+    {{ else }}
+        {{ errorf "invalid float: %q" $float }}
+    {{ end }}
+{{ end }}
+
+<figure class="align-items-center d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-center {{ with $margins }} {{ . }} {{ end }} paige-figure">
     <div class="{{ if $caption }} mb-2 {{ end }} mw-100">{{ $content }}</div>
     {{ with $caption }}
         <figcaption class="figure-caption">{{ . }}</figcaption>

@@ -1,5 +1,6 @@
 {{ $alt := .Get "alt" }}
 {{ $caption := .Get "caption" }}
+{{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
 {{ $link := .Get "link" }}
 {{ $maxheight := .Get "maxheight" }}
@@ -13,6 +14,7 @@
 {{ partial "paige/image-figure.html" (dict
     "alt" $alt
     "caption" $caption
+    "float" $float
     "height" $height
     "link" $link
     "maxheight" $maxheight

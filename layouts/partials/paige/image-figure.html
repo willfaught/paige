@@ -1,5 +1,6 @@
 {{ $alt := .alt }}
 {{ $caption := .caption }}
+{{ $float := .float }}
 {{ $height := .height }}
 {{ $link := .link }}
 {{ $maxheight := .maxheight }}
@@ -21,16 +22,12 @@
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt
     "class" $class
-    "height" $height
-    "maxheight" $maxheight
-    "maxwidth" $maxwidth
     "method" $method
     "options" $options
     "page" $page
     "resource" $resource
     "src" $src
     "title" $title
-    "width" $width
 ) }}
 
 {{ if $link }}
@@ -40,9 +37,83 @@
     ) }}
 {{ end }}
 
-<figure class="{{ if $table }} d-table mb-0 {{ end }} paige-figure text-center">
+{{ $style := "" }}
+
+{{ if $height }}
+    {{ with printf "height: %v" $height }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxheight }}
+    {{ with printf "max-height: %v" $maxheight }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxwidth }}
+    {{ with printf "max-width: %v" $maxwidth }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $width }}
+    {{ with printf "width: %v" $width }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $table }}
+    <figure class="d-table mb-0 paige-figure text-center">
+        {{ $content }}
+        {{ with $caption }}
+            <figcaption class="figure-caption" style="caption-side: bottom; display: table-caption">{{ . }}</figcaption>
+        {{ end }}
+    </figure>
+{{ else if $float }}
+    {{ $margins := "" }}
+    {{ if eq $float "start" }}
+        {{ $margins = "me-4" }}
+    {{ else if eq $float "end" }}
+        {{ $margins = "ms-4" }}
+    {{ else }}
+        {{ errorf "invalid float: %q" $float }}
+    {{ end }}
+    <figure class="d-table float-{{ $float }} {{ $margins }} paige-figure text-center" {{ with $style }} style="{{ . }}" {{ end }}>
+        {{ $content }}
+        {{ with $caption }}
+            <figcaption class="figure-caption" style="caption-side: bottom; display: table-caption">{{ . }}</figcaption>
+        {{ end }}
+    </figure>
+{{ else }}
+<figure class="paige-figure text-center">
+    {{ with $style }}
+        <div class="align-items-center d-flex flex-column">
+            <div style="{{ . }}">
+    {{ end }}
     {{ $content }}
     {{ with $caption }}
-        <figcaption class="figure-caption" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+        <figcaption class="figure-caption">{{ . }}</figcaption>
+    {{ end }}
+    {{ if $style }}
+        </div>
+    </div>
     {{ end }}
 </figure>
+{{ end }}
