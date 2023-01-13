@@ -17,10 +17,6 @@ section[class="paige-content"] > blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
-section[class="paige-content"] > div {
-    margin-bottom: 1rem;
-}
-
 {{ with .Site.Params.paige.content_max_width }}
     section[class="paige-content"], section[class="paige-toc"] {
         max-width: {{ . }};
