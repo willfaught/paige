@@ -1,10 +1,8 @@
 {{ $align := .Get "align" | default "center" }}
-{{ $caption := .Get "caption" }}
-{{ $cite := .Get 0 | default (.Get "cite") }}
+{{ $caption := .Get "caption" | markdownify }}
+{{ $cite := (.Get 0 | default (.Get "cite")) | markdownify }}
 {{ $float := .Get "float" }}
 
-{{ $caption = $caption | markdownify }}
-{{ $cite = $cite | markdownify }}
 {{ $content := .Inner | markdownify }}
 
 {{ $margins := "" }}
