@@ -16,7 +16,7 @@
     {{ end }}
 {{ end }}
 
-<figure class="d-flex align-items-center flex-column {{ with $float }} float-{{ . }} {{ end }} {{ with $margins }} {{ . }} {{ end }} paige-figure">
+<figure class="align-items-center d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} {{ with $margins }} {{ . }} {{ end }} paige-figure">
     <div>
         <blockquote class="blockquote {{ if $caption }} mb-2 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
         {{ with $caption }}
