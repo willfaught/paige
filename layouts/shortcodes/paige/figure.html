@@ -1,5 +1,9 @@
 {{ $caption := .Get 0 | default (.Get "caption") }}
 {{ $float := .Get "float" }}
+{{ $height := .Get "height" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
+{{ $width := .Get "width" }}
 
 {{ $content := .Inner }}
 
@@ -7,4 +11,8 @@
     "caption" $caption
     "content" $content
     "float" $float
+    "height" $height
+    "maxheight" $maxheight
+    "maxwidth" $maxwidth
+    "width" $width
 ) }}

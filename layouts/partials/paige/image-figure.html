@@ -87,15 +87,15 @@
         {{ end }}
     </figure>
 {{ else if $float }}
-    {{ $margins := "" }}
+    {{ $margin := "" }}
     {{ if eq $float "start" }}
-        {{ $margins = "me-4" }}
+        {{ $margin = "me-4" }}
     {{ else if eq $float "end" }}
-        {{ $margins = "ms-4" }}
+        {{ $margin = "ms-4" }}
     {{ else }}
         {{ errorf "invalid float: %q" $float }}
     {{ end }}
-    <figure class="d-table float-{{ $float }} {{ $margins }} paige-figure text-center" {{ with $style }} style="{{ . }}" {{ end }}>
+    <figure class="d-table float-{{ $float }} {{ $margin }} paige-figure text-center" {{ with $style }} style="{{ . | safeCSS }}" {{ end }}>
         {{ $content }}
         {{ with $caption }}
             <figcaption class="figure-caption" style="caption-side: bottom; display: table-caption">{{ . }}</figcaption>

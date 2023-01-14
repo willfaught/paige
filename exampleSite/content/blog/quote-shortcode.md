@@ -25,6 +25,22 @@ Don't believe everything you read on the Internet.
 Code:
 
 ```go-text-template
+{{</* paige/quote caption="Abraham Lincoln" */>}}
+Don't believe everything you read on the Internet.
+{{</* /paige/quote */>}}
+```
+
+Result:
+
+{{< paige/quote caption="Abraham Lincoln" >}}
+Don't believe everything you read on the Internet.
+{{< /paige/quote >}}
+
+---
+
+Code:
+
+```go-text-template
 {{</* paige/quote cite="Abraham Lincoln" */>}}
 Don't believe everything you read on the Internet.
 {{</* /paige/quote */>}}

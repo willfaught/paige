@@ -2,8 +2,54 @@
 {{ $caption := .Get "caption" | markdownify }}
 {{ $cite := (.Get 0 | default (.Get "cite")) | markdownify }}
 {{ $float := .Get "float" }}
+{{ $height := .Get "height" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
+{{ $width := .Get "width" }}
 
 {{ $content := .Inner | markdownify }}
+
+{{ $style := "" }}
+
+{{ if $height }}
+    {{ with printf "height: %v" $height }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxheight }}
+    {{ with printf "max-height: %v" $maxheight }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxwidth }}
+    {{ with printf "max-width: %v" $maxwidth }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $width }}
+    {{ with printf "width: %v" $width }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
 
 {{ $margins := "" }}
 {{ if $float }}
@@ -17,13 +63,17 @@
 {{ end }}
 
 <figure class="align-items-center d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} {{ with $margins }} {{ . }} {{ end }} paige-figure">
-    <div>
-        <blockquote class="blockquote {{ if $caption }} mb-2 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
-        {{ with $caption }}
-            <figcaption class="figure-caption text-center">{{ . }}</figcaption>
-        {{ end }}
-        {{ with $cite }}
-            <figcaption class="blockquote-footer figure-caption text-{{ $align }}">{{ . }}</figcaption>
-        {{ end }}
-    </div>
+    {{ with $style }}
+        <div class="align-items-center d-flex flex-column justify-content-center" style="{{ . | safeCSS }}">
+    {{ end }}
+    <blockquote class="blockquote {{ if $caption }} mb-2 {{ else if not $cite }} mb-0 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
+    {{ with $caption }}
+        <figcaption class="figure-caption">{{ . }}</figcaption>
+    {{ end }}
+    {{ with $cite }}
+        <figcaption class="blockquote-footer figure-caption mb-0 text-{{ $align }}">{{ . }}</figcaption>
+    {{ end }}
+    {{ if $style }}
+        </div>
+    {{ end }}
 </figure>

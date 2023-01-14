@@ -1,6 +1,52 @@
 {{ $caption := .caption | markdownify }}
 {{ $content := .content | markdownify }}
 {{ $float := .float }}
+{{ $height := .height }}
+{{ $maxheight := .maxheight }}
+{{ $maxwidth := .maxwidth }}
+{{ $width := .width }}
+
+{{ $style := "" }}
+
+{{ if $height }}
+    {{ with printf "height: %v" $height }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxheight }}
+    {{ with printf "max-height: %v" $maxheight }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxwidth }}
+    {{ with printf "max-width: %v" $maxwidth }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $width }}
+    {{ with printf "width: %v" $width }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
 
 {{ $margins := "" }}
 {{ if $float }}
@@ -13,9 +59,15 @@
     {{ end }}
 {{ end }}
 
-<figure class="align-items-center d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-center {{ with $margins }} {{ . }} {{ end }} paige-figure">
+<figure class="align-items-center d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} {{ with $margins }} {{ . }} {{ end }} paige-figure">
+    {{ with $style }}
+        <div class="align-items-center d-flex flex-column justify-content-center" style="{{ . | safeCSS }}">
+    {{ end }}
     <div class="{{ if $caption }} mb-2 {{ end }} mw-100">{{ $content }}</div>
     {{ with $caption }}
         <figcaption class="figure-caption">{{ . }}</figcaption>
+    {{ end }}
+    {{ if $style }}
+        </div>
     {{ end }}
 </figure>
