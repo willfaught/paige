@@ -25,6 +25,7 @@
         "maxwidth" $maxwidth
         "method" $method
         "options" $options
+        "packed" true
         "page" .Page
         "resource" $resource
         "src" $image
@@ -51,48 +52,49 @@
 
     <figure>
         {{ if eq $type "grid" }}
-            <div class="container-fluid {{ if $caption }} figure-img {{ end }} px-0">
+            <div class="container-fluid {{ if $caption }} mb-2 {{ end }} px-0">
                 <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
                     {{ with $inner }}
                         {{ . }}
                     {{ else }}
                         {{ range $resources }}
-                            {{ partial "paige/image-figure.html" (dict
-                                "height" $height
-                                "link" .RelPermalink
-                                "maxheight" $maxheight
-                                "maxwidth" $maxwidth
-                                "method" $method
-                                "options" $options
-                                "page" $.Page
-                                "resource" .
-                                "table" true
-                                "width" $width
+                            <div class="col">
+                            {{ partial "paige/a.html" (dict
+                                "content" (partial "paige/img.html" (dict
+                                    "class" "img-fluid"
+                                    "height" $height
+                                    "maxheight" $maxheight
+                                    "maxwidth" $maxwidth
+                                    "method" $method
+                                    "options" $options
+                                    "resource" .
+                                    "width" $width
+                                ))
+                                "href" .RelPermalink
                             ) }}
+                            </div>
                         {{ end }}
                     {{ end }}
                 </div>
             </div>
         {{ else if eq $type "rows" }}
-            {{ if not (or $height $maxheight) }}
-                {{ $maxheight = $maxheight | default "10rem" }}
-            {{ end }}
-            <div class="align-items-{{ $align }} column-gap-3 d-flex {{ with $caption }} figure-img {{ end }} flex-wrap justify-content-{{ $justify }} row-gap-3">
+            <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} {{ if $caption }} mb-2 {{ end }} row-gap-3">
                 {{ with $inner }}
                     {{ . }}
                 {{ else }}
                     {{ range $resources }}
-                        {{ partial "paige/image-figure.html" (dict
-                            "height" $height
-                            "link" .RelPermalink
-                            "maxheight" $maxheight
-                            "maxwidth" $maxwidth
-                            "method" $method
-                            "options" $options
-                            "page" $.Page
-                            "resource" .
-                            "table" true
-                            "width" $width
+                        {{ partial "paige/a.html" (dict
+                            "content" (partial "paige/img.html" (dict
+                                "class" "img-fluid"
+                                "height" $height
+                                "maxheight" $maxheight
+                                "maxwidth" $maxwidth
+                                "method" $method
+                                "options" $options
+                                "resource" .
+                                "width" $width
+                            ))
+                            "href" .RelPermalink
                         ) }}
                     {{ end }}
                 {{ end }}

@@ -7,6 +7,7 @@
 {{ $maxwidth := .maxwidth }}
 {{ $method := .method }}
 {{ $options := .options }}
+{{ $packed := .packed }}
 {{ $page := .page }}
 {{ $resource := .resource }}
 {{ $src := .src }}
@@ -14,14 +15,9 @@
 {{ $title := .title }}
 {{ $width := .width }}
 
-{{ $class := "img-fluid" }}
-{{ if $caption }}
-    {{ $class = "figure-img img-fluid" }}
-{{ end }}
-
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt
-    "class" $class
+    "class" "img-fluid"
     "method" $method
     "options" $options
     "page" $page
@@ -79,15 +75,8 @@
     {{ end }}
 {{ end }}
 
-{{ if $table }}
-    <figure class="d-table mb-0 paige-figure text-center">
-        {{ $content }}
-        {{ with $caption }}
-            <figcaption class="figure-caption" style="caption-side: bottom; display: table-caption">{{ . }}</figcaption>
-        {{ end }}
-    </figure>
-{{ else if $float }}
-    {{ $margin := "" }}
+{{ $margin := "" }}
+{{ if $float }}
     {{ if eq $float "start" }}
         {{ $margin = "me-4" }}
     {{ else if eq $float "end" }}
@@ -95,25 +84,19 @@
     {{ else }}
         {{ errorf "invalid float: %q" $float }}
     {{ end }}
-    <figure class="d-table float-{{ $float }} {{ $margin }} paige-figure text-center" {{ with $style }} style="{{ . | safeCSS }}" {{ end }}>
-        {{ $content }}
-        {{ with $caption }}
-            <figcaption class="figure-caption" style="caption-side: bottom; display: table-caption">{{ . }}</figcaption>
-        {{ end }}
-    </figure>
-{{ else }}
-<figure class="paige-figure text-center">
-    {{ with $style }}
-        <div class="align-items-center d-flex flex-column">
-            <div style="{{ . }}">
-    {{ end }}
-    {{ $content }}
-    {{ with $caption }}
-        <figcaption class="figure-caption">{{ . }}</figcaption>
-    {{ end }}
-    {{ if $style }}
-        </div>
-    </div>
-    {{ end }}
-</figure>
 {{ end }}
+
+<figure class="{{ if $float }} float-{{ $float }} {{ $margin }} {{ else if $packed }} mb-0 {{ end }} align-items-center d-flex flex-column justify-content-center paige-figure" {{ if $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+    <div class="align-items-center d-flex flex-column justify-content-center {{ if and $float $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+        {{ if or $float $table }}
+            <div class="d-table">
+        {{ end }}
+        <div {{ if $caption }} class="mb-2" {{ end }}>{{ $content }}</div>
+        {{ with $caption }}
+            <figcaption class="figure-caption text-center" {{ if or $float $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+        {{ end }}
+        {{ if or $float $table }}
+            </div>
+        {{ end }}
+    </div>
+</figure>

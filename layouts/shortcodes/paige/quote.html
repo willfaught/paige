@@ -51,29 +51,37 @@
     {{ end }}
 {{ end }}
 
-{{ $margins := "" }}
+{{ $margin := "" }}
 {{ if $float }}
     {{ if eq $float "start" }}
-        {{ $margins = "me-4" }}
+        {{ $margin = "me-4" }}
     {{ else if eq $float "end" }}
-        {{ $margins = "ms-4" }}
+        {{ $margin = "ms-4" }}
     {{ else }}
         {{ errorf "invalid float: %q" $float }}
     {{ end }}
 {{ end }}
 
-<figure class="align-items-center d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} {{ with $margins }} {{ . }} {{ end }} paige-figure">
-    {{ with $style }}
-        <div class="align-items-center d-flex flex-column justify-content-center" style="{{ . | safeCSS }}">
-    {{ end }}
-    <blockquote class="blockquote {{ if $caption }} mb-2 {{ else if not $cite }} mb-0 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
-    {{ with $caption }}
-        <figcaption class="figure-caption">{{ . }}</figcaption>
-    {{ end }}
-    {{ with $cite }}
-        <figcaption class="blockquote-footer figure-caption mb-0 text-{{ $align }}">{{ . }}</figcaption>
-    {{ end }}
-    {{ if $style }}
-        </div>
-    {{ end }}
+<figure class="{{ with $float }} float-{{ . }} {{ $margin }} {{ end }} align-items-center d-flex flex-column justify-content-center paige-figure" {{ if $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+    <div class="align-items-center d-flex flex-column justify-content-center {{ if and $float $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+        {{ if $float }}
+            <div class="d-table">
+        {{ end }}
+        {{ if $caption }}
+            <div class="mb-2">
+        {{ end }}
+            <blockquote class="blockquote {{ if not $cite }} mb-0 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
+        {{ if $caption }}
+            </div>
+        {{ end }}
+        {{ with $caption }}
+            <figcaption class="figure-caption text-center" {{ if $float }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+        {{ end }}
+        {{ with $cite }}
+            <figcaption class="blockquote-footer figure-caption mb-0 text-{{ $align }}">{{ . }}</figcaption>
+        {{ end }}
+        {{ if $float }}
+            </div>
+        {{ end }}
+    </div>
 </figure>
