@@ -82,7 +82,7 @@
         {{ if $table }}
             <div class="d-table">
         {{ end }}
-        <div>{{ $content }}</div>
+        <div class="text-{{ $align }}">{{ $content }}</div>
         {{ with $caption }}
             <figcaption class="figure-caption mt-{{ $gap }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
         {{ end }}

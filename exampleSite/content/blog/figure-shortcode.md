@@ -97,7 +97,27 @@ Michael was having brunch with Sally Sitwell at a restaurant called Skip Church'
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" */>}}
+{{</* paige/figure caption="Hickory Dickory Dock" align="start" */>}}
+<div style="white-space: pre">
+Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.
+</div>
+{{</* /paige/figure */>}}
+
+{{</* paige/figure caption="Hickory Dickory Dock" align="center" */>}}
+<div style="white-space: pre">
+Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.
+</div>
+{{</* /paige/figure */>}}
+
+{{</* paige/figure caption="Hickory Dickory Dock" align="end" */>}}
 <div style="white-space: pre">
 Hickory dickory dock.
 The mouse ran up the clock.
@@ -110,7 +130,27 @@ Hickory dickory dock.
 
 Result:
 
-{{< paige/figure caption="Hickory Dickory Dock" >}}
+{{< paige/figure caption="Hickory Dickory Dock" align="start" >}}
+<div style="white-space: pre">
+Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.
+</div>
+{{< /paige/figure >}}
+
+{{< paige/figure caption="Hickory Dickory Dock" align="center" >}}
+<div style="white-space: pre">
+Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.
+</div>
+{{< /paige/figure >}}
+
+{{< paige/figure caption="Hickory Dickory Dock" align="end" >}}
 <div style="white-space: pre">
 Hickory dickory dock.
 The mouse ran up the clock.
