@@ -76,7 +76,9 @@
 {{ end }}
 
 <figure class="{{ with $float }} float-{{ . }} {{ $sidemargin }} {{ end }} {{ if not $bottommargin }} mb-0 {{ end }} align-items-{{ $align }} d-flex flex-column justify-content-center paige-figure" {{ if $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
-    <div class="align-items-{{ $align }} d-flex flex-column justify-content-center {{ if $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+    {{ if and (not $float) $style }}
+        <div class="align-items-{{ $align }} d-flex flex-column justify-content-center {{ if $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+    {{ end }}
         {{ if $table }}
             <div class="d-table">
         {{ end }}
@@ -87,5 +89,7 @@
         {{ if $table }}
             </div>
         {{ end }}
-    </div>
+    {{ if and (not $float) $style }}
+        </div>
+    {{ end }}
 </figure>
