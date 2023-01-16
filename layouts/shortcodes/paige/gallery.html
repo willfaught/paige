@@ -8,25 +8,33 @@
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" | default "resize" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
+{{ $raw := .Get "raw" }}
 {{ $type := .Get "type" | default "rows" }}
 {{ $width := .Get "width" }}
 
 {{ if $image }}
-    {{ $resource := partial "paige/func-resource.html" (dict
-        "page" .Page
-        "url" $image
-    ) }}
+    {{ $link := $image }}
+    {{ $resource := "" }}
+
+    {{ if not $raw }}
+        {{ $resource = partial "paige/func-resource.html" (dict
+            "page" .Page
+            "url" $image
+        ) }}
+        {{ $link = $resource.RelPermalink }}
+    {{ end }}
 
     {{ partial "paige/image-figure.html" (dict
         "caption" $caption
         "compact" true
         "height" $height
-        "link" $resource.RelPermalink
+        "link" $link
         "maxheight" $maxheight
         "maxwidth" $maxwidth
         "method" $method
         "options" $options
         "page" .Page
+        "raw" $raw
         "resource" $resource
         "src" $image
         "table" true

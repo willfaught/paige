@@ -602,6 +602,7 @@ The `paige/image` shortcode provides a figure with a centered image.
     maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
+    raw=false
     src="me.jpg"
     title="My title"
     width="10rem" >}}
@@ -630,6 +631,8 @@ Parameters:
     <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
+    <dt><code>raw</code></dt>
+    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image URL.</dd>
     <dt><code>title</code></dt>
@@ -661,10 +664,12 @@ The `paige/gallery` shortcode provides a figure with a centered list of images.
     {{< paige/gallery
         image="me.jpg"
         caption="My caption"
+        raw=false
     >}}
     {{< paige/gallery
         image="you.jpg"
         caption="My caption"
+        raw=false
     >}}
 {{< /paige/gallery >}}
 ```
@@ -694,6 +699,8 @@ Parameters:
     <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
+    <dt><code>raw</code></dt>
+    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>

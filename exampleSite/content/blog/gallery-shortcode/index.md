@@ -9,6 +9,22 @@ title: Gallery Shortcode
 See the images in the example site to understand how the below file patterns work.
 Resize the viewport as narrow and wide as you can to see the responsiveness.
 
+Code:
+
+```go-text-template
+{{</* paige/gallery */>}}
+    {{</* paige/gallery image="https://picsum.photos/400/300.webp" raw=true /*/>}}
+{{</* /paige/gallery */>}}
+```
+
+Result:
+
+{{< paige/gallery >}}
+    {{< paige/gallery image="https://picsum.photos/400/300.webp" raw=true />}}
+{{< /paige/gallery >}}
+
+---
+
 ## Rows layout
 
 Code:
