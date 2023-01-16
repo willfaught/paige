@@ -11,7 +11,7 @@
 
 {{ $table := false }}
 
-{{ if or $compact $float }}
+{{ if and $caption (or $compact $float) }}
     {{ $table = true }}
 {{ end }}
 
