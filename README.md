@@ -683,7 +683,7 @@ Parameters:
     <dt><code>image</code></dt>
     <dd>Optional. String. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
-    <dd>Optional. Position 0. String. Page, site, or remote images glob. Defaults to all image page resources.</dd>
+    <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. String. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
     <dt><code>maxheight</code></dt>
