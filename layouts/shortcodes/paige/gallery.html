@@ -67,19 +67,19 @@
                     {{ else }}
                         {{ range $resources }}
                             <div class="col">
-                            {{ partial "paige/a.html" (dict
-                                "content" (partial "paige/img.html" (dict
-                                    "class" "img-fluid"
-                                    "height" $height
-                                    "maxheight" $maxheight
-                                    "maxwidth" $maxwidth
-                                    "method" $method
-                                    "options" $options
-                                    "resource" .
-                                    "width" $width
-                                ))
-                                "href" .RelPermalink
-                            ) }}
+                                {{ partial "paige/a.html" (dict
+                                    "content" (partial "paige/img.html" (dict
+                                        "class" "img-fluid"
+                                        "height" $height
+                                        "maxheight" $maxheight
+                                        "maxwidth" $maxwidth
+                                        "method" $method
+                                        "options" $options
+                                        "resource" .
+                                        "width" $width
+                                    ))
+                                    "href" .RelPermalink
+                                ) }}
                             </div>
                         {{ end }}
                     {{ end }}
