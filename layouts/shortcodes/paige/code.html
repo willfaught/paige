@@ -1,8 +1,12 @@
 {{ $align := .Get "align" }}
 {{ $caption := .Get "caption" }}
 {{ $float := .Get "float" }}
+{{ $height := .Get "height" }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
 {{ $options := .Get "options" }}
+{{ $width := .Get "width" }}
 
 {{ $content := highlight (.Inner | replaceRE "^\n" "") $lang $options }}
 
@@ -11,4 +15,8 @@
     "caption" $caption
     "content" $content
     "float" $float
+    "height" $height
+    "maxheight" $maxheight
+    "maxwidth" $maxwidth
+    "width" $width
 ) }}
