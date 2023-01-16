@@ -9,12 +9,6 @@
 {{ $maxwidth := .maxwidth }}
 {{ $width := .width }}
 
-{{ $bottommargin := true }}
-
-{{ if $compact }}
-    {{ $bottommargin = false }}
-{{ end }}
-
 {{ $table := false }}
 
 {{ if or $compact $float }}
@@ -75,7 +69,7 @@
     {{ end }}
 {{ end }}
 
-<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-center {{ if not $bottommargin }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
+<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-center {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
     {{ if and (not $float) $style }}
         <div class="align-items-{{ $align }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-center" style="{{ $style | safeCSS }}">
     {{ end }}
