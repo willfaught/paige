@@ -1,12 +1,11 @@
 {{ $align := .Get "align" }}
 {{ $caption := .Get 0 | default (.Get "caption") }}
+{{ $content := .Inner | markdownify }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $width := .Get "width" }}
-
-{{ $content := .Inner }}
 
 {{ partial "paige/figure.html" (dict
     "align" $align
