@@ -195,6 +195,15 @@ Result:
 
 ## Customization
 
+{{< paige/gallery caption="X image" >}}
+    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
+    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
+    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
+    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
+{{< /paige/gallery >}}
+
+---
+
 Code:
 
 ```go-text-template
