@@ -103,7 +103,7 @@
                 </div>
             </div>
         {{ else if eq $type "rows" }}
-            <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} {{ if $caption }} mb-2 {{ end }} row-gap-3">
+            <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
                 {{ with $inner }}
                     {{ . }}
                 {{ else }}
@@ -128,7 +128,7 @@
             {{ errorf "invalid type: %q" $type }}
         {{ end }}
         {{ with $caption }}
-            <figcaption class="figure-caption text-center">{{ . }}</figcaption>
+            <figcaption class="figure-caption mt-2 text-center">{{ . }}</figcaption>
         {{ end }}
     </figure>
 {{ end }}
