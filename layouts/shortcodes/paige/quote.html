@@ -7,7 +7,7 @@
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $width := .Get "width" }}
 
-{{ $content = printf `<blockquote class="blockquote mb-0">%v</blockquote>` $content | safeHTML }}
+{{ $content = printf `<blockquote class="blockquote mb-0">%v</blockquote>` $content }}
 
 {{ partial "paige/figure.html" (dict
     "align" $align
