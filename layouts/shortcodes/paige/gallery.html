@@ -19,13 +19,13 @@
 
     {{ partial "paige/image-figure.html" (dict
         "caption" $caption
+        "compact" true
         "height" $height
         "link" $resource.RelPermalink
         "maxheight" $maxheight
         "maxwidth" $maxwidth
         "method" $method
         "options" $options
-        "packed" true
         "page" .Page
         "resource" $resource
         "src" $image

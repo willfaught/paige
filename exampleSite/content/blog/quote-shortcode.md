@@ -41,22 +41,6 @@ Don't believe everything you read on the Internet.
 Code:
 
 ```go-text-template
-{{</* paige/quote cite="Abraham Lincoln" */>}}
-Don't believe everything you read on the Internet.
-{{</* /paige/quote */>}}
-```
-
-Result:
-
-{{< paige/quote cite="Abraham Lincoln" >}}
-Don't believe everything you read on the Internet.
-{{< /paige/quote >}}
-
----
-
-Code:
-
-```go-text-template
 {{</* paige/quote */>}}
 Don't believe everything you read on the Internet.
 {{</* /paige/quote */>}}
@@ -81,31 +65,7 @@ Use the Force, Harry.
 Code:
 
 ```go-text-template
-{{</* paige/quote cite="Abraham Lincoln" */>}}
-Don't believe everything you read on the Internet.
-{{</* /paige/quote */>}}
-
-{{</* paige/quote cite="Gandalf" */>}}
-Use the Force, Harry.
-{{</* /paige/quote */>}}
-```
-
-Result:
-
-{{< paige/quote cite="Abraham Lincoln" >}}
-Don't believe everything you read on the Internet.
-{{< /paige/quote >}}
-
-{{< paige/quote cite="Gandalf" >}}
-Use the Force, Harry.
-{{< /paige/quote >}}
-
----
-
-Code:
-
-```go-text-template
-{{</* paige/quote cite="Abraham Lincoln" float="end" */>}}
+{{</* paige/quote caption="Abraham Lincoln" float="end" */>}}
 Don't believe everything you read on the Internet.
 {{</* /paige/quote */>}}
 
@@ -114,7 +74,7 @@ Michael was having brunch with Sally Sitwell at a restaurant called Skip Church'
 
 Result:
 
-{{< paige/quote cite="Abraham Lincoln" float="end" >}}
+{{< paige/quote caption="Abraham Lincoln" float="end" >}}
 Don't believe everything you read on the Internet.
 {{< /paige/quote >}}
 
@@ -133,7 +93,15 @@ The mouse ran down,
 Hickory dickory dock.</div>
 {{</* /paige/quote */>}}
 
-{{</* paige/quote cite="Hickory Dickory Dock" align="end" */>}}
+{{</* paige/quote caption="Hickory Dickory Dock" align="center" */>}}
+<div style="white-space: pre">Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.</div>
+{{</* /paige/quote */>}}
+
+{{</* paige/quote caption="Hickory Dickory Dock" align="end" */>}}
 <div style="white-space: pre">Hickory dickory dock.
 The mouse ran up the clock.
 The clock struck one,
@@ -152,7 +120,15 @@ The mouse ran down,
 Hickory dickory dock.</div>
 {{< /paige/quote >}}
 
-{{< paige/quote cite="Hickory Dickory Dock" align="end" >}}
+{{< paige/quote caption="Hickory Dickory Dock" align="center" >}}
+<div style="white-space: pre">Hickory dickory dock.
+The mouse ran up the clock.
+The clock struck one,
+The mouse ran down,
+Hickory dickory dock.</div>
+{{< /paige/quote >}}
+
+{{< paige/quote caption="Hickory Dickory Dock" align="end" >}}
 <div style="white-space: pre">Humpty Dumpty sat on a wall,
 Humpty Dumpty had a great fall.
 All the king's horses and all the king's men

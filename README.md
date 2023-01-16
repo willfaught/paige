@@ -511,7 +511,7 @@ title: Search
 The `paige/figure` shortcode provides a figure with centered content.
 
 ```
-{{< paige/figure caption="My caption" float="left" >}}
+{{< paige/figure align="center" caption="My caption" float="left" >}}
 My content
 {{< /paige/figure >}}
 ```
@@ -521,6 +521,8 @@ Parameters:
 <dl>
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
+    <dt><code>align</code></dt>
+    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. Position 0. String. Markdown. Descriptive text that appears centered below the content.</dd>
     <dt><code>float</code></dt>
@@ -543,7 +545,7 @@ Parameters:
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Aligns text horizontally. Must be <code>start</code>, <code>center</code>, or <code>end</code>.</dd>
+    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the quotation. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
@@ -557,7 +559,7 @@ Parameters:
 The `paige/code` shortcode provides a figure with centered code.
 
 ```
-{{< paige/code caption="My caption" float="left" lang="html" options="linenos=true" >}}
+{{< paige/code align="center" caption="My caption" float="left" lang="html" options="linenos=true" >}}
 <!doctype html>
 <html lang="en">
 <body>
@@ -572,6 +574,8 @@ Parameters:
 <dl>
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
+    <dt><code>align</code></dt>
+    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the code.</dd>
     <dt><code>float</code></dt>
@@ -588,6 +592,7 @@ The `paige/image` shortcode provides a figure with a centered image.
 
 ```
 {{< paige/image
+    align="center"
     alt="My alt" >}}
     caption="My caption"
     float="left"
@@ -605,6 +610,8 @@ The `paige/image` shortcode provides a figure with a centered image.
 Parameters:
 
 <dl>
+    <dt><code>align</code></dt>
+    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>caption</code></dt>

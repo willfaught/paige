@@ -1,87 +1,22 @@
-{{ $align := .Get "align" | default "center" }}
+{{ $align := .Get "align" }}
 {{ $caption := .Get "caption" | markdownify }}
-{{ $cite := (.Get 0 | default (.Get "cite")) | markdownify }}
+{{ $content := .Inner | markdownify }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $width := .Get "width" }}
 
-{{ $content := .Inner | markdownify }}
+{{ $content = printf `<blockquote class="blockquote mb-0 text-%v">%v</blockquote>` $align $content | safeHTML }}
 
-{{ $style := "" }}
-
-{{ if $height }}
-    {{ with printf "height: %v" $height }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
-{{ if $maxheight }}
-    {{ with printf "max-height: %v" $maxheight }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
-{{ if $maxwidth }}
-    {{ with printf "max-width: %v" $maxwidth }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
-{{ if $width }}
-    {{ with printf "width: %v" $width }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
-{{ end }}
-
-{{ $margin := "" }}
-{{ if $float }}
-    {{ if eq $float "start" }}
-        {{ $margin = "me-4" }}
-    {{ else if eq $float "end" }}
-        {{ $margin = "ms-4" }}
-    {{ else }}
-        {{ errorf "invalid float: %q" $float }}
-    {{ end }}
-{{ end }}
-
-<figure class="{{ with $float }} float-{{ . }} {{ $margin }} {{ end }} align-items-center d-flex flex-column justify-content-center paige-figure" {{ if $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
-    <div class="align-items-center d-flex flex-column justify-content-center {{ if and $float $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
-        {{ if $float }}
-            <div class="d-table">
-        {{ end }}
-        {{ if $caption }}
-            <div class="mb-2">
-        {{ end }}
-            <blockquote class="blockquote {{ if not $cite }} mb-0 {{ end }} text-{{ $align }}">{{ $content }}</blockquote>
-        {{ if $caption }}
-            </div>
-        {{ end }}
-        {{ with $caption }}
-            <figcaption class="figure-caption text-center" {{ if $float }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
-        {{ end }}
-        {{ with $cite }}
-            <figcaption class="blockquote-footer figure-caption mb-0 text-{{ $align }}">{{ . }}</figcaption>
-        {{ end }}
-        {{ if $float }}
-            </div>
-        {{ end }}
-    </div>
-</figure>
+{{ partial "paige/figure.html" (dict
+    "align" $align
+    "caption" $caption
+    "content" $content
+    "float" $float
+    "gap" "0"
+    "height" $height
+    "maxheight" $maxheight
+    "maxwidth" $maxwidth
+    "width" $width
+) }}

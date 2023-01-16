@@ -1,3 +1,4 @@
+{{ $align := .Get "align" }}
 {{ $caption := .Get 0 | default (.Get "caption") }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
@@ -8,6 +9,7 @@
 {{ $content := .Inner }}
 
 {{ partial "paige/figure.html" (dict
+    "align" $align
     "caption" $caption
     "content" $content
     "float" $float

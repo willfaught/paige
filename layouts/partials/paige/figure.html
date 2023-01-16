@@ -1,10 +1,25 @@
+{{ $align := .align | default "center" }}
 {{ $caption := .caption | markdownify }}
+{{ $compact := .compact }}
 {{ $content := .content | markdownify }}
 {{ $float := .float }}
+{{ $gap := .gap | default "2" }}
 {{ $height := .height }}
 {{ $maxheight := .maxheight }}
 {{ $maxwidth := .maxwidth }}
 {{ $width := .width }}
+
+{{ $bottommargin := true }}
+
+{{ if $compact }}
+    {{ $bottommargin = false }}
+{{ end }}
+
+{{ $table := false }}
+
+{{ if or $compact $float }}
+    {{ $table = true }}
+{{ end }}
 
 {{ $style := "" }}
 
@@ -48,27 +63,28 @@
     {{ end }}
 {{ end }}
 
-{{ $margin := "" }}
+{{ $sidemargin := "" }}
+
 {{ if $float }}
     {{ if eq $float "start" }}
-        {{ $margin = "me-4" }}
+        {{ $sidemargin = "me-4" }}
     {{ else if eq $float "end" }}
-        {{ $margin = "ms-4" }}
+        {{ $sidemargin = "ms-4" }}
     {{ else }}
         {{ errorf "invalid float: %q" $float }}
     {{ end }}
 {{ end }}
 
-<figure class="{{ with $float }} float-{{ . }} {{ $margin }} {{ end }} align-items-center d-flex flex-column justify-content-center paige-figure" {{ if $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
-    <div class="align-items-center d-flex flex-column justify-content-center {{ if and $float $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
-        {{ if $float }}
+<figure class="{{ with $float }} float-{{ . }} {{ $sidemargin }} {{ end }} {{ if not $bottommargin }} mb-0 {{ end }} align-items-{{ $align }} d-flex flex-column justify-content-center paige-figure" {{ if $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+    <div class="align-items-{{ $align }} d-flex flex-column justify-content-center {{ if and $float $height }} h-100 {{ end }}" {{ if not $float }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ end }}>
+        {{ if $table }}
             <div class="d-table">
         {{ end }}
-        <div {{ if $caption }} class="mb-2" {{ end }}>{{ $content }}</div>
+        <div>{{ $content }}</div>
         {{ with $caption }}
-            <figcaption class="figure-caption text-center" {{ if $float }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+            <figcaption class="figure-caption mt-{{ $gap }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
         {{ end }}
-        {{ if $float }}
+        {{ if $table }}
             </div>
         {{ end }}
     </div>
