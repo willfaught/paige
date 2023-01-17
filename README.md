@@ -522,7 +522,7 @@ Parameters:
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. Position 0. String. Markdown. Descriptive text that appears centered below the content.</dd>
     <dt><code>float</code></dt>
@@ -547,7 +547,7 @@ Parameters:
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the quotation. Must not be used with <code>cite</code>.</dd>
     <dt><code>cite</code></dt>
@@ -579,7 +579,7 @@ Parameters:
     <dt><code>.Inner</code></dt>
     <dd>Required. String. Markdown. The inner content.</dd>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the code.</dd>
     <dt><code>float</code></dt>
@@ -619,7 +619,7 @@ Parameters:
 
 <dl>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>caption</code></dt>
