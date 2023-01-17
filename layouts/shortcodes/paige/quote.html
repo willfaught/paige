@@ -3,6 +3,7 @@
 {{ $content := .Inner | markdownify }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
+{{ $justify := .Get "justify" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $width := .Get "width" }}
@@ -15,6 +16,7 @@
     "content" $content
     "float" $float
     "height" $height
+    "justify" $justify
     "maxheight" $maxheight
     "maxwidth" $maxwidth
     "width" $width

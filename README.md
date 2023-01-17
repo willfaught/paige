@@ -511,7 +511,7 @@ title: Search
 The `paige/figure` shortcode provides a figure with centered content.
 
 ```
-{{< paige/figure align="center" caption="My caption" float="left" >}}
+{{< paige/figure align="center" caption="My caption" float="left" justify="center" >}}
 My content
 {{< /paige/figure >}}
 ```
@@ -527,6 +527,8 @@ Parameters:
     <dd>Optional. Position 0. String. Markdown. Descriptive text that appears centered below the content.</dd>
     <dt><code>float</code></dt>
     <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
 </dl>
 
 ### Quote
@@ -534,7 +536,7 @@ Parameters:
 The `paige/quote` shortcode provides a figure with a centered quotation.
 
 ```
-{{< paige/quote align="center" caption="My caption" cite="My citation" float="left" >}}
+{{< paige/quote align="center" caption="My caption" cite="My citation" float="left" justify="center" >}}
 My content
 {{< /paige/quote >}}
 ```
@@ -552,6 +554,8 @@ Parameters:
     <dd>Optional. Position 0. String. Markdown. Citation text that appears centered below the quotation. Must not be used with <code>caption</code>.</dd>
     <dt><code>float</code></dt>
     <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
 </dl>
 
 ### Code
@@ -559,7 +563,7 @@ Parameters:
 The `paige/code` shortcode provides a figure with centered code.
 
 ```
-{{< paige/code align="center" caption="My caption" float="left" lang="html" options="linenos=true" >}}
+{{< paige/code align="center" caption="My caption" float="left" justify="center" lang="html" options="linenos=true" >}}
 <!doctype html>
 <html lang="en">
 <body>
@@ -580,6 +584,8 @@ Parameters:
     <dd>Optional. String. Markdown. Descriptive text that appears centered below the code.</dd>
     <dt><code>float</code></dt>
     <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>lang</code></dt>
     <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
@@ -597,6 +603,7 @@ The `paige/image` shortcode provides a figure with a centered image.
     caption="My caption"
     float="left"
     height="10rem"
+    justify="center"
     link="https://github.com/willfaught/paige"
     maxheight="10rem"
     maxwidth="10rem"
@@ -621,6 +628,8 @@ Parameters:
     <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. Image height.</dd>
+    <dt><code>justify</code></dt>
+    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link.</dd>
     <dt><code>maxheight</code></dt>

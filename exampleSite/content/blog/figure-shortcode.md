@@ -57,7 +57,7 @@ Michael was having brunch with Sally Sitwell at a restaurant called Skip Church'
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Michael was having brunch with Sally Sitwell" float="end" */>}}
+{{</* paige/figure caption="Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro." width="20%" height="15rem" float="end" justify="center" */>}}
 Michael was having brunch
 {{</* /paige/figure */>}}
 
@@ -66,7 +66,7 @@ Michael was having brunch with Sally Sitwell at a restaurant called Skip Church'
 
 Result:
 
-{{< paige/figure caption="Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro." width="20%" height="15rem" float="end" >}}
+{{< paige/figure caption="Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro." width="20%" height="15rem" float="end" justify="center" >}}
 Michael was having brunch with Sally Sitwell
 {{< /paige/figure >}}
 

@@ -5,6 +5,7 @@
 {{ $float := .float }}
 {{ $gap := .gap }}
 {{ $height := .height }}
+{{ $justify := .justify | default "center" }}
 {{ $maxheight := .maxheight }}
 {{ $maxwidth := .maxwidth }}
 {{ $width := .width }}
@@ -69,9 +70,9 @@
     {{ end }}
 {{ end }}
 
-<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-center {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
+<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $justify }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
     {{ if and (not $float) $style }}
-        <div class="align-items-{{ $align }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-center" style="{{ $style | safeCSS }}">
+        <div class="align-items-{{ $align }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-{{ $justify }}" style="{{ $style | safeCSS }}">
     {{ end }}
     {{ if $table }}
         <div class="d-table">
