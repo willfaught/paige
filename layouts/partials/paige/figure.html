@@ -3,7 +3,7 @@
 {{ $compact := .compact }}
 {{ $content := .content | markdownify }}
 {{ $float := .float }}
-{{ $gap := .gap | default "2" }}
+{{ $gap := .gap }}
 {{ $height := .height }}
 {{ $maxheight := .maxheight }}
 {{ $maxwidth := .maxwidth }}
@@ -78,7 +78,7 @@
         {{ end }}
         <div class="text-{{ $align }}">{{ $content }}</div>
         {{ with $caption }}
-            <figcaption class="figure-caption mt-{{ $gap }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+            <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
         {{ end }}
         {{ if $table }}
             </div>
