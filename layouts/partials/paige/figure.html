@@ -73,16 +73,16 @@
     {{ if and (not $float) $style }}
         <div class="align-items-{{ $align }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-center" style="{{ $style | safeCSS }}">
     {{ end }}
-        {{ if $table }}
-            <div class="d-table">
-        {{ end }}
-        <div class="text-{{ $align }}">{{ $content }}</div>
-        {{ with $caption }}
-            <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
-        {{ end }}
-        {{ if $table }}
-            </div>
-        {{ end }}
+    {{ if $table }}
+        <div class="d-table">
+    {{ end }}
+    <div class="text-{{ $align }}">{{ $content }}</div>
+    {{ with $caption }}
+        <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+    {{ end }}
+    {{ if $table }}
+        </div>
+    {{ end }}
     {{ if and (not $float) $style }}
         </div>
     {{ end }}
