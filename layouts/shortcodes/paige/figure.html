@@ -6,6 +6,8 @@
 {{ $justify := .Get "justify" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
+{{ $number := .Get "number" }}
+{{ $numbered := .Get "numbered" }}
 {{ $width := .Get "width" }}
 
 {{ partial "paige/figure.html" (dict
@@ -18,5 +20,7 @@
     "justify" $justify
     "maxheight" $maxheight
     "maxwidth" $maxwidth
+    "number" $number
+    "numbered" $numbered
     "width" $width
 ) }}

@@ -4,7 +4,20 @@ body, html {
 }
 
 section[class="paige-content"] {
+    counter-reset: paige-figure;
     max-width: 100%;
+}
+
+section[class="paige-content"] figure.paige-figure.paige-figure-numbered {
+    counter-increment: paige-figure;
+}
+
+section[class="paige-content"] figure.paige-figure.paige-figure-numbered figcaption:empty::before {
+    content: "{{ i18n `paige_figure` }} " counter(paige-figure);
+}
+
+section[class="paige-content"] figure.paige-figure.paige-figure-numbered figcaption::before {
+    content: "{{ i18n `paige_figure` }} " counter(paige-figure) ": ";
 }
 
 section[class="paige-content"] > blockquote {

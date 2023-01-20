@@ -6,6 +6,8 @@
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
+{{ $number := .Get "number" }}
+{{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" }}
 {{ $width := .Get "width" }}
 
@@ -21,5 +23,7 @@
     "justify" $justify
     "maxheight" $maxheight
     "maxwidth" $maxwidth
+    "number" $number
+    "numbered" $numbered
     "width" $width
 ) }}

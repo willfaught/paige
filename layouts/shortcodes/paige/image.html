@@ -8,6 +8,8 @@
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" }}
+{{ $number := .Get "number" }}
+{{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" }}
 {{ $raw := .Get "raw" }}
 {{ $src := .Get 0 | default (.Get "src") }}
@@ -26,6 +28,8 @@
     "maxheight" $maxheight
     "maxwidth" $maxwidth
     "method" $method
+    "number" $number
+    "numbered" $numbered
     "options" $options
     "raw" $raw
     "src" $src

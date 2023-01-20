@@ -8,6 +8,8 @@
 {{ $justify := .justify | default "center" }}
 {{ $maxheight := .maxheight }}
 {{ $maxwidth := .maxwidth }}
+{{ $number := .number }}
+{{ $numbered := .numbered }}
 {{ $width := .width }}
 
 {{ $table := false }}
@@ -70,7 +72,22 @@
     {{ end }}
 {{ end }}
 
-<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $justify }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
+{{ $showcaption := $caption }}
+
+{{ if $caption }}
+    {{ if $number }}
+        {{ $caption = printf "%v %v: %v" (i18n "paige_figure") $number $caption }}
+    {{ end }}
+{{ else }}
+    {{ if $number }}
+        {{ $caption = printf "%v %v" (i18n "paige_figure") $number }}
+        {{ $showcaption = true }}
+    {{ else if $numbered }}
+        {{ $showcaption = true }}
+    {{ end }}
+{{ end }}
+
+<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $justify }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
     {{ if and (not $float) $style }}
         <div class="align-items-{{ $align }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-{{ $justify }}" style="{{ $style | safeCSS }}">
     {{ end }}
@@ -78,8 +95,8 @@
         <div class="d-table">
     {{ end }}
     <div class="text-{{ $align }}">{{ $content }}</div>
-    {{ with $caption }}
-        <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ . }}</figcaption>
+    {{ if $showcaption }}
+        <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
     {{ end }}
     {{ if $table }}
         </div>

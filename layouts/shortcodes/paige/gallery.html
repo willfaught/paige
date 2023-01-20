@@ -7,6 +7,8 @@
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" | default "resize" }}
+{{ $number := .Get "number" }}
+{{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
 {{ $raw := .Get "raw" }}
 {{ $type := .Get "type" | default "rows" }}
@@ -61,6 +63,7 @@
 {{ else }}
     {{ $inner := chomp .Inner }}
     {{ $resources := slice }}
+    {{ $showcaption := $caption }}
 
     {{ with $images }}
         {{ with $.Page.Resources.Match . }}
@@ -73,6 +76,19 @@
             {{ $resources = . }}
         {{ else }}
             {{ $resources = resources.ByType "image" }}
+        {{ end }}
+    {{ end }}
+
+    {{ if $caption }}
+        {{ if $number }}
+            {{ $caption = printf "%v %v: %v" (i18n "paige_figure") $number $caption }}
+        {{ end }}
+    {{ else }}
+        {{ if $number }}
+            {{ $caption = printf "%v %v" (i18n "paige_figure") $number }}
+            {{ $showcaption = true }}
+        {{ else if $numbered }}
+            {{ $showcaption = true }}
         {{ end }}
     {{ end }}
 
@@ -128,8 +144,8 @@
         {{ else }}
             {{ errorf "invalid type: %q" $type }}
         {{ end }}
-        {{ with $caption }}
-            <figcaption class="figure-caption mt-2 text-center">{{ . }}</figcaption>
+        {{ if $showcaption }}
+            <figcaption class="figure-caption mt-2 text-center">{{ $caption }}</figcaption>
         {{ end }}
     </figure>
 {{ end }}

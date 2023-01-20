@@ -519,6 +519,8 @@ The `paige/figure` shortcode provides a figure with content.
     justify="center"
     maxheight="10rem"
     maxwidth="10rem"
+    number=0
+    numbered=false
     width="10rem"
 >}}
 My content
@@ -544,6 +546,10 @@ Parameters:
     <dd>Optional. String. CSS value. Maximum total height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum total width.</dd>
+    <dt><code>number</code></dt>
+    <dd>Optional. Integer or string. Figure number. Displayed with the caption.</dd>
+    <dt><code>numbered</code></dt>
+    <dd>Optional. Boolean. Number the figure automatically. Displayed with the caption.</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Total width.</dd>
 </dl>
