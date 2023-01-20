@@ -1,5 +1,5 @@
 {{ $align := .Get "align" }}
-{{ $caption := .Get "caption" | markdownify }}
+{{ $caption := .Get 0 | default (.Get "caption") }}
 {{ $content := .Inner }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
