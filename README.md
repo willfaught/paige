@@ -2,37 +2,7 @@
 
 A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
 
-## Screenshots
-
 <img src="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg">
-
-Home page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/home.jpg">
-
-List page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/list.jpg">
-
-Single page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/single.jpg">
-
-Taxonomy page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/taxonomy.jpg">
-
-Term page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/term.jpg">
-
-404 page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/404.jpg">
-
-Search page:
-
-<img src="https://github.com/willfaught/paige/raw/master/images/search.jpg">
 
 ## Features
 
