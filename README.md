@@ -366,86 +366,18 @@ paginate: 50
 params:
   paige:
     social:
-      discord:
-        icon: discord
-        link: https://discord.com/users/username
-        name: Discord
-      dribbble:
-        icon: dribbble
-        link: https://dribbble.com/username
-        name: Dribbble
       email:
         icon: envelope
         link: mailto:username@example.com
         name: E-mail
-      facebook:
-        icon: facebook
-        link: https://facebook.com/username
-        name: Facebook
       github:
         icon: github
         link: https://github.com/username
         name: GitHub
-      instagram:
-        icon: instagram
-        link: https://instagram.com/username
-        name: Instagram
       linkedin:
         icon: linkedin
         link: https://linkedin.com/in/username
         name: LinkedIn
-      medium:
-        icon: medium
-        link: https://medium.com/@username
-        name: Medium
-      pinterest:
-        icon: pinterest
-        link: https://pinterest.com/username
-        name: Pinterest
-      quora:
-        icon: quora
-        link: https://quora.com/profile/username
-        name: Quora
-      reddit:
-        icon: reddit
-        link: https://reddit.com/u/username
-        name: Reddit
-      spotify:
-        icon: spotify
-        link: https://open.spotify.com/user/username
-        name: Spotify
-      stackoverflow:
-        icon: stack-overflow
-        link: https://stackoverflow.com/users/username
-        name: Stack Overflow
-      strava:
-        icon: strava
-        link: https://strava.com/athletes/username
-        name: Strava
-      twitch:
-        icon: twitch
-        link: https://twitch.tv/username
-        name: Twitch
-      twitter:
-        icon: twitter
-        link: https://twitter.com/username
-        name: Twitter
-      vimeo:
-        icon: vimeo
-        link: https://vimeo.com/username
-        name: Vimeo
-      wordpress:
-        icon: wordpress
-        link: https://username.wordpress.com
-        name: Wordpress
-      yelp:
-        icon: yelp
-        link: https://yelp.com/user_details?userid=username
-        name: Yelp
-      youtube:
-        icon: youtube
-        link: https://youtube.com/user/username
-        name: YouTube
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:
