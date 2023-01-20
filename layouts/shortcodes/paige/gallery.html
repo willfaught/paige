@@ -60,8 +60,8 @@
     {{ end }}
 {{ else }}
     {{ $inner := chomp .Inner }}
-
     {{ $resources := slice }}
+
     {{ with $images }}
         {{ with $.Page.Resources.Match . }}
             {{ $resources = . }}
