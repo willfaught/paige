@@ -1,6 +1,6 @@
 {{ $align := .Get "align" }}
 {{ $caption := .Get 0 | default (.Get "caption") }}
-{{ $content := .Inner | markdownify }}
+{{ $content := .Inner }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
 {{ $justify := .Get "justify" }}
