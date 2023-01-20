@@ -508,62 +508,72 @@ title: Search
 
 ### Figure
 
-The `paige/figure` shortcode provides a figure with centered content.
+The `paige/figure` shortcode provides a figure with content.
 
 ```
-{{< paige/figure align="center" caption="My caption" float="left" justify="center" >}}
+{{< paige/figure
+    align="center"
+    caption="My caption"
+    float="left"
+    height="10rem"
+    justify="center"
+    maxheight="10rem"
+    maxwidth="10rem"
+    width="10rem"
+>}}
 My content
 {{< /paige/figure >}}
 ```
 
+Inner content: Required. String. Markdown. The content.
+
 Parameters:
 
 <dl>
-    <dt><code>.Inner</code></dt>
-    <dd>Required. String. Markdown. The inner content.</dd>
     <dt><code>align</code></dt>
     <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. Position 0. String. Markdown. Descriptive text that appears centered below the content.</dd>
+    <dd>Optional. Position 0. String. Markdown. Descriptive text below the content.</dd>
     <dt><code>float</code></dt>
     <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. String. CSS value. Total height.</dd>
     <dt><code>justify</code></dt>
-    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Vertical alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Maximum total height.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. String. CSS value. Maximum total width.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. String. CSS value. Total width.</dd>
 </dl>
 
 ### Quote
 
-The `paige/quote` shortcode provides a figure with a centered quotation.
+The `paige/quote` shortcode provides a figure with a quotation.
 
 ```
-{{< paige/quote align="center" caption="My caption" cite="My citation" float="left" justify="center" >}}
+{{< paige/quote >}}
 My content
 {{< /paige/quote >}}
 ```
 
+Inner content: Required. String. Markdown. The quotation.
+
 Parameters:
 
-<dl>
-    <dt><code>.Inner</code></dt>
-    <dd>Required. String. Markdown. The inner content.</dd>
-    <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
-    <dt><code>caption</code></dt>
-    <dd>Optional. String. Markdown. Descriptive text that appears centered below the quotation. Must not be used with <code>cite</code>.</dd>
-    <dt><code>cite</code></dt>
-    <dd>Optional. Position 0. String. Markdown. Citation text that appears centered below the quotation. Must not be used with <code>caption</code>.</dd>
-    <dt><code>float</code></dt>
-    <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
-    <dt><code>justify</code></dt>
-    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
-</dl>
+It has the parameters of the `paige/figure` shortcode.
 
 ### Code
 
-The `paige/code` shortcode provides a figure with centered code.
+The `paige/code` shortcode provides a figure with code.
 
 ```
-{{< paige/code align="center" caption="My caption" float="left" justify="center" lang="html" options="linenos=true" >}}
+{{< paige/code
+    caption="My caption"
+    lang="html"
+    options="linenos=true"
+>}}
 <!doctype html>
 <html lang="en">
 <body>
@@ -573,91 +583,70 @@ The `paige/code` shortcode provides a figure with centered code.
 {{< /paige/code >}}
 ```
 
+Inner content: Required. String. The code.
+
 Parameters:
 
 <dl>
-    <dt><code>.Inner</code></dt>
-    <dd>Required. String. Markdown. The inner content.</dd>
-    <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. String. Markdown. Descriptive text that appears centered below the code.</dd>
-    <dt><code>float</code></dt>
-    <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
-    <dt><code>justify</code></dt>
-    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Markdown. Descriptive text below the code.</dd>
     <dt><code>lang</code></dt>
     <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">available codes</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo highlight options. See <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
 </dl>
 
+It has the other parameters of the `paige/figure` shortcode.
+
 ### Image
 
-The `paige/image` shortcode provides a figure with a centered image.
+The `paige/image` shortcode provides a figure with an image.
 
 ```
 {{< paige/image
-    align="center"
     alt="My alt" >}}
     caption="My caption"
-    float="left"
-    height="10rem"
-    justify="center"
     link="https://github.com/willfaught/paige"
-    maxheight="10rem"
-    maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
     raw=false
     src="me.jpg"
     title="My title"
-    width="10rem" >}}
+>}}
 ```
+
+Inner content: None.
 
 Parameters:
 
 <dl>
-    <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>caption</code></dt>
-    <dd>Optional. String. Markdown. Descriptive text that appears centered below the image.</dd>
-    <dt><code>float</code></dt>
-    <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
-    <dt><code>height</code></dt>
-    <dd>Optional. String. Image height.</dd>
-    <dt><code>justify</code></dt>
-    <dd>Optional. String. Vertical spacing of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Markdown. Descriptive text below the image.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link.</dd>
-    <dt><code>maxheight</code></dt>
-    <dd>Optional. String. Maximum image height.</dd>
-    <dt><code>maxwidth</code></dt>
-    <dd>Optional. String. Maximum image width.</dd>
     <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
+    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
+    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
     <dt><code>raw</code></dt>
     <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
     <dt><code>src</code></dt>
-    <dd>Required. Position 0. String. URL. Image URL.</dd>
+    <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
-    <dt><code>width</code></dt>
-    <dd>Optional. String. Image width.</dd>
 </dl>
+
+It has the other parameters of the `paige/figure` shortcode.
 
 ### Gallery
 
-The `paige/gallery` shortcode provides a figure with a centered list of images.
+The `paige/gallery` shortcode provides a figure with a collection of images.
 
 ```
 {{< paige/gallery
     align="center"
-    caption="My caption"
     height="10rem"
     images="*.jpg"
     justify="center"
@@ -671,50 +660,66 @@ The `paige/gallery` shortcode provides a figure with a centered list of images.
 
 {{< paige/gallery >}}
     {{< paige/gallery
+        align="center"
+        caption="My caption"
+        height="10rem"
         image="me.jpg"
-        caption="My caption"
+        justify="center"
+        maxheight="10rem"
+        maxwidth="10rem"
+        method="resize"
+        options="550x webp picture Lanczos"
         raw=false
-    >}}
+        width="10rem"
+    />}}
     {{< paige/gallery
-        image="you.jpg"
+        align="center"
         caption="My caption"
+        height="10rem"
+        image="you.jpg"
+        justify="center"
+        maxheight="10rem"
+        maxwidth="10rem"
+        method="resize"
+        options="550x webp picture Lanczos"
         raw=false
-    >}}
+        width="10rem"
+    />}}
 {{< /paige/gallery >}}
 ```
+
+Inner content: Optional. String. HTML. Must be other invocations of this shortcode.
 
 Parameters:
 
 <dl>
-    <dt><code>.Inner</code></dt>
-    <dd>Optional. String. Markdown. The inner content. Must be other invocations of the same shortcode.</dd>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Flexbox cross axis alignment. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"><code>align-items</code></a>.</dd>
-    <dt><code>caption</code></dt>
-    <dd>Optional. String. Markdown. Descriptive text that appears centered below the images.</dd>
+    <dd>Optional. String. Cross axis alignment. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"><code>align-items</code></a>.</dd>
     <dt><code>height</code></dt>
-    <dd>Optional. String. Image height.</dd>
+    <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>image</code></dt>
     <dd>Optional. String. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
-    <dd>Optional. String. Flexbox main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
+    <dd>Optional. String. Main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
     <dt><code>maxheight</code></dt>
-    <dd>Optional. String. Maximum image height.</dd>
+    <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
-    <dd>Optional. String. Maximum image width.</dd>
+    <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">Image Processing Methods</a>.</dd>
+    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">Image Processing Options</a>.</dd>
+    <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
     <dt><code>raw</code></dt>
     <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
     <dt><code>type</code></dt>
-    <dd>Optional. String. Type of layout. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
+    <dd>Optional. String. Type of layout. Grid and list layouts use the horizontal axis as the main axis, and the vertical axis as the cross axis. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
-    <dd>Optional. String. Image width.</dd>
+    <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
+
+It has the other parameters of the `paige/figure` shortcode.
 
 ## Customization
 
