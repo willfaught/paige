@@ -1,6 +1,6 @@
 {{ $align := .Get "align" }}
 {{ $caption := .Get 0 | default (.Get "caption") }}
-{{ $content := .Inner }}
+{{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
 {{ $justify := .Get "justify" }}
