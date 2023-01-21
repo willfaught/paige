@@ -639,6 +639,52 @@ Parameters:
 
 It has the other parameters of the `paige/figure` shortcode.
 
+### YouTube
+
+The `paige/youtube` shortcode provides a responsive YouTube video.
+
+```
+{{< paige/youtube
+    autoplay=false
+    controls=true
+    end=20
+    fullscreen=true
+    list=PL2WkvfelorAFjpzGUWc4OWAWmiJpwL97L
+    loop=true
+    mute=true
+    start=10
+    title="My title"
+    video="dQw4w9WgXcQ"
+>}}
+```
+
+Inner content: None.
+
+Parameters:
+
+<dl>
+    <dt><code>autoplay</code></dt>
+    <dd>Optional. Boolean. Automatically play the video.</dd>
+    <dt><code>controls</code></dt>
+    <dd>Optional. Boolean. Show video controls. Default is <code>true</code>.</dd>
+    <dt><code>end</code></dt>
+    <dd>Optional. Integer. Elapsed seconds. Stop the video here.</dd>
+    <dt><code>fullscreen</code></dt>
+    <dd>Optional. Boolean. Enable full screen. Default is <code>true</code>.</dd>
+    <dt><code>list</code></dt>
+    <dd>Optional. String. Playlist ID.</dd>
+    <dt><code>loop</code></dt>
+    <dd>Optional. Boolean. Loop the video.</dd>
+    <dt><code>mute</code></dt>
+    <dd>Optional. Boolean. Mute the video.</dd>
+    <dt><code>start</code></dt>
+    <dd>Optional. Integer. Elapsed seconds. Start the video here.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. String. Video description. Used for screen readers. Default is <code>YouTube video</code>.</dd>
+    <dt><code>video</code></dt>
+    <dd>Optional. Position 0. String. Video ID.</dd>
+</dl>
+
 ## Customize
 
 If `partials/paige/head-last.html` exists in the site, it is included at the end of the head tag.

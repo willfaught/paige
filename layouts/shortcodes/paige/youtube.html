@@ -1,0 +1,62 @@
+{{ $autoplay := .Get "autoplay" }}
+{{ $controls := .Get "controls" | default true }}
+{{ $end := .Get "end" }}
+{{ $fullscreen := .Get "fullscreen" | default true }}
+{{ $list := .Get "list" }}
+{{ $loop := .Get "loop" }}
+{{ $mute := .Get "mute" }}
+{{ $start := .Get "start" }}
+{{ $title := .Get "title" | default "YouTube video" }}
+{{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
+
+{{ $host := cond .Page.Site.Config.Privacy.YouTube.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}
+
+{{ $path := "" }}
+
+{{ if $list }}
+    {{ $path = printf "embed?list=%v&listtype=playlist" $list }}
+{{ else }}
+    {{ $path = printf "embed/%v" $video }}
+{{ end }}
+
+{{ $params := slice (printf "hl=es" (.Site.LanguageCode | default .Site.Language.Lang)) "modestbranding=1" }}
+
+{{ if $autoplay }}
+    {{ $params = $params | append "autoplay=1" | append "mute=1" }}
+{{ end }}
+
+{{ if not $controls }}
+    {{ $params = $params | append "controls=0" }}
+{{ end }}
+
+{{ with $end }}
+    {{ $params = $params | append (printf "end=%v" .) }}
+{{ end }}
+
+{{ if not $fullscreen }}
+    {{ $params = $params | append "fs=0" }}
+{{ end }}
+
+{{ if $loop }}
+    {{ $params = $params | append "loop=1" }}
+
+    {{ if $video }}
+        {{ $params = $params | append (printf "playlist=%v" $video) }}
+    {{ end }}
+{{ end }}
+
+{{ if $mute }}
+    {{ $params = $params | append "mute=1" }}
+{{ end }}
+
+{{ with $start }}
+    {{ $params = $params | append (printf "start=%v" .) }}
+{{ end }}
+
+{{ if $params }}
+    {{ $params = delimit (uniq (sort $params)) "&" }}
+{{ end }}
+
+<div class="mb-3 ratio ratio-16x9">
+    <iframe src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $title }} title="{{ . }}" {{ end }} {{ if $fullscreen }} allowfullscreen {{ end }}></iframe>
+</div>
