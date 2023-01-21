@@ -639,7 +639,7 @@ Parameters:
 
 It has the other parameters of the `paige/figure` shortcode.
 
-## Customization
+## Customize
 
 If `partials/paige/head-last.html` exists in the site, it is included at the end of the head tag.
 If `partials/paige/body-last.html` exists in the site, it is included at the end of the body tag.
