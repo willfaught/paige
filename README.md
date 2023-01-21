@@ -1,8 +1,18 @@
 # Paige
 
-A simple Hugo theme. [Try it out.](https://willfaught.com/paige)
+Powerful, pliable pixel perfection. An advanced Hugo theme. [Try it out.](https://willfaught.com/paige)
 
 <img src="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg">
+
+Paige is designed to put your content front and center,
+avoiding the typical clutter.
+The look is seamless and smooth, scalable and readable, portable and efficient.
+The layout is minimal and responsive,
+using verticality and white space to focus and delineate parts of the page.
+The implementation is flexible and extensible.
+It's a versatile canvas that serves most web needs.
+
+Welcome to the last Hugo theme you'll probably ever need.
 
 ## Features
 

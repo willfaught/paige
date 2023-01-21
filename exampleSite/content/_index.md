@@ -8,5 +8,5 @@ title: No Borders, No Limits
 ---
 
 <p class="lead text-center">
-<a href="https://github.com/willfaught/paige">Paige: A simple Hugo theme</a>
+<a href="https://github.com/willfaught/paige">Paige: Powerful, pliable pixel perfection. An advanced Hugo theme.</a>
 </p>
