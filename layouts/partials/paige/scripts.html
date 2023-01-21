@@ -6,7 +6,7 @@ function paigeResize() {
     }
     var mw = getComputedStyle(e).maxWidth;
     var w;
-    if (mw === "none") {
+    if (mw === "100%") {
         var e = document.querySelector("body > div.container");
         var s = getComputedStyle(e);
         var px = parseFloat(s.paddingLeft) + parseFloat(s.paddingRight);
