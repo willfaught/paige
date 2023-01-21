@@ -509,9 +509,9 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text below the code.</dd>
     <dt><code>lang</code></dt>
-    <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">codes</a>.</dd>
+    <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">codes</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo highlight options. See <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
+    <dd>Optional. String. Hugo highlight options. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
 </dl>
 
 It has the other parameters of the `paige/figure` shortcode.
@@ -545,9 +545,9 @@ Parameters:
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link.</dd>
     <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
+    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
+    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
     <dt><code>raw</code></dt>
     <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
     <dt><code>src</code></dt>
@@ -626,9 +626,9 @@ Parameters:
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
+    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
+    <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
     <dt><code>raw</code></dt>
     <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
     <dt><code>type</code></dt>
