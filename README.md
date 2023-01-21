@@ -565,6 +565,7 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
 ```
 {{< paige/gallery
     align="center"
+    caption="My caption"
     height="10rem"
     images="*.jpg"
     justify="center"
@@ -613,6 +614,8 @@ Parameters:
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. String. Cross axis alignment. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"><code>align-items</code></a>.</dd>
+    <dt><code>caption</code></dt>
+    <dd>Optional. String. Markdown. Descriptive text below the image or images.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>image</code></dt>
