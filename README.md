@@ -681,6 +681,8 @@ The page title is displayed in an `h1` tag, so page content headers must start w
 
 The page date is the publish date, if any.
 
+## Implementation
+
 Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are used unless overridden.
 
 Hugo names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
