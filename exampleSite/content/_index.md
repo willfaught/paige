@@ -4,6 +4,8 @@ description: Go ahead, touch the Cornballer
 greeting: You know [best](https://www.youtube.com/watch?v=1WDW8XKEGgU)
 image_stretch: true
 image_url: stretch.webp
+paige:
+    titleclass: display-1 fw-bold text-center
 title: No Borders, No Limits
 ---
 

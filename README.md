@@ -291,6 +291,7 @@ paige:
     method: "resize" # Hugo image processing method; values are "crop", "fill", "fit", "resize"; default is "resize"
     options: "550x webp picture Lanczos" # Hugo image processing options; default is "550x webp picture Lanczos"
   math: true # Enable math typesetting with KaTeX
+  titleclass: display-5 fw-bold text-center # Page title class attribute value
   toc: true # Show a table of contents if there are any headers
 ```
 
