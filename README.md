@@ -246,10 +246,6 @@ paige:
     utterances: # utteranc.es
       github_repo: "example/foo"
   date_format: "2006 January 2" # Hugo date format for page dates
-  gallery: # Inherited by the paige/gallery and paige/gallery/item shortcodes
-    display: "list" # Display images in a grid or list; values are "grid", "list"; default is "grid"
-    method: "resize" # Hugo image processing method; values are "crop", "fill", "fit", "resize"; default is "resize"
-    options: "550x webp picture Lanczos" # Hugo image processing options; default is "550x webp picture Lanczos"
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
   math:
@@ -286,10 +282,6 @@ authors: [
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
-  gallery: # Inherited by the paige/gallery and paige/gallery/item shortcodes
-    display: "list" # Display images in a grid or list; values are "grid", "list"; default is "grid"
-    method: "resize" # Hugo image processing method; values are "crop", "fill", "fit", "resize"; default is "resize"
-    options: "550x webp picture Lanczos" # Hugo image processing options; default is "550x webp picture Lanczos"
   math: true # Enable math typesetting with KaTeX
   titleclass: display-5 fw-bold text-center # Page title class attribute value
   toc: true # Show a table of contents if there are any headers
