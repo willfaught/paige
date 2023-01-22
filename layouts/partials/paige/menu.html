@@ -1,15 +1,16 @@
-{{ $p := . }}
-{{ $basePath := path.Clean (urls.Parse .Site.BaseURL).Path }}
-{{ if eq $basePath "/" }}
-    {{ $basePath = "" }}
-{{ end }}
+{{ $basepath := path.Clean (urls.Parse .Site.BaseURL).Path }}
 {{ $links := false }}
 {{ $pills := false }}
 {{ $tabs := false }}
+
+{{ if eq $basepath "/" }}
+    {{ $basepath = "" }}
+{{ end }}
+
 {{ with .Site.Params.paige.menu_style }}
-    {{ if eq . `links` }}
+    {{ if eq . "links" }}
         {{ $links = true }}
-    {{ else if eq . `tabs` }}
+    {{ else if eq . "tabs" }}
         {{ $tabs = true }}
     {{ else }}
         {{ $pills = true }}
@@ -17,10 +18,11 @@
 {{ else }}
     {{ $pills = true }}
 {{ end }}
+
 <nav class="justify-content-center my-3 nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ end }}">
     {{ range .Site.Menus.main }}
-        {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
-        {{ $menuPath := strings.TrimPrefix $basePath .URL }}
+        {{ $pagePath := strings.TrimPrefix $basepath $.RelPermalink }}
+        {{ $menuPath := strings.TrimPrefix $basepath .URL }}
         {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
         <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
