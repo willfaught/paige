@@ -6,13 +6,13 @@
 {{ with $page.Resources.GetMatch $url }}
     {{ $resource = . }}
 {{ else }}
-    {{ with $page.Resources.Get (relLangURL $url) }}
+    {{ with $page.Resources.Get $url }}
         {{ $resource = . }}
     {{ else }}
         {{ with resources.GetMatch $url }}
             {{ $resource = . }}
         {{ else }}
-            {{ with resources.Get (relLangURL $url) }}
+            {{ with resources.Get $url }}
                 {{ $resource = . }}
             {{ else }}
                 {{ with resources.GetRemote $url }}
