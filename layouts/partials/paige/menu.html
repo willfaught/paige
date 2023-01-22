@@ -22,6 +22,6 @@
         {{ $pagePath := strings.TrimPrefix $basePath $p.RelPermalink }}
         {{ $menuPath := strings.TrimPrefix $basePath .URL }}
         {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
-        <a href="{{ .URL }}" class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" {{ if $active }} aria-current="page" {{ end }}>{{ .Name }}</a>
+        <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
 </nav>
