@@ -58,5 +58,5 @@
 {{ end }}
 
 <div class="mb-3 ratio ratio-16x9">
-    <iframe referrerpolicy="no-referrer" src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $title }} title="{{ . }}" {{ end }} {{ if $fullscreen }} allowfullscreen {{ end }}></iframe>
+    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} referrerpolicy="no-referrer" src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $title }} title="{{ . }}" {{ end }}></iframe>
 </div>
