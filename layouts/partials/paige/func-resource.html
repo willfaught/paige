@@ -2,6 +2,7 @@
 {{ $url := .url }}
 
 {{ $resource := "" }}
+
 {{ with $page.Resources.GetMatch $url }}
     {{ $resource = . }}
 {{ else }}
@@ -21,7 +22,9 @@
         {{ end }}
     {{ end }}
 {{ end }}
+
 {{ if not $resource }}
     {{ errorf "invalid resource: %q" $url }}
 {{ end }}
+
 {{ return $resource }}
