@@ -18,47 +18,25 @@
     {{ $table = true }}
 {{ end }}
 
-{{ $style := "" }}
+{{ $style := slice }}
 
 {{ if $height }}
-    {{ with printf "height: %v" $height }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
+    {{ $style = $style | append (printf "height: %v" $height) }}
 {{ end }}
 
 {{ if $maxheight }}
-    {{ with printf "max-height: %v" $maxheight }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
+    {{ $style = $style | append (printf "max-height: %v" $maxheight) }}
 {{ end }}
 
 {{ if $maxwidth }}
-    {{ with printf "max-width: %v" $maxwidth }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
+    {{ $style = $style | append (printf "max-width: %v" $maxwidth) }}
 {{ end }}
 
 {{ if $width }}
-    {{ with printf "width: %v" $width }}
-        {{ if $style }}
-            {{ $style = printf "%v; %v" $style . }}
-        {{ else }}
-            {{ $style = . }}
-        {{ end }}
-    {{ end }}
+    {{ $style = $style | append (printf "width: %v" $width) }}
 {{ end }}
+
+{{ $style = delimit ($style | sort | uniq) "; " }}
 
 {{ $sidemargin := "" }}
 
