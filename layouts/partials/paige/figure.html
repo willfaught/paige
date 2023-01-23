@@ -12,13 +12,16 @@
 {{ $vertical := .vertical | default "center" }}
 {{ $width := .width }}
 
+{{ $heightish := or $maxheight $height }}
+{{ $showcaption := $caption }}
+{{ $sidemargin := "" }}
+{{ $style := slice }}
 {{ $table := false }}
+{{ $widthish := or $maxwidth $width }}
 
 {{ if and $caption (or $compact $float) }}
     {{ $table = true }}
 {{ end }}
-
-{{ $style := slice }}
 
 {{ if $height }}
     {{ $style = $style | append (printf "height: %v" $height) }}
@@ -38,8 +41,6 @@
 
 {{ $style = delimit ($style | sort | uniq) "; " }}
 
-{{ $sidemargin := "" }}
-
 {{ if $float }}
     {{ if eq $float "start" }}
         {{ $sidemargin = "me-4" }}
@@ -49,8 +50,6 @@
         {{ errorf "invalid float: %q" $float }}
     {{ end }}
 {{ end }}
-
-{{ $showcaption := $caption }}
 
 {{ if $caption }}
     {{ if $number }}
