@@ -284,7 +284,7 @@ link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the ti
 paige:
   description_class: h5 text-start # Page description class
   math: true # Enable math typesetting with KaTeX
-  titleclass: display-1 fw-medium text-start # Page title class
+  title_class: display-1 fw-medium text-start # Page title class
   toc: true # Show a table of contents if there are any headers
 ```
 

@@ -1,5 +1,5 @@
 {{ if .Title }}
-    {{ $class := .Params.paige.titleclass | default "display-5 fw-bold text-center" }}
+    {{ $class := .Params.paige.title_class | default "display-5 fw-bold text-center" }}
     {{ $title := .Title | markdownify }}
 
     <h1 class="{{ $class }}">{{ if .Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if .Scratch.Get "paige_show_full_pages" }}<a aria-label="Link to this section" class="paige-header-link" href="{{ .RelPermalink }}">#</a>{{ end }}</h1>
