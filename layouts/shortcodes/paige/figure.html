@@ -1,26 +1,26 @@
-{{ $align := .Get "align" }}
 {{ $caption := .Get 0 | default (.Get "caption") }}
 {{ $content := .Inner }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
-{{ $justify := .Get "justify" }}
+{{ $horizontal := .Get "horizontal" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $number := .Get "number" }}
 {{ $numbered := .Get "numbered" }}
+{{ $vertical := .Get "vertical" }}
 {{ $width := .Get "width" }}
 
 {{ partial "paige/figure.html" (dict
-    "align" $align
     "caption" $caption
     "content" $content
     "float" $float
     "gap" 2
     "height" $height
-    "justify" $justify
+    "horizontal" $horizontal
     "maxheight" $maxheight
     "maxwidth" $maxwidth
     "number" $number
     "numbered" $numbered
+    "vertical" $vertical
     "width" $width
 ) }}

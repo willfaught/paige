@@ -1,9 +1,8 @@
-{{ $align := .Get "align" }}
 {{ $alt := .Get "alt" }}
 {{ $caption := .Get "caption" }}
 {{ $float := .Get "float" }}
 {{ $height := .Get "height" }}
-{{ $justify := .Get "justify" }}
+{{ $horizontal := .Get "horizontal" }}
 {{ $link := .Get "link" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
@@ -14,16 +13,16 @@
 {{ $raw := .Get "raw" }}
 {{ $src := .Get 0 | default (.Get "src") }}
 {{ $title := .Get "title" }}
+{{ $vertical := .Get "vertical" }}
 {{ $width := .Get "width" }}
 
 {{ partial "paige/image-figure.html" (dict
-    "align" $align
     "alt" $alt
     "caption" $caption
     "float" $float
     "gap" 2
     "height" $height
-    "justify" $justify
+    "horizontal" $horizontal
     "link" $link
     "maxheight" $maxheight
     "maxwidth" $maxwidth
@@ -34,5 +33,6 @@
     "raw" $raw
     "src" $src
     "title" $title
+    "vertical" $vertical
     "width" $width
 ) }}

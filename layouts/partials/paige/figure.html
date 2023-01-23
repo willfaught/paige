@@ -1,15 +1,15 @@
-{{ $align := .align | default "center" }}
 {{ $caption := .caption | markdownify }}
 {{ $compact := .compact }}
 {{ $content := .content | markdownify }}
 {{ $float := .float }}
 {{ $gap := .gap }}
 {{ $height := .height }}
-{{ $justify := .justify | default "center" }}
+{{ $horizontal := .horizontal | default "center" }}
 {{ $maxheight := .maxheight }}
 {{ $maxwidth := .maxwidth }}
 {{ $number := .number }}
 {{ $numbered := .numbered }}
+{{ $vertical := .vertical | default "center" }}
 {{ $width := .width }}
 
 {{ $table := false }}
@@ -87,16 +87,16 @@
     {{ end }}
 {{ end }}
 
-<figure class="align-items-{{ $align }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $justify }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
+<figure class="align-items-{{ $horizontal }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $vertical }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
     {{ if and (not $float) $style }}
-        <div class="align-items-{{ $align }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-{{ $justify }}" style="{{ $style | safeCSS }}">
+        <div class="align-items-{{ $horizontal }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-{{ $vertical }}" style="{{ $style | safeCSS }}">
     {{ end }}
     {{ if $table }}
         <div class="d-table">
     {{ end }}
-    <div class="text-{{ $align }}">{{ $content }}</div>
+    <div class="text-{{ $horizontal }}">{{ $content }}</div>
     {{ if $showcaption }}
-        <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $align }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
+        <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $horizontal }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
     {{ end }}
     {{ if $table }}
         </div>

@@ -417,15 +417,15 @@ The `paige/figure` shortcode provides a figure with content.
 
 ```
 {{< paige/figure
-    align="center"
     caption="My caption"
     float="left"
     height="10rem"
-    justify="center"
+    horizontal="center"
     maxheight="10rem"
     maxwidth="10rem"
     number=0
     numbered=false
+    vertical="center"
     width="10rem"
 >}}
 My content
@@ -437,16 +437,14 @@ Inner content: Required. String. Markdown. The content.
 Parameters:
 
 <dl>
-    <dt><code>align</code></dt>
-    <dd>Optional. String. Horizontal alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. Position 0. String. Markdown. Descriptive text below the content.</dd>
     <dt><code>float</code></dt>
     <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Total height.</dd>
-    <dt><code>justify</code></dt>
-    <dd>Optional. String. Vertical alignment of the figure and caption. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dt><code>horizontal</code></dt>
+    <dd>Optional. String. Horizontal alignment. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Maximum total height.</dd>
     <dt><code>maxwidth</code></dt>
@@ -455,6 +453,8 @@ Parameters:
     <dd>Optional. Integer or string. Figure number. Displayed with the caption.</dd>
     <dt><code>numbered</code></dt>
     <dd>Optional. Boolean. Number the figure automatically. Displayed with the caption.</dd>
+    <dt><code>vertical</code></dt>
+    <dd>Optional. String. Vertical alignment. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Total width.</dd>
 </dl>

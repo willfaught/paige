@@ -3,6 +3,7 @@
 {{ $compact := .compact }}
 {{ $float := .float }}
 {{ $height := .height }}
+{{ $horizontal := .horizontal }}
 {{ $link := .link }}
 {{ $maxheight := .maxheight }}
 {{ $maxwidth := .maxwidth }}
@@ -16,6 +17,7 @@
 {{ $src := .src }}
 {{ $table := .table }}
 {{ $title := .title }}
+{{ $vertical := .vertical }}
 {{ $width := .width }}
 
 {{ $content := partial "paige/img.html" (dict
@@ -43,9 +45,11 @@
     "content" $content
     "float" $float
     "height" $height
+    "horizontal" $horizontal
     "maxheight" $maxheight
     "maxwidth" $maxwidth
     "number" $number
     "numbered" $numbered
+    "vertical" $vertical
     "width" $width
 ) }}
