@@ -64,21 +64,17 @@
     {{ end }}
 {{ end }}
 
-<figure class="align-items-{{ $horizontal }} d-flex flex-column {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $vertical }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
-    {{ if and (not $float) $style }}
-        <div class="align-items-{{ $horizontal }} d-flex flex-column {{ if $height }} h-100 {{ end }} justify-content-{{ $vertical }}" style="{{ $style | safeCSS }}">
-    {{ end }}
-    {{ if $table }}
-        <div class="d-table">
-    {{ end }}
-    <div class="text-{{ $horizontal }}">{{ $content }}</div>
-    {{ if $showcaption }}
-        <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $horizontal }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
-    {{ end }}
-    {{ if $table }}
-        </div>
-    {{ end }}
-    {{ if and (not $float) $style }}
-        </div>
-    {{ end }}
+<figure class="{{ if $widthish }} d-flex {{ end }} {{ with $float }} float-{{ . }} {{ end }} {{ if $widthish }} justify-content-{{ $horizontal }} {{ end }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
+    <div {{ if or $heightish $widthish }} class="{{ if $height }} d-flex flex-column justify-content-{{ $vertical }} {{ end }} overflow-auto" {{ end }} {{ if $style }} style="{{ $style | safeCSS }}" {{ end }}>
+        {{ if $table }}
+            <div class="d-table">
+        {{ end }}
+        <div class="text-{{ $horizontal }}">{{ $content }}</div>
+        {{ if $showcaption }}
+            <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $horizontal }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
+        {{ end }}
+        {{ if $table }}
+            </div>
+        {{ end }}
+    </div>
 </figure>
