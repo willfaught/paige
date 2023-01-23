@@ -282,6 +282,7 @@ authors: [
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
+  about_class: "h6 text-end" # Page about class
   description_class: "h5 text-start" # Page description class
   math: true # Enable math typesetting with KaTeX
   title_class: "display-1 fw-medium text-start" # Page title class
