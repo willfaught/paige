@@ -1,9 +1,17 @@
 {{ if .Content }}
+    {{ $class := $.Params.paige.content_class }}
+
     <section class="paige-content">
+        {{ with $class }}
+            <div class="{{ . }}">
+        {{ end }}
         {{ if .Scratch.Get "paige_show_full_pages" }}
             {{ .Content }}
         {{ else }}
             {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
+        {{ end }}
+        {{ if $class }}
+            </div>
         {{ end }}
     </section>
 {{ end }}
