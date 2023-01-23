@@ -283,7 +283,7 @@ authors: [
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
   math: true # Enable math typesetting with KaTeX
-  titleclass: display-5 fw-bold text-center # Page title class attribute value
+  titleclass: display-1 fw-medium text-start # Page title class
   toc: true # Show a table of contents if there are any headers
 ```
 
