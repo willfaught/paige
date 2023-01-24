@@ -545,7 +545,7 @@ Parameters:
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
     <dt><code>raw</code></dt>
-    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
+    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is <code>false</code>.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>title</code></dt>
@@ -625,7 +625,7 @@ Parameters:
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
     <dt><code>raw</code></dt>
-    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is false.</dd>
+    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is <code>false</code>.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Grid and list layouts use the horizontal axis as the main axis, and the vertical axis as the cross axis. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
