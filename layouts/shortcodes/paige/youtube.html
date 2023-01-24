@@ -53,9 +53,7 @@
     {{ $params = $params | append (printf "start=%v" .) }}
 {{ end }}
 
-{{ if $params }}
-    {{ $params = delimit (uniq (sort $params)) "&" }}
-{{ end }}
+{{ $params = delimit ($params | sort | uniq) "&" }}
 
 <div class="mb-3 ratio ratio-16x9">
     <iframe {{ if $fullscreen }} allowfullscreen {{ end }} referrerpolicy="no-referrer" src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
