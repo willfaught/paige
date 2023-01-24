@@ -6,6 +6,8 @@ tags: [shortcodes, videos]
 title: Vimeo Shortcode
 ---
 
+## Basic
+
 Code:
 
 ```go-text-template
@@ -16,7 +18,7 @@ Result:
 
 {{< paige/vimeo "644036051" >}}
 
----
+## Video parameter
 
 Code:
 
@@ -28,7 +30,7 @@ Result:
 
 {{< paige/vimeo video="644036051" >}}
 
----
+## All parameters
 
 Code:
 
