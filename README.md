@@ -666,6 +666,8 @@ Parameters:
     <dd>Optional. Boolean. Automatically play the video.</dd>
     <dt><code>controls</code></dt>
     <dd>Optional. Boolean. Show video controls. Default is <code>true</code>.</dd>
+    <dt><code>description</code></dt>
+    <dd>Optional. String. Plain text. Screen reader content. Default is <code>YouTube video</code>.</dd>
     <dt><code>end</code></dt>
     <dd>Optional. Integer. Elapsed seconds. Stop the video here.</dd>
     <dt><code>fullscreen</code></dt>
@@ -678,8 +680,6 @@ Parameters:
     <dd>Optional. Boolean. Mute the video.</dd>
     <dt><code>start</code></dt>
     <dd>Optional. Integer. Elapsed seconds. Start the video here.</dd>
-    <dt><code>title</code></dt>
-    <dd>Optional. String. Video description. Used for screen readers. Default is <code>YouTube video</code>.</dd>
     <dt><code>video</code></dt>
     <dd>Optional. Position 0. String. Video ID.</dd>
 </dl>
