@@ -605,7 +605,7 @@ Parameters:
 
 <dl>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Cross axis alignment. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. Must not be used when nested. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"><code>align-items</code></a>.</dd>
+    <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>. Must not be used when nested.</dd>
     <dt><code>caption</code></dt>
     <dd>Optional. String. Markdown. Descriptive text below the image or images.</dd>
     <dt><code>height</code></dt>
@@ -615,7 +615,7 @@ Parameters:
     <dt><code>images</code></dt>
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
-    <dd>Optional. String. Main axis space distribution. Must be <code>start</code>, <code>center</code>, <code>end</code>, etc. Must not be used when nested. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>.</dd>
+    <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>. Must not be used when nested.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
