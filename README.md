@@ -800,9 +800,13 @@ If one is missing, the other is used without the middle dot.
 For the home page, the title is the page title, if any, or the site title otherwise.
 
 The HTML body can have a header, a body, and a footer.
-The header has the menu, if any; the page title, if any; the page description, if any; and the page date, if any.
+The header has the menu, if any;
+the page title, if any;
+the page description, if any;
+the page authors, if any;
+and the page date, if any.
 The body has the page content, if any.
-The footer has the copyright notice, if any, and the theme link, if any.
+The footer has the copyright notice, if any; and the theme link, if any.
 
 The page title and description can be Markdown. Markup is stripped for HTML and RSS titles.
 
