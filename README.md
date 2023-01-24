@@ -638,6 +638,90 @@ Parameters:
 
 It has the other parameters of the `paige/figure` shortcode.
 
+### Vimeo
+
+The `paige/vimeo` shortcode provides a responsive Vimeo video.
+
+```
+{{< paige/vimeo
+    autopause=true
+    autoplay=false
+    background=false
+    byline=true
+    color="00adef"
+    controls=true
+    description="My description"
+    dnt=false
+    fullscreen=true
+    keyboard=true
+    loop=false
+    muted=false
+    pip=false
+    playsinline=true
+    portrait=true
+    quality="auto"
+    speed=false
+    texttrack=false
+    time="1m2s"
+    title=true
+    transparent=true
+    video="644036051"
+>}}
+```
+
+Inner content: None.
+
+Parameters:
+
+<dl>
+    <dt><code>autopause</code></dt>
+    <dd>Optional. Boolean. Enable playing more than one Vimeo video on the same page. Default is <code>true</code>.</dd>
+    <dt><code>autoplay</code></dt>
+    <dd>Optional. Boolean. Autoplay the video. Default is <code>false</code>.</dd>
+    <dt><code>background</code></dt>
+    <dd>Optional. Boolean. Autoplay the video. Hide the controls. Loop the video. Mute the video. Default is <code>false</code>.</dd>
+    <dt><code>byline</code></dt>
+    <dd>Optional. Boolean. Show the author. Default is configured per video.</dd>
+    <dt><code>color</code></dt>
+    <dd>Optional. String. Hex code. Control color. Default is <code>00adef</code>.</dd>
+    <dt><code>controls</code></dt>
+    <dd>Optional. Boolean. Show the controls. Default is <code>true</code>.</dd>
+    <dt><code>description</code></dt>
+    <dd>Optional. String. Plain text. Screen reader content. Default is <code>Vimeo video</code>.</dd>
+    <dt><code>dnt</code></dt>
+    <dd>Optional. Boolean. Do not track session data. Default is <code>false</code>.</dd>
+    <dt><code>fullscreen</code></dt>
+    <dd>Optional. Boolean. Enable full screen. Default is <code>true</code>.</dd>
+    <dt><code>keyboard</code></dt>
+    <dd>Optional. Boolean. Enable keyboard input. Default is <code>true</code>.</dd>
+    <dt><code>loop</code></dt>
+    <dd>Optional. Boolean. Loop the video. Default is <code>false</code>.</dd>
+    <dt><code>muted</code></dt>
+    <dd>Optional. Boolean. Mute the video. Default is <code>false</code>.</dd>
+    <dt><code>pip</code></dt>
+    <dd>Optional. Boolean. Show the picture-in-picture control. Default is <code>false</code>.</dd>
+    <dt><code>playsinline</code></dt>
+    <dd>Optional. Boolean. Play inline instead of full screen on mobile devices. Default is <code>true</code>.</dd>
+    <dt><code>portrait</code></dt>
+    <dd>Optional. Boolean. Show the author's profile image. Default is configured per video.</dd>
+    <dt><code>quality</code></dt>
+    <dd>Optional. String. The resolution. Must be <code>auto</code>, <code>240p</code>, <code>360p</code>, <code>540p</code>, <code>720p</code>, <code>1080p</code>, <code>2k</code>, or <code>4k</code>. Default is <code>auto</code>.</dd>
+    <dt><code>speed</code></dt>
+    <dd>Optional. Boolean. Show the speed controls. Default is <code>false</code>.</dd>
+    <dt><code>texttrack</code></dt>
+    <dd>Optional. String. Language code and optionally a locale code (e.g. <code>en</code>, <code>en-US</code>). Use the corresponding subtitles. Default is <code>false</code>.</dd>
+    <dt><code>time</code></dt>
+    <dd>Optional. String. Duration (e.g. <code>0m</code>, <code>1m2s</code>). Start time. Default is <code>0m</code>.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. Boolean. Show the title. Default is configured per video.</dd>
+    <dt><code>transparent</code></dt>
+    <dd>Optional. Boolean. Use a transparent background instead of a black one. Default is <code>true</code>.</dd>
+    <dt><code>video</code></dt>
+    <dd>Optional. Position 0. String. Video ID.</dd>
+</dl>
+
+See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) for more detail.
+
 ### YouTube
 
 The `paige/youtube` shortcode provides a responsive YouTube video.

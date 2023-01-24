@@ -1,0 +1,106 @@
+{{ $autopause := .Get "autopause" | default true }}
+{{ $autoplay := .Get "autoplay" }}
+{{ $background := .Get "background" }}
+{{ $byline := .Get "byline" | default true }}
+{{ $color := .Get "color" }}
+{{ $controls := .Get "controls" | default true }}
+{{ $description := .Get "title" | default "Vimeo video" }}
+{{ $dnt := .Get "dnt" | default .Page.Site.Config.Privacy.Vimeo.EnableDNT }}
+{{ $fullscreen := .Get "fullscreen" | default true }}
+{{ $keyboard := .Get "keyboard" | default true }}
+{{ $loop := .Get "loop" }}
+{{ $muted := .Get "muted" }}
+{{ $pip := .Get "pip" }}
+{{ $playsinline := .Get "playsinline" | default true }}
+{{ $portrait := .Get "portrait" }}
+{{ $quality := .Get "quality" }}
+{{ $speed := .Get "speed" }}
+{{ $time := .Get "time" }}
+{{ $texttrack := .Get "texttrack" }}
+{{ $title := .Get "title" }}
+{{ $transparent := .Get "transparent" | default true }}
+{{ $video := .Get 0 | default (.Get "video") }}
+
+{{ $params := slice }}
+
+{{ if not $autopause }}
+    {{ $params = $params | append "autopause=0" }}
+{{ end }}
+
+{{ if $autoplay }}
+    {{ $params = $params | append "autoplay=1" }}
+{{ end }}
+
+{{ if $background }}
+    {{ $params = $params | append "background=1" }}
+{{ end }}
+
+{{ if and (ne $byline nil) (ne $byline "") }}
+    {{ $params = $params | append (printf "portrait=%v" (cond $byline 1 0)) }}
+{{ end }}
+
+{{ with $color }}
+    {{ $params = $params | append (printf "color=%v" .) }}
+{{ end }}
+
+{{ if not $controls }}
+    {{ $params = $params | append "controls=0" }}
+{{ end }}
+
+{{ if $dnt }}
+    {{ $params = $params | append "dnt=1" }}
+{{ end }}
+
+{{ if not $keyboard }}
+    {{ $params = $params | append "keyboard=0" }}
+{{ end }}
+
+{{ if $loop }}
+    {{ $params = $params | append "loop=1" }}
+{{ end }}
+
+{{ if $muted }}
+    {{ $params = $params | append "muted=1" }}
+{{ end }}
+
+{{ if $pip }}
+    {{ $params = $params | append "pip=1" }}
+{{ end }}
+
+{{ if not $playsinline }}
+    {{ $params = $params | append "playsinline=0" }}
+{{ end }}
+
+{{ if and (ne $portrait nil) (ne $portrait "") }}
+    {{ $params = $params | append (printf "portrait=%v" (cond $portrait 1 0)) }}
+{{ end }}
+
+{{ with $quality }}
+    {{ $params = $params | append (printf "quality=%v" .) }}
+{{ end }}
+
+{{ if $speed }}
+    {{ $params = $params | append "speed=1" }}
+{{ end }}
+
+{{ with $texttrack }}
+    {{ $params = $params | append (printf "texttrack=%v" .) }}
+{{ end }}
+
+{{ with $time }}
+    {{ $params = $params | append (printf "#t=%v" .) }}
+{{ end }}
+
+{{ if and (ne $title nil) (ne $title "") }}
+    {{ $params = $params | append (printf "title=%v" (cond $title 1 0)) }}
+{{ end }}
+
+{{ if not $transparent }}
+    {{ $params = $params | append "transparent=0" }}
+{{ end }}
+
+{{ $params = delimit ($params | sort | uniq) "&" }}
+
+<div class="mb-3 ratio ratio-16x9">
+    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} referrerpolicy="no-referrer" src="https://player.vimeo.com/video/{{ $video | safeURL }}{{ with $params }}?{{ . | safeURL }}{{ end }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
+</div>
