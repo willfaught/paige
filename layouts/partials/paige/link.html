@@ -16,4 +16,4 @@
     {{ $integrity = $resource.Data.Integrity }}
 {{ end }}
 
-<link {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} href="{{ $href }}" integrity="{{ $integrity }}" {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
+<link {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} href="{{ $href | safeURL }}" integrity="{{ $integrity }}" {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
