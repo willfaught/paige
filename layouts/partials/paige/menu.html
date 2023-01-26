@@ -26,9 +26,9 @@
     <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
         <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
             {{ range .Site.Menus.main }}
-                {{ $pagePath := strings.TrimPrefix $basepath $.RelPermalink }}
-                {{ $menuPath := strings.TrimPrefix $basepath .URL }}
-                {{ $active := or (and (eq $menuPath "/") (eq $pagePath "/")) (and (ne $menuPath "/") (hasPrefix $pagePath $menuPath)) }}
+                {{ $pagepath := strings.TrimPrefix $basepath $.RelPermalink }}
+                {{ $menupath := strings.TrimPrefix $basepath .URL }}
+                {{ $active := or (and (eq $menupath "/") (eq $pagepath "/")) (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
                 <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
             {{ end }}
         </div>
