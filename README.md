@@ -258,7 +258,8 @@ paige:
     style:
       link_href: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" # Local or remote file
       link_integrity: "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" # File integrity hash
-  menu_style: "links" # Menu is link list for "links", tab list for "tabs", or pill list if unset
+  menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
+  menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width
   rss:
     managing_editor: "Michael Bluth"

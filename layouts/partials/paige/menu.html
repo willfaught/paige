@@ -1,7 +1,7 @@
 {{ $basepath := path.Clean (urls.Parse .Site.BaseURL).Path }}
+{{ $breakpoint := .Site.Params.paige.menu_breakpoint | default "sm" }}
 {{ $links := false }}
 {{ $pills := false }}
-{{ $tabs := false }}
 
 {{ if eq $basepath "/" }}
     {{ $basepath = "" }}
@@ -10,20 +10,27 @@
 {{ with .Site.Params.paige.menu_style }}
     {{ if eq . "links" }}
         {{ $links = true }}
-    {{ else if eq . "tabs" }}
-        {{ $tabs = true }}
-    {{ else }}
+    {{ else if eq . "pills" }}
         {{ $pills = true }}
+    {{ else }}
+        {{ errorf "invalid menu style: %q" . }}
     {{ end }}
 {{ else }}
     {{ $pills = true }}
 {{ end }}
 
-<nav class="justify-content-center my-3 nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ end }}">
-    {{ range .Site.Menus.main }}
-        {{ $pagePath := strings.TrimPrefix $basepath $.RelPermalink }}
-        {{ $menuPath := strings.TrimPrefix $basepath .URL }}
-        {{ $active := or (and (eq $menuPath "/") (eq $pagePath "/")) (and (ne $menuPath "/") (hasPrefix $pagePath $menuPath)) }}
-        <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-    {{ end }}
+<nav class="justify-content-center my-3 navbar navbar-expand-{{ $breakpoint }}">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#paige-menu-toggler" aria-controls="paige-menu-toggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
+        <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
+            {{ range .Site.Menus.main }}
+                {{ $pagePath := strings.TrimPrefix $basepath $.RelPermalink }}
+                {{ $menuPath := strings.TrimPrefix $basepath .URL }}
+                {{ $active := or (and (eq $menuPath "/") (eq $pagePath "/")) (and (ne $menuPath "/") (hasPrefix $pagePath $menuPath)) }}
+                <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+            {{ end }}
+        </div>
+    </div>
 </nav>
