@@ -23,7 +23,7 @@
     {{ range .Site.Menus.main }}
         {{ $pagePath := strings.TrimPrefix $basepath $.RelPermalink }}
         {{ $menuPath := strings.TrimPrefix $basepath .URL }}
-        {{ $active := or (and (eq $menuPath `/`) (eq $pagePath `/`)) (and (ne $menuPath `/`) (hasPrefix $pagePath $menuPath)) }}
+        {{ $active := or (and (eq $menuPath "/") (eq $pagePath "/")) (and (ne $menuPath "/") (hasPrefix $pagePath $menuPath)) }}
         <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
     {{ end }}
 </nav>
