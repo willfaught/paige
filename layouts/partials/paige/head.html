@@ -1,4 +1,7 @@
 <head>
+    {{ if templates.Exists "partials/paige/head-first.html" }}
+        {{ partial "paige/head-first.html" . }}
+    {{ end }}
     {{ partial "paige/metas.html" . }}
     <title>{{ partial "paige/func-title.html" . }}</title>
     {{ partial "paige/links.html" . }}

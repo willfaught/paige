@@ -1,11 +1,22 @@
-{{ if or .Site.Copyright (not .Site.Params.paige.hide_theme_link) }}
+{{ $copyright := .Site.Copyright }}
+{{ $first := templates.Exists "partials/paige/footer-first.html" }}
+{{ $last := templates.Exists "partials/paige/footer-last.html" }}
+{{ $showlink := not .Site.Params.paige.hide_theme_link }}
+
+{{ if or $copyright $first $last $showlink }}
     <footer>
-        {{ if and .Site.Copyright (not .Site.Params.paige.hide_theme_link) }}
-            <p class="text-center text-secondary">{{ .Site.Copyright | markdownify }} · <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
-        {{ else if .Site.Copyright }}
-            <p class="text-center text-secondary">{{ .Site.Copyright | markdownify }}</p>
-        {{ else if not .Site.Params.paige.hide_theme_link }}
+        {{ if $first }}
+            {{ partial "paige/footer-first.html" . }}
+        {{ end }}
+        {{ if and $copyright $showlink }}
+            <p class="text-center text-secondary">{{ $copyright | markdownify }} · <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
+        {{ else if $copyright }}
+            <p class="text-center text-secondary">{{ $copyright | markdownify }}</p>
+        {{ else if $showlink }}
             <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
+        {{ end }}
+        {{ if $last }}
+            {{ partial "paige/footer-last.html" . }}
         {{ end }}
     </footer>
 {{ end }}

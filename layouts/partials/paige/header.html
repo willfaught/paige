@@ -1,5 +1,17 @@
-{{ if .Site.Menus.main }}
+{{ $first := templates.Exists "partials/paige/header-first.html" }}
+{{ $last := templates.Exists "partials/paige/header-last.html" }}
+{{ $menu := .Site.Menus.main }}
+
+{{ if or $first $last $menu }}
     <header>
-        {{ partial "paige/menu.html" . }}
+        {{ if $first }}
+            {{ partial "paige/header-first.html" . }}
+        {{ end }}
+        {{ if $menu }}
+            {{ partial "paige/menu.html" . }}
+        {{ end }}
+        {{ if $last }}
+            {{ partial "paige/header-last.html" . }}
+        {{ end }}
     </header>
 {{ end }}

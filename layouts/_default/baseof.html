@@ -4,12 +4,21 @@
 <html {{ if eq .Site.Params.paige.color_scheme `dark` }} data-bs-theme="dark" {{ end }} {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
     {{ partial "paige/head.html" . }}
     {{ partial "paige/body.html" . }}
+        {{ if templates.Exists "partials/paige/body-first.html" }}
+            {{ partial "paige/body-first.html" . }}
+        {{ end }}
         <div class="container flex-fill">
             <div class="row">
                 <div class="col">
                     {{ partial "paige/header.html" . }}
                     <main>
+                        {{ if templates.Exists "partials/paige/main-first.html" }}
+                            {{ partial "paige/main-first.html" . }}
+                        {{ end }}
                         {{ block "main" . }}{{ end }}
+                        {{ if templates.Exists "partials/paige/main-last.html" }}
+                            {{ partial "paige/main-last.html" . }}
+                        {{ end }}
                     </main>
                     {{ partial "paige/footer.html" . }}
                 </div>

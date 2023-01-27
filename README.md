@@ -767,8 +767,22 @@ Parameters:
 
 ## Customize
 
-If `partials/paige/head-last.html` exists in the site, it is included at the end of the head tag.
-If `partials/paige/body-last.html` exists in the site, it is included at the end of the body tag.
+### Include
+
+| If this file exists in the site | It is included at |
+| ------------------------------- | ----------------- |
+| `partials/paige/body-first.html` | The beginning of the body tag |
+| `partials/paige/body-last.html` | The end of the body tag |
+| `partials/paige/footer-first.html` | The beginning of the footer tag |
+| `partials/paige/footer-last.html` | The end of the footer tag |
+| `partials/paige/head-first.html` | The beginning of the head tag |
+| `partials/paige/head-last.html` | The end of the head tag |
+| `partials/paige/header-first.html` | The beginning of the header tag |
+| `partials/paige/header-last.html` | The end of the header tag |
+| `partials/paige/main-first.html` | The beginning of the main tag |
+| `partials/paige/main-last.html` | The end of the main tag |
+
+### Override
 
 Most code is in partial templates that are included by the default layouts.
 Elements can be added, changed, or removed easily by overriding the corresponding default layout or partial template.
