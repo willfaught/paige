@@ -270,22 +270,6 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
----
-
-Code:
-
-```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" number="G" */>}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{</* /paige/figure */>}}
-```
-
-Result:
-
-{{< paige/figure caption="Hickory Dickory Dock" number="G" >}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{< /paige/figure >}}
-
 ## Vertical parameter
 
 Code:
