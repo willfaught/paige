@@ -820,6 +820,23 @@ replace the use of `paige/article.html` in `single.html` with the use of
 `paige/title.html`, `paige/description.html`, `paige/other.html`, `paige/toc.html`, and `paige/content.html`,
 then replace that use of `paige/title.html` with your own design.
 
+### Define
+
+These optional CSS classes can be defined how you want:
+
+<dl>
+    <dt><code>.paige-draft</code></dt>
+    <dd>Applied to the title of draft pages in the list and term default layouts.</dd>
+    <dt><code>.paige-expired</code></dt>
+    <dd>Applied to the title of expired pages in the list and term default layouts.</dd>
+    <dt><code>.paige-future</code></dt>
+    <dd>Applied to the title of future pages in the list and term default layouts.</dd>
+    <dt><code>.paige-modified</code></dt>
+    <dd>Applied to the title of modified pages in the list and term default layouts.</dd>
+    <dt><code>.paige-unpublished</code></dt>
+    <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term default layouts.</dd>
+</dl>
+
 ## Design
 
 The HTML author is the page authors, if any.

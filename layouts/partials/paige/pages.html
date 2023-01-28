@@ -28,13 +28,32 @@
                     {{ $dateclass := $.Param "paige.pages.date_class" | default (print $class " text-secondary") }}
                     {{ $description := cond ($.Param "paige.pages.hide_description" | not) (.Description | markdownify) "" }}
                     {{ $descriptionclass := $.Param "paige.pages.description_class" | default $class }}
+                    {{ $flags := slice }}
                     {{ $gap := "mb-0" }}
                     {{ $summary := cond ($.Param "paige.pages.show_summary" | not | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") "" }}
                     {{ $summaryclass := $.Param "paige.pages.summary_class" | default $class }}
                     {{ $title := .Title | markdownify }}
                     {{ $titleclass := $.Param "paige.pages.title_class" | default $class }}
 
-                    <p class="{{ if or $description $authors $date $summary }} {{ $gap }} {{ end }} {{ $titleclass }}">
+                    {{ if .Draft }}
+                        {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
+                    {{ end }}
+
+                    {{ if and .ExpiryDate (lt .ExpiryDate now) }}
+                        {{ $flags = $flags | append "paige-expired" "paige-unpublished" }}
+                    {{ end }}
+
+                    {{ if and .PublishDate (gt .PublishDate now) }}
+                        {{ $flags = $flags | append "paige-future" "paige-unpublished" }}
+                    {{ end }}
+
+                    {{ if and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
+                        {{ $flags = $flags | append "paige-modified" }}
+                    {{ end }}
+
+                    {{ $flags = delimit ($flags | sort | uniq) " " }}
+
+                    <p class="{{ if or $description $authors $date $summary }} {{ $gap }} {{ end }} {{ with $flags }} {{ . }} {{ end }} {{ $titleclass }}">
                         <a href="{{ .RelPermalink }}">{{ $title | markdownify }}</a>
                     </p>
                     {{ with $description }}
