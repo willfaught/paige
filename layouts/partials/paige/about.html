@@ -1,11 +1,12 @@
 {{ $authors := partial "paige/func-authors.html" . }}
+{{ $class := .Param "paige.about_class" | default "text-center text-secondary" }}
+{{ $aboveclass := print "mb-0" " " $class }}
 
-{{ if or $authors .PublishDate}}
-    {{ $class := .Params.paige.about_class | default "text-center text-secondary" }}
-
+{{ with $authors }}
+    <p class="{{ cond ($.PublishDate | not | not) $aboveclass $class }}">{{ . }}</p>
+{{ end }}
+{{ with .PublishDate }}
     <p class="{{ $class }}">
-        {{- with $authors }}{{ . }}{{ end -}}
-        {{- if and $authors .PublishDate }}<br>{{ end -}}
-        {{- with .PublishDate }}<time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.date_format | default ":date_long") . }}</time>{{ end -}}
+        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.date_format | default ":date_long") . }}</time>
     </p>
 {{ end }}

@@ -18,11 +18,39 @@
         {{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
         <section>
             {{ range $p.PageGroups }}
-                <h5 class="text-center">{{ .Key }}</h5>
+                <h2 class="{{ $.Param `paige.pages.header_class` | default `h5 text-center` }}">{{ .Key }}</h2>
                 {{ range .Pages }}
-                    <p class="text-center">
-                        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ with .Description }}<br>{{ . | markdownify }}{{ end }}
+                    {{ $class := "text-center" }}
+
+                    {{ $authors := cond ($.Param "paige.pages.show_authors" | not | not) (partial "paige/func-authors.html" .) "" }}
+                    {{ $authorsclass := $.Param "paige.pages.authors_class" | default (print $class " text-secondary") }}
+                    {{ $date := cond ($.Param "paige.pages.show_date" | not | not) .PublishDate "" }}
+                    {{ $dateclass := $.Param "paige.pages.date_class" | default (print $class " text-secondary") }}
+                    {{ $description := cond ($.Param "paige.pages.hide_description" | not) (.Description | markdownify) "" }}
+                    {{ $descriptionclass := $.Param "paige.pages.description_class" | default $class }}
+                    {{ $gap := "mb-0" }}
+                    {{ $summary := cond ($.Param "paige.pages.show_summary" | not | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") "" }}
+                    {{ $summaryclass := $.Param "paige.pages.summary_class" | default $class }}
+                    {{ $title := .Title | markdownify }}
+                    {{ $titleclass := $.Param "paige.pages.title_class" | default $class }}
+
+                    <p class="{{ if or $description $authors $date $summary }} {{ $gap }} {{ end }} {{ $titleclass }}">
+                        <a href="{{ .RelPermalink }}">{{ $title | markdownify }}</a>
                     </p>
+                    {{ with $description }}
+                        <p class="{{ if or $authors $date $summary }} {{ $gap }} {{ end }} {{ $descriptionclass }}">{{ . }}</p>
+                    {{ end }}
+                    {{ with $authors }}
+                        <p class="{{ if or $date $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
+                    {{ end }}
+                    {{ with $date }}
+                        <p class="{{ if $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
+                            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.date_format | default ":date_long") . }}</time>
+                        </p>
+                    {{ end }}
+                    {{ if $summary }}
+                        <p class="{{ $summaryclass }}">{{ $summary }}</p>
+                    {{ end }}
                 {{ end }}
             {{ end }}
         </section>

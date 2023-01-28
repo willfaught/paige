@@ -261,6 +261,17 @@ paige:
   menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
   menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width
+  pages: # Page lists in list and term default layouts
+    authors_class: "text-center text-secondary" # Page authors class attribute
+    date_class: "text-center text-secondary" # Page date class attribute
+    description_class: "text-center" # Page description class attribute
+    header_class: "h5 text-center" # Month and year header class attribute
+    hide_description: false # Hide the page description (default is true)
+    show_authors: false # Show the page authors (default is false)
+    show_date: false # Show the page date (default is false)
+    show_summary: false # Show the page summary (default is false)
+    summary_class: "text-center" # Page summary class attribute
+    title_class: "text-center" # Page title class attribute
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
@@ -305,6 +316,17 @@ Additional optional list page parameters:
 
 ```yaml
 paige:
+  pages: # Page list
+    authors_class: "text-center text-secondary" # Page authors class attribute
+    date_class: "text-center text-secondary" # Page date class attribute
+    description_class: "text-center" # Page description class attribute
+    header_class: "h5 text-center" # Month and year header class attribute
+    hide_description: false # Hide the page description (default is true)
+    show_authors: false # Show the page authors (default is false)
+    show_date: false # Show the page date (default is false)
+    show_summary: false # Show the page summary (default is false)
+    summary_class: "text-center" # Page summary class attribute
+    title_class: "text-center" # Page title class attribute
   show_full_pages: true # Show full pages, not just page titles and descriptions
 ```
 
