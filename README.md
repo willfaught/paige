@@ -248,6 +248,7 @@ paige:
       github_repo: "example/foo"
   date_class: "text-center text-secondary" # Page date class
   date_format: "2006 January 2" # Hugo date format for page dates
+  description_class: "lead text-center" # Page description class
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
   math:
@@ -282,6 +283,7 @@ paige:
       icon: example-icon # Bootstrap icon name
       link: https://example.com/username
       name: Example Site # Used for screen readers
+  title_class: "display-5 fw-bold text-center" # Page title class
 ```
 
 If you set `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.

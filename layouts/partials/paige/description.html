@@ -1,5 +1,5 @@
 {{ with .Description }}
-    {{ $class := $.Params.paige.description_class | default "lead text-center" }}
+    {{ $class := $.Param "paige.description_class" | default "lead text-center" }}
 
     <p class="{{ $class }}">{{ . | markdownify }}</p>
 {{ end }}
