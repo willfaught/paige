@@ -214,6 +214,7 @@ paige:
       domain: "example.com"
     yandex: # metrica.yandex.com
       account_id: "123456"
+  authors_class: "text-center text-secondary" # Page authors class
   bootstrap:
     icons:
       link_href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" # Local or remote file
@@ -245,6 +246,7 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
+  date_class: "text-center text-secondary" # Page date class
   date_format: "2006 January 2" # Hugo date format for page dates
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
@@ -294,8 +296,9 @@ authors: [
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
-  about_class: "h6 text-end" # Page about class
+  authors_class: "text-center text-secondary" # Page authors class
   content_class: "fst-italic" # Page content class
+  date_class: "text-center text-secondary" # Page date class
   description_class: "h5 text-start" # Page description class
   math: true # Enable math typesetting with KaTeX
   title_class: "display-1 fw-medium text-start" # Page title class
