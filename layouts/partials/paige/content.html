@@ -4,7 +4,7 @@
 {{ $content := "" }}
 
 {{ if $page.Param "paige.page.title.hide" | not }}
-    {{ $content = cond ($page.Scratch.Get "paige_show_full_pages" | not | not) $page.Content ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML) }}
+    {{ $content = cond ($page.Scratch.Get "paige_show_full_pages" | not) ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML) $page.Content }}
 {{ end }}
 
 {{ with $content }}
