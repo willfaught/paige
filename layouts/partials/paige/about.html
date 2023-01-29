@@ -9,6 +9,6 @@
 {{ end }}
 {{ with $date }}
     <p class="{{ $dateclass }}">
-        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.date_format | default ":date_long") . }}</time>
+        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.page.date.format | default ":date_long") . }}</time>
     </p>
 {{ end }}

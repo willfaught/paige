@@ -245,7 +245,6 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
-  date_format: "2006 January 2" # Hugo date format for page dates
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
   math:
@@ -270,6 +269,7 @@ paige:
       hide: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
+      format: ":date_long" # Default is ":date_long"
       hide: false # Default is false
     description:
       class: "lead text-center" # Default is "lead text-center"
