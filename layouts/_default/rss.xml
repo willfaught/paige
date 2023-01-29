@@ -1,12 +1,13 @@
 {{ $page := . }}
 
 {{ $item := $page }}
+{{ $limit := $page.Site.Config.Services.RSS.Limit }}
+{{ $pages := slice }}
+{{ $title := partial "paige/func-title.html" $page }}
 
 {{ if $page.IsHome }}
     {{ $item = $page.Site }}
 {{ end }}
-
-{{ $pages := slice }}
 
 {{ if or $page.IsHome $page.IsSection }}
     {{ $pages = $item.RegularPages }}
@@ -14,14 +15,11 @@
     {{ $pages = $item.Pages }}
 {{ end }}
 
-{{ $limit := $page.Site.Config.Services.RSS.Limit }}
-
 {{ if ge $limit 1 }}
     {{ $pages = $pages | first $limit }}
 {{ end }}
 
 {{ $pages = where $pages "Params.paige.hide_rss" "ne" true }}
-{{ $title := partial "paige/func-title.html" $page }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
