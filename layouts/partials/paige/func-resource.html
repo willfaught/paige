@@ -1,31 +1,32 @@
 {{ $params := . }}
 
 {{ $page := $params.page }}
-{{ $resource := "" }}
 {{ $url := $params.url }}
 
+{{ $result := "" }}
+
 {{ with $page.Resources.GetMatch $url }}
-    {{ $resource = . }}
+    {{ $result = . }}
 {{ else }}
     {{ with $page.Resources.Get $url }}
-        {{ $resource = . }}
+        {{ $result = . }}
     {{ else }}
         {{ with resources.GetMatch $url }}
-            {{ $resource = . }}
+            {{ $result = . }}
         {{ else }}
             {{ with resources.Get $url }}
-                {{ $resource = . }}
+                {{ $result = . }}
             {{ else }}
                 {{ with resources.GetRemote $url }}
-                    {{ $resource = . }}
+                    {{ $result = . }}
                 {{ end }}
             {{ end }}
         {{ end }}
     {{ end }}
 {{ end }}
 
-{{ if not $resource }}
+{{ if not $result }}
     {{ errorf "invalid resource: %q" $url }}
 {{ end }}
 
-{{ return $resource }}
+{{ return $result }}
