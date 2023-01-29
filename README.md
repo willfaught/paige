@@ -277,7 +277,7 @@ paige:
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
-  pages: # Page lists in list and term default layouts
+  page_list:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       show: false # Default is false
