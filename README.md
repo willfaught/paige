@@ -263,6 +263,7 @@ paige:
   metadata_max_width: "100ch" # Page metadata max width
   page: # Every page
     authors_class: "text-center text-secondary" # Page authors class
+    content_class: "fst-italic" # Page content class
     date_class: "text-center text-secondary" # Page date class
     description_class: "lead text-center" # Page description class
     title_class: "display-5 fw-bold text-center" # Page title class

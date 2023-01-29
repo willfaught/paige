@@ -1,5 +1,5 @@
 {{ if .Content }}
-    {{ $class := $.Params.paige.page.content_class }}
+    {{ $class := $.Param "paige.page.content_class" }}
 
     <section class="paige-content">
         {{ with $class }}
