@@ -1,7 +1,7 @@
-{{ $copyright := .Site.Copyright }}
+{{ $copyright := site.Copyright }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
-{{ $showlink := not .Site.Params.paige.hide_theme_link }}
+{{ $showlink := not site.Params.paige.hide_theme_link }}
 
 {{ if or $copyright $first $last $showlink }}
     <footer>

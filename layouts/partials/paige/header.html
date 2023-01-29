@@ -1,6 +1,6 @@
 {{ $first := templates.Exists "partials/paige/header-first.html" }}
 {{ $last := templates.Exists "partials/paige/header-last.html" }}
-{{ $menu := .Site.Menus.main }}
+{{ $menu := site.Menus.main }}
 
 {{ if or $first $last $menu }}
     <header>

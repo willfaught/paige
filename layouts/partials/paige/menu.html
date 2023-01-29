@@ -1,5 +1,5 @@
-{{ $basepath := path.Clean (urls.Parse .Site.BaseURL).Path }}
-{{ $breakpoint := .Site.Params.paige.menu_breakpoint | default "sm" }}
+{{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
+{{ $breakpoint := site.Params.paige.menu_breakpoint | default "sm" }}
 {{ $links := false }}
 {{ $pills := false }}
 
@@ -7,7 +7,7 @@
     {{ $basepath = "" }}
 {{ end }}
 
-{{ with .Site.Params.paige.menu_style }}
+{{ with site.Params.paige.menu_style }}
     {{ if eq . "links" }}
         {{ $links = true }}
     {{ else if eq . "pills" }}
@@ -25,7 +25,7 @@
     </button>
     <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
         <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
-            {{ range .Site.Menus.main }}
+            {{ range site.Menus.main }}
                 {{ $pagepath := strings.TrimPrefix $basepath $.RelPermalink }}
                 {{ $menupath := strings.TrimPrefix $basepath .URL }}
                 {{ $active := or (and (eq $menupath "/") (eq $pagepath "/")) (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}

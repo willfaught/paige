@@ -16,10 +16,10 @@
     {{ end }}
 
     {{ $result = delimit $names ", " }}
-{{ else if .Site.Params.authors }}
+{{ else if site.Params.authors }}
     {{ $names := slice }}
 
-    {{ range $k, $v := .Site.Params.authors }}
+    {{ range $k, $v := site.Params.authors }}
         {{ if eq $v.default true }}
             {{ $names = $names | append $v.name }}
         {{ end }}
