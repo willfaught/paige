@@ -5,16 +5,8 @@
     {{ partial "paige/metadata.html" $page }}
     <section>
         {{ if $page.Params.image_url }}
-            {{ $class := "mw-100 rounded-4 shadow" }}
-            {{ $style := "height: 20rem" }}
-
-            {{ if $page.Params.image_stretch }}
-                {{ $class = "rounded-4 shadow w-100" }}
-            {{ end }}
-
-            {{ if $page.Params.image_stretch }}
-                {{ $style = "height: 20rem; object-fit: cover" }}
-            {{ end }}
+            {{ $class := cond $page.Params.image_stretch "rounded-4 shadow w-100" "mw-100 rounded-4 shadow" }}
+            {{ $style := cond $page.Params.image_stretch "height: 20rem; object-fit: cover" "height: 20rem" }}
 
             <p {{ if not $page.Params.image_stretch }} class="text-center" {{ end }}>
                 {{ partial "paige/img.html" (dict
