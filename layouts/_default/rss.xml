@@ -1,68 +1,75 @@
 {{ $page := . }}
 
 {{ $item := $page }}
+
 {{ if $page.IsHome }}
-{{ $item = $page.Site }}
+    {{ $item = $page.Site }}
 {{ end }}
+
 {{ $pages := slice }}
+
 {{ if or $page.IsHome $page.IsSection }}
-{{ $pages = $item.RegularPages }}
+    {{ $pages = $item.RegularPages }}
 {{ else }}
-{{ $pages = $item.Pages }}
+    {{ $pages = $item.Pages }}
 {{ end }}
+
 {{ $limit := $page.Site.Config.Services.RSS.Limit }}
+
 {{ if ge $limit 1 }}
-{{ $pages = $pages | first $limit }}
+    {{ $pages = $pages | first $limit }}
 {{ end }}
+
 {{ $pages = where $pages "Params.paige.hide_rss" "ne" true }}
 {{ $title := partial "paige/func-title.html" $page }}
+
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    {{ with $page.OutputFormats.Get "RSS" }}
-    {{ printf `<atom:link href="%s" rel="self" type="%s"/>` .Permalink .MediaType | safeHTML }}
-    {{ end }}
-    {{ with $page.Site.Copyright }}
-    <copyright>{{ . }}</copyright>
-    {{ end }}
-    <description>{{ with $title }}{{ . }}{{ else }}Recent content{{ end }}</description>
-    {{ with $page.Site.LanguageCode | default .Site.Language.Lang }}
-    <language>{{ . }}</language>
-    {{ end }}
-    {{ if and $page.Date (not $page.Date.IsZero) }}
-    <lastBuildDate>{{ $page.Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-    {{ end }}
-    <link>{{ $page.Permalink }}</link>
-    {{ with $page.Site.Params.paige.rss.managing_editor }}
-    <managingEditor>{{ . }}</managingEditor>
-    {{ end }}
-    {{ with $title }}
-    <title>{{ . }}</title>
-    {{ end }}
-    {{ with $page.Site.Params.paige.rss.web_master }}
-    <webMaster>{{ . }}</webMaster>
-    {{ end }}
-    {{ range $pages }}
-    <item>
-      {{ with partial "paige/func-authors.html" . }}
-      <author>{{ . }}</author>
-      {{ end }}
-      {{ if .Content }}
-      <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
-      {{ else if .Description }}
-      <description>{{ .Description | markdownify | html }}</description>
-      {{ end }}
-      {{ with .Permalink }}
-      <guid>{{ . }}</guid>
-      <link>{{ . }}</link>
-      {{ end }}
-      {{ with .Date }}
-      <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{ end }}
-      {{ with .Title }}
-      <title>{{ . | markdownify | plainify | htmlUnescape }}</title>
-      {{ end }}
-    </item>
-    {{ end }}
-  </channel>
+    <channel>
+        {{ with $page.OutputFormats.Get "RSS" }}
+            {{ printf `<atom:link href="%s" rel="self" type="%s"/>` .Permalink .MediaType | safeHTML }}
+        {{ end }}
+        {{ with $page.Site.Copyright }}
+            <copyright>{{ . }}</copyright>
+        {{ end }}
+        <description>{{ with $title }}{{ . }}{{ else }}Recent content{{ end }}</description>
+        {{ with $page.Site.LanguageCode | default .Site.Language.Lang }}
+            <language>{{ . }}</language>
+        {{ end }}
+        {{ if and $page.Date (not $page.Date.IsZero) }}
+            <lastBuildDate>{{ $page.Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+        {{ end }}
+        <link>{{ $page.Permalink }}</link>
+        {{ with $page.Site.Params.paige.rss.managing_editor }}
+            <managingEditor>{{ . }}</managingEditor>
+        {{ end }}
+        {{ with $title }}
+            <title>{{ . }}</title>
+        {{ end }}
+        {{ with $page.Site.Params.paige.rss.web_master }}
+            <webMaster>{{ . }}</webMaster>
+        {{ end }}
+        {{ range $pages }}
+            <item>
+                {{ with partial "paige/func-authors.html" . }}
+                    <author>{{ . }}</author>
+                {{ end }}
+                {{ if .Content }}
+                    <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
+                {{ else if .Description }}
+                    <description>{{ .Description | markdownify | html }}</description>
+                {{ end }}
+                {{ with .Permalink }}
+                    <guid>{{ . }}</guid>
+                    <link>{{ . }}</link>
+                {{ end }}
+                {{ with .Date }}
+                    <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+                {{ end }}
+                {{ with .Title }}
+                    <title>{{ . | markdownify | plainify | htmlUnescape }}</title>
+                {{ end }}
+            </item>
+        {{ end }}
+    </channel>
 </rss>
