@@ -64,9 +64,9 @@
                     {{ with $authors }}
                         <p class="{{ if or $date $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
                     {{ end }}
-                    {{ with $date }}
+                    {{ if $date }}
                         <p class="{{ if $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
-                            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.page_list.date.format | default ":date_long") . }}</time>
+                            <time datetime="{{ $date.Format `2006-01-02` }}">{{ time.Format (.Param "paige.page_list.date.format" | default ":date_long") $date }}</time>
                         </p>
                     {{ end }}
                     {{ if $summary }}

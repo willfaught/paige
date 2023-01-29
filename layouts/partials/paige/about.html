@@ -7,8 +7,8 @@
 {{ with $authors }}
     <p class="{{ if $date }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
 {{ end }}
-{{ with $date }}
+{{ if $date }}
     <p class="{{ $dateclass }}">
-        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format (site.Params.paige.page.date.format | default ":date_long") . }}</time>
+        <time datetime="{{ $date.Format `2006-01-02` }}">{{ time.Format (.Param "paige.page.date.format" | default ":date_long") $date }}</time>
     </p>
 {{ end }}

@@ -283,6 +283,7 @@ paige:
       show: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
+      format: ":date_long" # Default is ":date_long"
       show: false # Default is false
     description:
       class: "text-center" # Default is "text-center"
