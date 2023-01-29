@@ -4,5 +4,5 @@
 {{ $title := cond ($page.Param "paige.page.title.hide" | not) ($page.Title | markdownify) "" }}
 
 {{ if $title }}
-    <h1 class="{{ $class }}">{{ if $page.Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if $page.Scratch.Get "paige_show_full_pages" }}<a aria-label="Link to this section" class="paige-header-link" href="{{ $page.RelPermalink }}">#</a>{{ end }}</h1>
+    <h1 class="{{ $class }}">{{ with $page.Params.link }}<a href="{{ . }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if $page.Scratch.Get "paige_show_full_pages" }}<a aria-label="Link to this section" class="paige-header-link" href="{{ $page.RelPermalink }}">#</a>{{ end }}</h1>
 {{ end }}
