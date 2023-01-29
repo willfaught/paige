@@ -6,12 +6,11 @@
     <section>
         {{ if $page.Params.image_url }}
             {{ $class := "mw-100 rounded-4 shadow" }}
+            {{ $style := "height: 20rem" }}
 
             {{ if $page.Params.image_stretch }}
                 {{ $class = "rounded-4 shadow w-100" }}
             {{ end }}
-
-            {{ $style := "height: 20rem" }}
 
             {{ if $page.Params.image_stretch }}
                 {{ $style = "height: 20rem; object-fit: cover" }}

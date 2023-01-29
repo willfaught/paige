@@ -36,8 +36,8 @@
         {{ with $page.Site.LanguageCode | default .Site.Language.Lang }}
             <language>{{ . }}</language>
         {{ end }}
-        {{ if and $page.Date (not $page.Date.IsZero) }}
-            <lastBuildDate>{{ $page.Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+        {{ if and $page.PublishDate (not $page.PublishDate.IsZero) }}
+            <lastBuildDate>{{ $page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
         {{ end }}
         <link>{{ $page.Permalink }}</link>
         {{ with $page.Site.Params.paige.rss.managing_editor }}
@@ -63,7 +63,7 @@
                     <guid>{{ . }}</guid>
                     <link>{{ . }}</link>
                 {{ end }}
-                {{ with .Date }}
+                {{ with .PublishDate }}
                     <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
                 {{ end }}
                 {{ with .Title }}
