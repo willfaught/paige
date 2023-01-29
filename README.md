@@ -261,28 +261,41 @@ paige:
   menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
   menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width
-  page: # Every page
-    authors_class: "text-center text-secondary" # Page authors class
-    content_class: "fst-italic" # Page content class
-    date_class: "text-center text-secondary" # Page date class
-    description_class: "lead text-center" # Page description class
-    hide_authors: false # Hide the page authors (default is false)
-    hide_content: false # Hide the page authors (default is false)
-    hide_date: false # Hide the page date (default is false)
-    hide_description: false # Hide the page description (default is false)
-    hide_title: false # Hide the page title (default is false)
-    title_class: "display-5 fw-bold text-center" # Page title class
+  page:
+    authors:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      hide: false # Default is false
+    content:
+      class: "" # Default is ""
+      hide: false # Default is false
+    date:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      hide: false # Default is false
+    description:
+      class: "lead text-center" # Default is "lead text-center"
+      hide: false # Default is false
+    title:
+      class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
+      hide: false # Default is false
   pages: # Page lists in list and term default layouts
-    authors_class: "text-center text-secondary" # Page authors class attribute
-    date_class: "text-center text-secondary" # Page date class attribute
-    description_class: "text-center" # Page description class attribute
-    header_class: "h5 text-center" # Month and year header class attribute
-    hide_description: false # Hide the page description (default is true)
-    show_authors: false # Show the page authors (default is false)
-    show_date: false # Show the page date (default is false)
-    show_summary: false # Show the page summary (default is false)
-    summary_class: "text-center" # Page summary class attribute
-    title_class: "text-center" # Page title class attribute
+    authors:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
+    date:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
+    description:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
+    header:
+      class: "h5 text-center" # Month and year header class attribute
+      hide: false # Default is false
+    summary:
+      class: "text-center" # Default is "text-center"
+      show: false # Default is false
+    title:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
@@ -307,16 +320,21 @@ link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the ti
 paige:
   math: true # Enable math typesetting with KaTeX
   page:
-    authors_class: "text-center text-secondary" # Page authors class
-    content_class: "fst-italic" # Page content class
-    date_class: "text-center text-secondary" # Page date class
-    description_class: "lead text-center" # Page description class
-    hide_authors: false # Hide the page authors (default is false)
-    hide_content: false # Hide the page authors (default is false)
-    hide_date: false # Hide the page date (default is false)
-    hide_description: false # Hide the page description (default is false)
-    hide_title: false # Hide the page title (default is false)
-    title_class: "display-5 fw-bold text-center" # Page title class
+    authors:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      hide: false # Default is false
+    content:
+      class: "" # Default is ""
+      hide: false # Default is false
+    date:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      hide: false # Default is false
+    description:
+      class: "lead text-center" # Default is "lead text-center"
+      hide: false # Default is false
+    title:
+      class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
+      hide: false # Default is false
   toc: true # Show a table of contents if there are any headers
 ```
 
@@ -334,17 +352,25 @@ Additional optional list page parameters:
 
 ```yaml
 paige:
-  pages: # Page list
-    authors_class: "text-center text-secondary" # Page authors class attribute
-    date_class: "text-center text-secondary" # Page date class attribute
-    description_class: "text-center" # Page description class attribute
-    header_class: "h5 text-center" # Month and year header class attribute
-    hide_description: false # Hide the page description (default is true)
-    show_authors: false # Show the page authors (default is false)
-    show_date: false # Show the page date (default is false)
-    show_summary: false # Show the page summary (default is false)
-    summary_class: "text-center" # Page summary class attribute
-    title_class: "text-center" # Page title class attribute
+  page_list:
+    authors:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
+    date:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
+    description:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
+    header:
+      class: "h5 text-center" # Month and year header class attribute
+      hide: false # Default is false
+    summary:
+      class: "text-center" # Default is "text-center"
+      show: false # Default is false
+    title:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
   show_full_pages: true # Show full pages, not just page titles and descriptions
 ```
 

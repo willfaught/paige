@@ -1,5 +1,5 @@
-{{ $class := .Param "paige.page.title_class" | default "display-5 fw-bold text-center" }}
-{{ $title := cond (.Param "paige.page.hide_title" | not | not) "" (.Title | markdownify) }}
+{{ $class := .Param "paige.page.title.class" | default "display-5 fw-bold text-center" }}
+{{ $title := cond (.Param "paige.page.title.hide" | not) (.Title | markdownify) "" }}
 
 {{ if $title }}
     <h1 class="{{ $class }}">{{ if .Params.link }}<a href="{{ .Params.link }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}{{ if .Scratch.Get "paige_show_full_pages" }}<a aria-label="Link to this section" class="paige-header-link" href="{{ .RelPermalink }}">#</a>{{ end }}</h1>

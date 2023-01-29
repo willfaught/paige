@@ -18,21 +18,23 @@
         {{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
         <section>
             {{ range $p.PageGroups }}
-                <h2 class="{{ $.Param `paige.pages.header_class` | default `h5 text-center` }}">{{ .Key }}</h2>
+                {{ if $.Param "paige.pages.header.hide" | not }}
+                    <h2 class="{{ $.Param `paige.pages.header.class` | default `h5 text-center` }}">{{ .Key }}</h2>
+                {{ end }}
                 {{ range .Pages }}
                     {{ $class := "text-center" }}
 
-                    {{ $authors := cond ($.Param "paige.pages.show_authors" | not | not) (partial "paige/func-authors.html" .) "" }}
-                    {{ $authorsclass := $.Param "paige.pages.authors_class" | default (print $class " text-secondary") }}
-                    {{ $date := cond ($.Param "paige.pages.show_date" | not | not) .PublishDate "" }}
-                    {{ $dateclass := $.Param "paige.pages.date_class" | default (print $class " text-secondary") }}
-                    {{ $description := cond ($.Param "paige.pages.hide_description" | not) (.Description | markdownify) "" }}
-                    {{ $descriptionclass := $.Param "paige.pages.description_class" | default $class }}
+                    {{ $authors := cond ($.Param "paige.pages.authors.show" | not) "" (partial "paige/func-authors.html" .) }}
+                    {{ $authorsclass := $.Param "paige.pages.authors.class" | default (print $class " text-secondary") }}
+                    {{ $date := cond ($.Param "paige.pages.date.show" | not) "" .PublishDate }}
+                    {{ $dateclass := $.Param "paige.pages.date.class" | default (print $class " text-secondary") }}
+                    {{ $description := cond ($.Param "paige.pages.description.hide" | not) (.Description | markdownify) "" }}
+                    {{ $descriptionclass := $.Param "paige.pages.description.class" | default $class }}
                     {{ $flags := slice }}
                     {{ $gap := "mb-0" }}
-                    {{ $summary := cond ($.Param "paige.pages.show_summary" | not | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") "" }}
-                    {{ $summaryclass := $.Param "paige.pages.summary_class" | default $class }}
-                    {{ $title := .Title | markdownify }}
+                    {{ $summary := cond ($.Param "paige.pages.summary.show" | not) "" (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") }}
+                    {{ $summaryclass := $.Param "paige.pages.summary.class" | default $class }}
+                    {{ $title := cond ($.Param "paige.pages.title.hide" | not) (.Title | markdownify) "" }}
                     {{ $titleclass := $.Param "paige.pages.title_class" | default $class }}
 
                     {{ if .Draft }}

@@ -1,8 +1,8 @@
-{{ $authors := cond (.Param "paige.page.hide_authors" | not | not) "" (partial "paige/func-authors.html" .) }}
-{{ $authorsclass := .Param "paige.page.authors_class" | default "text-center text-secondary" }}
+{{ $authors := cond (.Param "paige.page.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
+{{ $authorsclass := .Param "paige.page.authors.class" | default "text-center text-secondary" }}
 {{ $gap := "mb-0" }}
-{{ $date := cond (.Param "paige.page.hide_date" | not | not) "" .PublishDate }}
-{{ $dateclass := .Param "paige.page.date_class" | default "text-center text-secondary" }}
+{{ $date := cond (.Param "paige.page.date.hide" | not) .PublishDate "" }}
+{{ $dateclass := .Param "paige.page.date.class" | default "text-center text-secondary" }}
 
 {{ with $authors }}
     <p class="{{ if $date }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
