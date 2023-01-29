@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $credit := not ($page.Param "paige.hide_credit_data") }}
+{{ $credit := $page.Param "paige.hide_credit_data" | not }}
 {{ $dark := eq ($page.Param "paige.color_scheme") "dark" }}
 {{ $lang := $page.Site.LanguageCode | default $page.Site.Language.Lang }}
 {{ $rtl := eq $page.Language.LanguageDirection "rtl" }}

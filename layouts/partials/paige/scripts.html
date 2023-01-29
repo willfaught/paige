@@ -34,7 +34,7 @@ function paigeResize() {
 }
 paigeResize();
 addEventListener("resize", paigeResize);
-{{ if not ($page.Param "paige.color_scheme") }}
+{{ if $page.Param "paige.color_scheme" | not }}
 var paigeQuery = matchMedia("(prefers-color-scheme: dark)");
 if (paigeQuery.matches) {
     document.documentElement.setAttribute("data-bs-theme", "dark")
