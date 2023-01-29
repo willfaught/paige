@@ -1,8 +1,9 @@
 {{ $page := . }}
 
-<!doctype html>
-{{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
 {{ $lang := $page.Site.LanguageCode | default $page.Site.Language.Lang }}
+{{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
+
+<!doctype html>
 <html {{ if eq $page.Site.Params.paige.color_scheme `dark` }} data-bs-theme="dark" {{ end }} {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
     {{ partial "paige/head.html" $page }}
     {{ partial "paige/body.html" $page }}
