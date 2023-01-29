@@ -1,3 +1,5 @@
+{{ $page := . }}
+
 <style>
 body, html {
     height: 100%;
@@ -30,13 +32,13 @@ section[class="paige-content"] > blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
-{{ with site.Params.paige.content_max_width }}
+{{ with $page.Param "paige.content_max_width" }}
     section[class="paige-content"], section[class="paige-toc"] {
         max-width: {{ . }};
     }
 {{ end }}
 
-{{ with site.Params.paige.metadata_max_width }}
+{{ with $page.Param "paige.metadata_max_width" }}
     section[class="paige-metadata"] {
         max-width: {{ . }};
     }
@@ -74,7 +76,7 @@ section[class="paige-content"] > blockquote p:last-of-type {
     opacity: 1;
 }
 
-{{ with site.Params.paige.color_scheme }}
+{{ with $page.Param "paige.color_scheme" }}
     {{ if eq . "dark" }}
         {{ partial "paige/dark.css" . | safeCSS }}
     {{ else if eq . "light" }}

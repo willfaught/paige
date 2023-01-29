@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ template "_internal/disqus.html" . }}
-{{ if site.Params.paige.comments.cactus }}
+{{ if $page.Param "paige.comments.cactus" }}
     <section class="mb-3">
         <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
         <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
@@ -11,26 +11,26 @@
             node: document.getElementById("comment-section"),
             defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
             serverName: "cactus.chat",
-            siteName: "{{ site.Params.paige.comments.cactus.account_id | safeJS }}",
+            siteName: "{{ $page.Param "paige.comments.cactus.account_id" | safeJS }}",
             commentSectionId: "{{ $page.RelPermalink | safeJS }}"
         })
         </script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ with site.Params.paige.comments.commento }}
+{{ with $page.Param "paige.comments.commento" }}
     <section class="mb-3">
         <div id="commento"></div>
         <script defer src="{{ .script_url }}"></script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ if site.Params.paige.comments.graphcomment }}
+{{ if $page.Param "paige.comments.graphcomment" }}
     <section class="mb-3">
         <div id="graphcomment"></div>
         <script type="text/javascript">
         var __semio__params = {
-            graphcommentId: "{{ site.Params.paige.comments.graphcomment.account_id | safeJS }}",
+            graphcommentId: "{{ $page.Param "paige.comments.graphcomment.account_id" | safeJS }}",
             behaviour: {
                 uid: "{{ $page.RelPermalink | safeJS }}"
             }
@@ -47,11 +47,11 @@
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ if site.Params.paige.comments.hyvor }}
+{{ if $page.Param "paige.comments.hyvor" }}
     <section class="mb-3">
         <div id="hyvor-talk-view"></div>
         <script type="text/javascript">
-        var HYVOR_TALK_WEBSITE = "{{ site.Params.paige.comments.hyvor.account_id | safeJS }}";
+        var HYVOR_TALK_WEBSITE = "{{ $page.Param "paige.comments.hyvor.account_id" | safeJS }}";
         var HYVOR_TALK_CONFIG = {
             url: false,
             id: "{{ $page.RelPermalink | safeJS }}"
@@ -61,10 +61,10 @@
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ if site.Params.paige.comments.intensedebate }}
+{{ if $page.Param "paige.comments.intensedebate" }}
     <section class="mb-3">
         <script>
-        var idcomments_acct = "{{ site.Params.paige.comments.intensedebate.account_id | safeJS }}";
+        var idcomments_acct = "{{ $page.Param "paige.comments.intensedebate.account_id" | safeJS }}";
         var idcomments_post_id = "{{ $page.RelPermalink | safeJS }}";
         var idcomments_post_url = "{{ $page.Permalink | safeJS }}";
         </script>
@@ -73,7 +73,7 @@
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ with site.Params.paige.comments.isso }}
+{{ with $page.Param "paige.comments.isso" }}
     <section class="mb-3">
         <script src="{{ .script_url }}"></script>
         <section id="isso-thread">
@@ -81,32 +81,32 @@
         </section>
     </section>
 {{ end }}
-{{ with site.Params.paige.comments.muut }}
+{{ with $page.Param "paige.comments.muut" }}
     <section class="mb-3">
         <a href="https://muut.com/i/{{ .account_id }}/comments" class="muut" type="dynamic">Comments</a>
         <script src="https://cdn.muut.com/1/moot.min.js"></script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ if site.Params.paige.comments.remark42 }}
+{{ if $page.Param "paige.comments.remark42" }}
     <section class="mb-3">
         <div id="remark42"></div>
         <script>
         var remark_config = {
-            host: "{{ site.Params.paige.comments.remark42.host_url | safeJS }}",
-            site_id: "{{ site.Params.paige.comments.remark42.site_id | default `remark` | safeJS }}"
+            host: "{{ $page.Param "paige.comments.remark42.host_url" | safeJS }}",
+            site_id: "{{ $page.Param "paige.comments.remark42.site_id" | default `remark` | safeJS }}"
         }
         </script>
         <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ if site.Params.paige.comments.replybox }}
+{{ if $page.Param "paige.comments.replybox" }}
     <section class="mb-3">
         <div id="replybox"></div>
         <script>
         window.replybox = {
-            site: "{{ site.Params.paige.comments.replybox.account_id | safeJS }}",
+            site: "{{ $page.Param "paige.comments.replybox.account_id" | safeJS }}",
             identifier: "{{ $page.RelPermalink | safeJS }}"
         };
         </script>
@@ -114,7 +114,7 @@
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </section>
 {{ end }}
-{{ with site.Params.paige.comments.utterances }}
+{{ with $page.Param "paige.comments.utterances" }}
     <section class="mb-3">
         <script src="https://utteranc.es/client.js" repo="{{ .github_repo }}" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
