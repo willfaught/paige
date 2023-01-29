@@ -1,18 +1,14 @@
 {{ $page := . }}
 
-{{ $item := $page }}
 {{ $limit := $page.Site.Config.Services.RSS.Limit }}
-{{ $pages := slice }}
+{{ $pages := "" }}
+{{ $pagesource := cond $page.IsHome $page.Site $page }}
 {{ $title := partial "paige/func-title.html" $page }}
 
-{{ if $page.IsHome }}
-    {{ $item = $page.Site }}
-{{ end }}
-
 {{ if or $page.IsHome $page.IsSection }}
-    {{ $pages = $item.RegularPages }}
+    {{ $pages = $pagesource.RegularPages }}
 {{ else }}
-    {{ $pages = $item.Pages }}
+    {{ $pages = $pagesource.Pages }}
 {{ end }}
 
 {{ if ge $limit 1 }}
