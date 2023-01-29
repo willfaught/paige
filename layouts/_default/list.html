@@ -2,7 +2,7 @@
 {{ $page := . }}
 
 {{ if $page.Param "paige.show_full_pages" | not }}
-{{ partial "paige/article.html" $page }}
+    {{ partial "paige/article.html" $page }}
 {{ end }}
 {{ partial "paige/pages.html" $page }}
 {{ end }}

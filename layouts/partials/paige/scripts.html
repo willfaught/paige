@@ -35,17 +35,17 @@ function paigeResize() {
 paigeResize();
 addEventListener("resize", paigeResize);
 {{ if $page.Param "paige.color_scheme" | not }}
-var paigeQuery = matchMedia("(prefers-color-scheme: dark)");
-if (paigeQuery.matches) {
-    document.documentElement.setAttribute("data-bs-theme", "dark")
-}
-paigeQuery.addEventListener("change", function (e) {
-    if (e.matches) {
-        document.documentElement.setAttribute("data-bs-theme", "dark");
-    } else {
-        document.documentElement.removeAttribute("data-bs-theme");
+    var paigeQuery = matchMedia("(prefers-color-scheme: dark)");
+    if (paigeQuery.matches) {
+        document.documentElement.setAttribute("data-bs-theme", "dark")
     }
-});
+    paigeQuery.addEventListener("change", function (e) {
+        if (e.matches) {
+            document.documentElement.setAttribute("data-bs-theme", "dark");
+        } else {
+            document.documentElement.removeAttribute("data-bs-theme");
+        }
+    });
 {{ end }}
 </script>
 {{ partial "paige/script.html" (dict
