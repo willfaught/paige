@@ -214,7 +214,6 @@ paige:
       domain: "example.com"
     yandex: # metrica.yandex.com
       account_id: "123456"
-  authors_class: "text-center text-secondary" # Page authors class
   bootstrap:
     icons:
       link_href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" # Local or remote file
@@ -246,9 +245,7 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
-  date_class: "text-center text-secondary" # Page date class
   date_format: "2006 January 2" # Hugo date format for page dates
-  description_class: "lead text-center" # Page description class
   hide_theme_comment: true # Don't put a link to this project in a code comment
   hide_theme_link: true # Don't put a link to this project in the footer
   math:
@@ -264,6 +261,11 @@ paige:
   menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
   menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width
+  page: # Every page
+    authors_class: "text-center text-secondary" # Page authors class
+    date_class: "text-center text-secondary" # Page date class
+    description_class: "lead text-center" # Page description class
+    title_class: "display-5 fw-bold text-center" # Page title class
   pages: # Page lists in list and term default layouts
     authors_class: "text-center text-secondary" # Page authors class attribute
     date_class: "text-center text-secondary" # Page date class attribute
@@ -283,7 +285,6 @@ paige:
       icon: example-icon # Bootstrap icon name
       link: https://example.com/username
       name: Example Site # Used for screen readers
-  title_class: "display-5 fw-bold text-center" # Page title class
 ```
 
 If you set `hide_theme_comment` or `hide_theme_link`, please credit this project in a post to help others find it.
@@ -298,12 +299,13 @@ authors: [
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
-  authors_class: "text-center text-secondary" # Page authors class
-  content_class: "fst-italic" # Page content class
-  date_class: "text-center text-secondary" # Page date class
-  description_class: "h5 text-start" # Page description class
   math: true # Enable math typesetting with KaTeX
-  title_class: "display-1 fw-medium text-start" # Page title class
+  page:
+    authors_class: "text-center text-secondary" # Page authors class
+    content_class: "fst-italic" # Page content class
+    date_class: "text-center text-secondary" # Page date class
+    description_class: "lead text-center" # Page description class
+    title_class: "display-5 fw-bold text-center" # Page title class
   toc: true # Show a table of contents if there are any headers
 ```
 
