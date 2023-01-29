@@ -1,8 +1,8 @@
 {{- $page := . -}}
 
-{{- $page.Scratch.Add "index" slice -}}
+{{- $page.Scratch.Add "paige_index" slice -}}
 {{- range where $page.Site.RegularPages "Params.paige.hide_search" "ne" true -}}
-{{- $page.Scratch.Add "index" (dict
+{{- $page.Scratch.Add "paige_index" (dict
     "categories" .Params.categories
     "date" .PublishDate
     "description" (.Description  | markdownify | plainify | htmlUnescape)
@@ -12,4 +12,4 @@
     "text" (strings.TrimRight " " (replace (.Plain | htmlUnescape) "\n" " "))
     "title" (.Title | markdownify | plainify | htmlUnescape)) -}}
 {{- end -}}
-{{- $page.Scratch.Get "index" | jsonify -}}
+{{- $page.Scratch.Get "paige_index" | jsonify -}}
