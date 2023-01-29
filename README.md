@@ -266,6 +266,11 @@ paige:
     content_class: "fst-italic" # Page content class
     date_class: "text-center text-secondary" # Page date class
     description_class: "lead text-center" # Page description class
+    hide_authors: false # Hide the page authors (default is false)
+    hide_content: false # Hide the page authors (default is false)
+    hide_date: false # Hide the page date (default is false)
+    hide_description: false # Hide the page description (default is false)
+    hide_title: false # Hide the page title (default is false)
     title_class: "display-5 fw-bold text-center" # Page title class
   pages: # Page lists in list and term default layouts
     authors_class: "text-center text-secondary" # Page authors class attribute
@@ -306,6 +311,11 @@ paige:
     content_class: "fst-italic" # Page content class
     date_class: "text-center text-secondary" # Page date class
     description_class: "lead text-center" # Page description class
+    hide_authors: false # Hide the page authors (default is false)
+    hide_content: false # Hide the page authors (default is false)
+    hide_date: false # Hide the page date (default is false)
+    hide_description: false # Hide the page description (default is false)
+    hide_title: false # Hide the page title (default is false)
     title_class: "display-5 fw-bold text-center" # Page title class
   toc: true # Show a table of contents if there are any headers
 ```

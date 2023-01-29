@@ -1,17 +1,8 @@
-{{ if .Content }}
-    {{ $class := $.Param "paige.page.content_class" }}
+{{ $class := .Param "paige.page.content_class" }}
+{{ $content := cond (.Scratch.Get "paige_show_full_pages" | not | not) .Content (.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML) }}
 
-    <section class="paige-content">
-        {{ with $class }}
-            <div class="{{ . }}">
-        {{ end }}
-        {{ if .Scratch.Get "paige_show_full_pages" }}
-            {{ .Content }}
-        {{ else }}
-            {{ .Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML }}
-        {{ end }}
-        {{ if $class }}
-            </div>
-        {{ end }}
+{{ with $content }}
+    <section class="paige-content {{ with $class }} {{ . }} {{ end }}">
+        {{ . }}
     </section>
 {{ end }}
