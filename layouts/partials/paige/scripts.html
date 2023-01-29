@@ -1,3 +1,5 @@
+{{ $page := . }}
+
 <script>
 function paigeResize() {
     var e = document.querySelector('section[class="paige-content"]');
@@ -32,7 +34,7 @@ function paigeResize() {
 }
 paigeResize();
 addEventListener("resize", paigeResize);
-{{ if not .Site.Params.paige.color_scheme }}
+{{ if not ($page.Param "paige.color_scheme") }}
 var paigeQuery = matchMedia("(prefers-color-scheme: dark)");
 if (paigeQuery.matches) {
     document.documentElement.setAttribute("data-bs-theme", "dark")

@@ -8,7 +8,7 @@
 {{ end }}
 <link href="{{ relLangURL `favicon.png` | safeURL }}" rel="icon" type="image/png">
 <link href="{{ relLangURL `favicon.svg` | safeURL }}" rel="icon" type="image/svg+xml">
-<link color="{{ .Site.Params.paige.color | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
+<link color="{{ $page.Param `paige.color` | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
 <link href="{{ relLangURL `site.webmanifest` | safeURL }}" rel="manifest">
 {{ partial "paige/link.html" (dict
     "href" (site.Params.paige.bootstrap.icons.link_href | default "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css")

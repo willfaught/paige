@@ -1,4 +1,6 @@
-{{ with .Site.Params.paige.social }}
+{{ $page := . }}
+
+{{ with $page.Param "paige.social" }}
     <section>
         <nav>
             <div class="mb-3 text-center">
