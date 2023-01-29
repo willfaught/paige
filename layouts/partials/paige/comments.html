@@ -11,8 +11,8 @@
             node: document.getElementById("comment-section"),
             defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
             serverName: "cactus.chat",
-            siteName: {{ site.Params.paige.comments.cactus.account_id }},
-            commentSectionId: {{ $page.RelPermalink }}
+            siteName: "{{ site.Params.paige.comments.cactus.account_id | safeJS }}",
+            commentSectionId: "{{ $page.RelPermalink | safeJS }}"
         })
         </script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
@@ -30,9 +30,9 @@
         <div id="graphcomment"></div>
         <script type="text/javascript">
         var __semio__params = {
-            graphcommentId: {{ site.Params.paige.comments.graphcomment.account_id }},
+            graphcommentId: "{{ site.Params.paige.comments.graphcomment.account_id | safeJS }}",
             behaviour: {
-                uid: {{ $page.RelPermalink }}
+                uid: "{{ $page.RelPermalink | safeJS }}"
             }
         };
         function __semio__onload() {
@@ -51,10 +51,10 @@
     <section class="mb-3">
         <div id="hyvor-talk-view"></div>
         <script type="text/javascript">
-        var HYVOR_TALK_WEBSITE = {{ site.Params.paige.comments.hyvor.account_id }};
+        var HYVOR_TALK_WEBSITE = "{{ site.Params.paige.comments.hyvor.account_id | safeJS }}";
         var HYVOR_TALK_CONFIG = {
             url: false,
-            id: {{ $page.RelPermalink }}
+            id: "{{ $page.RelPermalink | safeJS }}"
         };
         </script>
         <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
@@ -64,9 +64,9 @@
 {{ if site.Params.paige.comments.intensedebate }}
     <section class="mb-3">
         <script>
-        var idcomments_acct = {{ site.Params.paige.comments.intensedebate.account_id }};
-        var idcomments_post_id = {{ $page.RelPermalink }};
-        var idcomments_post_url = {{ $page.Permalink }};
+        var idcomments_acct = "{{ site.Params.paige.comments.intensedebate.account_id | safeJS }}";
+        var idcomments_post_id = "{{ $page.RelPermalink | safeJS }}";
+        var idcomments_post_url = "{{ $page.Permalink | safeJS }}";
         </script>
         <span id="IDCommentsPostTitle" style="display:none"></span>
         <script type="text/javascript" src="http://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>
@@ -93,8 +93,8 @@
         <div id="remark42"></div>
         <script>
         var remark_config = {
-            host: {{ site.Params.paige.comments.remark42.host_url }},
-            site_id: {{ site.Params.paige.comments.remark42.site_id | default "remark" }}
+            host: "{{ site.Params.paige.comments.remark42.host_url | safeJS }}",
+            site_id: "{{ site.Params.paige.comments.remark42.site_id | default `remark` | safeJS }}"
         }
         </script>
         <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
@@ -106,8 +106,8 @@
         <div id="replybox"></div>
         <script>
         window.replybox = {
-            site: {{ site.Params.paige.comments.replybox.account_id }},
-            identifier: {{ $page.RelPermalink }}
+            site: "{{ site.Params.paige.comments.replybox.account_id | safeJS }}",
+            identifier: "{{ $page.RelPermalink | safeJS }}"
         };
         </script>
         <script src="https://cdn.getreplybox.com/js/embed.js"></script>
