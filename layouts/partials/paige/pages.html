@@ -18,8 +18,8 @@
         {{ $p := .Paginate (.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
         <section>
             {{ range $p.PageGroups }}
-                {{ if $.Param "paige.page_list.header.hide" | not }}
-                    <h2 class="{{ $.Param `paige.page_list.header.class` | default `h5 text-center` }}">{{ .Key }}</h2>
+                {{ if $.Param "paige.page_list.date_header.hide" | not }}
+                    <h2 class="{{ $.Param `paige.page_list.date_header.class` | default `h5 text-center` }}">{{ .Key }}</h2>
                 {{ end }}
                 {{ range .Pages }}
                     {{ $class := "text-center" }}
