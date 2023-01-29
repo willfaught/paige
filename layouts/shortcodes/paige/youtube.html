@@ -9,7 +9,7 @@
 {{ $start := .Get "start" }}
 {{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
 
-{{ $host := cond .Page.Site.Config.Privacy.YouTube.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}
+{{ $host := cond site.Config.Privacy.YouTube.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}
 
 {{ $path := "" }}
 
@@ -19,7 +19,7 @@
     {{ $path = printf "embed/%v" $video }}
 {{ end }}
 
-{{ $params := slice (printf "hl=es" (.Site.LanguageCode | default .Site.Language.Lang)) "modestbranding=1" }}
+{{ $params := slice (printf "hl=es" (site.LanguageCode | default site.Language.Lang)) "modestbranding=1" }}
 
 {{ if $autoplay }}
     {{ $params = $params | append "autoplay=1" | append "mute=1" }}

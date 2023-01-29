@@ -5,7 +5,7 @@
 {{ $color := .Get "color" }}
 {{ $controls := .Get "controls" | default true }}
 {{ $description := .Get "title" | default "Vimeo video" }}
-{{ $dnt := .Get "dnt" | default .Page.Site.Config.Privacy.Vimeo.EnableDNT }}
+{{ $dnt := .Get "dnt" | default site.Config.Privacy.Vimeo.EnableDNT }}
 {{ $fullscreen := .Get "fullscreen" | default true }}
 {{ $keyboard := .Get "keyboard" | default true }}
 {{ $loop := .Get "loop" }}

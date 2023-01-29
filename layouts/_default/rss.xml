@@ -1,8 +1,8 @@
 {{ $page := . }}
 
-{{ $limit := $page.Site.Config.Services.RSS.Limit }}
+{{ $limit := site.Config.Services.RSS.Limit }}
 {{ $pages := "" }}
-{{ $pagesource := cond $page.IsHome $page.Site $page }}
+{{ $pagesource := cond $page.IsHome site $page }}
 {{ $title := partial "paige/func-title.html" $page }}
 
 {{ if or $page.IsHome $page.IsSection }}
@@ -23,11 +23,11 @@
         {{ with $page.OutputFormats.Get "RSS" }}
             {{ printf `<atom:link href="%s" rel="self" type="%s"/>` .Permalink .MediaType | safeHTML }}
         {{ end }}
-        {{ with $page.Site.Copyright }}
+        {{ with site.Copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
         <description>{{ with $title -}} {{- . -}} {{- else -}} Recent content {{- end }}</description>
-        {{ with $page.Site.LanguageCode | default .Site.Language.Lang }}
+        {{ with site.LanguageCode | default site.Language.Lang }}
             <language>{{ . }}</language>
         {{ end }}
         {{ if and $page.PublishDate (not $page.PublishDate.IsZero) }}
