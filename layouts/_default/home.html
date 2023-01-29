@@ -16,13 +16,13 @@
                 {{ $style = "height: 20rem; object-fit: cover" }}
             {{ end }}
 
-            <p {{ if not .Params.image_stretch }} class="text-center" {{ end }}>
+            <p {{ if not $page.Params.image_stretch }} class="text-center" {{ end }}>
                 {{ partial "paige/img.html" (dict
                     "class" $class
                     "fetchpriority" "high"
                     "loading" "eager"
-                    "raw" .Params.image_raw
-                    "src" .Params.image_url
+                    "raw" $page.Params.image_raw
+                    "src" $page.Params.image_url
                     "style" $style
                 ) }}
             </p>

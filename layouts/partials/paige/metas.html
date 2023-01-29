@@ -8,7 +8,7 @@
     <meta content="{{ . }}" name="description">
 {{ end }}
 {{ if or $page.Keywords $page.Params.tags $page.Params.categories }}
-    <meta content="{{ delimit (sort (union (union .Keywords .Params.tags) .Params.categories)) `, ` }}" name="keywords">
+    <meta content="{{ delimit (sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories)) `, ` }}" name="keywords">
 {{ end }}
 <meta content="{{ $page.Param "paige.color" | default `#0d6efd` }}" name="msapplication-TileColor">
 {{ if ne (relLangURL "browserconfig.xml") "/browserconfig.xml" }}
