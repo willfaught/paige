@@ -1,7 +1,9 @@
+{{ $page := . }}
+
 <article>
     <div class="align-items-center d-flex flex-column mb-0">
-        {{ partial "paige/metadata.html" . }}
-        {{ partial "paige/toc.html" . }}
-        {{ partial "paige/content.html" . }}
+        {{ partial "paige/metadata.html" $page }}
+        {{ partial "paige/toc.html" $page }}
+        {{ partial "paige/content.html" $page }}
     </div>
 </article>

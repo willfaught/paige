@@ -1,9 +1,11 @@
-{{ $crossorigin := .crossorigin | default "anonymous" }}
-{{ $href := .href }}
-{{ $integrity := .integrity }}
-{{ $page := .page }}
-{{ $raw := .raw }}
-{{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
+{{ $params := . }}
+
+{{ $crossorigin := $params.crossorigin | default "anonymous" }}
+{{ $href := $params.href }}
+{{ $integrity := $params.integrity }}
+{{ $page := $params.page }}
+{{ $raw := $params.raw }}
+{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 
 {{ if $raw }}
     {{ $href = relLangURL $href }}

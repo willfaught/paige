@@ -1,7 +1,9 @@
-{{ if and .Content .Params.paige.toc (not (eq (.Scratch.Get "paige_show_full_pages") true)) (ne .TableOfContents `<nav id="TableOfContents"></nav>`) }}
+{{ $page := . }}
+
+{{ if and $page.Content $page.Params.paige.toc (not (eq ($page.Scratch.Get "paige_show_full_pages") true)) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
     <section class="paige-toc">
         <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
-            {{ .TableOfContents }}
+            {{ $page.TableOfContents }}
         </div>
     </section>
 {{ end }}

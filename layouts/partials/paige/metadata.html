@@ -1,5 +1,7 @@
+{{ $page := . }}
+
 <section class="paige-metadata w-100">
-    {{ partial "paige/title.html" . }}
-    {{ partial "paige/description.html" . }}
-    {{ partial "paige/about.html" . }}
+    {{ partial "paige/title.html" $page }}
+    {{ partial "paige/description.html" $page }}
+    {{ partial "paige/about.html" $page }}
 </section>

@@ -1,9 +1,11 @@
+{{ $page := . }}
+
 {{ $result := "" }}
 
-{{ if .Params.authors }}
+{{ if $page.Params.authors }}
     {{ $names := slice }}
 
-    {{ range .Params.authors }}
+    {{ range $page.Params.authors }}
         {{ if eq (printf "%T" .) "string" }}
             {{ $names = $names | append (index site.Params.authors .).name }}
         {{ else }}

@@ -1,3 +1,5 @@
+{{ $page := . }}
+
 <link href="{{ relLangURL `apple-touch-icon.png` | safeURL }}" rel="apple-touch-icon" sizes="180x180">
 <link href="{{ relLangURL `favicon-16x16.png` | safeURL }}" rel="icon" sizes="16x16" type="image/png">
 <link href="{{ relLangURL `favicon-32x32.png` | safeURL }}" rel="icon" sizes="32x32" type="image/png">
@@ -18,7 +20,7 @@
     "integrity" site.Params.paige.bootstrap.style.link_integrity
     "raw" site.Params.paige.bootstrap.style.raw
 ) }}
-{{ if or .Params.paige.math (and .Params.paige.show_full_pages (where .Pages "Params.paige.math" "eq" true)) }}
+{{ if or $page.Params.paige.math (and $page.Params.paige.show_full_pages (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/link.html" (dict
         "href" (site.Params.paige.math.style.link_href | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
         "integrity" (site.Params.paige.math.style.link_integrity | default "sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=")
@@ -26,7 +28,7 @@
     ) }}
 {{ end }}
 {{ if .AlternativeOutputFormats }}
-    {{ $title := partial "paige/func-title.html" . }}
+    {{ $title := partial "paige/func-title.html" $page }}
     {{ range .AlternativeOutputFormats }}
         <link href="{{ .Permalink | safeURL }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
     {{ end }}

@@ -1,3 +1,5 @@
+{{ $page := . }}
+
 <section>
     <div class="container-fluid">
         <form action="{{ .Page.RelPermalink }}" dir="auto" method="get">
@@ -87,7 +89,7 @@ function paigeSearch(queryText) {
             var done = {};
             results.forEach(function (result) {
                 result.result.forEach(function (path) {
-                    if (path === "{{ .RelPermalink }}" || done[path]) {
+                    if (path === "{{ $page.RelPermalink }}" || done[path]) {
                         return;
                     }
                     if (!shown) {

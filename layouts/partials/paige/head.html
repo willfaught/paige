@@ -1,12 +1,14 @@
+{{ $page := . }}
+
 <head>
     {{ if templates.Exists "partials/paige/head-first.html" }}
-        {{ partial "paige/head-first.html" . }}
+        {{ partial "paige/head-first.html" $page }}
     {{ end }}
-    {{ partial "paige/metas.html" . }}
-    <title>{{ partial "paige/func-title.html" . }}</title>
-    {{ partial "paige/links.html" . }}
-    {{ partial "paige/style.html" . }}
+    {{ partial "paige/metas.html" $page }}
+    <title>{{ partial "paige/func-title.html" $page }}</title>
+    {{ partial "paige/links.html" $page }}
+    {{ partial "paige/style.html" $page }}
     {{ if templates.Exists "partials/paige/head-last.html" }}
-        {{ partial "paige/head-last.html" . }}
+        {{ partial "paige/head-last.html" $page }}
     {{ end }}
 </head>

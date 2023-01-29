@@ -1,14 +1,16 @@
-{{ $authors := cond (.Param "paige.page.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
-{{ $authorsclass := .Param "paige.page.authors.class" | default "text-center text-secondary" }}
+{{ $page := . }}
+
+{{ $authors := cond ($page.Param "paige.page.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
+{{ $authorsclass := $page.Param "paige.page.authors.class" | default "text-center text-secondary" }}
 {{ $gap := "mb-0" }}
-{{ $date := cond (.Param "paige.page.date.hide" | not) .PublishDate "" }}
-{{ $dateclass := .Param "paige.page.date.class" | default "text-center text-secondary" }}
+{{ $date := cond ($page.Param "paige.page.date.hide" | not) $page.PublishDate "" }}
+{{ $dateclass := $page.Param "paige.page.date.class" | default "text-center text-secondary" }}
 
 {{ with $authors }}
     <p class="{{ if $date }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
 {{ end }}
-{{ if $date }}
+{{ with $date }}
     <p class="{{ $dateclass }}">
-        <time datetime="{{ $date.Format `2006-01-02` }}">{{ time.Format (.Param "paige.page.date.format" | default ":date_long") $date }}</time>
+        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format ($page.Param "paige.page.date.format" | default ":date_long") . }}</time>
     </p>
 {{ end }}

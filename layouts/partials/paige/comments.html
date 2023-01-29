@@ -1,3 +1,5 @@
+{{ $page := . }}
+
 {{ template "_internal/disqus.html" . }}
 {{ if site.Params.paige.comments.cactus }}
     <section class="mb-3">
@@ -10,7 +12,7 @@
             defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
             serverName: "cactus.chat",
             siteName: {{ site.Params.paige.comments.cactus.account_id }},
-            commentSectionId: {{ .RelPermalink }}
+            commentSectionId: {{ $page.RelPermalink }}
         })
         </script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
@@ -30,7 +32,7 @@
         var __semio__params = {
             graphcommentId: {{ site.Params.paige.comments.graphcomment.account_id }},
             behaviour: {
-                uid: {{ .RelPermalink }}
+                uid: {{ $page.RelPermalink }}
             }
         };
         function __semio__onload() {
@@ -52,7 +54,7 @@
         var HYVOR_TALK_WEBSITE = {{ site.Params.paige.comments.hyvor.account_id }};
         var HYVOR_TALK_CONFIG = {
             url: false,
-            id: {{ .RelPermalink }}
+            id: {{ $page.RelPermalink }}
         };
         </script>
         <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
@@ -63,8 +65,8 @@
     <section class="mb-3">
         <script>
         var idcomments_acct = {{ site.Params.paige.comments.intensedebate.account_id }};
-        var idcomments_post_id = {{ .RelPermalink }};
-        var idcomments_post_url = {{ .Permalink }};
+        var idcomments_post_id = {{ $page.RelPermalink }};
+        var idcomments_post_url = {{ $page.Permalink }};
         </script>
         <span id="IDCommentsPostTitle" style="display:none"></span>
         <script type="text/javascript" src="http://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>
@@ -105,7 +107,7 @@
         <script>
         window.replybox = {
             site: {{ site.Params.paige.comments.replybox.account_id }},
-            identifier: {{ .RelPermalink }}
+            identifier: {{ $page.RelPermalink }}
         };
         </script>
         <script src="https://cdn.getreplybox.com/js/embed.js"></script>

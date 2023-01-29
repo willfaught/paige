@@ -1,7 +1,8 @@
-{{ $page := .page }}
-{{ $url := .url }}
+{{ $params := . }}
 
+{{ $page := $params.page }}
 {{ $resource := "" }}
+{{ $url := $params.url }}
 
 {{ with $page.Resources.GetMatch $url }}
     {{ $resource = . }}

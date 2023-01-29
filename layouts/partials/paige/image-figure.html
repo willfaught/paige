@@ -1,23 +1,25 @@
-{{ $alt := .alt }}
-{{ $caption := .caption }}
-{{ $compact := .compact }}
-{{ $float := .float }}
-{{ $height := .height }}
-{{ $horizontal := .horizontal }}
-{{ $link := .link }}
-{{ $maxheight := .maxheight }}
-{{ $maxwidth := .maxwidth }}
-{{ $method := .method }}
-{{ $number := .number }}
-{{ $numbered := .numbered }}
-{{ $options := .options }}
-{{ $page := .page }}
-{{ $raw := .raw }}
-{{ $resource := .resource }}
-{{ $src := .src }}
-{{ $title := .title }}
-{{ $vertical := .vertical }}
-{{ $width := .width }}
+{{ $params := . }}
+
+{{ $alt := $params.alt }}
+{{ $caption := $params.caption }}
+{{ $compact := $params.compact }}
+{{ $float := $params.float }}
+{{ $height := $params.height }}
+{{ $horizontal := $params.horizontal }}
+{{ $link := $params.link }}
+{{ $maxheight := $params.maxheight }}
+{{ $maxwidth := $params.maxwidth }}
+{{ $method := $params.method }}
+{{ $number := $params.number }}
+{{ $numbered := $params.numbered }}
+{{ $options := $params.options }}
+{{ $page := $params.page }}
+{{ $raw := $params.raw }}
+{{ $resource := $params.resource }}
+{{ $src := $params.src }}
+{{ $title := $params.title }}
+{{ $vertical := $params.vertical }}
+{{ $width := $params.width }}
 
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt

@@ -1,14 +1,16 @@
 {{ define "main" }}
+{{ $page := . }}
+
 <article>
-    {{ partial "paige/metadata.html" . }}
+    {{ partial "paige/metadata.html" $page }}
     <section>
-        {{ if .Params.image_url }}
+        {{ if $page.Params.image_url }}
             {{ $class := "mw-100 rounded-4 shadow" }}
-            {{ if .Params.image_stretch }}
+            {{ if $page.Params.image_stretch }}
                 {{ $class = "rounded-4 shadow w-100" }}
             {{ end }}
             {{ $style := "height: 20rem" }}
-            {{ if .Params.image_stretch }}
+            {{ if $page.Params.image_stretch }}
                 {{ $style = "height: 20rem; object-fit: cover" }}
             {{ end }}
             <p {{ if not .Params.image_stretch }} class="text-center" {{ end }}>
@@ -22,10 +24,10 @@
                 ) }}
             </p>
         {{ end }}
-        {{ with .Params.greeting }}
+        {{ with $page.Params.greeting }}
         <p class="display-5 fw-bold h2 text-center">{{ . | markdownify }}</p>
         {{ end }}
-        {{ with .Params.blurb }}
+        {{ with $page.Params.blurb }}
         <div class="container-fluid">
             <div class="justify-content-center row">
                 <div class="col col-auto col-lg-7 px-0">
@@ -35,8 +37,8 @@
         </div>
         {{ end }}
     </section>
-    {{ partial "paige/toc.html" . }}
-    {{ partial "paige/content.html" . }}
-    {{ partial "paige/social.html" . }}
+    {{ partial "paige/toc.html" $page }}
+    {{ partial "paige/content.html" $page }}
+    {{ partial "paige/social.html" $page }}
 </article>
 {{ end }}

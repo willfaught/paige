@@ -1,6 +1,8 @@
 {{ define "main" }}
+{{ $page := . }}
+
 {{ if not .Params.paige.show_full_pages }}
-{{ partial "paige/article.html" . }}
+{{ partial "paige/article.html" $page }}
 {{ end }}
-{{ partial "paige/pages.html" . }}
+{{ partial "paige/pages.html" $page }}
 {{ end }}

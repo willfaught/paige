@@ -1,43 +1,45 @@
-{{ $item := . }}
-{{ if .IsHome }}
-{{ $item = .Site }}
+{{ $page := . }}
+
+{{ $item := $page }}
+{{ if $page.IsHome }}
+{{ $item = $page.Site }}
 {{ end }}
 {{ $pages := slice }}
-{{ if or $.IsHome $.IsSection }}
+{{ if or $page.IsHome $page.IsSection }}
 {{ $pages = $item.RegularPages }}
 {{ else }}
 {{ $pages = $item.Pages }}
 {{ end }}
-{{ $limit := .Site.Config.Services.RSS.Limit }}
+{{ $limit := $page.Site.Config.Services.RSS.Limit }}
 {{ if ge $limit 1 }}
 {{ $pages = $pages | first $limit }}
 {{ end }}
 {{ $pages = where $pages "Params.paige.hide_rss" "ne" true }}
-{{ $title := partial "paige/func-title.html" . }}
+{{ $title := partial "paige/func-title.html" $page }}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    {{ with .OutputFormats.Get "RSS" }}
+    {{ with $page.OutputFormats.Get "RSS" }}
     {{ printf `<atom:link href="%s" rel="self" type="%s"/>` .Permalink .MediaType | safeHTML }}
     {{ end }}
-    {{ with .Site.Copyright }}
+    {{ with $page.Site.Copyright }}
     <copyright>{{ . }}</copyright>
     {{ end }}
     <description>{{ with $title }}{{ . }}{{ else }}Recent content{{ end }}</description>
-    {{ with .Site.LanguageCode | default .Site.Language.Lang }}
+    {{ with $page.Site.LanguageCode | default .Site.Language.Lang }}
     <language>{{ . }}</language>
     {{ end }}
-    {{ if and .Date (not .Date.IsZero) }}
-    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{ if and $page.Date (not $page.Date.IsZero) }}
+    <lastBuildDate>{{ $page.Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     {{ end }}
-    <link>{{ .Permalink }}</link>
-    {{ with .Site.Params.paige.rss.managing_editor }}
+    <link>{{ $page.Permalink }}</link>
+    {{ with $page.Site.Params.paige.rss.managing_editor }}
     <managingEditor>{{ . }}</managingEditor>
     {{ end }}
     {{ with $title }}
     <title>{{ . }}</title>
     {{ end }}
-    {{ with .Site.Params.paige.rss.web_master }}
+    {{ with $page.Site.Params.paige.rss.web_master }}
     <webMaster>{{ . }}</webMaster>
     {{ end }}
     {{ range $pages }}

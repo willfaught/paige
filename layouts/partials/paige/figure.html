@@ -1,16 +1,18 @@
-{{ $caption := .caption | markdownify }}
-{{ $compact := .compact }}
-{{ $content := .content | markdownify }}
-{{ $float := .float }}
-{{ $gap := .gap }}
-{{ $height := .height }}
-{{ $horizontal := .horizontal | default "center" }}
-{{ $maxheight := .maxheight }}
-{{ $maxwidth := .maxwidth }}
-{{ $number := .number }}
-{{ $numbered := .numbered }}
-{{ $vertical := .vertical | default "center" }}
-{{ $width := .width }}
+{{ $params := . }}
+
+{{ $caption := $params.caption | markdownify }}
+{{ $compact := $params.compact }}
+{{ $content := $params.content | markdownify }}
+{{ $float := $params.float }}
+{{ $gap := $params.gap }}
+{{ $height := $params.height }}
+{{ $horizontal := $params.horizontal | default "center" }}
+{{ $maxheight := $params.maxheight }}
+{{ $maxwidth := $params.maxwidth }}
+{{ $number := $params.number }}
+{{ $numbered := $params.numbered }}
+{{ $vertical := $params.vertical | default "center" }}
+{{ $width := $params.width }}
 
 {{ $heightish := or $maxheight $height }}
 {{ $showcaption := $caption }}

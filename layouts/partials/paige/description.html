@@ -1,5 +1,7 @@
-{{ $class := .Param "paige.page.description.class" | default "lead text-center" }}
-{{ $description := cond (.Param "paige.page.description.hide" | not) (.Description | markdownify) "" }}
+{{ $page := . }}
+
+{{ $class := $page.Param "paige.page.description.class" | default "lead text-center" }}
+{{ $description := cond ($page.Param "paige.page.description.hide" | not) ($page.Description | markdownify) "" }}
 
 {{ with $description }}
     <p class="{{ $class }}">{{ . }}</p>

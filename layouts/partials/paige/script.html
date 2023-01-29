@@ -1,11 +1,13 @@
-{{ $crossorigin := .crossorigin | default "anonymous" }}
-{{ $defer := .defer | default "defer" }}
-{{ $integrity := .integrity }}
-{{ $onload := .onload | safeJS }}
-{{ $page := .page }}
-{{ $referrerpolicy := .referrerpolicy | default "no-referrer" }}
-{{ $raw := .raw }}
-{{ $src := .src }}
+{{ $params := . }}
+
+{{ $crossorigin := $params.crossorigin | default "anonymous" }}
+{{ $defer := $params.defer | default "defer" }}
+{{ $integrity := $params.integrity }}
+{{ $onload := $params.onload | safeJS }}
+{{ $page := $params.page }}
+{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
+{{ $raw := $params.raw }}
+{{ $src := $params.src }}
 
 {{ if $raw }}
     {{ $src = relLangURL $src }}

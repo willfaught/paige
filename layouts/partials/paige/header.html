@@ -1,3 +1,5 @@
+{{ $page := . }}
+
 {{ $first := templates.Exists "partials/paige/header-first.html" }}
 {{ $last := templates.Exists "partials/paige/header-last.html" }}
 {{ $menu := site.Menus.main }}
@@ -5,13 +7,13 @@
 {{ if or $first $last $menu }}
     <header>
         {{ if $first }}
-            {{ partial "paige/header-first.html" . }}
+            {{ partial "paige/header-first.html" $page }}
         {{ end }}
         {{ if $menu }}
-            {{ partial "paige/menu.html" . }}
+            {{ partial "paige/menu.html" $page }}
         {{ end }}
         {{ if $last }}
-            {{ partial "paige/header-last.html" . }}
+            {{ partial "paige/header-last.html" $page }}
         {{ end }}
     </header>
 {{ end }}
