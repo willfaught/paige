@@ -50,7 +50,7 @@ outputs:
 paginate: 50
 params:
   paige:
-    hide_theme_link: true
+    hide_credit_link: true
     social:
       discord:
         icon: discord

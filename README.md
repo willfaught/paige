@@ -246,7 +246,7 @@ paige:
     utterances: # utteranc.es
       github_repo: "example/foo"
   hide_credit_data: true # Don't credit this project in a data attribute
-  hide_theme_link: true # Don't put a link to this project in the footer
+  hide_credit_link: true # Don't put a link to this project in the footer
   math:
     autorender:
       script_integrity: "sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" # File integrity hash

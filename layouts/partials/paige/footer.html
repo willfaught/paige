@@ -1,20 +1,20 @@
 {{ $page := . }}
 
 {{ $copyright := site.Copyright }}
+{{ $credit := not site.Params.paige.hide_credit_link }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
-{{ $showlink := not site.Params.paige.hide_theme_link }}
 
-{{ if or $copyright $first $last $showlink }}
+{{ if or $copyright $credit $first $last }}
     <footer>
         {{ if $first }}
             {{ partial "paige/footer-first.html" . }}
         {{ end }}
-        {{ if and $copyright $showlink }}
+        {{ if and $copyright $credit }}
             <p class="text-center text-secondary">{{ $copyright | markdownify }} · <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
         {{ else if $copyright }}
             <p class="text-center text-secondary">{{ $copyright | markdownify }}</p>
-        {{ else if $showlink }}
+        {{ else if $credit }}
             <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
         {{ end }}
         {{ if $last }}
