@@ -10,11 +10,10 @@
         {{ if $first }}
             {{ partial "paige/footer-first.html" . }}
         {{ end }}
-        {{ if and $copyright $credit }}
-            <p class="text-center text-secondary">{{ $copyright | markdownify }} · <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
-        {{ else if $copyright }}
-            <p class="text-center text-secondary">{{ $copyright | markdownify }}</p>
-        {{ else if $credit }}
+        {{ if $copyright }}
+            <p class="{{ if $credit }} mb-0 {{ end }} text-center text-secondary">{{ $copyright | markdownify }}</p>
+        {{ end }}
+        {{ if $credit }}
             <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
         {{ end }}
         {{ if $last }}
