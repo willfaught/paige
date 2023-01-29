@@ -20,7 +20,7 @@
     "integrity" ($page.Param "paige.bootstrap.style.link_integrity")
     "raw" ($page.Param "paige.bootstrap.style.raw")
 ) }}
-{{ if or $page.Params.paige.math (and $page.Params.paige.show_full_pages (where $page.Pages "Params.paige.math" "eq" true)) }}
+{{ if or ($page.Param "paige.math") (and ($page.Param "paige.show_full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/link.html" (dict
         "href" ($page.Param "paige.math.style.link_href" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
         "integrity" ($page.Param "paige.math.style.link_integrity" | default "sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=")
