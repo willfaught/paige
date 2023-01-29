@@ -1,11 +1,12 @@
 {{ $page := . }}
 
+{{ $credit := not $page.Site.Params.paige.hide_credit_data }}
 {{ $dark := eq $page.Site.Params.paige.color_scheme "dark" }}
 {{ $lang := $page.Site.LanguageCode | default $page.Site.Language.Lang }}
 {{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
 
 <!doctype html>
-<html {{ if $dark }} data-bs-theme="dark" {{ end }} {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
+<html {{ if $dark }} data-bs-theme="dark" {{ end }} {{ if $credit }} data-paige-credit="Paige theme from https://github.com/willfaught/paige" {{ end }} {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
     {{ partial "paige/head.html" $page }}
     {{ partial "paige/body.html" $page }}
         {{ if templates.Exists "partials/paige/body-first.html" }}
@@ -34,6 +35,3 @@
         {{ end }}
     </body>
 </html>
-{{ if not $page.Site.Params.paige.hide_theme_comment }}
-{{ print "<!-- Paige theme from https://github.com/willfaught/paige -->" | safeHTML }}
-{{ end }}

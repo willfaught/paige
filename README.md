@@ -245,7 +245,7 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
-  hide_theme_comment: true # Don't put a link to this project in a code comment
+  hide_credit_data: true # Don't credit this project in a data attribute
   hide_theme_link: true # Don't put a link to this project in the footer
   math:
     autorender:
@@ -913,7 +913,7 @@ The page date is the publish date, if any.
 
 Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are used unless overridden.
 
-Hugo names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
+Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
 
 ## Community
 
