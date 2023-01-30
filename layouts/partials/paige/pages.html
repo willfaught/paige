@@ -40,6 +40,8 @@
                     {{ $readingtimeclass := $page.Param "paige.page_list.reading_time.class" | default "text-center text-secondary" }}
                     {{ $summary := cond ($page.Param "paige.page_list.summary.show" | not) "" (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") }}
                     {{ $summaryclass := $page.Param "paige.page_list.summary.class" | default $class }}
+                    {{ $tags := cond ($page.Param "paige.page_list.tags.show" | not) slice (.Params.tags | default slice) | sort | uniq }}
+                    {{ $tagsclass := $page.Param "paige.page_list.tags.class" | default "badge text-bg-secondary text-decoration-none" }}
                     {{ $title := cond ($page.Param "paige.page_list.title.hide" | not) (.Title | markdownify) "" }}
                     {{ $titleclass := $page.Param "paige.page_list.title.class" | default $class }}
 
@@ -61,27 +63,34 @@
 
                     {{ $flags = delimit ($flags | sort | uniq) " " }}
 
-                    <p class="{{ if or $description $authors $date $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ with $flags }} {{ . }} {{ end }} {{ $titleclass }}">
+                    <p class="{{ if or $description $authors $date $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ with $flags }} {{ . }} {{ end }} {{ $titleclass }}">
                         <a href="{{ .RelPermalink }}">{{ $title | markdownify }}</a>
                     </p>
                     {{ with $description }}
-                        <p class="{{ if or $authors $date $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ $descriptionclass }}">{{ . }}</p>
+                        <p class="{{ if or $authors $date $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ $descriptionclass }}">{{ . }}</p>
                     {{ end }}
                     {{ with $authors }}
-                        <p class="{{ if or $date $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
+                        <p class="{{ if or $date $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
                     {{ end }}
                     {{ if $date }}
-                        <p class="{{ if or $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
+                        <p class="{{ if or $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
                             <time datetime="{{ $date.Format `2006-01-02` }}">{{ time.Format (.Param "paige.page_list.date.format" | default ":date_long") $date }}</time>
                         </p>
                     {{ end }}
                     {{ if $readingtime }}
-                        <p class="{{ if or $categories $summary }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ .ReadingTime }} {{ i18n "paige_minutes" .ReadingTime }}</p>
+                        <p class="{{ if or $categories $tags $summary }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ .ReadingTime }} {{ i18n "paige_minutes" .ReadingTime }}</p>
                     {{ end }}
                     {{ with $categories }}
-                        <p class="{{ if $summary }} {{ $gap }} {{ end }} text-center">
+                        <p class="{{ if or $tags $summary }} {{ $gap }} {{ end }} text-center">
                             {{ range . }}
                                 <a class="{{ $categoriesclass }}" href="{{ relLangURL (printf `categories/%v/` .) | safeURL }}">{{ . }}</a>
+                            {{ end }}
+                        </p>
+                    {{ end }}
+                    {{ with $tags }}
+                        <p class="{{ if $summary }} {{ $gap }} {{ end }} text-center">
+                            {{ range . }}
+                                <a class="{{ $tagsclass }}" href="{{ relLangURL (printf `tags/%v/` .) | safeURL }}">{{ . }}</a>
                             {{ end }}
                         </p>
                     {{ end }}

@@ -9,22 +9,31 @@
 {{ $dateclass := $page.Param "paige.page.date.class" | default "text-center text-secondary" }}
 {{ $readingtime := $page.Param "paige.page.reading_time.show" }}
 {{ $readingtimeclass := $page.Param "paige.page.reading_time.class" | default "text-center text-secondary" }}
+{{ $tags := cond ($page.Param "paige.page.tags.show" | not) slice ($page.Params.tags | default slice) | sort | uniq }}
+{{ $tagsclass := $page.Param "paige.page.tags.class" | default "badge text-bg-secondary text-decoration-none" }}
 
 {{ with $authors }}
-    <p class="{{ if or $date $readingtime $categories }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
+    <p class="{{ if or $date $readingtime $categories $tags }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
 {{ end }}
 {{ with $date }}
-    <p class="{{ if or $readingtime $categories }} {{ $gap }} {{ end }} {{ $dateclass }}">
+    <p class="{{ if or $readingtime $categories $tags }} {{ $gap }} {{ end }} {{ $dateclass }}">
         <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format ($page.Param "paige.page.date.format" | default ":date_long") . }}</time>
     </p>
 {{ end }}
 {{ if $readingtime }}
-    <p class="{{ if $categories }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ $page.ReadingTime }} {{ i18n "paige_minutes" $page.ReadingTime }}</p>
+    <p class="{{ if or $categories $tags }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ $page.ReadingTime }} {{ i18n "paige_minutes" $page.ReadingTime }}</p>
 {{ end }}
 {{ with $categories }}
-    <p class="text-center">
+    <p class="{{ if $tags }} {{ $gap }} {{ end }} text-center">
         {{ range . }}
             <a class="{{ $categoriesclass }}" href="{{ relLangURL (printf `categories/%v/` .) | safeURL }}">{{ . }}</a>
+        {{ end }}
+    </p>
+{{ end }}
+{{ with $tags }}
+    <p class="text-center">
+        {{ range . }}
+            <a class="{{ $tagsclass }}" href="{{ relLangURL (printf `tags/%v/` .) | safeURL }}">{{ . }}</a>
         {{ end }}
     </p>
 {{ end }}
