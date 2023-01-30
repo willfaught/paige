@@ -2,38 +2,38 @@
 
 {{ $authors := cond ($page.Param "paige.page.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
 {{ $authorsclass := $page.Param "paige.page.authors.class" | default "text-center text-secondary" }}
-{{ $categories := cond ($page.Param "paige.page.categories.show" | not) slice ($page.Params.categories | default slice) | sort | uniq }}
-{{ $categoriesclass := $page.Param "paige.page.categories.class" | default "badge text-bg-secondary text-decoration-none" }}
+{{ $categories := cond ($page.Param "paige.page.terms.show" | not) slice ($page.Params.categories | default slice) | sort | uniq }}
 {{ $date := cond ($page.Param "paige.page.date.hide" | not) $page.PublishDate "" }}
 {{ $dateclass := $page.Param "paige.page.date.class" | default "text-center text-secondary" }}
 {{ $gap := "mb-0" }}
 {{ $readingtime := $page.Param "paige.page.reading_time.show" }}
 {{ $readingtimeclass := $page.Param "paige.page.reading_time.class" | default "text-center text-secondary" }}
-{{ $tags := cond ($page.Param "paige.page.tags.show" | not) slice ($page.Params.tags | default slice) | sort | uniq }}
-{{ $tagsclass := $page.Param "paige.page.tags.class" | default "badge text-bg-secondary text-decoration-none" }}
+{{ $tags := cond ($page.Param "paige.page.terms.show" | not) slice ($page.Params.tags | default slice) | sort | uniq }}
+{{ $termsinnerclass := $page.Param "paige.page.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
+{{ $termsouterclass := $page.Param "paige.page.terms.outer_class" | default "text-center" }}
 
+{{ if or $categories $tags }}
+    <p {{ with $termsouterclass }} class="{{ . }}" {{ end }}>
+        {{ $terms := slice }}
+        {{ range $categories }}
+            {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "categories/%v/" | relLangURL)) }}
+        {{ end }}
+        {{ range $tags }}
+            {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "tags/%v/" | relLangURL)) }}
+        {{ end }}
+        {{ range sort $terms "name" }}
+            <a {{ with $termsinnerclass }} class="{{ . }}" {{ end }} href="{{ .url | safeURL }}">{{ .name }}</a>
+        {{ end }}
+    </p>
+{{ end }}
 {{ with $authors }}
-    <p class="{{ if or $date $readingtime $categories $tags }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
+    <p class="{{ if or $date $readingtime }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
 {{ end }}
 {{ with $date }}
-    <p class="{{ if or $readingtime $categories $tags }} {{ $gap }} {{ end }} {{ $dateclass }}">
+    <p class="{{ if $readingtime }} {{ $gap }} {{ end }} {{ $dateclass }}">
         <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format ($page.Param "paige.page.date.format" | default ":date_long") . }}</time>
     </p>
 {{ end }}
 {{ if $readingtime }}
-    <p class="{{ if or $categories $tags }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ $page.ReadingTime }} {{ i18n "paige_minutes" $page.ReadingTime }}</p>
-{{ end }}
-{{ with $categories }}
-    <p class="{{ if $tags }} {{ $gap }} {{ end }} text-center">
-        {{ range . }}
-            <a class="{{ $categoriesclass }}" href="{{ relLangURL (printf `categories/%v/` .) | safeURL }}">{{ . }}</a>
-        {{ end }}
-    </p>
-{{ end }}
-{{ with $tags }}
-    <p class="text-center">
-        {{ range . }}
-            <a class="{{ $tagsclass }}" href="{{ relLangURL (printf `tags/%v/` .) | safeURL }}">{{ . }}</a>
-        {{ end }}
-    </p>
+    <p class="{{ $readingtimeclass }}">{{ $page.ReadingTime }} {{ i18n "paige_minutes" $page.ReadingTime }}</p>
 {{ end }}
