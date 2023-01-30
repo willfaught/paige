@@ -28,6 +28,8 @@
 
                     {{ $authors := cond ($page.Param "paige.page_list.authors.show" | not) "" (partial "paige/func-authors.html" .) }}
                     {{ $authorsclass := $page.Param "paige.page_list.authors.class" | default (print $class " text-secondary") }}
+                    {{ $categories := cond ($page.Param "paige.page_list.categories.show" | not) slice (.Params.categories | default slice) | sort | uniq }}
+                    {{ $categoriesclass := $page.Param "paige.page_list.categories.class" | default "badge text-bg-secondary text-decoration-none" }}
                     {{ $date := cond ($page.Param "paige.page_list.date.show" | not) "" .PublishDate }}
                     {{ $dateclass := $page.Param "paige.page_list.date.class" | default (print $class " text-secondary") }}
                     {{ $description := cond ($page.Param "paige.page_list.description.hide" | not) (.Description | markdownify) "" }}
@@ -59,22 +61,29 @@
 
                     {{ $flags = delimit ($flags | sort | uniq) " " }}
 
-                    <p class="{{ if or $description $authors $date $readingtime $summary }} {{ $gap }} {{ end }} {{ with $flags }} {{ . }} {{ end }} {{ $titleclass }}">
+                    <p class="{{ if or $description $authors $date $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ with $flags }} {{ . }} {{ end }} {{ $titleclass }}">
                         <a href="{{ .RelPermalink }}">{{ $title | markdownify }}</a>
                     </p>
                     {{ with $description }}
-                        <p class="{{ if or $authors $date $readingtime $summary }} {{ $gap }} {{ end }} {{ $descriptionclass }}">{{ . }}</p>
+                        <p class="{{ if or $authors $date $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ $descriptionclass }}">{{ . }}</p>
                     {{ end }}
                     {{ with $authors }}
-                        <p class="{{ if or $date $readingtime $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
+                        <p class="{{ if or $date $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
                     {{ end }}
                     {{ if $date }}
-                        <p class="{{ if or $readingtime $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
+                        <p class="{{ if or $readingtime $categories $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
                             <time datetime="{{ $date.Format `2006-01-02` }}">{{ time.Format (.Param "paige.page_list.date.format" | default ":date_long") $date }}</time>
                         </p>
                     {{ end }}
                     {{ if $readingtime }}
-                        <p class="{{ if $summary }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ .ReadingTime }} {{ i18n "paige_minutes" .ReadingTime }}</p>
+                        <p class="{{ if or $categories $summary }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ .ReadingTime }} {{ i18n "paige_minutes" .ReadingTime }}</p>
+                    {{ end }}
+                    {{ with $categories }}
+                        <p class="{{ if $summary }} {{ $gap }} {{ end }} text-center">
+                            {{ range . }}
+                                <a class="{{ $categoriesclass }}" href="{{ relLangURL (printf `categories/%v/` .) | safeURL }}">{{ . }}</a>
+                            {{ end }}
+                        </p>
                     {{ end }}
                     {{ if $summary }}
                         <p class="{{ $summaryclass }}">{{ $summary }}</p>

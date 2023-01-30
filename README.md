@@ -264,6 +264,9 @@ paige:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       hide: false # Default is false
+    categories:
+      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
+      show: false # Default is false
     content:
       class: "" # Default is ""
       hide: false # Default is false
@@ -283,6 +286,9 @@ paige:
   page_list:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
+    categories:
+      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       show: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"

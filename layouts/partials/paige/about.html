@@ -2,6 +2,8 @@
 
 {{ $authors := cond ($page.Param "paige.page.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
 {{ $authorsclass := $page.Param "paige.page.authors.class" | default "text-center text-secondary" }}
+{{ $categories := cond ($page.Param "paige.page.categories.show" | not) slice ($page.Params.categories | default slice) | sort | uniq }}
+{{ $categoriesclass := $page.Param "paige.page.categories.class" | default "badge text-bg-secondary text-decoration-none" }}
 {{ $gap := "mb-0" }}
 {{ $date := cond ($page.Param "paige.page.date.hide" | not) $page.PublishDate "" }}
 {{ $dateclass := $page.Param "paige.page.date.class" | default "text-center text-secondary" }}
@@ -9,13 +11,20 @@
 {{ $readingtimeclass := $page.Param "paige.page.reading_time.class" | default "text-center text-secondary" }}
 
 {{ with $authors }}
-    <p class="{{ if or $date $readingtime }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
+    <p class="{{ if or $date $readingtime $categories }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
 {{ end }}
 {{ with $date }}
-    <p class="{{ if $readingtime }} {{ $gap }} {{ end }} {{ $dateclass }}">
+    <p class="{{ if or $readingtime $categories }} {{ $gap }} {{ end }} {{ $dateclass }}">
         <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format ($page.Param "paige.page.date.format" | default ":date_long") . }}</time>
     </p>
 {{ end }}
 {{ if $readingtime }}
-    <p class="{{ $readingtimeclass }}">{{ $page.ReadingTime }} {{ i18n "paige_minutes" $page.ReadingTime }}</p>
+    <p class="{{ if $categories }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ $page.ReadingTime }} {{ i18n "paige_minutes" $page.ReadingTime }}</p>
+{{ end }}
+{{ with $categories }}
+    <p class="text-center">
+        {{ range . }}
+            <a class="{{ $categoriesclass }}" href="{{ relLangURL (printf `categories/%v/` .) | safeURL }}">{{ . }}</a>
+        {{ end }}
+    </p>
 {{ end }}
