@@ -274,6 +274,9 @@ paige:
     description:
       class: "lead text-center" # Default is "lead text-center"
       hide: false # Default is false
+    reading_time:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
@@ -291,6 +294,9 @@ paige:
     description:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false
+    reading_time:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      show: false # Default is false
     summary:
       class: "text-center" # Default is "text-center"
       show: false # Default is false

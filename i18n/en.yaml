@@ -1,6 +1,10 @@
 paige_figure:
   other: Figure
 
+paige_minutes:
+  one: minute
+  other: minutes
+
 paige_noscript:
   other: JavaScript is required.
 
