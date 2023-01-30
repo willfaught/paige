@@ -4,9 +4,9 @@
 {{ $authorsclass := $page.Param "paige.page.authors.class" | default "text-center text-secondary" }}
 {{ $categories := cond ($page.Param "paige.page.categories.show" | not) slice ($page.Params.categories | default slice) | sort | uniq }}
 {{ $categoriesclass := $page.Param "paige.page.categories.class" | default "badge text-bg-secondary text-decoration-none" }}
-{{ $gap := "mb-0" }}
 {{ $date := cond ($page.Param "paige.page.date.hide" | not) $page.PublishDate "" }}
 {{ $dateclass := $page.Param "paige.page.date.class" | default "text-center text-secondary" }}
+{{ $gap := "mb-0" }}
 {{ $readingtime := $page.Param "paige.page.reading_time.show" }}
 {{ $readingtimeclass := $page.Param "paige.page.reading_time.class" | default "text-center text-secondary" }}
 {{ $tags := cond ($page.Param "paige.page.tags.show" | not) slice ($page.Params.tags | default slice) | sort | uniq }}
