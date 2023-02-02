@@ -1,12 +1,14 @@
 {{ $page := . }}
 
+{{ $class := "mb-0 text-center" }}
+
 {{ if $page.Pages }}
     {{ if $page.Param "paige.show_full_pages" }}
         {{ $p := $page.Paginate $page.Pages }}
         <section>
             {{ range $p.Pages }}
                 {{ $page.Scratch.Set "paige_show_full_pages" true }}
-                {{ partial "paige/article.html" $page }}
+                {{ partial "paige/article.html" . }}
             {{ end }}
         </section>
         {{ if or $p.HasPrev $p.HasNext }}
@@ -24,79 +26,95 @@
                     <h2 class="{{ $.Param `paige.page_list.date_header.class` | default `h5 text-center` }}">{{ .Key }}</h2>
                 {{ end }}
                 {{ range .Pages }}
-                    {{ $class := "text-center" }}
-
                     {{ $authors := cond ($page.Param "paige.page_list.authors.show" | not) "" (partial "paige/func-authors.html" .) }}
                     {{ $authorsclass := $page.Param "paige.page_list.authors.class" | default (print $class " text-secondary") }}
-                    {{ $categories := cond ($page.Param "paige.page_list.categories.show" | not) slice (.Params.categories | default slice) | sort | uniq }}
-                    {{ $categoriesclass := $page.Param "paige.page_list.categories.class" | default "badge text-bg-secondary text-decoration-none" }}
+                    {{ $categories := cond ($page.Param "paige.page_list.terms.show" | not) slice (.Params.categories | default slice) | sort | uniq }}
                     {{ $date := cond ($page.Param "paige.page_list.date.show" | not) "" .PublishDate }}
                     {{ $dateclass := $page.Param "paige.page_list.date.class" | default (print $class " text-secondary") }}
+                    {{ $dateformat := $page.Param "paige.page_list.date.format" | default ":date_long" }}
                     {{ $description := cond ($page.Param "paige.page_list.description.hide" | not) (.Description | markdownify) "" }}
                     {{ $descriptionclass := $page.Param "paige.page_list.description.class" | default $class }}
+                    {{ $draft := .Draft }}
+                    {{ $expired := and .ExpiryDate (lt .ExpiryDate now) }}
                     {{ $flags := slice }}
-                    {{ $gap := "mb-0" }}
-                    {{ $readingtime := $page.Param "paige.page_list.reading_time.show" }}
-                    {{ $readingtimeclass := $page.Param "paige.page_list.reading_time.class" | default "text-center text-secondary" }}
+                    {{ $future := and .PublishDate (gt .PublishDate now) }}
+                    {{ $modified := and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
+                    {{ $readingtime := cond ($page.Param "paige.page_list.reading_time.show" | not) "" .ReadingTime }}
+                    {{ $readingtimeclass := $page.Param "paige.page_list.reading_time.class" | default (print $class " text-secondary") }}
+                    {{ $sectionclass := $page.Param "paige.page_list.section.class" | default "mb-3 w-100" }}
                     {{ $summary := cond ($page.Param "paige.page_list.summary.show" | not) "" (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") }}
                     {{ $summaryclass := $page.Param "paige.page_list.summary.class" | default $class }}
-                    {{ $tags := cond ($page.Param "paige.page_list.tags.show" | not) slice (.Params.tags | default slice) | sort | uniq }}
-                    {{ $tagsclass := $page.Param "paige.page_list.tags.class" | default "badge text-bg-secondary text-decoration-none" }}
+                    {{ $tags := cond ($page.Param "paige.page_list.terms.show" | not) slice (.Params.tags | default slice) | sort | uniq }}
+                    {{ $termsinnerclass := $page.Param "paige.page_list.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
+                    {{ $termsouterclass := $page.Param "paige.page_list.terms.outer_class" | default $class }}
                     {{ $title := cond ($page.Param "paige.page_list.title.hide" | not) (.Title | markdownify) "" }}
                     {{ $titleclass := $page.Param "paige.page_list.title.class" | default $class }}
+                    {{ $titlelink := .RelPermalink }}
 
-                    {{ if .Draft }}
+                    {{ if $draft }}
                         {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
                     {{ end }}
 
-                    {{ if and .ExpiryDate (lt .ExpiryDate now) }}
+                    {{ if $expired }}
                         {{ $flags = $flags | append "paige-expired" "paige-unpublished" }}
                     {{ end }}
 
-                    {{ if and .PublishDate (gt .PublishDate now) }}
+                    {{ if $future }}
                         {{ $flags = $flags | append "paige-future" "paige-unpublished" }}
                     {{ end }}
 
-                    {{ if and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
+                    {{ if $modified }}
                         {{ $flags = $flags | append "paige-modified" }}
                     {{ end }}
 
                     {{ $flags = delimit ($flags | sort | uniq) " " }}
+                    {{ $sectionclass = delimit (split $sectionclass " " | append $flags | sort | uniq) " " }}
 
-                    <p class="{{ if or $description $authors $date $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ with $flags }} {{ . }} {{ end }} {{ $titleclass }}">
-                        <a href="{{ .RelPermalink }}">{{ $title | markdownify }}</a>
-                    </p>
-                    {{ with $description }}
-                        <p class="{{ if or $authors $date $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ $descriptionclass }}">{{ . }}</p>
-                    {{ end }}
-                    {{ with $authors }}
-                        <p class="{{ if or $date $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ $authorsclass }}">{{ . }}</p>
-                    {{ end }}
-                    {{ if $date }}
-                        <p class="{{ if or $readingtime $categories $tags $summary }} {{ $gap }} {{ end }} {{ $dateclass }}">
-                            <time datetime="{{ $date.Format `2006-01-02` }}">{{ time.Format (.Param "paige.page_list.date.format" | default ":date_long") $date }}</time>
-                        </p>
-                    {{ end }}
-                    {{ if $readingtime }}
-                        <p class="{{ if or $categories $tags $summary }} {{ $gap }} {{ end }} {{ $readingtimeclass }}">{{ .ReadingTime }} {{ i18n "paige_minutes" .ReadingTime }}</p>
-                    {{ end }}
-                    {{ with $categories }}
-                        <p class="{{ if or $tags $summary }} {{ $gap }} {{ end }} text-center">
-                            {{ range . }}
-                                <a class="{{ $categoriesclass }}" href="{{ relLangURL (printf `categories/%v/` .) | safeURL }}">{{ . }}</a>
-                            {{ end }}
-                        </p>
-                    {{ end }}
-                    {{ with $tags }}
-                        <p class="{{ if $summary }} {{ $gap }} {{ end }} text-center">
-                            {{ range . }}
-                                <a class="{{ $tagsclass }}" href="{{ relLangURL (printf `tags/%v/` .) | safeURL }}">{{ . }}</a>
-                            {{ end }}
-                        </p>
-                    {{ end }}
-                    {{ if $summary }}
-                        <p class="{{ $summaryclass }}">{{ $summary }}</p>
-                    {{ end }}
+                    <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
+                        {{ with $title }}
+                            <p {{ with $titleclass }} class="{{ . }}" {{ end }}><a href="{{ $titlelink }}">{{ . }}</a></p>
+                        {{ end }}
+
+                        {{ with $description }}
+                            <p {{ with $descriptionclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
+                        {{ end }}
+
+                        {{ if or $categories $tags }}
+                            <p {{ with $termsouterclass }} class="{{ . }}" {{ end }}>
+                                {{ $terms := slice }}
+
+                                {{ range $categories }}
+                                    {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "categories/%v/" | relLangURL)) }}
+                                {{ end }}
+
+                                {{ range $tags }}
+                                    {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "tags/%v/" | relLangURL)) }}
+                                {{ end }}
+
+                                {{ range sort $terms "name" }}
+                                    <a {{ with $termsinnerclass }} class="{{ . }}" {{ end }} href="{{ .url | safeURL }}">{{ .name }}</a>
+                                {{ end }}
+                            </p>
+                        {{ end }}
+
+                        {{ with $authors }}
+                            <p {{ with $authorsclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
+                        {{ end }}
+
+                        {{ with $date }}
+                            <p {{ with $dateclass }} class="{{ . }}" {{ end }}>
+                                <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+                            </p>
+                        {{ end }}
+
+                        {{ with $readingtime }}
+                            <p {{ with $readingtimeclass }} class="{{ . }}" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
+                        {{ end }}
+
+                        {{ with $summary }}
+                            <p {{ with $summaryclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
+                        {{ end }}
+                    </section>
                 {{ end }}
             {{ end }}
         </section>

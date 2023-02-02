@@ -296,7 +296,7 @@ paige:
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       format: ":date_long" # Default is ":date_long"
-      show: false # Default is false
+      hide: true # Default is true
     date_header:
       class: "h5 text-center" # Month and year header class attribute
       hide: false # Default is false
@@ -876,12 +876,11 @@ For example, the default layouts
 `home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html`
 include the partial template `paige/article.html`.
 `paige/article.html` includes the partial templates `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`.
-`paige/metadata.html` includes the partial templates `paige/title.html`, `paige/description.html`, and `paige/other.html`.
-To change the page title for those default layouts, change `paige/title.html`.
+To change the page title for those default layouts, change `paige/metadata.html`.
 To change the page title for `single.html`,
 replace the use of `paige/article.html` in `single.html` with the use of
-`paige/title.html`, `paige/description.html`, `paige/other.html`, `paige/toc.html`, and `paige/content.html`,
-then replace that use of `paige/title.html` with your own design.
+`paige/metadata.html`, `paige/toc.html`, and `paige/content.html`,
+then replace that use of `paige/metadata.html` with your own design.
 
 ### Define
 
