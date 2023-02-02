@@ -1,4 +1,6 @@
 {{ define "main" }}
-{{ partial "paige/article.html" . }}
-{{ partial "paige/search.html" . }}
+{{ $page := . }}
+
+{{ partial "paige/article.html" $page }}
+{{ partial "paige/search.html" $page }}
 {{ end }}
