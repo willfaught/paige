@@ -22,7 +22,7 @@
 
 <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
     {{ with $title }}
-        <h1 {{ with $titleclass }} class="{{ . }}" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $page.Scratch.Get "paige_show_full_pages" }}<a aria-label="Link to this section" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
+        <h1 {{ with $titleclass }} class="{{ . }}" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $page.Scratch.Get "paige_list_show_content" }}<a aria-label="Link to this section" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
     {{ end }}
 
     {{ with $description }}

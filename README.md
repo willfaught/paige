@@ -293,6 +293,8 @@ paige:
     categories:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
+    content:
+      show: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       format: ":date_long" # Default is ":date_long"
@@ -375,6 +377,8 @@ paige:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       show: false # Default is false
+    content:
+      show: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       show: false # Default is false
@@ -390,7 +394,6 @@ paige:
     title:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false
-  show_full_pages: true # Show full pages, not just page titles and descriptions
 ```
 
 Additional optional single page parameters:

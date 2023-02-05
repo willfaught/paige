@@ -53,7 +53,7 @@ addEventListener("resize", paigeResize);
     "raw" ($page.Param "paige.bootstrap.script.raw")
     "src" ($page.Param "paige.bootstrap.script.script_src" | default "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
 ) }}
-{{ if or ($page.Param "paige.math") (and ($page.Param "paige.show_full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
+{{ if or ($page.Param "paige.math") (and ($page.Param "paige.page_list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/script.html" (dict
         "integrity" ($page.Param "paige.math.script.script_integrity")
         "raw" ($page.Param "paige.math.script.raw")

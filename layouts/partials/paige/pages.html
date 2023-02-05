@@ -3,11 +3,11 @@
 {{ $class := "mb-0 text-center" }}
 
 {{ if $page.Pages }}
-    {{ if $page.Param "paige.show_full_pages" }}
+    {{ if $page.Param "paige.page_list.content.show" }}
         {{ $p := $page.Paginate $page.Pages }}
         <section>
             {{ range $p.Pages }}
-                {{ $page.Scratch.Set "paige_show_full_pages" true }}
+                {{ $page.Scratch.Set "paige_list_show_content" true }}
                 {{ partial "paige/article.html" . }}
             {{ end }}
         </section>
