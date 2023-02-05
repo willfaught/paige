@@ -268,7 +268,7 @@ paige:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
     content:
-      class: "paige-content" # Default is "paige-content"
+      class: "mw-100 paige-content" # Default is "mw-100 paige-content"
       hide: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
