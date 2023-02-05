@@ -177,7 +177,7 @@ $ hugo server -D
 
 ## Configure
 
-There is a single parameter object with sensible defaults that can be overridden in site configuration and page front matter:
+There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
 
 ```yaml
 authors:
