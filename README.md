@@ -245,6 +245,12 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
+  home:
+    blurb: "There's a new daddy in town." # Displayed below the greeting
+    greeting: "You know best" # Displayed below the image
+    image_raw: true # Do not copy or process the image
+    image_stretch: true # Stretch the image fully horizontally if true; center the image otherwise
+    image_url: "me.jpg" # A page, site, or remote resource glob
   hide_credit_data: true # Don't credit this project in a data attribute
   hide_credit_link: true # Don't credit this project in the footer
   list:
