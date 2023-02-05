@@ -315,6 +315,10 @@ paige:
     reading_time:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       hide: false # Default is false
+    rss:
+      hide: true # Don't include this page in RSS feeds
+    search:
+      hide: true # Don't include this page in search results
     tags:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
@@ -346,14 +350,6 @@ authors: [
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
   math: true # Enable math typesetting with KaTeX
-```
-
-Additional optional single page parameters:
-
-```yaml
-paige:
-  hide_rss: true # Don't include this page in RSS feeds
-  hide_search: true # Don't include this page in search results
 ```
 
 Example `config.yaml`:
