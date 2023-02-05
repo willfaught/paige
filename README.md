@@ -930,7 +930,7 @@ The page date is the publish date, if any.
 
 Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are used unless overridden.
 
-Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
+Hugo names, HTML names, CSS names, JavaScript names, and directory names that begin with "paige" capitalized in any way are reserved.
 
 ## Community
 
