@@ -300,9 +300,6 @@ paige:
       authors:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
         hide: false # Default is false
-      content:
-        class: "mw-100 paige-content" # Default is "mw-100 paige-content"
-        hide: false # Default is false
       date:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
         format: ":date_long" # Default is ":date_long"
@@ -329,6 +326,9 @@ paige:
     table_of_contents:
       hide: false # Default is false
       max_width: "66ch" # Default is ""
+    content:
+      class: "mw-100 paige-content" # Default is "mw-100 paige-content"
+      hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth" # Default is ""
     web_master: "Michael Bluth" # Default is ""
