@@ -309,8 +309,6 @@ paige:
       reading_time:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
         hide: false # Default is false
-      search:
-        hide: false # Don't include this page in search results; default is false
       section:
         class: "paige-metadata w-100" # Default is "paige-metadata w-100"
       terms:
@@ -331,6 +329,8 @@ paige:
     hide_page: false # Default is false
     managing_editor: "Michael Bluth" # Default is ""
     web_master: "Michael Bluth" # Default is ""
+  search:
+    hide_page: false # Default is false
   social:
     examplesite:
       bootstrap_icon: example-icon
