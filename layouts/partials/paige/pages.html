@@ -79,6 +79,10 @@
                             <p {{ with $descriptionclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
                         {{ end }}
 
+                        {{ with $summary }}
+                            <p {{ with $summaryclass }} class="{{ . }}" {{ end }}><i>{{ . }}</i></p>
+                        {{ end }}
+
                         {{ if or $categories $tags }}
                             <p {{ with $termsouterclass }} class="{{ . }}" {{ end }}>
                                 {{ $terms := slice }}
@@ -109,10 +113,6 @@
 
                         {{ with $readingtime }}
                             <p {{ with $readingtimeclass }} class="{{ . }}" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
-                        {{ end }}
-
-                        {{ with $summary }}
-                            <p {{ with $summaryclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
                         {{ end }}
                     </section>
                 {{ end }}
