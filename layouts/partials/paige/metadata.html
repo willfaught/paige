@@ -2,17 +2,17 @@
 
 {{ $authors := cond ($page.Param "paige.page.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
 {{ $authorsclass := $page.Param "paige.page.authors.class" | default "text-center text-secondary" }}
-{{ $categories := cond ($page.Param "paige.page.terms.show" | not) slice ($page.Params.categories | default slice) | sort | uniq }}
+{{ $categories := cond ($page.Param "paige.page.terms.hide" | not) ($page.Params.categories | default slice) slice | sort | uniq }}
 {{ $date := cond ($page.Param "paige.page.date.hide" | not) $page.PublishDate "" }}
 {{ $dateclass := $page.Param "paige.page.date.class" | default "text-center text-secondary" }}
 {{ $dateformat := $page.Param "paige.page.date.format" | default ":date_long" }}
 {{ $description := cond ($page.Param "paige.page.description.hide" | not) ($page.Description | markdownify) "" }}
 {{ $descriptionclass := $page.Param "paige.page.description.class" | default "lead text-center" }}
 {{ $nogap := "mb-0" }}
-{{ $readingtime := cond ($page.Param "paige.page.reading_time.show" | not) "" $page.ReadingTime }}
+{{ $readingtime := cond ($page.Param "paige.page.reading_time.hide" | not) $page.ReadingTime "" }}
 {{ $readingtimeclass := $page.Param "paige.page.reading_time.class" | default "text-center text-secondary" }}
 {{ $sectionclass := "paige-metadata w-100" }}
-{{ $tags := cond ($page.Param "paige.page.terms.show" | not) slice ($page.Params.tags | default slice) | sort | uniq }}
+{{ $tags := cond ($page.Param "paige.page.terms.hide" | not) ($page.Params.tags | default slice) slice | sort | uniq }}
 {{ $termsinnerclass := $page.Param "paige.page.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
 {{ $termsouterclass := $page.Param "paige.page.terms.outer_class" | default "text-center" }}
 {{ $title := cond ($page.Param "paige.page.title.hide" | not) ($page.Title | markdownify) "" }}

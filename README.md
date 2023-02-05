@@ -266,7 +266,7 @@ paige:
       hide: false # Default is false
     categories:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      show: false # Default is false
+      hide: false # Default is false
     content:
       class: "" # Default is ""
       hide: false # Default is false
@@ -279,20 +279,20 @@ paige:
       hide: false # Default is false
     reading_time:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
-      show: false # Default is false
+      hide: false # Default is false
     tags:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      show: false # Default is false
+      hide: false # Default is false
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
   page_list:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
-      show: false # Default is false
+      hide: false # Default is false
     categories:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      show: false # Default is false
+      hide: false # Default is false
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       format: ":date_long" # Default is ":date_long"
@@ -305,13 +305,13 @@ paige:
       hide: false # Default is false
     reading_time:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
-      show: false # Default is false
+      hide: false # Default is false
     summary:
       class: "text-center" # Default is "text-center"
-      show: false # Default is false
+      hide: false # Default is false
     tags:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      show: false # Default is false
+      hide: false # Default is false
     title:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false

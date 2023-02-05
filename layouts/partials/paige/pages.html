@@ -26,10 +26,10 @@
                     <h2 class="{{ $.Param `paige.page_list.date_header.class` | default `h5 text-center` }}">{{ .Key }}</h2>
                 {{ end }}
                 {{ range .Pages }}
-                    {{ $authors := cond ($page.Param "paige.page_list.authors.show" | not) "" (partial "paige/func-authors.html" .) }}
+                    {{ $authors := cond ($page.Param "paige.page_list.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
                     {{ $authorsclass := $page.Param "paige.page_list.authors.class" | default (print $class " text-secondary") }}
-                    {{ $categories := cond ($page.Param "paige.page_list.terms.show" | not) slice (.Params.categories | default slice) | sort | uniq }}
-                    {{ $date := cond ($page.Param "paige.page_list.date.show" | not) "" .PublishDate }}
+                    {{ $categories := cond ($page.Param "paige.page_list.terms.hide" | not) (.Params.categories | default slice) slice | sort | uniq }}
+                    {{ $date := cond ($page.Param "paige.page_list.date.hide" | not) .PublishDate "" }}
                     {{ $dateclass := $page.Param "paige.page_list.date.class" | default (print $class " text-secondary") }}
                     {{ $dateformat := $page.Param "paige.page_list.date.format" | default ":date_long" }}
                     {{ $description := cond ($page.Param "paige.page_list.description.hide" | not) (.Description | markdownify) "" }}
@@ -39,12 +39,12 @@
                     {{ $flags := slice }}
                     {{ $future := and .PublishDate (gt .PublishDate now) }}
                     {{ $modified := and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
-                    {{ $readingtime := cond ($page.Param "paige.page_list.reading_time.show" | not) "" .ReadingTime }}
+                    {{ $readingtime := cond ($page.Param "paige.page_list.reading_time.hide" | not) .ReadingTime "" }}
                     {{ $readingtimeclass := $page.Param "paige.page_list.reading_time.class" | default (print $class " text-secondary") }}
                     {{ $sectionclass := $page.Param "paige.page_list.section.class" | default "mb-3 w-100" }}
-                    {{ $summary := cond ($page.Param "paige.page_list.summary.show" | not) "" (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>") }}
+                    {{ $summary := cond ($page.Param "paige.page_list.summary.hide" | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | htmlUnescape | plainify) "" }}
                     {{ $summaryclass := $page.Param "paige.page_list.summary.class" | default $class }}
-                    {{ $tags := cond ($page.Param "paige.page_list.terms.show" | not) slice (.Params.tags | default slice) | sort | uniq }}
+                    {{ $tags := cond ($page.Param "paige.page_list.terms.hide" | not) (.Params.tags | default slice) slice | sort | uniq }}
                     {{ $termsinnerclass := $page.Param "paige.page_list.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
                     {{ $termsouterclass := $page.Param "paige.page_list.terms.outer_class" | default $class }}
                     {{ $title := cond ($page.Param "paige.page_list.title.hide" | not) (.Title | markdownify) "" }}
