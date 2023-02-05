@@ -319,13 +319,13 @@ paige:
       hide: true # Don't include this page in RSS feeds
     search:
       hide: true # Don't include this page in search results
+    table_of_contents:
+      hide: false # Default is false
     tags:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
-      hide: false # Default is false
-    table_of_contents:
       hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth"
