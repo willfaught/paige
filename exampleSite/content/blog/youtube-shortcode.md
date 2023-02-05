@@ -2,7 +2,7 @@
 categories: [paige]
 date: 2023-01-20
 description: Demonstration of the Paige YouTube shortcode.
-tags: [shortcodes, videos]
+tags: [shortcodes, videos, youtube]
 title: YouTube Shortcode
 ---
 

@@ -2,7 +2,7 @@
 categories: [paige]
 date: 2023-01-22
 description: Demonstration of the Paige Vimeo shortcode.
-tags: [shortcodes, videos]
+tags: [shortcodes, videos, vimeo]
 title: Vimeo Shortcode
 ---
 

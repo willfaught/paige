@@ -2,7 +2,7 @@
 categories: [paige]
 date: "2023-01-02"
 description: Demonstration of the Paige quote shortcode.
-tags: [figures, shortcodes]
+tags: [figures, quotations, shortcodes]
 title: Quote Shortcode
 ---
 
