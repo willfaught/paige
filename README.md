@@ -177,10 +177,7 @@ $ hugo server -D
 
 ## Configure
 
-All configuration settings have sensible defaults.
-No manual configuration is required.
-
-Optional site parameters:
+There is a single parameter object with sensible defaults that can be overridden in site configuration and page front matter:
 
 ```yaml
 authors:
