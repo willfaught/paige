@@ -290,8 +290,9 @@ paige:
       class: "fst-italic mb-0 text-center" # Default is "fst-italic mb-0 text-center"
       hide: false # Default is false
     terms:
-      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
+      inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
+      outer_class: "mb-0 text-center" # Default is "mb-0 text-center"
     title:
       class: "mb-0 text-center" # Default is "mb-0 text-center"
       hide: false # Default is false
@@ -326,8 +327,9 @@ paige:
     table_of_contents:
       hide: false # Default is false
     terms:
-      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
+      inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
+      outer_class: "text-center" # Default is "text-center"
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
