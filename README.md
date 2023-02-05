@@ -223,9 +223,9 @@ paige:
       link_href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" # Local or remote file
       link_integrity: "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" # File integrity hash
       raw: false # Do not copy or process the file; default is false
-  color: "#123456" # Theme color for Safari and Windows
-  color_scheme: "light" # Use the "light" or "dark" color scheme without automatic switching
-  content_max_width: "66ch" # Page table of contents and content max width
+  color: "#123456" # Theme color for Safari and Windows; default is "#0d6efd"
+  color_scheme: "light" # Use the "light" or "dark" color scheme without automatic switching; default is ""
+  content_max_width: "66ch" # Page table of contents and content max width; default is ""
   comments:
     cactus: # cactus.chat
       account_id: "123456"
@@ -245,14 +245,14 @@ paige:
     utterances: # utteranc.es
       github_repo: "example/foo"
   home:
-    blurb: "There's a new daddy in town." # Displayed below the greeting
-    greeting: "You know best" # Displayed below the image
+    blurb: "There's a new daddy in town." # Displayed below the greeting; default is ""
+    greeting: "You know best" # Displayed below the image; default is ""
     image:
       raw: false # Do not copy or process the file; default is false
-      stretch: true # Stretch the image fully horizontally if true; center the image otherwise
-      url: "me.jpg" # A page, site, or remote resource glob
-  hide_credit_data: true # Don't credit this project in a data attribute
-  hide_credit_link: true # Don't credit this project in the footer
+      stretch: false # Stretch the image fully horizontally if true; center the image otherwise; default is false
+      url: "me.jpg" # A page, site, or remote resource glob; default is ""
+  hide_credit_data: false # Don't credit this project in a data attribute; default is false
+  hide_credit_link: false # Don't credit this project in the footer; default is false
   katex:
     autorender:
       raw: false # Do not copy or process the file; default is false
@@ -297,9 +297,9 @@ paige:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false
   math: false # Enable math typesetting; default is false
-  menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
+  menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
   menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
-  metadata_max_width: "100ch" # Page metadata max width
+  metadata_max_width: "100ch" # Page metadata max width; default is ""
   page:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
@@ -321,9 +321,9 @@ paige:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       hide: false # Default is false
     rss:
-      hide: true # Don't include this page in RSS feeds
+      hide: false # Don't include this page in RSS feeds; default is false
     search:
-      hide: true # Don't include this page in search results
+      hide: false # Don't include this page in search results; default is false
     table_of_contents:
       hide: false # Default is false
     tags:
@@ -333,8 +333,8 @@ paige:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
   rss:
-    managing_editor: "Michael Bluth"
-    web_master: "Michael Bluth"
+    managing_editor: "Michael Bluth" # Default is ""
+    web_master: "Michael Bluth" # Default is ""
   social:
     examplesite:
       bootstrap_icon: example-icon
