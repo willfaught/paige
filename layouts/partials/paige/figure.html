@@ -66,8 +66,8 @@
     {{ end }}
 {{ end }}
 
-<figure class="{{ if $widthish }} d-flex {{ end }} {{ with $float }} float-{{ . }} {{ end }} {{ if $widthish }} justify-content-{{ $horizontal }} {{ end }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
-    <div {{ if or $heightish $widthish }} class="{{ if $height }} d-flex flex-column justify-content-{{ $vertical }} {{ end }} overflow-auto" {{ end }} {{ if $style }} style="{{ $style | safeCSS }}" {{ end }}>
+<figure class="{{ if $widthish }} d-flex {{ end }} {{ with $float }} float-{{ . }} {{ end }} {{ if $widthish }} justify-content-{{ $horizontal }} {{ end }} {{ if $compact }} mb-0 {{ end }} {{ if $float }} {{ $sidemargin }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}" {{ if and $float $style }} style="{{ $style | safeCSS }}" {{ end }}>
+    <div {{ if or $heightish $widthish }} class="{{ if $height }} d-flex flex-column justify-content-{{ $vertical }} {{ end }} overflow-auto" {{ end }} {{ if and (not $float) $style }} style="{{ $style | safeCSS }}" {{ end }}>
         {{ if $table }}
             <div class="d-table">
         {{ end }}
