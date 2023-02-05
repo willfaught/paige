@@ -247,6 +247,37 @@ paige:
       github_repo: "example/foo"
   hide_credit_data: true # Don't credit this project in a data attribute
   hide_credit_link: true # Don't credit this project in the footer
+  list:
+    authors:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      hide: false # Default is false
+    categories:
+      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
+      hide: false # Default is false
+    content:
+      show: false # Default is false
+    date:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      format: ":date_long" # Default is ":date_long"
+      hide: true # Default is true
+    date_header:
+      class: "h5 text-center" # Month and year header class attribute
+      hide: false # Default is false
+    description:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
+    reading_time:
+      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      hide: false # Default is false
+    summary:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
+    tags:
+      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
+      hide: false # Default is false
+    title:
+      class: "text-center" # Default is "text-center"
+      hide: false # Default is false
   math:
     autorender:
       script_integrity: "sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" # File integrity hash
@@ -285,37 +316,6 @@ paige:
       hide: false # Default is false
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
-      hide: false # Default is false
-  list:
-    authors:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    categories:
-      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      hide: false # Default is false
-    content:
-      show: false # Default is false
-    date:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      format: ":date_long" # Default is ":date_long"
-      hide: true # Default is true
-    date_header:
-      class: "h5 text-center" # Month and year header class attribute
-      hide: false # Default is false
-    description:
-      class: "text-center" # Default is "text-center"
-      hide: false # Default is false
-    reading_time:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    summary:
-      class: "text-center" # Default is "text-center"
-      hide: false # Default is false
-    tags:
-      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      hide: false # Default is false
-    title:
-      class: "text-center" # Default is "text-center"
       hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth"
