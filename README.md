@@ -267,31 +267,31 @@ paige:
       link_integrity: "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" # File integrity hash
   list:
     authors:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
       hide: false # Default is false
     content:
       show: false # Default is false
     date:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
       format: ":date_long" # Default is ":date_long"
       hide: false # Default is false
     date_header:
       class: "h5 text-center" # Month and year header class attribute
       hide: false # Default is false
     description:
-      class: "text-center" # Default is "text-center"
+      class: "mb-0 text-center" # Default is "mb-0 text-center"
       hide: false # Default is false
     reading_time:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
+      class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
       hide: false # Default is false
     summary:
-      class: "text-center" # Default is "text-center"
+      class: "fst-italic mb-0 text-center" # Default is "fst-italic mb-0 text-center"
       hide: false # Default is false
     terms:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
     title:
-      class: "text-center" # Default is "text-center"
+      class: "mb-0 text-center" # Default is "mb-0 text-center"
       hide: false # Default is false
   math: false # Enable math typesetting; default is false
   menu:
