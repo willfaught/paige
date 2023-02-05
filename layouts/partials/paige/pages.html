@@ -43,7 +43,7 @@
                     {{ $readingtimeclass := $page.Param "paige.page_list.reading_time.class" | default (print $class " text-secondary") }}
                     {{ $sectionclass := $page.Param "paige.page_list.section.class" | default "mb-3 w-100" }}
                     {{ $summary := cond ($page.Param "paige.page_list.summary.hide" | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | htmlUnescape | plainify) "" }}
-                    {{ $summaryclass := $page.Param "paige.page_list.summary.class" | default $class }}
+                    {{ $summaryclass := $page.Param "paige.page_list.summary.class" | default (print "fst-italic " $class) }}
                     {{ $tags := cond ($page.Param "paige.page_list.terms.hide" | not) (.Params.tags | default slice) slice | sort | uniq }}
                     {{ $termsinnerclass := $page.Param "paige.page_list.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
                     {{ $termsouterclass := $page.Param "paige.page_list.terms.outer_class" | default $class }}
@@ -80,7 +80,7 @@
                         {{ end }}
 
                         {{ with $summary }}
-                            <p {{ with $summaryclass }} class="{{ . }}" {{ end }}><i>{{ . }}</i></p>
+                            <p {{ with $summaryclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
                         {{ end }}
 
                         {{ if or $categories $tags }}
