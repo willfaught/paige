@@ -336,7 +336,7 @@ paige:
     web_master: "Michael Bluth"
   social: # Social links on the home page
     examplesite:
-      icon: example-icon # Bootstrap icon name
+      bootstrap_icon: example-icon
       link: https://example.com/username
       name: Example Site # Used for screen readers
 ```
@@ -414,15 +414,15 @@ params:
   paige:
     social:
       email:
-        icon: envelope
+        bootstrap_icon: envelope
         link: mailto:username@example.com
         name: E-mail
       github:
-        icon: github
+        bootstrap_icon: github
         link: https://github.com/username
         name: GitHub
       linkedin:
-        icon: linkedin
+        bootstrap_icon: linkedin
         link: https://linkedin.com/in/username
         name: LinkedIn
 permalinks:

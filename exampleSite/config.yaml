@@ -52,83 +52,83 @@ params:
   paige:
     social:
       discord:
-        icon: discord
+        bootstrap_icon: discord
         link: https://discord.com/users/username
         name: Discord
       dribbble:
-        icon: dribbble
+        bootstrap_icon: dribbble
         link: https://dribbble.com/username
         name: Dribbble
       email:
-        icon: envelope
+        bootstrap_icon: envelope
         link: mailto:username@example.com
         name: E-mail
       facebook:
-        icon: facebook
+        bootstrap_icon: facebook
         link: https://facebook.com/username
         name: Facebook
       github:
-        icon: github
+        bootstrap_icon: github
         link: https://github.com/username
         name: GitHub
       instagram:
-        icon: instagram
+        bootstrap_icon: instagram
         link: https://instagram.com/username
         name: Instagram
       linkedin:
-        icon: linkedin
+        bootstrap_icon: linkedin
         link: https://linkedin.com/in/username
         name: LinkedIn
       medium:
-        icon: medium
+        bootstrap_icon: medium
         link: https://medium.com/@username
         name: Medium
       pinterest:
-        icon: pinterest
+        bootstrap_icon: pinterest
         link: https://pinterest.com/username
         name: Pinterest
       quora:
-        icon: quora
+        bootstrap_icon: quora
         link: https://quora.com/profile/username
         name: Quora
       reddit:
-        icon: reddit
+        bootstrap_icon: reddit
         link: https://reddit.com/u/username
         name: Reddit
       spotify:
-        icon: spotify
+        bootstrap_icon: spotify
         link: https://open.spotify.com/user/username
         name: Spotify
       stackoverflow:
-        icon: stack-overflow
+        bootstrap_icon: stack-overflow
         link: https://stackoverflow.com/users/username
         name: Stack Overflow
       strava:
-        icon: strava
+        bootstrap_icon: strava
         link: https://strava.com/athletes/username
         name: Strava
       twitch:
-        icon: twitch
+        bootstrap_icon: twitch
         link: https://twitch.tv/username
         name: Twitch
       twitter:
-        icon: twitter
+        bootstrap_icon: twitter
         link: https://twitter.com/username
         name: Twitter
       vimeo:
-        icon: vimeo
+        bootstrap_icon: vimeo
         link: https://vimeo.com/username
         name: Vimeo
       wordpress:
-        icon: wordpress
+        bootstrap_icon: wordpress
         link: https://username.wordpress.com
         name: Wordpress
       yelp:
-        icon: yelp
+        bootstrap_icon: yelp
         link: https://yelp.com/user_details?userid=username
         name: Yelp
       youtube:
-        icon: youtube
+        bootstrap_icon: youtube
         link: https://youtube.com/user/username
         name: YouTube
 permalinks:
