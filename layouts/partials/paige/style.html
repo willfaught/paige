@@ -33,7 +33,13 @@ section.paige-content > blockquote p:last-of-type {
 }
 
 {{ with $page.Param "paige.content_max_width" }}
-    section.paige-content, section.paige-toc {
+    section.paige-content {
+        max-width: {{ . }};
+    }
+{{ end }}
+
+{{ with $page.Param "paige.main.table_of_contents.max_width" }}
+    section.paige-toc {
         max-width: {{ . }};
     }
 {{ end }}

@@ -219,7 +219,7 @@ paige:
       raw: false # Do not copy or process the file; default is false
   color: "#123456" # Theme color for Safari and Windows; default is "#0d6efd"
   color_scheme: "light" # Use the "light" or "dark" color scheme without automatic switching; default is ""
-  content_max_width: "66ch" # Page table of contents and content max width; default is ""
+  content_max_width: "66ch" # Page content max width; default is ""
   comments:
     cactus: # cactus.chat
       account_id: "123456"
@@ -328,6 +328,7 @@ paige:
         hide: false # Default is false
     table_of_contents:
       hide: false # Default is false
+      max_width: "66ch" # Default is ""
   rss:
     managing_editor: "Michael Bluth" # Default is ""
     web_master: "Michael Bluth" # Default is ""
