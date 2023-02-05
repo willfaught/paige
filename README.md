@@ -309,8 +309,6 @@ paige:
       reading_time:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
         hide: false # Default is false
-      rss:
-        hide: false # Don't include this page in RSS feeds; default is false
       search:
         hide: false # Don't include this page in search results; default is false
       section:
@@ -330,6 +328,7 @@ paige:
       hide: false # Default is false
       max_width: "66ch" # Default is ""
   rss:
+    hide_page: false # Default is false
     managing_editor: "Michael Bluth" # Default is ""
     web_master: "Michael Bluth" # Default is ""
   social:
