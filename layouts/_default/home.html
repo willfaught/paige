@@ -4,25 +4,25 @@
 <article>
     {{ partial "paige/metadata.html" $page }}
     <section>
-        {{ if $page.Params.image_url }}
-            {{ $class := cond $page.Params.image_stretch "rounded-4 shadow w-100" "mw-100 rounded-4 shadow" }}
-            {{ $style := cond $page.Params.image_stretch "height: 20rem; object-fit: cover" "height: 20rem" }}
+        {{ if $page.Param "paige.home.image_url" }}
+            {{ $class := cond ($page.Param "paige.home.image_stretch" | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
+            {{ $style := cond ($page.Param "paige.home.image_stretch" | not) "height: 20rem" "height: 20rem; object-fit: cover" }}
 
-            <p {{ if not $page.Params.image_stretch }} class="text-center" {{ end }}>
+            <p {{ if not ($page.Param "paige.home.image_stretch") }} class="text-center" {{ end }}>
                 {{ partial "paige/img.html" (dict
                     "class" $class
                     "fetchpriority" "high"
                     "loading" "eager"
-                    "raw" $page.Params.image_raw
-                    "src" $page.Params.image_url
+                    "raw" ($page.Param "paige.home.image_raw")
+                    "src" ($page.Param "paige.home.image_url")
                     "style" $style
                 ) }}
             </p>
         {{ end }}
-        {{ with $page.Params.greeting }}
+        {{ with $page.Param "paige.home.greeting" }}
             <p class="display-5 fw-bold h2 text-center">{{ . | markdownify }}</p>
         {{ end }}
-        {{ with $page.Params.blurb }}
+        {{ with $page.Param "paige.home.blurb" }}
             <div class="container-fluid">
                 <div class="justify-content-center row">
                     <div class="col col-auto col-lg-7 px-0">

@@ -368,14 +368,16 @@ paige:
       hide: false # Default is false
 ```
 
-Additional optional home page parameters:
+Optional home page parameters:
 
 ```yaml
-blurb: "There's a new daddy in town." # Displayed below the greeting
-greeting: "You know best" # Displayed below the image
-image_raw: true # Do not copy or process the image
-image_stretch: true # Stretch the image fully horizontally if true; center the image otherwise
-image_url: "me.jpg" # A page, site, or remote resource glob
+paige:
+  home:
+    blurb: "There's a new daddy in town." # Displayed below the greeting
+    greeting: "You know best" # Displayed below the image
+    image_raw: true # Do not copy or process the image
+    image_stretch: true # Stretch the image fully horizontally if true; center the image otherwise
+    image_url: "me.jpg" # A page, site, or remote resource glob
 ```
 
 Additional optional list page parameters:
