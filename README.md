@@ -353,11 +353,10 @@ authors:
 Optional page parameters:
 
 ```yaml
-authors: [
-  "michael_bluth", # Credit the corresponding author name in the site parameters
-  {"author": "michael_bluth"}, # Credit the corresponding author name in the site parameters
-  {"name": "Lucille Bluth"} # Credit this author name
-]
+authors:
+- "michael_bluth" # Credit the corresponding author in the site parameters
+- author: "michael_bluth" # Credit the corresponding author in the site parameters
+- name: "Lucille Bluth" # Credit this author
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 ```
 
