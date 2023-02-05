@@ -53,84 +53,84 @@ params:
     social:
       discord:
         bootstrap_icon: discord
-        link: https://discord.com/users/username
         name: Discord
+        url: https://discord.com/users/username
       dribbble:
         bootstrap_icon: dribbble
-        link: https://dribbble.com/username
         name: Dribbble
+        url: https://dribbble.com/username
       email:
         bootstrap_icon: envelope
-        link: mailto:username@example.com
         name: E-mail
+        url: mailto:username@example.com
       facebook:
         bootstrap_icon: facebook
-        link: https://facebook.com/username
         name: Facebook
+        url: https://facebook.com/username
       github:
         bootstrap_icon: github
-        link: https://github.com/username
         name: GitHub
+        url: https://github.com/username
       instagram:
         bootstrap_icon: instagram
-        link: https://instagram.com/username
         name: Instagram
+        url: https://instagram.com/username
       linkedin:
         bootstrap_icon: linkedin
-        link: https://linkedin.com/in/username
         name: LinkedIn
+        url: https://linkedin.com/in/username
       medium:
         bootstrap_icon: medium
-        link: https://medium.com/@username
         name: Medium
+        url: https://medium.com/@username
       pinterest:
         bootstrap_icon: pinterest
-        link: https://pinterest.com/username
         name: Pinterest
+        url: https://pinterest.com/username
       quora:
         bootstrap_icon: quora
-        link: https://quora.com/profile/username
         name: Quora
+        url: https://quora.com/profile/username
       reddit:
         bootstrap_icon: reddit
-        link: https://reddit.com/u/username
         name: Reddit
+        url: https://reddit.com/u/username
       spotify:
         bootstrap_icon: spotify
-        link: https://open.spotify.com/user/username
         name: Spotify
+        url: https://open.spotify.com/user/username
       stackoverflow:
         bootstrap_icon: stack-overflow
-        link: https://stackoverflow.com/users/username
         name: Stack Overflow
+        url: https://stackoverflow.com/users/username
       strava:
         bootstrap_icon: strava
-        link: https://strava.com/athletes/username
         name: Strava
+        url: https://strava.com/athletes/username
       twitch:
         bootstrap_icon: twitch
-        link: https://twitch.tv/username
         name: Twitch
+        url: https://twitch.tv/username
       twitter:
         bootstrap_icon: twitter
-        link: https://twitter.com/username
         name: Twitter
+        url: https://twitter.com/username
       vimeo:
         bootstrap_icon: vimeo
-        link: https://vimeo.com/username
         name: Vimeo
+        url: https://vimeo.com/username
       wordpress:
         bootstrap_icon: wordpress
-        link: https://username.wordpress.com
         name: Wordpress
+        url: https://username.wordpress.com
       yelp:
         bootstrap_icon: yelp
-        link: https://yelp.com/user_details?userid=username
         name: Yelp
+        url: https://yelp.com/user_details?userid=username
       youtube:
         bootstrap_icon: youtube
-        link: https://youtube.com/user/username
         name: YouTube
+        url: https://youtube.com/user/username
 permalinks:
   blog: /blog/:year/:month/:day/:title/
 social:

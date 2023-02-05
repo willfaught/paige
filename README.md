@@ -334,11 +334,11 @@ paige:
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
-  social: # Social links on the home page
+  social:
     examplesite:
       bootstrap_icon: example-icon
-      link: https://example.com/username
-      name: Example Site # Used for screen readers
+      name: Example
+      url: https://example.com/username
 ```
 
 If you set `hide_credit_data` or `hide_credit_link`, please credit this project in a post to help others find it.
