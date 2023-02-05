@@ -269,9 +269,6 @@ paige:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       hide: false # Default is false
-    categories:
-      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      hide: false # Default is false
     content:
       show: false # Default is false
     date:
@@ -290,7 +287,7 @@ paige:
     summary:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false
-    tags:
+    terms:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
     title:
@@ -304,9 +301,6 @@ paige:
   page:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    categories:
-      class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
     content:
       class: "mw-100 paige-content" # Default is "mw-100 paige-content"
@@ -327,7 +321,7 @@ paige:
       hide: false # Don't include this page in search results; default is false
     table_of_contents:
       hide: false # Default is false
-    tags:
+    terms:
       class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
       hide: false # Default is false
     title:
