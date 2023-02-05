@@ -284,6 +284,8 @@ paige:
     reading_time:
       class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
       hide: false # Default is false
+    section:
+      class: "mb-3 w-100" # Default is "mb-3 w-100"
     summary:
       class: "fst-italic mb-0 text-center" # Default is "fst-italic mb-0 text-center"
       hide: false # Default is false
@@ -319,6 +321,8 @@ paige:
       hide: false # Don't include this page in RSS feeds; default is false
     search:
       hide: false # Don't include this page in search results; default is false
+    section:
+      class: "paige-metadata w-100" # Default is "paige-metadata w-100"
     table_of_contents:
       hide: false # Default is false
     terms:
