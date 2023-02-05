@@ -32,7 +32,7 @@ section.paige-content > blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
-{{ with $page.Param "paige.content_max_width" }}
+{{ with $page.Param "paige.main.content.max_width" }}
     section.paige-content {
         max-width: {{ . }};
     }
