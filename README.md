@@ -295,38 +295,39 @@ paige:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
     style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width; default is ""
-  page:
-    authors:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    content:
-      class: "mw-100 paige-content" # Default is "mw-100 paige-content"
-      hide: false # Default is false
-    date:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      format: ":date_long" # Default is ":date_long"
-      hide: false # Default is false
-    description:
-      class: "lead text-center" # Default is "lead text-center"
-      hide: false # Default is false
-    reading_time:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    rss:
-      hide: false # Don't include this page in RSS feeds; default is false
-    search:
-      hide: false # Don't include this page in search results; default is false
-    section:
-      class: "paige-metadata w-100" # Default is "paige-metadata w-100"
-    table_of_contents:
-      hide: false # Default is false
-    terms:
-      hide: false # Default is false
-      inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      outer_class: "text-center" # Default is "text-center"
-    title:
-      class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
-      hide: false # Default is false
+  main:
+    metadata:
+      authors:
+        class: "text-center text-secondary" # Default is "text-center text-secondary"
+        hide: false # Default is false
+      content:
+        class: "mw-100 paige-content" # Default is "mw-100 paige-content"
+        hide: false # Default is false
+      date:
+        class: "text-center text-secondary" # Default is "text-center text-secondary"
+        format: ":date_long" # Default is ":date_long"
+        hide: false # Default is false
+      description:
+        class: "lead text-center" # Default is "lead text-center"
+        hide: false # Default is false
+      reading_time:
+        class: "text-center text-secondary" # Default is "text-center text-secondary"
+        hide: false # Default is false
+      rss:
+        hide: false # Don't include this page in RSS feeds; default is false
+      search:
+        hide: false # Don't include this page in search results; default is false
+      section:
+        class: "paige-metadata w-100" # Default is "paige-metadata w-100"
+      table_of_contents:
+        hide: false # Default is false
+      terms:
+        hide: false # Default is false
+        inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
+        outer_class: "text-center" # Default is "text-center"
+      title:
+        class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
+        hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth" # Default is ""
     web_master: "Michael Bluth" # Default is ""

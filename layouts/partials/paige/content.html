@@ -1,9 +1,9 @@
 {{ $page := . }}
 
-{{ $class := $page.Param "paige.page.content.class" | default "mw-100 paige-content" }}
+{{ $class := $page.Param "paige.main.metadata.content.class" | default "mw-100 paige-content" }}
 {{ $content := "" }}
 
-{{ if $page.Param "paige.page.title.hide" | not }}
+{{ if $page.Param "paige.main.metadata.title.hide" | not }}
     {{ $content = cond ($page.Scratch.Get "paige_list_show_content" | not) ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` `${1}<a aria-label="Link to this section" class="paige-header-link" href="#${2}">#</a>${3}` | safeHTML) $page.Content }}
 {{ end }}
 
