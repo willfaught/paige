@@ -319,8 +319,6 @@ paige:
         hide: false # Don't include this page in search results; default is false
       section:
         class: "paige-metadata w-100" # Default is "paige-metadata w-100"
-      table_of_contents:
-        hide: false # Default is false
       terms:
         hide: false # Default is false
         inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
@@ -328,6 +326,8 @@ paige:
       title:
         class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
         hide: false # Default is false
+    table_of_contents:
+      hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth" # Default is ""
     web_master: "Michael Bluth" # Default is ""
