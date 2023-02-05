@@ -296,6 +296,7 @@ paige:
     title:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false
+  math: false # Enable math typesetting; default is false
   menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
   menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width
@@ -352,8 +353,6 @@ authors: [
   {"name": "Lucille Bluth"} # Credit this author name
 ]
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
-paige:
-  math: true # Enable math typesetting with KaTeX
 ```
 
 Example `config.yaml`:
