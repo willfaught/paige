@@ -6,6 +6,10 @@ tags: [figures, shortcodes]
 title: Figure Shortcode
 ---
 
+Paige provides a `paige/figure` shortcode for displaying content.
+
+<!--more-->
+
 ## Basic
 
 Code:

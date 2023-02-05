@@ -6,6 +6,10 @@ tags: [figures, shortcodes]
 title: Quote Shortcode
 ---
 
+Paige provides a `paige/quote` shortcode for displaying a quotation.
+
+<!--more-->
+
 Code:
 
 ```go-text-template

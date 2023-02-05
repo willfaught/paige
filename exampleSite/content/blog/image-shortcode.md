@@ -6,6 +6,10 @@ tags: [figures, shortcodes]
 title: Image Shortcode
 ---
 
+Paige provides a `paige/image` shortcode for displaying an image.
+
+<!--more-->
+
 Code:
 
 ```go-text-template

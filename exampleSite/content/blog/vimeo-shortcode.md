@@ -6,6 +6,10 @@ tags: [shortcodes, videos]
 title: Vimeo Shortcode
 ---
 
+Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.
+
+<!--more-->
+
 ## Basic
 
 Code:

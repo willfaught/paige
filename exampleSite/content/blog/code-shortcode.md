@@ -6,6 +6,10 @@ tags: [figures, shortcodes]
 title: Code Shortcode
 ---
 
+Paige provides a `paige/code` shortcode for displaying code.
+
+<!--more-->
+
 Code:
 
 ```go-text-template

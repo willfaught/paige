@@ -6,6 +6,10 @@ tags: [figures, shortcodes]
 title: Gallery Shortcode
 ---
 
+Paige provides a `paige/gallery` shortcode for displaying a list of images.
+
+<!--more-->
+
 See the images in the example site to understand how the below file patterns work.
 Resize the viewport as narrow and wide as you can to see the responsiveness.
 

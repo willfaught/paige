@@ -6,6 +6,10 @@ tags: [shortcodes, videos]
 title: YouTube Shortcode
 ---
 
+Paige provides a `paige/youtube` shortcode for playing YouTube videos.
+
+<!--more-->
+
 Code:
 
 ```go-text-template
