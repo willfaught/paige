@@ -346,64 +346,6 @@ authors: [
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
   math: true # Enable math typesetting with KaTeX
-  page:
-    authors:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    content:
-      class: "" # Default is ""
-      hide: false # Default is false
-    date:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      hide: false # Default is false
-    description:
-      class: "lead text-center" # Default is "lead text-center"
-      hide: false # Default is false
-    title:
-      class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
-      hide: false # Default is false
-    table_of_contents:
-      hide: false # Default is false
-```
-
-Optional home page parameters:
-
-```yaml
-paige:
-  home:
-    blurb: "There's a new daddy in town." # Displayed below the greeting
-    greeting: "You know best" # Displayed below the image
-    image:
-      raw: true # Do not copy or process the image
-      stretch: true # Stretch the image fully horizontally if true; center the image otherwise
-      url: "me.jpg" # A page, site, or remote resource glob
-```
-
-Additional optional list page parameters:
-
-```yaml
-paige:
-  list:
-    authors:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      show: false # Default is false
-    content:
-      show: false # Default is false
-    date:
-      class: "text-center text-secondary" # Default is "text-center text-secondary"
-      show: false # Default is false
-    description:
-      class: "text-center" # Default is "text-center"
-      hide: false # Default is false
-    header:
-      class: "h5 text-center" # Month and year header class attribute
-      hide: false # Default is false
-    summary:
-      class: "text-center" # Default is "text-center"
-      show: false # Default is false
-    title:
-      class: "text-center" # Default is "text-center"
-      hide: false # Default is false
 ```
 
 Additional optional single page parameters:
