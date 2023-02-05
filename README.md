@@ -277,7 +277,7 @@ paige:
     date:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       format: ":date_long" # Default is ":date_long"
-      hide: true # Default is true
+      hide: false # Default is false
     date_header:
       class: "h5 text-center" # Month and year header class attribute
       hide: false # Default is false
