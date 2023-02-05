@@ -180,12 +180,6 @@ $ hugo server -D
 There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
 
 ```yaml
-authors:
-  michael_bluth:
-    name: "Michael Bluth"
-    default: true # Credit this author in pages that have no authors parameter
-  george_bluth:
-    name: "George Bluth"
 paige:
   analytics:
     chartbeat: # chartbeat.com
@@ -344,6 +338,17 @@ paige:
 ```
 
 If you set `hide_credit_data` or `hide_credit_link`, please credit this project in a post to help others find it.
+
+Optional site parameters:
+
+```yaml
+authors:
+  michael_bluth:
+    name: "Michael Bluth"
+    default: true # Credit this author in pages that have no authors parameter
+  george_bluth:
+    name: "George Bluth"
+```
 
 Optional page parameters:
 
