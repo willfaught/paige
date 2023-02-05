@@ -5,41 +5,41 @@ body, html {
     height: 100%;
 }
 
-section[class="paige-content"] {
+section.paige-content {
     counter-reset: paige-figure;
     max-width: 100%;
 }
 
-section[class="paige-content"] figure.paige-figure.paige-figure-numbered {
+section.paige-content figure.paige-figure.paige-figure-numbered {
     counter-increment: paige-figure;
 }
 
-section[class="paige-content"] figure.paige-figure.paige-figure-numbered figcaption:empty::before {
+section.paige-content figure.paige-figure.paige-figure-numbered figcaption:empty::before {
     content: "{{ i18n `paige_figure` }} " counter(paige-figure);
 }
 
-section[class="paige-content"] figure.paige-figure.paige-figure-numbered figcaption::before {
+section.paige-content figure.paige-figure.paige-figure-numbered figcaption::before {
     content: "{{ i18n `paige_figure` }} " counter(paige-figure) ": ";
 }
 
-section[class="paige-content"] > blockquote {
+section.paige-content > blockquote {
     padding: 0.5rem 1rem;
     border-left: 0.25rem solid var(--bs-border-color);
     padding-right: 0.25rem;
 }
 
-section[class="paige-content"] > blockquote p:last-of-type {
+section.paige-content > blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
 {{ with $page.Param "paige.content_max_width" }}
-    section[class="paige-content"], section[class="paige-toc"] {
+    section.paige-content, section.paige-toc {
         max-width: {{ . }};
     }
 {{ end }}
 
 {{ with $page.Param "paige.metadata_max_width" }}
-    section[class="paige-metadata"] {
+    section.paige-metadata {
         max-width: {{ . }};
     }
 {{ end }}
