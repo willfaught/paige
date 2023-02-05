@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $class := $page.Param "paige.page.content.class" }}
+{{ $class := $page.Param "paige.page.content.class" | default "paige-content" }}
 {{ $content := "" }}
 
 {{ if $page.Param "paige.page.title.hide" | not }}
@@ -8,7 +8,7 @@
 {{ end }}
 
 {{ with $content }}
-    <section class="paige-content {{ with $class }} {{ . }} {{ end }}">
+    <section {{ with $class }} class="{{ . }}" {{ end }}>
         {{ . }}
     </section>
 {{ end }}
