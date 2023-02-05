@@ -55,15 +55,15 @@ addEventListener("resize", paigeResize);
 ) }}
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/script.html" (dict
-        "integrity" ($page.Param "paige.math.script.script_integrity")
-        "raw" ($page.Param "paige.math.script.raw")
-        "src" ($page.Param "paige.math.script.script_src" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js")
+        "integrity" ($page.Param "paige.katex.script.script_integrity")
+        "raw" ($page.Param "paige.katex.script.raw")
+        "src" ($page.Param "paige.katex.script.script_src" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js")
     ) }}
     {{ partial "paige/script.html" (dict
-        "integrity" ($page.Param "paige.math.autorender.script_integrity")
+        "integrity" ($page.Param "paige.katex.autorender.script_integrity")
         "onload" "renderMathInElement(document.body);"
-        "raw" ($page.Param "paige.math.autorender.raw")
-        "src" ($page.Param "paige.math.autorender.script_src" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js")
+        "raw" ($page.Param "paige.katex.autorender.raw")
+        "src" ($page.Param "paige.katex.autorender.script_src" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js")
     ) }}
 {{ end }}
 {{ if site.GoogleAnalytics }}
