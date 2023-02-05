@@ -286,7 +286,7 @@ paige:
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
-  page_list:
+  list:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       hide: false # Default is false
@@ -373,7 +373,7 @@ Additional optional list page parameters:
 
 ```yaml
 paige:
-  page_list:
+  list:
     authors:
       class: "text-center text-secondary" # Default is "text-center text-secondary"
       show: false # Default is false

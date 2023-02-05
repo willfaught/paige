@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $page := . }}
 
-{{ if $page.Param "paige.page_list.content.show" | not }}
+{{ if $page.Param "paige.list.content.show" | not }}
     {{ partial "paige/article.html" $page }}
 {{ end }}
 {{ partial "paige/pages.html" $page }}
