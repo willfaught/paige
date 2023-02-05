@@ -297,8 +297,9 @@ paige:
       class: "text-center" # Default is "text-center"
       hide: false # Default is false
   math: false # Enable math typesetting; default is false
-  menu_breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
-  menu_style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
+  menu:
+    breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
+    style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   metadata_max_width: "100ch" # Page metadata max width; default is ""
   page:
     authors:

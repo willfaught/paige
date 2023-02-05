@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
-{{ $breakpoint := $page.Param "paige.menu_breakpoint" | default "sm" }}
+{{ $breakpoint := $page.Param "paige.menu.breakpoint" | default "sm" }}
 {{ $links := false }}
 {{ $pills := false }}
 
@@ -9,7 +9,7 @@
     {{ $basepath = "" }}
 {{ end }}
 
-{{ with $page.Param "paige.menu_style" }}
+{{ with $page.Param "paige.menu.style" }}
     {{ if eq . "links" }}
         {{ $links = true }}
     {{ else if eq . "pills" }}
