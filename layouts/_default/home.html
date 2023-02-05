@@ -4,17 +4,17 @@
 <article>
     {{ partial "paige/metadata.html" $page }}
     <section>
-        {{ if $page.Param "paige.home.image_url" }}
-            {{ $class := cond ($page.Param "paige.home.image_stretch" | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
-            {{ $style := cond ($page.Param "paige.home.image_stretch" | not) "height: 20rem" "height: 20rem; object-fit: cover" }}
+        {{ if $page.Param "paige.home.image.url" }}
+            {{ $class := cond ($page.Param "paige.home.image.stretch" | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
+            {{ $style := cond ($page.Param "paige.home.image.stretch" | not) "height: 20rem" "height: 20rem; object-fit: cover" }}
 
-            <p {{ if not ($page.Param "paige.home.image_stretch") }} class="text-center" {{ end }}>
+            <p {{ if not ($page.Param "paige.home.image.stretch") }} class="text-center" {{ end }}>
                 {{ partial "paige/img.html" (dict
                     "class" $class
                     "fetchpriority" "high"
                     "loading" "eager"
-                    "raw" ($page.Param "paige.home.image_raw")
-                    "src" ($page.Param "paige.home.image_url")
+                    "raw" ($page.Param "paige.home.image.raw")
+                    "src" ($page.Param "paige.home.image.url")
                     "style" $style
                 ) }}
             </p>
