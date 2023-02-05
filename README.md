@@ -323,6 +323,8 @@ paige:
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
+    table_of_contents:
+      hide: false # Default is false
   rss:
     managing_editor: "Michael Bluth"
     web_master: "Michael Bluth"
@@ -362,7 +364,8 @@ paige:
     title:
       class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
       hide: false # Default is false
-  toc: true # Show a table of contents if there are any headers
+    table_of_contents:
+      hide: false # Default is false
 ```
 
 Additional optional home page parameters:
