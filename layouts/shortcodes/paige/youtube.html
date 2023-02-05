@@ -6,6 +6,7 @@
 {{ $list := .Get "list" }}
 {{ $loop := .Get "loop" }}
 {{ $mute := .Get "mute" }}
+{{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer-when-downgrade" }}
 {{ $start := .Get "start" }}
 {{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
 
@@ -56,5 +57,5 @@
 {{ $params = delimit ($params | sort | uniq) "&" }}
 
 <div class="mb-3 ratio ratio-16x9">
-    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} referrerpolicy="no-referrer" src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
+    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
 </div>

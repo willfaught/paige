@@ -14,6 +14,7 @@
 {{ $playsinline := .Get "playsinline" | default true }}
 {{ $portrait := .Get "portrait" }}
 {{ $quality := .Get "quality" }}
+{{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer" }}
 {{ $speed := .Get "speed" }}
 {{ $time := .Get "time" }}
 {{ $texttrack := .Get "texttrack" }}
@@ -102,5 +103,5 @@
 {{ $params = delimit ($params | sort | uniq) "&" }}
 
 <div class="mb-3 ratio ratio-16x9">
-    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} referrerpolicy="no-referrer" src="https://player.vimeo.com/video/{{ $video | safeURL }}{{ with $params }}?{{ . | safeURL }}{{ end }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
+    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="https://player.vimeo.com/video/{{ $video | safeURL }}{{ with $params }}?{{ . | safeURL }}{{ end }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
 </div>
