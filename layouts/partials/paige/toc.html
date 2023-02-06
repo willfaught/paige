@@ -1,9 +1,17 @@
 {{ $page := . }}
 
+{{ $class := $page.Param "paige.main.table_of_contents.class" | default "border mb-3 pe-3 ps-3 pt-3 rounded" }}
+
 {{ if and $page.Content ($page.Param "paige.main.table_of_contents.hide" | not) (not (eq ($page.Scratch.Get "paige_list_show_content") true)) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
     <section class="paige-toc">
-        <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
-            {{ $page.TableOfContents }}
-        </div>
+        {{ with $class }}
+            <div class="{{ . }}">
+        {{ end }}
+
+        {{ $page.TableOfContents }}
+
+        {{ if $class }}
+            </div>
+        {{ end }}
     </section>
 {{ end }}

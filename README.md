@@ -323,6 +323,7 @@ paige:
         class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
         hide: false # Default is false
     table_of_contents:
+      class: "border mb-3 pe-3 ps-3 pt-3 rounded" # Default is "border mb-3 pe-3 ps-3 pt-3 rounded"
       hide: false # Default is false
       max_width: "66ch" # Default is ""
     content:
