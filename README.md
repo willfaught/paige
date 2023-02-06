@@ -293,7 +293,6 @@ paige:
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
     style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
-  metadata_max_width: "100ch" # Page metadata max width; default is ""
   main:
     metadata:
       authors:
@@ -306,6 +305,7 @@ paige:
       description:
         class: "lead text-center" # Default is "lead text-center"
         hide: false # Default is false
+      max_width: "100ch" # Default is ""
       reading_time:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
         hide: false # Default is false
