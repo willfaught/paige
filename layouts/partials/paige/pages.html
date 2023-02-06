@@ -23,7 +23,7 @@
         <section>
             {{ range $p.PageGroups }}
                 {{ if $page.Param "paige.list.date_header.hide" | not }}
-                    <h2 class="{{ $.Param `paige.list.date_header.class` | default `h5 text-center` }}">{{ .Key }}</h2>
+                    <p class="{{ $.Param `paige.list.date_header.class` | default `h5 text-center` }}">{{ .Key }}</p>
                 {{ end }}
                 {{ range .Pages }}
                     {{ $authors := cond ($page.Param "paige.list.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
