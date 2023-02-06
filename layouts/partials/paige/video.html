@@ -1,0 +1,16 @@
+{{ $params := . }}
+
+{{ $class := $params.class | default "paige-video ratio ratio-16x9" }}
+{{ $fullscreen := $params.fullscreen }}
+{{ $referrerpolicy := $params.referrerpolicy }}
+{{ $src := $params.src }}
+{{ $title := $params.title }}
+
+<div class="{{ $class }}">
+    {{ partial "paige/iframe.html" (dict
+        "fullscreen" $fullscreen
+        "referrerpolicy" $referrerpolicy
+        "src" $src
+        "title" $title
+    ) }}
+</div>

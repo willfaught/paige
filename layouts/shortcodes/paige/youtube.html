@@ -1,14 +1,24 @@
 {{ $autoplay := .Get "autoplay" }}
+{{ $caption := .Get "caption" }}
 {{ $controls := .Get "controls" | default true }}
 {{ $description := .Get "description" | default "YouTube video" }}
 {{ $end := .Get "end" }}
+{{ $float := .Get "float" }}
 {{ $fullscreen := .Get "fullscreen" | default true }}
+{{ $height := .Get "height" }}
+{{ $horizontal := .Get "horizontal" }}
 {{ $list := .Get "list" }}
 {{ $loop := .Get "loop" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
 {{ $mute := .Get "mute" }}
+{{ $number := .Get "number" }}
+{{ $numbered := .Get "numbered" }}
 {{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer-when-downgrade" }}
 {{ $start := .Get "start" }}
+{{ $vertical := .Get "vertical" }}
 {{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
+{{ $width := .Get "width" }}
 
 {{ $host := cond site.Config.Privacy.YouTube.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}
 
@@ -56,6 +66,28 @@
 
 {{ $params = delimit ($params | sort | uniq) "&" }}
 
-<div class="mb-3 ratio ratio-16x9">
-    <iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="https://{{ $host | safeURL }}/{{ $path | safeURL }}?{{ $params | safeURL }}" {{ with $description }} title="{{ . }}" {{ end }}></iframe>
-</div>
+{{ $src := print "https://" $host "/" $path }}
+
+{{ with $params }}
+    {{ $src = print $src "?" . }}
+{{ end }}
+
+{{ partial "paige/figure.html" (dict
+    "caption" $caption
+    "content" (partial "paige/video.html" (dict
+        "fullscreen" $fullscreen
+        "referrerpolicy" $referrerpolicy
+        "src" $src
+        "title" $description
+    ))
+    "float" $float
+    "gap" 2
+    "height" $height
+    "horizontal" $horizontal
+    "maxheight" $maxheight
+    "maxwidth" $maxwidth
+    "number" $number
+    "numbered" $numbered
+    "vertical" $vertical
+    "width" $width
+) }}

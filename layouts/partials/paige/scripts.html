@@ -17,17 +17,10 @@ function paigeResize() {
     } else {
         w = parseFloat(mw.substring(0, mw.length - 2));
     }
-    var es = document.querySelectorAll("section.paige-content > div");
+    var es = document.querySelectorAll("div.paige-video");
     for (var i = 0; i < es.length; i++) {
         var e = es[i];
-        var iframe = false;
-        for (var j = 0; j < e.children.length; j++) {
-            if (e.children.item(j).tagName.toLowerCase() === "iframe") {
-                iframe = true;
-                break;
-            }
-        }
-        if (iframe && e.style.width !== w) {
+        if (e.style.width !== w) {
             e.style.width = w + "px";
         }
     }
