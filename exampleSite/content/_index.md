@@ -7,11 +7,12 @@ paige:
         image:
             stretch: true
             url: stretch.webp
-    page:
-        reading_time:
-            hide: true
-        title:
-            class: display-1 fw-bold text-center
+    main:
+        metadata:
+            reading_time:
+                hide: true
+            title:
+                class: display-1 fw-bold text-center
 title: No Borders, No Limits
 ---
 
