@@ -1,14 +1,16 @@
 {{ define "main" }}
 {{ $page := . }}
 
+{{ $stretch := $page.Param "paige.home.image.stretch" }}
+
 <article>
     {{ partial "paige/metadata.html" $page }}
     <section>
         {{ if $page.Param "paige.home.image.url" }}
-            {{ $class := cond ($page.Param "paige.home.image.stretch" | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
-            {{ $style := cond ($page.Param "paige.home.image.stretch" | not) "height: 20rem" "height: 20rem; object-fit: cover" }}
+            {{ $class := cond ($stretch | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
+            {{ $style := cond ($stretch | not) "height: 20rem" "height: 20rem; object-fit: cover" }}
 
-            <p {{ if not ($page.Param "paige.home.image.stretch") }} class="text-center" {{ end }}>
+            <p {{ if not $stretch }} class="text-center" {{ end }}>
                 {{ partial "paige/img.html" (dict
                     "class" $class
                     "fetchpriority" "high"
