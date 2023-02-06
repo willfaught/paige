@@ -70,16 +70,21 @@
     {{ if or $heightish $widthish (and (not $float) $style) }}
         <div {{ if or $heightish $widthish }} class="{{ if $height }} d-flex flex-column justify-content-{{ $vertical }} {{ end }} overflow-auto" {{ end }} {{ if and (not $float) $style }} style="{{ $style | safeCSS }}" {{ end }}>
     {{ end }}
+
     {{ if $table }}
         <div class="d-table">
     {{ end }}
+
     <div class="text-{{ $horizontal }}">{{ $content }}</div>
+
     {{ if $showcaption }}
         <figcaption class="figure-caption {{ with $gap }} mt-{{ . }} {{ end }} text-{{ $horizontal }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
     {{ end }}
+
     {{ if $table }}
         </div>
     {{ end }}
+
     {{ if or $heightish $widthish (and (not $float) $style) }}
         </div>
     {{ end }}
