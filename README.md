@@ -244,8 +244,11 @@ paige:
       raw: false # Do not copy or process the file; default is false
       stretch: false # Stretch the image fully horizontally if true; center the image otherwise; default is false
       url: "me.jpg" # A page, site, or remote resource glob; default is ""
-  hide_credit_data: false # Don't credit this project in a data attribute; default is false
-  hide_credit_link: false # Don't credit this project in the footer; default is false
+  credit:
+    data:
+      hide: false # Don't credit this project in a data attribute; default is false
+    link:
+      hide: false # Don't credit this project in the footer; default is false
   katex:
     autorender:
       raw: false # Do not copy or process the file; default is false

@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ $copyright := site.Copyright }}
-{{ $credit := $page.Param "paige.hide_credit_link" | not }}
+{{ $credit := $page.Param "paige.credit.link.hide" | not }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
 
