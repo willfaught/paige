@@ -72,7 +72,7 @@
                     {{ end }}
 
                     {{ $flags = delimit ($flags | uniq) " " }}
-                    {{ $sectionclass = delimit (split $sectionclass " " | append $flags | sort | uniq) " " }}
+                    {{ $sectionclass = delimit (split $sectionclass " " | append $flags | uniq | sort) " " }}
 
                     <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
                         {{ with $title }}
