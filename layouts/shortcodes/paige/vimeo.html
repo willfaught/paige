@@ -37,7 +37,7 @@
 {{ end }}
 
 {{ if and (ne $byline nil) (ne $byline "") }}
-    {{ $params = $params | append (printf "portrait=%v" (cond $byline 1 0)) }}
+    {{ $params = $params | append (printf "byline=%v" (cond $byline 1 0)) }}
 {{ end }}
 
 {{ with $color }}
