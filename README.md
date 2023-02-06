@@ -290,9 +290,10 @@ paige:
       class: "mb-0 text-center" # Default is "mb-0 text-center"
       hide: false # Default is false
   math: false # Enable math typesetting; default is false
-  menu:
-    breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
-    style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
+  header:
+    menu:
+      breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
+      style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   main:
     metadata:
       authors:
