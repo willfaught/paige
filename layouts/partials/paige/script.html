@@ -16,6 +16,7 @@
         "page" $page
         "url" (relLangURL $src)
     )) | minify | fingerprint }}
+
     {{ $integrity = $resource.Data.Integrity }}
     {{ $src = $resource.RelPermalink }}
 {{ end }}

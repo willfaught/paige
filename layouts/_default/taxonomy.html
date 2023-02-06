@@ -2,15 +2,16 @@
 {{ $page := . }}
 
 {{ partial "paige/article.html" $page }}
+
 {{ if $page.Pages }}
-<section>
-    <ul class="list-inline text-center">
-        {{ range (sort $page.Pages "Title") }}
-        <li class="list-inline-item">
-            <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-        </li>
-        {{ end }}
-    </ul>
-</section>
+    <section>
+        <ul class="list-inline text-center">
+            {{ range (sort $page.Pages "Title") }}
+                <li class="list-inline-item">
+                    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+                </li>
+            {{ end }}
+        </ul>
+    </section>
 {{ end }}
 {{ end }}

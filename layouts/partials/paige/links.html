@@ -3,13 +3,16 @@
 <link href="{{ relLangURL `apple-touch-icon.png` | safeURL }}" rel="apple-touch-icon" sizes="180x180">
 <link href="{{ relLangURL `favicon-16x16.png` | safeURL }}" rel="icon" sizes="16x16" type="image/png">
 <link href="{{ relLangURL `favicon-32x32.png` | safeURL }}" rel="icon" sizes="32x32" type="image/png">
+
 {{ if ne (relLangURL "favicon.ico") "/favicon.ico" }}
     <link href="{{ relLangURL `favicon.ico` | safeURL }}" rel="shortcut icon">
 {{ end }}
+
 <link href="{{ relLangURL `favicon.png` | safeURL }}" rel="icon" type="image/png">
 <link href="{{ relLangURL `favicon.svg` | safeURL }}" rel="icon" type="image/svg+xml">
 <link color="{{ $page.Param `paige.color` | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
 <link href="{{ relLangURL `site.webmanifest` | safeURL }}" rel="manifest">
+
 {{ partial "paige/link.html" (dict
     "href" ($page.Param "paige.bootstrap.icons.link_href" | default "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css")
     "integrity" ($page.Param "paige.bootstrap.icons.link_integrity")
@@ -20,6 +23,7 @@
     "integrity" ($page.Param "paige.bootstrap.style.link_integrity")
     "raw" ($page.Param "paige.bootstrap.style.raw")
 ) }}
+
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/link.html" (dict
         "href" ($page.Param "paige.katex.style.link_href" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
@@ -27,6 +31,7 @@
         "raw" true
     ) }}
 {{ end }}
+
 {{ if .AlternativeOutputFormats }}
     {{ $title := partial "paige/func-title.html" $page }}
     {{ range .AlternativeOutputFormats }}

@@ -1,20 +1,27 @@
 {{ $page := . }}
 
 <meta charset="utf-8">
+
 {{ with partial "paige/func-authors.html" $page }}
     <meta content="{{ . }}" name="author">
 {{ end }}
+
 {{ with $page.Description }}
     <meta content="{{ . }}" name="description">
 {{ end }}
+
 {{ if or $page.Keywords $page.Params.tags $page.Params.categories }}
     <meta content="{{ delimit (sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories)) `, ` }}" name="keywords">
 {{ end }}
+
 <meta content="{{ $page.Param `paige.color` | default `#0d6efd` }}" name="msapplication-TileColor">
+
 {{ if ne (relLangURL "browserconfig.xml") "/browserconfig.xml" }}
     <meta content="{{ relLangURL `browserconfig.xml` }}" name="msapplication-config" >
 {{ end }}
+
 <meta content="{{ $page.Param `paige.color` | default `#0d6efd` }}" name="theme-color">
 <meta content="width=device-width, initial-scale=1" name="viewport">
+
 {{ template "_internal/opengraph.html" $page }}
 {{ template "_internal/twitter_cards.html" $page }}

@@ -5,6 +5,7 @@
 
 <article>
     {{ partial "paige/metadata.html" $page }}
+
     <section>
         {{ if $page.Param "paige.home.image.url" }}
             {{ $class := cond ($stretch | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
@@ -21,9 +22,11 @@
                 ) }}
             </p>
         {{ end }}
+
         {{ with $page.Param "paige.home.greeting" }}
             <p class="display-5 fw-bold h2 text-center">{{ . | markdownify }}</p>
         {{ end }}
+
         {{ with $page.Param "paige.home.blurb" }}
             <div class="container-fluid">
                 <div class="justify-content-center row">
@@ -34,6 +37,7 @@
             </div>
         {{ end }}
     </section>
+
     {{ partial "paige/toc.html" $page }}
     {{ partial "paige/content.html" $page }}
     {{ partial "paige/social.html" $page }}
