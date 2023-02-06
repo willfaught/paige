@@ -67,6 +67,10 @@
                         {{ $flags = $flags | append "paige-modified" }}
                     {{ end }}
 
+                    {{ if not (or $draft $expired $future) }}
+                        {{ $flags = $flags | append "paige-published" }}
+                    {{ end }}
+
                     {{ $flags = delimit ($flags | sort | uniq) " " }}
                     {{ $sectionclass = delimit (split $sectionclass " " | append $flags | sort | uniq) " " }}
 

@@ -783,6 +783,8 @@ These optional CSS classes can be defined how you want:
     <dd>Applied to the title of future pages in the list and term default layouts.</dd>
     <dt><code>.paige-modified</code></dt>
     <dd>Applied to the title of modified pages in the list and term default layouts.</dd>
+    <dt><code>.paige-published</code></dt>
+    <dd>Applied to the title of published pages in the list and term default layouts.</dd>
     <dt><code>.paige-unpublished</code></dt>
     <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term default layouts.</dd>
 </dl>
