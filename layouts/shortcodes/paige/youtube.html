@@ -64,7 +64,7 @@
     {{ $params = $params | append (printf "start=%v" .) }}
 {{ end }}
 
-{{ $params = delimit ($params | sort | uniq) "&" }}
+{{ $params = delimit ($params | sort) "&" }}
 
 {{ $src := print "https://" $host "/" $path }}
 

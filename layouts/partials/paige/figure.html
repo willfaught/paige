@@ -41,7 +41,7 @@
     {{ $style = $style | append (printf "width: %v" $width) }}
 {{ end }}
 
-{{ $style = delimit ($style | sort | uniq) "; " }}
+{{ $style = delimit ($style | sort) "; " }}
 
 {{ if $float }}
     {{ if eq $float "start" }}
