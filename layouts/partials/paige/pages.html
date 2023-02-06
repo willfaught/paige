@@ -28,7 +28,7 @@
                 {{ range .Pages }}
                     {{ $authors := cond ($page.Param "paige.list.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
                     {{ $authorsclass := $page.Param "paige.list.authors.class" | default (print $class " text-secondary") }}
-                    {{ $categories := cond ($page.Param "paige.list.terms.hide" | not) (.Params.categories | default slice) slice | sort | uniq }}
+                    {{ $categories := cond ($page.Param "paige.list.terms.hide" | not) (.Params.categories | default slice) slice | uniq }}
                     {{ $date := cond ($page.Param "paige.list.date.hide" | not) .PublishDate "" }}
                     {{ $dateclass := $page.Param "paige.list.date.class" | default (print $class " text-secondary") }}
                     {{ $dateformat := $page.Param "paige.list.date.format" | default ":date_long" }}
@@ -44,7 +44,7 @@
                     {{ $sectionclass := $page.Param "paige.list.section.class" | default "mb-3 w-100" }}
                     {{ $summary := cond ($page.Param "paige.list.summary.hide" | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | htmlUnescape | plainify) "" }}
                     {{ $summaryclass := $page.Param "paige.list.summary.class" | default (print "fst-italic " $class) }}
-                    {{ $tags := cond ($page.Param "paige.list.terms.hide" | not) (.Params.tags | default slice) slice | sort | uniq }}
+                    {{ $tags := cond ($page.Param "paige.list.terms.hide" | not) (.Params.tags | default slice) slice | uniq }}
                     {{ $termsinnerclass := $page.Param "paige.list.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
                     {{ $termsouterclass := $page.Param "paige.list.terms.outer_class" | default $class }}
                     {{ $title := cond ($page.Param "paige.list.title.hide" | not) (.Title | markdownify) "" }}
@@ -71,7 +71,7 @@
                         {{ $flags = $flags | append "paige-published" }}
                     {{ end }}
 
-                    {{ $flags = delimit ($flags | sort | uniq) " " }}
+                    {{ $flags = delimit ($flags | uniq) " " }}
                     {{ $sectionclass = delimit (split $sectionclass " " | append $flags | sort | uniq) " " }}
 
                     <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
