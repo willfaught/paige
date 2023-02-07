@@ -757,13 +757,13 @@ Parameters:
 
 ### Override
 
-Most code is in partial templates that are included by the layouts.
-Elements can be added, changed, or removed easily by overriding the corresponding layout or partial template.
+Most code is in partials that are included by the layouts.
+Elements can be added, changed, or removed easily by overriding the corresponding layout or partial.
 
 For example, the layouts
 `home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html`
-include the partial template `paige/article.html`.
-`paige/article.html` includes the partial templates `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`.
+include the partial `paige/article.html`.
+`paige/article.html` includes the partials `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`.
 To change the page title for those layouts, change `paige/metadata.html`.
 To change the page title for `single.html`,
 replace the use of `paige/article.html` in `single.html` with the use of
