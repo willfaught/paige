@@ -22,7 +22,9 @@
                         {{ if templates.Exists "partials/paige/main-first.html" }}
                             {{ partial "paige/main-first.html" $page }}
                         {{ end }}
+
                         {{ block "main" $page }}{{ end }}
+
                         {{ if templates.Exists "partials/paige/main-last.html" }}
                             {{ partial "paige/main-last.html" $page }}
                         {{ end }}
