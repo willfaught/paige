@@ -343,7 +343,7 @@ paige:
       url: https://example.com/username
 ```
 
-If you set `hide_credit_data` or `hide_credit_link`, please credit this project in a post to help others find it.
+If you set `paige.credit.data.hide` or `paige.credit.link.hide`, please credit this project in a post to help others find it.
 
 Optional site parameters:
 
