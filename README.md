@@ -237,6 +237,15 @@ paige:
       account_id: "123456"
     utterances: # utteranc.es
       github_repo: "example/foo"
+  credit:
+    data:
+      hide: false # Don't credit this project in a data attribute; default is false
+    link:
+      hide: false # Don't credit this project in the footer; default is false
+  header:
+    menu:
+      breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
+      style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   home:
     blurb: "There's a new daddy in town." # Displayed below the greeting; default is ""
     greeting: "You know best" # Displayed below the image; default is ""
@@ -244,11 +253,6 @@ paige:
       raw: false # Do not copy or process the file; default is false
       stretch: false # Stretch the image fully horizontally if true; center the image otherwise; default is false
       url: "me.jpg" # A page, site, or remote resource glob; default is ""
-  credit:
-    data:
-      hide: false # Don't credit this project in a data attribute; default is false
-    link:
-      hide: false # Don't credit this project in the footer; default is false
   katex:
     autorender:
       raw: false # Do not copy or process the file; default is false
@@ -292,11 +296,6 @@ paige:
     title:
       class: "mb-0 text-center" # Default is "mb-0 text-center"
       hide: false # Default is false
-  math: false # Enable math typesetting; default is false
-  header:
-    menu:
-      breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
-      style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
   main:
     metadata:
       authors:
@@ -330,6 +329,7 @@ paige:
       class: "mw-100 paige-content" # Default is "mw-100 paige-content"
       hide: false # Default is false
       max_width: "66ch" # Default is ""
+  math: false # Enable math typesetting; default is false
   rss:
     hide_page: false # Default is false
     managing_editor: "Michael Bluth" # Default is ""
