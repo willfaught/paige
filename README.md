@@ -757,14 +757,14 @@ Parameters:
 
 ### Override
 
-Most code is in partial templates that are included by the default layouts.
-Elements can be added, changed, or removed easily by overriding the corresponding default layout or partial template.
+Most code is in partial templates that are included by the layouts.
+Elements can be added, changed, or removed easily by overriding the corresponding layout or partial template.
 
-For example, the default layouts
+For example, the layouts
 `home.html`, `list.html`, `single.html`, `taxonomy.html`, and `term.html`
 include the partial template `paige/article.html`.
 `paige/article.html` includes the partial templates `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`.
-To change the page title for those default layouts, change `paige/metadata.html`.
+To change the page title for those layouts, change `paige/metadata.html`.
 To change the page title for `single.html`,
 replace the use of `paige/article.html` in `single.html` with the use of
 `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`,
@@ -830,7 +830,7 @@ These optional CSS classes can be defined how you want:
     <dt><code>.paige-toc</code></dt>
     <dd>The page table of contents, if any.</dd>
     <dt><code>.paige-unpublished</code></dt>
-    <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term default layouts.</dd>
+    <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term layouts.</dd>
 </dl>
 
 ## Design
