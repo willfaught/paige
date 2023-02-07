@@ -6,17 +6,17 @@
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
 
 {{ if or $copyright $credit $first $last }}
-    <footer>
+    <footer id="paige-footer">
         {{ if $first }}
             {{ partial "paige/footer-first.html" . }}
         {{ end }}
 
         {{ if $copyright }}
-            <p class="{{ if $credit }} mb-0 {{ end }} text-center text-secondary">{{ $copyright | markdownify }}</p>
+            <p class="{{ if $credit }} mb-0 {{ end }} text-center text-secondary" id="paige-copyright">{{ $copyright | markdownify }}</p>
         {{ end }}
 
         {{ if $credit }}
-            <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a></p>
+            <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" id="paige-credit">Paige Theme</a></p>
         {{ end }}
 
         {{ if $last }}

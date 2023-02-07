@@ -13,12 +13,12 @@
             {{ partial "paige/body-first.html" $page }}
         {{ end }}
 
-        <div class="container flex-fill">
+        <div class="container flex-fill" id="paige-container">
             <div class="row">
                 <div class="col">
                     {{ partial "paige/header.html" $page }}
 
-                    <main>
+                    <main id="paige-main">
                         {{ if templates.Exists "partials/paige/main-first.html" }}
                             {{ partial "paige/main-first.html" $page }}
                         {{ end }}

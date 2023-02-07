@@ -775,16 +775,60 @@ then replace that use of `paige/metadata.html` with your own design.
 These optional CSS classes can be defined how you want:
 
 <dl>
+    <dt><code>#paige-container</code></dt>
+    <dd>The outermost element in the body.</dd>
+    <dt><code>#paige-copyright</code></dt>
+    <dd>The copyright in the footer, if any.</dd>
+    <dt><code>#paige-credit</code></dt>
+    <dd>The credit in the footer, if any.</dd>
+    <dt><code>#paige-footer</code></dt>
+    <dd>The footer element in the container, if any.</dd>
+    <dt><code>#paige-header</code></dt>
+    <dd>The header element in the container, if any.</dd>
+    <dt><code>#paige-main</code></dt>
+    <dd>The main element in the container.</dd>
+    <dt><code>#paige-pages</code></dt>
+    <dd>The pages in the list and term layouts, if any.</dd>
+    <dt><code>#paige-pagination</code></dt>
+    <dd>The pagination links in the list and term layouts, if any.</dd>
+    <dt><code>.paige-article</code></dt>
+    <dd>The page article.</dd>
+    <dt><code>.paige-authors</code></dt>
+    <dd>The page authors, if any.</dd>
+    <dt><code>.paige-content</code></dt>
+    <dd>The page content, if any.</dd>
+    <dt><code>.paige-date</code></dt>
+    <dd>The page date, if any.</dd>
+    <dt><code>.paige-date-header</code></dt>
+    <dd>Date headers in list and term layouts.</dd>
+    <dt><code>.paige-description</code></dt>
+    <dd>The page description, if any.</dd>
     <dt><code>.paige-draft</code></dt>
-    <dd>Applied to the title of draft pages in the list and term default layouts.</dd>
+    <dd>Applied to the title of draft pages in the list and term layouts.</dd>
     <dt><code>.paige-expired</code></dt>
-    <dd>Applied to the title of expired pages in the list and term default layouts.</dd>
+    <dd>Applied to the title of expired pages in the list and term layouts.</dd>
     <dt><code>.paige-future</code></dt>
-    <dd>Applied to the title of future pages in the list and term default layouts.</dd>
+    <dd>Applied to the title of future pages in the list and term layouts.</dd>
+    <dt><code>.paige-metadata</code></dt>
+    <dd>The page metadata section.</dd>
     <dt><code>.paige-modified</code></dt>
-    <dd>Applied to the title of modified pages in the list and term default layouts.</dd>
+    <dd>Applied to the title of modified pages in the list and term layouts.</dd>
+    <dt><code>.paige-page</code></dt>
+    <dd>A page in the pages in the list and term layouts, if any.</dd>
     <dt><code>.paige-published</code></dt>
-    <dd>Applied to the title of published pages in the list and term default layouts.</dd>
+    <dd>Applied to the title of published pages in the list and term layouts.</dd>
+    <dt><code>.paige-summary</code></dt>
+    <dd>The page summary, if any.</dd>
+    <dt><code>.paige-reading-time</code></dt>
+    <dd>The page reading time, if any.</dd>
+    <dt><code>.paige-terms-inner</code></dt>
+    <dd>The page terms, if any.</dd>
+    <dt><code>.paige-terms-outer</code></dt>
+    <dd>The container of the page terms, if any.</dd>
+    <dt><code>.paige-title</code></dt>
+    <dd>The page title, if any.</dd>
+    <dt><code>.paige-toc</code></dt>
+    <dd>The page table of contents, if any.</dd>
     <dt><code>.paige-unpublished</code></dt>
     <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term default layouts.</dd>
 </dl>

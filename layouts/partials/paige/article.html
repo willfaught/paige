@@ -1,6 +1,34 @@
 {{ $page := . }}
 
-<article>
+{{ $class := slice "paige-article" }}
+{{ $draft := $page.Draft }}
+{{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
+{{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
+{{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
+
+{{ if $draft }}
+    {{ $class = $class | append "paige-draft" "paige-unpublished" }}
+{{ end }}
+
+{{ if $expired }}
+    {{ $class = $class | append "paige-expired" "paige-unpublished" }}
+{{ end }}
+
+{{ if $future }}
+    {{ $class = $class | append "paige-future" "paige-unpublished" }}
+{{ end }}
+
+{{ if $modified }}
+    {{ $class = $class | append "paige-modified" }}
+{{ end }}
+
+{{ if not (or $draft $expired $future) }}
+    {{ $class = $class | append "paige-published" }}
+{{ end }}
+
+{{ $class = delimit ($class | uniq) " " }}
+
+<article class="{{ $class }}">
     <div class="align-items-center d-flex flex-column mb-0">
         {{ partial "paige/metadata.html" $page }}
         {{ partial "paige/toc.html" $page }}

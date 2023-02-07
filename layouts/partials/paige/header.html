@@ -5,7 +5,7 @@
 {{ $menu := site.Menus.main }}
 
 {{ if or $first $last $menu }}
-    <header>
+    <header id="paige-header">
         {{ if $first }}
             {{ partial "paige/header-first.html" $page }}
         {{ end }}

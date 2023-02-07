@@ -1,22 +1,22 @@
 {{ $page := . }}
 
 {{ $authors := cond ($page.Param "paige.main.metadata.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
-{{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "text-center text-secondary" }}
+{{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
 {{ $categories := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
 {{ $date := cond ($page.Param "paige.main.metadata.date.hide" | not) $page.PublishDate "" }}
-{{ $dateclass := $page.Param "paige.main.metadata.date.class" | default "text-center text-secondary" }}
+{{ $dateclass := $page.Param "paige.main.metadata.date.class" | default "paige-date text-center text-secondary" }}
 {{ $dateformat := $page.Param "paige.main.metadata.date.format" | default ":date_long" }}
 {{ $description := cond ($page.Param "paige.main.metadata.description.hide" | not) ($page.Description | markdownify) "" }}
-{{ $descriptionclass := $page.Param "paige.main.metadata.description.class" | default "lead text-center" }}
+{{ $descriptionclass := $page.Param "paige.main.metadata.description.class" | default "lead paige-description text-center" }}
 {{ $nogap := "mb-0" }}
 {{ $readingtime := cond ($page.Param "paige.main.metadata.reading_time.hide" | not) $page.ReadingTime "" }}
-{{ $readingtimeclass := $page.Param "paige.main.metadata.reading_time.class" | default "text-center text-secondary" }}
+{{ $readingtimeclass := $page.Param "paige.main.metadata.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
 {{ $sectionclass := "paige-metadata w-100" }}
 {{ $tags := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.tags | default slice) slice | uniq }}
-{{ $termsinnerclass := $page.Param "paige.main.metadata.terms.inner_class" | default "badge text-bg-secondary text-decoration-none" }}
-{{ $termsouterclass := $page.Param "paige.main.metadata.terms.outer_class" | default "text-center" }}
+{{ $termsinnerclass := $page.Param "paige.main.metadata.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
+{{ $termsouterclass := $page.Param "paige.main.metadata.terms.outer_class" | default "paige-terms-outer text-center" }}
 {{ $title := cond ($page.Param "paige.main.metadata.title.hide" | not) ($page.Title | markdownify) "" }}
-{{ $titleclass := $page.Param "paige.main.metadata.title.class" | default "display-5 fw-bold text-center" }}
+{{ $titleclass := $page.Param "paige.main.metadata.title.class" | default "display-5 fw-bold paige-title text-center" }}
 {{ $titlelink := $page.Params.link }}
 {{ $titlepage := $page.RelPermalink }}
 
