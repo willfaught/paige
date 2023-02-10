@@ -1,4 +1,5 @@
 ---
+authors: [michael_bluth]
 categories: [paige]
 date: 2023-01-22
 description: Demonstration of the Paige Vimeo shortcode.

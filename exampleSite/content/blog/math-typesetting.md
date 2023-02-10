@@ -1,5 +1,5 @@
 ---
-author: Hugo Authors
+authors: [michael_bluth]
 title: Math Typesetting
 date: 2019-03-08
 description: A brief guide to setup KaTeX.

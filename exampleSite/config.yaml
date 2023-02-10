@@ -49,6 +49,9 @@ outputs:
   - rss
 paginate: 50
 params:
+  authors:
+    michael_bluth:
+      name: Michael Bluth
   paige:
     social:
       discord:
