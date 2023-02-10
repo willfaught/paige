@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $copyright := site.Copyright }}
+{{ $copyright := site.Copyright | markdownify }}
 {{ $credit := $page.Param "paige.credit.link.hide" | not }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
@@ -11,8 +11,8 @@
             {{ partial "paige/footer-first.html" . }}
         {{ end }}
 
-        {{ if $copyright }}
-            <p class="{{ if $credit }} mb-0 {{ end }} text-center text-secondary" id="paige-copyright">{{ $copyright | markdownify }}</p>
+        {{ with $copyright }}
+            <p class="{{ if $credit }} mb-0 {{ end }} text-center text-secondary" id="paige-copyright">{{ . }}</p>
         {{ end }}
 
         {{ if $credit }}
