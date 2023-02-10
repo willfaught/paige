@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ if $page.Pages }}
+{{ if and $page.Pages ($page.Param "paige.list.pages.hide" | not) }}
     {{ if $page.Param "paige.list.content.show" }}
         {{ $p := $page.Paginate $page.Pages }}
         <section>

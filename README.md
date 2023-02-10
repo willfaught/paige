@@ -281,6 +281,8 @@ paige:
     description:
       class: "mb-0 text-center" # Default is "mb-0 text-center"
       hide: false # Default is false
+    pages:
+      hide: false # Default is false
     reading_time:
       class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
       hide: false # Default is false
