@@ -1,6 +1,12 @@
 paige_figure:
   other: Figure
 
+paige_aria_page_link:
+  other: Link to this page
+
+paige_aria_section_link:
+  other: Link to this section
+
 paige_minutes:
   one: minute
   other: minutes
