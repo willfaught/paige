@@ -3,7 +3,7 @@
 {{ if and $page.Pages ($page.Param "paige.list.pages.hide" | not) }}
     {{ if $page.Param "paige.list.content.show" }}
         {{ $p := $page.Paginate $page.Pages }}
-        <section>
+        <section id="paige-pages">
             {{ range $p.Pages }}
                 {{ $page.Scratch.Set "paige_list_show_content" true }}
                 {{ partial "paige/article.html" . }}
