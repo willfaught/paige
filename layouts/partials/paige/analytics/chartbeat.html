@@ -1,0 +1,22 @@
+{{ $page := . }}
+
+{{ with $page.Param "paige.analytics.chartbeat" }}
+    <script type='text/javascript'>
+    (function() {
+        var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+        _sf_async_config.uid = "{{ .account_id | safeJS }}";
+        _sf_async_config.domain = "{{ .domain | safeJS }}";
+        _sf_async_config.useCanonical = true;
+        _sf_async_config.useCanonicalDomain = true;
+        function loadChartbeat() {
+            var e = document.createElement('script');
+            var n = document.getElementsByTagName('script')[0];
+            e.type = 'text/javascript';
+            e.async = true;
+            e.src = 'https://static.chartbeat.com/js/chartbeat.js';
+            n.parentNode.insertBefore(e, n);
+        }
+        loadChartbeat();
+    })();
+    </script>
+{{ end }}
