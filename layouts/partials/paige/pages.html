@@ -40,7 +40,7 @@
                     {{ $readingtime := cond ($page.Param "paige.list.reading_time.hide" | not) .ReadingTime "" }}
                     {{ $readingtimeclass := $page.Param "paige.list.reading_time.class" | default "mb-0 paige-reading-time text-center text-secondary" }}
                     {{ $sectionclass := $page.Param "paige.list.section.class" | default "mb-3 paige-page w-100" }}
-                    {{ $summary := cond ($page.Param "paige.list.summary.hide" | not) (.Summary | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" | htmlUnescape | plainify) "" }}
+                    {{ $summary := cond ($page.Param "paige.list.summary.hide" | not) (.Summary | htmlUnescape | plainify) "" }}
                     {{ $summaryclass := $page.Param "paige.list.summary.class" | default "fst-italic mb-0 paige-summary text-center" }}
                     {{ $tags := cond ($page.Param "paige.list.terms.hide" | not) (.Params.tags | default slice) slice | uniq }}
                     {{ $termsinnerclass := $page.Param "paige.list.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
