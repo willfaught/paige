@@ -772,7 +772,7 @@ then replace that use of `paige/metadata.html` with your own design.
 
 ### Define
 
-These optional CSS classes can be defined how you want:
+These optional CSS names can be defined how you want:
 
 <dl>
     <dt><code>#paige-container</code></dt>
