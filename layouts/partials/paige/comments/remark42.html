@@ -1,0 +1,15 @@
+{{ $page := . }}
+
+{{ if $page.Param "paige.comments.remark42" }}
+    <section class="mb-3">
+        <div id="remark42"></div>
+        <script>
+        var remark_config = {
+            host: "{{ $page.Param `paige.comments.remark42.host_url` | safeJS }}",
+            site_id: "{{ $page.Param `paige.comments.remark42.site_id` | default `remark` | safeJS }}"
+        }
+        </script>
+        <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
+        <noscript>{{ i18n "paige_noscript" }}</noscript>
+    </section>
+{{ end }}

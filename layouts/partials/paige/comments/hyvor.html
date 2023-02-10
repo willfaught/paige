@@ -1,0 +1,16 @@
+{{ $page := . }}
+
+{{ if $page.Param "paige.comments.hyvor" }}
+    <section class="mb-3">
+        <div id="hyvor-talk-view"></div>
+        <script type="text/javascript">
+        var HYVOR_TALK_WEBSITE = "{{ $page.Param "paige.comments.hyvor.account_id" | safeJS }}";
+        var HYVOR_TALK_CONFIG = {
+            url: false,
+            id: "{{ $page.RelPermalink | safeJS }}"
+        };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+        <noscript>{{ i18n "paige_noscript" }}</noscript>
+    </section>
+{{ end }}

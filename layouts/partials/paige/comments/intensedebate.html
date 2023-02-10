@@ -1,0 +1,14 @@
+{{ $page := . }}
+
+{{ if $page.Param "paige.comments.intensedebate" }}
+    <section class="mb-3">
+        <script>
+        var idcomments_acct = "{{ $page.Param "paige.comments.intensedebate.account_id" | safeJS }}";
+        var idcomments_post_id = "{{ $page.RelPermalink | safeJS }}";
+        var idcomments_post_url = "{{ $page.Permalink | safeJS }}";
+        </script>
+        <span id="IDCommentsPostTitle" style="display:none"></span>
+        <script type="text/javascript" src="http://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>
+        <noscript>{{ i18n "paige_noscript" }}</noscript>
+    </section>
+{{ end }}

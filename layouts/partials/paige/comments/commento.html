@@ -1,0 +1,9 @@
+{{ $page := . }}
+
+{{ with $page.Param "paige.comments.commento" }}
+    <section class="mb-3">
+        <div id="commento"></div>
+        <script defer src="{{ .script_url }}"></script>
+        <noscript>{{ i18n "paige_noscript" }}</noscript>
+    </section>
+{{ end }}
