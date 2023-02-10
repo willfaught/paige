@@ -307,9 +307,13 @@ paige:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
         format: ":date_long" # Default is ":date_long"
         hide: false # Default is false
+        lastmod:
+          hide: false # Default is false
       description:
         class: "lead text-center" # Default is "lead text-center"
         hide: false # Default is false
+      git:
+        commit_url_prefix: "https://github.com/willfaught/paige/commit/" # Default is ""
       max_width: "100ch" # Default is ""
       reading_time:
         class: "text-center text-secondary" # Default is "text-center text-secondary"
