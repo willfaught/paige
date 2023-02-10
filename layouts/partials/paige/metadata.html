@@ -3,11 +3,14 @@
 {{ $authors := cond ($page.Param "paige.main.metadata.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
 {{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
 {{ $categories := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
+{{ $commiturl := "" }}
 {{ $date := cond ($page.Param "paige.main.metadata.date.hide" | not) $page.PublishDate "" }}
 {{ $dateclass := $page.Param "paige.main.metadata.date.class" | default "paige-date text-center text-secondary" }}
 {{ $dateformat := $page.Param "paige.main.metadata.date.format" | default ":date_long" }}
 {{ $description := cond ($page.Param "paige.main.metadata.description.hide" | not) ($page.Description | markdownify) "" }}
 {{ $descriptionclass := $page.Param "paige.main.metadata.description.class" | default "lead paige-description text-center" }}
+{{ $lastmod := cond (eq $date $page.Lastmod) "" $page.Lastmod }}
+{{ $lastmodshow := and $lastmod ($page.Param "paige.main.metadata.date.lastmod.hide" | not) }}
 {{ $nogap := "mb-0" }}
 {{ $readingtime := cond ($page.Param "paige.main.metadata.reading_time.hide" | not) $page.ReadingTime "" }}
 {{ $readingtimeclass := $page.Param "paige.main.metadata.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
@@ -19,10 +22,6 @@
 {{ $titleclass := $page.Param "paige.main.metadata.title.class" | default "display-5 fw-bold paige-title text-center" }}
 {{ $titlelink := $page.Params.link }}
 {{ $titlepage := $page.RelPermalink }}
-
-{{ $commiturl := "" }}
-{{ $lastmod := cond (eq $date $page.Lastmod) "" $page.Lastmod }}
-{{ $lastmodshow := and $lastmod ($page.Param "paige.main.metadata.date.lastmod.hide" | not) }}
 
 {{ if and ($page.Param "paige.main.metadata.git.commit_url_prefix") $page.GitInfo }}
     {{ $commiturl = print ($page.Param "paige.main.metadata.git.commit_url_prefix") $page.GitInfo.Hash }}

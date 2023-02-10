@@ -27,6 +27,7 @@
                     {{ $authors := cond ($page.Param "paige.list.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
                     {{ $authorsclass := $page.Param "paige.list.authors.class" | default "mb-0 paige-authors text-center text-secondary" }}
                     {{ $categories := cond ($page.Param "paige.list.terms.hide" | not) (.Params.categories | default slice) slice | uniq }}
+                    {{ $commiturl := "" }}
                     {{ $date := cond ($page.Param "paige.list.date.hide" | not) .PublishDate "" }}
                     {{ $dateclass := $page.Param "paige.list.date.class" | default "mb-0 paige-date text-center text-secondary" }}
                     {{ $dateformat := $page.Param "paige.list.date.format" | default ":date_long" }}
@@ -50,10 +51,6 @@
                     {{ $title := cond ($page.Param "paige.list.title.hide" | not) (.Title | markdownify) "" }}
                     {{ $titleclass := $page.Param "paige.list.title.class" | default "mb-0 paige-title text-center" }}
                     {{ $titlelink := .RelPermalink }}
-
-                    {{ $commiturl := "" }}
-                    {{ $lastmod := cond (eq $date $page.Lastmod) "" $page.Lastmod }}
-                    {{ $lastmodshow := and $lastmod ($page.Param "paige.main.metadata.date.lastmod.hide" | not) }}
 
                     {{ if and ($page.Param "paige.main.metadata.git.commit_url_prefix") $page.GitInfo }}
                         {{ $commiturl = print ($page.Param "paige.main.metadata.git.commit_url_prefix") $page.GitInfo.Hash }}
