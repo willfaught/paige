@@ -27,7 +27,7 @@
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/link.html" (dict
         "href" ($page.Param "paige.katex.style.link_href" | default "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")
-        "integrity" ($page.Param "paige.katex.style.link_integrity" | default "sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=")
+        "integrity" ($page.Param "paige.katex.style.link_integrity" | default "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/")
         "raw" true
     ) }}
 {{ end }}
