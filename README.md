@@ -696,6 +696,8 @@ Parameters:
     <dd>Optional. Position 0. String. Video ID.</dd>
 </dl>
 
+It has the parameters of the `paige/figure` shortcode.
+
 See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) for more detail.
 
 ### YouTube
@@ -743,6 +745,8 @@ Parameters:
     <dt><code>video</code></dt>
     <dd>Optional. Position 0. String. Video ID.</dd>
 </dl>
+
+It has the parameters of the `paige/figure` shortcode.
 
 ## Customize
 
