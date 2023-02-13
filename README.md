@@ -794,31 +794,31 @@ These optional CSS names can be defined how you want:
     <dt><code>#paige-container</code></dt>
     <dd>The outermost element in the body.</dd>
     <dt><code>#paige-copyright</code></dt>
-    <dd>The copyright in the footer, if any.</dd>
+    <dd>The copyright in the footer.</dd>
     <dt><code>#paige-credit</code></dt>
-    <dd>The credit in the footer, if any.</dd>
+    <dd>The credit in the footer.</dd>
     <dt><code>#paige-footer</code></dt>
-    <dd>The footer element in the container, if any.</dd>
+    <dd>The footer element in the container.</dd>
     <dt><code>#paige-header</code></dt>
-    <dd>The header element in the container, if any.</dd>
+    <dd>The header element in the container.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main element in the container.</dd>
     <dt><code>#paige-pages</code></dt>
-    <dd>The pages in the list and term layouts, if any.</dd>
+    <dd>The pages in the list and term layouts.</dd>
     <dt><code>#paige-pagination</code></dt>
-    <dd>The pagination links in the list and term layouts, if any.</dd>
+    <dd>The pagination links in the list and term layouts.</dd>
     <dt><code>.paige-article</code></dt>
     <dd>The page article.</dd>
     <dt><code>.paige-authors</code></dt>
-    <dd>The page authors, if any.</dd>
+    <dd>The page authors.</dd>
     <dt><code>.paige-content</code></dt>
-    <dd>The page content, if any.</dd>
+    <dd>The page content.</dd>
     <dt><code>.paige-date</code></dt>
-    <dd>The page date, if any.</dd>
+    <dd>The page date.</dd>
     <dt><code>.paige-date-header</code></dt>
     <dd>Date headers in list and term layouts.</dd>
     <dt><code>.paige-description</code></dt>
-    <dd>The page description, if any.</dd>
+    <dd>The page description.</dd>
     <dt><code>.paige-draft</code></dt>
     <dd>Applied to the title of draft pages in the list and term layouts.</dd>
     <dt><code>.paige-expired</code></dt>
@@ -830,51 +830,47 @@ These optional CSS names can be defined how you want:
     <dt><code>.paige-modified</code></dt>
     <dd>Applied to the title of modified pages in the list and term layouts.</dd>
     <dt><code>.paige-page</code></dt>
-    <dd>A page in the pages in the list and term layouts, if any.</dd>
+    <dd>A page in the pages in the list and term layouts.</dd>
     <dt><code>.paige-published</code></dt>
     <dd>Applied to the title of published pages in the list and term layouts.</dd>
     <dt><code>.paige-summary</code></dt>
-    <dd>The page summary, if any.</dd>
+    <dd>The page summary.</dd>
     <dt><code>.paige-reading-time</code></dt>
-    <dd>The page reading time, if any.</dd>
+    <dd>The page reading time.</dd>
     <dt><code>.paige-terms-inner</code></dt>
-    <dd>The page terms, if any.</dd>
+    <dd>The page terms.</dd>
     <dt><code>.paige-terms-outer</code></dt>
-    <dd>The container of the page terms, if any.</dd>
+    <dd>The container of the page terms.</dd>
     <dt><code>.paige-title</code></dt>
-    <dd>The page title, if any.</dd>
+    <dd>The page title.</dd>
     <dt><code>.paige-toc</code></dt>
-    <dd>The page table of contents, if any.</dd>
+    <dd>The page table of contents.</dd>
     <dt><code>.paige-unpublished</code></dt>
     <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term layouts.</dd>
 </dl>
 
 ## Design
 
-The HTML author is the page authors, if any.
+The HTML author is the page authors.
 
-The HTML description is the page description, if any.
+The HTML description is the page description.
 
-The HTML keywords is a union of the page keywords, tags, and categories, if any.
+The HTML keywords is a union of the page keywords, tags, and categories.
 
 The HTML title is the page title, followed by a middle dot, followed by the site title.
 If one is missing, the other is used without the middle dot.
-For the home page, the title is the page title, if any, or the site title otherwise.
+For the home page, the title is the page title, or the site title otherwise.
 
 The HTML body can have a header, a body, and a footer.
-The header has the menu, if any;
-the page title, if any;
-the page description, if any;
-the page authors, if any;
-and the page date, if any.
-The body has the page content, if any.
-The footer has the copyright notice, if any; and the theme link, if any.
+The header has the menu, the page title, the page description, the page authors, and the page date.
+The body has the page content.
+The footer has the copyright notice and the theme link.
 
 The page title and description can be Markdown. Markup is stripped for HTML and RSS titles.
 
 The page title is displayed in an `h1` tag, so page content headers must start with `h2`.
 
-The page date is the publish date, if any.
+The page date is the publish date.
 
 ## Implementation
 
