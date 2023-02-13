@@ -26,7 +26,7 @@ To enable KaTex on a per page basis include the parameter `paige.math: true` in 
 
 **Note:** Use the online reference of [Supported TeX Functions](https://katex.org/docs/supported.html)
 
-### Examples
+## Examples
 
 <p>
 Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
