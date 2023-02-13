@@ -2,7 +2,7 @@
 authors: [michael_bluth]
 date: 2019-03-10
 description: A brief description of Hugo Shortcodes.
-tags: [shortcodes, privacy]
+tags: [content, shortcodes, privacy]
 title: Rich Content
 ---
 
