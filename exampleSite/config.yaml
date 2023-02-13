@@ -10,34 +10,30 @@ languages:
         name: Home
         url: /
         weight: 10
-      - identifier: about
-        name: About
-        url: /about/
-        weight: 20
       - identifier: content
         name: Content
         url: /content/
-        weight: 30
+        weight: 20
       - identifier: layouts
         name: Layouts
         url: /layouts/
-        weight: 40
+        weight: 30
       - identifier: shortcodes
         name: Shortcodes
         url: /shortcodes/
-        weight: 50
+        weight: 40
       - identifier: categories
         name: Categories
         url: /categories/
-        weight: 60
+        weight: 50
       - identifier: tags
         name: Tags
         url: /tags/
-        weight: 70
+        weight: 60
       - identifier: search
         name: Search
         url: /search/
-        weight: 80
+        weight: 70
     title: No Borders, No Limits
     weight: 10
 markup:
