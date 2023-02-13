@@ -142,8 +142,6 @@ params:
         bootstrap_icon: youtube
         name: YouTube
         url: https://youtube.com/user/username
-permalinks:
-  blog: /content/:year/:month/:day/:title/
 social:
   twitter: username
 theme: paige
