@@ -6,7 +6,7 @@ paige:
         greeting: You know [best](https://www.youtube.com/watch?v=1WDW8XKEGgU)
         image:
             stretch: true
-            url: stretch.webp
+            url: landscape.webp
     main:
         metadata:
             reading_time:
