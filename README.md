@@ -177,6 +177,8 @@ $ hugo server -D
 
 ## Configure
 
+### Parameters
+
 There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
 
 ```yaml
@@ -353,6 +355,8 @@ The assigned values shown are the default values.
 
 If you set `paige.credit.data.hide` or `paige.credit.link.hide`, please credit this project in a post to help others find it.
 
+### Site parameters
+
 Optional site parameters:
 
 ```yaml
@@ -361,6 +365,8 @@ authors:
     name: ""
     default: false # Credit this author in pages that have no authors parameter
 ```
+
+### Page parameters
 
 Optional page parameters:
 
