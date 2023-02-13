@@ -14,9 +14,9 @@ languages:
         name: About
         url: /about/
         weight: 20
-      - identifier: blog
-        name: Blog
-        url: /blog/
+      - identifier: content
+        name: Content
+        url: /content/
         weight: 30
       - identifier: layouts
         name: Layouts
@@ -143,7 +143,7 @@ params:
         name: YouTube
         url: https://youtube.com/user/username
 permalinks:
-  blog: /blog/:year/:month/:day/:title/
+  blog: /content/:year/:month/:day/:title/
 social:
   twitter: username
 theme: paige
