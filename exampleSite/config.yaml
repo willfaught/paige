@@ -18,18 +18,22 @@ languages:
         name: Blog
         url: /blog/
         weight: 30
+      - identifier: shortcodes
+        name: Shortcodes
+        url: /shortcodes/
+        weight: 40
       - identifier: categories
         name: Categories
         url: /categories/
-        weight: 40
+        weight: 50
       - identifier: tags
         name: Tags
         url: /tags/
-        weight: 50
+        weight: 60
       - identifier: search
         name: Search
         url: /search/
-        weight: 60
+        weight: 70
     title: No Borders, No Limits
     weight: 10
 markup:
