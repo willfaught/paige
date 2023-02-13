@@ -8,6 +8,9 @@ tags: [layouts, search]
 title: Search Layout
 ---
 
+Paige provides a `paige/search` layout for site search.
+
+<!--more-->
 
 Example `config.yaml`:
 
