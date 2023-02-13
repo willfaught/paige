@@ -182,172 +182,174 @@ There is a single parameter object with sensible defaults that can be overridden
 ```yaml
 paige:
   analytics:
-    chartbeat: # chartbeat.com
-      account_id: "123456"
-      domain: "example.com"
-    clicky: # clicky.com
-      account_id: "123456"
-    fathom: # usefathom.com
-      account_id: "123456"
-    finteza: # finteza.com
-      account_id: "123456"
-      script_url: "https://example.com/script.js"
-    hotjar: # hotjar.com
-      account_id: "123456"
-    matomo: # matomo.org
-      account_id: "123456"
-      host_url: "https://example.com"
-    mixpanel: # mixpanel.com
-      token: "123456"
+    chartbeat: # See https://chartbeat.com
+      account_id: "" # Example is "123456"
+      domain: "" # Example is "example.com"
+    clicky: # See https://clicky.com
+      account_id: "" # Example is "123456"
+    fathom: # See https://usefathom.com
+      account_id: "" # Example is "123456"
+    finteza: # See https://finteza.com
+      account_id: "" # Example is "123456"
+      script_url: "" # Example is "https://example.com/script.js"
+    hotjar: # See https://hotjar.com
+      account_id: "" # Example is "123456"
+    matomo: # See https://matomo.org
+      account_id: "" # Example is "123456"
+      host_url: "" # Example is "https://example.com"
+    mixpanel: # See https://mixpanel.com
+      token: "" # Example is "123456"
     plausible: # plausible.io
-      account_id: "123456"
-    woopra: # woopra.com
-      domain: "example.com"
-    yandex: # metrica.yandex.com
-      account_id: "123456"
-  bootstrap:
+      account_id: "" # Example is "123456"
+    woopra: # See https://woopra.com
+      domain: "" # Example is "example.com"
+    yandex: # See https://metrica.yandex.com
+      account_id: "" # Example is "123456"
+  bootstrap: # See https://getbootstrap.com
     icons:
-      link_href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" # Local or remote file
-      link_integrity: "sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" # File integrity hash
+      link_href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" # Local or remote resource glob
+      link_integrity: "sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" # Subresource integrity hash
     script:
-      raw: false # Do not copy or process the file; default is false
-      script_integrity: "sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" # File integrity hash
-      script_src: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" # Local or remote file
+      raw: false # Do not copy or process the resource
+      script_integrity: "sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" # Subresource integrity hash
+      script_src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" # Local or remote resource glob
     style:
-      link_href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" # Local or remote file
-      link_integrity: "sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" # File integrity hash
-      raw: false # Do not copy or process the file; default is false
-  color: "#123456" # Theme color for Safari and Windows; default is "#0d6efd"
-  color_scheme: "light" # Use the "light" or "dark" color scheme without automatic switching; default is ""
+      link_href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" # Local or remote resource glob
+      link_integrity: "sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" # Subresource integrity hash
+      raw: false # Do not copy or process the resource
+  color: "#0d6efd" # Theme color for Safari and Windows
+  color_scheme: "" # Always use this color scheme without automatic switching; must be "", "light", or "dark"
   comments:
-    cactus: # cactus.chat
-      account_id: "123456"
-    commento: # commento.io
-      script_url: "https://example.com/script.js"
-    hyvor: # hyvor.com
-      account_id: "123456"
+    cactus: # See https://cactus.chat
+      account_id: "" # Example is "123456"
+    commento: # See https://commento.io
+      script_url: "" # Example is "https://example.com/script.js"
+    hyvor: # See https://hyvor.com
+      account_id: "" # Example is "123456"
     intensedebate: # intensedebate.com
-      account_id: "123456"
-    isso: # isso-comments.de
-      script_url: "https://example.com/script.js"
-    remark42: # remark42.com
-      host_url: "https://example.com"
-      site_id: "123456"
-    replybox: # getreplybox.com
-      account_id: "123456"
-    utterances: # utteranc.es
-      github_repo: "example/foo"
+      account_id: "" # Example is "123456"
+    isso: # See https://isso-comments.de
+      script_url: "" # Example is "https://example.com/script.js"
+    remark42: # See https://remark42.com
+      host_url: "" # Example is "https://example.com"
+      site_id: "" # Example is "123456"
+    replybox: # See https://getreplybox.com
+      account_id: "" # Example is "123456"
+    utterances: # See https://utteranc.es
+      github_repo: "" # Example is "example/foo"
   credit:
     data:
-      hide: false # Don't credit this project in a data attribute; default is false
+      hide: false # Don't credit this project in a data attribute
     link:
-      hide: false # Don't credit this project in the footer; default is false
+      hide: false # Don't credit this project in the footer
   header:
     menu:
-      breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items; default is "sm"
-      style: "pills" # Menu item style; must be "links" or "pills"; default is "pills"
+      breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
+      style: "pills" # Must be "links" or "pills"
   home:
-    blurb: "There's a new daddy in town." # Displayed below the greeting; default is ""
-    greeting: "You know best" # Displayed below the image; default is ""
+    blurb: "" # Displayed below the greeting
+    greeting: "" # Displayed below the image
     image:
-      raw: false # Do not copy or process the file; default is false
-      stretch: false # Stretch the image fully horizontally if true; center the image otherwise; default is false
-      url: "me.jpg" # A page, site, or remote resource glob; default is ""
+      raw: false # Do not copy or process the file
+      stretch: false # Stretch the image fully horizontally if true; center the image otherwise
+      url: "" # Local or remote resource glob
   katex:
     autorender:
-      raw: false # Do not copy or process the file; default is false
-      script_integrity: "sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" # File integrity hash
-      script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" # Local or remote file
+      raw: false # Do not copy or process the file
+      script_integrity: "sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" # Subresource integrity hash
+      script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" # Local or remote resource glob
     script:
-      raw: false # Do not copy or process the file; default is false
-      script_integrity: "sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O" # File integrity hash
-      script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js" # Local or remote file
+      raw: false # Do not copy or process the file
+      script_integrity: "sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O" # Subresource integrity hash
+      script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js" # Local or remote resource glob
     style:
-      link_href: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" # Local or remote file
-      link_integrity: "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" # File integrity hash
+      link_href: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" # Local or remote resource glob
+      link_integrity: "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" # Subresource integrity hash
   list:
     authors:
-      class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
-      hide: false # Default is false
+      class: "mb-0 text-center text-secondary"
+      hide: false
     content:
-      show: false # Default is false
+      show: false
     date:
-      class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
-      format: ":date_long" # Default is ":date_long"
-      hide: false # Default is false
+      class: "mb-0 text-center text-secondary"
+      format: ":date_long" # Hugo date format
+      hide: false
     date_header:
-      class: "h5 text-center" # Month and year header class attribute
-      hide: false # Default is false
+      class: "h5 text-center"
+      hide: false
     description:
-      class: "mb-0 text-center" # Default is "mb-0 text-center"
-      hide: false # Default is false
+      class: "mb-0 text-center"
+      hide: false
     pages:
-      hide: false # Default is false
+      hide: false
     reading_time:
-      class: "mb-0 text-center text-secondary" # Default is "mb-0 text-center text-secondary"
-      hide: false # Default is false
+      class: "mb-0 text-center text-secondary"
+      hide: false
     section:
-      class: "mb-3 w-100" # Default is "mb-3 w-100"
+      class: "mb-3 w-100"
     summary:
-      class: "fst-italic mb-0 text-center" # Default is "fst-italic mb-0 text-center"
-      hide: false # Default is false
+      class: "fst-italic mb-0 text-center"
+      hide: false
     terms:
-      hide: false # Default is false
-      inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-      outer_class: "mb-0 text-center" # Default is "mb-0 text-center"
+      hide: false
+      inner_class: "badge text-bg-secondary text-decoration-none"
+      outer_class: "mb-0 text-center"
     title:
-      class: "mb-0 text-center" # Default is "mb-0 text-center"
-      hide: false # Default is false
+      class: "mb-0 text-center"
+      hide: false
   main:
     metadata:
       authors:
-        class: "text-center text-secondary" # Default is "text-center text-secondary"
-        hide: false # Default is false
+        class: "text-center text-secondary"
+        hide: false
       date:
-        class: "text-center text-secondary" # Default is "text-center text-secondary"
-        format: ":date_long" # Default is ":date_long"
-        hide: false # Default is false
+        class: "text-center text-secondary"
+        format: ":date_long" # Hugo date format
+        hide: false
         lastmod:
-          hide: false # Default is false
+          hide: false
       description:
-        class: "lead text-center" # Default is "lead text-center"
-        hide: false # Default is false
+        class: "lead text-center"
+        hide: false
       git:
-        commit_url_prefix: "https://github.com/willfaught/paige/commit/" # Default is ""
-      max_width: "100ch" # Default is ""
+        commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
+      max_width: ""
       reading_time:
-        class: "text-center text-secondary" # Default is "text-center text-secondary"
-        hide: false # Default is false
+        class: "text-center text-secondary"
+        hide: false
       section:
-        class: "paige-metadata w-100" # Default is "paige-metadata w-100"
+        class: "paige-metadata w-100"
       terms:
-        hide: false # Default is false
-        inner_class: "badge text-bg-secondary text-decoration-none" # Default is "badge text-bg-secondary text-decoration-none"
-        outer_class: "text-center" # Default is "text-center"
+        hide: false
+        inner_class: "badge text-bg-secondary text-decoration-none"
+        outer_class: "text-center"
       title:
-        class: "display-5 fw-bold text-center" # Default is "display-5 fw-bold text-center"
-        hide: false # Default is false
+        class: "display-5 fw-bold text-center"
+        hide: false
     table_of_contents:
-      class: "border mb-3 pe-3 ps-3 pt-3 rounded" # Default is "border mb-3 pe-3 ps-3 pt-3 rounded"
-      hide: false # Default is false
-      max_width: "66ch" # Default is ""
+      class: "border mb-3 pe-3 ps-3 pt-3 rounded"
+      hide: false
+      max_width: ""
     content:
-      class: "mw-100 paige-content" # Default is "mw-100 paige-content"
-      hide: false # Default is false
-      max_width: "66ch" # Default is ""
-  math: false # Enable math typesetting; default is false
+      class: "mw-100 paige-content"
+      hide: false
+      max_width: ""
+  math: false # Math typesetting
   rss:
-    hide_page: false # Default is false
-    managing_editor: "Michael Bluth" # Default is ""
-    web_master: "Michael Bluth" # Default is ""
+    hide_page: false
+    managing_editor: ""
+    web_master: ""
   search:
-    hide_page: false # Default is false
+    hide_page: false
   social:
     examplesite:
-      bootstrap_icon: example-icon
-      name: Example
-      url: https://example.com/username
+      bootstrap_icon: "" # Example is "example-icon"
+      name: "" # Example is "Example"
+      url: "" # Example is "https://example.com/username"
 ```
+
+The assigned values shown are the default values.
 
 If you set `paige.credit.data.hide` or `paige.credit.link.hide`, please credit this project in a post to help others find it.
 
@@ -356,10 +358,8 @@ Optional site parameters:
 ```yaml
 authors:
   michael_bluth:
-    name: "Michael Bluth"
-    default: true # Credit this author in pages that have no authors parameter
-  george_bluth:
-    name: "George Bluth"
+    name: ""
+    default: false # Credit this author in pages that have no authors parameter
 ```
 
 Optional page parameters:
