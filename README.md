@@ -892,6 +892,9 @@ Feedback is encouraged and appreciated.
 
 If you have a fix or improvement, please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
 
+If you have a customization or alteration you think others may like,
+please share it by [posting code or screenshots to the discussion](https://github.com/willfaught/paige/discussions/8).
+
 ## Credits
 
 Photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI).
