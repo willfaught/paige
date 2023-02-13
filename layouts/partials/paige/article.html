@@ -1,4 +1,14 @@
+{{ $params := . }}
+
 {{ $page := . }}
+{{ $listshowcontent := false }}
+
+{{ if reflect.IsMap $params }}
+    {{ $page = $params.page }}
+    {{ $listshowcontent = $params.listshowcontent }}
+{{ else }}
+    {{ $params = dict "listshowcontent" $listshowcontent "page" $page }}
+{{ end }}
 
 {{ $class := slice "paige-article" }}
 {{ $draft := $page.Draft }}
@@ -30,8 +40,8 @@
 
 <article class="{{ $class }}">
     <div class="align-items-center d-flex flex-column mb-0">
-        {{ partial "paige/metadata.html" $page }}
-        {{ partial "paige/toc.html" $page }}
-        {{ partial "paige/content.html" $page }}
+        {{ partial "paige/metadata.html" $params }}
+        {{ partial "paige/toc.html" $params }}
+        {{ partial "paige/content.html" $params }}
     </div>
 </article>

@@ -1,4 +1,12 @@
+{{ $params := . }}
+
 {{ $page := . }}
+{{ $listshowcontent := false }}
+
+{{ if reflect.IsMap $params }}
+    {{ $page = $params.page }}
+    {{ $listshowcontent = $params.listshowcontent }}
+{{ end }}
 
 {{ $authors := cond ($page.Param "paige.main.metadata.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
 {{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
@@ -29,7 +37,7 @@
 
 <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
     {{ with $title }}
-        <h1 {{ with $titleclass }} class="{{ . }}" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $page.Scratch.Get "paige_list_show_content" }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
+        <h1 {{ with $titleclass }} class="{{ . }}" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $listshowcontent }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
     {{ end }}
 
     {{ with $description }}
