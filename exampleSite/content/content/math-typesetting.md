@@ -4,6 +4,7 @@ date: 2019-03-08
 description: A brief guide to setup KaTeX.
 paige:
     math: true
+tags: [katex, math, typesetting]
 title: Math Typesetting
 ---
 
