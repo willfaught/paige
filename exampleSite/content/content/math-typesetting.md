@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
-title: Math Typesetting
 date: 2019-03-08
 description: A brief guide to setup KaTeX.
 paige:
     math: true
+title: Math Typesetting
 ---
 
 Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
