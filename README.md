@@ -255,18 +255,6 @@ paige:
       raw: false # Do not copy or process the file
       stretch: false # Stretch the image fully horizontally if true; center the image otherwise
       url: "" # Local or remote resource glob
-  katex:
-    autorender:
-      raw: false # Do not copy or process the file
-      script_integrity: "sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" # Subresource integrity hash
-      script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" # Local or remote resource glob
-    script:
-      raw: false # Do not copy or process the file
-      script_integrity: "sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O" # Subresource integrity hash
-      script_src: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js" # Local or remote resource glob
-    style:
-      link_href: "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" # Local or remote resource glob
-      link_integrity: "sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" # Subresource integrity hash
   list:
     authors:
       class: "mb-0 text-center text-secondary"
@@ -337,7 +325,7 @@ paige:
       class: "mw-100 paige-content"
       hide: false
       max_width: ""
-  math: false # Math typesetting
+  math: false # Enable math typesetting
   rss:
     hide_page: false
     managing_editor: ""
@@ -875,6 +863,8 @@ The page date is the publish date.
 ## Implementation
 
 Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are used unless overridden.
+
+KaTeX 0.16.4 is used for math typesetting.
 
 Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
 
