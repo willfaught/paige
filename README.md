@@ -207,19 +207,7 @@ paige:
       domain: "" # Example is "example.com"
     yandex: # See https://metrica.yandex.com
       account_id: "" # Example is "123456"
-  bootstrap: # See https://getbootstrap.com
-    icons:
-      link_href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" # Local or remote resource glob
-      link_integrity: "sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" # Subresource integrity hash
-    script:
-      raw: false # Do not copy or process the resource
-      script_integrity: "sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" # Subresource integrity hash
-      script_src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" # Local or remote resource glob
-    style:
-      link_href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" # Local or remote resource glob
-      link_integrity: "sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" # Subresource integrity hash
-      raw: false # Do not copy or process the resource
-  color: "#0d6efd" # Theme color for Safari and Windows
+  color: "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
   color_scheme: "" # Always use this color scheme without automatic switching; must be "", "light", or "dark"
   comments:
     cactus: # See https://cactus.chat
@@ -862,9 +850,16 @@ The page date is the publish date.
 
 ## Implementation
 
-Bootstrap 5.3.0-alpha1 CSS and JavaScript and Bootstrap Icons 1.10.3 are used unless overridden.
+The following NPM packages are used:
 
-KaTeX 0.16.4 is used for math typesetting.
+- Bootstrap 5.3.0-alpha1
+- Bootstrap Icons 1.10.3
+- KaTeX 0.16.4
+
+The files are checked into in the repository.
+
+Bootstrap JS and SCSS files can be loaded manually at `paige/bootstrap`,
+e.g. `paige/bootstrap/alert.js` and `paige/bootstrap/_alert.scss`.
 
 Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
 

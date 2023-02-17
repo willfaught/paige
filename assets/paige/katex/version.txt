@@ -1,1 +1,0 @@
-https://github.com/KaTeX/KaTeX/releases/tag/v0.16.4

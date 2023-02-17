@@ -41,14 +41,10 @@ addEventListener("resize", paigeResize);
     });
 {{ end }}
 </script>
-{{ partial "paige/script.html" (dict
-    "integrity" ($page.Param "paige.bootstrap.script.script_integrity" | default "sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN")
-    "raw" ($page.Param "paige.bootstrap.script.raw")
-    "src" ($page.Param "paige.bootstrap.script.script_src" | default "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
-) }}
+{{ partial "paige/script.html" (dict "src" "paige/bootstrap/bootstrap.bundle.js") }}
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
-    {{ partial "paige/script.html" (dict "src" "paige/katex/katex.min.js") }}
-    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "paige/katex/auto-render.min.js") }}
+    {{ partial "paige/script.html" (dict "src" "paige/katex/katex.js") }}
+    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "paige/katex/auto-render.js") }}
 {{ end }}
 {{ partial "paige/analytics.html" $page }}
 <noscript>{{ i18n "paige_noscript" }}</noscript>

@@ -1,20 +1,33 @@
 {{ $params := . }}
 
 {{ $crossorigin := $params.crossorigin | default "anonymous" }}
-{{ $href := $params.href }}
+{{ $enablesourcemap := not hugo.IsProduction }}
+{{ $href := relLangURL $params.href }}
+{{ $includepaths := $params.includepaths }}
 {{ $integrity := $params.integrity }}
+{{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
 {{ $raw := $params.raw }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
+{{ $sass := $params.sass }}
 
-{{ if $raw }}
-    {{ $href = relLangURL $href }}
-{{ else }}
-    {{ $resource := (partial "paige/func-resource.html" (dict
+{{ if not $raw }}
+    {{ $resource := partial "paige/func-resource.html" (dict
         "page" $page
-        "url" (relLangURL $href)
-    )) | minify | fingerprint }}
+        "url" $href
+    ) }}
 
+    {{ $resource = resources.ExecuteAsTemplate $href (or $page dict) $resource }}
+
+    {{ if $sass }}
+        {{ $resource = $resource | toCSS (dict
+            "enableSourceMap" $enablesourcemap
+            "includePaths" $includepaths
+            "outputStyle" $outputstyle
+        ) }}
+    {{ end }}
+
+    {{ $resource = $resource | minify | fingerprint }}
     {{ $href = $resource.RelPermalink }}
     {{ $integrity = $resource.Data.Integrity }}
 {{ end }}

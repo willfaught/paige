@@ -1,0 +1,4 @@
+{{ $page := . }}
+
+$primary: {{ $page.Param "paige.color" | default "#0d6efd" }};
+@import "bootstrap";
