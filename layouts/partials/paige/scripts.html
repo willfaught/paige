@@ -42,9 +42,11 @@ addEventListener("resize", paigeResize);
 {{ end }}
 </script>
 {{ partial "paige/script.html" (dict "src" "paige/bootstrap/bootstrap.bundle.js") }}
+
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/script.html" (dict "src" "paige/katex/katex.js") }}
     {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "paige/katex/auto-render.js") }}
 {{ end }}
+
 {{ partial "paige/analytics.html" $page }}
 <noscript>{{ i18n "paige_noscript" }}</noscript>
