@@ -10,11 +10,11 @@
 {{ $src := $params.src }}
 
 {{ if $raw }}
-    {{ $src = relLangURL $src }}
+    {{ $src = $src }}
 {{ else }}
     {{ $resource := (partial "paige/func-resource.html" (dict
         "page" $page
-        "url" (relLangURL $src)
+        "url" $src
     )) | minify | fingerprint }}
 
     {{ $integrity = $resource.Data.Integrity }}

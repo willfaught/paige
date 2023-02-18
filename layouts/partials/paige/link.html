@@ -2,7 +2,7 @@
 
 {{ $crossorigin := $params.crossorigin | default "anonymous" }}
 {{ $enablesourcemap := not hugo.IsProduction }}
-{{ $href := relLangURL $params.href }}
+{{ $href := $params.href }}
 {{ $includepaths := $params.includepaths }}
 {{ $integrity := $params.integrity }}
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
