@@ -338,7 +338,7 @@ Optional site parameters:
 ```yaml
 authors:
   michael_bluth:
-    name: ""
+    name: "Michael Bluth"
     default: false # Credit this author in pages that have no authors parameter
 ```
 
