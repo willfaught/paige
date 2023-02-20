@@ -7,7 +7,11 @@
 
 {{ if (urls.Parse $url).Scheme }}
     {{ with resources.GetRemote $url }}
-        {{ $result = . }}
+        {{ with .Err }}
+            {{ errorf "cannot get remote resource %q: %v" $url . }}
+        {{ else }}
+            {{ $result = . }}
+        {{ end }}
     {{ end }}
 {{ else }}
     {{ with $page.Resources.GetMatch $url }}
