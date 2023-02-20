@@ -187,6 +187,8 @@ $ rm -rf themes/paige/.git
 
 ```sh
 $ cd yourproject
+$ hugo mod npm pack
+$ npm install
 $ hugo server -D
 ```
 
