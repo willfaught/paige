@@ -8,12 +8,12 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Hugo
-        run: sudo apt-get install hugo
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: recursive
+      - name: Install Hugo
+        run: sudo apt-get install hugo
       - id: pages
         name: Setup Pages
         uses: actions/configure-pages@v2
