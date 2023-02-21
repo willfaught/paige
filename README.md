@@ -51,10 +51,12 @@ Welcome to the last Hugo theme you'll probably ever need.
 Get started by [starring](https://github.com/willfaught/paige/stargazers)
 and [following](https://github.com/willfaught/paige/watchers) the project.
 
-If you find a problem or have a suggestion, please share it by [creating an issue](https://github.com/willfaught/paige/issues/new).
+If you find a problem or have a suggestion,
+please share it by [creating an issue](https://github.com/willfaught/paige/issues/new).
 Feedback is encouraged and appreciated.
 
-If you have a fix or improvement, please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
+If you have a fix or improvement,
+please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
 
 If you make a customization or alteration,
 please share it by [posting code or screenshots](https://github.com/willfaught/paige/discussions/8).
