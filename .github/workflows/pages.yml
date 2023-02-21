@@ -17,7 +17,7 @@ jobs:
       - id: pages
         name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Build with Hugo
+      - name: Build
         run: |
           cd exampleSite
           hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify --themesDir ../..
