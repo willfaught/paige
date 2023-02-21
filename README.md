@@ -371,7 +371,7 @@ link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the ti
 
 ### Minimal look
 
-By default, all content is shown. If you want a minimal look, try the following:
+By default, everything is shown. If you want a more minimal look, try the following:
 
 ```yaml
 paige:
