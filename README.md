@@ -795,7 +795,7 @@ These optional CSS names can be defined how you want:
     <dt><code>#paige-main</code></dt>
     <dd>The main element in the container.</dd>
     <dt><code>#paige-pages</code></dt>
-    <dd>The pages in the list and term layouts.</dd>
+    <dd>The page list in the list and term layouts.</dd>
     <dt><code>#paige-pagination</code></dt>
     <dd>The pagination links in the list and term layouts.</dd>
     <dt><code>.paige-article</code></dt>
