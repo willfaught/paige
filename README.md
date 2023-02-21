@@ -46,6 +46,19 @@ Welcome to the last Hugo theme you'll probably ever need.
 - Table of contents
 - Twitter sharing
 
+## Community
+
+Get started by [starring](https://github.com/willfaught/paige/stargazers)
+and [following](https://github.com/willfaught/paige/watchers) the project.
+
+If you find a problem or have a suggestion, please share it by [creating an issue](https://github.com/willfaught/paige/issues/new).
+Feedback is encouraged and appreciated.
+
+If you have a fix or improvement, please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
+
+If you have a customization or alteration you think others may like,
+please share it by [posting code or screenshots to the discussion](https://github.com/willfaught/paige/discussions/8).
+
 ## Get started with Hugo
 
 1. [Install Hugo](https://gohugo.io/installation/).
@@ -862,19 +875,6 @@ Bootstrap JS and SCSS files can be loaded manually at `paige/bootstrap`,
 e.g. `paige/bootstrap/alert.js` and `paige/bootstrap/_alert.scss`.
 
 Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
-
-## Community
-
-Get started by [starring](https://github.com/willfaught/paige/stargazers)
-and [following](https://github.com/willfaught/paige/watchers) the project.
-
-If you find a problem or have a suggestion, please share it by [creating an issue](https://github.com/willfaught/paige/issues/new).
-Feedback is encouraged and appreciated.
-
-If you have a fix or improvement, please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
-
-If you have a customization or alteration you think others may like,
-please share it by [posting code or screenshots to the discussion](https://github.com/willfaught/paige/discussions/8).
 
 ## Credits
 
