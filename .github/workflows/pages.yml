@@ -26,8 +26,7 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
-  build:
+  build-linux:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.102.3
@@ -55,14 +54,27 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./exampleSite/public
+  # build-windows:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #       with:
+  #         submodules: recursive
+  #     - name: Install Hugo
+  #       run: choco install hugo
+  #     - name: Build
+  #       run: |
+  #         cd exampleSite
+  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify --themesDir ../..
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.pages.outputs.base_url }}
+    needs: build-linux
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
