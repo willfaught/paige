@@ -56,8 +56,8 @@ Feedback is encouraged and appreciated.
 
 If you have a fix or improvement, please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
 
-If you have a customization or alteration you think others may like,
-please share it by [posting code or screenshots to the discussion](https://github.com/willfaught/paige/discussions/8).
+If you make a customization or alteration,
+please share it by [posting code or screenshots](https://github.com/willfaught/paige/discussions/8).
 
 ## Get started with Hugo
 
