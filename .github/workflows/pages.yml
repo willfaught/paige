@@ -17,13 +17,10 @@ jobs:
       - id: pages
         name: Setup Pages
         uses: actions/configure-pages@v2
-      - env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        name: Build with Hugo
+      - name: Build with Hugo
         run: |
           cd exampleSite
-          hugo --minify --baseURL ${{ steps.pages.outputs.base_url }} --themesDir ../..
+          hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify --themesDir ../..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
