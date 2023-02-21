@@ -369,6 +369,33 @@ authors:
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 ```
 
+### Minimal look
+
+By default, all content is shown. If you want a minimal look, try the following:
+
+```yaml
+paige:
+  list:
+    authors:
+      hide: true
+    date:
+      hide: true
+    reading_time:
+      hide: true
+    summary:
+      hide: true
+    terms:
+      hide: true
+  main:
+    metadata:
+      reading_time:
+        hide: true
+      terms:
+        hide: true
+    table_of_contents:
+      hide: true
+```
+
 ## Layouts
 
 The `paige/search` layout provides full site search.
