@@ -807,7 +807,7 @@ These optional CSS names can be defined how you want:
     <dt><code>.paige-date</code></dt>
     <dd>The page date.</dd>
     <dt><code>.paige-date-header</code></dt>
-    <dd>Date headers in list and term layouts.</dd>
+    <dd>The date headers in list and term layouts.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The page description.</dd>
     <dt><code>.paige-draft</code></dt>
