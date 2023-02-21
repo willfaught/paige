@@ -1,23 +1,14 @@
-name: Deploy Hugo site to Pages
-on:
-  push:
-    branches: ["**"]
-  workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 concurrency:
-  group: "pages"
   cancel-in-progress: true
+  group: "pages"
 defaults:
   run:
     shell: bash
 jobs:
   build-linux:
-    runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.102.3
+    runs-on: ubuntu-latest
     steps:
       - name: Install Hugo CLI
         run: |
@@ -27,13 +18,13 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      - name: Setup Pages
-        id: pages
+      - id: pages
+        name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Build with Hugo
-        env:
+      - env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+        name: Build with Hugo
         run: |
           cd exampleSite
           hugo --minify --baseURL ${{ steps.pages.outputs.base_url }} --themesDir ../..
@@ -64,3 +55,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+name: Deploy Hugo site to Pages
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+  pages: write
