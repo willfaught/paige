@@ -427,10 +427,8 @@ outputs:
 Example `content/search.md`:
 
 ```yaml
----
-layout: paige/search
-title: Search
----
+layout: "paige/search"
+title: "Search"
 ```
 
 ## Shortcodes
