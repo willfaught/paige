@@ -253,13 +253,6 @@ paige:
     menu:
       breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
       style: "pills" # Must be "links" or "pills"
-  home:
-    blurb: "" # Displayed below the greeting
-    greeting: "" # Displayed below the image
-    image:
-      raw: false # Do not copy or process the file
-      stretch: false # Stretch the image fully horizontally if true; center the image otherwise
-      url: "" # Local or remote resource glob
   list:
     authors:
       class: "mb-0 text-center text-secondary"
@@ -337,11 +330,6 @@ paige:
     web_master: ""
   search:
     hide_page: false
-  social:
-    examplesite:
-      bootstrap_icon: "" # Example is "example-icon"
-      name: "" # Example is "Example"
-      url: "" # Example is "https://example.com/username"
 ```
 
 The assigned values shown are the default values.
@@ -399,6 +387,33 @@ paige:
 ```
 
 ## Layouts
+
+## Home
+
+The `paige/home` layout provides a home page.
+
+Example `content/_index.md`:
+
+```yaml
+layout: "paige/home"
+paige:
+  home:
+    blurb: "" # Displayed below the greeting
+    greeting: "" # Displayed below the image
+    image:
+      raw: false # Do not copy or process the file
+      stretch: false # Stretch the image fully horizontally if true; center the image otherwise
+      url: "" # Local or remote resource glob
+  social:
+    examplesite:
+      bootstrap_icon: "" # Example is "example-icon"
+      name: "" # Example is "Example"
+      url: "" # Example is "https://example.com/username"
+```
+
+The assigned values shown are the default values.
+
+## Search
 
 The `paige/search` layout provides full site search.
 

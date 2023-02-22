@@ -1,9 +1,10 @@
 ---
-description: Go ahead, touch the Cornballer
+description: Powerful, pliable pixel perfection.
+layout: paige/home
 paige:
     home:
-        blurb: There's a new daddy in town. A discipline daddy. If I make this comeback, I'll buy you a hundred George Michaels that you can teach to drive! These are my awards, Mother. From Army. The seal is for marksmanship, and the gorilla is for sand racing. We'll have to find something to do so that people can look at you without wanting to kill [themselves](https://bluthipsum.com).
-        greeting: You know [best](https://www.youtube.com/watch?v=1WDW8XKEGgU)
+        blurb: Paige is designed to put your content front and center, avoiding the typical clutter. The look is seamless and smooth, scalable and readable, portable and efficient. The layout is minimal and responsive, using verticality and white space to focus and delineate parts of the page. The implementation is flexible and extensible. It's a versatile canvas that serves most web needs. Welcome to the last Hugo theme you'll probably ever need.
+        greeting: An advanced Hugo theme
         image:
             stretch: true
             url: landscape.webp
@@ -13,9 +14,12 @@ paige:
                 hide: true
             title:
                 class: display-1 fw-bold text-center
-title: No Borders, No Limits
+    social:
+        github:
+            bootstrap_icon: github
+            name: GitHub
+            url: https://github.com/willfaught/paige
+title: Paige
 ---
 
-<p class="lead text-center">
-<a href="https://github.com/willfaught/paige">Paige: Powerful, pliable pixel perfection. An advanced Hugo theme.</a>
-</p>
+<a class="lead" href="https://github.com/willfaught/paige">Install it now.</a>

@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ $page := . }}
+
+{{ $stretch := $page.Params.paige.home.image.stretch }}
+
+<article class="paige-article">
+    <div class="align-items-center d-flex flex-column mb-0">
+        {{ partial "paige/metadata.html" $page }}
+
+        {{ if or $page.Params.paige.home.image.url $page.Params.paige.home.greeting $page.Params.paige.home.blurb }}
+            <section>
+                {{ if $page.Params.paige.home.image.url }}
+                    {{ $class := cond ($stretch | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
+                    {{ $style := cond ($stretch | not) "height: 20rem; width: auto" "height: 20rem; object-fit: cover; width: 100%" }}
+
+                    <p {{ if not $stretch }} class="text-center" {{ end }}>
+                        {{ partial "paige/img.html" (dict
+                            "class" $class
+                            "fetchpriority" "high"
+                            "loading" "eager"
+                            "raw" $page.Params.paige.home.image.raw
+                            "src" $page.Params.paige.home.image.url
+                            "style" $style
+                        ) }}
+                    </p>
+                {{ end }}
+
+                {{ with $page.Params.paige.home.greeting }}
+                    <p class="display-5 fw-bold h2 text-center">{{ . | markdownify }}</p>
+                {{ end }}
+
+                {{ with $page.Params.paige.home.blurb }}
+                    <div class="container-fluid">
+                        <div class="justify-content-center row">
+                            <div class="col col-auto col-lg-7 px-0">
+                                <p class="lead text-center">{{ . | markdownify }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+            </section>
+        {{ end }}
+
+        {{ partial "paige/toc.html" $page }}
+        {{ partial "paige/content.html" $page }}
+        {{ partial "paige/social.html" $page }}
+    </div>
+</article>
+{{ end }}

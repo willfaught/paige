@@ -1,6 +1,14 @@
-{{ $page := . }}
+{{ $params := . }}
 
-{{ with $page.Param "paige.social" }}
+{{ $key := slice "paige" "social" }}
+{{ $page := $params }}
+
+{{ if reflect.IsMap $params }}
+    {{ $key = $params.key | default $key }}
+    {{ $page = $params.page }}
+{{ end }}
+
+{{ with index $page.Params $key }}
     <section>
         <nav>
             <div class="mb-3 text-center">
