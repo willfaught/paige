@@ -12,7 +12,7 @@
 {{ if $raw }}
     {{ $src = $src }}
 {{ else }}
-    {{ $resource := (partial "paige/func-resource.html" (dict
+    {{ $resource := (partial "paige/resource.html" (dict
         "page" $page
         "url" $src
     )) | minify | fingerprint }}

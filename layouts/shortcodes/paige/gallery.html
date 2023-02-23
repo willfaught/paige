@@ -19,7 +19,7 @@
     {{ $resource := "" }}
 
     {{ if not $raw }}
-        {{ $resource = partial "paige/func-resource.html" (dict
+        {{ $resource = partial "paige/resource.html" (dict
             "page" .Page
             "url" $image
         ) }}

@@ -27,7 +27,7 @@
     {{ $src = relLangURL $src }}
 {{ else }}
     {{ if not $resource }}
-        {{ $resource = partial "paige/func-resource.html" (dict
+        {{ $resource = partial "paige/resource.html" (dict
             "page" $page
             "url" $src
         ) }}
