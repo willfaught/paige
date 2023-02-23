@@ -26,7 +26,7 @@
 {{ end }}
 
 {{ if .AlternativeOutputFormats }}
-    {{ $title := partial "paige/func-title.html" $page }}
+    {{ $title := partial "paige/title.html" $page }}
     {{ range .AlternativeOutputFormats }}
         <link href="{{ .Permalink | safeURL }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
     {{ end }}
