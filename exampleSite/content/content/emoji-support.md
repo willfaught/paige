@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: 2019-03-05
 description: Guide to emoji usage in Hugo.
 tags: [content, content, emoji]
 title: Emoji Support
+weight: 50
 ---
 
 Emoji can be enabled in a Hugo project in a number of ways.

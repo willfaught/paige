@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: "2023-01-05"
 description: Demonstration of the Paige gallery shortcode.
 tags: [figures, gallery, images, shortcodes]
 title: Gallery Shortcode
+weight: 50
 ---
 
 Paige provides a `paige/gallery` shortcode for displaying a list of images.

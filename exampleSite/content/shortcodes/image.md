@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: "2023-01-04"
 description: Demonstration of the Paige image shortcode.
 tags: [figures, images, shortcodes]
 title: Image Shortcode
+weight: 40
 ---
 
 Paige provides a `paige/image` shortcode for displaying an image.

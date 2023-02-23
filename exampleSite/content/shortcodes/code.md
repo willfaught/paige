@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: "2023-01-03"
 description: Demonstration of the Paige code shortcode.
 tags: [code, figures, shortcodes]
 title: Code Shortcode
+weight: 30
 ---
 
 Paige provides a `paige/code` shortcode for displaying code.

@@ -1,11 +1,11 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: "2023-02-12"
 description: Demonstration of the Paige search layout.
 layout: paige/search
 tags: [layouts, search]
 title: Search Layout
+weight: 20
 ---
 
 Paige provides a `paige/search` layout for site search.

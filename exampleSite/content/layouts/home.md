@@ -1,7 +1,6 @@
 ---
 authors: ["michael_bluth"]
 categories: ["paige"]
-date: "2023-02-22"
 description: "Demonstration of the Paige home layout."
 layout: "paige/home"
 paige:
@@ -106,6 +105,7 @@ paige:
             name: "YouTube"
             url: "https://youtube.com/user/username"
 title: "Home Layout"
+weight: 10
 ---
 
 Paige provides a `paige/home` layout for a home page.

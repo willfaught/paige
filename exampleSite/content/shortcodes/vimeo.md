@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: 2023-01-22
 description: Demonstration of the Paige Vimeo shortcode.
 tags: [shortcodes, videos, vimeo]
 title: Vimeo Shortcode
+weight: 70
 ---
 
 Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.

@@ -1,10 +1,10 @@
 ---
 authors: [michael_bluth]
 categories: [paige]
-date: 2023-01-20
 description: Demonstration of the Paige YouTube shortcode.
 tags: [shortcodes, videos, youtube]
 title: YouTube Shortcode
+weight: 60
 ---
 
 Paige provides a `paige/youtube` shortcode for playing YouTube videos.
