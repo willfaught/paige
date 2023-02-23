@@ -34,7 +34,6 @@ languages:
         name: Search
         url: /search/
         weight: 70
-    title: No Borders, No Limits
     weight: 10
 markup:
   goldmark:
