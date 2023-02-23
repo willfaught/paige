@@ -54,6 +54,35 @@ params:
   authors:
     michael_bluth:
       name: Michael Bluth
+  paige:
+    credit:
+      link:
+        hide: true
+    list:
+      authors:
+        hide: true
+      date:
+        hide: true
+      date_header:
+        hide: true
+      reading_time:
+        hide: true
+      summary:
+        hide: true
+      terms:
+        hide: true
+    main:
+      metadata:
+        authors:
+          hide: true
+        date:
+          hide: true
+        reading_time:
+          hide: true
+        terms:
+          hide: true
+      table_of_contents:
+        hide: true
 social:
   twitter: username
 theme: paige
