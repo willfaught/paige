@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["paige"]
+categories: ["content", "paige"]
 description: "Guide to emoji usage in Hugo."
-tags: ["content", "emoji"]
+tags: ["emoji"]
 title: "Emoji Support"
 weight: 50
 ---

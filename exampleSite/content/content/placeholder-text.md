@@ -1,7 +1,8 @@
 ---
 authors: ["will_faught"]
+categories: ["content", "paige"]
 description: "Lorem Ipsum Dolor Si Amet."
-tags: ["content", "markdown", "text"]
+tags: ["markdown", "text"]
 title: "Placeholder Text"
 weight: 30
 ---

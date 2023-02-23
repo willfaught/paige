@@ -1,7 +1,8 @@
 ---
 authors: ["will_faught"]
+categories: ["content", "paige"]
 description: "A brief description of Hugo Shortcodes."
-tags: ["content", "shortcodes", "privacy"]
+tags: ["shortcodes", "privacy"]
 title: "Rich Content"
 weight: 20
 ---

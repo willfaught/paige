@@ -1,6 +1,6 @@
 ---
 authors: ["will_faught"]
-categories: ["paige"]
+categories: ["layouts", "paige"]
 description: "Demonstration of the Paige home layout."
 layout: "paige/home"
 paige:

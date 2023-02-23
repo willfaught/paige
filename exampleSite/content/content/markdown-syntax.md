@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["paige"]
+categories: ["content", "paige"]
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-tags: ["content", "markdown", "css", "html"]
+tags: ["markdown", "css", "html"]
 title: "Markdown Syntax Guide"
 weight: 10
 ---

@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["paige"]
+categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige Vimeo shortcode."
-tags: ["shortcodes", "videos", "vimeo"]
+tags: ["videos", "vimeo"]
 title: "Vimeo Shortcode"
 weight: 70
 ---

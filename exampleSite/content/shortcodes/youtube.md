@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["paige"]
+categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige YouTube shortcode."
-tags: ["shortcodes", "videos", "youtube"]
+tags: ["videos", "youtube"]
 title: "YouTube Shortcode"
 weight: 60
 ---
