@@ -1,10 +1,10 @@
 ---
-authors: [will_faught]
-categories: [paige]
-description: Demonstration of the Paige search layout.
-layout: paige/search
-tags: [layouts, search]
-title: Search Layout
+authors: ["will_faught"]
+categories: ["paige"]
+description: "Demonstration of the Paige search layout."
+layout: "paige/search"
+tags: ["layouts", "search"]
+title: "Search Layout"
 weight: 20
 ---
 

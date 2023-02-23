@@ -1,10 +1,10 @@
 ---
-authors: [will_faught]
-description: A brief guide to setup KaTeX.
+authors: ["will_faught"]
+description: "A brief guide to setup KaTeX."
 paige:
     math: true
-tags: [content, katex, math, typesetting]
-title: Math Typesetting
+tags: ["content", "katex", "math", "typesetting"]
+title: "Math Typesetting"
 weight: 40
 ---
 

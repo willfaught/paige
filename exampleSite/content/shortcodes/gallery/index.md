@@ -1,9 +1,9 @@
 ---
-authors: [will_faught]
-categories: [paige]
-description: Demonstration of the Paige gallery shortcode.
-tags: [figures, gallery, images, shortcodes]
-title: Gallery Shortcode
+authors: ["will_faught"]
+categories: ["paige"]
+description: "Demonstration of the Paige gallery shortcode."
+tags: ["figures", "gallery", "images", "shortcodes"]
+title: "Gallery Shortcode"
 weight: 50
 ---
 

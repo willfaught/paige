@@ -1,9 +1,9 @@
 ---
-authors: [will_faught]
-categories: [paige]
-description: Demonstration of the Paige code shortcode.
-tags: [code, figures, shortcodes]
-title: Code Shortcode
+authors: ["will_faught"]
+categories: ["paige"]
+description: "Demonstration of the Paige code shortcode."
+tags: ["code", "figures", "shortcodes"]
+title: "Code Shortcode"
 weight: 30
 ---
 

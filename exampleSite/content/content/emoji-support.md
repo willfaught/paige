@@ -1,9 +1,9 @@
 ---
-authors: [will_faught]
-categories: [paige]
-description: Guide to emoji usage in Hugo.
-tags: [content, content, emoji]
-title: Emoji Support
+authors: ["will_faught"]
+categories: ["paige"]
+description: "Guide to emoji usage in Hugo."
+tags: ["content", "emoji"]
+title: "Emoji Support"
 weight: 50
 ---
 

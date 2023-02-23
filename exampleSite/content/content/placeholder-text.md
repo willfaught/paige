@@ -1,8 +1,8 @@
 ---
-authors: [will_faught]
-description: Lorem Ipsum Dolor Si Amet.
-tags: [content, markdown, text]
-title: Placeholder Text
+authors: ["will_faught"]
+description: "Lorem Ipsum Dolor Si Amet."
+tags: ["content", "markdown", "text"]
+title: "Placeholder Text"
 weight: 30
 ---
 

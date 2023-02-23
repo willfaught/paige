@@ -1,4 +1,4 @@
 ---
-layout: paige/search
-title: Search
+layout: "paige/search"
+title: "Search"
 ---

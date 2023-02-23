@@ -1,8 +1,8 @@
 ---
-authors: [will_faught]
-description: A brief description of Hugo Shortcodes.
-tags: [content, shortcodes, privacy]
-title: Rich Content
+authors: ["will_faught"]
+description: "A brief description of Hugo Shortcodes."
+tags: ["content", "shortcodes", "privacy"]
+title: "Rich Content"
 weight: 20
 ---
 
