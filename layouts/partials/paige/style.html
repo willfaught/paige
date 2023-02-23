@@ -5,46 +5,46 @@ body, html {
     height: 100%;
 }
 
-section.paige-content {
+.paige-content {
     counter-reset: paige-figure;
 }
 
-section.paige-content figure.paige-figure.paige-figure-numbered {
+.paige-content .paige-figure.paige-figure-numbered {
     counter-increment: paige-figure;
 }
 
-section.paige-content figure.paige-figure.paige-figure-numbered figcaption:empty::before {
+.paige-content .paige-figure.paige-figure-numbered figcaption:empty::before {
     content: "{{ i18n `paige_figure` }} " counter(paige-figure);
 }
 
-section.paige-content figure.paige-figure.paige-figure-numbered figcaption::before {
+.paige-content .paige-figure.paige-figure-numbered figcaption::before {
     content: "{{ i18n `paige_figure` }} " counter(paige-figure) ": ";
 }
 
-section.paige-content > blockquote {
+.paige-content > blockquote {
     padding: 0.5rem 1rem;
     border-left: 0.25rem solid var(--bs-border-color);
     padding-right: 0.25rem;
 }
 
-section.paige-content > blockquote p:last-of-type {
+.paige-content > blockquote p:last-of-type {
     margin-bottom: 0;
 }
 
 {{ with $page.Param "paige.main.content.max_width" }}
-    section.paige-content {
+    .paige-content {
         max-width: {{ . }};
     }
 {{ end }}
 
 {{ with $page.Param "paige.main.table_of_contents.max_width" }}
-    section.paige-toc {
+    .paige-toc {
         max-width: {{ . }};
     }
 {{ end }}
 
 {{ with $page.Param "paige.main.metadata.max_width" }}
-    section.paige-metadata {
+    .paige-metadata {
         max-width: {{ . }};
     }
 {{ end }}
