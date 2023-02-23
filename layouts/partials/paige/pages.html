@@ -16,7 +16,7 @@
             </section>
         {{ end }}
     {{ else }}
-        {{ $p := $page.Paginate ($page.Pages.ByDate.Reverse.GroupByDate "January 2006") }}
+        {{ $p := $page.Paginate ($page.Pages.ByPublishDate.Reverse.GroupByPublishDate "January 2006") }}
         <section id="paige-pages">
             {{ range $p.PageGroups }}
                 {{ if $page.Param "paige.list.date_header.hide" | not }}
