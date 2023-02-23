@@ -104,6 +104,7 @@ paige:
             bootstrap_icon: "youtube"
             name: "YouTube"
             url: "https://youtube.com/user/username"
+tags: ["home"]
 title: "Home Layout"
 weight: 10
 ---
