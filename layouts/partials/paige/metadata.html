@@ -8,7 +8,7 @@
     {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
-{{ $authors := cond ($page.Param "paige.main.metadata.authors.hide" | not) (partial "paige/func-authors.html" $page) "" }}
+{{ $authors := cond ($page.Param "paige.main.metadata.authors.hide" | not) (partial "paige/authors.html" $page) "" }}
 {{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
 {{ $categories := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
 {{ $commiturl := "" }}

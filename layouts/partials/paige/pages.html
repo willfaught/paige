@@ -23,7 +23,7 @@
                     <p class="{{ $.Param `paige.list.date_header.class` | default `h5 paige-date-header text-center` }}">{{ .Key }}</p>
                 {{ end }}
                 {{ range .Pages }}
-                    {{ $authors := cond ($page.Param "paige.list.authors.hide" | not) (partial "paige/func-authors.html" .) "" }}
+                    {{ $authors := cond ($page.Param "paige.list.authors.hide" | not) (partial "paige/authors.html" .) "" }}
                     {{ $authorsclass := $page.Param "paige.list.authors.class" | default "mb-0 paige-authors text-center text-secondary" }}
                     {{ $categories := cond ($page.Param "paige.list.terms.hide" | not) (.Params.categories | default slice) slice | uniq }}
                     {{ $commiturl := "" }}

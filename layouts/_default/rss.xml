@@ -45,7 +45,7 @@
         {{ end }}
         {{ range $pages }}
             <item>
-                {{ with partial "paige/func-authors.html" . }}
+                {{ with partial "paige/authors.html" . }}
                     <author>{{ . }}</author>
                 {{ end }}
                 {{ if .Content }}
