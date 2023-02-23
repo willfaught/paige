@@ -1,5 +1,5 @@
 ---
-authors: [michael_bluth]
+authors: [will_faught]
 description: A brief guide to setup KaTeX.
 paige:
     math: true

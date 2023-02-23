@@ -1,5 +1,5 @@
 ---
-authors: [michael_bluth]
+authors: [will_faught]
 description: A brief description of Hugo Shortcodes.
 tags: [content, shortcodes, privacy]
 title: Rich Content

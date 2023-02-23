@@ -52,8 +52,8 @@ outputs:
 paginate: 50
 params:
   authors:
-    michael_bluth:
-      name: Michael Bluth
+    will_faught:
+      name: Will Faught
   paige:
     credit:
       link:

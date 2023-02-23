@@ -1,5 +1,5 @@
 ---
-authors: [michael_bluth]
+authors: [will_faught]
 categories: [paige]
 description: Demonstration of the Paige image shortcode.
 tags: [figures, images, shortcodes]

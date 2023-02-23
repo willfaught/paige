@@ -1,5 +1,5 @@
 ---
-authors: [michael_bluth]
+authors: [will_faught]
 categories: [paige]
 description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
 tags: [content, markdown, css, html]

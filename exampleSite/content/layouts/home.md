@@ -1,5 +1,5 @@
 ---
-authors: ["michael_bluth"]
+authors: ["will_faught"]
 categories: ["paige"]
 description: "Demonstration of the Paige home layout."
 layout: "paige/home"
@@ -116,7 +116,7 @@ These are the parameters for this page:
 
 ```yaml
 ---
-authors: ["michael_bluth"]
+authors: ["will_faught"]
 categories: ["paige"]
 date: "2023-02-22"
 description: "Demonstration of the Paige home layout."

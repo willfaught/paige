@@ -1,5 +1,5 @@
 ---
-authors: [michael_bluth]
+authors: [will_faught]
 categories: [paige]
 description: Guide to emoji usage in Hugo.
 tags: [content, content, emoji]
