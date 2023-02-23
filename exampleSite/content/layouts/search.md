@@ -23,8 +23,8 @@ Example `content/layouts/search.md`:
 
 ```yaml
 ---
-layout: paige/search
-title: Search Layout
+layout: "paige/search"
+title: "Search Layout"
 ---
 ```
 
