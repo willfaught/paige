@@ -82,6 +82,8 @@ params:
           hide: true
         date:
           hide: true
+        git:
+          commit_url_prefix: "https://github.com/willfaught/paige/commit/"
         reading_time:
           hide: true
         terms:
