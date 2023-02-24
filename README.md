@@ -893,12 +893,14 @@ The HTML title is the page title, followed by a middle dot, followed by the site
 If one is missing, the other is used without the middle dot.
 For the home page, the title is the page title, or the site title otherwise.
 
-The HTML body can have a header, a body, and a footer.
-The header has the menu, the page title, the page description, the page authors, and the page date.
-The body has the page content.
+The HTML body has a header, a body, and a footer.
+The header has the menu.
+The body has the page article.
 The footer has the copyright notice and the theme link.
+The article has the page metadata, table of contents, and content.
+The metadata has the page title, description, terms, authors, date, and reading time.
 
-The page title and description can be Markdown. Markup is stripped for HTML and RSS titles.
+The copyright notice, title, and description can be Markdown. Markup is stripped for HTML and RSS titles.
 
 The page title is displayed in an `h1` tag, so page content headers must start with `h2`.
 
