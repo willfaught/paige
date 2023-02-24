@@ -914,8 +914,6 @@ The following NPM packages are used:
 - Bootstrap Icons 1.10.3
 - KaTeX 0.16.4
 
-The files are checked into in the repository.
-
 Bootstrap JS and SCSS files can be loaded manually at `paige/bootstrap`,
 e.g. `paige/bootstrap/alert.js` and `paige/bootstrap/_alert.scss`.
 
