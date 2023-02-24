@@ -910,9 +910,9 @@ The page date is the publish date.
 
 The following NPM packages are used:
 
-- Bootstrap 5.3.0-alpha1
-- Bootstrap Icons 1.10.3
-- KaTeX 0.16.4
+- [bootstrap](https://www.npmjs.com/package/bootstrap/v/5.3.0-alpha1)
+- [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons/v/1.10.3)
+- [katex](https://www.npmjs.com/package/katex/v/0.16.4)
 
 Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
 
