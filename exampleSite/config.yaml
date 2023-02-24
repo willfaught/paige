@@ -1,3 +1,4 @@
+baseurl: http://localhost
 copyright: © Will Faught
 enablerobotstxt: true
 languagecode: en-us
