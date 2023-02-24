@@ -218,7 +218,7 @@ paige:
       host_url: ""
     mixpanel: # See https://mixpanel.com
       token: ""
-    plausible: # plausible.io
+    plausible: # See https://plausible.io
       account_id: ""
     woopra: # See https://woopra.com
       domain: ""
@@ -233,7 +233,7 @@ paige:
       script_url: ""
     hyvor: # See https://hyvor.com
       account_id: ""
-    intensedebate: # intensedebate.com
+    intensedebate: # See https://intensedebate.com
       account_id: ""
     isso: # See https://isso-comments.de
       script_url: ""
