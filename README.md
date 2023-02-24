@@ -202,48 +202,48 @@ There is a single parameter object with sensible defaults that can be overridden
 paige:
   analytics:
     chartbeat: # See https://chartbeat.com
-      account_id: "" # Example is "123456"
-      domain: "" # Example is "example.com"
+      account_id: ""
+      domain: ""
     clicky: # See https://clicky.com
-      account_id: "" # Example is "123456"
+      account_id: ""
     fathom: # See https://usefathom.com
-      account_id: "" # Example is "123456"
+      account_id: ""
     finteza: # See https://finteza.com
-      account_id: "" # Example is "123456"
-      script_url: "" # Example is "https://example.com/script.js"
+      account_id: ""
+      script_url: ""
     hotjar: # See https://hotjar.com
-      account_id: "" # Example is "123456"
+      account_id: ""
     matomo: # See https://matomo.org
-      account_id: "" # Example is "123456"
-      host_url: "" # Example is "https://example.com"
+      account_id: ""
+      host_url: ""
     mixpanel: # See https://mixpanel.com
-      token: "" # Example is "123456"
+      token: ""
     plausible: # plausible.io
-      account_id: "" # Example is "123456"
+      account_id: ""
     woopra: # See https://woopra.com
-      domain: "" # Example is "example.com"
+      domain: ""
     yandex: # See https://metrica.yandex.com
-      account_id: "" # Example is "123456"
+      account_id: ""
   color: "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
   color_scheme: "" # Always use this color scheme without automatic switching; must be "", "light", or "dark"
   comments:
     cactus: # See https://cactus.chat
-      account_id: "" # Example is "123456"
+      account_id: ""
     commento: # See https://commento.io
-      script_url: "" # Example is "https://example.com/script.js"
+      script_url: ""
     hyvor: # See https://hyvor.com
-      account_id: "" # Example is "123456"
+      account_id: ""
     intensedebate: # intensedebate.com
-      account_id: "" # Example is "123456"
+      account_id: ""
     isso: # See https://isso-comments.de
-      script_url: "" # Example is "https://example.com/script.js"
+      script_url: ""
     remark42: # See https://remark42.com
-      host_url: "" # Example is "https://example.com"
-      site_id: "" # Example is "123456"
+      host_url: ""
+      site_id: ""
     replybox: # See https://getreplybox.com
-      account_id: "" # Example is "123456"
+      account_id: ""
     utterances: # See https://utteranc.es
-      github_repo: "" # Example is "example/foo"
+      github_repo: ""
   credit:
     data:
       hide: false # Don't credit this project in a data attribute
