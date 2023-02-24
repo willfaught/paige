@@ -22,18 +22,22 @@ languages:
         name: Shortcodes
         url: /shortcodes/
         weight: 40
+      - identifier: configuration
+        name: Configuration
+        url: /configuration/
+        weight: 50
       - identifier: categories
         name: Categories
         url: /categories/
-        weight: 50
+        weight: 60
       - identifier: tags
         name: Tags
         url: /tags/
-        weight: 60
+        weight: 70
       - identifier: search
         name: Search
         url: /search/
-        weight: 70
+        weight: 80
     weight: 10
 markup:
   goldmark:

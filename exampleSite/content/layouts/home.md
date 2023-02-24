@@ -118,8 +118,7 @@ These are the parameters for this page:
 ```yaml
 ---
 authors: ["will_faught"]
-categories: ["paige"]
-date: "2023-02-22"
+categories: ["layouts", "paige"]
 description: "Demonstration of the Paige home layout."
 layout: "paige/home"
 paige:
@@ -223,6 +222,8 @@ paige:
       bootstrap_icon: "youtube"
       name: "YouTube"
       url: "https://youtube.com/user/username"
+tags: ["home"]
 title: "Home Layout"
+weight: 10
 ---
 ```
