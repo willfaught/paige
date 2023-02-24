@@ -388,7 +388,7 @@ paige:
 
 ## Layouts
 
-## Home
+### Home
 
 The `paige/home` layout provides a home page.
 
@@ -413,7 +413,7 @@ paige:
 
 The assigned values shown are the default values.
 
-## Search
+### Search
 
 The `paige/search` layout provides full site search.
 
