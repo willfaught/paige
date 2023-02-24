@@ -21,7 +21,7 @@ jobs:
         run: |
           cd exampleSite
           npm install
-          hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify --themesDir ../..
+          hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --themesDir ../..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -39,7 +39,7 @@ jobs:
   #       run: |
   #         cd exampleSite
   #         npm install
-  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify --themesDir ../..
+  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --themesDir ../..
   deploy:
     environment:
       name: github-pages
