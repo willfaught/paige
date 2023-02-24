@@ -36,8 +36,6 @@
                     {{ $expired := and .ExpiryDate (lt .ExpiryDate now) }}
                     {{ $flags := slice }}
                     {{ $future := and .PublishDate (gt .PublishDate now) }}
-                    {{ $lastmod := cond (eq $date .Lastmod) "" .Lastmod }}
-                    {{ $lastmodshow := and $lastmod ($page.Param "paige.main.metadata.date.lastmod.hide" | not) }}
                     {{ $modified := and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
                     {{ $readingtime := cond ($page.Param "paige.list.reading_time.hide" | not) .ReadingTime "" }}
                     {{ $readingtimeclass := $page.Param "paige.list.reading_time.class" | default "mb-0 paige-reading-time text-center text-secondary" }}
@@ -115,16 +113,14 @@
 
                         {{ with $date }}
                             <p {{ with $dateclass }} class="{{ . }}" {{ end }}>
-                                {{ if $lastmodshow }}
-                                    <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time> &middot; {{ with $commiturl }} <a class="link-secondary text-decoration-none" href="{{ . }}"> {{ end }} <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat $lastmod }}</time> {{ if $commiturl }} </a> {{ end }}
-                                {{ else }}
-                                    {{ with $commiturl }}
-                                        <a class="link-secondary text-decoration-none" href="{{ . }}">
-                                    {{ end }}
-                                        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
-                                    {{ if $commiturl }}
-                                        </a>
-                                    {{ end }}
+                                {{ with $commiturl }}
+                                    <a class="link-secondary text-decoration-none" href="{{ . }}">
+                                {{ end }}
+
+                                <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+
+                                {{ if $commiturl }}
+                                    </a>
                                 {{ end }}
                             </p>
                         {{ end }}

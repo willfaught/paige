@@ -12,13 +12,11 @@
 {{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
 {{ $categories := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
 {{ $commiturl := "" }}
-{{ $date := cond ($page.Param "paige.main.metadata.date.hide" | not) $page.PublishDate "" }}
+{{ $date := cond ($page.Param "paige.main.metadata.date.hide" | not) (cond (eq ($page.Param "paige.date" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
 {{ $dateclass := $page.Param "paige.main.metadata.date.class" | default "paige-date text-center text-secondary" }}
 {{ $dateformat := $page.Param "paige.main.metadata.date.format" | default ":date_long" }}
 {{ $description := cond ($page.Param "paige.main.metadata.description.hide" | not) ($page.Description | markdownify) "" }}
 {{ $descriptionclass := $page.Param "paige.main.metadata.description.class" | default "lead paige-description text-center" }}
-{{ $lastmod := cond (eq $date $page.Lastmod) "" $page.Lastmod }}
-{{ $lastmodshow := and $lastmod ($page.Param "paige.main.metadata.date.lastmod.hide" | not) }}
 {{ $nogap := "mb-0" }}
 {{ $readingtime := cond ($page.Param "paige.main.metadata.reading_time.hide" | not) $page.ReadingTime "" }}
 {{ $readingtimeclass := $page.Param "paige.main.metadata.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
@@ -68,16 +66,14 @@
 
     {{ with $date }}
         <p {{ if or $dateclass $readingtime }} class="{{ if $readingtime }} {{ $nogap }} {{ end }} {{ with $dateclass }} {{ . }} {{ end }}" {{ end }}>
-            {{ if $lastmodshow }}
-                <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time> &middot; {{ with $commiturl }} <a class="link-secondary text-decoration-none" href="{{ . }}"> {{ end }} <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat $lastmod }}</time> {{ if $commiturl }} </a> {{ end }}
-            {{ else }}
-                {{ with $commiturl }}
-                    <a class="link-secondary text-decoration-none" href="{{ . }}">
-                {{ end }}
-                    <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
-                {{ if $commiturl }}
-                    </a>
-                {{ end }}
+            {{ with $commiturl }}
+                <a class="link-secondary text-decoration-none" href="{{ . }}">
+            {{ end }}
+
+            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+
+            {{ if $commiturl }}
+                </a>
             {{ end }}
         </p>
     {{ end }}

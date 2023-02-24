@@ -249,6 +249,7 @@ paige:
       hide: false # Don't credit this project in a data attribute
     link:
       hide: false # Don't credit this project in the footer
+  date: "published" # Page date displayed; must be "published" or "modified"
   header:
     menu:
       breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
@@ -295,8 +296,6 @@ paige:
         class: "text-center text-secondary"
         format: ":date_long" # Hugo date format
         hide: false
-        lastmod:
-          hide: false
       description:
         class: "lead text-center"
         hide: false
