@@ -21,7 +21,7 @@
     {{ partial "paige/link.html" (dict "href" "paige/bootstrap/bootstrap.css") }}
 {{ end }}
 
-{{ if or ($page.Param "paige.math") (and ($page.Param "paige.list.content.show") (where $page.Pages "Params.paige.math" "eq" true)) }}
+{{ if or ($page.Param "paige.math") (and ($page.Param "paige.section_pages.full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/link.html" (dict "href" "paige/katex/katex.css") }}
 {{ end }}
 

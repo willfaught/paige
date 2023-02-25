@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ if $page.Pages }}
-    {{ if $page.Param "paige.list.content.show" }}
+    {{ if $page.Param "paige.section_pages.full_pages" }}
         {{ $p := $page.Paginate $page.Pages }}
         <section id="paige-pages">
             {{ range $p.Pages }}

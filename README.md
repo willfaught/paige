@@ -258,9 +258,8 @@ paige:
     source: "published" # Displayed date in single pages; must be "published" or "modified"
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
-  list:
-    content:
-      show: false
+  section_pages:
+    full_pages: false # Display full pages in the list of pages.
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
