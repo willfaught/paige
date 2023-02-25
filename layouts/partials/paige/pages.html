@@ -45,8 +45,7 @@
                     {{ $tags := cond ($page.Param "paige.list.terms.hide" | not) (.Params.tags | default slice) slice | uniq }}
                     {{ $termsinnerclass := $page.Param "paige.list.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
                     {{ $termsouterclass := $page.Param "paige.list.terms.outer_class" | default "mb-0 paige-terms-outer text-center" }}
-                    {{ $title := cond ($page.Param "paige.list.title.hide" | not) (.Title | markdownify) "" }}
-                    {{ $titleclass := $page.Param "paige.list.title.class" | default "mb-0 paige-title text-center" }}
+                    {{ $title := .Title | markdownify }}
                     {{ $titlelink := .RelPermalink }}
 
                     {{ if and ($page.Param "paige.git.commit_url_prefix") $page.GitInfo }}
@@ -78,7 +77,7 @@
 
                     <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
                         {{ with $title }}
-                            <p {{ with $titleclass }} class="{{ . }}" {{ end }}><a href="{{ $titlelink }}">{{ . }}</a></p>
+                            <p class="mb-0 paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
                         {{ end }}
 
                         {{ with $description }}

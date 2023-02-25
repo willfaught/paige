@@ -296,9 +296,6 @@ paige:
       hide: false
       inner_class: "badge text-bg-secondary text-decoration-none"
       outer_class: "mb-0 text-center"
-    title:
-      class: "mb-0 text-center"
-      hide: false
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
@@ -323,9 +320,6 @@ paige:
     class: "border mb-3 pe-3 ps-3 pt-3 rounded"
     hide: false
     max_width: ""
-  title:
-    class: "display-5 fw-bold text-center"
-    hide: false
 ```
 
 The assigned values shown are the default values.

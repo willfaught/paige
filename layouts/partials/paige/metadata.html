@@ -23,8 +23,7 @@
 {{ $tags := cond ($page.Param "paige.terms.hide" | not) ($page.Params.tags | default slice) slice | uniq }}
 {{ $termsinnerclass := $page.Param "paige.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
 {{ $termsouterclass := $page.Param "paige.terms.outer_class" | default "paige-terms-outer text-center" }}
-{{ $title := cond ($page.Param "paige.title.hide" | not) ($page.Title | markdownify) "" }}
-{{ $titleclass := $page.Param "paige.title.class" | default "display-5 fw-bold paige-title text-center" }}
+{{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.Params.link }}
 {{ $titlepage := $page.RelPermalink }}
 
@@ -34,7 +33,7 @@
 
 <section class="paige-metadata w-100">
     {{ with $title }}
-        <h1 {{ with $titleclass }} class="{{ . }}" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $listshowcontent }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
+        <h1 class="display-5 fw-bold paige-title text-center">{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $listshowcontent }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
     {{ end }}
 
     {{ with $description }}
