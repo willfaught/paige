@@ -224,6 +224,9 @@ paige:
       domain: ""
     yandex: # See https://metrica.yandex.com
       account_id: ""
+  authors:
+    class: "text-center text-secondary"
+    hide: false
   color: "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
   color_scheme: "" # Always use this color scheme without automatic switching; must be "", "light", or "dark"
   comments:
@@ -244,6 +247,10 @@ paige:
       account_id: ""
     utterances: # See https://utteranc.es
       github_repo: ""
+  content:
+    class: "mw-100 paige-content"
+    hide: false
+    max_width: ""
   credit:
     data:
       hide: false # Don't credit this project in a data attribute
@@ -254,9 +261,11 @@ paige:
     format: ":date_long" # Hugo date format
     hide: false
     source: "published" # Displayed date; must be "published" or "modified"
-  menu:
-    breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
-    style: "pills" # Must be "links" or "pills"
+  description:
+    class: "lead text-center"
+    hide: false
+  git:
+    commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   list:
     authors:
       class: "mb-0 text-center text-secondary"
@@ -290,41 +299,32 @@ paige:
     title:
       class: "mb-0 text-center"
       hide: false
+  math: false # Enable math typesetting
+  menu:
+    breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
+    style: "pills" # Must be "links" or "pills"
   metadata:
     max_width: ""
-  authors:
-    class: "text-center text-secondary"
-    hide: false
-  description:
-    class: "lead text-center"
-    hide: false
-  git:
-    commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   reading_time:
     class: "text-center text-secondary"
     hide: false
-  terms:
-    hide: false
-    inner_class: "badge text-bg-secondary text-decoration-none"
-    outer_class: "text-center"
-  title:
-    class: "display-5 fw-bold text-center"
-    hide: false
-  table_of_contents:
-    class: "border mb-3 pe-3 ps-3 pt-3 rounded"
-    hide: false
-    max_width: ""
-  content:
-    class: "mw-100 paige-content"
-    hide: false
-    max_width: ""
-  math: false # Enable math typesetting
   rss:
     hide_page: false
     managing_editor: ""
     web_master: ""
   search:
     hide_page: false
+  terms:
+    hide: false
+    inner_class: "badge text-bg-secondary text-decoration-none"
+    outer_class: "text-center"
+  table_of_contents:
+    class: "border mb-3 pe-3 ps-3 pt-3 rounded"
+    hide: false
+    max_width: ""
+  title:
+    class: "display-5 fw-bold text-center"
+    hide: false
 ```
 
 The assigned values shown are the default values.
