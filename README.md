@@ -753,6 +753,8 @@ It has the parameters of the `paige/figure` shortcode.
 | `partials/paige/header-last.html`  | The end of the header tag       |
 | `partials/paige/main-first.html`   | The beginning of the main tag   |
 | `partials/paige/main-last.html`    | The end of the main tag         |
+| `partials/paige/style-first.html`  | The beginning of the style tag  |
+| `partials/paige/style-last.html`   | The end of the style tag        |
 
 ### Override
 

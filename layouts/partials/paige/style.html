@@ -1,6 +1,10 @@
 {{ $page := . }}
 
 <style>
+{{ if templates.Exists "partials/paige/style-first.css" }}
+    {{ partial "paige/style-first.css" $page | safeCSS }}
+{{ end }}
+
 body, html {
     height: 100%;
 }
@@ -95,5 +99,9 @@ body, html {
     @media (prefers-color-scheme: light) {
         {{ partial "paige/light.css" . | safeCSS }}
     }
+{{ end }}
+
+{{ if templates.Exists "partials/paige/style-last.css" }}
+    {{ partial "paige/style-last.css" $page | safeCSS }}
 {{ end }}
 </style>
