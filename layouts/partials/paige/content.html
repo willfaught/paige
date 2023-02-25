@@ -8,15 +8,10 @@
     {{ $page = $params.page }}
 {{ end }}
 
-{{ $class := $page.Param "paige.content.class" | default "mw-100 paige-content" }}
-{{ $content := "" }}
-
-{{ if $page.Param "paige.content.hide" | not }}
-    {{ $content = cond ($fullpages | not) ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` (printf `${1}<a aria-label="%v" class="paige-header-link" href="#${2}">#</a>${3}` (i18n "paige_aria_section_link")) | safeHTML) $page.Content }}
-{{ end }}
+{{ $content := cond ($fullpages | not) ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` (printf `${1}<a aria-label="%v" class="paige-header-link" href="#${2}">#</a>${3}` (i18n "paige_aria_section_link")) | safeHTML) $page.Content }}
 
 {{ with $content }}
-    <section class="{{ $class }}">
+    <section class="mw-100 paige-content">
         {{ . }}
     </section>
 {{ end }}

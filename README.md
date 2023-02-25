@@ -245,8 +245,6 @@ paige:
     utterances: # See https://utteranc.es
       github_repo: ""
   content:
-    class: "mw-100 paige-content"
-    hide: false
     max_width: ""
   credit:
     data:
