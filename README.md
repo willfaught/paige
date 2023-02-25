@@ -244,9 +244,6 @@ paige:
       account_id: ""
     utterances: # See https://utteranc.es
       github_repo: ""
-  credit:
-    data:
-      hide: false # Don't credit this project in a data attribute
   date:
     format: ":date_long" # Hugo date format
     source: "published" # Displayed date in single pages; must be "published" or "modified"
