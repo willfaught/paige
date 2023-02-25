@@ -20,7 +20,6 @@
 {{ $nogap := "mb-0" }}
 {{ $readingtime := cond ($page.Param "paige.reading_time.hide" | not) $page.ReadingTime "" }}
 {{ $readingtimeclass := $page.Param "paige.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
-{{ $sectionclass := "paige-metadata w-100" }}
 {{ $tags := cond ($page.Param "paige.terms.hide" | not) ($page.Params.tags | default slice) slice | uniq }}
 {{ $termsinnerclass := $page.Param "paige.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
 {{ $termsouterclass := $page.Param "paige.terms.outer_class" | default "paige-terms-outer text-center" }}
@@ -33,7 +32,7 @@
     {{ $commiturl = print ($page.Param "paige.git.commit_url_prefix") $page.GitInfo.Hash }}
 {{ end }}
 
-<section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
+<section class="paige-metadata w-100">
     {{ with $title }}
         <h1 {{ with $titleclass }} class="{{ . }}" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $listshowcontent }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
     {{ end }}

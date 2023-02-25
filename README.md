@@ -292,8 +292,6 @@ paige:
       hide: false
   metadata:
     max_width: ""
-    section:
-      class: "paige-metadata w-100"
   authors:
     class: "text-center text-secondary"
     hide: false
