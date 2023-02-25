@@ -15,8 +15,7 @@
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
 {{ $nogap := "mb-0" }}
-{{ $readingtime := cond ($page.Param "paige.reading_time.hide" | not) $page.ReadingTime "" }}
-{{ $readingtimeclass := $page.Param "paige.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
+{{ $readingtime := $page.ReadingTime }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
 {{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.Params.link }}
@@ -72,6 +71,6 @@
     {{ end }}
 
     {{ with $readingtime }}
-        <p {{ with $readingtimeclass }} class="{{ . }}" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
+        <p class="paige-reading-time text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
     {{ end }}
 </section>

@@ -266,9 +266,6 @@ paige:
       hide: false
     pages:
       hide: false
-    reading_time:
-      class: "mb-0 text-center text-secondary"
-      hide: false
     section:
       class: "mb-3 w-100"
   math: false # Enable math typesetting
@@ -277,9 +274,6 @@ paige:
     style: "pills" # Must be "links" or "pills"
   metadata:
     max_width: ""
-  reading_time:
-    class: "text-center text-secondary"
-    hide: false
   rss:
     hide_page: false
     managing_editor: ""
