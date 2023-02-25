@@ -12,10 +12,6 @@
     {{ partial "paige/links.html" $page }}
     {{ partial "paige/style.html" $page }}
 
-    {{ with $page.Param "paige.style" }}
-        <style>{{ . | safeCSS }}</style>
-    {{ end }}
-
     {{ if templates.Exists "partials/paige/head-last.html" }}
         {{ partial "paige/head-last.html" $page }}
     {{ end }}

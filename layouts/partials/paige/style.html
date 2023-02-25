@@ -101,6 +101,10 @@ body, html {
     }
 {{ end }}
 
+{{ with $page.Param "paige.style" }}
+    {{ . | safeCSS }}
+{{ end }}
+
 {{ if templates.Exists "partials/paige/style-last.css" }}
     {{ partial "paige/style-last.css" $page | safeCSS }}
 {{ end }}

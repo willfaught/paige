@@ -16,6 +16,8 @@ paige:
     hide: false
   terms:
     hide: false
+  style: |
+    .paige-authors { display: block; }
 tags: ["hide", "singles"]
 title: "Hide Configuration"
 weight: 10
