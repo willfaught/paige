@@ -8,18 +8,10 @@
     {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
-{{ $class := $page.Param "paige.table_of_contents.class" | default "border mb-3 pe-3 ps-3 pt-3 rounded" }}
-
-{{ if and $page.Content ($page.Param "paige.table_of_contents.hide" | not) (not $listshowcontent) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
+{{ if and $page.Content (not $listshowcontent) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
     <section class="paige-toc">
-        {{ with $class }}
-            <div class="{{ . }}">
-        {{ end }}
-
-        {{ $page.TableOfContents }}
-
-        {{ if $class }}
-            </div>
-        {{ end }}
+        <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
+            {{ $page.TableOfContents }}
+        </div>
     </section>
 {{ end }}

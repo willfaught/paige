@@ -274,8 +274,6 @@ paige:
     hide_page: false
   style: ""
   table_of_contents:
-    class: "border mb-3 pe-3 ps-3 pt-3 rounded"
-    hide: false
     max_width: ""
 ```
 
