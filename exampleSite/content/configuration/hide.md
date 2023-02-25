@@ -4,20 +4,18 @@ categories: ["configuration", "paige"]
 date: "2022-02-23"
 description: "Demonstration of the Paige hide configuration."
 paige:
-  main:
-    metadata:
-      authors:
-        hide: false
-      date:
-        hide: false
-      git:
-        commit_url_prefix: "https://github.com/willfaught/paige/commit/"
-      reading_time:
-        hide: false
-      terms:
-        hide: false
-    table_of_contents:
-      hide: false
+  authors:
+    hide: false
+  date:
+    hide: false
+  git:
+    commit_url_prefix: "https://github.com/willfaught/paige/commit/"
+  reading_time:
+    hide: false
+  table_of_contents:
+    hide: false
+  terms:
+    hide: false
 tags: ["hide", "singles"]
 title: "Hide Configuration"
 weight: 10

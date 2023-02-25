@@ -8,12 +8,10 @@ paige:
     image:
       stretch: true
       url: landscape.webp
-  main:
-    metadata:
-      reading_time:
-        hide: true
-      title:
-        class: display-1 fw-bold text-center
+  reading_time:
+    hide: true
+  title:
+    class: display-1 fw-bold text-center
   social:
     github:
       bootstrap_icon: github

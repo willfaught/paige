@@ -49,8 +49,8 @@
                     {{ $titleclass := $page.Param "paige.list.title.class" | default "mb-0 paige-title text-center" }}
                     {{ $titlelink := .RelPermalink }}
 
-                    {{ if and ($page.Param "paige.metadata.git.commit_url_prefix") $page.GitInfo }}
-                        {{ $commiturl = print ($page.Param "paige.metadata.git.commit_url_prefix") $page.GitInfo.Hash }}
+                    {{ if and ($page.Param "paige.git.commit_url_prefix") $page.GitInfo }}
+                        {{ $commiturl = print ($page.Param "paige.git.commit_url_prefix") $page.GitInfo.Hash }}
                     {{ end }}
 
                     {{ if $draft }}

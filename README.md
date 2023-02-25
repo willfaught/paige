@@ -249,11 +249,14 @@ paige:
       hide: false # Don't credit this project in a data attribute
     link:
       hide: false # Don't credit this project in the footer
-  date: "published" # Page date displayed; must be "published" or "modified"
-  header:
-    menu:
-      breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
-      style: "pills" # Must be "links" or "pills"
+  date:
+    class: "text-center text-secondary"
+    format: ":date_long" # Hugo date format
+    hide: false
+    source: "published" # Displayed date; must be "published" or "modified"
+  menu:
+    breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
+    style: "pills" # Must be "links" or "pills"
   list:
     authors:
       class: "mb-0 text-center text-secondary"
@@ -288,31 +291,27 @@ paige:
       class: "mb-0 text-center"
       hide: false
   metadata:
-    authors:
-      class: "text-center text-secondary"
-      hide: false
-    date:
-      class: "text-center text-secondary"
-      format: ":date_long" # Hugo date format
-      hide: false
-    description:
-      class: "lead text-center"
-      hide: false
-    git:
-      commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
     max_width: ""
-    reading_time:
-      class: "text-center text-secondary"
-      hide: false
     section:
       class: "paige-metadata w-100"
-    terms:
-      hide: false
-      inner_class: "badge text-bg-secondary text-decoration-none"
-      outer_class: "text-center"
-    title:
-      class: "display-5 fw-bold text-center"
-      hide: false
+  authors:
+    class: "text-center text-secondary"
+    hide: false
+  description:
+    class: "lead text-center"
+    hide: false
+  git:
+    commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
+  reading_time:
+    class: "text-center text-secondary"
+    hide: false
+  terms:
+    hide: false
+    inner_class: "badge text-bg-secondary text-decoration-none"
+    outer_class: "text-center"
+  title:
+    class: "display-5 fw-bold text-center"
+    hide: false
   table_of_contents:
     class: "border mb-3 pe-3 ps-3 pt-3 rounded"
     hide: false
