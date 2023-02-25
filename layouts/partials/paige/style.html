@@ -45,18 +45,6 @@ body, html {
     }
 {{ end }}
 
-{{ with $page.Param "paige.table_of_contents.max_width" }}
-    .paige-toc {
-        max-width: {{ . | safeCSS }};
-    }
-{{ end }}
-
-{{ with $page.Param "paige.metadata.max_width" }}
-    .paige-metadata {
-        max-width: {{ . | safeCSS }};
-    }
-{{ end }}
-
 .paige-figure .highlight .chroma pre, .paige-figure .highlight pre.chroma {
     margin-bottom: 0;
 }
@@ -82,6 +70,18 @@ body, html {
 .paige-header-link:focus, .paige-header-link:hover, :hover > .paige-header-link, :target > .paige-header-link {
     opacity: 1;
 }
+
+{{ with $page.Param "paige.metadata.max_width" }}
+    .paige-metadata {
+        max-width: {{ . | safeCSS }};
+    }
+{{ end }}
+
+{{ with $page.Param "paige.table_of_contents.max_width" }}
+    .paige-toc {
+        max-width: {{ . | safeCSS }};
+    }
+{{ end }}
 
 {{ with $page.Param "paige.color_scheme" }}
     {{ if eq . "dark" }}
