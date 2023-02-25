@@ -818,8 +818,6 @@ then replace that use of `paige/metadata.html` with your own design.
 These optional CSS names can be defined how you want:
 
 <dl>
-    <dt><code>#paige-container</code></dt>
-    <dd>The outermost element in the body.</dd>
     <dt><code>#paige-copyright</code></dt>
     <dd>The copyright in the footer.</dd>
     <dt><code>#paige-credit</code></dt>
@@ -834,6 +832,8 @@ These optional CSS names can be defined how you want:
     <dd>The page list in the list and term layouts.</dd>
     <dt><code>#paige-pagination</code></dt>
     <dd>The pagination links in the list and term layouts.</dd>
+    <dt><code>#paige-root</code></dt>
+    <dd>The outermost element in the body.</dd>
     <dt><code>.paige-article</code></dt>
     <dd>The page article.</dd>
     <dt><code>.paige-authors</code></dt>
