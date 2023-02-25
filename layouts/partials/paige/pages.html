@@ -33,7 +33,6 @@
                     {{ $future := and .PublishDate (gt .PublishDate now) }}
                     {{ $modified := and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
                     {{ $readingtime := .ReadingTime }}
-                    {{ $sectionclass := $page.Param "paige.list.section.class" | default "mb-3 paige-page w-100" }}
                     {{ $summary := .Summary | htmlUnescape | plainify }}
                     {{ $tags := .Params.tags | default slice | uniq }}
                     {{ $title := .Title | markdownify }}
@@ -64,9 +63,9 @@
                     {{ end }}
 
                     {{ $flags = delimit ($flags | uniq) " " }}
-                    {{ $sectionclass = delimit (split $sectionclass " " | append $flags | uniq | sort) " " }}
+                    {{ $class := delimit (slice "mb-3" "paige-page" "w-100" | append $flags | uniq | sort) " " }}
 
-                    <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
+                    <section class="{{ $class }}">
                         {{ with $title }}
                             <p class="mb-0 paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
                         {{ end }}

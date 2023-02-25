@@ -263,8 +263,6 @@ paige:
       show: false
     pages:
       hide: false
-    section:
-      class: "mb-3 w-100"
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
