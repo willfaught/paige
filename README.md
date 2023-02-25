@@ -277,9 +277,6 @@ paige:
       hide: false
     section:
       class: "mb-3 w-100"
-    summary:
-      class: "fst-italic mb-0 text-center"
-      hide: false
     terms:
       hide: false
       inner_class: "badge text-bg-secondary text-decoration-none"
