@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-<footer id="paige-footer">
+<footer class="mb-3" id="paige-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
@@ -9,7 +9,7 @@
         <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
     {{ end }}
 
-    <p class="text-center" id="paige-credit">
+    <p class="mb-0 text-center" id="paige-credit">
         <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>
     </p>
 
