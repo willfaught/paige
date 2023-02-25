@@ -1,23 +1,20 @@
 {{ $page := . }}
 
 {{ $copyright := site.Copyright | markdownify }}
-{{ $credit := $page.Param "paige.credit.link.hide" | not }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
 
-{{ if or $copyright $credit $first $last }}
+{{ if or $copyright $first $last }}
     <footer id="paige-footer">
         {{ if $first }}
             {{ partial "paige/footer-first.html" . }}
         {{ end }}
 
         {{ with $copyright }}
-            <p class="{{ if $credit }} mb-0 {{ end }} text-center text-secondary" id="paige-copyright">{{ . }}</p>
+            <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
         {{ end }}
 
-        {{ if $credit }}
-            <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" id="paige-credit">Paige Theme</a></p>
-        {{ end }}
+        <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" id="paige-credit">Paige Theme</a></p>
 
         {{ if $last }}
             {{ partial "paige/footer-last.html" . }}

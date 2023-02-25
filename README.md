@@ -247,8 +247,6 @@ paige:
   credit:
     data:
       hide: false # Don't credit this project in a data attribute
-    link:
-      hide: false # Don't credit this project in the footer
   date:
     format: ":date_long" # Hugo date format
     source: "published" # Displayed date in single pages; must be "published" or "modified"
@@ -272,7 +270,7 @@ paige:
 
 The assigned values shown are the default values.
 
-If you set `paige.credit.data.hide` or `paige.credit.link.hide`, please credit this project in a post to help others find it.
+If you set `paige.credit.data.hide`, please credit this project in a post to help others find it.
 
 ### Site parameters
 
@@ -830,6 +828,8 @@ Use these CSS selectors to extend the default styling:
     <dt><code>.paige-unpublished</code></dt>
     <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term layouts.</dd>
 </dl>
+
+If you hide `#paige-credit`, please credit this project in a post to help others find it.
 
 ## Design
 
