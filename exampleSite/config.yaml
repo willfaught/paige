@@ -1,4 +1,4 @@
-baseurl: "http://localhost"
+baseurl: "https://example.com"
 copyright: "© Will Faught"
 enablerobotstxt: true
 languagecode: "en-us"
