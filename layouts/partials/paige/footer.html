@@ -1,23 +1,17 @@
 {{ $page := . }}
 
-{{ $copyright := site.Copyright | markdownify }}
-{{ $first := templates.Exists "partials/paige/footer-first.html" }}
-{{ $last := templates.Exists "partials/paige/footer-last.html" }}
+<footer id="paige-footer">
+    {{ if templates.Exists "partials/paige/footer-first.html" }}
+        {{ partial "paige/footer-first.html" . }}
+    {{ end }}
 
-{{ if or $copyright $first $last }}
-    <footer id="paige-footer">
-        {{ if $first }}
-            {{ partial "paige/footer-first.html" . }}
-        {{ end }}
+    {{ with site.Copyright | markdownify }}
+        <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
+    {{ end }}
 
-        {{ with $copyright }}
-            <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
-        {{ end }}
+    <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" id="paige-credit">Paige Theme</a></p>
 
-        <p class="text-center"><a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" id="paige-credit">Paige Theme</a></p>
-
-        {{ if $last }}
-            {{ partial "paige/footer-last.html" . }}
-        {{ end }}
-    </footer>
-{{ end }}
+    {{ if templates.Exists "partials/paige/footer-last.html" }}
+        {{ partial "paige/footer-last.html" . }}
+    {{ end }}
+</footer>
