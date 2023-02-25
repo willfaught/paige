@@ -1,11 +1,11 @@
 {{ $params := . }}
 
+{{ $fullpages := false }}
 {{ $page := . }}
-{{ $listshowcontent := false }}
 
 {{ if reflect.IsMap $params }}
+    {{ $fullpages = $params.fullpages }}
     {{ $page = $params.page }}
-    {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
 {{ $authors := partial "paige/authors.html" $page }}
@@ -27,7 +27,7 @@
 
 <section class="paige-metadata w-100">
     {{ with $title }}
-        <h1 class="display-5 fw-bold paige-title text-center">{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $listshowcontent }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
+        <h1 class="display-5 fw-bold paige-title text-center">{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $fullpages }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
     {{ end }}
 
     {{ with $description }}

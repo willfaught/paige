@@ -1,13 +1,13 @@
 {{ $params := . }}
 
+{{ $fullpages := false }}
 {{ $page := . }}
-{{ $listshowcontent := false }}
 
 {{ if reflect.IsMap $params }}
+    {{ $fullpages = $params.fullpages }}
     {{ $page = $params.page }}
-    {{ $listshowcontent = $params.listshowcontent }}
 {{ else }}
-    {{ $params = dict "listshowcontent" $listshowcontent "page" $page }}
+    {{ $params = dict "fullpages" $fullpages "page" $page }}
 {{ end }}
 
 {{ $class := slice "paige-article" }}

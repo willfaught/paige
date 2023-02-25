@@ -5,7 +5,7 @@
         {{ $p := $page.Paginate $page.Pages }}
         <section id="paige-pages">
             {{ range $p.Pages }}
-                {{ partial "paige/article.html" (dict "listshowcontent" true "page" .) }}
+                {{ partial "paige/article.html" (dict "fullpages" true "page" .) }}
             {{ end }}
         </section>
         {{ if or $p.HasPrev $p.HasNext }}

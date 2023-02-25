@@ -1,14 +1,14 @@
 {{ $params := . }}
 
+{{ $fullpages := false }}
 {{ $page := . }}
-{{ $listshowcontent := false }}
 
 {{ if reflect.IsMap $params }}
+    {{ $fullpages = $params.fullpages }}
     {{ $page = $params.page }}
-    {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
-{{ if and $page.Content (not $listshowcontent) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
+{{ if and $page.Content (not $fullpages) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
     <section class="paige-toc">
         <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
             {{ $page.TableOfContents }}
