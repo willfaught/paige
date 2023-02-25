@@ -22,11 +22,11 @@ body, html {
 }
 
 .paige-content .paige-figure.paige-figure-numbered figcaption:empty::before {
-    content: "{{ i18n `paige_figure` }} " counter(paige-figure);
+    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure);
 }
 
 .paige-content .paige-figure.paige-figure-numbered figcaption::before {
-    content: "{{ i18n `paige_figure` }} " counter(paige-figure) ": ";
+    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure) ": ";
 }
 
 .paige-content > blockquote {
@@ -41,19 +41,19 @@ body, html {
 
 {{ with $page.Param "paige.content.max_width" }}
     .paige-content {
-        max-width: {{ . }};
+        max-width: {{ . | safeCSS }};
     }
 {{ end }}
 
 {{ with $page.Param "paige.table_of_contents.max_width" }}
     .paige-toc {
-        max-width: {{ . }};
+        max-width: {{ . | safeCSS }};
     }
 {{ end }}
 
 {{ with $page.Param "paige.metadata.max_width" }}
     .paige-metadata {
-        max-width: {{ . }};
+        max-width: {{ . | safeCSS }};
     }
 {{ end }}
 
