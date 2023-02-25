@@ -4,29 +4,20 @@ categories: ["configuration", "paige"]
 date: "2022-02-23"
 description: "Demonstration of the Paige configuration."
 paige:
-  authors:
-    hide: false
-  date:
-    hide: false
-  list:
-    authors:
-      hide: false
-    date:
-      hide: false
-    date_header:
-      hide: false
-    reading_time:
-      hide: false
-    summary:
-      hide: false
-    terms:
-      hide: false
-  reading_time:
-    hide: false
-  terms:
-    hide: false
-  table_of_contents:
-    hide: false
+  style: |
+    .paige-authors,
+    .paige-date,
+    .paige-reading-time,
+    .paige-terms-outer,
+    .paige-toc,
+    #paige-credit,
+    #paige-pages .paige-authors,
+    #paige-pages .paige-date-header,
+    #paige-pages .paige-date,
+    #paige-pages .paige-summary,
+    #paige-pages .paige-terms {
+        display: block;
+    }
 tags: ["lists"]
 title: "Configuration"
 ---
@@ -35,33 +26,24 @@ This site hides some list page data by default. This page shows it all.
 
 <!--more-->
 
+## Parameters
+
 This page has the following parameters:
 
 ```yaml
 paige:
-  list:
-    authors:
-      hide: false
-    date:
-      hide: false
-    date_header:
-      hide: false
-    reading_time:
-      hide: false
-    summary:
-      hide: false
-    terms:
-      hide: false
-  main:
-    metadata:
-      authors:
-        hide: false
-      date:
-        hide: false
-      reading_time:
-        hide: false
-      terms:
-        hide: false
-      table_of_contents:
-        hide: false
+  style: |
+    .paige-authors,
+    .paige-date,
+    .paige-reading-time,
+    .paige-terms-outer,
+    .paige-toc,
+    #paige-credit,
+    #paige-pages .paige-authors,
+    #paige-pages .paige-date-header,
+    #paige-pages .paige-date,
+    #paige-pages .paige-summary,
+    #paige-pages .paige-terms {
+        display: block;
+    }
 ```
