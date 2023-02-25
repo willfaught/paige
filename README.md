@@ -852,6 +852,8 @@ These optional CSS names can be defined how you want:
     <dd>Applied to the title of expired pages in the list and term layouts.</dd>
     <dt><code>.paige-future</code></dt>
     <dd>Applied to the title of future pages in the list and term layouts.</dd>
+    <dt><code>.paige-home</code></dt>
+    <dd>Appears with <code>.paige-article</code> for a page with kind "home".</dd>
     <dt><code>.paige-metadata</code></dt>
     <dd>The page metadata section.</dd>
     <dt><code>.paige-modified</code></dt>
@@ -860,10 +862,18 @@ These optional CSS names can be defined how you want:
     <dd>A page in the pages in the list and term layouts.</dd>
     <dt><code>.paige-published</code></dt>
     <dd>Applied to the title of published pages in the list and term layouts.</dd>
+    <dt><code>.paige-section</code></dt>
+    <dd>Appears with <code>.paige-article</code> for a page with kind "section".</dd>
+    <dt><code>.paige-single</code></dt>
+    <dd>Appears with <code>.paige-article</code> for a page with kind "page".</dd>
     <dt><code>.paige-summary</code></dt>
     <dd>The page summary.</dd>
     <dt><code>.paige-reading-time</code></dt>
     <dd>The page reading time.</dd>
+    <dt><code>.paige-taxonomy</code></dt>
+    <dd>Appears with <code>.paige-article</code> for a page with kind "taxonomy".</dd>
+    <dt><code>.paige-term</code></dt>
+    <dd>Appears with <code>.paige-article</code> for a page with kind "term".</dd>
     <dt><code>.paige-terms-inner</code></dt>
     <dd>The page terms.</dd>
     <dt><code>.paige-terms-outer</code></dt>
