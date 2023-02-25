@@ -8,10 +8,10 @@
     {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
-{{ $class := $page.Param "paige.main.content.class" | default "mw-100 paige-content" }}
+{{ $class := $page.Param "paige.content.class" | default "mw-100 paige-content" }}
 {{ $content := "" }}
 
-{{ if $page.Param "paige.main.content.hide" | not }}
+{{ if $page.Param "paige.content.hide" | not }}
     {{ $content = cond ($listshowcontent | not) ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` (printf `${1}<a aria-label="%v" class="paige-header-link" href="#${2}">#</a>${3}` (i18n "paige_aria_section_link")) | safeHTML) $page.Content }}
 {{ end }}
 

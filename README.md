@@ -287,41 +287,40 @@ paige:
     title:
       class: "mb-0 text-center"
       hide: false
-  main:
-    metadata:
-      authors:
-        class: "text-center text-secondary"
-        hide: false
-      date:
-        class: "text-center text-secondary"
-        format: ":date_long" # Hugo date format
-        hide: false
-      description:
-        class: "lead text-center"
-        hide: false
-      git:
-        commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
-      max_width: ""
-      reading_time:
-        class: "text-center text-secondary"
-        hide: false
-      section:
-        class: "paige-metadata w-100"
-      terms:
-        hide: false
-        inner_class: "badge text-bg-secondary text-decoration-none"
-        outer_class: "text-center"
-      title:
-        class: "display-5 fw-bold text-center"
-        hide: false
-    table_of_contents:
-      class: "border mb-3 pe-3 ps-3 pt-3 rounded"
+  metadata:
+    authors:
+      class: "text-center text-secondary"
       hide: false
-      max_width: ""
-    content:
-      class: "mw-100 paige-content"
+    date:
+      class: "text-center text-secondary"
+      format: ":date_long" # Hugo date format
       hide: false
-      max_width: ""
+    description:
+      class: "lead text-center"
+      hide: false
+    git:
+      commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
+    max_width: ""
+    reading_time:
+      class: "text-center text-secondary"
+      hide: false
+    section:
+      class: "paige-metadata w-100"
+    terms:
+      hide: false
+      inner_class: "badge text-bg-secondary text-decoration-none"
+      outer_class: "text-center"
+    title:
+      class: "display-5 fw-bold text-center"
+      hide: false
+  table_of_contents:
+    class: "border mb-3 pe-3 ps-3 pt-3 rounded"
+    hide: false
+    max_width: ""
+  content:
+    class: "mw-100 paige-content"
+    hide: false
+    max_width: ""
   math: false # Enable math typesetting
   rss:
     hide_page: false

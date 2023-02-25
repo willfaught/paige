@@ -8,29 +8,29 @@
     {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
-{{ $authors := cond ($page.Param "paige.main.metadata.authors.hide" | not) (partial "paige/authors.html" $page) "" }}
-{{ $authorsclass := $page.Param "paige.main.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
-{{ $categories := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
+{{ $authors := cond ($page.Param "paige.metadata.authors.hide" | not) (partial "paige/authors.html" $page) "" }}
+{{ $authorsclass := $page.Param "paige.metadata.authors.class" | default "paige-authors text-center text-secondary" }}
+{{ $categories := cond ($page.Param "paige.metadata.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
 {{ $commiturl := "" }}
-{{ $date := cond ($page.Param "paige.main.metadata.date.hide" | not) (cond (eq ($page.Param "paige.date" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
-{{ $dateclass := $page.Param "paige.main.metadata.date.class" | default "paige-date text-center text-secondary" }}
-{{ $dateformat := $page.Param "paige.main.metadata.date.format" | default ":date_long" }}
-{{ $description := cond ($page.Param "paige.main.metadata.description.hide" | not) ($page.Description | markdownify) "" }}
-{{ $descriptionclass := $page.Param "paige.main.metadata.description.class" | default "lead paige-description text-center" }}
+{{ $date := cond ($page.Param "paige.metadata.date.hide" | not) (cond (eq ($page.Param "paige.date" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
+{{ $dateclass := $page.Param "paige.metadata.date.class" | default "paige-date text-center text-secondary" }}
+{{ $dateformat := $page.Param "paige.metadata.date.format" | default ":date_long" }}
+{{ $description := cond ($page.Param "paige.metadata.description.hide" | not) ($page.Description | markdownify) "" }}
+{{ $descriptionclass := $page.Param "paige.metadata.description.class" | default "lead paige-description text-center" }}
 {{ $nogap := "mb-0" }}
-{{ $readingtime := cond ($page.Param "paige.main.metadata.reading_time.hide" | not) $page.ReadingTime "" }}
-{{ $readingtimeclass := $page.Param "paige.main.metadata.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
+{{ $readingtime := cond ($page.Param "paige.metadata.reading_time.hide" | not) $page.ReadingTime "" }}
+{{ $readingtimeclass := $page.Param "paige.metadata.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
 {{ $sectionclass := "paige-metadata w-100" }}
-{{ $tags := cond ($page.Param "paige.main.metadata.terms.hide" | not) ($page.Params.tags | default slice) slice | uniq }}
-{{ $termsinnerclass := $page.Param "paige.main.metadata.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
-{{ $termsouterclass := $page.Param "paige.main.metadata.terms.outer_class" | default "paige-terms-outer text-center" }}
-{{ $title := cond ($page.Param "paige.main.metadata.title.hide" | not) ($page.Title | markdownify) "" }}
-{{ $titleclass := $page.Param "paige.main.metadata.title.class" | default "display-5 fw-bold paige-title text-center" }}
+{{ $tags := cond ($page.Param "paige.metadata.terms.hide" | not) ($page.Params.tags | default slice) slice | uniq }}
+{{ $termsinnerclass := $page.Param "paige.metadata.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
+{{ $termsouterclass := $page.Param "paige.metadata.terms.outer_class" | default "paige-terms-outer text-center" }}
+{{ $title := cond ($page.Param "paige.metadata.title.hide" | not) ($page.Title | markdownify) "" }}
+{{ $titleclass := $page.Param "paige.metadata.title.class" | default "display-5 fw-bold paige-title text-center" }}
 {{ $titlelink := $page.Params.link }}
 {{ $titlepage := $page.RelPermalink }}
 
-{{ if and ($page.Param "paige.main.metadata.git.commit_url_prefix") $page.GitInfo }}
-    {{ $commiturl = print ($page.Param "paige.main.metadata.git.commit_url_prefix") $page.GitInfo.Hash }}
+{{ if and ($page.Param "paige.metadata.git.commit_url_prefix") $page.GitInfo }}
+    {{ $commiturl = print ($page.Param "paige.metadata.git.commit_url_prefix") $page.GitInfo.Hash }}
 {{ end }}
 
 <section {{ with $sectionclass }} class="{{ . }}" {{ end }}>
