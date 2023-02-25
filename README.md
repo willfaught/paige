@@ -760,22 +760,6 @@ then replace that use of `paige/metadata.html` with your own design.
 Use these CSS selectors to extend the default styling:
 
 <dl>
-    <dt><code>#paige-copyright</code></dt>
-    <dd>The copyright in the footer.</dd>
-    <dt><code>#paige-credit</code></dt>
-    <dd>The credit in the footer.</dd>
-    <dt><code>#paige-footer</code></dt>
-    <dd>The footer element in the container.</dd>
-    <dt><code>#paige-header</code></dt>
-    <dd>The header element in the container.</dd>
-    <dt><code>#paige-main</code></dt>
-    <dd>The main element in the container.</dd>
-    <dt><code>#paige-pages</code></dt>
-    <dd>The page list in the list and term layouts.</dd>
-    <dt><code>#paige-pagination</code></dt>
-    <dd>The pagination links in the list and term layouts.</dd>
-    <dt><code>#paige-root</code></dt>
-    <dd>The outermost element in the body.</dd>
     <dt><code>.paige-article</code></dt>
     <dd>The page article.</dd>
     <dt><code>.paige-authors</code></dt>
@@ -826,6 +810,22 @@ Use these CSS selectors to extend the default styling:
     <dd>The page table of contents.</dd>
     <dt><code>.paige-unpublished</code></dt>
     <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term layouts.</dd>
+    <dt><code>#paige-copyright</code></dt>
+    <dd>The copyright in the footer.</dd>
+    <dt><code>#paige-credit</code></dt>
+    <dd>The credit in the footer.</dd>
+    <dt><code>#paige-footer</code></dt>
+    <dd>The footer element in the container.</dd>
+    <dt><code>#paige-header</code></dt>
+    <dd>The header element in the container.</dd>
+    <dt><code>#paige-main</code></dt>
+    <dd>The main element in the container.</dd>
+    <dt><code>#paige-pages</code></dt>
+    <dd>The page list in the list and term layouts.</dd>
+    <dt><code>#paige-pagination</code></dt>
+    <dd>The pagination links in the list and term layouts.</dd>
+    <dt><code>#paige-root</code></dt>
+    <dd>The outermost element in the body.</dd>
 </dl>
 
 If you hide `#paige-credit`, please credit this project in a post to help others find it.
