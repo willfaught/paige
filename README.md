@@ -204,6 +204,7 @@ paige:
     chartbeat: # See https://chartbeat.com
       account_id: ""
       domain: ""
+    disabled: false # Disable all analytics
     clicky: # See https://clicky.com
       account_id: ""
     fathom: # See https://usefathom.com
@@ -231,6 +232,7 @@ paige:
       account_id: ""
     commento: # See https://commento.io
       script_url: ""
+    disabled: false # Disable all comments
     hyvor: # See https://hyvor.com
       account_id: ""
     intensedebate: # See https://intensedebate.com

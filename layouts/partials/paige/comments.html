@@ -1,13 +1,15 @@
 {{ $page := . }}
 
-{{ template "_internal/disqus.html" $page }}
-{{ partial "paige/comments/cactus.html" $page }}
-{{ partial "paige/comments/commento.html" $page }}
-{{ partial "paige/comments/graphcomment.html" $page }}
-{{ partial "paige/comments/hyvor.html" $page }}
-{{ partial "paige/comments/intensedebate.html" $page }}
-{{ partial "paige/comments/isso.html" $page }}
-{{ partial "paige/comments/muut.html" $page }}
-{{ partial "paige/comments/remark42.html" $page }}
-{{ partial "paige/comments/replybox.html" $page }}
-{{ partial "paige/comments/utterances.html" $page }}
+{{ if $page.Param "paige.comments.disabled" | not }}
+    {{ template "_internal/disqus.html" $page }}
+    {{ partial "paige/comments/cactus.html" $page }}
+    {{ partial "paige/comments/commento.html" $page }}
+    {{ partial "paige/comments/graphcomment.html" $page }}
+    {{ partial "paige/comments/hyvor.html" $page }}
+    {{ partial "paige/comments/intensedebate.html" $page }}
+    {{ partial "paige/comments/isso.html" $page }}
+    {{ partial "paige/comments/muut.html" $page }}
+    {{ partial "paige/comments/remark42.html" $page }}
+    {{ partial "paige/comments/replybox.html" $page }}
+    {{ partial "paige/comments/utterances.html" $page }}
+{{ end }}
