@@ -272,7 +272,7 @@ paige:
     web_master: ""
   search:
     hide_page: false
-  style: ""
+  style: "" # CSS included at the end of the stylesheet, before layouts/paige/style-last.css.
   table_of_contents:
     max_width: ""
 ```
