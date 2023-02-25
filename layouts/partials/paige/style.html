@@ -93,11 +93,11 @@ body, html {
     {{ end }}
 {{ else }}
     @media (prefers-color-scheme: dark) {
-        {{ partial "paige/dark.css" . | safeCSS }}
+        {{ partial "paige/dark.css" $page | safeCSS }}
     }
 
     @media (prefers-color-scheme: light) {
-        {{ partial "paige/light.css" . | safeCSS }}
+        {{ partial "paige/light.css" $page | safeCSS }}
     }
 {{ end }}
 
