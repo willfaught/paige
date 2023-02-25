@@ -261,8 +261,6 @@ paige:
   list:
     content:
       show: false
-    pages:
-      hide: false
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
