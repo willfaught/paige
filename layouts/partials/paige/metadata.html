@@ -8,8 +8,7 @@
     {{ $listshowcontent = $params.listshowcontent }}
 {{ end }}
 
-{{ $authors := cond ($page.Param "paige.authors.hide" | not) (partial "paige/authors.html" $page) "" }}
-{{ $authorsclass := $page.Param "paige.authors.class" | default "paige-authors text-center text-secondary" }}
+{{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := cond ($page.Param "paige.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
 {{ $commiturl := "" }}
 {{ $date := cond ($page.Param "paige.date.hide" | not) (cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
@@ -58,7 +57,7 @@
     {{ end }}
 
     {{ with $authors }}
-        <p {{ if or $authorsclass $date $readingtime }} class="{{ if or $date $readingtime }} {{ $nogap }} {{ end }} {{ with $authorsclass }} {{ . }} {{ end }}" {{ end }}>{{ . }}</p>
+        <p class="{{ if or $date $readingtime }} {{ $nogap }} {{ end }} paige-authors text-center text-secondary">{{ . }}</p>
     {{ end }}
 
     {{ with $date }}

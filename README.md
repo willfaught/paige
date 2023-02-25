@@ -224,9 +224,6 @@ paige:
       domain: ""
     yandex: # See https://metrica.yandex.com
       account_id: ""
-  authors:
-    class: "text-center text-secondary"
-    hide: false
   color: "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
   color_scheme: "" # Always use this color scheme without automatic switching; must be "", "light", or "dark"
   comments:
@@ -264,9 +261,6 @@ paige:
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   list:
-    authors:
-      class: "mb-0 text-center text-secondary"
-      hide: false
     content:
       show: false
     date:
