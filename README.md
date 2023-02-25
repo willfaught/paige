@@ -255,7 +255,7 @@ paige:
       hide: false # Don't credit this project in the footer
   date:
     format: ":date_long" # Hugo date format
-    source: "published" # Displayed date; must be "published" or "modified"
+    source: "published" # Displayed date in single pages; must be "published" or "modified"
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   list:
