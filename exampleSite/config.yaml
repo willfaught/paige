@@ -1,42 +1,42 @@
-baseurl: http://localhost
-copyright: © Will Faught
+baseurl: "http://localhost"
+copyright: "© Will Faught"
 enablerobotstxt: true
-languagecode: en-us
+languagecode: "en-us"
 languages:
   en:
     menu:
       main:
-      - identifier: home
-        name: Home
-        url: /
+      - identifier: "home"
+        name: "Home"
+        url: "/"
         weight: 10
-      - identifier: content
-        name: Content
-        url: /content/
+      - identifier: "content"
+        name: "Content"
+        url: "/content/"
         weight: 20
-      - identifier: layouts
-        name: Layouts
-        url: /layouts/
+      - identifier: "layouts"
+        name: "Layouts"
+        url: "/layouts/"
         weight: 30
-      - identifier: shortcodes
-        name: Shortcodes
-        url: /shortcodes/
+      - identifier: "shortcodes"
+        name: "Shortcodes"
+        url: "/shortcodes/"
         weight: 40
-      - identifier: configuration
-        name: Configuration
-        url: /configuration/
+      - identifier: "configuration"
+        name: "Configuration"
+        url: "/configuration/"
         weight: 50
-      - identifier: categories
-        name: Categories
-        url: /categories/
+      - identifier: "categories"
+        name: "Categories"
+        url: "/categories/"
         weight: 60
-      - identifier: tags
-        name: Tags
-        url: /tags/
+      - identifier: "tags"
+        name: "Tags"
+        url: "/tags/"
         weight: 70
-      - identifier: search
-        name: Search
-        url: /search/
+      - identifier: "search"
+        name: "Search"
+        url: "/search/"
         weight: 80
     weight: 10
 markup:
@@ -51,14 +51,14 @@ markup:
     startlevel: 2
 outputs:
   home:
-  - html
-  - json
-  - rss
+  - "html"
+  - "json"
+  - "rss"
 paginate: 50
 params:
   authors:
     will_faught:
-      name: Will Faught
+      name: "Will Faught"
   paige:
     credit:
       link:
@@ -91,7 +91,7 @@ params:
       table_of_contents:
         hide: true
 social:
-  twitter: username
-theme: paige
-timezone: America/Los_Angeles
-titlecasestyle: Go
+  twitter: "username"
+theme: "paige"
+timezone: "America/Los_Angeles"
+titlecasestyle: "Go"
