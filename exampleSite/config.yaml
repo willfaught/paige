@@ -60,34 +60,8 @@ params:
     will_faught:
       name: "Will Faught"
   paige:
-    authors:
-      hide: true
-    credit:
-      link:
-        hide: true
-    date:
-      hide: true
     git:
       commit_url_prefix: "https://github.com/willfaught/paige/commit/"
-    list:
-      authors:
-        hide: true
-      date:
-        hide: true
-      date_header:
-        hide: true
-      reading_time:
-        hide: true
-      summary:
-        hide: true
-      terms:
-        hide: true
-    reading_time:
-      hide: true
-    table_of_contents:
-      hide: true
-    terms:
-      hide: true
 social:
   twitter: "username"
 theme: "paige"
