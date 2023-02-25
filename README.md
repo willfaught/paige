@@ -244,8 +244,6 @@ paige:
       account_id: ""
     utterances: # See https://utteranc.es
       github_repo: ""
-  content:
-    max_width: ""
   credit:
     data:
       hide: false # Don't credit this project in a data attribute
@@ -257,11 +255,10 @@ paige:
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   math: false # Enable math typesetting
+  max_width: "" # Maximum width for whole page
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
     style: "pills" # Must be "links" or "pills"
-  metadata:
-    max_width: ""
   rss:
     hide_page: false
     managing_editor: ""
@@ -271,8 +268,6 @@ paige:
   section_pages:
     full_pages: false # Display full pages in the list of pages.
   style: "" # CSS included at the end of the stylesheet, before layouts/paige/style-last.css.
-  table_of_contents:
-    max_width: ""
 ```
 
 The assigned values shown are the default values.

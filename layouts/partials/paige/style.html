@@ -39,12 +39,6 @@ body, html {
     margin-bottom: 0;
 }
 
-{{ with $page.Param "paige.content.max_width" }}
-    .paige-content {
-        max-width: {{ . | safeCSS }};
-    }
-{{ end }}
-
 .paige-figure .highlight .chroma pre, .paige-figure .highlight pre.chroma {
     margin-bottom: 0;
 }
@@ -71,14 +65,8 @@ body, html {
     opacity: 1;
 }
 
-{{ with $page.Param "paige.metadata.max_width" }}
-    .paige-metadata {
-        max-width: {{ . | safeCSS }};
-    }
-{{ end }}
-
-{{ with $page.Param "paige.table_of_contents.max_width" }}
-    .paige-toc {
+{{ with $page.Param "paige.max_width" }}
+    #paige-root {
         max-width: {{ . | safeCSS }};
     }
 {{ end }}
