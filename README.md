@@ -813,9 +813,9 @@ replace the use of `paige/article.html` in `single.html` with the use of
 `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`,
 then replace that use of `paige/metadata.html` with your own design.
 
-### Define
+### Extend
 
-These optional CSS names can be defined how you want:
+Use these CSS selectors to extend the default styling:
 
 <dl>
     <dt><code>#paige-copyright</code></dt>
