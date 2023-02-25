@@ -3,7 +3,7 @@ authors: ["will_faught"]
 categories: ["content", "paige"]
 description: "A brief guide to setup KaTeX."
 paige:
-    math: true
+  math: true
 tags: ["katex", "math", "typesetting"]
 title: "Math Typesetting"
 weight: 40
