@@ -12,8 +12,6 @@ using verticality and white space to focus and delineate parts of the page.
 The implementation is flexible and extensible.
 It's a versatile canvas that serves most web needs.
 
-Welcome to the last Hugo theme you'll probably ever need.
-
 ## Features
 
 - Accessibility
