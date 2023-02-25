@@ -4,20 +4,20 @@ categories: ["configuration", "paige"]
 date: "2022-02-23"
 description: "Demonstration of the Paige hide configuration."
 paige:
-  authors:
-    hide: false
-  date:
-    hide: false
-  git:
-    commit_url_prefix: "https://github.com/willfaught/paige/commit/"
-  reading_time:
-    hide: false
-  table_of_contents:
-    hide: false
-  terms:
-    hide: false
   style: |
-    .paige-authors { display: block; }
+    .paige-authors,
+    .paige-date,
+    .paige-reading-time,
+    .paige-terms-outer,
+    .paige-toc,
+    #paige-credit,
+    #paige-pages .paige-authors,
+    #paige-pages .paige-date-header,
+    #paige-pages .paige-date,
+    #paige-pages .paige-summary,
+    #paige-pages .paige-terms {
+        display: block;
+    }
 tags: ["hide", "singles"]
 title: "Hide Configuration"
 weight: 10
@@ -33,18 +33,18 @@ This page has the following parameters:
 
 ```yaml
 paige:
-  main:
-    metadata:
-      authors:
-        hide: false
-      date:
-        hide: false
-      git:
-        commit_url_prefix: "https://github.com/willfaught/paige/commit/"
-      reading_time:
-        hide: false
-      terms:
-        hide: false
-    table_of_contents:
-      hide: false
+  style: |
+    .paige-authors,
+    .paige-date,
+    .paige-reading-time,
+    .paige-terms-outer,
+    .paige-toc,
+    #paige-credit,
+    #paige-pages .paige-authors,
+    #paige-pages .paige-date-header,
+    #paige-pages .paige-date,
+    #paige-pages .paige-summary,
+    #paige-pages .paige-terms {
+        display: block;
+    }
 ```
