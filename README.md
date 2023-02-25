@@ -816,10 +816,10 @@ Use these CSS selectors to extend the default styling:
     <dd>Appears with <code>.paige-article</code> for a page with kind "taxonomy".</dd>
     <dt><code>.paige-term</code></dt>
     <dd>Appears with <code>.paige-article</code> for a page with kind "term".</dd>
+    <dt><code>.paige-term</code></dt>
+    <dd>A page term.</dd>
     <dt><code>.paige-terms</code></dt>
     <dd>The page terms.</dd>
-    <dt><code>.paige-terms-inner</code></dt>
-    <dd>A page term.</dd>
     <dt><code>.paige-title</code></dt>
     <dd>The page title.</dd>
     <dt><code>.paige-toc</code></dt>

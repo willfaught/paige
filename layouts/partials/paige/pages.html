@@ -91,7 +91,7 @@
                                 {{ end }}
 
                                 {{ range sort $terms "name" }}
-                                    <a class="badge paige-terms-inner text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ .name }}</a>
+                                    <a class="badge paige-term text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ .name }}</a>
                                 {{ end }}
                             </p>
                         {{ end }}

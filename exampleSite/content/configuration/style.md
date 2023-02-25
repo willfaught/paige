@@ -32,7 +32,7 @@ paige:
     #paige-pages .paige-date-header { font-style: italic; }
     #paige-pages .paige-date { font-style: italic; }
     #paige-pages .paige-summary { font-style: italic; }
-    #paige-pages .paige-terms-inner { font-style: italic; }
+    #paige-pages .paige-term { font-style: italic; }
 tags: ["singles", "style"]
 title: "Style Configuration"
 weight: 20
@@ -76,5 +76,5 @@ paige:
     #paige-pages .paige-date-header { font-style: italic; }
     #paige-pages .paige-date { font-style: italic; }
     #paige-pages .paige-summary { font-style: italic; }
-    #paige-pages .paige-terms-inner { font-style: italic; }
+    #paige-pages .paige-term { font-style: italic; }
 ```
