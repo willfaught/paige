@@ -8,7 +8,7 @@ paige:
     .paige-authors,
     .paige-date,
     .paige-reading-time,
-    .paige-terms-outer,
+    .paige-terms,
     .paige-toc,
     #paige-credit,
     #paige-pages .paige-authors,
@@ -23,7 +23,7 @@ paige:
     .paige-date { font-style: italic; }
     .paige-description { font-style: italic; }
     .paige-reading-time { font-style: italic; }
-    .paige-terms-outer { font-style: italic; }
+    .paige-terms { font-style: italic; }
     .paige-title { font-style: italic; }
     .paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
@@ -52,7 +52,7 @@ paige:
     .paige-authors,
     .paige-date,
     .paige-reading-time,
-    .paige-terms-outer,
+    .paige-terms,
     .paige-toc,
     #paige-credit,
     #paige-pages .paige-authors,
@@ -67,7 +67,7 @@ paige:
     .paige-date { font-style: italic; }
     .paige-description { font-style: italic; }
     .paige-reading-time { font-style: italic; }
-    .paige-terms-outer { font-style: italic; }
+    .paige-terms { font-style: italic; }
     .paige-title { font-style: italic; }
     .paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
