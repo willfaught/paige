@@ -30,8 +30,7 @@
                     {{ $date := cond ($page.Param "paige.list.date.hide" | not) .PublishDate "" }}
                     {{ $dateclass := $page.Param "paige.list.date.class" | default "mb-0 paige-date text-center text-secondary" }}
                     {{ $dateformat := $page.Param "paige.list.date.format" | default ":date_long" }}
-                    {{ $description := cond ($page.Param "paige.list.description.hide" | not) (.Description | markdownify) "" }}
-                    {{ $descriptionclass := $page.Param "paige.list.description.class" | default "mb-0 paige-description text-center" }}
+                    {{ $description := .Description | markdownify }}
                     {{ $draft := .Draft }}
                     {{ $expired := and .ExpiryDate (lt .ExpiryDate now) }}
                     {{ $flags := slice }}
@@ -81,7 +80,7 @@
                         {{ end }}
 
                         {{ with $description }}
-                            <p {{ with $descriptionclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
+                            <p class="mb-0 paige-description text-center">{{ . }}</p>
                         {{ end }}
 
                         {{ with $summary }}

@@ -261,9 +261,6 @@ paige:
     format: ":date_long" # Hugo date format
     hide: false
     source: "published" # Displayed date; must be "published" or "modified"
-  description:
-    class: "lead text-center"
-    hide: false
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   list:
@@ -278,9 +275,6 @@ paige:
       hide: false
     date_header:
       class: "h5 text-center"
-      hide: false
-    description:
-      class: "mb-0 text-center"
       hide: false
     pages:
       hide: false

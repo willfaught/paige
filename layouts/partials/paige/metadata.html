@@ -15,8 +15,7 @@
 {{ $date := cond ($page.Param "paige.date.hide" | not) (cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
 {{ $dateclass := $page.Param "paige.date.class" | default "paige-date text-center text-secondary" }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
-{{ $description := cond ($page.Param "paige.description.hide" | not) ($page.Description | markdownify) "" }}
-{{ $descriptionclass := $page.Param "paige.description.class" | default "lead paige-description text-center" }}
+{{ $description := $page.Description | markdownify }}
 {{ $nogap := "mb-0" }}
 {{ $readingtime := cond ($page.Param "paige.reading_time.hide" | not) $page.ReadingTime "" }}
 {{ $readingtimeclass := $page.Param "paige.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
@@ -37,7 +36,7 @@
     {{ end }}
 
     {{ with $description }}
-        <p {{ with $descriptionclass }} class="{{ . }}" {{ end }}>{{ . }}</p>
+        <p class="lead paige-description text-center">{{ . }}</p>
     {{ end }}
 
     {{ if or $categories $tags }}
