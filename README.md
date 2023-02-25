@@ -254,19 +254,13 @@ paige:
     link:
       hide: false # Don't credit this project in the footer
   date:
-    class: "text-center text-secondary"
     format: ":date_long" # Hugo date format
-    hide: false
     source: "published" # Displayed date; must be "published" or "modified"
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   list:
     content:
       show: false
-    date:
-      class: "mb-0 text-center text-secondary"
-      format: ":date_long" # Hugo date format
-      hide: false
     date_header:
       class: "h5 text-center"
       hide: false

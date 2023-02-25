@@ -26,9 +26,8 @@
                     {{ $authors := partial "paige/authors.html" . }}
                     {{ $categories := .Params.categories | default slice | uniq }}
                     {{ $commiturl := "" }}
-                    {{ $date := cond ($page.Param "paige.list.date.hide" | not) .PublishDate "" }}
-                    {{ $dateclass := $page.Param "paige.list.date.class" | default "mb-0 paige-date text-center text-secondary" }}
-                    {{ $dateformat := $page.Param "paige.list.date.format" | default ":date_long" }}
+                    {{ $date := .PublishDate }}
+                    {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
                     {{ $description := .Description | markdownify }}
                     {{ $draft := .Draft }}
                     {{ $expired := and .ExpiryDate (lt .ExpiryDate now) }}
@@ -106,7 +105,7 @@
                         {{ end }}
 
                         {{ with $date }}
-                            <p {{ with $dateclass }} class="{{ . }}" {{ end }}>
+                            <p class="mb-0 paige-date text-center text-secondary">
                                 {{ with $commiturl }}
                                     <a class="link-secondary text-decoration-none" href="{{ . }}">
                                 {{ end }}

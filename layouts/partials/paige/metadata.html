@@ -11,8 +11,7 @@
 {{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := $page.Params.categories | default slice | uniq }}
 {{ $commiturl := "" }}
-{{ $date := cond ($page.Param "paige.date.hide" | not) (cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
-{{ $dateclass := $page.Param "paige.date.class" | default "paige-date text-center text-secondary" }}
+{{ $date := cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
 {{ $nogap := "mb-0" }}
@@ -59,7 +58,7 @@
     {{ end }}
 
     {{ with $date }}
-        <p {{ if or $dateclass $readingtime }} class="{{ if $readingtime }} {{ $nogap }} {{ end }} {{ with $dateclass }} {{ . }} {{ end }}" {{ end }}>
+        <p class="{{ if $readingtime }} {{ $nogap }} {{ end }} paige-date text-center text-secondary">
             {{ with $commiturl }}
                 <a class="link-secondary text-decoration-none" href="{{ . }}">
             {{ end }}
