@@ -52,25 +52,29 @@
         </p>
     {{ end }}
 
-    {{ with $authors }}
-        <p class="{{ if or $date $readingtime }} {{ $nogap }} {{ end }} paige-authors text-center text-secondary">{{ . }}</p>
-    {{ end }}
-
-    {{ with $date }}
-        <p class="{{ if $readingtime }} {{ $nogap }} {{ end }} paige-date text-center text-secondary">
-            {{ with $commiturl }}
-                <a class="link-secondary text-decoration-none" href="{{ . }}">
+    {{ if or $authors $date $readingtime }}
+        <div class="mb-3">
+            {{ with $authors }}
+                <p class="mb-0 paige-authors text-center text-secondary">{{ . }}</p>
             {{ end }}
 
-            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+            {{ with $date }}
+                <p class="mb-0 paige-date text-center text-secondary">
+                    {{ with $commiturl }}
+                        <a class="link-secondary text-decoration-none" href="{{ . }}">
+                    {{ end }}
 
-            {{ if $commiturl }}
-                </a>
+                    <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+
+                    {{ if $commiturl }}
+                        </a>
+                    {{ end }}
+                </p>
             {{ end }}
-        </p>
-    {{ end }}
 
-    {{ with $readingtime }}
-        <p class="paige-reading-time text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
+            {{ with $readingtime }}
+                <p class="mb-0 paige-reading-time text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
+            {{ end }}
+        </div>
     {{ end }}
 </section>
