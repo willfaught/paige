@@ -9,7 +9,7 @@
 {{ end }}
 
 {{ $authors := partial "paige/authors.html" $page }}
-{{ $categories := cond ($page.Param "paige.terms.hide" | not) ($page.Params.categories | default slice) slice | uniq }}
+{{ $categories := $page.Params.categories | default slice | uniq }}
 {{ $commiturl := "" }}
 {{ $date := cond ($page.Param "paige.date.hide" | not) (cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod) "" }}
 {{ $dateclass := $page.Param "paige.date.class" | default "paige-date text-center text-secondary" }}
@@ -18,9 +18,7 @@
 {{ $nogap := "mb-0" }}
 {{ $readingtime := cond ($page.Param "paige.reading_time.hide" | not) $page.ReadingTime "" }}
 {{ $readingtimeclass := $page.Param "paige.reading_time.class" | default "paige-reading-time text-center text-secondary" }}
-{{ $tags := cond ($page.Param "paige.terms.hide" | not) ($page.Params.tags | default slice) slice | uniq }}
-{{ $termsinnerclass := $page.Param "paige.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
-{{ $termsouterclass := $page.Param "paige.terms.outer_class" | default "paige-terms-outer text-center" }}
+{{ $tags := $page.Params.tags | default slice | uniq }}
 {{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.Params.link }}
 {{ $titlepage := $page.RelPermalink }}
@@ -39,7 +37,7 @@
     {{ end }}
 
     {{ if or $categories $tags }}
-        <p {{ with $termsouterclass }} class="{{ . }}" {{ end }}>
+        <p class="paige-terms-outer text-center">
             {{ $terms := slice }}
 
             {{ range $categories }}
@@ -51,7 +49,7 @@
             {{ end }}
 
             {{ range sort $terms "name" }}
-                <a {{ with $termsinnerclass }} class="{{ . }}" {{ end }} href="{{ .url | safeURL }}">{{ .name }}</a>
+                <a class="badge paige-terms-inner text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ .name }}</a>
             {{ end }}
         </p>
     {{ end }}

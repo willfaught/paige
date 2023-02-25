@@ -277,10 +277,6 @@ paige:
       hide: false
     section:
       class: "mb-3 w-100"
-    terms:
-      hide: false
-      inner_class: "badge text-bg-secondary text-decoration-none"
-      outer_class: "mb-0 text-center"
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
@@ -297,10 +293,6 @@ paige:
   search:
     hide_page: false
   style: ""
-  terms:
-    hide: false
-    inner_class: "badge text-bg-secondary text-decoration-none"
-    outer_class: "text-center"
   table_of_contents:
     class: "border mb-3 pe-3 ps-3 pt-3 rounded"
     hide: false

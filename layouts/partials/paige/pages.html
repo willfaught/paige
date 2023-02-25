@@ -24,7 +24,7 @@
                 {{ end }}
                 {{ range .Pages }}
                     {{ $authors := partial "paige/authors.html" . }}
-                    {{ $categories := cond ($page.Param "paige.list.terms.hide" | not) (.Params.categories | default slice) slice | uniq }}
+                    {{ $categories := .Params.categories | default slice | uniq }}
                     {{ $commiturl := "" }}
                     {{ $date := cond ($page.Param "paige.list.date.hide" | not) .PublishDate "" }}
                     {{ $dateclass := $page.Param "paige.list.date.class" | default "mb-0 paige-date text-center text-secondary" }}
@@ -39,9 +39,7 @@
                     {{ $readingtimeclass := $page.Param "paige.list.reading_time.class" | default "mb-0 paige-reading-time text-center text-secondary" }}
                     {{ $sectionclass := $page.Param "paige.list.section.class" | default "mb-3 paige-page w-100" }}
                     {{ $summary := .Summary | htmlUnescape | plainify }}
-                    {{ $tags := cond ($page.Param "paige.list.terms.hide" | not) (.Params.tags | default slice) slice | uniq }}
-                    {{ $termsinnerclass := $page.Param "paige.list.terms.inner_class" | default "badge paige-terms-inner text-bg-secondary text-decoration-none" }}
-                    {{ $termsouterclass := $page.Param "paige.list.terms.outer_class" | default "mb-0 paige-terms-outer text-center" }}
+                    {{ $tags := .Params.tags | default slice | uniq }}
                     {{ $title := .Title | markdownify }}
                     {{ $titlelink := .RelPermalink }}
 
@@ -86,7 +84,7 @@
                         {{ end }}
 
                         {{ if or $categories $tags }}
-                            <p {{ with $termsouterclass }} class="{{ . }}" {{ end }}>
+                            <p class="mb-0 paige-terms-outer text-center">
                                 {{ $terms := slice }}
 
                                 {{ range $categories }}
@@ -98,7 +96,7 @@
                                 {{ end }}
 
                                 {{ range sort $terms "name" }}
-                                    <a {{ with $termsinnerclass }} class="{{ . }}" {{ end }} href="{{ .url | safeURL }}">{{ .name }}</a>
+                                    <a class="badge paige-terms-inner text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ .name }}</a>
                                 {{ end }}
                             </p>
                         {{ end }}
