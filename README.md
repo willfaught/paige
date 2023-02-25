@@ -314,6 +314,7 @@ paige:
     web_master: ""
   search:
     hide_page: false
+  style: ""
   terms:
     hide: false
     inner_class: "badge text-bg-secondary text-decoration-none"
