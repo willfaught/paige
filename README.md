@@ -261,9 +261,6 @@ paige:
   list:
     content:
       show: false
-    date_header:
-      class: "h5 text-center"
-      hide: false
     pages:
       hide: false
     section:

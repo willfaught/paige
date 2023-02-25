@@ -19,9 +19,7 @@
         {{ $p := $page.Paginate ($page.Pages.ByPublishDate.Reverse.GroupByPublishDate "January 2006") }}
         <section id="paige-pages">
             {{ range $p.PageGroups }}
-                {{ if $page.Param "paige.list.date_header.hide" | not }}
-                    <p class="{{ $.Param `paige.list.date_header.class` | default `h5 paige-date-header text-center` }}">{{ .Key }}</p>
-                {{ end }}
+                <p class="h5 paige-date-header text-center">{{ .Key }}</p>
                 {{ range .Pages }}
                     {{ $authors := partial "paige/authors.html" . }}
                     {{ $categories := .Params.categories | default slice | uniq }}
