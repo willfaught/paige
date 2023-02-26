@@ -68,13 +68,21 @@ please share it by [posting code or screenshots](https://github.com/willfaught/p
     $ brew install hugo
     ```
 
-2. Create a site:
+2. [Install Node](https://nodejs.org/en/download/).
+
+    For Homebrew on Mac:
+
+    ```sh
+    $ brew install node
+    ```
+
+3. Create a site:
 
     ```sh
     $ hugo new site yourproject
     ```
 
-3. Create a post:
+4. Create a post:
 
     ```sh
     $ cd yourproject
