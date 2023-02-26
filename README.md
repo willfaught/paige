@@ -60,7 +60,7 @@ please share it by [posting code or screenshots](https://github.com/willfaught/p
 
 ## Get started with Hugo
 
-1. [Install Hugo](https://gohugo.io/installation/).
+1. [Install Hugo](https://gohugo.io/installation/) (the extended version is required).
 
     For Homebrew on Mac:
 
