@@ -62,8 +62,6 @@ params:
   paige:
     git:
       commit_url_prefix: "https://github.com/willfaught/paige/commit/"
-social:
-  twitter: "username"
 theme: "paige"
 timezone: "America/Los_Angeles"
 titlecasestyle: "Go"
