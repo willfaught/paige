@@ -47,7 +47,7 @@ It's a versatile canvas that serves most web needs.
 ## Community
 
 Get started by [starring](https://github.com/willfaught/paige/stargazers)
-and [following](https://github.com/willfaught/paige/watchers) the project.
+and [watching](https://github.com/willfaught/paige/watchers) the project.
 
 If you find a problem or have a suggestion,
 please share it by [creating an issue](https://github.com/willfaught/paige/issues/new).
