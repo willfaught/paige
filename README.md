@@ -51,7 +51,6 @@ and [following](https://github.com/willfaught/paige/watchers) the project.
 
 If you find a problem or have a suggestion,
 please share it by [creating an issue](https://github.com/willfaught/paige/issues/new).
-Feedback is encouraged and appreciated.
 
 If you have a fix or improvement,
 please share it by [creating a pull request](https://github.com/willfaught/paige/compare).
