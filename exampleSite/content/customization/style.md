@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["configuration", "paige"]
+categories: ["customization", "paige"]
 date: "2022-02-23"
-description: "Demonstration of the Paige style configuration."
+description: "Demonstration of Paige customization that styles data."
 paige:
   style: |
     .paige-authors,
@@ -34,7 +34,7 @@ paige:
     #paige-pages .paige-summary { font-style: italic; }
     #paige-pages .paige-term { font-style: italic; }
 tags: ["singles", "style"]
-title: "Style Configuration"
+title: "Style Data"
 weight: 20
 ---
 

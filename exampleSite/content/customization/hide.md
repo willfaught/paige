@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["configuration", "paige"]
+categories: ["customization", "paige"]
 date: "2022-02-23"
-description: "Demonstration of the Paige hide configuration."
+description: "Demonstration of Paige customization that hides data."
 paige:
   style: |
     .paige-authors,
@@ -19,7 +19,7 @@ paige:
         display: block;
     }
 tags: ["hide", "singles"]
-title: "Hide Configuration"
+title: "Hide Data"
 weight: 10
 ---
 

@@ -22,9 +22,9 @@ languages:
         name: "Shortcodes"
         url: "/shortcodes/"
         weight: 40
-      - identifier: "configuration"
-        name: "Configuration"
-        url: "/configuration/"
+      - identifier: "customization"
+        name: "Customization"
+        url: "/customization/"
         weight: 50
       - identifier: "categories"
         name: "Categories"

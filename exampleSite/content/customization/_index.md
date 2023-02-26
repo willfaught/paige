@@ -1,8 +1,8 @@
 ---
 authors: ["will_faught"]
-categories: ["configuration", "paige"]
+categories: ["customization", "paige"]
 date: "2022-02-23"
-description: "Demonstration of the Paige configuration."
+description: "Demonstration of Paige customization."
 paige:
   style: |
     .paige-authors,
@@ -18,11 +18,11 @@ paige:
     #paige-pages .paige-terms {
         display: block;
     }
-tags: ["lists"]
-title: "Configuration"
+tags: ["sections"]
+title: "Customization"
 ---
 
-This site hides some list page data by default. This page shows it all.
+This site hides some section page data by default. This page shows it all.
 
 <!--more-->
 
