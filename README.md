@@ -297,33 +297,6 @@ authors:
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 ```
 
-### Minimal look
-
-By default, everything is shown. If you want a more minimal look, try the following:
-
-```yaml
-paige:
-  list:
-    authors:
-      hide: true
-    date:
-      hide: true
-    reading_time:
-      hide: true
-    summary:
-      hide: true
-    terms:
-      hide: true
-  main:
-    metadata:
-      reading_time:
-        hide: true
-      terms:
-        hide: true
-    table_of_contents:
-      hide: true
-```
-
 ## Layouts
 
 ### Home
@@ -832,6 +805,31 @@ Use these CSS selectors to extend the default styling:
 </dl>
 
 If you hide `#paige-credit`, please credit this project in a post to help others find it.
+
+### Minimal look
+
+By default, everything is shown.
+If you want a more minimal look,
+try the following in your `layouts/partials/paige/style-first.css`:
+
+```css
+.paige-authors,
+.paige-date,
+.paige-reading-time,
+.paige-terms,
+.paige-toc,
+#paige-credit,
+#paige-pages .paige-authors,
+#paige-pages .paige-date-header,
+#paige-pages .paige-date,
+#paige-pages .paige-summary,
+#paige-pages .paige-terms {
+    display: none;
+}
+
+```
+
+This is used in the example site.
 
 ## Design
 
