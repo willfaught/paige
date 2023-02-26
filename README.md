@@ -274,8 +274,6 @@ paige:
 
 The assigned values shown are the default values.
 
-If you set `paige.credit.data.hide`, please credit this project in a post to help others find it.
-
 ### Site parameters
 
 Optional site parameters:
