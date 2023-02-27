@@ -7,7 +7,6 @@
 {{ $gap := $params.gap }}
 {{ $height := $params.height }}
 {{ $horizontal := $params.horizontal | default "center" }}
-{{ $maxheight := $params.maxheight }}
 {{ $maxwidth := $params.maxwidth }}
 {{ $number := $params.number }}
 {{ $numbered := $params.numbered }}
@@ -26,10 +25,6 @@
 
 {{ if $height }}
     {{ $heights = $heights | append (printf "height: %v" $height) }}
-{{ end }}
-
-{{ if $maxheight }}
-    {{ $heights = $heights | append (printf "max-height: %v" $maxheight) }}
 {{ end }}
 
 {{ $heights = delimit ($heights | sort) "; " }}

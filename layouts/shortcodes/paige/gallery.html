@@ -4,7 +4,6 @@
 {{ $image := .Get "image" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
-{{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" | default "resize" }}
 {{ $number := .Get "number" }}
@@ -33,7 +32,6 @@
             "gap" 2
             "height" $height
             "link" $link
-            "maxheight" $maxheight
             "maxwidth" $maxwidth
             "method" $method
             "options" $options
@@ -49,7 +47,6 @@
             "content" (partial "paige/img.html" (dict
                 "class" "img-fluid"
                 "height" $height
-                "maxheight" $maxheight
                 "maxwidth" $maxwidth
                 "method" $method
                 "options" $options
@@ -105,7 +102,6 @@
                                     "content" (partial "paige/img.html" (dict
                                         "class" "img-fluid"
                                         "height" $height
-                                        "maxheight" $maxheight
                                         "maxwidth" $maxwidth
                                         "method" $method
                                         "options" $options
@@ -129,7 +125,6 @@
                             "content" (partial "paige/img.html" (dict
                                 "class" "img-fluid"
                                 "height" $height
-                                "maxheight" $maxheight
                                 "maxwidth" $maxwidth
                                 "method" $method
                                 "options" $options

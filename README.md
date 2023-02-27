@@ -354,7 +354,6 @@ The `paige/figure` shortcode provides a figure with content.
     float="left"
     height="10rem"
     horizontal="center"
-    maxheight="10rem"
     maxwidth="10rem"
     number=0
     numbered=false
@@ -378,8 +377,6 @@ Parameters:
     <dd>Optional. String. CSS value. Total height.</dd>
     <dt><code>horizontal</code></dt>
     <dd>Optional. String. Horizontal alignment. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
-    <dt><code>maxheight</code></dt>
-    <dd>Optional. String. CSS value. Maximum total height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum total width.</dd>
     <dt><code>number</code></dt>
@@ -495,7 +492,6 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
     height="10rem"
     images="*.jpg"
     justify="center"
-    maxheight="10rem"
     maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
@@ -508,7 +504,6 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
         caption="My caption"
         height="10rem"
         image="me.jpg"
-        maxheight="10rem"
         maxwidth="10rem"
         method="resize"
         options="550x webp picture Lanczos"
@@ -519,7 +514,6 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
         caption="My caption"
         height="10rem"
         image="you.jpg"
-        maxheight="10rem"
         maxwidth="10rem"
         method="resize"
         options="550x webp picture Lanczos"
@@ -546,8 +540,6 @@ Parameters:
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>. Must not be used when nested.</dd>
-    <dt><code>maxheight</code></dt>
-    <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>method</code></dt>

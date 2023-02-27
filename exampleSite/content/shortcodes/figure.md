@@ -120,22 +120,6 @@ I made a huge tiny mistake. In fact, it was a box of Oscar's legally obtained me
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" height="5rem" */>}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{</* /paige/figure */>}}
-```
-
-Result:
-
-{{< paige/figure caption="Hickory Dickory Dock" height="5rem" >}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{< /paige/figure >}}
-
----
-
-Code:
-
-```go-text-template
 {{</* paige/figure caption="Hickory Dickory Dock" height="20rem" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -176,38 +160,6 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 {{< /paige/figure >}}
 
 {{< paige/figure caption="Hickory Dickory Dock" horizontal="end" >}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{< /paige/figure >}}
-
-## Maxheight parameter
-
-Code:
-
-```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" maxheight="5rem" */>}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{</* /paige/figure */>}}
-```
-
-Result:
-
-{{< paige/figure caption="Hickory Dickory Dock" maxheight="5rem" >}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{< /paige/figure >}}
-
----
-
-Code:
-
-```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" maxheight="20rem" */>}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{</* /paige/figure */>}}
-```
-
-Result:
-
-{{< paige/figure caption="Hickory Dickory Dock" maxheight="20rem" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
@@ -406,13 +358,13 @@ I made a huge tiny mistake. In fact, it was a box of Oscar's legally obtained me
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" horizontal="end" maxheight="20rem" maxwidth="10rem" number=7 vertical="center" */>}}
+{{</* paige/figure caption="Hickory Dickory Dock" height="20rem" horizontal="end" maxwidth="10rem" number=7 vertical="center" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
 ```
 
 Result:
 
-{{< paige/figure caption="Hickory Dickory Dock" horizontal="end" maxheight="20rem" maxwidth="10rem" number=7 vertical="center" >}}
+{{< paige/figure caption="Hickory Dickory Dock" height="20rem" horizontal="end" maxwidth="10rem" number=7 vertical="center" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}

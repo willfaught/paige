@@ -3,7 +3,6 @@
 {{ $height := .Get "height" }}
 {{ $horizontal := .Get "horizontal" }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
-{{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $number := .Get "number" }}
 {{ $numbered := .Get "numbered" }}
@@ -20,7 +19,6 @@
     "gap" 2
     "height" $height
     "horizontal" $horizontal
-    "maxheight" $maxheight
     "maxwidth" $maxwidth
     "number" $number
     "numbered" $numbered
