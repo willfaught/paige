@@ -1,27 +1,4 @@
-{{ $caption := .Get "caption" }}
-{{ $float := .Get "float" }}
-{{ $height := .Get "height" }}
-{{ $horizontal := .Get "horizontal" }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
-{{ $maxwidth := .Get "maxwidth" }}
-{{ $number := .Get "number" }}
-{{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" }}
-{{ $vertical := .Get "vertical" }}
-{{ $width := .Get "width" }}
 
-{{ $content := highlight (.Inner | replaceRE "^\n" "") $lang $options }}
-
-{{ partial "paige/figure.html" (dict
-    "caption" $caption
-    "content" $content
-    "float" $float
-    "gap" 2
-    "height" $height
-    "horizontal" $horizontal
-    "maxwidth" $maxwidth
-    "number" $number
-    "numbered" $numbered
-    "vertical" $vertical
-    "width" $width
-) }}
+<div class="paige-code">{{ highlight (.Inner | replaceRE "^\n" "") $lang $options }}</div>

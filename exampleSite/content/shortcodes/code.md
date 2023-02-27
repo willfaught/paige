@@ -11,6 +11,8 @@ Paige provides a `paige/code` shortcode for displaying code.
 
 <!--more-->
 
+## Basic
+
 Code:
 
 ```go-text-template
@@ -77,12 +79,12 @@ Result:
                  --XXXXXXXXXXXXXXXXXX-
 {{< /paige/code >}}
 
----
+## Lang parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/code lang="c" options="linenos=true,hl_lines=10" */>}}
+{{</* paige/code lang="c" */>}}
 float Q_rsqrt( float number )
 {
 	long i;
@@ -103,7 +105,7 @@ float Q_rsqrt( float number )
 
 Result:
 
-{{< paige/code lang="c" options="linenos=true,hl_lines=10" >}}
+{{< paige/code lang="c" >}}
 float Q_rsqrt( float number )
 {
 	long i;
@@ -120,3 +122,68 @@ float Q_rsqrt( float number )
 	return y;
 }
 {{< /paige/code >}}
+
+
+## Options parameter
+
+Code:
+
+```go-text-template
+{{</* paige/code options="linenos=true,hl_lines=10" */>}}
+float Q_rsqrt( float number )
+{
+	long i;
+	float x2, y;
+	const float threehalfs = 1.5F;
+
+	x2 = number * 0.5F;
+	y  = number;
+	i  = * ( long * ) &y;
+	i  = 0x5f3759df - ( i >> 1 );
+	y  = * ( float * ) &i;
+	y  = y * ( threehalfs - ( x2 * y * y ) );
+
+	return y;
+}
+{{</* /paige/code */>}}
+```
+
+Result:
+
+{{< paige/code options="linenos=true,hl_lines=10" >}}
+float Q_rsqrt( float number )
+{
+	long i;
+	float x2, y;
+	const float threehalfs = 1.5F;
+
+	x2 = number * 0.5F;
+	y  = number;
+	i  = * ( long * ) &y;
+	i  = 0x5f3759df - ( i >> 1 );
+	y  = * ( float * ) &i;
+	y  = y * ( threehalfs - ( x2 * y * y ) );
+
+	return y;
+}
+{{< /paige/code >}}
+
+## Figure
+
+Code:
+
+```go-text-template
+{{</* paige/figure caption="Quine" */>}}
+{{</* paige/code options="linenos=true,hl_lines=10" */>}}
+q = 'q = %r; print(q %% q)'; print(q % q)
+{{</* /paige/code */>}}
+{{</* /paige/figure */>}}
+```
+
+Result:
+
+{{< paige/figure caption="Quine" >}}
+{{< paige/code lang="python" >}}
+q = 'q = %r; print(q %% q)'; print(q % q)
+{{< /paige/code >}}
+{{< /paige/figure >}}
