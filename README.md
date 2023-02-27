@@ -401,9 +401,7 @@ My content
 
 Inner content: Required. String. Markdown. The quotation.
 
-Parameters:
-
-It has the parameters of the `paige/figure` shortcode.
+Parameters: None.
 
 ### Code
 
@@ -756,6 +754,8 @@ Use these CSS selectors to extend the default styling:
     <dd>A page in the pages in the list and term layouts.</dd>
     <dt><code>.paige-published</code></dt>
     <dd>Applied to the title of published pages in the list and term layouts.</dd>
+    <dt><code>.paige-quote</code></dt>
+    <dd>On the root element of the `paige/quote` shortcode.</dd>
     <dt><code>.paige-section</code></dt>
     <dd>Appears with <code>.paige-article</code> for a page with kind "section".</dd>
     <dt><code>.paige-single</code></dt>

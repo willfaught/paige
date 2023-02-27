@@ -11,32 +11,38 @@ Paige provides a `paige/quote` shortcode for displaying a quotation.
 
 <!--more-->
 
+## Basic
+
 Code:
 
 ```go-text-template
 {{</* paige/quote */>}}
-Don't believe everything you read on the Internet.
+Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/quote */>}}
 ```
 
 Result:
 
 {{< paige/quote >}}
-Don't believe everything you read on the Internet.
+Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/quote >}}
 
----
+## Figure
 
 Code:
 
 ```go-text-template
-{{</* paige/quote caption="Abraham Lincoln" */>}}
-Don't believe everything you read on the Internet.
+{{</* paige/figure caption="Hickory Dickory Dock" */>}}
+{{</* paige/quote */>}}
+Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/quote */>}}
+{{</* /paige/figure */>}}
 ```
 
 Result:
 
-{{< paige/quote caption="Abraham Lincoln" >}}
-Don't believe everything you read on the Internet.
+{{< paige/figure caption="Hickory Dickory Dock" >}}
+{{< paige/quote >}}
+Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/quote >}}
+{{< /paige/figure >}}

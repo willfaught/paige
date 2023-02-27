@@ -1,25 +1,5 @@
-{{ $caption := .Get 0 | default (.Get "caption") }}
-{{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" }}
-{{ $float := .Get "float" }}
-{{ $height := .Get "height" }}
-{{ $horizontal := .Get "horizontal" }}
-{{ $maxwidth := .Get "maxwidth" }}
-{{ $number := .Get "number" }}
-{{ $numbered := .Get "numbered" }}
-{{ $vertical := .Get "vertical" }}
-{{ $width := .Get "width" }}
+{{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" | markdownify }}
 
-{{ $content = printf `<blockquote class="blockquote mb-0">%v</blockquote>` $content }}
-
-{{ partial "paige/figure.html" (dict
-    "caption" $caption
-    "content" $content
-    "float" $float
-    "height" $height
-    "horizontal" $horizontal
-    "maxwidth" $maxwidth
-    "number" $number
-    "numbered" $numbered
-    "vertical" $vertical
-    "width" $width
-) }}
+<div class="paige-quote">
+    <blockquote class="blockquote">{{ $content }}</blockquote>
+</div>
