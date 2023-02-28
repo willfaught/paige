@@ -1,36 +1,31 @@
 {{ $alt := .Get "alt" }}
-{{ $caption := .Get "caption" }}
-{{ $float := .Get "float" }}
-{{ $height := .Get "height" }}
-{{ $horizontal := .Get "horizontal" }}
 {{ $link := .Get "link" }}
-{{ $maxwidth := .Get "maxwidth" }}
+{{ $height := .Get "height" }}
 {{ $method := .Get "method" }}
-{{ $number := .Get "number" }}
-{{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" }}
 {{ $raw := .Get "raw" }}
 {{ $src := .Get 0 | default (.Get "src") }}
 {{ $title := .Get "title" }}
-{{ $vertical := .Get "vertical" }}
 {{ $width := .Get "width" }}
 
-{{ partial "paige/image-figure.html" (dict
+{{ $content := partial "paige/img.html" (dict
     "alt" $alt
-    "caption" $caption
-    "float" $float
-    "gap" 2
+    "class" "img-fluid"
     "height" $height
-    "horizontal" $horizontal
-    "link" $link
-    "maxwidth" $maxwidth
     "method" $method
-    "number" $number
-    "numbered" $numbered
     "options" $options
+    "page" .Page
     "raw" $raw
     "src" $src
     "title" $title
-    "vertical" $vertical
     "width" $width
 ) }}
+
+{{ if $link }}
+    {{ $content = partial "paige/a.html" (dict
+        "content" $content
+        "href" $link
+    ) }}
+{{ end }}
+
+<div class="paige-image">{{ $content }}</div>

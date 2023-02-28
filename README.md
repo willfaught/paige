@@ -436,13 +436,14 @@ The `paige/image` shortcode provides a figure with an image.
 ```
 {{< paige/image
     alt="My alt" >}}
-    caption="My caption"
+    height="10rem"
     link="https://github.com/willfaught/paige"
     method="resize"
     options="550x webp picture Lanczos"
     raw=false
     src="me.jpg"
     title="My title"
+    width="10rem"
 >}}
 ```
 
@@ -453,8 +454,8 @@ Parameters:
 <dl>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
-    <dt><code>caption</code></dt>
-    <dd>Optional. String. Markdown. Descriptive text below the image.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link.</dd>
     <dt><code>method</code></dt>
@@ -467,9 +468,9 @@ Parameters:
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
-
-It has the other parameters of the `paige/figure` shortcode.
 
 ### Gallery
 

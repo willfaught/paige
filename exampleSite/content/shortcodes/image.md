@@ -11,6 +11,80 @@ Paige provides a `paige/image` shortcode for displaying an image.
 
 <!--more-->
 
+## Alt parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image alt="Landscape" src="landscape.webp" */>}}
+```
+
+Result:
+
+{{< paige/image alt="Landscape" src="landscape.webp" >}}
+
+## Height parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image height="10rem" src="landscape.webp" */>}}
+```
+
+Result:
+
+{{< paige/image height="10rem" src="landscape.webp" >}}
+
+## Link parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image link="https://github.com/willfaught/paige" src="landscape.webp" */>}}
+```
+
+Result:
+
+{{< paige/image link="https://github.com/willfaught/paige" src="landscape.webp" >}}
+
+## Method and options parameters
+
+Code:
+
+```go-text-template
+{{</* paige/image link="https://github.com/willfaught/paige" method="resize" options="550x webp picture Lanczos" src="landscape.webp" */>}}
+```
+
+Result:
+
+{{< paige/image link="https://github.com/willfaught/paige" method="resize" options="550x webp picture Lanczos" src="landscape.webp" >}}
+
+## Raw parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image raw=false src="https://picsum.photos/1296/600.webp" */>}}
+```
+
+Result:
+
+{{< paige/image raw=false src="https://picsum.photos/1296/600.webp" >}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/image raw=true src="https://picsum.photos/1296/600.webp" */>}}
+```
+
+Result:
+
+{{< paige/image raw=true src="https://picsum.photos/1296/600.webp" >}}
+
+## Src parameter
+
 Code:
 
 ```go-text-template
@@ -21,34 +95,42 @@ Result:
 
 {{< paige/image src="landscape.webp" >}}
 
----
+## Title parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/image src="landscape.webp" caption="Landscape" width="50%" link="https://github.com/willfaught/paige" */>}}
+{{</* paige/image src="landscape.webp" title="Landscape" */>}}
 ```
 
 Result:
 
-{{< paige/image src="landscape.webp" caption="Landscape" width="50%" link="https://github.com/willfaught/paige" >}}
+{{< paige/image src="landscape.webp" title="Landscape" >}}
 
----
+## Width parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/image src="landscape.webp" caption="Landscape" width="25%" link="https://github.com/willfaught/paige" float="start" */>}}
-
-{{</* paige/image src="landscape.webp" caption="Landscape" width="25%" link="https://github.com/willfaught/paige" float="end" */>}}
-
-Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro. In addition to brunch, the restaurant was known for an item on the menu called the "Skip's Scramble", an omelet that contained everything on the menu. Do not order the Skip's Scramble. You might enjoy this. Oh. Em. Gee. That's amazing. It feels good to be back in a queen! I need a tea to give my dingle less tingle. Teamocil. Heyyyyyy Uncle Father Oscar. Let's see some bananas and nuts! So Ann, the question is, do you want a man or a boy? I know how I would answer. Never once touched my per diem. I'd go to Craft Service, get some raw veggies, bacon, Cup-A-Soup…baby, I got a stew goin'. You might enjoy this. Oh. Em. Gee. That's amazing. I've always been deeply passionate about nature. Perhaps you remember Neuterfest? I'll never forget your wedding. But I did finally get into Dad's pants. Although I had to have the crotch taken in a little bit. She's a girl, I need to teach her how to be a woman. Within her lies a queen. Let me out that queen. There are dozens of us! Dozens! Oh please. They didn't sneak into this country to be your friends. No one's called him Baby Buster since high school. I mean, it's one banana, Michael. What could it cost, ten dollars? "Circumvent." It means "to go around." Gob: The old "reach around." Mom always taught us to curl up in a ball and remain motionless when confronted. You're Killing Me, Buster.
+{{</* paige/image src="landscape.webp" width="50%" */>}}
 ```
 
 Result:
 
-{{< paige/image src="landscape.webp" caption="Landscape" width="25%" link="https://github.com/willfaught/paige" float="start" >}}
+{{< paige/image src="landscape.webp" width="50%" >}}
 
-{{< paige/image src="landscape.webp" caption="Landscape" width="25%" link="https://github.com/willfaught/paige" float="end" >}}
+## Figure
 
-Michael was having brunch with Sally Sitwell at a restaurant called Skip Church's Bistro. In addition to brunch, the restaurant was known for an item on the menu called the "Skip's Scramble", an omelet that contained everything on the menu. Do not order the Skip's Scramble. You might enjoy this. Oh. Em. Gee. That's amazing. It feels good to be back in a queen! I need a tea to give my dingle less tingle. Teamocil. Heyyyyyy Uncle Father Oscar. Let's see some bananas and nuts! So Ann, the question is, do you want a man or a boy? I know how I would answer. Never once touched my per diem. I'd go to Craft Service, get some raw veggies, bacon, Cup-A-Soup…baby, I got a stew goin'. You might enjoy this. Oh. Em. Gee. That's amazing. I've always been deeply passionate about nature. Perhaps you remember Neuterfest? I'll never forget your wedding. But I did finally get into Dad's pants. Although I had to have the crotch taken in a little bit. She's a girl, I need to teach her how to be a woman. Within her lies a queen. Let me out that queen. There are dozens of us! Dozens! Oh please. They didn't sneak into this country to be your friends. No one's called him Baby Buster since high school. I mean, it's one banana, Michael. What could it cost, ten dollars? "Circumvent." It means "to go around." Gob: The old "reach around." Mom always taught us to curl up in a ball and remain motionless when confronted. You're Killing Me, Buster.
+Code:
+
+```go-text-template
+{{</* paige/figure caption="Landscape" */>}}
+{{</* paige/image src="landscape.webp" */>}}
+{{</* /paige/figure */>}}
+```
+
+Result:
+
+{{< paige/figure caption="Landscape" >}}
+{{< paige/image src="landscape.webp" >}}
+{{< /paige/figure >}}
