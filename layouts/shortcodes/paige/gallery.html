@@ -1,7 +1,6 @@
 {{ $align := .Get "align" | default "center" }}
 {{ $caption := .Get "caption" }}
 {{ $height := .Get "height" }}
-{{ $image := .Get "image" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
 {{ $maxwidth := .Get "maxwidth" }}
@@ -9,138 +8,91 @@
 {{ $number := .Get "number" }}
 {{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
-{{ $raw := .Get "raw" }}
 {{ $type := .Get "type" | default "rows" }}
 {{ $width := .Get "width" }}
 
-{{ if $image }}
-    {{ $link := $image }}
-    {{ $resource := "" }}
+{{ $inner := chomp .Inner }}
+{{ $resources := slice }}
+{{ $showcaption := $caption }}
 
-    {{ if not $raw }}
-        {{ $resource = partial "paige/resource.html" (dict
-            "page" .Page
-            "url" $image
-        ) }}
-        {{ $link = $resource.RelPermalink }}
-    {{ end }}
-
-    {{ if $caption }}
-        {{ partial "paige/image-figure.html" (dict
-            "caption" $caption
-            "compact" true
-            "gap" 2
-            "height" $height
-            "link" $link
-            "maxwidth" $maxwidth
-            "method" $method
-            "options" $options
-            "page" .Page
-            "raw" $raw
-            "resource" $resource
-            "src" $image
-            "table" true
-            "width" $width
-        ) }}
+{{ with $images }}
+    {{ with $.Page.Resources.Match . }}
+        {{ $resources = . }}
     {{ else }}
-        {{ partial "paige/a.html" (dict
-            "content" (partial "paige/img.html" (dict
-                "class" "img-fluid"
-                "height" $height
-                "maxwidth" $maxwidth
-                "method" $method
-                "options" $options
-                "resource" $resource
-                "src" $image
-                "width" $width
-            ))
-            "href" $link
-        ) }}
+        {{ $resources = resources.Match . }}
     {{ end }}
 {{ else }}
-    {{ $inner := chomp .Inner }}
-    {{ $resources := slice }}
-    {{ $showcaption := $caption }}
-
-    {{ with $images }}
-        {{ with $.Page.Resources.Match . }}
-            {{ $resources = . }}
-        {{ else }}
-            {{ $resources = resources.Match . }}
-        {{ end }}
+    {{ with .Page.Resources.ByType "image" }}
+        {{ $resources = . }}
     {{ else }}
-        {{ with .Page.Resources.ByType "image" }}
-            {{ $resources = . }}
-        {{ else }}
-            {{ $resources = resources.ByType "image" }}
-        {{ end }}
+        {{ $resources = resources.ByType "image" }}
     {{ end }}
+{{ end }}
 
-    {{ if $caption }}
-        {{ if $number }}
-            {{ $caption = printf "%v %v: %v" (i18n "paige_figure") $number $caption }}
-        {{ end }}
-    {{ else }}
-        {{ if $number }}
-            {{ $caption = printf "%v %v" (i18n "paige_figure") $number }}
-            {{ $showcaption = true }}
-        {{ else if $numbered }}
-            {{ $showcaption = true }}
-        {{ end }}
+{{ if $caption }}
+    {{ if $number }}
+        {{ $caption = printf "%v %v: %v" (i18n "paige_figure") $number $caption }}
     {{ end }}
+{{ else }}
+    {{ if $number }}
+        {{ $caption = printf "%v %v" (i18n "paige_figure") $number }}
+        {{ $showcaption = true }}
+    {{ else if $numbered }}
+        {{ $showcaption = true }}
+    {{ end }}
+{{ end }}
 
-    <figure>
-        {{ if eq $type "grid" }}
-            <div class="container-fluid px-0">
-                <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
-                    {{ with $inner }}
-                        {{ . }}
-                    {{ else }}
-                        {{ range $resources }}
-                            <div class="col">
-                                {{ partial "paige/a.html" (dict
-                                    "content" (partial "paige/img.html" (dict
-                                        "class" "img-fluid"
-                                        "height" $height
-                                        "maxwidth" $maxwidth
-                                        "method" $method
-                                        "options" $options
-                                        "resource" .
-                                        "width" $width
-                                    ))
-                                    "href" .RelPermalink
-                                ) }}
-                            </div>
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-        {{ else if eq $type "rows" }}
-            <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
+<figure class="paige-gallery">
+    {{ if eq $type "grid" }}
+        <div class="container-fluid px-0">
+            <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
                 {{ with $inner }}
                     {{ . }}
                 {{ else }}
                     {{ range $resources }}
-                        {{ partial "paige/a.html" (dict
-                            "content" (partial "paige/img.html" (dict
-                                "class" "img-fluid"
-                                "height" $height
-                                "maxwidth" $maxwidth
-                                "method" $method
-                                "options" $options
-                                "resource" .
-                                "width" $width
-                            ))
-                            "href" .RelPermalink
-                        ) }}
+                        <div class="col">
+                            {{ partial "paige/a.html" (dict
+                                "content" (partial "paige/img.html" (dict
+                                    "class" "img-fluid"
+                                    "height" $height
+                                    "maxwidth" $maxwidth
+                                    "method" $method
+                                    "options" $options
+                                    "resource" .
+                                    "width" $width
+                                ))
+                                "href" .RelPermalink
+                            ) }}
+                        </div>
                     {{ end }}
                 {{ end }}
             </div>
-        {{ else }}
-            {{ errorf "invalid type: %q" $type }}
-        {{ end }}
-        {{ if $showcaption }}
-            <figcaption class="figure-caption mt-2 text-center">{{ $caption }}</figcaption>
-        {{ end }}
-    </figure>
-{{ end }}
+        </div>
+    {{ else if eq $type "rows" }}
+        <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
+            {{ with $inner }}
+                {{ . }}
+            {{ else }}
+                {{ range $resources }}
+                    {{ partial "paige/a.html" (dict
+                        "content" (partial "paige/img.html" (dict
+                            "class" "img-fluid"
+                            "height" $height
+                            "maxwidth" $maxwidth
+                            "method" $method
+                            "options" $options
+                            "resource" .
+                            "width" $width
+                        ))
+                        "href" .RelPermalink
+                    ) }}
+                {{ end }}
+            {{ end }}
+        </div>
+    {{ else }}
+        {{ errorf "invalid type: %q" $type }}
+    {{ end }}
+    {{ if $showcaption }}
+        <figcaption class="figure-caption mt-2 text-center">{{ $caption }}</figcaption>
+    {{ end }}
+</figure>

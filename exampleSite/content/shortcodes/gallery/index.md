@@ -213,14 +213,14 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery caption="1 image" */>}}
-    {{</* paige/gallery image="*-1*.jpg" caption="Image 1" /*/>}}
+    {{</* paige/image src="*-1*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery caption="1 image" >}}
-    {{< paige/gallery image="*-1*.jpg" caption="Image 1" />}}
+    {{< paige/image src="*-1*.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -229,16 +229,16 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery caption="2 images" */>}}
-    {{</* paige/gallery image="*-2*.jpg" caption="Image 1" /*/>}}
-    {{</* paige/gallery image="*-3*.jpg" caption="Image 2" /*/>}}
+    {{</* paige/image src="*-2*.jpg" /*/>}}
+    {{</* paige/image src="*-3*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery caption="2 images" >}}
-    {{< paige/gallery image="*-2*.jpg" caption="Image 1" />}}
-    {{< paige/gallery image="*-3*.jpg" caption="Image 2" />}}
+    {{< paige/image src="*-2*.jpg" >}}
+    {{< paige/image src="*-3*.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -247,18 +247,18 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery caption="3 images" */>}}
-    {{</* paige/gallery image="*-4*.jpg" caption="Image 1" /*/>}}
-    {{</* paige/gallery image="*-5*.jpg" caption="Image 2" /*/>}}
-    {{</* paige/gallery image="*-6*.jpg" caption="Image 3" /*/>}}
+    {{</* paige/image src="*-4*.jpg" /*/>}}
+    {{</* paige/image src="*-5*.jpg" /*/>}}
+    {{</* paige/image src="*-6*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery caption="3 images" >}}
-    {{< paige/gallery image="*-4*.jpg" caption="Image 1" />}}
-    {{< paige/gallery image="*-5*.jpg" caption="Image 2" />}}
-    {{< paige/gallery image="*-6*.jpg" caption="Image 3" />}}
+    {{< paige/image src="*-4*.jpg" >}}
+    {{< paige/image src="*-5*.jpg" >}}
+    {{< paige/image src="*-6*.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -267,20 +267,20 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery caption="4 images" */>}}
-    {{</* paige/gallery image="*-7*.jpg" caption="Image 1" /*/>}}
-    {{</* paige/gallery image="*-8*.jpg" caption="Image 2" /*/>}}
-    {{</* paige/gallery image="*-9*.jpg" caption="Image 3" /*/>}}
-    {{</* paige/gallery image="*-10.jpg*" caption="Image 4" /*/>}}
+    {{</* paige/image src="*-7*.jpg" /*/>}}
+    {{</* paige/image src="*-8*.jpg" /*/>}}
+    {{</* paige/image src="*-9*.jpg" /*/>}}
+    {{</* paige/image src="*-10.jpg*" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery caption="4 images" >}}
-    {{< paige/gallery image="*-7*.jpg" caption="Image 1" />}}
-    {{< paige/gallery image="*-8*.jpg" caption="Image 2" />}}
-    {{< paige/gallery image="*-9*.jpg" caption="Image 3" />}}
-    {{< paige/gallery image="*-10.jpg*" caption="Image 4" />}}
+    {{< paige/image src="*-7*.jpg" >}}
+    {{< paige/image src="*-8*.jpg" >}}
+    {{< paige/image src="*-9*.jpg" >}}
+    {{< paige/image src="*-10.jpg*" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -289,22 +289,22 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery caption="5 images" */>}}
-    {{</* paige/gallery image="*-11*.jpg" caption="Image 1" /*/>}}
-    {{</* paige/gallery image="*-12*.jpg" caption="Image 2" /*/>}}
-    {{</* paige/gallery image="*-13*.jpg" caption="Image 3" /*/>}}
-    {{</* paige/gallery image="*-14*.jpg" caption="Image 4" /*/>}}
-    {{</* paige/gallery image="*-15*.jpg" caption="Image 5" /*/>}}
+    {{</* paige/image src="*-11*.jpg" /*/>}}
+    {{</* paige/image src="*-12*.jpg" /*/>}}
+    {{</* paige/image src="*-13*.jpg" /*/>}}
+    {{</* paige/image src="*-14*.jpg" /*/>}}
+    {{</* paige/image src="*-15*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery caption="5 images" >}}
-    {{< paige/gallery image="*-11*.jpg" caption="Image 1" />}}
-    {{< paige/gallery image="*-12*.jpg" caption="Image 2" />}}
-    {{< paige/gallery image="*-13*.jpg" caption="Image 3" />}}
-    {{< paige/gallery image="*-14*.jpg" caption="Image 4" />}}
-    {{< paige/gallery image="*-15*.jpg" caption="Image 5" />}}
+    {{< paige/image src="*-11*.jpg" >}}
+    {{< paige/image src="*-12*.jpg" >}}
+    {{< paige/image src="*-13*.jpg" >}}
+    {{< paige/image src="*-14*.jpg" >}}
+    {{< paige/image src="*-15*.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -313,24 +313,24 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery caption="6 images" */>}}
-    {{</* paige/gallery image="*-16*.jpg" caption="Image 1" /*/>}}
-    {{</* paige/gallery image="*-17*.jpg" caption="Image 2" /*/>}}
-    {{</* paige/gallery image="*-18*.jpg" caption="Image 3" /*/>}}
-    {{</* paige/gallery image="*-19*.jpg" caption="Image 4" /*/>}}
-    {{</* paige/gallery image="*-20*.jpg" caption="Image 5" /*/>}}
-    {{</* paige/gallery image="*-21*.jpg" caption="Image 6" /*/>}}
+    {{</* paige/image src="*-16*.jpg" /*/>}}
+    {{</* paige/image src="*-17*.jpg" /*/>}}
+    {{</* paige/image src="*-18*.jpg" /*/>}}
+    {{</* paige/image src="*-19*.jpg" /*/>}}
+    {{</* paige/image src="*-20*.jpg" /*/>}}
+    {{</* paige/image src="*-21*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery caption="6 images" >}}
-    {{< paige/gallery image="*-16*.jpg" caption="Image 1" />}}
-    {{< paige/gallery image="*-17*.jpg" caption="Image 2" />}}
-    {{< paige/gallery image="*-18*.jpg" caption="Image 3" />}}
-    {{< paige/gallery image="*-19*.jpg" caption="Image 4" />}}
-    {{< paige/gallery image="*-20*.jpg" caption="Image 5" />}}
-    {{< paige/gallery image="*-21*.jpg" caption="Image 6" />}}
+    {{< paige/image src="*-16*.jpg" >}}
+    {{< paige/image src="*-17*.jpg" >}}
+    {{< paige/image src="*-18*.jpg" >}}
+    {{< paige/image src="*-19*.jpg" >}}
+    {{< paige/image src="*-20*.jpg" >}}
+    {{< paige/image src="*-21*.jpg" >}}
 {{< /paige/gallery >}}
 
 <div class="text-center">Photos by <a href="https://unsplash.com/@photos_by_lanty">Lanty</a>.</div>
