@@ -115,22 +115,6 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 I made a huge tiny mistake. In fact, it was a box of Oscar's legally obtained medical marijuana. Primo bud. Real sticky weed. And don't make the water too hot. The scabs come right off. There's a new daddy in town. A discipline daddy. It's so watery. And yet there's a smack of ham to it. Chickens don't clap! I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. I hear the jury's still out on science. This is not what it looks like. It looks like you're tweaking her nipples through a chain-link fence. What, so the guy we are meeting with can't even grow his own hair? COME ON!
 
-## Height parameter
-
-Code:
-
-```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" height="20rem" */>}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{</* /paige/figure */>}}
-```
-
-Result:
-
-{{< paige/figure caption="Hickory Dickory Dock" height="20rem" >}}
-Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
-{{< /paige/figure >}}
-
 ## Horizontal parameter
 
 Code:
@@ -266,15 +250,15 @@ Code:
 ```go-text-template
 <div class="column-gap-3 d-flex justify-content-between">
 
-{{</* paige/figure caption="Hickory Dickory Dock" height="20rem" vertical="start" */>}}
+{{</* paige/figure caption="Hickory Dickory Dock" vertical="start" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
 
-{{</* paige/figure caption="Hickory Dickory Dock" height="20rem" vertical="center" */>}}
+{{</* paige/figure caption="Hickory Dickory Dock" vertical="center" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
 
-{{</* paige/figure caption="Hickory Dickory Dock" height="20rem" vertical="end" */>}}
+{{</* paige/figure caption="Hickory Dickory Dock" vertical="end" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
 
@@ -285,15 +269,15 @@ Result:
 
 <div class="column-gap-3 d-flex justify-content-between">
 
-{{< paige/figure caption="Hickory Dickory Dock" height="20rem" vertical="start" >}}
+{{< paige/figure caption="Hickory Dickory Dock" vertical="start" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
-{{< paige/figure caption="Hickory Dickory Dock" height="20rem" vertical="center" >}}
+{{< paige/figure caption="Hickory Dickory Dock" vertical="center" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
-{{< paige/figure caption="Hickory Dickory Dock" height="20rem" vertical="end" >}}
+{{< paige/figure caption="Hickory Dickory Dock" vertical="end" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
@@ -336,7 +320,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" float="start" height="20rem" number=7 vertical="end" width="10rem" */>}}
+{{</* paige/figure caption="Hickory Dickory Dock" float="start" number=7 width="20rem" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
 
@@ -345,7 +329,7 @@ I made a huge tiny mistake. In fact, it was a box of Oscar's legally obtained me
 
 Result:
 
-{{< paige/figure caption="Hickory Dickory Dock" float="start" height="20rem" number=7 vertical="end" width="10rem" >}}
+{{< paige/figure caption="Hickory Dickory Dock" float="start" number=7 width="20rem" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
@@ -358,13 +342,21 @@ I made a huge tiny mistake. In fact, it was a box of Oscar's legally obtained me
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Hickory Dickory Dock" height="20rem" horizontal="end" maxwidth="10rem" number=7 vertical="center" */>}}
+<div style="height: 20rem">
+
+{{</* paige/figure caption="Hickory Dickory Dock" horizontal="end" maxwidth="20rem" number=7 vertical="end" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
+
+</div>
 ```
 
 Result:
 
-{{< paige/figure caption="Hickory Dickory Dock" height="20rem" horizontal="end" maxwidth="10rem" number=7 vertical="center" >}}
+<div style="height: 20rem">
+
+{{< paige/figure caption="Hickory Dickory Dock" horizontal="end" maxwidth="20rem" number=7 vertical="end" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
+
+</div>

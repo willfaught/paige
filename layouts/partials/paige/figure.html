@@ -5,7 +5,6 @@
 {{ $content := $params.content | markdownify }}
 {{ $float := $params.float }}
 {{ $gap := $params.gap }}
-{{ $height := $params.height }}
 {{ $horizontal := $params.horizontal | default "center" }}
 {{ $maxwidth := $params.maxwidth }}
 {{ $number := $params.number }}
@@ -13,7 +12,6 @@
 {{ $vertical := $params.vertical | default "center" }}
 {{ $width := $params.width }}
 
-{{ $heights := slice }}
 {{ $showcaption := $caption }}
 {{ $sidemargin := "" }}
 {{ $table := false }}
@@ -22,12 +20,6 @@
 {{ if and $caption (or $compact $float) }}
     {{ $table = true }}
 {{ end }}
-
-{{ if $height }}
-    {{ $heights = $heights | append (printf "height: %v" $height) }}
-{{ end }}
-
-{{ $heights = delimit ($heights | sort) "; " }}
 
 {{ if $maxwidth }}
     {{ $widths = $widths | append (printf "max-width: %v" $maxwidth) }}
@@ -62,7 +54,7 @@
     {{ end }}
 {{ end }}
 
-<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $horizontal }} {{ if $compact }} mb-0 {{ else }} mb-3 {{ end }} {{ with $sidemargin }} {{ . }} {{ end }} overflow-auto paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}" {{ with $heights }} style="{{ . | safeCSS }}" {{ end }}>
+<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $horizontal }} {{ if $compact }} mb-0 {{ else }} mb-3 {{ end }} {{ with $sidemargin }} {{ . }} {{ end }} overflow-auto paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
     <figure class="{{ if $table }} d-table {{ end }} mb-0" {{ with $widths }} style="{{ . | safeCSS }}" {{ end }}>
         <div class="d-flex justify-content-{{ $horizontal }} text-{{ $horizontal }}">{{ $content }}</div>
 
