@@ -14,22 +14,6 @@ Paige provides a `paige/gallery` shortcode for displaying a list of images.
 See the images in the example site to understand how the below file patterns work.
 Resize the viewport as narrow and wide as you can to see the responsiveness.
 
-Code:
-
-```go-text-template
-{{</* paige/gallery */>}}
-    {{</* paige/gallery image="https://picsum.photos/400/300.webp" raw=true /*/>}}
-{{</* /paige/gallery */>}}
-```
-
-Result:
-
-{{< paige/gallery >}}
-    {{< paige/gallery image="https://picsum.photos/400/300.webp" raw=true />}}
-{{< /paige/gallery >}}
-
----
-
 ## Rows layout
 
 Code:
@@ -199,15 +183,6 @@ Result:
 {{< paige/gallery images="*.jpg" caption="All images" type="grid" />}}
 
 ## Customization
-
-{{< paige/gallery caption="X image" >}}
-    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
-    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
-    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
-    {{< paige/gallery image="*-1*.jpg" height="10rem" />}}
-{{< /paige/gallery >}}
-
----
 
 Code:
 
