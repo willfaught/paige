@@ -7,6 +7,7 @@
 {{ $fingerprint := $params.fingerprint | default true }}
 {{ $height := $params.height }}
 {{ $loading := $params.loading | default "lazy" }}
+{{ $maxheight := $params.maxheight }}
 {{ $maxwidth := $params.maxwidth }}
 {{ $method := $params.method }}
 {{ $options := $params.options }}
@@ -56,16 +57,26 @@
     {{ $src = $resource.RelPermalink }}
 {{ end }}
 
-{{ if and $height (not (or $maxwidth $width)) }}
+{{ if and (or $height $maxheight) (not (or $maxwidth $width)) }}
     {{ $width = "auto" }}
 {{ end }}
 
-{{ if and (or $maxwidth $width) (not $height) }}
+{{ if and (or $maxwidth $width) (not (or $height $maxheight)) }}
     {{ $height = "auto" }}
 {{ end }}
 
 {{ if $height }}
     {{ with printf "height: %v" $height }}
+        {{ if $style }}
+            {{ $style = printf "%v; %v" $style . }}
+        {{ else }}
+            {{ $style = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if $maxheight }}
+    {{ with printf "max-height: %v" $maxheight }}
         {{ if $style }}
             {{ $style = printf "%v; %v" $style . }}
         {{ else }}

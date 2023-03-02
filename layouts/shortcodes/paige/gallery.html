@@ -2,6 +2,7 @@
 {{ $height := .Get "height" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
+{{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" | default "resize" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
@@ -39,6 +40,7 @@
                             {{ partial "paige/a.html" (dict
                                 "content" (partial "paige/img.html" (dict
                                     "height" $height
+                                    "maxheight" $maxheight
                                     "maxwidth" $maxwidth
                                     "method" $method
                                     "options" $options
@@ -61,6 +63,7 @@
                     {{ partial "paige/a.html" (dict
                         "content" (partial "paige/img.html" (dict
                             "height" $height
+                            "maxheight" $maxheight
                             "maxwidth" $maxwidth
                             "method" $method
                             "options" $options
