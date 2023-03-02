@@ -39,7 +39,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Result:
 
-{{< paige/figure caption="Abraham Lincoln" >}}
+{{< paige/figure caption="Hickory Dickory Dock" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/figure >}}
 
