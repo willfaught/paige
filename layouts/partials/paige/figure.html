@@ -53,7 +53,7 @@
     {{ end }}
 {{ end }}
 
-<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
+<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} h-100 justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
     <figure class="{{ if $table }} d-table {{ end }} mb-0" {{ with $widths }} style="{{ . | safeCSS }}" {{ end }}>
         <div class="d-flex justify-content-{{ $horizontal }} text-{{ $horizontal }}">{{ $content }}</div>
 
