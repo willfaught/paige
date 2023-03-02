@@ -19,182 +19,182 @@ Resize the viewport as narrow and wide as you can to see the responsiveness.
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="1*.jpg" caption="1 image" /*/>}}
+{{</* paige/gallery images="1*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="1*.jpg" caption="1 image" />}}
+{{< paige/gallery images="1*.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2*.jpg" caption="2 images" /*/>}}
+{{</* paige/gallery images="2*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2*.jpg" caption="2 images" />}}
+{{< paige/gallery images="2*.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="3*.jpg" caption="3 images" /*/>}}
+{{</* paige/gallery images="3*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="3*.jpg" caption="3 images" />}}
+{{< paige/gallery images="3*.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="4*.jpg" caption="4 images" /*/>}}
+{{</* paige/gallery images="4*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="4*.jpg" caption="4 images" />}}
+{{< paige/gallery images="4*.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="5*.jpg" caption="5 images" /*/>}}
+{{</* paige/gallery images="5*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="5*.jpg" caption="5 images" />}}
+{{< paige/gallery images="5*.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="6*.jpg" caption="6 images" /*/>}}
+{{</* paige/gallery images="6*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="6*.jpg" caption="6 images" />}}
+{{< paige/gallery images="6*.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="*.jpg" caption="All images" /*/>}}
+{{</* paige/gallery images="*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="*.jpg" caption="All images" />}}
+{{< paige/gallery images="*.jpg" />}}
 
 ## Grid layout
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="1*.jpg" caption="1 image" type="grid" /*/>}}
+{{</* paige/gallery images="1*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="1*" caption="1 image" type="grid" />}}
+{{< paige/gallery images="1*" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2*.jpg" caption="2 images" type="grid" /*/>}}
+{{</* paige/gallery images="2*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2*" caption="2 images" type="grid" />}}
+{{< paige/gallery images="2*" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="3*.jpg" caption="3 images" type="grid" /*/>}}
+{{</* paige/gallery images="3*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="3*" caption="3 images" type="grid" />}}
+{{< paige/gallery images="3*" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="4*.jpg" caption="4 images" type="grid" /*/>}}
+{{</* paige/gallery images="4*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="4*" caption="4 images" type="grid" />}}
+{{< paige/gallery images="4*" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="5*.jpg" caption="5 images" type="grid" /*/>}}
+{{</* paige/gallery images="5*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="5*" caption="5 images" type="grid" />}}
+{{< paige/gallery images="5*" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="6*.jpg" caption="6 images" type="grid" /*/>}}
+{{</* paige/gallery images="6*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="6*" caption="6 images" type="grid" />}}
+{{< paige/gallery images="6*" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="*.jpg" caption="All images" type="grid" /*/>}}
+{{</* paige/gallery images="*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="*.jpg" caption="All images" type="grid" />}}
+{{< paige/gallery images="*.jpg" />}}
 
 ## Customization
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery caption="1 image" */>}}
+{{</* paige/gallery */>}}
     {{</* paige/image src="*-1*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
-{{< paige/gallery caption="1 image" >}}
+{{< paige/gallery >}}
     {{< paige/image src="*-1*.jpg" >}}
 {{< /paige/gallery >}}
 
@@ -203,7 +203,7 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery caption="2 images" */>}}
+{{</* paige/gallery */>}}
     {{</* paige/image src="*-2*.jpg" /*/>}}
     {{</* paige/image src="*-3*.jpg" /*/>}}
 {{</* /paige/gallery */>}}
@@ -211,7 +211,7 @@ Code:
 
 Result:
 
-{{< paige/gallery caption="2 images" >}}
+{{< paige/gallery >}}
     {{< paige/image src="*-2*.jpg" >}}
     {{< paige/image src="*-3*.jpg" >}}
 {{< /paige/gallery >}}
@@ -221,7 +221,7 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery caption="3 images" */>}}
+{{</* paige/gallery */>}}
     {{</* paige/image src="*-4*.jpg" /*/>}}
     {{</* paige/image src="*-5*.jpg" /*/>}}
     {{</* paige/image src="*-6*.jpg" /*/>}}
@@ -230,7 +230,7 @@ Code:
 
 Result:
 
-{{< paige/gallery caption="3 images" >}}
+{{< paige/gallery >}}
     {{< paige/image src="*-4*.jpg" >}}
     {{< paige/image src="*-5*.jpg" >}}
     {{< paige/image src="*-6*.jpg" >}}
@@ -241,7 +241,7 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery caption="4 images" */>}}
+{{</* paige/gallery */>}}
     {{</* paige/image src="*-7*.jpg" /*/>}}
     {{</* paige/image src="*-8*.jpg" /*/>}}
     {{</* paige/image src="*-9*.jpg" /*/>}}
@@ -251,7 +251,7 @@ Code:
 
 Result:
 
-{{< paige/gallery caption="4 images" >}}
+{{< paige/gallery >}}
     {{< paige/image src="*-7*.jpg" >}}
     {{< paige/image src="*-8*.jpg" >}}
     {{< paige/image src="*-9*.jpg" >}}
@@ -263,7 +263,7 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery caption="5 images" */>}}
+{{</* paige/gallery */>}}
     {{</* paige/image src="*-11*.jpg" /*/>}}
     {{</* paige/image src="*-12*.jpg" /*/>}}
     {{</* paige/image src="*-13*.jpg" /*/>}}
@@ -274,7 +274,7 @@ Code:
 
 Result:
 
-{{< paige/gallery caption="5 images" >}}
+{{< paige/gallery >}}
     {{< paige/image src="*-11*.jpg" >}}
     {{< paige/image src="*-12*.jpg" >}}
     {{< paige/image src="*-13*.jpg" >}}
@@ -287,7 +287,7 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery caption="6 images" */>}}
+{{</* paige/gallery */>}}
     {{</* paige/image src="*-16*.jpg" /*/>}}
     {{</* paige/image src="*-17*.jpg" /*/>}}
     {{</* paige/image src="*-18*.jpg" /*/>}}
@@ -299,7 +299,7 @@ Code:
 
 Result:
 
-{{< paige/gallery caption="6 images" >}}
+{{< paige/gallery >}}
     {{< paige/image src="*-16*.jpg" >}}
     {{< paige/image src="*-17*.jpg" >}}
     {{< paige/image src="*-18*.jpg" >}}
@@ -308,4 +308,42 @@ Result:
     {{< paige/image src="*-21*.jpg" >}}
 {{< /paige/gallery >}}
 
-<div class="text-center">Photos by <a href="https://unsplash.com/@photos_by_lanty">Lanty</a>.</div>
+## Figure
+
+Code:
+
+```go-text-template
+{{</* paige/gallery */>}}
+{{</* paige/figure caption="Image 1" /*/>}}
+{{</* paige/image src="*-1*.jpg" /*/>}}
+{{</* /paige/figure */>}}
+{{</* paige/figure caption="Image 2" /*/>}}
+{{</* paige/image src="*-2*.jpg" /*/>}}
+{{</* /paige/figure */>}}
+{{</* paige/figure caption="Image 3" /*/>}}
+{{</* paige/image src="*-3*.jpg" /*/>}}
+{{</* /paige/figure */>}}
+{{</* paige/figure caption="Image 4" /*/>}}
+{{</* paige/image src="*-4*.jpg" /*/>}}
+{{</* /paige/figure */>}}
+{{</* /paige/gallery */>}}
+```
+
+Result:
+
+{{< paige/gallery >}}
+{{< paige/figure caption="Image 1" >}}
+{{< paige/image src="*-1*.jpg" >}}
+{{< /paige/figure >}}
+{{< paige/figure caption="Image 2" >}}
+{{< paige/image src="*-2*.jpg" >}}
+{{< /paige/figure >}}
+{{< paige/figure caption="Image 3" >}}
+{{< paige/image src="*-3*.jpg" >}}
+{{< /paige/figure >}}
+{{< paige/figure caption="Image 4" >}}
+{{< paige/image src="*-4*.jpg" >}}
+{{< /paige/figure >}}
+{{< /paige/gallery >}}
+
+<p class="text-center">Photos by <a href="https://unsplash.com/@photos_by_lanty">Lanty</a>.</p>

@@ -1,48 +1,33 @@
 {{ $align := .Get "align" | default "center" }}
-{{ $caption := .Get "caption" }}
 {{ $height := .Get "height" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" | default "resize" }}
-{{ $number := .Get "number" }}
-{{ $numbered := .Get "numbered" }}
 {{ $options := .Get "options" | default "550x webp picture Lanczos" }}
 {{ $type := .Get "type" | default "rows" }}
 {{ $width := .Get "width" }}
 
 {{ $inner := chomp .Inner }}
 {{ $resources := slice }}
-{{ $showcaption := $caption }}
 
-{{ with $images }}
-    {{ with $.Page.Resources.Match . }}
-        {{ $resources = . }}
+{{ if not $inner }}
+    {{ with $images }}
+        {{ with $.Page.Resources.Match . }}
+            {{ $resources = . }}
+        {{ else }}
+            {{ $resources = resources.Match . }}
+        {{ end }}
     {{ else }}
-        {{ $resources = resources.Match . }}
-    {{ end }}
-{{ else }}
-    {{ with .Page.Resources.ByType "image" }}
-        {{ $resources = . }}
-    {{ else }}
-        {{ $resources = resources.ByType "image" }}
+        {{ with .Page.Resources.ByType "image" }}
+            {{ $resources = . }}
+        {{ else }}
+            {{ $resources = resources.ByType "image" }}
+        {{ end }}
     {{ end }}
 {{ end }}
 
-{{ if $caption }}
-    {{ if $number }}
-        {{ $caption = printf "%v %v: %v" (i18n "paige_figure") $number $caption }}
-    {{ end }}
-{{ else }}
-    {{ if $number }}
-        {{ $caption = printf "%v %v" (i18n "paige_figure") $number }}
-        {{ $showcaption = true }}
-    {{ else if $numbered }}
-        {{ $showcaption = true }}
-    {{ end }}
-{{ end }}
-
-<figure class="paige-gallery">
+<div class="paige-gallery">
     {{ if eq $type "grid" }}
         <div class="container-fluid px-0">
             <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
@@ -92,7 +77,4 @@
     {{ else }}
         {{ errorf "invalid type: %q" $type }}
     {{ end }}
-    {{ if $showcaption }}
-        <figcaption class="figure-caption mt-2 text-center">{{ $caption }}</figcaption>
-    {{ end }}
-</figure>
+</div>

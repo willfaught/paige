@@ -1,7 +1,6 @@
 {{ $params := . }}
 
 {{ $caption := $params.caption | markdownify }}
-{{ $compact := $params.compact }}
 {{ $content := $params.content | markdownify }}
 {{ $float := $params.float }}
 {{ $gap := $params.gap }}
@@ -17,7 +16,7 @@
 {{ $table := false }}
 {{ $widths := slice }}
 
-{{ if and $caption (or $compact $float) }}
+{{ if and $caption $float }}
     {{ $table = true }}
 {{ end }}
 
@@ -54,7 +53,7 @@
     {{ end }}
 {{ end }}
 
-<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $horizontal }} {{ if $compact }} mb-0 {{ else }} mb-3 {{ end }} {{ with $sidemargin }} {{ . }} {{ end }} overflow-auto paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
+<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }} overflow-auto paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
     <figure class="{{ if $table }} d-table {{ end }} mb-0" {{ with $widths }} style="{{ . | safeCSS }}" {{ end }}>
         <div class="d-flex justify-content-{{ $horizontal }} text-{{ $horizontal }}">{{ $content }}</div>
 
