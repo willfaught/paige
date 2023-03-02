@@ -248,7 +248,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 Code:
 
 ```go-text-template
-<div class="column-gap-3 d-flex justify-content-between">
+<div class="column-gap-3 d-flex justify-content-between" style="height: 20rem">
 
 {{</* paige/figure caption="Hickory Dickory Dock" vertical="start" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
@@ -267,7 +267,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Result:
 
-<div class="column-gap-3 d-flex justify-content-between">
+<div class="column-gap-3 d-flex justify-content-between" style="height: 20rem">
 
 {{< paige/figure caption="Hickory Dickory Dock" vertical="start" >}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
