@@ -38,7 +38,7 @@ jobs:
   #       with:
   #         submodules: recursive
   #     - name: Setup Hugo
-  #       run: choco install hugo
+  #       run: choco install hugo-extended
   #     - name: Build
   #       run: |
   #         cd exampleSite
