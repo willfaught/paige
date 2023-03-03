@@ -606,8 +606,6 @@ Parameters:
     <dd>Optional. Position 0. String. Video ID.</dd>
 </dl>
 
-It has the parameters of the `paige/figure` shortcode.
-
 See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) for more detail.
 
 ### YouTube
@@ -618,13 +616,13 @@ The `paige/youtube` shortcode provides a responsive YouTube video.
 {{< paige/youtube
     autoplay=false
     controls=true
-    end=20
+    description="YouTube video"
+    end=0
     fullscreen=true
-    list=PL2WkvfelorAFjpzGUWc4OWAWmiJpwL97L
-    loop=true
-    mute=true
-    start=10
-    title="My title"
+    list="PL2WkvfelorAFjpzGUWc4OWAWmiJpwL97L"
+    loop=false
+    mute=false
+    start=0
     video="dQw4w9WgXcQ"
 >}}
 ```
