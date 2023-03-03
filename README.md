@@ -479,10 +479,10 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
 ```
 {{< paige/gallery
     align="center"
-    caption="My caption"
     height="10rem"
     images="*.jpg"
     justify="center"
+    maxheight="10rem"
     maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
@@ -491,61 +491,38 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
 />}}
 
 {{< paige/gallery >}}
-    {{< paige/gallery
-        caption="My caption"
-        height="10rem"
-        image="me.jpg"
-        maxwidth="10rem"
-        method="resize"
-        options="550x webp picture Lanczos"
-        raw=false
-        width="10rem"
-    />}}
-    {{< paige/gallery
-        caption="My caption"
-        height="10rem"
-        image="you.jpg"
-        maxwidth="10rem"
-        method="resize"
-        options="550x webp picture Lanczos"
-        raw=false
-        width="10rem"
-    />}}
+{{< paige/image src="1.jpg" >}}
+{{< paige/image src="2.jpg" >}}
+{{< paige/image src="3.jpg" >}}
 {{< /paige/gallery >}}
 ```
 
-Inner content: Optional. String. HTML. Must be other uses of this shortcode.
+Inner content: Optional. String. HTML.
 
 Parameters:
 
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>. Must not be used when nested.</dd>
-    <dt><code>caption</code></dt>
-    <dd>Optional. String. Markdown. Descriptive text below the image or images.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
-    <dt><code>image</code></dt>
-    <dd>Optional. String. Page, site, or remote image glob. Only used in the inner content of this shortcode.</dd>
     <dt><code>images</code></dt>
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>. Must not be used when nested.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>method</code></dt>
     <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
-    <dt><code>raw</code></dt>
-    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is <code>false</code>.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Grid and list layouts use the horizontal axis as the main axis, and the vertical axis as the cross axis. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
-
-It has the other parameters of the `paige/figure` shortcode.
 
 ### Vimeo
 
