@@ -13,20 +13,24 @@
             {{ $result = . }}
         {{ end }}
     {{ end }}
-{{ else }}
+{{ end }}
+
+{{ if and (not $result) $page }}
     {{ with $page.Resources.GetMatch $url }}
         {{ $result = . }}
     {{ else }}
         {{ with $page.Resources.Get $url }}
             {{ $result = . }}
-        {{ else }}
-            {{ with resources.GetMatch $url }}
-                {{ $result = . }}
-            {{ else }}
-                {{ with resources.Get $url }}
-                    {{ $result = . }}
-                {{ end }}
-            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if not $result }}
+    {{ with resources.GetMatch $url }}
+        {{ $result = . }}
+    {{ else }}
+        {{ with resources.Get $url }}
+            {{ $result = . }}
         {{ end }}
     {{ end }}
 {{ end }}
