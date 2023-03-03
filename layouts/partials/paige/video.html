@@ -2,7 +2,7 @@
 
 {{ $class := $params.class | default "paige-video ratio ratio-16x9" }}
 {{ $fullscreen := $params.fullscreen }}
-{{ $referrerpolicy := $params.referrerpolicy }}
+{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $src := $params.src }}
 {{ $title := $params.title }}
 
