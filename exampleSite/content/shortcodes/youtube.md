@@ -11,6 +11,8 @@ Paige provides a `paige/youtube` shortcode for playing YouTube videos.
 
 <!--more-->
 
+## Basic
+
 Code:
 
 ```go-text-template
@@ -21,7 +23,115 @@ Result:
 
 {{< paige/youtube "dQw4w9WgXcQ" >}}
 
----
+## Autoplay parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube autoplay=true video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube autoplay=true video="dQw4w9WgXcQ" >}}
+
+## Controls parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube controls=true video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube controls=true video="dQw4w9WgXcQ" >}}
+
+## Description parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube description="My title" video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube description="My title" video="dQw4w9WgXcQ" >}}
+
+## End parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube end=20 video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube end=20 video="dQw4w9WgXcQ" >}}
+
+## Fullscreen parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube fullscreen=false video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube fullscreen=false video="dQw4w9WgXcQ" >}}
+
+## List parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube list="PLOstxpSiJGlClyRnCiubdXJcUvwgHcrVH" video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube list="PLOstxpSiJGlClyRnCiubdXJcUvwgHcrVH" video="dQw4w9WgXcQ" >}}
+
+## Loop parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube loop=true video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube loop=true video="dQw4w9WgXcQ" >}}
+
+## Mute parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube mute=true video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube mute=true video="dQw4w9WgXcQ" >}}
+
+## Start parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube start=10 video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube start=10 video="dQw4w9WgXcQ" >}}
+
+## Video parameter
 
 Code:
 
@@ -33,32 +143,18 @@ Result:
 
 {{< paige/youtube video="dQw4w9WgXcQ" >}}
 
----
+## Figure
 
 Code:
 
 ```go-text-template
-{{</* paige/youtube
-    controls=true
-    end=20
-    fullscreen=true
-    loop=true
-    mute=true
-    start=10
-    title="My title"
-    video="dQw4w9WgXcQ"
-*/>}}
+{{</* paige/figure caption="YouTube" */>}}
+{{</* paige/youtube video="dQw4w9WgXcQ" */>}}
+{{</* /paige/figure */>}}
 ```
 
 Result:
 
-{{< paige/youtube
-    controls=true
-    end=20
-    fullscreen=true
-    loop=true
-    mute=true
-    start=10
-    title="My title"
-    video="dQw4w9WgXcQ"
->}}
+{{< paige/figure caption="YouTube" >}}
+{{< paige/youtube video="dQw4w9WgXcQ" >}}
+{{< /paige/figure >}}
