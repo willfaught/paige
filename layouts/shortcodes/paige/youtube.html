@@ -1,21 +1,15 @@
 {{ $autoplay := .Get "autoplay" }}
-{{ $caption := .Get "caption" }}
 {{ $controls := .Get "controls" | default true }}
 {{ $description := .Get "description" | default "YouTube video" }}
 {{ $end := .Get "end" }}
-{{ $float := .Get "float" }}
 {{ $fullscreen := .Get "fullscreen" | default true }}
 {{ $height := .Get "height" }}
-{{ $horizontal := .Get "horizontal" }}
 {{ $list := .Get "list" }}
 {{ $loop := .Get "loop" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $mute := .Get "mute" }}
-{{ $number := .Get "number" }}
-{{ $numbered := .Get "numbered" }}
 {{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer-when-downgrade" }}
 {{ $start := .Get "start" }}
-{{ $vertical := .Get "vertical" }}
 {{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
 {{ $width := .Get "width" }}
 
@@ -71,21 +65,11 @@
     {{ $src = print $src "?" . }}
 {{ end }}
 
-{{ partial "paige/figure.html" (dict
-    "caption" $caption
-    "content" (partial "paige/video.html" (dict
-        "fullscreen" $fullscreen
-        "height" $height
-        "referrerpolicy" $referrerpolicy
-        "src" $src
-        "title" $description
-        "width" $width
-    ))
-    "float" $float
-    "gap" 2
-    "horizontal" $horizontal
-    "maxwidth" $maxwidth
-    "number" $number
-    "numbered" $numbered
-    "vertical" $vertical
+{{ partial "paige/video.html" (dict
+    "fullscreen" $fullscreen
+    "height" $height
+    "referrerpolicy" $referrerpolicy
+    "src" $src
+    "title" $description
+    "width" $width
 ) }}

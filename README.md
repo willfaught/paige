@@ -656,8 +656,6 @@ Parameters:
     <dd>Optional. Position 0. String. Video ID.</dd>
 </dl>
 
-It has the parameters of the `paige/figure` shortcode.
-
 ## Customize
 
 ### Include
