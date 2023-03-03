@@ -6,6 +6,8 @@ defaults:
     shell: bash
 jobs:
   build-linux:
+    env:
+      HUGO_VERSION: 0.111.1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,7 +15,9 @@ jobs:
         with:
           submodules: recursive
       - name: Setup Hugo
-        run: sudo apt-get install hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - id: pages
         name: Setup Pages
         uses: actions/configure-pages@v2
