@@ -10,6 +10,10 @@
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 
+{{ if not $src }}
+    {{ errorf "invalid src: %q" $src }}
+{{ end }}
+
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt
     "class" "img-fluid"
