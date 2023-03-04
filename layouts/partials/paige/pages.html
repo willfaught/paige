@@ -3,21 +3,21 @@
 {{ if $page.Pages }}
     {{ if $page.Param "paige.section_pages.full_pages" }}
         {{ $p := $page.Paginate $page.Pages }}
-        <section id="paige-pages">
+        <div id="paige-pages">
             {{ range $p.Pages }}
                 {{ partial "paige/article.html" (dict "fullpages" true "page" .) }}
             {{ end }}
-        </section>
+        </div>
         {{ if or $p.HasPrev $p.HasNext }}
-            <section id="paige-pagination">
+            <div id="paige-pagination">
                 <div class="d-flex justify-content-center">
                     {{ partial "paige/pagination.html" $page }}
                 </div>
-            </section>
+            </div>
         {{ end }}
     {{ else }}
         {{ $p := $page.Paginate ($page.Pages.ByPublishDate.Reverse.GroupByPublishDate "January 2006") }}
-        <section id="paige-pages">
+        <div id="paige-pages">
             {{ range $p.PageGroups }}
                 <p class="h5 paige-date-header text-center">{{ .Key }}</p>
                 {{ range .Pages }}
@@ -65,7 +65,7 @@
                     {{ $flags = delimit ($flags | uniq) " " }}
                     {{ $class := delimit (slice "mb-3" "paige-page" "w-100" | append $flags | uniq | sort) " " }}
 
-                    <section class="{{ $class }}">
+                    <div class="{{ $class }}">
                         {{ with $title }}
                             <p class="mb-0 paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
                         {{ end }}
@@ -117,16 +117,16 @@
                         {{ with $readingtime }}
                             <p class="mb-0 paige-reading-time text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
                         {{ end }}
-                    </section>
+                    </div>
                 {{ end }}
             {{ end }}
-        </section>
+        </div>
         {{ if or $p.HasPrev $p.HasNext }}
-            <section id="paige-pagination">
+            <div id="paige-pagination">
                 <div class="d-flex justify-content-center">
                     {{ partial "paige/pagination.html" $page }}
                 </div>
-            </section>
+            </div>
         {{ end }}
     {{ end }}
 {{ end }}

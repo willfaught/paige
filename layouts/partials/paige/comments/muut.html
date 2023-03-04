@@ -1,9 +1,9 @@
 {{ $page := . }}
 
 {{ with $page.Param "paige.comments.muut" }}
-    <section class="mb-3">
+    <div class="mb-3">
         <a href="https://muut.com/i/{{ .account_id }}/comments" class="muut" type="dynamic">Comments</a>
         <script src="https://cdn.muut.com/1/moot.min.js"></script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
-    </section>
+    </div>
 {{ end }}

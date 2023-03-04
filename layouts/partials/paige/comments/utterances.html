@@ -1,8 +1,8 @@
 {{ $page := . }}
 
 {{ with $page.Param "paige.comments.utterances" }}
-    <section class="mb-3">
+    <div class="mb-3">
         <script src="https://utteranc.es/client.js" repo="{{ .github_repo }}" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
-    </section>
+    </div>
 {{ end }}

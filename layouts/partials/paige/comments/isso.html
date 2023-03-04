@@ -1,10 +1,10 @@
 {{ $page := . }}
 
 {{ with $page.Param "paige.comments.isso" }}
-    <section class="mb-3">
+    <div class="mb-3">
         <script src="{{ .script_url }}"></script>
-        <section id="isso-thread">
+        <div id="isso-thread">
             <noscript>{{ i18n "paige_noscript" }}</noscript>
-        </section>
-    </section>
+        </div>
+    </div>
 {{ end }}

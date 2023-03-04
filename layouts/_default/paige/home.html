@@ -8,7 +8,7 @@
         {{ partial "paige/metadata.html" $page }}
 
         {{ if or $page.Params.paige.home.image.url $page.Params.paige.home.greeting $page.Params.paige.home.blurb }}
-            <section>
+            <div>
                 {{ if $page.Params.paige.home.image.url }}
                     {{ $class := cond ($stretch | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
                     {{ $style := cond ($stretch | not) "height: 20rem; width: auto" "height: 20rem; object-fit: cover; width: 100%" }}
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 {{ end }}
-            </section>
+            </div>
         {{ end }}
 
         {{ partial "paige/toc.html" $page }}

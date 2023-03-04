@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ if $page.Param "paige.comments.graphcomment" }}
-    <section class="mb-3">
+    <div class="mb-3">
         <div id="graphcomment"></div>
         <script type="text/javascript">
         var __semio__params = {
@@ -20,5 +20,5 @@
         })();
         </script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
-    </section>
+    </div>
 {{ end }}

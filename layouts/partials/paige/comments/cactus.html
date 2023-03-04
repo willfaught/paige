@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ if $page.Param "paige.comments.cactus" }}
-    <section class="mb-3">
+    <div class="mb-3">
         <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
         <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
         <div id="comment-section"></div>
@@ -15,5 +15,5 @@
         })
         </script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
-    </section>
+    </div>
 {{ end }}
