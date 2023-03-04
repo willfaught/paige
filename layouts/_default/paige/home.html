@@ -1,7 +1,9 @@
 {{ define "main" }}
 {{ $page := . }}
 
+{{ $height := $page.Params.paige.home.image.height | default "20rem" }}
 {{ $stretch := $page.Params.paige.home.image.stretch }}
+{{ $width := $page.Params.paige.home.image.width }}
 
 <article class="paige-article paige-home">
     <div class="align-items-center d-flex flex-column mb-0">
@@ -10,10 +12,10 @@
         {{ if or $page.Params.paige.home.image.url $page.Params.paige.home.greeting $page.Params.paige.home.blurb }}
             <div>
                 {{ if $page.Params.paige.home.image.url }}
-                    {{ $class := cond ($stretch | not) "mw-100 rounded-4 shadow" "rounded-4 shadow w-100" }}
-                    {{ $style := cond ($stretch | not) "height: 20rem; width: auto" "height: 20rem; object-fit: cover; width: 100%" }}
+                    {{ $class := cond ($stretch | not) "mw-100 rounded-4 shadow" "rounded-4 shadow" }}
+                    {{ $style := cond ($stretch | not) (printf "height: %s; width: %s" $height ($width | default "auto")) (printf "height: %s; object-fit: cover; width: %s" $height ($width | default "100%")) }}
 
-                    <p {{ if not $stretch }} class="text-center" {{ end }}>
+                    <p {{ if or (not $stretch) $width }} class="text-center" {{ end }}>
                         {{ partial "paige/img.html" (dict
                             "alt" $page.Params.paige.home.image.alt
                             "class" $class
