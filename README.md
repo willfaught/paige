@@ -802,13 +802,11 @@ try the following in your `layouts/partials/paige/style-first.css`:
 
 ```css
 .paige-authors,
-.paige-date,
 .paige-reading-time,
 .paige-terms,
 .paige-toc,
 #paige-credit,
 #paige-pages .paige-authors,
-#paige-pages .paige-date-header,
 #paige-pages .paige-date,
 #paige-pages .paige-summary,
 #paige-pages .paige-terms {
