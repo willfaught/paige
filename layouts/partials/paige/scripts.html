@@ -2,7 +2,7 @@
 
 <script>
 function paigeResize() {
-    var e = document.querySelector("section.paige-content");
+    var e = document.querySelector(".paige-content");
     if (!e) {
         return;
     }
@@ -17,7 +17,7 @@ function paigeResize() {
     } else {
         w = parseFloat(mw.substring(0, mw.length - 2));
     }
-    var es = document.querySelectorAll("div.paige-video");
+    var es = document.querySelectorAll(".paige-video");
     for (var i = 0; i < es.length; i++) {
         var e = es[i];
         if (e.style.width !== w) {
