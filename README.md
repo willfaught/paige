@@ -815,8 +815,6 @@ try the following in your `layouts/partials/paige/style-first.css`:
 
 ```
 
-This is used in the example site.
-
 ## Design
 
 The HTML author is the page authors.
