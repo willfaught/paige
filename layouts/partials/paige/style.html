@@ -87,18 +87,18 @@ body, html {
     margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .paige-header-link {
-        transition: none;
-    }
-}
-
 .paige-header-link:focus, .paige-header-link:hover, :hover > .paige-header-link, :target > .paige-header-link {
     opacity: 1;
 }
 
 .paige-image {
     margin-bottom: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .paige-header-link {
+        transition: none;
+    }
 }
 
 {{ with $page.Param "paige.max_width" }}
