@@ -43,6 +43,7 @@ It's a versatile canvas that serves most web needs.
 - Social links
 - Table of contents
 - Twitter sharing
+- Validated with [PageSpeed](https://pagespeed.web.dev/report?url=https%3A%2F%2Fwillfaught.com%2Fpaige%2F&form_factor=desktop) and [Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwillfaught.com%2Fpaige%2F)
 
 ## Community
 
