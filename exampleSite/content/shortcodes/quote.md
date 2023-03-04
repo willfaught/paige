@@ -27,6 +27,22 @@ Result:
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{< /paige/quote >}}
 
+## Cite
+
+Code:
+
+```go-text-template
+{{</* paige/quote cite="Hickory Dickory Dock" */>}}
+Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
+{{</* /paige/quote */>}}
+```
+
+Result:
+
+{{< paige/quote cite="Hickory Dickory Dock" >}}
+Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
+{{< /paige/quote >}}
+
 ## Figure
 
 Code:
