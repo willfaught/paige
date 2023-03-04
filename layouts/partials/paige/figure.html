@@ -36,7 +36,7 @@
     {{ else if eq $float "end" }}
         {{ $sidemargin = "ms-4" }}
     {{ else }}
-        {{ errorf "invalid float: %q" $float }}
+        {{ errorf "paige/figure: invalid float: %q" $float }}
     {{ end }}
 {{ end }}
 

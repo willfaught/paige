@@ -113,7 +113,7 @@ body, html {
     {{ else if eq . "light" }}
         {{ partial "paige/light.css" . | safeCSS }}
     {{ else }}
-        {{ errorf "invalid color scheme: %q" . }}
+        {{ errorf "paige/style: invalid color scheme: %q" . }}
     {{ end }}
 {{ else }}
     @media (prefers-color-scheme: dark) {

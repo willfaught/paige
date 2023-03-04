@@ -11,7 +11,7 @@
 {{ $width := .Get "width" }}
 
 {{ if not $src }}
-    {{ errorf "invalid src: %q" $src }}
+    {{ errorf "paige/image: invalid src: %q" $src }}
 {{ end }}
 
 {{ $content := partial "paige/img.html" (dict

@@ -43,7 +43,7 @@
         {{ else if eq $method "resize" }}
             {{ $resource = $resource.Resize $options }}
         {{ else }}
-            {{ errorf "invalid method: %q" $method }}
+            {{ errorf "paige/img: invalid method: %q" $method }}
         {{ end }}
     {{ end }}
 

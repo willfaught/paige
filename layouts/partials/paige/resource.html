@@ -8,7 +8,7 @@
 {{ if (urls.Parse $url).Scheme }}
     {{ with resources.GetRemote $url }}
         {{ with .Err }}
-            {{ errorf "cannot get remote resource %q: %v" $url . }}
+            {{ errorf "paige/resource: cannot get remote resource %q: %v" $url . }}
         {{ else }}
             {{ $result = . }}
         {{ end }}
@@ -36,7 +36,7 @@
 {{ end }}
 
 {{ if not $result }}
-    {{ errorf "invalid resource: %q" $url }}
+    {{ errorf "paige/resource: invalid resource: %q" $url }}
 {{ end }}
 
 {{ return $result }}

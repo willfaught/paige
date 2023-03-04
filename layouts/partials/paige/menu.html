@@ -15,7 +15,7 @@
     {{ else if eq . "pills" }}
         {{ $pills = true }}
     {{ else }}
-        {{ errorf "invalid menu style: %q" . }}
+        {{ errorf "paige/menu: invalid menu style: %q" . }}
     {{ end }}
 {{ else }}
     {{ $pills = true }}
