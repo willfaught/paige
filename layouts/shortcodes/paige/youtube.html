@@ -65,11 +65,13 @@
     {{ $src = print $src "?" . }}
 {{ end }}
 
-{{ partial "paige/video.html" (dict
-    "fullscreen" $fullscreen
-    "height" $height
-    "referrerpolicy" $referrerpolicy
-    "src" $src
-    "title" $description
-    "width" $width
-) }}
+<div class="paige-youtube">
+    {{ partial "paige/video.html" (dict
+        "fullscreen" $fullscreen
+        "height" $height
+        "referrerpolicy" $referrerpolicy
+        "src" $src
+        "title" $description
+        "width" $width
+    ) }}
+</div>
