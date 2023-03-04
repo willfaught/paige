@@ -1,22 +1,61 @@
-{{ $caption := .Get 0 | default (.Get "caption") }}
-{{ $content := .Inner }}
+{{ $caption := .Get 0 | default (.Get "caption") | markdownify }}
+{{ $content := .Inner | markdownify }}
 {{ $float := .Get "float" }}
-{{ $horizontal := .Get "horizontal" }}
+{{ $horizontal := .Get "horizontal" | default "center" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $number := .Get "number" }}
 {{ $numbered := .Get "numbered" }}
-{{ $vertical := .Get "vertical" }}
+{{ $vertical := .Get "vertical" | default "center" }}
 {{ $width := .Get "width" }}
 
-{{ partial "paige/figure.html" (dict
-    "caption" $caption
-    "content" $content
-    "float" $float
-    "gap" 2
-    "horizontal" $horizontal
-    "maxwidth" $maxwidth
-    "number" $number
-    "numbered" $numbered
-    "vertical" $vertical
-    "width" $width
-) }}
+{{ $showcaption := $caption }}
+{{ $sidemargin := "" }}
+{{ $table := false }}
+{{ $widths := slice }}
+
+{{ if and $caption $float }}
+    {{ $table = true }}
+{{ end }}
+
+{{ if $maxwidth }}
+    {{ $widths = $widths | append (printf "max-width: %v" $maxwidth) }}
+{{ end }}
+
+{{ if $width }}
+    {{ $widths = $widths | append (printf "width: %v" $width) }}
+{{ end }}
+
+{{ $widths = delimit ($widths | sort) "; " }}
+
+{{ if $float }}
+    {{ if eq $float "start" }}
+        {{ $sidemargin = "me-4" }}
+    {{ else if eq $float "end" }}
+        {{ $sidemargin = "ms-4" }}
+    {{ else }}
+        {{ errorf "paige/figure: invalid float: %q" $float }}
+    {{ end }}
+{{ end }}
+
+{{ if $caption }}
+    {{ if $number }}
+        {{ $caption = printf "%v %v: %v" (i18n "paige_figure") $number $caption }}
+    {{ end }}
+{{ else }}
+    {{ if $number }}
+        {{ $caption = printf "%v %v" (i18n "paige_figure") $number }}
+        {{ $showcaption = true }}
+    {{ else if $numbered }}
+        {{ $showcaption = true }}
+    {{ end }}
+{{ end }}
+
+<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} h-100 justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
+    <figure class="{{ if $table }} d-table {{ end }} mb-0" {{ with $widths }} style="{{ . | safeCSS }}" {{ end }}>
+        <div class="d-flex justify-content-{{ $horizontal }} text-{{ $horizontal }}">{{ $content }}</div>
+
+        {{ if $showcaption }}
+            <figcaption class="figure-caption mt-2 text-{{ $horizontal }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
+        {{ end }}
+    </figure>
+</div>
