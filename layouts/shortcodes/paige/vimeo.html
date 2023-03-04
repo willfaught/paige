@@ -26,6 +26,10 @@
 {{ $video := .Get 0 | default (.Get "video") }}
 {{ $width := .Get "width" }}
 
+{{ if not $video }}
+    {{ errorf "paige/vimeo: no video" }}
+{{ end }}
+
 {{ $params := slice }}
 
 {{ if not $autopause }}

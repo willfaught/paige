@@ -8,6 +8,10 @@
 {{ $vertical := .Get "vertical" | default "center" }}
 {{ $width := .Get "width" }}
 
+{{ if not $content }}
+    {{ errorf "paige/figure: no content" }}
+{{ end }}
+
 {{ $showcaption := $caption }}
 {{ $sidemargin := "" }}
 {{ $table := false }}

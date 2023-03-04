@@ -14,6 +14,10 @@
 {{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
 {{ $width := .Get "width" }}
 
+{{ if not $video }}
+    {{ errorf "paige/youtube: no video" }}
+{{ end }}
+
 {{ $host := cond site.Config.Privacy.YouTube.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}
 
 {{ $path := "" }}

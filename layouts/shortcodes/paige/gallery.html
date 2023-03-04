@@ -13,7 +13,7 @@
 {{ $resources := slice }}
 
 {{ if and (not $images) (not $inner) }}
-    {{ errorf "paige/gallery: no content specified" }}
+    {{ errorf "paige/gallery: no content" }}
 {{ end }}
 
 {{ if not $inner }}
