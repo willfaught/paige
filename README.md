@@ -328,7 +328,7 @@ The assigned values shown are the default values.
 
 ### Search
 
-The `paige/search` layout provides full site search.
+The `paige/search` layout provides a search page.
 
 Example `config.yaml`:
 
