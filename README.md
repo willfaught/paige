@@ -344,6 +344,16 @@ layout: "paige/search"
 title: "Search"
 ```
 
+### Section
+
+The `paige/section` layout provides a section page.
+
+Example `content/_index.md`:
+
+```yaml
+layout: "paige/section"
+```
+
 ## Shortcodes
 
 ### Figure

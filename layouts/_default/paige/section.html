@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ $page := . }}
+
+{{ if $page.Param "paige.section_pages.full_pages" | not }}
+    {{ partial "paige/article.html" $page }}
+{{ end }}
+
+{{ partial "paige/pages.html" $page }}
+{{ end }}
