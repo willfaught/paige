@@ -1,6 +1,8 @@
 {{ $alt := .Get "alt" }}
 {{ $link := .Get "link" }}
 {{ $height := .Get "height" }}
+{{ $maxheight := .Get "maxheight" }}
+{{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" }}
 {{ $options := .Get "options" }}
 {{ $raw := .Get "raw" }}
@@ -12,6 +14,8 @@
     "alt" $alt
     "class" "img-fluid"
     "height" $height
+    "maxheight" $maxheight
+    "maxwidth" $maxwidth
     "method" $method
     "options" $options
     "page" .Page

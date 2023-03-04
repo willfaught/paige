@@ -438,6 +438,8 @@ The `paige/image` shortcode provides a figure with an image.
     alt="My alt" >}}
     height="10rem"
     link="https://github.com/willfaught/paige"
+    maxheight="10rem"
+    maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
     raw=false
@@ -458,6 +460,10 @@ Parameters:
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Image maximum height.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. String. CSS value. Image maximum width.</dd>
     <dt><code>method</code></dt>
     <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>

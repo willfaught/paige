@@ -47,6 +47,30 @@ Result:
 
 {{< paige/image link="https://github.com/willfaught/paige" src="landscape.webp" >}}
 
+## Maxheight parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image maxheight="10rem" src="landscape.webp" */>}}
+```
+
+Result:
+
+{{< paige/image maxheight="10rem" src="landscape.webp" >}}
+
+## Maxwidth parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image maxwidth="10rem" src="landscape.webp" */>}}
+```
+
+Result:
+
+{{< paige/image maxwidth="10rem" src="landscape.webp" >}}
+
 ## Method and options parameters
 
 Code:
