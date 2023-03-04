@@ -258,7 +258,7 @@ paige:
   git:
     commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
   math: false # Enable math typesetting
-  max_width: "" # Maximum width for the whole page
+  max_width: "" # CSS unit; maximum width for the whole page
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
     style: "pills" # Must be "links" or "pills"
