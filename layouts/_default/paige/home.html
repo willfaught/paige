@@ -15,6 +15,7 @@
 
                     <p {{ if not $stretch }} class="text-center" {{ end }}>
                         {{ partial "paige/img.html" (dict
+                            "alt" $page.Params.paige.home.image.alt
                             "class" $class
                             "fetchpriority" "high"
                             "loading" "eager"

@@ -312,6 +312,7 @@ paige:
     blurb: "" # Displayed below the greeting
     greeting: "" # Displayed below the image
     image:
+      alt: "" # Image alt
       raw: false # Do not copy or process the file
       stretch: false # Stretch the image fully horizontally if true; center the image otherwise
       url: "" # Local or remote resource glob
