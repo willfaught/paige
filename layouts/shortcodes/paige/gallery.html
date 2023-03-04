@@ -12,6 +12,10 @@
 {{ $inner := chomp .Inner }}
 {{ $resources := slice }}
 
+{{ if and (not $images) (not $inner) }}
+    {{ errorf "paige/gallery: no content specified" }}
+{{ end }}
+
 {{ if not $inner }}
     {{ with $images }}
         {{ with $.Page.Resources.Match . }}
