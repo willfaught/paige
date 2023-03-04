@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ with $page.Param "paige.comments.isso" }}
-    <div class="mb-3">
+    <div class="mb-3" id="paige-comments">
         <script src="{{ .script_url }}"></script>
         <div id="isso-thread">
             <noscript>{{ i18n "paige_noscript" }}</noscript>

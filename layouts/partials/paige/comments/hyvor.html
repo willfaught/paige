@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ if $page.Param "paige.comments.hyvor" }}
-    <div class="mb-3">
+    <div class="mb-3" id="paige-comments">
         <div id="hyvor-talk-view"></div>
         <script type="text/javascript">
         var HYVOR_TALK_WEBSITE = "{{ $page.Param "paige.comments.hyvor.account_id" | safeJS }}";

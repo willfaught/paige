@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ if $page.Param "paige.comments.replybox" }}
-    <div class="mb-3">
+    <div class="mb-3" id="paige-comments">
         <div id="replybox"></div>
         <script>
         window.replybox = {

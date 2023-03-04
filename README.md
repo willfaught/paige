@@ -775,6 +775,8 @@ Use these CSS selectors to extend the default styling:
     <dd>The page table of contents.</dd>
     <dt><code>.paige-unpublished</code></dt>
     <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term layouts.</dd>
+    <dt><code>#paige-comments</code></dt>
+    <dd>The comments below the article.</dd>
     <dt><code>#paige-copyright</code></dt>
     <dd>The copyright in the footer.</dd>
     <dt><code>#paige-credit</code></dt>
