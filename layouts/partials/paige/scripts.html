@@ -20,7 +20,7 @@ function paigeResize() {
     var es = document.querySelectorAll(".paige-video");
     for (var i = 0; i < es.length; i++) {
         var e = es[i];
-        if (e.style.width !== w) {
+        if (!e.style.height && !e.style.width) {
             e.style.width = w + "px";
         }
     }

@@ -10,6 +10,7 @@
 {{ $height := .Get "height" }}
 {{ $keyboard := .Get "keyboard" | default true }}
 {{ $loop := .Get "loop" }}
+{{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $muted := .Get "muted" }}
 {{ $pip := .Get "pip" }}
@@ -115,6 +116,8 @@
     {{ partial "paige/video.html" (dict
         "fullscreen" $fullscreen
         "height" $height
+        "maxheight" $maxheight
+        "maxwidth" $maxwidth
         "referrerpolicy" $referrerpolicy
         "src" $src
         "title" $description

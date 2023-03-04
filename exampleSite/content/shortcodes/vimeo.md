@@ -131,6 +131,18 @@ Result:
 
 {{< paige/vimeo fullscreen=false video="644036051" >}}
 
+## Height parameter
+
+Code:
+
+```go-text-template
+{{</* paige/vimeo height="10rem" video="644036051" */>}}
+```
+
+Result:
+
+{{< paige/vimeo height="10rem" video="644036051" >}}
+
 ## Keyboard parameter
 
 Code:
@@ -154,6 +166,30 @@ Code:
 Result:
 
 {{< paige/vimeo loop=true video="644036051" >}}
+
+## Maxheight parameter
+
+Code:
+
+```go-text-template
+{{</* paige/vimeo maxheight="10rem" video="644036051" */>}}
+```
+
+Result:
+
+{{< paige/vimeo maxheight="10rem" video="644036051" >}}
+
+## Maxwidth parameter
+
+Code:
+
+```go-text-template
+{{</* paige/vimeo maxwidth="50%" video="644036051" */>}}
+```
+
+Result:
+
+{{< paige/vimeo maxwidth="50%" video="644036051" >}}
 
 ## Muted parameter
 
@@ -286,6 +322,18 @@ Code:
 Result:
 
 {{< paige/vimeo video="644036051" >}}
+
+## Width parameter
+
+Code:
+
+```go-text-template
+{{</* paige/vimeo video="644036051" width="50%" */>}}
+```
+
+Result:
+
+{{< paige/vimeo video="644036051" width="50%" >}}
 
 ## Figure
 

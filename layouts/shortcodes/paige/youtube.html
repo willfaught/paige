@@ -6,6 +6,7 @@
 {{ $height := .Get "height" }}
 {{ $list := .Get "list" }}
 {{ $loop := .Get "loop" }}
+{{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $mute := .Get "mute" }}
 {{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer-when-downgrade" }}
@@ -69,6 +70,8 @@
     {{ partial "paige/video.html" (dict
         "fullscreen" $fullscreen
         "height" $height
+        "maxheight" $maxheight
+        "maxwidth" $maxwidth
         "referrerpolicy" $referrerpolicy
         "src" $src
         "title" $description

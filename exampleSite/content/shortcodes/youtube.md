@@ -83,6 +83,18 @@ Result:
 
 {{< paige/youtube fullscreen=false video="dQw4w9WgXcQ" >}}
 
+## Height parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube height="10rem" video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube height="10rem" video="dQw4w9WgXcQ" >}}
+
 ## List parameter
 
 Code:
@@ -106,6 +118,30 @@ Code:
 Result:
 
 {{< paige/youtube loop=true video="dQw4w9WgXcQ" >}}
+
+## Maxheight parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube maxheight="10rem" video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube maxheight="10rem" video="dQw4w9WgXcQ" >}}
+
+## Maxwidth parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube maxwidth="50%" video="dQw4w9WgXcQ" */>}}
+```
+
+Result:
+
+{{< paige/youtube maxwidth="50%" video="dQw4w9WgXcQ" >}}
 
 ## Mute parameter
 
@@ -142,6 +178,18 @@ Code:
 Result:
 
 {{< paige/youtube video="dQw4w9WgXcQ" >}}
+
+## Width parameter
+
+Code:
+
+```go-text-template
+{{</* paige/youtube video="dQw4w9WgXcQ" width="50%" */>}}
+```
+
+Result:
+
+{{< paige/youtube video="dQw4w9WgXcQ" width="50%" >}}
 
 ## Figure
 

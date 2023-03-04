@@ -539,8 +539,11 @@ The `paige/vimeo` shortcode provides a responsive Vimeo video.
     description="My description"
     dnt=false
     fullscreen=true
+    height="10rem"
     keyboard=true
     loop=false
+    maxheight="10rem"
+    maxwidth="10rem"
     muted=false
     pip=false
     playsinline=true
@@ -552,6 +555,7 @@ The `paige/vimeo` shortcode provides a responsive Vimeo video.
     title=true
     transparent=true
     video="644036051"
+    width="10rem"
 >}}
 ```
 
@@ -578,10 +582,16 @@ Parameters:
     <dd>Optional. Boolean. Do not track session data. Default is <code>false</code>.</dd>
     <dt><code>fullscreen</code></dt>
     <dd>Optional. Boolean. Enable full screen. Default is <code>true</code>.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. String. CSS value. Video height.</dd>
     <dt><code>keyboard</code></dt>
     <dd>Optional. Boolean. Enable keyboard input. Default is <code>true</code>.</dd>
     <dt><code>loop</code></dt>
     <dd>Optional. Boolean. Loop the video. Default is <code>false</code>.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Video maximum height.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. String. CSS value. Video maximum width.</dd>
     <dt><code>muted</code></dt>
     <dd>Optional. Boolean. Mute the video. Default is <code>false</code>.</dd>
     <dt><code>pip</code></dt>
@@ -604,6 +614,8 @@ Parameters:
     <dd>Optional. Boolean. Use a transparent background instead of a black one. Default is <code>true</code>.</dd>
     <dt><code>video</code></dt>
     <dd>Optional. Position 0. String. Video ID.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. String. CSS value. Video width.</dd>
 </dl>
 
 See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) for more detail.
@@ -619,11 +631,15 @@ The `paige/youtube` shortcode provides a responsive YouTube video.
     description="YouTube video"
     end=0
     fullscreen=true
+    height="10rem"
     list="PL2WkvfelorAFjpzGUWc4OWAWmiJpwL97L"
     loop=false
+    maxheight="10rem"
+    maxwidth="10rem"
     mute=false
     start=0
     video="dQw4w9WgXcQ"
+    width="10rem"
 >}}
 ```
 
@@ -642,16 +658,24 @@ Parameters:
     <dd>Optional. Integer. Elapsed seconds. Stop the video here.</dd>
     <dt><code>fullscreen</code></dt>
     <dd>Optional. Boolean. Enable full screen. Default is <code>true</code>.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. String. CSS value. Video height.</dd>
     <dt><code>list</code></dt>
     <dd>Optional. String. Playlist ID.</dd>
     <dt><code>loop</code></dt>
     <dd>Optional. Boolean. Loop the video.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Video maximum height.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. String. CSS value. Video maximum width.</dd>
     <dt><code>mute</code></dt>
     <dd>Optional. Boolean. Mute the video.</dd>
     <dt><code>start</code></dt>
     <dd>Optional. Integer. Elapsed seconds. Start the video here.</dd>
     <dt><code>video</code></dt>
     <dd>Optional. Position 0. String. Video ID.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. String. CSS value. Video width.</dd>
 </dl>
 
 ## Customize
