@@ -9,7 +9,7 @@ function paigeResize() {
     var mw = getComputedStyle(e).maxWidth;
     var w;
     if (mw === "100%") {
-        var e = document.querySelector("body > div.container");
+        var e = document.querySelector("#paige-root");
         var s = getComputedStyle(e);
         var px = parseFloat(s.paddingLeft) + parseFloat(s.paddingRight);
         var bx = parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth);
