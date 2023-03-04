@@ -2,21 +2,16 @@
 {{ $autoplay := .Get "autoplay" }}
 {{ $background := .Get "background" }}
 {{ $byline := .Get "byline" }}
-{{ $caption := .Get "caption" }}
 {{ $color := .Get "color" }}
 {{ $controls := .Get "controls" | default true }}
 {{ $description := .Get "title" | default "Vimeo video" }}
 {{ $dnt := .Get "dnt" | default site.Config.Privacy.Vimeo.EnableDNT }}
-{{ $float := .Get "float" }}
 {{ $fullscreen := .Get "fullscreen" | default true }}
 {{ $height := .Get "height" }}
-{{ $horizontal := .Get "horizontal" }}
 {{ $keyboard := .Get "keyboard" | default true }}
 {{ $loop := .Get "loop" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $muted := .Get "muted" }}
-{{ $number := .Get "number" }}
-{{ $numbered := .Get "numbered" }}
 {{ $pip := .Get "pip" }}
 {{ $playsinline := .Get "playsinline" | default true }}
 {{ $portrait := .Get "portrait" }}
@@ -27,7 +22,6 @@
 {{ $time := .Get "time" }}
 {{ $title := .Get "title" }}
 {{ $transparent := .Get "transparent" | default true }}
-{{ $vertical := .Get "vertical" }}
 {{ $video := .Get 0 | default (.Get "video") }}
 {{ $width := .Get "width" }}
 
@@ -117,21 +111,13 @@
     {{ $src = print $src "?" . }}
 {{ end }}
 
-{{ partial "paige/figure.html" (dict
-    "caption" $caption
-    "content" (partial "paige/video.html" (dict
+<div class="paige-vimeo">
+    {{ partial "paige/video.html" (dict
         "fullscreen" $fullscreen
         "height" $height
         "referrerpolicy" $referrerpolicy
         "src" $src
         "title" $description
         "width" $width
-    ))
-    "float" $float
-    "gap" 2
-    "horizontal" $horizontal
-    "maxwidth" $maxwidth
-    "number" $number
-    "numbered" $numbered
-    "vertical" $vertical
-) }}
+    ) }}
+</div>
