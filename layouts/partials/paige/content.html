@@ -11,5 +11,5 @@
 {{ $content := cond ($fullpages | not) ($page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` (printf `${1}<a aria-label="%v" class="paige-header-link" href="#${2}">#</a>${3}` (i18n "paige_aria_section_link")) | safeHTML) $page.Content }}
 
 {{ with $content }}
-    <div class="mw-100 overflow-x-auto paige-content">{{ . }}</div>
+    <div class="mw-100 overflow-x-auto {{ if $fullpages }} paige-content {{ end }}" {{ if not $fullpages }} id="paige-content" {{ end }}>{{ . }}</div>
 {{ end }}

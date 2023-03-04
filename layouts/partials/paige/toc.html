@@ -9,7 +9,7 @@
 {{ end }}
 
 {{ if and $page.Content (not $fullpages) (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
-    <div class="paige-toc">
+    <div id="paige-toc">
         <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
             {{ $page.TableOfContents }}
         </div>

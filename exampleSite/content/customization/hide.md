@@ -5,15 +5,16 @@ date: "2023-02-01"
 description: "Demonstration of Paige customization that hides data."
 paige:
   style: |
-    .paige-authors,
-    .paige-date,
-    .paige-reading-time,
-    .paige-terms,
-    .paige-toc,
+    #paige-authors,
     #paige-credit,
+    #paige-date,
+    #paige-reading-time,
+    #paige-terms,
+    #paige-toc,
     #paige-pages .paige-authors,
-    #paige-pages .paige-date-header,
     #paige-pages .paige-date,
+    #paige-pages .paige-date-header,
+    #paige-pages .paige-reading-time,
     #paige-pages .paige-summary,
     #paige-pages .paige-terms {
         display: block;
@@ -34,15 +35,16 @@ This page has the following parameters:
 ```yaml
 paige:
   style: |
-    .paige-authors,
-    .paige-date,
-    .paige-reading-time,
-    .paige-terms,
-    .paige-toc,
+    #paige-authors,
     #paige-credit,
+    #paige-date,
+    #paige-reading-time,
+    #paige-terms,
+    #paige-toc,
     #paige-pages .paige-authors,
-    #paige-pages .paige-date-header,
     #paige-pages .paige-date,
+    #paige-pages .paige-date-header,
+    #paige-pages .paige-reading-time,
     #paige-pages .paige-summary,
     #paige-pages .paige-terms {
         display: block;

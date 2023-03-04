@@ -805,11 +805,11 @@ If you want a more minimal look,
 try the following in your `layouts/partials/paige/style-first.css`:
 
 ```css
-.paige-authors,
-.paige-reading-time,
-.paige-terms,
-.paige-toc,
+#paige-authors,
 #paige-credit,
+#paige-reading-time,
+#paige-terms,
+#paige-toc,
 #paige-pages .paige-authors,
 #paige-pages .paige-date,
 #paige-pages .paige-summary,

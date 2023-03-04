@@ -14,7 +14,7 @@ paige:
       bootstrap_icon: "github"
       name: "GitHub"
       url: "https://github.com/willfaught/paige"
-  style: ".paige-title { font-size: 5rem; }"
+  style: "#paige-title { font-size: 5rem; }"
 title: "Paige"
 ---
 
