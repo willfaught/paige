@@ -9,6 +9,10 @@
 {{ $raw := $params.raw }}
 {{ $src := $params.src }}
 
+{{ if not $src }}
+    {{ errorf "paige/script: no src" }}
+{{ end }}
+
 {{ if $raw }}
     {{ $src = $src }}
 {{ else }}

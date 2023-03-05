@@ -11,6 +11,10 @@
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
 
+{{ if not $href }}
+    {{ errorf "paige/link: no href" }}
+{{ end }}
+
 {{ if not $raw }}
     {{ $resource := partial "paige/resource.html" (dict
         "page" $page

@@ -20,6 +20,10 @@
 {{ $title := $params.title }}
 {{ $width := $params.width }}
 
+{{ if and (not $src) (not $resource) }}
+    {{ errorf "paige/img: no src or resource" }}
+{{ end }}
+
 {{ $intrinsicheight := $height }}
 {{ $intrinsicwidth := $width }}
 
