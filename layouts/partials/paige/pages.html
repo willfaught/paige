@@ -16,108 +16,15 @@
             </div>
         {{ end }}
     {{ else }}
-        {{ $p := $page.Paginate ($page.Pages.ByPublishDate.Reverse.GroupByPublishDate "January 2006") }}
         <div id="paige-pages">
+            {{ range (where $page.Pages "Params.paige.pin" true).ByPublishDate.Reverse }}
+                {{ partial "paige/page.html" . }}
+            {{ end }}
+            {{ $p := $page.Paginate ($page.Pages.ByPublishDate.Reverse.GroupByPublishDate "January 2006") }}
             {{ range $p.PageGroups }}
                 <p class="h5 paige-date-header text-center">{{ .Key }}</p>
                 {{ range .Pages }}
-                    {{ $authors := partial "paige/authors.html" . }}
-                    {{ $categories := .Params.categories | default slice | uniq }}
-                    {{ $commiturl := "" }}
-                    {{ $date := .PublishDate }}
-                    {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
-                    {{ $description := .Description | markdownify }}
-                    {{ $draft := .Draft }}
-                    {{ $expired := and .ExpiryDate (lt .ExpiryDate now) }}
-                    {{ $flags := slice }}
-                    {{ $future := and .PublishDate (gt .PublishDate now) }}
-                    {{ $modified := and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
-                    {{ $readingtime := .ReadingTime }}
-                    {{ $summary := .Summary | htmlUnescape | plainify }}
-                    {{ $tags := .Params.tags | default slice | uniq }}
-                    {{ $title := .Title | markdownify }}
-                    {{ $titlelink := .RelPermalink }}
-
-                    {{ if and ($page.Param "paige.git.commit_url_prefix") $page.GitInfo }}
-                        {{ $commiturl = print ($page.Param "paige.git.commit_url_prefix") $page.GitInfo.Hash }}
-                    {{ end }}
-
-                    {{ if $draft }}
-                        {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
-                    {{ end }}
-
-                    {{ if $expired }}
-                        {{ $flags = $flags | append "paige-expired" "paige-unpublished" }}
-                    {{ end }}
-
-                    {{ if $future }}
-                        {{ $flags = $flags | append "paige-future" "paige-unpublished" }}
-                    {{ end }}
-
-                    {{ if $modified }}
-                        {{ $flags = $flags | append "paige-modified" }}
-                    {{ end }}
-
-                    {{ if not (or $draft $expired $future) }}
-                        {{ $flags = $flags | append "paige-published" }}
-                    {{ end }}
-
-                    {{ $flags = delimit ($flags | uniq) " " }}
-                    {{ $class := delimit (slice "mb-3" "paige-page" "w-100" | append $flags | uniq | sort) " " }}
-
-                    <div class="{{ $class }}">
-                        {{ with $title }}
-                            <p class="mb-0 paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
-                        {{ end }}
-
-                        {{ with $description }}
-                            <p class="mb-0 paige-description text-center">{{ . }}</p>
-                        {{ end }}
-
-                        {{ with $summary }}
-                            <p class="fst-italic mb-0 paige-summary text-center">{{ . }}</p>
-                        {{ end }}
-
-                        {{ if or $categories $tags }}
-                            <p class="mb-0 paige-terms text-center">
-                                {{ $terms := slice }}
-
-                                {{ range $categories }}
-                                    {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "categories/%v/" | relLangURL)) }}
-                                {{ end }}
-
-                                {{ range $tags }}
-                                    {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "tags/%v/" | relLangURL)) }}
-                                {{ end }}
-
-                                {{ range sort $terms "name" }}
-                                    <a class="badge paige-term text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ .name }}</a>
-                                {{ end }}
-                            </p>
-                        {{ end }}
-
-                        {{ with $authors }}
-                            <p class="mb-0 paige-authors text-center text-secondary">{{ . }}</p>
-                        {{ end }}
-
-                        {{ with $date }}
-                            <p class="mb-0 paige-date text-center text-secondary">
-                                {{ with $commiturl }}
-                                    <a class="link-secondary text-decoration-none" href="{{ . }}">
-                                {{ end }}
-
-                                <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
-
-                                {{ if $commiturl }}
-                                    </a>
-                                {{ end }}
-                            </p>
-                        {{ end }}
-
-                        {{ with $readingtime }}
-                            <p class="mb-0 paige-reading-time text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
-                        {{ end }}
-                    </div>
+                    {{ partial "paige/page.html" . }}
                 {{ end }}
             {{ end }}
         </div>
