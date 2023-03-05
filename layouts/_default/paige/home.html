@@ -47,7 +47,10 @@
 
         {{ partial "paige/toc.html" $page }}
         {{ partial "paige/content.html" $page }}
-        {{ partial "paige/social.html" $page }}
+
+        {{ if $page.Param "paige.social" }}
+            <p class="display-6 text-center">{{ partial "paige/social.html" $page }}</p>
+        {{ end }}
     </div>
 </article>
 {{ end }}
