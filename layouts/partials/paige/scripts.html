@@ -2,9 +2,12 @@
 
 <script>
 function paigeResize() {
-    var e = document.querySelector(".paige-content");
+    var e = document.querySelector("#paige-content");
     if (!e) {
-        return;
+        e = document.querySelector(".paige-content");
+        if (!e) {
+            return;
+        }
     }
     var mw = getComputedStyle(e).maxWidth;
     var w;
