@@ -2,7 +2,7 @@
 authors: ["will_faught"]
 categories: ["customization", "paige"]
 date: "2023-02-01"
-description: "Demonstration of Paige customization that hides data."
+description: "Demonstration of Paige customization that shows data."
 paige:
   style: |
     #paige-authors,
@@ -19,8 +19,8 @@ paige:
     #paige-pages .paige-terms {
         display: block;
     }
-tags: ["hide", "singles"]
-title: "Hide Data"
+tags: ["show", "singles"]
+title: "Show Data"
 weight: 10
 ---
 
