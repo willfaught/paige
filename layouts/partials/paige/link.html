@@ -1,14 +1,15 @@
 {{ $params := . }}
 
 {{ $crossorigin := $params.crossorigin | default "anonymous" }}
-{{ $enablesourcemap := not hugo.IsProduction }}
 {{ $href := $params.href }}
 {{ $includepaths := $params.includepaths }}
 {{ $integrity := $params.integrity }}
-{{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
+
+{{ $enablesourcemap := not hugo.IsProduction }}
+{{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 
 {{ if not $href }}
     {{ errorf "paige/link: no href" }}
