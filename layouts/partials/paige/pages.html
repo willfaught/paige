@@ -2,13 +2,13 @@
 
 {{ if $page.Pages }}
     {{ if $page.Param "paige.section_pages.full_pages" }}
-        {{ $p := $page.Paginate $page.Pages }}
+        {{ $pager := $page.Paginate $page.Pages }}
         <div id="paige-pages">
-            {{ range $p.Pages }}
+            {{ range $pager.Pages }}
                 {{ partial "paige/article.html" (dict "fullpages" true "page" .) }}
             {{ end }}
         </div>
-        {{ if or $p.HasPrev $p.HasNext }}
+        {{ if or $pager.HasPrev $pager.HasNext }}
             <div id="paige-pagination">
                 <div class="d-flex justify-content-center">
                     {{ partial "paige/pagination.html" $page }}
@@ -17,18 +17,21 @@
         {{ end }}
     {{ else }}
         <div id="paige-pages">
-            {{ range (where $page.Pages "Params.paige.pin" true).ByPublishDate.Reverse }}
+            {{ $pinned := where $page.Pages "Params.paige.pin" true }}
+            {{ range $pinned.ByPublishDate.Reverse }}
                 {{ partial "paige/page.html" . }}
             {{ end }}
-            {{ $p := $page.Paginate ($page.Pages.ByPublishDate.Reverse.GroupByPublishDate "January 2006") }}
-            {{ range $p.PageGroups }}
+            {{ $unpinned := complement $pinned $page.Pages }}
+            {{ $pagegroups := $unpinned.ByPublishDate.Reverse.GroupByPublishDate "January 2006" }}
+            {{ $pager := $page.Paginate $pagegroups }}
+            {{ range $pager.PageGroups }}
                 <p class="h5 paige-date-header text-center">{{ .Key }}</p>
                 {{ range .Pages }}
                     {{ partial "paige/page.html" . }}
                 {{ end }}
             {{ end }}
         </div>
-        {{ if or $p.HasPrev $p.HasNext }}
+        {{ if or $pager.HasPrev $pager.HasNext }}
             <div id="paige-pagination">
                 <div class="d-flex justify-content-center">
                     {{ partial "paige/pagination.html" $page }}

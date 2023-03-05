@@ -390,6 +390,7 @@ authors:
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 paige:
   alert: "Alert!" # Markdown displayed before the page body (defaults to primary alert type)
+  pin: true # Display this page before the rest
 paige:
   alert:
     message: "Alert!" # Markdown displayed before the page body
