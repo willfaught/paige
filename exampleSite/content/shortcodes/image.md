@@ -83,30 +83,6 @@ Result:
 
 {{< paige/image link="https://github.com/willfaught/paige" method="resize" options="550x webp picture Lanczos" src="landscape.webp" >}}
 
-## Raw parameter
-
-Code:
-
-```go-text-template
-{{</* paige/image raw=false src="https://picsum.photos/1296/600.webp" */>}}
-```
-
-Result:
-
-{{< paige/image raw=false src="https://picsum.photos/1296/600.webp" >}}
-
----
-
-Code:
-
-```go-text-template
-{{</* paige/image raw=true src="https://picsum.photos/1296/600.webp" */>}}
-```
-
-Result:
-
-{{< paige/image raw=true src="https://picsum.photos/1296/600.webp" >}}
-
 ## Src parameter
 
 Code:

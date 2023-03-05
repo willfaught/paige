@@ -7,7 +7,6 @@
 {{ $integrity := $params.integrity }}
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
-{{ $raw := $params.raw }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
 
@@ -15,13 +14,8 @@
     {{ errorf "paige/link: no href" }}
 {{ end }}
 
-{{ if not $raw }}
-    {{ $resource := partial "paige/resource.html" (dict
-        "page" $page
-        "url" $href
-    ) }}
-
-    {{ $resource = resources.ExecuteAsTemplate $href (or $page dict) $resource }}
+{{ with partial "paige/resource.html" (dict "page" $page "url" $href) }}
+    {{ $resource := resources.ExecuteAsTemplate $href (or $page dict) . }}
 
     {{ if $sass }}
         {{ $resource = $resource | toCSS (dict
@@ -34,6 +28,8 @@
     {{ $resource = $resource | minify | fingerprint }}
     {{ $href = $resource.RelPermalink }}
     {{ $integrity = $resource.Data.Integrity }}
+{{ else }}
+    {{ $href = relLangURL $href }}
 {{ end }}
 
 <link {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} href="{{ $href | safeURL }}" {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">

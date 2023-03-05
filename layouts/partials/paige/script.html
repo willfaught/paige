@@ -6,23 +6,18 @@
 {{ $onload := $params.onload | safeJS }}
 {{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
-{{ $raw := $params.raw }}
 {{ $src := $params.src }}
 
 {{ if not $src }}
     {{ errorf "paige/script: no src" }}
 {{ end }}
 
-{{ if $raw }}
-    {{ $src = $src }}
-{{ else }}
-    {{ $resource := (partial "paige/resource.html" (dict
-        "page" $page
-        "url" $src
-    )) | minify | fingerprint }}
-
+{{ with partial "paige/resource.html" (dict "page" $page "url" $src) }}
+    {{ $resource := . | minify | fingerprint }}
     {{ $integrity = $resource.Data.Integrity }}
     {{ $src = $resource.RelPermalink }}
+{{ else }}
+    {{ $href = relLangURL $href }}
 {{ end }}
 
 <script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}"></script>

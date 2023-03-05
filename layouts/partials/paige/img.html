@@ -12,7 +12,6 @@
 {{ $method := $params.method }}
 {{ $options := $params.options }}
 {{ $page := $params.page }}
-{{ $raw := $params.raw }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $resource := $params.resource }}
 {{ $src := $params.src }}
@@ -27,16 +26,14 @@
 {{ $intrinsicheight := $height }}
 {{ $intrinsicwidth := $width }}
 
-{{ if $raw }}
-    {{ $src = relLangURL $src }}
-{{ else }}
-    {{ if not $resource }}
-        {{ $resource = partial "paige/resource.html" (dict
-            "page" $page
-            "url" $src
-        ) }}
-    {{ end }}
+{{ if not $resource }}
+    {{ $resource = partial "paige/resource.html" (dict
+        "page" $page
+        "url" $src
+    ) }}
+{{ end }}
 
+{{ with $resource }}
     {{ if and $method $options }}
         {{ if eq $method "crop" }}
             {{ $resource = $resource.Crop $options }}
@@ -59,6 +56,8 @@
     {{ end }}
 
     {{ $src = $resource.RelPermalink }}
+{{ else }}
+    {{ $src = relLangURL $src }}
 {{ end }}
 
 {{ if and (or $height $maxheight) (not (or $maxwidth $width)) }}

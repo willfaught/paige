@@ -315,7 +315,6 @@ paige:
     image:
       alt: "" # Image alt
       height: "" # CSS unit; image height
-      raw: false # Do not copy the file
       stretch: false # Stretch the image fully horizontally if true; center the image otherwise
       url: "" # Local or remote resource glob
       width: "" # CSS unit; image width
@@ -456,7 +455,6 @@ The `paige/image` shortcode provides a figure with an image.
     maxwidth="10rem"
     method="resize"
     options="550x webp picture Lanczos"
-    raw=false
     src="me.jpg"
     title="My title"
     width="10rem"
@@ -482,8 +480,6 @@ Parameters:
     <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
-    <dt><code>raw</code></dt>
-    <dd>Optional. Boolean. Whether to reference an image without copying it. Default is <code>false</code>.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>title</code></dt>

@@ -35,8 +35,4 @@
     {{ end }}
 {{ end }}
 
-{{ if not $result }}
-    {{ errorf "paige/resource: invalid resource: %q" $url }}
-{{ end }}
-
 {{ return $result }}

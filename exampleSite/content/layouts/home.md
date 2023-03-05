@@ -8,7 +8,6 @@ paige:
     blurb: "This is the blurb."
     greeting: "This is the greeting"
     image:
-      raw: false
       stretch: false
       url: "landscape.webp"
   main:
@@ -126,7 +125,6 @@ paige:
     blurb: "This is the blurb."
     greeting: "This is the greeting"
     image:
-      raw: false
       stretch: false
       url: "landscape.webp"
   main:

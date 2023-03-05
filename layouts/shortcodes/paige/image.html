@@ -5,7 +5,6 @@
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $method := .Get "method" }}
 {{ $options := .Get "options" }}
-{{ $raw := .Get "raw" }}
 {{ $src := .Get 0 | default (.Get "src") }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
@@ -23,7 +22,6 @@
     "method" $method
     "options" $options
     "page" .Page
-    "raw" $raw
     "src" $src
     "title" $title
     "width" $width
