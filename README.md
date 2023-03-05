@@ -315,7 +315,7 @@ paige:
     image:
       alt: "" # Image alt
       height: "" # CSS unit; image height
-      raw: false # Do not copy or process the file
+      raw: false # Do not copy the file
       stretch: false # Stretch the image fully horizontally if true; center the image otherwise
       url: "" # Local or remote resource glob
       width: "" # CSS unit; image width
