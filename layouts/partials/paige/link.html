@@ -18,11 +18,7 @@
     {{ $resource := resources.ExecuteAsTemplate $href (or $page dict) . }}
 
     {{ if $sass }}
-        {{ $resource = $resource | toCSS (dict
-            "enableSourceMap" $enablesourcemap
-            "includePaths" $includepaths
-            "outputStyle" $outputstyle
-        ) }}
+        {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $includepaths "outputStyle" $outputstyle) }}
     {{ end }}
 
     {{ $resource = $resource | minify | fingerprint }}
