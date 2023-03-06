@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["customization", "paige"]
 date: "2022-02-23"
 description: "Demonstration of Paige customization."

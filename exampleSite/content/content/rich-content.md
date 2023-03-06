@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["content", "paige"]
 description: "A brief description of Hugo Shortcodes."
 tags: ["shortcodes", "privacy"]

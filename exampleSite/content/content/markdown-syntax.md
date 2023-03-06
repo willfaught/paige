@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["content", "paige"]
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags: ["markdown", "css", "html"]

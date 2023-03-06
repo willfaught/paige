@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["content", "paige"]
 description: "Lorem Ipsum Dolor Si Amet."
 tags: ["markdown", "text"]

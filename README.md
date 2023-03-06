@@ -325,7 +325,7 @@ Optional site parameters:
 
 ```yaml
 authors:
-  will_faught:
+  will-faught:
     name: "Will Faught"
     default: false # Credit this author in pages that have no authors parameter
 ```
@@ -336,8 +336,8 @@ Optional page parameters:
 
 ```yaml
 authors:
-- "will_faught" # Credit the corresponding author in the site parameters
-- author: "will_faught" # Credit the corresponding author in the site parameters
+- "will-faught" # Credit the corresponding author in the site parameters
+- author: "will-faught" # Credit the corresponding author in the site parameters
 - name: "Will Faught" # Credit this author
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 ```

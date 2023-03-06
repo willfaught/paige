@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige Vimeo shortcode."
 tags: ["videos", "vimeo"]

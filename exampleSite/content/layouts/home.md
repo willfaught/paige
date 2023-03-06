@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["layouts", "paige"]
 description: "Demonstration of the Paige home layout."
 layout: "paige/home"
@@ -116,7 +116,7 @@ These are the parameters for this page:
 
 ```yaml
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["layouts", "paige"]
 description: "Demonstration of the Paige home layout."
 layout: "paige/home"

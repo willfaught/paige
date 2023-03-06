@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["layouts", "paige"]
 description: "Demonstration of the Paige search layout."
 layout: "paige/search"

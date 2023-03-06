@@ -1,5 +1,5 @@
 ---
-authors: ["will_faught"]
+authors: ["will-faught"]
 categories: ["content", "paige"]
 description: "Guide to emoji usage in Hugo."
 tags: ["emoji"]
