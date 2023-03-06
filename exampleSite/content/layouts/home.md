@@ -10,18 +10,6 @@ paige:
     image:
       stretch: false
       url: "landscape.webp"
-  main:
-    metadata:
-      authors:
-        hide: true
-      date:
-        hide: true
-      reading_time:
-        hide: true
-      terms:
-        hide: true
-      title:
-        class: "display-1 fw-bold text-center"
   social:
     discord:
       bootstrap_icon: "discord"
@@ -127,18 +115,6 @@ paige:
     image:
       stretch: false
       url: "landscape.webp"
-  main:
-    metadata:
-      authors:
-        hide: true
-      date:
-        hide: true
-      reading_time:
-        hide: true
-      terms:
-        hide: true
-      title:
-        class: "display-1 fw-bold text-center"
   social:
     discord:
       bootstrap_icon: "discord"
