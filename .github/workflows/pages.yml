@@ -18,6 +18,8 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Setup Embedded Dart Sass
+        run: sudo snap install dart-sass-embedded
       - id: pages
         name: Setup Pages
         uses: actions/configure-pages@v2
@@ -39,6 +41,8 @@ jobs:
   #         submodules: recursive
   #     - name: Setup Hugo
   #       run: choco install hugo-extended
+  #     - name: Setup Embedded Dart Sass
+  #       run: choco install dart-sass-embedded
   #     - name: Build
   #       run: |
   #         cd exampleSite

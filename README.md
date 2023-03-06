@@ -77,13 +77,21 @@ please share it by [posting code or screenshots](https://github.com/willfaught/p
     $ brew install node
     ```
 
-3. Create a site:
+3. [Install Embedded Dart Sass](https://github.com/sass/dart-sass-embedded/releases).
+
+    For Homebrew on Mac:
+
+    ```sh
+    $ brew install sass/sass/dart-sass-embedded
+    ```
+
+4. Create a site:
 
     ```sh
     $ hugo new site yourproject
     ```
 
-4. Create a post:
+5. Create a post:
 
     ```sh
     $ cd yourproject
