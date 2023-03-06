@@ -69,6 +69,18 @@ please share it by [posting code or screenshots](https://github.com/willfaught/p
     $ brew install hugo
     ```
 
+    For Chocolatey on Windows:
+
+    ```sh
+    $ choco install hugo-extended
+    ```
+
+    For Snap on Linux:
+
+    ```sh
+    $ sudo snap install hugo
+    ```
+
 2. [Install Node](https://nodejs.org/en/download/).
 
     For Homebrew on Mac:
@@ -77,12 +89,36 @@ please share it by [posting code or screenshots](https://github.com/willfaught/p
     $ brew install node
     ```
 
+    For Chocolatey on Windows:
+
+    ```sh
+    $ choco install nodejs
+    ```
+
+    For Snap on Linux:
+
+    ```sh
+    $ sudo snap install node
+    ```
+
 3. [Install Embedded Dart Sass](https://github.com/sass/dart-sass-embedded/releases).
 
     For Homebrew on Mac:
 
     ```sh
     $ brew install sass/sass/dart-sass-embedded
+    ```
+
+    For Chocolatey on Windows:
+
+    ```sh
+    $ choco install dart-sass-embedded
+    ```
+
+    For Snap on Linux:
+
+    ```sh
+    $ sudo snap install dart-sass-embedded
     ```
 
 4. Create a site:
