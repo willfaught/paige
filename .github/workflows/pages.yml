@@ -7,7 +7,7 @@ defaults:
 jobs:
   build-linux:
     env:
-      HUGO_VERSION: 0.111.1
+      HUGO_VERSION: 0.111.2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
