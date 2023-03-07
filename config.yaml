@@ -28,7 +28,7 @@ module:
   - source: "node_modules/bootstrap/js/dist"
     target: "static/paige/bootstrap"
   - source: "node_modules/bootstrap/scss"
-    target: "static/paige/bootstrap"
+    target: "assets/paige/bootstrap"
   # Bootstrap Icons
   - source: "node_modules/bootstrap-icons/font/fonts"
     target: "static/paige/bootstrap-icons/fonts"
