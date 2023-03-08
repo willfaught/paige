@@ -339,6 +339,12 @@ authors:
 - author: "will-faught" # Credit the corresponding author in the site parameters
 - name: "Will Faught" # Credit this author
 link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
+paige:
+  alert: "Alert!" # Markdown displayed before the page body (defaults to primary alert type)
+paige:
+  alert:
+    message: "Alert!" # Markdown displayed before the page body
+    type: "primary" # Bootstrap alert type
 ```
 
 ## Layouts

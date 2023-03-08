@@ -1,0 +1,9 @@
+{{ $page := . }}
+
+{{ with $page.Param "paige.alert" }}
+    {{ if reflect.IsMap . }}
+        <div class="alert alert-{{ .type }}" role="alert">{{ .message | markdownify }}</div>
+    {{ else }}
+        <div class="alert alert-primary" role="alert">{{ . | markdownify }}</div>
+    {{ end }}
+{{ end }}

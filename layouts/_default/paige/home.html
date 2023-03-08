@@ -45,6 +45,7 @@
         {{ end }}
 
         {{ partial "paige/toc.html" $page }}
+        {{ partial "paige/alert.html" $page }}
         {{ partial "paige/content.html" $page }}
 
         {{ if $page.Param "paige.social" }}
