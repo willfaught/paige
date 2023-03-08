@@ -8,7 +8,7 @@ paige:
     image:
       alt: "Landscape"
       stretch: true
-      url: "landscape.webp"
+      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
   social:
     github:
       bootstrap_icon: "github"
