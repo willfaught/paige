@@ -1,7 +1,6 @@
 {{ $page := . }}
 
-{{ $dark := eq ($page.Param "paige.color_scheme") "dark" }}
 {{ $lang := site.LanguageCode | default site.Language.Lang }}
 {{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
 
-<html {{ if $dark }} data-bs-theme="dark" {{ end }} data-paige="Paige theme from https://github.com/willfaught/paige" {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
+<html data-paige="Paige theme from https://github.com/willfaught/paige" {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>

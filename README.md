@@ -276,7 +276,6 @@ paige:
     yandex: # See https://metrica.yandex.com
       account_id: ""
   color: "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
-  color_scheme: "" # Always use this color scheme without automatic switching; must be "", "light", or "dark"
   comments:
     cactus: # See https://cactus.chat
       account_id: ""
