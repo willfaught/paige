@@ -312,7 +312,7 @@ paige:
   search:
     hide_page: false
   section_pages:
-    full_pages: false # Display full pages in the list of pages.
+    full_pages: false # Display full pages in the list of pages
   style: "" # CSS included at the end of the stylesheet, before style-last.css
 ```
 
