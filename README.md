@@ -747,20 +747,20 @@ Parameters:
 
 ### Include
 
-| If this file exists in the site    | It is included at               |
-| ---------------------------------- | ------------------------------- |
-| `partials/paige/body-first.html`   | The beginning of the body tag   |
-| `partials/paige/body-last.html`    | The end of the body tag         |
-| `partials/paige/footer-first.html` | The beginning of the footer tag |
-| `partials/paige/footer-last.html`  | The end of the footer tag       |
-| `partials/paige/head-first.html`   | The beginning of the head tag   |
-| `partials/paige/head-last.html`    | The end of the head tag         |
-| `partials/paige/header-first.html` | The beginning of the header tag |
-| `partials/paige/header-last.html`  | The end of the header tag       |
-| `partials/paige/main-first.html`   | The beginning of the main tag   |
-| `partials/paige/main-last.html`    | The end of the main tag         |
-| `partials/paige/style-first.css`   | The beginning of the style tag  |
-| `partials/paige/style-last.css`    | The end of the style tag        |
+| If this file exists in the site            | It is included at               |
+| ------------------------------------------ | ------------------------------- |
+| `layouts/partials/paige/body-first.html`   | The beginning of the body tag   |
+| `layouts/partials/paige/body-last.html`    | The end of the body tag         |
+| `layouts/partials/paige/footer-first.html` | The beginning of the footer tag |
+| `layouts/partials/paige/footer-last.html`  | The end of the footer tag       |
+| `layouts/partials/paige/head-first.html`   | The beginning of the head tag   |
+| `layouts/partials/paige/head-last.html`    | The end of the head tag         |
+| `layouts/partials/paige/header-first.html` | The beginning of the header tag |
+| `layouts/partials/paige/header-last.html`  | The end of the header tag       |
+| `layouts/partials/paige/main-first.html`   | The beginning of the main tag   |
+| `layouts/partials/paige/main-last.html`    | The end of the main tag         |
+| `layouts/partials/paige/style-first.css`   | The beginning of the style tag  |
+| `layouts/partials/paige/style-last.css`    | The end of the style tag        |
 
 ### Override
 
