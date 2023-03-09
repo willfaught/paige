@@ -17,7 +17,7 @@
     {{ $integrity = $resource.Data.Integrity }}
     {{ $src = $resource.RelPermalink }}
 {{ else }}
-    {{ $href = relLangURL $href }}
+    {{ $src = relLangURL $src }}
 {{ end }}
 
 <script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}"></script>
