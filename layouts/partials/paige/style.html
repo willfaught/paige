@@ -95,6 +95,14 @@ body, html {
     margin-bottom: 1rem;
 }
 
+@media (prefers-color-scheme: dark) {
+    {{ partial "paige/dark.css" $page | safeCSS }}
+}
+
+@media (prefers-color-scheme: light) {
+    {{ partial "paige/light.css" $page | safeCSS }}
+}
+
 @media (prefers-reduced-motion: reduce) {
     .paige-header-link {
         transition: none;
@@ -104,24 +112,6 @@ body, html {
 {{ with $page.Param "paige.max_width" }}
     #paige-root {
         max-width: {{ . | safeCSS }};
-    }
-{{ end }}
-
-{{ with $page.Param "paige.color_scheme" }}
-    {{ if eq . "dark" }}
-        {{ partial "paige/dark.css" . | safeCSS }}
-    {{ else if eq . "light" }}
-        {{ partial "paige/light.css" . | safeCSS }}
-    {{ else }}
-        {{ errorf "paige/style: invalid color scheme: %q" . }}
-    {{ end }}
-{{ else }}
-    @media (prefers-color-scheme: dark) {
-        {{ partial "paige/dark.css" $page | safeCSS }}
-    }
-
-    @media (prefers-color-scheme: light) {
-        {{ partial "paige/light.css" $page | safeCSS }}
     }
 {{ end }}
 
