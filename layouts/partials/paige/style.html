@@ -109,12 +109,6 @@ body, html {
     }
 }
 
-{{ with $page.Param "paige.max_width" }}
-    #paige-root {
-        max-width: {{ . | safeCSS }};
-    }
-{{ end }}
-
 {{ with $page.Param "paige.style" }}
     {{ . | safeCSS }}
 {{ end }}
