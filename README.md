@@ -869,6 +869,7 @@ try the following in your `layouts/partials/paige/style-first.css`:
 #paige-toc,
 #paige-pages .paige-authors,
 #paige-pages .paige-date,
+#paige-pages .paige-reading-time,
 #paige-pages .paige-summary,
 #paige-pages .paige-terms {
     display: none;
