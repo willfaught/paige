@@ -244,6 +244,56 @@ $ hugo server -D
 
 ## Configure
 
+### Mounts
+
+Example `config.yaml`:
+
+```yaml
+module:
+  mounts:
+  # Default mounts
+  - source: "archetypes"
+    target: "archetypes"
+  - source: "assets"
+    target: "assets"
+  - source: "content"
+    target: "content"
+  - source: "data"
+    target: "data"
+  - source: "i18n"
+    target: "i18n"
+  - source: "layouts"
+    target: "layouts"
+  - source: "static"
+    target: "static"
+  # Bootstrap
+  - source: "node_modules/bootstrap/dist/css"
+    target: "assets/_paige/bootstrap"
+    includeFiles: ["/bootstrap.css"]
+  - source: "node_modules/bootstrap/dist/js"
+    target: "assets/_paige/bootstrap"
+    includeFiles: ["/bootstrap.bundle.js"]
+  - source: "node_modules/bootstrap/js/dist"
+    target: "static/_paige/bootstrap"
+  - source: "node_modules/bootstrap/scss"
+    target: "assets/_paige/bootstrap"
+  # Bootstrap Icons
+  - source: "node_modules/bootstrap-icons/font/fonts"
+    target: "static/_paige/bootstrap-icons/fonts"
+  - source: "node_modules/bootstrap-icons/font"
+    target: "assets/_paige/bootstrap-icons"
+    includeFiles: ["/bootstrap-icons.css"]
+  # Katex
+  - source: "node_modules/katex/contrib/auto-render"
+    target: "assets/paige/katex"
+    includeFiles: ["/auto-render.js"]
+  - source: "node_modules/katex/dist/fonts"
+    target: "static/paige/katex/fonts"
+  - source: "node_modules/katex/dist"
+    target: "assets/paige/katex"
+    includeFiles: ["/katex.css", "/katex.js"]
+```
+
 ### Parameters
 
 There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
