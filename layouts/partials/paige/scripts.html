@@ -31,7 +31,7 @@ function paigeResize() {
 paigeResize();
 addEventListener("resize", paigeResize);
 </script>
-{{ partial "paige/script.html" (dict "src" "paige/bootstrap/bootstrap.bundle.js") }}
+{{ partial "paige/script.html" (dict "src" "_paige/bootstrap/bootstrap.bundle.js") }}
 
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.section_pages.full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/script.html" (dict "src" "paige/katex/katex.js") }}

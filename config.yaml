@@ -20,27 +20,27 @@ module:
     target: "static"
   # Bootstrap
   - source: "node_modules/bootstrap/dist/css"
-    target: "assets/paige/bootstrap"
+    target: "assets/_paige/bootstrap"
     includeFiles: ["/bootstrap.css"]
   - source: "node_modules/bootstrap/dist/js"
-    target: "assets/paige/bootstrap"
+    target: "assets/_paige/bootstrap"
     includeFiles: ["/bootstrap.bundle.js"]
   - source: "node_modules/bootstrap/js/dist"
-    target: "static/paige/bootstrap"
+    target: "static/_paige/bootstrap"
   - source: "node_modules/bootstrap/scss"
-    target: "assets/paige/bootstrap"
+    target: "assets/_paige/bootstrap"
   # Bootstrap Icons
   - source: "node_modules/bootstrap-icons/font/fonts"
-    target: "static/paige/bootstrap-icons/fonts"
+    target: "static/_paige/bootstrap-icons/fonts"
   - source: "node_modules/bootstrap-icons/font"
-    target: "assets/paige/bootstrap-icons"
+    target: "assets/_paige/bootstrap-icons"
     includeFiles: ["/bootstrap-icons.css"]
   # Katex
   - source: "node_modules/katex/contrib/auto-render"
-    target: "assets/paige/katex"
+    target: "assets/_paige/katex"
     includeFiles: ["/auto-render.js"]
   - source: "node_modules/katex/dist/fonts"
-    target: "static/paige/katex/fonts"
+    target: "static/_paige/katex/fonts"
   - source: "node_modules/katex/dist"
-    target: "assets/paige/katex"
+    target: "assets/_paige/katex"
     includeFiles: ["/katex.css", "/katex.js"]

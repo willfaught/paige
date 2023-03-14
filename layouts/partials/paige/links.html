@@ -13,8 +13,8 @@
 <link color="{{ $page.Param `paige.color` | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
 <link href="{{ relLangURL `site.webmanifest` | safeURL }}" rel="manifest">
 
-{{ partial "paige/link.html" (dict "href" "paige/bootstrap/paige.scss" "page" $page "sass" true) }}
-{{ partial "paige/link.html" (dict "href" "paige/bootstrap-icons/bootstrap-icons.css") }}
+{{ partial "paige/link.html" (dict "href" "_paige/bootstrap/paige.scss" "page" $page "sass" true) }}
+{{ partial "paige/link.html" (dict "href" "_paige/bootstrap-icons/bootstrap-icons.css") }}
 
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.section_pages.full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
     {{ partial "paige/link.html" (dict "href" "paige/katex/katex.css") }}

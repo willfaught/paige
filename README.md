@@ -285,12 +285,12 @@ module:
     includeFiles: ["/bootstrap-icons.css"]
   # Katex
   - source: "node_modules/katex/contrib/auto-render"
-    target: "assets/paige/katex"
+    target: "assets/_paige/katex"
     includeFiles: ["/auto-render.js"]
   - source: "node_modules/katex/dist/fonts"
-    target: "static/paige/katex/fonts"
+    target: "static/_paige/katex/fonts"
   - source: "node_modules/katex/dist"
-    target: "assets/paige/katex"
+    target: "assets/_paige/katex"
     includeFiles: ["/katex.css", "/katex.js"]
 ```
 
@@ -959,7 +959,8 @@ The following NPM packages are used:
 - [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons/v/1.10.3)
 - [katex](https://www.npmjs.com/package/katex/v/0.16.4)
 
-Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way are reserved.
+Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way,
+optionally prefixed with one or more underscores, are reserved.
 
 ## Credits
 
