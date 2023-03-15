@@ -285,8 +285,6 @@ paige:
 
 The assigned values shown are the default values.
 
-### Site parameters
-
 Optional site parameters:
 
 ```yaml
@@ -295,8 +293,6 @@ authors:
     name: "Will Faught"
     default: false # Credit this author in pages that have no authors parameter
 ```
-
-### Page parameters
 
 Optional page parameters:
 
