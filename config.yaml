@@ -26,7 +26,7 @@ module:
     target: "assets/_paige/bootstrap"
     includeFiles: ["/bootstrap.bundle.js"]
   - source: "node_modules/bootstrap/js/dist"
-    target: "static/_paige/bootstrap"
+    target: "assets/_paige/bootstrap"
   - source: "node_modules/bootstrap/scss"
     target: "assets/_paige/bootstrap"
   # Bootstrap Icons
