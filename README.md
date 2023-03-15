@@ -138,118 +138,12 @@ See [Hugo's quick start guide](https://gohugo.io/getting-started/quick-start/) f
 
 ## Install
 
-### Option 1: Use a Hugo module
-
 Example `config.yaml`:
 
 ```yaml
 module:
   imports:
   - path: "github.com/willfaught/paige"
-```
-
-Install:
-
-```sh
-$ cd yourproject
-$ hugo mod init github.com/youraccount/yourproject
-$ hugo mod get github.com/willfaught/paige
-```
-
-Update:
-
-```sh
-$ cd yourproject
-$ hugo mod get -u
-```
-
-### Option 2: Use a Git subtree
-
-Example `config.yaml`:
-
-```yaml
-theme: "paige"
-```
-
-Install:
-
-```sh
-$ cd yourproject
-$ git subtree add --prefix themes/paige --squash https://github.com/willfaught/paige master
-```
-
-Update:
-
-```sh
-$ cd yourproject
-$ git subtree pull --prefix themes/paige --squash https://github.com/willfaught/paige master
-```
-
-### Option 3: Use a Git submodule
-
-Example `config.yaml`:
-
-```yaml
-theme: "paige"
-```
-
-Install:
-
-```sh
-$ cd yourproject
-$ git submodule add https://github.com/willfaught/paige themes/paige
-$ git submodule update --init --recursive --remote
-```
-
-Update:
-
-```sh
-$ cd yourproject
-$ git submodule update --recursive --remote
-```
-
-### Option 4: Use a copy
-
-Example `config.yaml`:
-
-```yaml
-theme: "paige"
-```
-
-Install:
-
-```sh
-$ cd yourproject
-$ git clone https://github.com/willfaught/paige themes/paige
-$ rm -rf themes/paige/.git
-```
-
-Update:
-
-```sh
-$ cd yourproject
-$ rm -rf themes/paige
-$ git clone https://github.com/willfaught/paige themes/paige
-$ rm -rf themes/paige/.git
-```
-
-## Run
-
-```sh
-$ cd yourproject
-$ hugo mod npm pack
-$ npm install
-$ hugo server -D
-```
-
-## Configure
-
-### Mounts
-
-Example `config.yaml`:
-
-```yaml
-module:
   mounts:
   # Default mounts
   - source: "archetypes"
@@ -294,7 +188,31 @@ module:
     includeFiles: ["/katex.css", "/katex.js"]
 ```
 
-### Parameters
+Install:
+
+```sh
+$ cd yourproject
+$ hugo mod init github.com/youraccount/yourproject
+$ hugo mod get github.com/willfaught/paige
+```
+
+Update:
+
+```sh
+$ cd yourproject
+$ hugo mod get -u
+```
+
+## Run
+
+```sh
+$ cd yourproject
+$ hugo mod npm pack
+$ npm install
+$ hugo server -D
+```
+
+## Configure
 
 There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
 
