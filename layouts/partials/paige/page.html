@@ -1,21 +1,23 @@
-{{ $authors := partial "paige/authors.html" . }}
-{{ $categories := .Params.categories | default slice | uniq }}
+{{ $page := . }}
+
+{{ $authors := partial "paige/authors.html" $page }}
+{{ $categories := $page.Params.categories | default slice | uniq }}
 {{ $commiturl := "" }}
-{{ $date := .PublishDate }}
-{{ $dateformat := .Param "paige.date.format" | default ":date_long" }}
-{{ $description := .Description | markdownify }}
-{{ $draft := .Draft }}
-{{ $expired := and .ExpiryDate (lt .ExpiryDate now) }}
+{{ $date := $page.PublishDate }}
+{{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
+{{ $description := $page.Description | markdownify }}
+{{ $draft := $page.Draft }}
+{{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $flags := slice }}
-{{ $future := and .PublishDate (gt .PublishDate now) }}
-{{ $modified := and .PublishDate .Lastmod (lt .PublishDate .Lastmod) }}
-{{ $pinned := .Params.paige.pin }}
-{{ $readingtime := .ReadingTime }}
-{{ $series := .Params.series }}
-{{ $summary := .Summary | htmlUnescape | plainify }}
-{{ $tags := .Params.tags | default slice | uniq }}
-{{ $title := .Title | markdownify }}
-{{ $titlelink := .RelPermalink }}
+{{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
+{{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
+{{ $pinned := $page.Params.paige.pin }}
+{{ $readingtime := $page.ReadingTime }}
+{{ $series := $page.Params.series }}
+{{ $summary := $page.Summary | htmlUnescape | plainify }}
+{{ $tags := $page.Params.tags | default slice | uniq }}
+{{ $title := $page.Title | markdownify }}
+{{ $titlelink := $page.RelPermalink }}
 
 {{ if and (.Param "paige.git.commit_url_prefix") .GitInfo }}
     {{ $commiturl = print (.Param "paige.git.commit_url_prefix") .GitInfo.Hash }}
