@@ -16,7 +16,6 @@
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
 {{ $id := not $fullpages }}
-{{ $nogap := "mb-0" }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.Params.series }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
