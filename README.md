@@ -744,81 +744,133 @@ then replace that use of `paige/metadata.html` with your own design.
 
 ### Extend
 
-Use these CSS selectors to extend the default styling:
+Use CSS selectors to extend the default styling.
+
+Page identifiers:
 
 <dl>
-    <dt><code>.paige-article</code></dt>
-    <dd>The page article.</dd>
-    <dt><code>.paige-authors</code></dt>
-    <dd>The page authors.</dd>
-    <dt><code>.paige-content</code></dt>
-    <dd>The page content.</dd>
-    <dt><code>.paige-date</code></dt>
-    <dd>The page date.</dd>
-    <dt><code>.paige-date-header</code></dt>
-    <dd>The date headers in list and term layouts.</dd>
-    <dt><code>.paige-description</code></dt>
-    <dd>The page description.</dd>
-    <dt><code>.paige-draft</code></dt>
-    <dd>Applied to the title of draft pages in the list and term layouts.</dd>
-    <dt><code>.paige-expired</code></dt>
-    <dd>Applied to the title of expired pages in the list and term layouts.</dd>
-    <dt><code>.paige-future</code></dt>
-    <dd>Applied to the title of future pages in the list and term layouts.</dd>
-    <dt><code>.paige-home</code></dt>
-    <dd>Appears with <code>.paige-article</code> for a page with kind "home".</dd>
-    <dt><code>.paige-metadata</code></dt>
-    <dd>The page metadata section.</dd>
-    <dt><code>.paige-modified</code></dt>
-    <dd>Applied to the title of modified pages in the list and term layouts.</dd>
-    <dt><code>.paige-page</code></dt>
-    <dd>A page in the pages in the list and term layouts.</dd>
-    <dt><code>.paige-published</code></dt>
-    <dd>Applied to the title of published pages in the list and term layouts.</dd>
-    <dt><code>.paige-quote</code></dt>
-    <dd>On the root element of the `paige/quote` shortcode.</dd>
-    <dt><code>.paige-section</code></dt>
-    <dd>Appears with <code>.paige-article</code> for a page with kind "section".</dd>
-    <dt><code>.paige-single</code></dt>
-    <dd>Appears with <code>.paige-article</code> for a page with kind "page".</dd>
-    <dt><code>.paige-summary</code></dt>
-    <dd>The page summary.</dd>
-    <dt><code>.paige-reading-time</code></dt>
-    <dd>The page reading time.</dd>
-    <dt><code>.paige-taxonomy</code></dt>
-    <dd>Appears with <code>.paige-article</code> for a page with kind "taxonomy".</dd>
-    <dt><code>.paige-term</code></dt>
-    <dd>Appears with <code>.paige-article</code> for a page with kind "term".</dd>
-    <dt><code>.paige-term</code></dt>
-    <dd>A page term.</dd>
-    <dt><code>.paige-terms</code></dt>
-    <dd>The page terms.</dd>
-    <dt><code>.paige-title</code></dt>
-    <dd>The page title.</dd>
-    <dt><code>.paige-toc</code></dt>
-    <dd>The page table of contents.</dd>
-    <dt><code>.paige-unpublished</code></dt>
-    <dd>Applied to the title of unpublished (draft, expired, future) pages in the list and term layouts.</dd>
+    <dt><code>#paige-authors</code></dt>
+    <dd>The authors.</dd>
     <dt><code>#paige-comments</code></dt>
-    <dd>The comments below the article.</dd>
+    <dd>The comments.</dd>
+    <dt><code>#paige-content</code></dt>
+    <dd>The content.</dd>
     <dt><code>#paige-copyright</code></dt>
-    <dd>The copyright in the footer.</dd>
+    <dd>The copyright.</dd>
     <dt><code>#paige-credit</code></dt>
-    <dd>The credit in the footer.</dd>
+    <dd>The credit.</dd>
+    <dt><code>#paige-date</code></dt>
+    <dd>The date.</dd>
+    <dt><code>#paige-description</code></dt>
+    <dd>The description.</dd>
     <dt><code>#paige-footer</code></dt>
-    <dd>The footer element in the container.</dd>
+    <dd>The footer.</dd>
     <dt><code>#paige-header</code></dt>
-    <dd>The header element in the container.</dd>
+    <dd>The header.</dd>
     <dt><code>#paige-main</code></dt>
-    <dd>The main element in the container.</dd>
+    <dd>The main.</dd>
     <dt><code>#paige-pages</code></dt>
-    <dd>The page list in the list and term layouts.</dd>
+    <dd>The sub-page list in the section and term layouts.</dd>
     <dt><code>#paige-pagination</code></dt>
-    <dd>The pagination links in the list and term layouts.</dd>
+    <dd>The sub-page pagination links in the section and term layouts.</dd>
+    <dt><code>#paige-reading-time</code></dt>
+    <dd>The reading time.</dd>
     <dt><code>#paige-root</code></dt>
     <dd>The outermost element in the body.</dd>
     <dt><code>#paige-series</code></dt>
-    <dd>The page series.</dd>
+    <dd>The series.</dd>
+    <dt><code>#paige-terms</code></dt>
+    <dd>The terms.</dd>
+    <dt><code>#paige-title</code></dt>
+    <dd>The title.</dd>
+    <dt><code>#paige-toc</code></dt>
+    <dd>The table of contents.</dd>
+</dl>
+
+Page and sub-page classes:
+
+<dl>
+    <dt><code>.paige-article</code></dt>
+    <dd>The article.</dd>
+    <dt><code>.paige-authors</code></dt>
+    <dd>The authors.</dd>
+    <dt><code>.paige-content</code></dt>
+    <dd>The content.</dd>
+    <dt><code>.paige-date</code></dt>
+    <dd>The date.</dd>
+    <dt><code>.paige-date-header</code></dt>
+    <dd>The date headers.</dd>
+    <dt><code>.paige-description</code></dt>
+    <dd>The description.</dd>
+    <dt><code>.paige-metadata</code></dt>
+    <dd>The metadata.</dd>
+    <dt><code>.paige-page</code></dt>
+    <dd>A sub-page.</dd>
+    <dt><code>.paige-summary</code></dt>
+    <dd>The summary.</dd>
+    <dt><code>.paige-reading-time</code></dt>
+    <dd>The reading time.</dd>
+    <dt><code>.paige-series</code></dt>
+    <dd>The series.</dd>
+    <dt><code>.paige-term</code></dt>
+    <dd>A term.</dd>
+    <dt><code>.paige-terms</code></dt>
+    <dd>The terms.</dd>
+    <dt><code>.paige-title</code></dt>
+    <dd>The title.</dd>
+    <dt><code>.paige-toc</code></dt>
+    <dd>The table of contents.</dd>
+</dl>
+
+Kind classes:
+
+<dl>
+    <dt><code>.paige-home</code></dt>
+    <dd>The container element of pages with kind "home".</dd>
+    <dt><code>.paige-section</code></dt>
+    <dd>The container element of pages with kind "section".</dd>
+    <dt><code>.paige-single</code></dt>
+    <dd>The container element of pages with kind "page".</dd>
+    <dt><code>.paige-taxonomy</code></dt>
+    <dd>The container element of pages with kind "taxonomy".</dd>
+    <dt><code>.paige-term</code></dt>
+    <dd>The container element of pages with kind "term".</dd>
+</dl>
+
+Status classes:
+
+<dl>
+    <dt><code>.paige-draft</code></dt>
+    <dd>The container element of draft pages.</dd>
+    <dt><code>.paige-expired</code></dt>
+    <dd>The container element of expired pages.</dd>
+    <dt><code>.paige-future</code></dt>
+    <dd>The container element of future pages.</dd>
+    <dt><code>.paige-modified</code></dt>
+    <dd>The container element of modified pages.</dd>
+    <dt><code>.paige-published</code></dt>
+    <dd>The container element of published pages.</dd>
+    <dt><code>.paige-unpublished</code></dt>
+    <dd>The container element of unpublished pages.</dd>
+</dl>
+
+Shortcode classes:
+
+<dl>
+    <dt><code>.paige-code</code></dt>
+    <dd>The container element of <code>paige/code</code> shortcodes.</dd>
+    <dt><code>.paige-figure</code></dt>
+    <dd>The container element of <code>paige/figure</code> shortcodes.</dd>
+    <dt><code>.paige-gallery</code></dt>
+    <dd>The container element of <code>paige/gallery</code> shortcodes.</dd>
+    <dt><code>.paige-image</code></dt>
+    <dd>The container element of <code>paige/image</code> shortcodes.</dd>
+    <dt><code>.paige-quote</code></dt>
+    <dd>The container element of <code>paige/quote</code> shortcodes.</dd>
+    <dt><code>.paige-vimeo</code></dt>
+    <dd>The container element of <code>paige/vimeo</code> shortcodes.</dd>
+    <dt><code>.paige-youtube</code></dt>
+    <dd>The container element of <code>paige/youtube</code> shortcodes.</dd>
 </dl>
 
 If you hide `#paige-credit`, please credit this project in a post to help others find it.
