@@ -4,7 +4,7 @@
 {{ partial "paige/article.html" $page }}
 
 {{ if $page.Pages }}
-    <div id="paige-pages">
+    <div id="paige-subpages">
         <ul class="list-inline text-center">
             {{ range (sort $page.Pages "Title") }}
                 <li class="list-inline-item">

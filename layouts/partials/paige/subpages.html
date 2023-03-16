@@ -3,7 +3,7 @@
 {{ if $page.Pages }}
     {{ if $page.Param "paige.section_pages.full_pages" }}
         {{ $pager := $page.Paginate $page.Pages }}
-        <div id="paige-pages">
+        <div id="paige-subpages">
             {{ range $pager.Pages }}
                 {{ partial "paige/article.html" (dict "fullpages" true "page" .) }}
             {{ end }}
@@ -17,7 +17,7 @@
             </div>
         {{ end }}
     {{ else }}
-        <div id="paige-pages">
+        <div id="paige-subpages">
             {{ $pinned := where $page.Pages "Params.paige.pin" true }}
 
             {{ range $pinned.ByPublishDate.Reverse }}
