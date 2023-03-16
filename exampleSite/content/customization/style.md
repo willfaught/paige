@@ -35,9 +35,9 @@ paige:
     #paige-subpages .paige-authors { font-style: italic; }
     #paige-subpages .paige-date { font-style: italic; }
     #paige-subpages .paige-date-header { font-style: italic; }
+    #paige-subpages .paige-keyword { font-style: italic; }
     #paige-subpages .paige-series { font-style: italic; }
     #paige-subpages .paige-summary { font-style: italic; }
-    #paige-subpages .paige-term { font-style: italic; }
 series: ["demo"]
 tags: ["singles", "style"]
 title: "Style Data"
@@ -85,7 +85,7 @@ paige:
     #paige-subpages .paige-authors { font-style: italic; }
     #paige-subpages .paige-date { font-style: italic; }
     #paige-subpages .paige-date-header { font-style: italic; }
+    #paige-subpages .paige-keyword { font-style: italic; }
     #paige-subpages .paige-series { font-style: italic; }
     #paige-subpages .paige-summary { font-style: italic; }
-    #paige-subpages .paige-term { font-style: italic; }
 ```

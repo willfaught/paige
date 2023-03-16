@@ -802,6 +802,8 @@ Page and sub-page classes:
     <dd>The date headers.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The description.</dd>
+    <dt><code>.paige-keyword</code></dt>
+    <dd>A keyword.</dd>
     <dt><code>.paige-keywords</code></dt>
     <dd>The keywords.</dd>
     <dt><code>.paige-metadata</code></dt>
@@ -814,8 +816,6 @@ Page and sub-page classes:
     <dd>The series.</dd>
     <dt><code>.paige-subpage</code></dt>
     <dd>A sub-page.</dd>
-    <dt><code>.paige-term</code></dt>
-    <dd>A term.</dd>
     <dt><code>.paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>.paige-toc</code></dt>
