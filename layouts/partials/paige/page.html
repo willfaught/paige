@@ -64,15 +64,21 @@
             {{ $terms := slice }}
 
             {{ range $categories }}
-                {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "categories/%v/" | relLangURL)) }}
+                {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "categories/%v/" | relLangURL | string)) }}
             {{ end }}
 
             {{ range $tags }}
-                {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "tags/%v/" | relLangURL)) }}
+                {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "tags/%v/" | relLangURL | string)) }}
             {{ end }}
 
             {{ range sort $terms "name" }}
-                <a class="badge paige-term text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ .name }}</a>
+                {{ $name := .name }}
+
+                {{ with site.GetPage .url }}
+                    {{ $name = .Title }}
+                {{ end }}
+
+                <a class="badge paige-term text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ $name }}</a>
             {{ end }}
         </p>
     {{ end }}
