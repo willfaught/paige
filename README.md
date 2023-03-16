@@ -804,14 +804,14 @@ Page and sub-page classes:
     <dd>The description.</dd>
     <dt><code>.paige-metadata</code></dt>
     <dd>The metadata.</dd>
-    <dt><code>.paige-page</code></dt>
-    <dd>A sub-page.</dd>
     <dt><code>.paige-summary</code></dt>
     <dd>The summary.</dd>
     <dt><code>.paige-reading-time</code></dt>
     <dd>The reading time.</dd>
     <dt><code>.paige-series</code></dt>
     <dd>The series.</dd>
+    <dt><code>.paige-subpage</code></dt>
+    <dd>A sub-page.</dd>
     <dt><code>.paige-term</code></dt>
     <dd>A term.</dd>
     <dt><code>.paige-terms</code></dt>

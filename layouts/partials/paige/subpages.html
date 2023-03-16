@@ -21,7 +21,7 @@
             {{ $pinned := where $page.Pages "Params.paige.pin" true }}
 
             {{ range $pinned.ByPublishDate.Reverse }}
-                {{ partial "paige/page.html" . }}
+                {{ partial "paige/subpage.html" . }}
             {{ end }}
 
             {{ $unpinned := complement $pinned $page.Pages }}
@@ -32,7 +32,7 @@
                 <p class="h5 paige-date-header text-center">{{ .Key }}</p>
 
                 {{ range .Pages }}
-                    {{ partial "paige/page.html" . }}
+                    {{ partial "paige/subpage.html" . }}
                 {{ end }}
             {{ end }}
         </div>
