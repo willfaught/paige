@@ -770,7 +770,7 @@ Page identifiers:
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
     <dt><code>#paige-pagination</code></dt>
-    <dd>The sub-page pagination links in the section and term layouts.</dd>
+    <dd>The sub-page pagination links.</dd>
     <dt><code>#paige-reading-time</code></dt>
     <dd>The reading time.</dd>
     <dt><code>#paige-root</code></dt>
