@@ -46,7 +46,13 @@
         {{ range $pages }}
             <item>
                 {{ with partial "paige/authors.html" . }}
-                    <author>{{ . }}</author>
+                    {{ $authors := slice }}
+
+                    {{ range . }}
+                        {{ $authors = $authors | append .name }}
+                    {{ end }}
+
+                    <author>{{ delimit $authors ", " }}</author>
                 {{ end }}
                 {{ if .Content }}
                     <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>

@@ -1,33 +1,32 @@
 {{ $page := . }}
 
-{{ $result := "" }}
+{{ $result := slice }}
 
 {{ if $page.Params.authors }}
-    {{ $names := slice }}
-
     {{ range $page.Params.authors }}
-        {{ if eq (printf "%T" .) "string" }}
-            {{ $names = $names | append (index site.Params.authors .).name }}
-        {{ else }}
+        {{ $id := "" }}
+        {{ $name := "" }}
+
+        {{ if reflect.IsMap . }}
             {{ with .author }}
-                {{ $names = $names | append (index site.Params.authors .).name }}
+                {{ $id = . }}
+                {{ $name = (index site.Params.authors .).name }}
             {{ else }}
-                {{ $names = $names | append .name }}
+                {{ $name = .name }}
             {{ end }}
+        {{ else }}
+            {{ $id = . }}
+            {{ $name = (index site.Params.authors .).name }}
         {{ end }}
+
+        {{ $result = $result | append (dict "id" $id "name" $name) }}
     {{ end }}
-
-    {{ $result = delimit $names ", " }}
 {{ else if site.Params.authors }}
-    {{ $names := slice }}
-
     {{ range $k, $v := site.Params.authors }}
         {{ if eq $v.default true }}
-            {{ $names = $names | append $v.name }}
+            {{ $result = $result | append (dict "id" $k "name" $v.name) }}
         {{ end }}
     {{ end }}
-
-    {{ $result = delimit $names ", " }}
 {{ end }}
 
 {{ return $result }}

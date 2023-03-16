@@ -72,7 +72,21 @@
             {{ end }}
 
             {{ with $authors }}
-                <p class="mb-0 {{ if $class }} paige-authors {{ end }} text-center text-secondary" {{ if $id }} id="paige-authors" {{ end }}>{{ . }}</p>
+                <p class="mb-0 {{ if $class }} paige-authors {{ end }} text-center text-secondary" {{ if $id }} id="paige-authors" {{ end }}>
+                    {{ range $i, $author := . -}}
+                        {{- if gt $i 0 }}, {{ end -}}
+
+                        {{- with $author.id -}}
+                            {{- with site.GetPage (print "authors/" .) -}}
+                                <a class="link-secondary text-decoration-none" href="{{ .RelPermalink }}">{{ .Title | default $author.name }}</a>
+                            {{- else -}}
+                                {{- $author.name -}}
+                            {{- end -}}
+                        {{- else -}}
+                            {{- $author.name -}}
+                        {{- end -}}
+                    {{- end }}
+                </p>
             {{ end }}
 
             {{ with $date }}

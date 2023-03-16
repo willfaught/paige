@@ -90,7 +90,21 @@
     {{ end }}
 
     {{ with $authors }}
-        <p class="mb-0 paige-authors text-center text-secondary">{{ . }}</p>
+        <p class="mb-0 paige-authors text-center text-secondary">
+            {{ range $i, $author := . -}}
+                {{- if gt $i 0 }}, {{ end -}}
+
+                {{- with $author.id -}}
+                    {{- with site.GetPage (print "authors/" .) -}}
+                        <a class="link-secondary text-decoration-none" href="{{ .RelPermalink }}">{{ .Title | default $author.name }}</a>
+                    {{- else -}}
+                        {{- $author.name -}}
+                    {{- end -}}
+                {{- else -}}
+                    {{- $author.name -}}
+                {{- end -}}
+            {{- end }}
+        </p>
     {{ end }}
 
     {{ with $date }}
