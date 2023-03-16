@@ -64,11 +64,11 @@
             {{ $terms := slice }}
 
             {{ range $categories }}
-                {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "categories/%v/" | relLangURL | string)) }}
+                {{ $terms = $terms | append (dict "name" . "url" (printf "categories/%v/" . | relLangURL | string)) }}
             {{ end }}
 
             {{ range $tags }}
-                {{ $terms = $terms | append (dict "name" . "url" (lower . | printf "tags/%v/" | relLangURL | string)) }}
+                {{ $terms = $terms | append (dict "name" . "url" (printf "tags/%v/" . | relLangURL | string)) }}
             {{ end }}
 
             {{ range sort $terms "name" }}
