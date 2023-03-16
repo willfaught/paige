@@ -9,12 +9,14 @@ paige:
     #paige-credit,
     #paige-date,
     #paige-reading-time,
+    #paige-series,
     #paige-terms,
     #paige-toc,
     #paige-pages .paige-authors,
     #paige-pages .paige-date,
     #paige-pages .paige-date-header,
     #paige-pages .paige-reading-time,
+    #paige-pages .paige-series,
     #paige-pages .paige-summary,
     #paige-pages .paige-terms {
         display: block;
@@ -24,16 +26,19 @@ paige:
     #paige-date { font-style: italic; }
     #paige-description { font-style: italic; }
     #paige-reading-time { font-style: italic; }
+    #paige-series { font-style: italic; }
     #paige-terms { font-style: italic; }
     #paige-title { font-style: italic; }
     #paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
     #paige-credit { font-style: italic; }
     #paige-pages .paige-authors { font-style: italic; }
-    #paige-pages .paige-date-header { font-style: italic; }
     #paige-pages .paige-date { font-style: italic; }
+    #paige-pages .paige-date-header { font-style: italic; }
+    #paige-pages .paige-series { font-style: italic; }
     #paige-pages .paige-summary { font-style: italic; }
     #paige-pages .paige-term { font-style: italic; }
+series: ["demo"]
 tags: ["singles", "style"]
 title: "Style Data"
 weight: 20
@@ -54,12 +59,14 @@ paige:
     #paige-credit,
     #paige-date,
     #paige-reading-time,
+    #paige-series,
     #paige-terms,
     #paige-toc,
     #paige-pages .paige-authors,
     #paige-pages .paige-date,
     #paige-pages .paige-date-header,
     #paige-pages .paige-reading-time,
+    #paige-pages .paige-series,
     #paige-pages .paige-summary,
     #paige-pages .paige-terms {
         display: block;
@@ -69,14 +76,16 @@ paige:
     #paige-date { font-style: italic; }
     #paige-description { font-style: italic; }
     #paige-reading-time { font-style: italic; }
+    #paige-series { font-style: italic; }
     #paige-terms { font-style: italic; }
     #paige-title { font-style: italic; }
     #paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
     #paige-credit { font-style: italic; }
     #paige-pages .paige-authors { font-style: italic; }
-    #paige-pages .paige-date-header { font-style: italic; }
     #paige-pages .paige-date { font-style: italic; }
+    #paige-pages .paige-date-header { font-style: italic; }
+    #paige-pages .paige-series { font-style: italic; }
     #paige-pages .paige-summary { font-style: italic; }
     #paige-pages .paige-term { font-style: italic; }
 ```

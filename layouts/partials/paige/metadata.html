@@ -18,6 +18,7 @@
 {{ $id := not $fullpages }}
 {{ $nogap := "mb-0" }}
 {{ $readingtime := $page.ReadingTime }}
+{{ $series := $page.Params.series }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
 {{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.Params.link }}
@@ -54,8 +55,22 @@
         </p>
     {{ end }}
 
-    {{ if or $authors $date $readingtime }}
+    {{ if or $authors $date $readingtime $series }}
         <div class="mb-3">
+            {{ with $series }}
+                <p class="mb-0 {{ if $class }} paige-series {{ end }} text-center text-secondary" {{ if $id }} id="paige-series" {{ end }}>
+                    {{ range $i, $name := . -}}
+                        {{- if gt $i 0 }}, {{ end -}}
+
+                        {{- with site.GetPage (print "series/" $name) -}}
+                            <a class="link-secondary text-decoration-none" href="{{ .RelPermalink }}">{{ .Title | default $name }}</a>
+                        {{- else -}}
+                            {{- $name -}}
+                        {{- end -}}
+                    {{- end }}
+                </p>
+            {{ end }}
+
             {{ with $authors }}
                 <p class="mb-0 {{ if $class }} paige-authors {{ end }} text-center text-secondary" {{ if $id }} id="paige-authors" {{ end }}>{{ . }}</p>
             {{ end }}

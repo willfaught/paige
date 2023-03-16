@@ -26,18 +26,22 @@ languages:
         name: "Customization"
         url: "/customization/"
         weight: 50
+      - identifier: "series"
+        name: "Series"
+        url: "/series/"
+        weight: 60
       - identifier: "categories"
         name: "Categories"
         url: "/categories/"
-        weight: 60
+        weight: 70
       - identifier: "tags"
         name: "Tags"
         url: "/tags/"
-        weight: 70
+        weight: 80
       - identifier: "search"
         name: "Search"
         url: "/search/"
-        weight: 80
+        weight: 90
     weight: 10
 markup:
   goldmark:
@@ -62,6 +66,10 @@ params:
   paige:
     git:
       commit_url_prefix: "https://github.com/willfaught/paige/commit/"
+taxonomies:
+  category: "categories"
+  series: "series"
+  tag: "tags"
 theme: "paige"
 timezone: "America/Los_Angeles"
 titlecasestyle: "Go"

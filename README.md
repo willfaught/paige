@@ -40,6 +40,7 @@ It's a versatile canvas that serves most web needs.
 - Safari and Firefox Reader View support
 - Search
 - Sections
+- Series
 - Single column
 - Social links
 - Table of contents
@@ -816,6 +817,8 @@ Use these CSS selectors to extend the default styling:
     <dd>The pagination links in the list and term layouts.</dd>
     <dt><code>#paige-root</code></dt>
     <dd>The outermost element in the body.</dd>
+    <dt><code>#paige-series</code></dt>
+    <dd>The page series.</dd>
 </dl>
 
 If you hide `#paige-credit`, please credit this project in a post to help others find it.
@@ -830,11 +833,13 @@ try the following in your `layouts/partials/paige/style-first.css`:
 #paige-authors,
 #paige-credit,
 #paige-reading-time,
+#paige-series,
 #paige-terms,
 #paige-toc,
 #paige-pages .paige-authors,
 #paige-pages .paige-date,
 #paige-pages .paige-reading-time,
+#paige-pages .paige-series,
 #paige-pages .paige-summary,
 #paige-pages .paige-terms {
     display: none;
