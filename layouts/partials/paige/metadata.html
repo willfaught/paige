@@ -37,7 +37,7 @@
     {{ end }}
 
     {{ if or $categories $tags }}
-        <p class="{{ if $class }} paige-terms {{ end }} text-center" {{ if $id }} id="paige-terms" {{ end }}>
+        <p class="{{ if $class }} paige-keywords {{ end }} text-center" {{ if $id }} id="paige-keywords" {{ end }}>
             {{ $terms := slice }}
 
             {{ range $categories }}

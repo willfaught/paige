@@ -8,17 +8,17 @@ paige:
     #paige-authors,
     #paige-credit,
     #paige-date,
+    #paige-keywords,
     #paige-reading-time,
     #paige-series,
-    #paige-terms,
     #paige-toc,
     #paige-subpages .paige-authors,
     #paige-subpages .paige-date,
     #paige-subpages .paige-date-header,
+    #paige-subpages .paige-keywords,
     #paige-subpages .paige-reading-time,
     #paige-subpages .paige-series,
-    #paige-subpages .paige-summary,
-    #paige-subpages .paige-terms {
+    #paige-subpages .paige-summary {
         display: block;
     }
 series: ["demo"]
@@ -40,17 +40,17 @@ paige:
     #paige-authors,
     #paige-credit,
     #paige-date,
+    #paige-keywords,
     #paige-reading-time,
     #paige-series,
-    #paige-terms,
     #paige-toc,
     #paige-subpages .paige-authors,
     #paige-subpages .paige-date,
     #paige-subpages .paige-date-header,
+    #paige-subpages .paige-keywords,
     #paige-subpages .paige-reading-time,
     #paige-subpages .paige-series,
-    #paige-subpages .paige-summary,
-    #paige-subpages .paige-terms {
+    #paige-subpages .paige-summary {
         display: block;
     }
 ```

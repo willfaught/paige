@@ -767,6 +767,8 @@ Page identifiers:
     <dd>The footer.</dd>
     <dt><code>#paige-header</code></dt>
     <dd>The header.</dd>
+    <dt><code>#paige-keywords</code></dt>
+    <dd>The keywords.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
     <dt><code>#paige-pagination</code></dt>
@@ -779,8 +781,6 @@ Page identifiers:
     <dd>The series.</dd>
     <dt><code>#paige-subpages</code></dt>
     <dd>The sub-pages.</dd>
-    <dt><code>#paige-terms</code></dt>
-    <dd>The terms.</dd>
     <dt><code>#paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>#paige-toc</code></dt>
@@ -802,6 +802,8 @@ Page and sub-page classes:
     <dd>The date headers.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The description.</dd>
+    <dt><code>.paige-keywords</code></dt>
+    <dd>The keywords.</dd>
     <dt><code>.paige-metadata</code></dt>
     <dd>The metadata.</dd>
     <dt><code>.paige-summary</code></dt>
@@ -814,8 +816,6 @@ Page and sub-page classes:
     <dd>A sub-page.</dd>
     <dt><code>.paige-term</code></dt>
     <dd>A term.</dd>
-    <dt><code>.paige-terms</code></dt>
-    <dd>The terms.</dd>
     <dt><code>.paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>.paige-toc</code></dt>
@@ -884,16 +884,16 @@ try the following in your `layouts/partials/paige/style-first.css`:
 ```css
 #paige-authors,
 #paige-credit,
+#paige-keywords,
 #paige-reading-time,
 #paige-series,
-#paige-terms,
 #paige-toc,
 #paige-subpages .paige-authors,
 #paige-subpages .paige-date,
+#paige-subpages .paige-keywords,
 #paige-subpages .paige-reading-time,
 #paige-subpages .paige-series,
-#paige-subpages .paige-summary,
-#paige-subpages .paige-terms {
+#paige-subpages .paige-summary {
     display: none;
 }
 
