@@ -62,7 +62,7 @@
                         {{- if gt $i 0 }}, {{ end -}}
 
                         {{- with site.GetPage (print "series/" $name) -}}
-                            <a class="link-secondary text-decoration-none" href="{{ .RelPermalink }}">{{ .Title | default $name }}</a>
+                            <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title | default $name }}</a>
                         {{- else -}}
                             {{- $name -}}
                         {{- end -}}
@@ -77,7 +77,7 @@
 
                         {{- with $author.id -}}
                             {{- with site.GetPage (print "authors/" .) -}}
-                                <a class="link-secondary text-decoration-none" href="{{ .RelPermalink }}">{{ .Title | default $author.name }}</a>
+                                <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title | default $author.name }}</a>
                             {{- else -}}
                                 {{- $author.name -}}
                             {{- end -}}
@@ -91,7 +91,7 @@
             {{ with $date }}
                 <p class="mb-0 {{ if $class }} paige-date {{ end }} text-center text-secondary" {{ if $id }} id="paige-date" {{ end }}>
                     {{ with $commiturl }}
-                        <a class="link-secondary text-decoration-none" href="{{ . }}">
+                        <a class="link-secondary" href="{{ . }}">
                     {{ end }}
 
                     <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
