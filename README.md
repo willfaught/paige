@@ -16,6 +16,7 @@ It's a versatile canvas that serves most web needs.
 
 - Accessibility
 - Analytics
+- Authors
 - Automatic switching between light and dark color schemes
 - Blog
 - Bootstrap
@@ -27,12 +28,11 @@ It's a versatile canvas that serves most web needs.
 - Facebook sharing
 - Header links
 - Landing page
+- Languages
 - Light color scheme
 - Math typesetting
 - Menu
 - Minimal design
-- Multiple authors
-- Multiple languages
 - RSS with full content
 - Responsive
 - Right-to-left languages
