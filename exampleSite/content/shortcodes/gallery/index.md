@@ -294,5 +294,3 @@ Result:
 {{< paige/image src="3-4.jpg" >}}
 {{< /paige/figure >}}
 {{< /paige/gallery >}}
-
-<p class="text-center">Photos by <a href="https://unsplash.com/@photos_by_lanty">Lanty</a>.</p>

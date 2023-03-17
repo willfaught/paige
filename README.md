@@ -941,7 +941,8 @@ optionally prefixed with one or more underscores, are reserved.
 
 ## Credits
 
-Photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI).
+- Photos by [Lanty](https://unsplash.com/@photos_by_lanty)
+- Photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI)
 
 ## Project
 
