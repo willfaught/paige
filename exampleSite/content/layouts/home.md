@@ -12,83 +12,83 @@ paige:
       url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
   social:
     discord:
-      bootstrap_icon: "discord"
+      class: "bi bi-discord"
       name: "Discord"
       url: "https://discord.com/users/username"
     dribbble:
-      bootstrap_icon: "dribbble"
+      class: "bi bi-dribbble"
       name: "Dribbble"
       url: "https://dribbble.com/username"
     email:
-      bootstrap_icon: "envelope"
+      class: "bi bi-envelope"
       name: "E-mail"
       url: "mailto:username@example.com"
     facebook:
-      bootstrap_icon: "facebook"
+      class: "bi bi-facebook"
       name: "Facebook"
       url: "https://facebook.com/username"
     github:
-      bootstrap_icon: "github"
+      class: "bi bi-github"
       name: "GitHub"
       url: "https://github.com/username"
     instagram:
-      bootstrap_icon: "instagram"
+      class: "bi bi-instagram"
       name: "Instagram"
       url: "https://instagram.com/username"
     linkedin:
-      bootstrap_icon: "linkedin"
+      class: "bi bi-linkedin"
       name: "LinkedIn"
       url: "https://linkedin.com/in/username"
     medium:
-      bootstrap_icon: "medium"
+      class: "bi bi-medium"
       name: "Medium"
       url: "https://medium.com/@username"
     pinterest:
-      bootstrap_icon: "pinterest"
+      class: "bi bi-pinterest"
       name: "Pinterest"
       url: "https://pinterest.com/username"
     quora:
-      bootstrap_icon: "quora"
+      class: "bi bi-quora"
       name: "Quora"
       url: "https://quora.com/profile/username"
     reddit:
-      bootstrap_icon: "reddit"
+      class: "bi bi-reddit"
       name: "Reddit"
       url: "https://reddit.com/u/username"
     spotify:
-      bootstrap_icon: "spotify"
+      class: "bi bi-spotify"
       name: "Spotify"
       url: "https://open.spotify.com/user/username"
     stackoverflow:
-      bootstrap_icon: "stack-overflow"
+      class: "bi bi-stack-overflow"
       name: "Stack Overflow"
       url: "https://stackoverflow.com/users/username"
     strava:
-      bootstrap_icon: "strava"
+      class: "bi bi-strava"
       name: "Strava"
       url: "https://strava.com/athletes/username"
     twitch:
-      bootstrap_icon: "twitch"
+      class: "bi bi-twitch"
       name: "Twitch"
       url: "https://twitch.tv/username"
     twitter:
-      bootstrap_icon: "twitter"
+      class: "bi bi-twitter"
       name: "Twitter"
       url: "https://twitter.com/username"
     vimeo:
-      bootstrap_icon: "vimeo"
+      class: "bi bi-vimeo"
       name: "Vimeo"
       url: "https://vimeo.com/username"
     wordpress:
-      bootstrap_icon: "wordpress"
+      class: "bi bi-wordpress"
       name: "Wordpress"
       url: "https://username.wordpress.com"
     yelp:
-      bootstrap_icon: "yelp"
+      class: "bi bi-yelp"
       name: "Yelp"
       url: "https://yelp.com/user_details?userid=username"
     youtube:
-      bootstrap_icon: "youtube"
+      class: "bi bi-youtube"
       name: "YouTube"
       url: "https://youtube.com/user/username"
 tags: ["home"]
@@ -117,83 +117,83 @@ paige:
       url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
   social:
     discord:
-      bootstrap_icon: "discord"
+      class: "bi bi-discord"
       name: "Discord"
       url: "https://discord.com/users/username"
     dribbble:
-      bootstrap_icon: "dribbble"
+      class: "bi bi-dribbble"
       name: "Dribbble"
       url: "https://dribbble.com/username"
     email:
-      bootstrap_icon: "envelope"
+      class: "bi bi-envelope"
       name: "E-mail"
       url: "mailto:username@example.com"
     facebook:
-      bootstrap_icon: "facebook"
+      class: "bi bi-facebook"
       name: "Facebook"
       url: "https://facebook.com/username"
     github:
-      bootstrap_icon: "github"
+      class: "bi bi-github"
       name: "GitHub"
       url: "https://github.com/username"
     instagram:
-      bootstrap_icon: "instagram"
+      class: "bi bi-instagram"
       name: "Instagram"
       url: "https://instagram.com/username"
     linkedin:
-      bootstrap_icon: "linkedin"
+      class: "bi bi-linkedin"
       name: "LinkedIn"
       url: "https://linkedin.com/in/username"
     medium:
-      bootstrap_icon: "medium"
+      class: "bi bi-medium"
       name: "Medium"
       url: "https://medium.com/@username"
     pinterest:
-      bootstrap_icon: "pinterest"
+      class: "bi bi-pinterest"
       name: "Pinterest"
       url: "https://pinterest.com/username"
     quora:
-      bootstrap_icon: "quora"
+      class: "bi bi-quora"
       name: "Quora"
       url: "https://quora.com/profile/username"
     reddit:
-      bootstrap_icon: "reddit"
+      class: "bi bi-reddit"
       name: "Reddit"
       url: "https://reddit.com/u/username"
     spotify:
-      bootstrap_icon: "spotify"
+      class: "bi bi-spotify"
       name: "Spotify"
       url: "https://open.spotify.com/user/username"
     stackoverflow:
-      bootstrap_icon: "stack-overflow"
+      class: "bi bi-stack-overflow"
       name: "Stack Overflow"
       url: "https://stackoverflow.com/users/username"
     strava:
-      bootstrap_icon: "strava"
+      class: "bi bi-strava"
       name: "Strava"
       url: "https://strava.com/athletes/username"
     twitch:
-      bootstrap_icon: "twitch"
+      class: "bi bi-twitch"
       name: "Twitch"
       url: "https://twitch.tv/username"
     twitter:
-      bootstrap_icon: "twitter"
+      class: "bi bi-twitter"
       name: "Twitter"
       url: "https://twitter.com/username"
     vimeo:
-      bootstrap_icon: "vimeo"
+      class: "bi bi-vimeo"
       name: "Vimeo"
       url: "https://vimeo.com/username"
     wordpress:
-      bootstrap_icon: "wordpress"
+      class: "bi bi-wordpress"
       name: "Wordpress"
       url: "https://username.wordpress.com"
     yelp:
-      bootstrap_icon: "yelp"
+      class: "bi bi-yelp"
       name: "Yelp"
       url: "https://yelp.com/user_details?userid=username"
     youtube:
-      bootstrap_icon: "youtube"
+      class: "bi bi-youtube"
       name: "YouTube"
       url: "https://youtube.com/user/username"
 tags: ["home"]

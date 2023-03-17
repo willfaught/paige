@@ -3,9 +3,9 @@
 <span class="paige-social">
     {{ range $k, $v := $page.Param "paige.social" }}
         {{ if hasPrefix $v.link "mailto:" }}
-            <a href="#" data-a="{{ base64Encode (index (split $v.url `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $v.url `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)"><i class="bi bi-{{ $v.bootstrap_icon }} mx-2"><span class="visually-hidden">{{ $v.name }}</span></i></a>
+            <a class="mx-2" href="#" data-a="{{ base64Encode (index (split $v.url `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $v.url `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)"><i class="{{ $v.class }}"><span class="visually-hidden">{{ $v.name }}</span></i></a>
         {{ else }}
-            <a href="{{ $v.url }}"><i class="bi bi-{{ $v.bootstrap_icon }} mx-2"><span class="visually-hidden">{{ $v.name }}</span></i></a>
+            <a class="mx-2" href="{{ $v.url }}"><i class="{{ $v.class }}"><span class="visually-hidden">{{ $v.name }}</span></i></a>
         {{ end }}
     {{ end }}
 </span>

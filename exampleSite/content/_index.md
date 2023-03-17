@@ -11,7 +11,7 @@ paige:
       url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
   social:
     github:
-      bootstrap_icon: "github"
+      class: "bi bi-github"
       name: "GitHub"
       url: "https://github.com/willfaught/paige"
   style: "#paige-title { font-size: 5rem; }"
