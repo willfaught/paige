@@ -27,7 +27,7 @@
     {{ $commiturl = print ($page.Param "paige.git.commit_url_prefix") $page.GitInfo.Hash }}
 {{ end }}
 
-<div class="paige-metadata w-100">
+<div class="{{ if $class }} paige-metadata {{ end }} w-100" {{ if $id }} id="paige-metadata" {{ end }}>
     {{ with $title }}
         <h1 class="display-5 fw-bold {{ if $class }} paige-title {{ end }} text-center" {{ if $id }} id="paige-title" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $fullpages }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
     {{ end }}

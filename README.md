@@ -773,6 +773,8 @@ Page identifiers:
     <dd>The keywords.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
+    <dt><code>#paige-metadata</code></dt>
+    <dd>The metadata.</dd>
     <dt><code>#paige-pagination</code></dt>
     <dd>The sub-page pagination links.</dd>
     <dt><code>#paige-reading-time</code></dt>
