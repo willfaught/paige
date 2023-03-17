@@ -8,7 +8,7 @@ paige:
     image:
       alt: "Landscape"
       stretch: true
-      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
+      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296"
   social:
     github:
       class: "bi bi-github"

@@ -9,7 +9,7 @@ paige:
     greeting: "This is the greeting"
     image:
       stretch: false
-      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
+      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296"
   social:
     discord:
       class: "bi bi-discord"
@@ -114,7 +114,7 @@ paige:
     greeting: "This is the greeting"
     image:
       stretch: false
-      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967"
+      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296"
   social:
     discord:
       class: "bi bi-discord"
