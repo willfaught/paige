@@ -749,6 +749,8 @@ Use CSS selectors to extend the default styling.
 Page identifiers:
 
 <dl>
+    <dt><code>#paige-article</code></dt>
+    <dd>The article.</dd>
     <dt><code>#paige-authors</code></dt>
     <dd>The authors.</dd>
     <dt><code>#paige-comments</code></dt>
