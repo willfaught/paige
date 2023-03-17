@@ -53,7 +53,7 @@
 
 {{ $class = delimit ($class | uniq) " " }}
 
-<article class="{{ $class }}" {{ if $id }} id="paige-article" {{ end }}>
+<article {{ with $class }} class="{{ . }}" {{ end }} {{ if $id }} id="paige-article" {{ end }}>
     <div class="align-items-center d-flex flex-column mb-0">
         {{ partial "paige/metadata.html" $params }}
         {{ partial "paige/alert.html" $page }}
