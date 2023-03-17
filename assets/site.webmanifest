@@ -1,3 +1,5 @@
+{{- $page := . -}}
+
 {
     "name": "",
     "short_name": "",
@@ -13,7 +15,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#0d6efd",
-    "background_color": "#0d6efd",
+    "theme_color": "{{ $page.Param `paige.color` | default `#0d6efd` }}",
+    "background_color": "{{ $page.Param `paige.color` | default `#0d6efd` }}",
     "display": "standalone"
 }

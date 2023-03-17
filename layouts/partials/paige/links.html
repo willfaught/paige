@@ -11,7 +11,7 @@
 <link href="{{ relLangURL `favicon.png` | safeURL }}" rel="icon" type="image/png">
 <link href="{{ relLangURL `favicon.svg` | safeURL }}" rel="icon" type="image/svg+xml">
 <link color="{{ $page.Param `paige.color` | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
-<link href="{{ relLangURL `site.webmanifest` | safeURL }}" rel="manifest">
+<link href="{{ (resources.Get `site.webmanifest` | resources.ExecuteAsTemplate `site.webmanifest` .).RelPermalink | safeURL }}" rel="manifest">
 
 {{ partial "paige/link.html" (dict "href" "_paige/bootstrap/paige.scss" "page" $page "sass" true) }}
 {{ partial "paige/link.html" (dict "href" "_paige/bootstrap-icons/bootstrap-icons.css") }}

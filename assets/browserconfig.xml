@@ -1,8 +1,10 @@
+{{- $page := . -}}
+
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
     <msapplication>
         <tile>
-            <TileColor>#0d6efd</TileColor>
+            <TileColor>{{ $page.Param "paige.color" | default "#0d6efd" }}</TileColor>
         </tile>
     </msapplication>
 </browserconfig>
