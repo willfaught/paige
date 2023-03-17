@@ -3,15 +3,19 @@
 
 {{ partial "paige/article.html" $page }}
 
-{{ if $page.Pages }}
-    <div id="paige-subpages">
-        <ul class="list-inline text-center">
-            {{ range (sort $page.Pages "Title") }}
-                <li class="list-inline-item">
-                    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-                </li>
-            {{ end }}
-        </ul>
-    </div>
+{{ if or (eq $page.RelPermalink "/categories/") (eq $page.RelPermalink "/tags/") }}
+    {{ if $page.Pages }}
+        <div id="paige-subpages">
+            <ul class="list-inline text-center">
+                {{ range (sort $page.Pages "Title") }}
+                    <li class="list-inline-item">
+                        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+{{ else }}
+    {{ partial "paige/subpages.html" $page }}
 {{ end }}
 {{ end }}
