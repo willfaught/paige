@@ -17,16 +17,16 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery align="start" */>}}
-{{</* paige/image height="20rem" src="2-2.jpg" */>}}
-{{</* paige/image height="10rem" src="2-3.jpg" */>}}
+{{</* paige/image height="20rem" src="1-2.jpg" */>}}
+{{</* paige/image height="10rem" src="2-2.jpg" */>}}
 {{</* /paige/gallery /*/>}}
 ```
 
 Result:
 
 {{< paige/gallery align="start" >}}
-{{< paige/image height="20rem" src="2-2.jpg" >}}
-{{< paige/image height="10rem" src="2-3.jpg" >}}
+{{< paige/image height="20rem" src="1-2.jpg" >}}
+{{< paige/image height="10rem" src="2-2.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -35,16 +35,16 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery align="center" */>}}
-{{</* paige/image height="20rem" src="2-2.jpg" */>}}
-{{</* paige/image height="10rem" src="2-3.jpg" */>}}
+{{</* paige/image height="20rem" src="1-2.jpg" */>}}
+{{</* paige/image height="10rem" src="2-2.jpg" */>}}
 {{</* /paige/gallery /*/>}}
 ```
 
 Result:
 
 {{< paige/gallery align="center" >}}
-{{< paige/image height="20rem" src="2-2.jpg" >}}
-{{< paige/image height="10rem" src="2-3.jpg" >}}
+{{< paige/image height="20rem" src="1-2.jpg" >}}
+{{< paige/image height="10rem" src="2-2.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -53,16 +53,16 @@ Code:
 
 ```go-text-template
 {{</* paige/gallery align="end" */>}}
-{{</* paige/image height="20rem" src="2-2.jpg" */>}}
-{{</* paige/image height="10rem" src="2-3.jpg" */>}}
+{{</* paige/image height="20rem" src="1-2.jpg" */>}}
+{{</* paige/image height="10rem" src="2-2.jpg" */>}}
 {{</* /paige/gallery /*/>}}
 ```
 
 Result:
 
 {{< paige/gallery align="end" >}}
-{{< paige/image height="20rem" src="2-2.jpg" >}}
-{{< paige/image height="10rem" src="2-3.jpg" >}}
+{{< paige/image height="20rem" src="1-2.jpg" >}}
+{{< paige/image height="10rem" src="2-2.jpg" >}}
 {{< /paige/gallery >}}
 
 ## Height parameter
@@ -70,144 +70,144 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery height="10rem" images="2-*.jpg" /*/>}}
+{{</* paige/gallery height="10rem" images="*-2.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery height="10rem" images="2-*.jpg" />}}
+{{< paige/gallery height="10rem" images="*-2.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery height="20rem" images="2-*.jpg" /*/>}}
+{{</* paige/gallery height="20rem" images="*-2.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery height="20rem" images="2-*.jpg" />}}
+{{< paige/gallery height="20rem" images="*-2.jpg" />}}
 
 ## Images parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-2.jpg" /*/>}}
+{{</* paige/gallery images="1-2.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-2.jpg" />}}
+{{< paige/gallery images="1-2.jpg" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" /*/>}}
+{{</* paige/gallery images="*-2.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" />}}
+{{< paige/gallery images="*-2.jpg" />}}
 
 ## Justify parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" justify="start" /*/>}}
+{{</* paige/gallery images="*-2.jpg" justify="start" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" justify="start" />}}
+{{< paige/gallery images="*-2.jpg" justify="start" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" justify="center" /*/>}}
+{{</* paige/gallery images="*-2.jpg" justify="center" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" justify="center" />}}
+{{< paige/gallery images="*-2.jpg" justify="center" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" justify="end" /*/>}}
+{{</* paige/gallery images="*-2.jpg" justify="end" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" justify="end" />}}
+{{< paige/gallery images="*-2.jpg" justify="end" />}}
 
 ## Maxheight parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" maxheight="10rem" /*/>}}
+{{</* paige/gallery images="*-2.jpg" maxheight="10rem" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" maxheight="10rem" />}}
+{{< paige/gallery images="*-2.jpg" maxheight="10rem" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" maxheight="20rem" /*/>}}
+{{</* paige/gallery images="*-2.jpg" maxheight="20rem" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" maxheight="20rem" />}}
+{{< paige/gallery images="*-2.jpg" maxheight="20rem" />}}
 
 ## Maxwidth parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" maxwidth="10rem" /*/>}}
+{{</* paige/gallery images="*-2.jpg" maxwidth="10rem" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" maxwidth="10rem" />}}
+{{< paige/gallery images="*-2.jpg" maxwidth="10rem" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" maxwidth="20rem" /*/>}}
+{{</* paige/gallery images="*-2.jpg" maxwidth="20rem" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" maxwidth="20rem" />}}
+{{< paige/gallery images="*-2.jpg" maxwidth="20rem" />}}
 
 ## Method and options parameters
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" method="fill" options="550x550 r90 webp picture Lanczos" /*/>}}
+{{</* paige/gallery images="*-2.jpg" method="fill" options="550x550 r90 webp picture Lanczos" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" method="fill" options="550x550 r90 webp picture Lanczos" />}}
+{{< paige/gallery images="*-2.jpg" method="fill" options="550x550 r90 webp picture Lanczos" />}}
 
 ## Type
 
@@ -238,24 +238,24 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" width="10rem" /*/>}}
+{{</* paige/gallery images="*-2.jpg" width="10rem" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" width="10rem" />}}
+{{< paige/gallery images="*-2.jpg" width="10rem" />}}
 
 ---
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="2-*.jpg" width="20rem" /*/>}}
+{{</* paige/gallery images="*-2.jpg" width="20rem" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="2-*.jpg" width="20rem" />}}
+{{< paige/gallery images="*-2.jpg" width="20rem" />}}
 
 ## Figure
 
@@ -264,16 +264,16 @@ Code:
 ```go-text-template
 {{</* paige/gallery */>}}
 {{</* paige/figure caption="Image 1" /*/>}}
-{{</* paige/image src="1-1.jpg" /*/>}}
+{{</* paige/image src="1-2.jpg" /*/>}}
 {{</* /paige/figure */>}}
 {{</* paige/figure caption="Image 2" /*/>}}
 {{</* paige/image src="2-2.jpg" /*/>}}
 {{</* /paige/figure */>}}
 {{</* paige/figure caption="Image 3" /*/>}}
-{{</* paige/image src="2-3.jpg" /*/>}}
+{{</* paige/image src="3.jpg" /*/>}}
 {{</* /paige/figure */>}}
 {{</* paige/figure caption="Image 4" /*/>}}
-{{</* paige/image src="3-4.jpg" /*/>}}
+{{</* paige/image src="4.jpg" /*/>}}
 {{</* /paige/figure */>}}
 {{</* /paige/gallery */>}}
 ```
@@ -282,15 +282,15 @@ Result:
 
 {{< paige/gallery >}}
 {{< paige/figure caption="Image 1" >}}
-{{< paige/image src="1-1.jpg" >}}
+{{< paige/image src="1-2.jpg" >}}
 {{< /paige/figure >}}
 {{< paige/figure caption="Image 2" >}}
 {{< paige/image src="2-2.jpg" >}}
 {{< /paige/figure >}}
 {{< paige/figure caption="Image 3" >}}
-{{< paige/image src="2-3.jpg" >}}
+{{< paige/image src="3.jpg" >}}
 {{< /paige/figure >}}
 {{< paige/figure caption="Image 4" >}}
-{{< paige/image src="3-4.jpg" >}}
+{{< paige/image src="4.jpg" >}}
 {{< /paige/figure >}}
 {{< /paige/gallery >}}
