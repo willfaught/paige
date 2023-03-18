@@ -7,6 +7,7 @@
 {{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $src := $params.src }}
+{{ $type := $params.type }}
 
 {{ if not $src }}
     {{ errorf "paige/script: no src" }}
@@ -20,4 +21,4 @@
     {{ $src = relLangURL $src }}
 {{ end }}
 
-<script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}"></script>
+<script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}" {{ with $type }} {{ printf `type="%v"` . | safeHTMLAttr }} {{ end }}></script>
