@@ -62,6 +62,8 @@ please share it by [creating a pull request](https://github.com/willfaught/paige
 If you make a customization or alteration,
 please share it by [posting code or screenshots](https://github.com/willfaught/paige/discussions/8).
 
+Please share your deployed sites by [posting links](https://github.com/willfaught/paige/discussions/12).
+
 ## Get started with Hugo
 
 1. [Install Hugo](https://gohugo.io/installation/) (the extended version is required).
