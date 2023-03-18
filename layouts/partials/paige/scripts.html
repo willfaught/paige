@@ -34,8 +34,8 @@ addEventListener("resize", paigeResize);
 {{ partial "paige/script.html" (dict "src" "_paige/bootstrap/bootstrap.bundle.js") }}
 
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.section_pages.full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
-    {{ partial "paige/script.html" (dict "src" "paige/katex/katex.js") }}
-    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "paige/katex/auto-render.js") }}
+    {{ partial "paige/script.html" (dict "src" "_paige/katex/katex.min.js") }}
+    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "_paige/katex/auto-render.min.js") }}
 {{ end }}
 
 {{ partial "paige/analytics.html" $page }}

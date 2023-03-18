@@ -36,11 +36,11 @@ module:
     target: "assets/_paige/bootstrap-icons"
     includeFiles: ["/bootstrap-icons.css"]
   # Katex
-  - source: "node_modules/katex/contrib/auto-render"
+  - source: "node_modules/katex/dist/contrib"
     target: "assets/_paige/katex"
-    includeFiles: ["/auto-render.js"]
+    includeFiles: ["/auto-render.min.js"]
   - source: "node_modules/katex/dist/fonts"
     target: "static/_paige/katex/fonts"
   - source: "node_modules/katex/dist"
     target: "assets/_paige/katex"
-    includeFiles: ["/katex.css", "/katex.js"]
+    includeFiles: ["/katex.min.css", "/katex.min.js"]

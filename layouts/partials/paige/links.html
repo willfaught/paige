@@ -17,7 +17,7 @@
 {{ partial "paige/link.html" (dict "href" "_paige/bootstrap-icons/bootstrap-icons.css") }}
 
 {{ if or ($page.Param "paige.math") (and ($page.Param "paige.section_pages.full_pages") (where $page.Pages "Params.paige.math" "eq" true)) }}
-    {{ partial "paige/link.html" (dict "href" "paige/katex/katex.css") }}
+    {{ partial "paige/link.html" (dict "href" "_paige/katex/katex.min.css") }}
 {{ end }}
 
 {{ if .AlternativeOutputFormats }}
