@@ -31,7 +31,7 @@
             <language>{{ . }}</language>
         {{ end }}
         {{ if and $page.PublishDate (not $page.PublishDate.IsZero) }}
-            <lastBuildDate>{{ $page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+            <lastBuildDate>{{ $page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
         {{ end }}
         <link>{{ $page.Permalink }}</link>
         {{ with $page.Param "paige.rss.managing_editor" }}
@@ -64,7 +64,7 @@
                     <link>{{ . }}</link>
                 {{ end }}
                 {{ with .PublishDate }}
-                    <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+                    <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
                 {{ end }}
                 {{ with .Title }}
                     <title>{{ . | markdownify | plainify | htmlUnescape }}</title>
