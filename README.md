@@ -337,7 +337,7 @@ paige:
       width: "" # CSS unit; image width
   social:
     examplesite:
-      bootstrap_icon: "" # Example is "example-icon"
+      class: "" # Examples are "bi bi-emoji-smile" and "fa-regular fa-face-smile"
       name: "" # Example is "Example"
       url: "" # Example is "https://example.com/username"
 ```
