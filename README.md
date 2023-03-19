@@ -755,6 +755,10 @@ Page identifiers:
     <dd>The article.</dd>
     <dt><code>#paige-authors</code></dt>
     <dd>The authors.</dd>
+    <dt><code>#paige-collections</code></dt>
+    <dd>The collections.</dd>
+    <dt><code>#paige-collections-header</code></dt>
+    <dd>The collections header.</dd>
     <dt><code>#paige-comments</code></dt>
     <dd>The comments.</dd>
     <dt><code>#paige-content</code></dt>
@@ -783,10 +787,16 @@ Page identifiers:
     <dd>The reading time.</dd>
     <dt><code>#paige-root</code></dt>
     <dd>The outermost element in the body.</dd>
+    <dt><code>#paige-sections</code></dt>
+    <dd>The sections.</dd>
+    <dt><code>#paige-sections-header</code></dt>
+    <dd>The sections header.</dd>
     <dt><code>#paige-series</code></dt>
     <dd>The series.</dd>
     <dt><code>#paige-subpages</code></dt>
     <dd>The sub-pages.</dd>
+    <dt><code>#paige-subpages-header</code></dt>
+    <dd>The sub-pages header.</dd>
     <dt><code>#paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>#paige-toc</code></dt>

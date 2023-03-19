@@ -1,3 +1,6 @@
+paige_collections:
+  other: Sammlungen
+
 paige_figure:
   other: Abbildung
 
@@ -13,6 +16,9 @@ paige_minutes:
 
 paige_noscript:
   other: JavaScript wird benötigt.
+
+paige_pages:
+  other: Seiten
 
 paige_search_button:
   other: Suche
@@ -31,3 +37,6 @@ paige_search_searching:
 
 paige_search_something:
   other: Die Suche lieferte einige Treffer
+
+paige_sections:
+  other: Abschnitte
