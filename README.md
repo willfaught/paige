@@ -841,7 +841,7 @@ Kind classes:
 <dl>
     <dt><code>.paige-home</code></dt>
     <dd>The container element of pages with kind "home".</dd>
-    <dt><code>.paige-section</code></dt>
+    <dt><code>.paige-list</code></dt>
     <dd>The container element of pages with kind "section".</dd>
     <dt><code>.paige-single</code></dt>
     <dd>The container element of pages with kind "page".</dd>
