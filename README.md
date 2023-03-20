@@ -824,12 +824,12 @@ Page and sub-page classes:
     <dd>The metadata.</dd>
     <dt><code>.paige-page</code></dt>
     <dd>A page.</dd>
-    <dt><code>.paige-summary</code></dt>
-    <dd>The summary.</dd>
     <dt><code>.paige-reading-time</code></dt>
     <dd>The reading time.</dd>
     <dt><code>.paige-series</code></dt>
     <dd>The series.</dd>
+    <dt><code>.paige-summary</code></dt>
+    <dd>The summary.</dd>
     <dt><code>.paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>.paige-toc</code></dt>
