@@ -30,7 +30,10 @@
             {{ range site.Menus.main }}
                 {{ $pagepath := strings.TrimPrefix $basepath $.RelPermalink }}
                 {{ $menupath := strings.TrimPrefix $basepath .URL }}
-                {{ $active := or (and (eq $menupath "/") (eq $pagepath "/")) (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
+                {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
+                {{ $menuprefix := (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
+                {{ $sectionprefix := (and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section))) }}
+                {{ $active := or $home $menuprefix $sectionprefix }}
 
                 <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
             {{ end }}
