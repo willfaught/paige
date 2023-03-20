@@ -31,9 +31,9 @@
 {{ with $pages }}
     {{ if $page.Param "paige.section_pages.full_pages" }}
         {{ $pager := $page.Paginate . }}
-        <div id="paige-subpages">
+        <div id="paige-pages">
             {{ if or $collections $sections }}
-                <h2 class="h4 text-center" id="paige-subpages-header">{{ i18n "paige_pages" }}</h2>
+                <h2 class="h4 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
             {{ end }}
 
             {{ range $pager.Pages }}
@@ -49,9 +49,9 @@
             </div>
         {{ end }}
     {{ else }}
-        <div id="paige-subpages">
+        <div id="paige-pages">
             {{ if or $collections $sections }}
-                <h2 class="h4 text-center" id="paige-subpages-header">{{ i18n "paige_pages" }}</h2>
+                <h2 class="h4 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
             {{ end }}
 
             {{ $pinned := where . "Params.paige.pin" true }}

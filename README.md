@@ -781,6 +781,10 @@ Page identifiers:
     <dd>The main.</dd>
     <dt><code>#paige-metadata</code></dt>
     <dd>The metadata.</dd>
+    <dt><code>#paige-pages</code></dt>
+    <dd>The pages.</dd>
+    <dt><code>#paige-pages-header</code></dt>
+    <dd>The pages header.</dd>
     <dt><code>#paige-pagination</code></dt>
     <dd>The sub-page pagination links.</dd>
     <dt><code>#paige-reading-time</code></dt>
@@ -793,10 +797,6 @@ Page identifiers:
     <dd>The sections header.</dd>
     <dt><code>#paige-series</code></dt>
     <dd>The series.</dd>
-    <dt><code>#paige-subpages</code></dt>
-    <dd>The sub-pages.</dd>
-    <dt><code>#paige-subpages-header</code></dt>
-    <dd>The sub-pages header.</dd>
     <dt><code>#paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>#paige-toc</code></dt>
