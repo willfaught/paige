@@ -44,7 +44,7 @@
 {{ end }}
 
 {{ $flags = delimit ($flags | uniq) " " }}
-{{ $class := delimit (slice "mb-3" "paige-subpage" "w-100" | append $flags | uniq | sort) " " }}
+{{ $class := delimit (slice "mb-3" "paige-page" "w-100" | append $flags | uniq | sort) " " }}
 
 <div class="{{ $class }}">
     {{ with $title }}

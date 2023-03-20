@@ -11,7 +11,7 @@
         {{ end }}
 
         {{ range $k, $v := . }}
-            {{ partial "paige/subpage.html" (site.GetPage $k) }}
+            {{ partial "paige/page.html" (site.GetPage $k) }}
         {{ end }}
     </div>
 {{ end }}
@@ -23,7 +23,7 @@
         {{ end }}
 
         {{ range . }}
-            {{ partial "paige/subpage.html" . }}
+            {{ partial "paige/page.html" . }}
         {{ end }}
     </div>
 {{ end }}
@@ -57,7 +57,7 @@
             {{ $pinned := where . "Params.paige.pin" true }}
 
             {{ range $pinned.ByPublishDate.Reverse }}
-                {{ partial "paige/subpage.html" . }}
+                {{ partial "paige/page.html" . }}
             {{ end }}
 
             {{ $unpinned := complement $pinned . }}
@@ -68,7 +68,7 @@
                 <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
 
                 {{ range .Pages }}
-                    {{ partial "paige/subpage.html" . }}
+                    {{ partial "paige/page.html" . }}
                 {{ end }}
             {{ end }}
         </div>

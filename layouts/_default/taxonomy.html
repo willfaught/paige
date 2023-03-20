@@ -5,7 +5,7 @@
 
 {{ if or (eq $page.RelPermalink "/categories/") (eq $page.RelPermalink "/tags/") }}
     {{ if $page.Pages }}
-        <div id="paige-subpages">
+        <div id="paige-pages">
             <ul class="list-inline text-center">
                 {{ range (sort $page.Pages "Title") }}
                     <li class="list-inline-item">
@@ -16,6 +16,6 @@
         </div>
     {{ end }}
 {{ else }}
-    {{ partial "paige/subpages.html" $page }}
+    {{ partial "paige/pages.html" $page }}
 {{ end }}
 {{ end }}

@@ -12,13 +12,13 @@ paige:
     #paige-reading-time,
     #paige-series,
     #paige-toc,
-    #paige-subpages .paige-authors,
-    #paige-subpages .paige-date,
-    #paige-subpages .paige-date-header,
-    #paige-subpages .paige-keywords,
-    #paige-subpages .paige-reading-time,
-    #paige-subpages .paige-series,
-    #paige-subpages .paige-summary {
+    .paige-authors,
+    .paige-date,
+    .paige-date-header,
+    .paige-keywords,
+    .paige-reading-time,
+    .paige-series,
+    .paige-summary {
         display: block;
     }
     #paige-authors { font-style: italic; }
@@ -32,12 +32,12 @@ paige:
     #paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
     #paige-credit { font-style: italic; }
-    #paige-subpages .paige-authors { font-style: italic; }
-    #paige-subpages .paige-date { font-style: italic; }
-    #paige-subpages .paige-date-header { font-style: italic; }
-    #paige-subpages .paige-keyword { font-style: italic; }
-    #paige-subpages .paige-series { font-style: italic; }
-    #paige-subpages .paige-summary { font-style: italic; }
+    .paige-authors { font-style: italic; }
+    .paige-date { font-style: italic; }
+    .paige-date-header { font-style: italic; }
+    .paige-keyword { font-style: italic; }
+    .paige-series { font-style: italic; }
+    .paige-summary { font-style: italic; }
 series: ["demo"]
 tags: ["singles", "style"]
 title: "Style Data"
@@ -62,13 +62,13 @@ paige:
     #paige-reading-time,
     #paige-series,
     #paige-toc,
-    #paige-subpages .paige-authors,
-    #paige-subpages .paige-date,
-    #paige-subpages .paige-date-header,
-    #paige-subpages .paige-keywords,
-    #paige-subpages .paige-reading-time,
-    #paige-subpages .paige-series,
-    #paige-subpages .paige-summary {
+    .paige-authors,
+    .paige-date,
+    .paige-date-header,
+    .paige-keywords,
+    .paige-reading-time,
+    .paige-series,
+    .paige-summary {
         display: block;
     }
     #paige-authors { font-style: italic; }
@@ -82,10 +82,10 @@ paige:
     #paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
     #paige-credit { font-style: italic; }
-    #paige-subpages .paige-authors { font-style: italic; }
-    #paige-subpages .paige-date { font-style: italic; }
-    #paige-subpages .paige-date-header { font-style: italic; }
-    #paige-subpages .paige-keyword { font-style: italic; }
-    #paige-subpages .paige-series { font-style: italic; }
-    #paige-subpages .paige-summary { font-style: italic; }
+    .paige-authors { font-style: italic; }
+    .paige-date { font-style: italic; }
+    .paige-date-header { font-style: italic; }
+    .paige-keyword { font-style: italic; }
+    .paige-series { font-style: italic; }
+    .paige-summary { font-style: italic; }
 ```
