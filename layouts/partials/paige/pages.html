@@ -29,56 +29,35 @@
 {{ end }}
 
 {{ with $pages }}
-    {{ if $page.Param "paige.section_pages.full_pages" }}
-        {{ $pager := $page.Paginate . }}
-        <div id="paige-pages">
-            {{ if or $collections $sections }}
-                <h2 class="h4 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
-            {{ end }}
-
-            {{ range $pager.Pages }}
-                {{ partial "paige/article.html" (dict "fullpages" true "page" .) }}
-            {{ end }}
-        </div>
-
-        {{ if or $pager.HasPrev $pager.HasNext }}
-            <div id="paige-pagination">
-                <div class="d-flex justify-content-center">
-                    {{ partial "paige/pagination.html" $page }}
-                </div>
-            </div>
+    <div id="paige-pages">
+        {{ if or $collections $sections }}
+            <h2 class="h4 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
         {{ end }}
-    {{ else }}
-        <div id="paige-pages">
-            {{ if or $collections $sections }}
-                <h2 class="h4 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
-            {{ end }}
 
-            {{ $pinned := where . "Params.paige.pin" true }}
+        {{ $pinned := where . "Params.paige.pin" true }}
 
-            {{ range $pinned.ByPublishDate.Reverse }}
+        {{ range $pinned.ByPublishDate.Reverse }}
+            {{ partial "paige/page.html" . }}
+        {{ end }}
+
+        {{ $unpinned := complement $pinned . }}
+        {{ $pagegroups := $unpinned.ByPublishDate.Reverse.GroupByPublishDate "January 2006" }}
+        {{ $pager := $page.Paginate $pagegroups }}
+
+        {{ range $pager.PageGroups }}
+            <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
+
+            {{ range .Pages }}
                 {{ partial "paige/page.html" . }}
             {{ end }}
-
-            {{ $unpinned := complement $pinned . }}
-            {{ $pagegroups := $unpinned.ByPublishDate.Reverse.GroupByPublishDate "January 2006" }}
-            {{ $pager := $page.Paginate $pagegroups }}
-
-            {{ range $pager.PageGroups }}
-                <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
-
-                {{ range .Pages }}
-                    {{ partial "paige/page.html" . }}
-                {{ end }}
-            {{ end }}
-        </div>
-
-        {{ if or $pager.HasPrev $pager.HasNext }}
-            <div id="paige-pagination">
-                <div class="d-flex justify-content-center">
-                    {{ partial "paige/pagination.html" $page }}
-                </div>
-            </div>
         {{ end }}
+    </div>
+
+    {{ if or $pager.HasPrev $pager.HasNext }}
+        <div id="paige-pagination">
+            <div class="d-flex justify-content-center">
+                {{ partial "paige/pagination.html" $page }}
+            </div>
+        </div>
     {{ end }}
 {{ end }}

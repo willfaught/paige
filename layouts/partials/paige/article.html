@@ -1,20 +1,9 @@
-{{ $params := . }}
-
-{{ $fullpages := false }}
 {{ $page := . }}
 
-{{ if reflect.IsMap $params }}
-    {{ $fullpages = $params.fullpages }}
-    {{ $page = $params.page }}
-{{ else }}
-    {{ $params = dict "fullpages" $fullpages "page" $page }}
-{{ end }}
-
-{{ $class := cond $fullpages (slice "paige-article") slice }}
+{{ $class := slice }}
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
-{{ $id := not $fullpages }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
 
 {{ if $draft }}
@@ -53,11 +42,11 @@
 
 {{ $class = delimit ($class | uniq) " " }}
 
-<article {{ with $class }} class="{{ . }}" {{ end }} {{ if $id }} id="paige-article" {{ end }}>
+<article {{ with $class }} class="{{ . }}" {{ end }} id="paige-article">
     <div class="align-items-center d-flex flex-column mb-0">
-        {{ partial "paige/metadata.html" $params }}
+        {{ partial "paige/metadata.html" $page }}
         {{ partial "paige/alert.html" $page }}
-        {{ partial "paige/toc.html" $params }}
-        {{ partial "paige/content.html" $params }}
+        {{ partial "paige/toc.html" $page }}
+        {{ partial "paige/content.html" $page }}
     </div>
 </article>

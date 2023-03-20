@@ -1,21 +1,11 @@
-{{ $params := . }}
-
-{{ $fullpages := false }}
 {{ $page := . }}
-
-{{ if reflect.IsMap $params }}
-    {{ $fullpages = $params.fullpages }}
-    {{ $page = $params.page }}
-{{ end }}
 
 {{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := $page.Params.categories | default slice | uniq }}
-{{ $class := $fullpages }}
 {{ $commiturl := "" }}
 {{ $date := cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
-{{ $id := not $fullpages }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.Params.series }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
@@ -27,17 +17,17 @@
     {{ $commiturl = print ($page.Param "paige.git.commit_url_prefix") $page.GitInfo.Hash }}
 {{ end }}
 
-<div class="{{ if $class }} paige-metadata {{ end }} w-100" {{ if $id }} id="paige-metadata" {{ end }}>
+<div class="w-100" id="paige-metadata">
     {{ with $title }}
-        <h1 class="display-5 fw-bold {{ if $class }} paige-title {{ end }} text-center" {{ if $id }} id="paige-title" {{ end }}>{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ if $fullpages }}<a aria-label="{{ i18n `paige_aria_page_link` }}" class="paige-header-link" href="{{ $titlepage }}">#</a>{{ end }}</h1>
+        <h1 class="display-5 fw-bold text-center" id="paige-title">{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
     {{ end }}
 
     {{ with $description }}
-        <p class="lead {{ if $class }} paige-description {{ end }} text-center" {{ if $id }} id="paige-description" {{ end }}>{{ . }}</p>
+        <p class="lead text-center" id="paige-description">{{ . }}</p>
     {{ end }}
 
     {{ if or $categories $tags }}
-        <p class="{{ if $class }} paige-keywords {{ end }} text-center" {{ if $id }} id="paige-keywords" {{ end }}>
+        <p class="text-center" id="paige-keywords">
             {{ $terms := slice }}
 
             {{ range $categories }}
@@ -63,7 +53,7 @@
     {{ if or $authors $date $readingtime $series }}
         <div class="mb-3">
             {{ with $series }}
-                <p class="mb-0 {{ if $class }} paige-series {{ end }} text-center text-secondary" {{ if $id }} id="paige-series" {{ end }}>
+                <p class="mb-0 text-center text-secondary" id="paige-series">
                     {{ range $i, $name := . -}}
                         {{- if gt $i 0 }}, {{ end -}}
 
@@ -77,7 +67,7 @@
             {{ end }}
 
             {{ with $authors }}
-                <p class="mb-0 {{ if $class }} paige-authors {{ end }} text-center text-secondary" {{ if $id }} id="paige-authors" {{ end }}>
+                <p class="mb-0 text-center text-secondary" id="paige-authors">
                     {{ range $i, $author := . -}}
                         {{- if gt $i 0 }}, {{ end -}}
 
@@ -95,7 +85,7 @@
             {{ end }}
 
             {{ with $date }}
-                <p class="mb-0 {{ if $class }} paige-date {{ end }} text-center text-secondary" {{ if $id }} id="paige-date" {{ end }}>
+                <p class="mb-0 text-center text-secondary" id="paige-date">
                     {{ with $commiturl }}
                         <a class="link-secondary" href="{{ . }}">
                     {{ end }}
@@ -109,7 +99,7 @@
             {{ end }}
 
             {{ with $readingtime }}
-                <p class="mb-0 {{ if $class }} paige-reading-time {{ end }} text-center text-secondary" {{ if $id }} id="paige-reading-time" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
+                <p class="mb-0 text-center text-secondary" id="paige-reading-time">{{ . }} {{ i18n "paige_minutes" . }}</p>
             {{ end }}
         </div>
     {{ end }}
