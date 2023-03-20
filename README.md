@@ -777,6 +777,8 @@ Page identifiers:
     <dd>The keywords.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
+    <dt><code>#paige-menu</code></dt>
+    <dd>The menu.</dd>
     <dt><code>#paige-metadata</code></dt>
     <dd>The metadata.</dd>
     <dt><code>#paige-pages</code></dt>
