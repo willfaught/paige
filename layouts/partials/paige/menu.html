@@ -28,7 +28,7 @@
     <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
         <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
             {{ range site.Menus.main }}
-                {{ $pagepath := strings.TrimPrefix $basepath $.RelPermalink }}
+                {{ $pagepath := strings.TrimPrefix $basepath $page.RelPermalink }}
                 {{ $menupath := strings.TrimPrefix $basepath .URL }}
                 {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
                 {{ $menuprefix := (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
