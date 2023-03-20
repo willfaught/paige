@@ -1,15 +1,8 @@
 {{ $page := . }}
 
 {{ $limit := site.Config.Services.RSS.Limit }}
-{{ $pages := "" }}
-{{ $pagesource := cond $page.IsHome site $page }}
+{{ $pages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := partial "paige/title.html" $page }}
-
-{{ if or $page.IsHome $page.IsSection }}
-    {{ $pages = $pagesource.RegularPages }}
-{{ else }}
-    {{ $pages = $pagesource.Pages }}
-{{ end }}
 
 {{ if ge $limit 1 }}
     {{ $pages = $pages | first $limit }}
