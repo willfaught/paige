@@ -315,6 +315,16 @@ paige:
 
 ## Layouts
 
+### Cloud
+
+The `paige/cloud` layout provides a link cloud for sub-pages.
+
+Example `content/tags/_index.md`:
+
+```yaml
+layout: "paige/cloud"
+```
+
 ### Home
 
 The `paige/home` layout provides a home page.

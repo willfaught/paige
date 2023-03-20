@@ -2,20 +2,5 @@
 {{ $page := . }}
 
 {{ partial "paige/article.html" $page }}
-
-{{ if or (eq $page.RelPermalink "/categories/") (eq $page.RelPermalink "/tags/") }}
-    {{ if $page.Pages }}
-        <div id="paige-pages">
-            <ul class="list-inline text-center">
-                {{ range (sort $page.Pages "Title") }}
-                    <li class="list-inline-item">
-                        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-                    </li>
-                {{ end }}
-            </ul>
-        </div>
-    {{ end }}
-{{ else }}
-    {{ partial "paige/pages.html" $page }}
-{{ end }}
+{{ partial "paige/pages.html" $page }}
 {{ end }}
