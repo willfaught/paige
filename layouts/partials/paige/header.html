@@ -2,22 +2,16 @@
 
 {{ $first := templates.Exists "partials/paige/header-first.html" }}
 {{ $last := templates.Exists "partials/paige/header-last.html" }}
-{{ $menu := site.Menus.main }}
 
-{{ if or $first $last $menu }}
-    <header id="paige-header">
-        {{ if $first }}
-            {{ partial "paige/header-first.html" $page }}
-        {{ end }}
+<header id="paige-header">
+    {{ if $first }}
+        {{ partial "paige/header-first.html" $page }}
+    {{ end }}
 
-        {{ if $menu }}
-            {{ partial "paige/menu.html" $page }}
-        {{ end }}
+    {{ partial "paige/menu.html" $page }}
+    {{ partial "paige/breadcrumb.html" . }}
 
-        {{ partial "paige/breadcrumb.html" . }}
-
-        {{ if $last }}
-            {{ partial "paige/header-last.html" $page }}
-        {{ end }}
-    </header>
-{{ end }}
+    {{ if $last }}
+        {{ partial "paige/header-last.html" $page }}
+    {{ end }}
+</header>

@@ -23,21 +23,23 @@
     {{ $pills = true }}
 {{ end }}
 
-<nav class="justify-content-center my-3 navbar navbar-expand-{{ $breakpoint }}" id="paige-menu">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#paige-menu-toggler" aria-controls="paige-menu-toggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
-        <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
-            {{ range site.Menus.main }}
-                {{ $menupath := strings.TrimPrefix $basepath .URL }}
-                {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
-                {{ $menuprefix := (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
-                {{ $sectionprefix := (and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section))) }}
-                {{ $active := or $home $menuprefix $sectionprefix }}
+{{ with site.Menus.main }}
+    <nav class="justify-content-center my-3 navbar navbar-expand-{{ $breakpoint }}" id="paige-menu">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#paige-menu-toggler" aria-controls="paige-menu-toggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
+            <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
+                {{ range . }}
+                    {{ $menupath := strings.TrimPrefix $basepath .URL }}
+                    {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
+                    {{ $menuprefix := (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
+                    {{ $sectionprefix := (and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section))) }}
+                    {{ $active := or $home $menuprefix $sectionprefix }}
 
-                <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-            {{ end }}
+                    <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+{{ end }}
