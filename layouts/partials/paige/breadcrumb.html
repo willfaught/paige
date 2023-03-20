@@ -4,7 +4,7 @@
     <nav aria-label="{{ i18n `paige_breadcrumb` }}" class="d-flex justify-content-center mt-3" id="paige-breadcrumb">
         <ol class="breadcrumb">
             {{ range .Reverse }}
-                <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title | markdownify}}</a></li>
             {{ end }}
         </ol>
     </nav>
