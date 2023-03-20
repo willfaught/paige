@@ -20,6 +20,9 @@ paige_noscript:
 paige_pages:
   other: Pages
 
+paige_pinned_page:
+  other: Pinned page
+
 paige_search_button:
   other: Search
 
