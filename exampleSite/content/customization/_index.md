@@ -1,7 +1,6 @@
 ---
 authors: ["will-faught"]
 categories: ["customization", "paige"]
-date: "2022-02-23"
 description: "Demonstrations of Paige customization."
 paige:
   style: |
