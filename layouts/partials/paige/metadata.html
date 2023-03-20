@@ -6,11 +6,11 @@
 {{ $date := cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
+{{ $link := $page.Params.link }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.Params.series }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
 {{ $title := $page.Title | markdownify }}
-{{ $titlelink := $page.Params.link }}
 
 {{ if and ($page.Param "paige.git.commit_url_prefix") $page.GitInfo }}
     {{ $commiturl = print ($page.Param "paige.git.commit_url_prefix") $page.GitInfo.Hash }}
@@ -18,7 +18,7 @@
 
 <div class="w-100" id="paige-metadata">
     {{ with $title }}
-        <h1 class="display-5 fw-bold text-center" id="paige-title">{{ with $titlelink }}<a href="{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
+        <h1 class="display-5 fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
     {{ end }}
 
     {{ with $description }}
