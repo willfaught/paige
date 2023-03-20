@@ -1,17 +1,14 @@
 {{ $page := . }}
 
-{{ $first := templates.Exists "partials/paige/header-first.html" }}
-{{ $last := templates.Exists "partials/paige/header-last.html" }}
-
 <header id="paige-header">
-    {{ if $first }}
+    {{ if templates.Exists "partials/paige/header-first.html" }}
         {{ partial "paige/header-first.html" $page }}
     {{ end }}
 
     {{ partial "paige/menu.html" $page }}
     {{ partial "paige/breadcrumb.html" . }}
 
-    {{ if $last }}
+    {{ if templates.Exists "partials/paige/header-last.html" }}
         {{ partial "paige/header-last.html" $page }}
     {{ end }}
 </header>
