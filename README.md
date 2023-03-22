@@ -313,6 +313,37 @@ paige:
   pin: true # Display this page before the rest
 ```
 
+## Features
+
+An optional menu can be configured for root pages and sections.
+The active menu item has a URL that is a prefix of the path of the current page.
+
+Example `config.yaml`:
+
+```yaml
+languages:
+  en:
+    menu:
+      main:
+      - identifier: "home"
+        name: "Home"
+        url: "/"
+        weight: 10
+      - identifier: "blog"
+        name: "Blog"
+        url: "/blog/"
+        weight: 20
+      - identifier: "tags"
+        name: "Tags"
+        url: "/tags/"
+        weight: 30
+      - identifier: "search"
+        name: "Search"
+        url: "/search/"
+        weight: 40
+    weight: 10
+```
+
 ## Layouts
 
 ### Cloud
