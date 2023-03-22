@@ -784,6 +784,8 @@ Page identifiers:
     <dd>The article.</dd>
     <dt><code>#paige-authors</code></dt>
     <dd>The authors.</dd>
+    <dt><code>#paige-breadcrumbs</code></dt>
+    <dd>The breadcrumbs.</dd>
     <dt><code>#paige-collections</code></dt>
     <dd>The collections.</dd>
     <dt><code>#paige-collections-header</code></dt>
