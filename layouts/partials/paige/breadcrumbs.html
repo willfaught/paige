@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ with .Ancestors }}
-    <nav aria-label="{{ i18n `paige_breadcrumb` }}" class="mt-3" id="paige-breadcrumb">
+    <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="mt-3" id="paige-breadcrumbs">
         <div class="d-flex justify-content-center">
             <ol class="breadcrumb">
                 {{ range .Reverse }}

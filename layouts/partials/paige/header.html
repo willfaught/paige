@@ -6,7 +6,7 @@
     {{ end }}
 
     {{ partial "paige/menu.html" $page }}
-    {{ partial "paige/breadcrumb.html" . }}
+    {{ partial "paige/breadcrumbs.html" . }}
 
     {{ if templates.Exists "partials/paige/header-last.html" }}
         {{ partial "paige/header-last.html" $page }}
