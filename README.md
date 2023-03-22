@@ -930,6 +930,7 @@ try the following in your `layouts/partials/paige/style-first.css`:
 
 ```css
 #paige-authors,
+#paige-collections,
 #paige-credit,
 #paige-keywords,
 #paige-reading-time,
