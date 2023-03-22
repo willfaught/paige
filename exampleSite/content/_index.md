@@ -14,7 +14,15 @@ paige:
       class: "bi bi-github"
       name: "GitHub"
       url: "https://github.com/willfaught/paige"
-  style: "#paige-title { font-size: 5rem; }"
+  style: |
+    #paige-collections,
+    #paige-sections,
+    #paige-pages {
+        display: none;
+    }
+    #paige-title {
+        font-size: 5rem;
+    }
 title: "Paige"
 ---
 
