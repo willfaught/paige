@@ -378,6 +378,32 @@ title: "Search"
 
 ## Shortcodes
 
+### Code
+
+The `paige/code` shortcode provides a figure with code.
+
+```
+{{< paige/code lang="html" options="linenos=true" >}}
+<!doctype html>
+<html lang="en">
+<body>
+  <p>Test</p>
+</body>
+</html>
+{{< /paige/code >}}
+```
+
+Inner content: Required. String. The code.
+
+Parameters:
+
+<dl>
+    <dt><code>lang</code></dt>
+    <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">codes</a>.</dd>
+    <dt><code>options</code></dt>
+    <dd>Optional. String. Hugo highlight options. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
+</dl>
+
 ### Figure
 
 The `paige/figure` shortcode provides a figure with content.
@@ -421,92 +447,6 @@ Parameters:
     <dd>Optional. String. Vertical alignment. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Total width.</dd>
-</dl>
-
-### Quote
-
-The `paige/quote` shortcode provides a figure with a quotation.
-
-```
-{{< paige/quote >}}
-My content
-{{< /paige/quote >}}
-```
-
-Inner content: Required. String. Markdown. The quotation.
-
-Parameters: None.
-
-### Code
-
-The `paige/code` shortcode provides a figure with code.
-
-```
-{{< paige/code lang="html" options="linenos=true" >}}
-<!doctype html>
-<html lang="en">
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /paige/code >}}
-```
-
-Inner content: Required. String. The code.
-
-Parameters:
-
-<dl>
-    <dt><code>lang</code></dt>
-    <dd>Optional. Position 0. String. Chroma language code. Defaults to <code>plaintext</code>. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">codes</a>.</dd>
-    <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo highlight options. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
-</dl>
-
-### Image
-
-The `paige/image` shortcode provides a figure with an image.
-
-```
-{{< paige/image
-    alt="My alt" >}}
-    height="10rem"
-    link="https://github.com/willfaught/paige"
-    maxheight="10rem"
-    maxwidth="10rem"
-    method="resize"
-    options="550x webp picture Lanczos"
-    src="me.jpg"
-    title="My title"
-    width="10rem"
->}}
-```
-
-Inner content: None.
-
-Parameters:
-
-<dl>
-    <dt><code>alt</code></dt>
-    <dd>Optional. String. Plain text. Image alt.</dd>
-    <dt><code>height</code></dt>
-    <dd>Optional. String. CSS value. Image height.</dd>
-    <dt><code>link</code></dt>
-    <dd>Optional. String. URL. Image link.</dd>
-    <dt><code>maxheight</code></dt>
-    <dd>Optional. String. CSS value. Image maximum height.</dd>
-    <dt><code>maxwidth</code></dt>
-    <dd>Optional. String. CSS value. Image maximum width.</dd>
-    <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
-    <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
-    <dt><code>src</code></dt>
-    <dd>Required. Position 0. String. URL. Image source.</dd>
-    <dt><code>title</code></dt>
-    <dd>Optional. String. Plain text. Image title.</dd>
-    <dt><code>width</code></dt>
-    <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
 
 ### Gallery
@@ -581,6 +521,66 @@ Parameters:
     <dt><code>url</code></dt>
     <dd>Optional. String. URL. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
+
+### Image
+
+The `paige/image` shortcode provides a figure with an image.
+
+```
+{{< paige/image
+    alt="My alt" >}}
+    height="10rem"
+    link="https://github.com/willfaught/paige"
+    maxheight="10rem"
+    maxwidth="10rem"
+    method="resize"
+    options="550x webp picture Lanczos"
+    src="me.jpg"
+    title="My title"
+    width="10rem"
+>}}
+```
+
+Inner content: None.
+
+Parameters:
+
+<dl>
+    <dt><code>alt</code></dt>
+    <dd>Optional. String. Plain text. Image alt.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. String. CSS value. Image height.</dd>
+    <dt><code>link</code></dt>
+    <dd>Optional. String. URL. Image link.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Image maximum height.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. String. CSS value. Image maximum width.</dd>
+    <dt><code>method</code></dt>
+    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
+    <dt><code>options</code></dt>
+    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
+    <dt><code>src</code></dt>
+    <dd>Required. Position 0. String. URL. Image source.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. String. Plain text. Image title.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. String. CSS value. Image width.</dd>
+</dl>
+
+### Quote
+
+The `paige/quote` shortcode provides a figure with a quotation.
+
+```
+{{< paige/quote >}}
+My content
+{{< /paige/quote >}}
+```
+
+Inner content: Required. String. Markdown. The quotation.
+
+Parameters: None.
 
 ### Vimeo
 
