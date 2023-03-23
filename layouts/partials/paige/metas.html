@@ -3,7 +3,13 @@
 <meta charset="utf-8">
 
 {{ with partial "paige/authors.html" $page }}
-    <meta content="{{ . }}" name="author">
+    {{ $authors := slice }}
+
+    {{ range . }}
+        {{ $authors = $authors | append .name }}
+    {{ end }}
+
+    <meta content="{{ delimit $authors `, ` }}" name="author">
 {{ end }}
 
 {{ with $page.Description }}
