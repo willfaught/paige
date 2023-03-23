@@ -481,7 +481,7 @@ Parameters:
 
 <dl>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>. Must not be used when nested.</dd>
+    <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>.</dd>
     <dt><code>format</code></dt>
     <dd>Optional. String. Image format. Must be <code>bmp</code>, <code>gif</code>, <code>jpg</code>, <code>png</code>, <code>tiff</code>, or <code>webp</code>. Must not be used with <code>method</code> or <code>options</code>.</dd>
     <dt><code>height</code></dt>
@@ -489,7 +489,7 @@ Parameters:
     <dt><code>images</code></dt>
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
-    <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>. Must not be used when nested.</dd>
+    <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
