@@ -1,0 +1,58 @@
+{{ $alt := .Get "alt" }}
+{{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" | markdownify }}
+{{ $header := .Get "header" | markdownify }}
+{{ $height := .Get "height" }}
+{{ $image := .Get "image" }}
+{{ $imageclass := .Get "imageclass" }}
+{{ $maxheight := .Get "maxheight" | default "20rem" }}
+{{ $maxwidth := .Get "maxwidth" }}
+{{ $page := .Page }}
+{{ $stretch := .Get "stretch" }}
+{{ $title := .Get "title" }}
+{{ $width := .Get "width" }}
+
+<div class="paige-hero">
+    {{ with $image }}
+        {{ $classes := split $imageclass " "}}
+
+        {{ if $stretch }}
+            {{ $classes = $classes | append "w-100" }}
+        {{ else }}
+            {{ $classes = $classes | append "mw-100" }}
+        {{ end }}
+
+        {{ $imageclass = delimit $classes " " }}
+        {{ $style := cond ($stretch | not) "" "object-fit: cover" }}
+
+        <p {{ if or (not $stretch) $width }} class="text-center paige-hero-image" {{ end }}>
+            {{ partial "paige/img.html" (dict
+                "alt" $alt
+                "class" $imageclass
+                "height" $height
+                "fetchpriority" "high"
+                "loading" "eager"
+                "maxheight" $maxheight
+                "maxwidth" $maxwidth
+                "page" $page
+                "src" .
+                "style" $style
+                "title" $title
+                "width" $width
+            ) }}
+        </p>
+    {{ end }}
+
+    {{ with $header }}
+        <p class="display-5 fw-bold h2 paige-hero-header text-center">{{ . }}</p>
+    {{ end }}
+
+    {{ with $content }}
+        <div class="container-fluid paige-hero-content">
+            <div class="justify-content-center row">
+                <div class="col col-auto col-lg-7 px-0">
+                    <p class="lead text-center">{{ . }}</p>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+</div>
