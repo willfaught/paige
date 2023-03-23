@@ -4,14 +4,6 @@
     <link href="{{ relLangURL `apple-touch-icon.png` | safeURL }}" rel="apple-touch-icon" sizes="180x180">
 {{ end }}
 
-{{ if fileExists "favicon-16x16.png" }}
-    <link href="{{ relLangURL `favicon-16x16.png` | safeURL }}" rel="icon" sizes="16x16" type="image/png">
-{{ end }}
-
-{{ if fileExists "favicon-32x32.png" }}
-    <link href="{{ relLangURL `favicon-32x32.png` | safeURL }}" rel="icon" sizes="32x32" type="image/png">
-{{ end }}
-
 {{ if fileExists "favicon.ico" }}
     <link href="{{ relLangURL `favicon.ico` | safeURL }}" rel="shortcut icon">
 {{ end }}
@@ -22,6 +14,14 @@
 
 {{ if fileExists "favicon.svg" }}
     <link href="{{ relLangURL `favicon.svg` | safeURL }}" rel="icon" type="image/svg+xml">
+{{ end }}
+
+{{ if fileExists "favicon-16x16.png" }}
+    <link href="{{ relLangURL `favicon-16x16.png` | safeURL }}" rel="icon" sizes="16x16" type="image/png">
+{{ end }}
+
+{{ if fileExists "favicon-32x32.png" }}
+    <link href="{{ relLangURL `favicon-32x32.png` | safeURL }}" rel="icon" sizes="32x32" type="image/png">
 {{ end }}
 
 {{ if fileExists "safari-pinned-tab.svg" }}
