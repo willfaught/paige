@@ -27,6 +27,6 @@ Paige is designed to put your content front and center, avoiding the typical clu
     <a class="lead" href="https://github.com/willfaught/paige">Install it now.</a>
 </p>
 
-<div class="column-gap-3 d-flex display-6 justify-content-center mb-3 paige-social">
+<div class="column-gap-3 d-flex display-6 justify-content-center mb-3">
     {{< paige/icon class="bi bi-github" name="GitHub" url="https://github.com/willfaught/paige" >}}
 </div>
