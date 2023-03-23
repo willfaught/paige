@@ -1,17 +1,36 @@
 {{ $page := . }}
 
-<link href="{{ relLangURL `apple-touch-icon.png` | safeURL }}" rel="apple-touch-icon" sizes="180x180">
-<link href="{{ relLangURL `favicon-16x16.png` | safeURL }}" rel="icon" sizes="16x16" type="image/png">
-<link href="{{ relLangURL `favicon-32x32.png` | safeURL }}" rel="icon" sizes="32x32" type="image/png">
+{{ if fileExists "apple-touch-icon.png" }}
+    <link href="{{ relLangURL `apple-touch-icon.png` | safeURL }}" rel="apple-touch-icon" sizes="180x180">
+{{ end }}
+
+{{ if fileExists "favicon-16x16.png" }}
+    <link href="{{ relLangURL `favicon-16x16.png` | safeURL }}" rel="icon" sizes="16x16" type="image/png">
+{{ end }}
+
+{{ if fileExists "favicon-32x32.png" }}
+    <link href="{{ relLangURL `favicon-32x32.png` | safeURL }}" rel="icon" sizes="32x32" type="image/png">
+{{ end }}
 
 {{ if ne (relLangURL "favicon.ico") "/favicon.ico" }}
     <link href="{{ relLangURL `favicon.ico` | safeURL }}" rel="shortcut icon">
 {{ end }}
 
-<link href="{{ relLangURL `favicon.png` | safeURL }}" rel="icon" type="image/png">
-<link href="{{ relLangURL `favicon.svg` | safeURL }}" rel="icon" type="image/svg+xml">
-<link color="{{ $page.Param `paige.color` | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
-<link href="{{ (resources.Get `site.webmanifest` | resources.ExecuteAsTemplate `site.webmanifest` .).RelPermalink | safeURL }}" rel="manifest">
+{{ if fileExists "favicon.png" }}
+    <link href="{{ relLangURL `favicon.png` | safeURL }}" rel="icon" type="image/png">
+{{ end }}
+
+{{ if fileExists "favicon.svg" }}
+    <link href="{{ relLangURL `favicon.svg` | safeURL }}" rel="icon" type="image/svg+xml">
+{{ end }}
+
+{{ if fileExists "safari-pinned-tab.svg" }}
+    <link color="{{ $page.Param `paige.color` | default `#0d6efd` }}" href="{{ relLangURL `safari-pinned-tab.svg` | safeURL }}" rel="mask-icon">
+{{ end }}
+
+{{ if fileExists "site.webmanifest" }}
+    <link href="{{ (resources.Get `site.webmanifest` | resources.ExecuteAsTemplate `site.webmanifest` .).RelPermalink | safeURL }}" rel="manifest">
+{{ end }}
 
 {{ partial "paige/link.html" (dict "href" "_paige/bootstrap/paige.scss" "page" $page "sass" true) }}
 {{ partial "paige/link.html" (dict "href" "_paige/bootstrap-icons/bootstrap-icons.css") }}
