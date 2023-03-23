@@ -863,6 +863,8 @@ Page and sub-page classes:
     <dd>The reading time.</dd>
     <dt><code>.paige-series</code></dt>
     <dd>The series.</dd>
+    <dt><code>.paige-social</code></dt>
+    <dd>Social icon links.</dd>
     <dt><code>.paige-summary</code></dt>
     <dd>The summary.</dd>
     <dt><code>.paige-title</code></dt>
