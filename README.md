@@ -501,6 +501,53 @@ Parameters:
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
 
+### Hero
+
+The `paige/hero` shortcode provides a hero section.
+
+```
+{{< paige/hero
+    alt="My alt"
+    header="My header"
+    height="10rem"
+    image="https://github.com/willfaught/paige"
+    imageclass="rounded-4 shadow"
+    maxheight="10rem"
+    maxwidth="10rem"
+    title="My title"
+    width="10rem"
+>}}
+My content
+{{< /paige/hero >}}
+```
+
+Inner content: Optional. String. Markdown. The body.
+
+Parameters:
+
+<dl>
+    <dt><code>alt</code></dt>
+    <dd>Optional. String. Plain text. Image alt.</dd>
+    <dt><code>header</code></dt>
+    <dd>Optional. String. Markdown. The header.</dd>
+    <dt><code>height</code></dt>
+    <dd>Optional. String. CSS value. Image height.</dd>
+    <dt><code>image</code></dt>
+    <dd>Optional. String. URL. Image source.</dd>
+    <dt><code>imageclass</code></dt>
+    <dd>Optional. String. Class attribute value.</dd>
+    <dt><code>maxheight</code></dt>
+    <dd>Optional. String. CSS value. Image maximum height. Default is <code>20rem</code>.</dd>
+    <dt><code>maxwidth</code></dt>
+    <dd>Optional. String. CSS value. Image maximum width.</dd>
+    <dt><code>stretch</code></dt>
+    <dd>Optional. Boolean. Whether to stretch the image fully horizontally.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. String. Plain text. Image title.</dd>
+    <dt><code>width</code></dt>
+    <dd>Optional. String. CSS value. Image width.</dd>
+</dl>
+
 ### Icon
 
 The `paige/icon` shortcode provides a web font icon.
