@@ -15,6 +15,7 @@ title: "Paige"
 
 {{< paige/hero
     alt="Landscape"
+    format="webp"
     header="An advanced Hugo theme"
     image="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296"
     imageclass="rounded-4 shadow"
