@@ -315,7 +315,7 @@ paige:
 
 ## Features
 
-An optional menu can be configured for root pages and sections.
+An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
 
 Example `config.yaml`:
