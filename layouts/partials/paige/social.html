@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-<span class="paige-social">
+<span>
     {{ range $k, $v := $page.Param "paige.social" }}
         {{ if hasPrefix $v.link "mailto:" }}
             <a class="mx-2" href="#" data-a="{{ base64Encode (index (split $v.url `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $v.url `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)"><i class="{{ $v.class }}"><span class="visually-hidden">{{ $v.name }}</span></i></a>

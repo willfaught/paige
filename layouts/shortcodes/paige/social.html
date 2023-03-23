@@ -1,0 +1,7 @@
+{{ $page := .Page }}
+
+{{ if $page.Param "paige.social" }}
+    <p class="display-6 paige-social text-center">
+        {{ partial "paige/social.html" $page }}
+    </p>
+{{ end }}
