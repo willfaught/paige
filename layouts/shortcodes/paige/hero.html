@@ -1,5 +1,6 @@
 {{ $alt := .Get "alt" }}
 {{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" | markdownify }}
+{{ $format := .Get "format" }}
 {{ $header := .Get "header" | markdownify }}
 {{ $height := .Get "height" }}
 {{ $image := .Get "image" }}
@@ -29,6 +30,7 @@
                 "class" $imageclass
                 "height" $height
                 "fetchpriority" "high"
+                "format" $format
                 "loading" "eager"
                 "maxheight" $maxheight
                 "maxwidth" $maxwidth

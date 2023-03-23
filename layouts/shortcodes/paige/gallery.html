@@ -1,4 +1,5 @@
 {{ $align := .Get "align" | default "center" }}
+{{ $format := .Get "format" }}
 {{ $height := .Get "height" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
@@ -44,6 +45,7 @@
                             {{ partial "paige/a.html" (dict
                                 "content" (partial "paige/img.html" (dict
                                     "class" "img-fluid"
+                                    "format" $format
                                     "height" $height
                                     "maxheight" $maxheight
                                     "maxwidth" $maxwidth
@@ -68,6 +70,7 @@
                     {{ partial "paige/a.html" (dict
                         "content" (partial "paige/img.html" (dict
                             "class" "img-fluid"
+                            "format" $format
                             "height" $height
                             "maxheight" $maxheight
                             "maxwidth" $maxwidth

@@ -456,6 +456,7 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
 ```
 {{< paige/gallery
     align="center"
+    format="webp"
     height="10rem"
     images="*.jpg"
     justify="center"
@@ -481,6 +482,8 @@ Parameters:
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>. Must not be used when nested.</dd>
+    <dt><code>format</code></dt>
+    <dd>Optional. String. Image format. Must be <code>bmp</code>, <code>gif</code>, <code>jpg</code>, <code>png</code>, <code>tiff</code>, or <code>webp</code>. Must not be used with <code>method</code> or <code>options</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>images</code></dt>
@@ -508,6 +511,7 @@ The `paige/hero` shortcode provides a hero section.
 ```
 {{< paige/hero
     alt="My alt"
+    format="webp"
     header="My header"
     height="10rem"
     image="https://github.com/willfaught/paige"
@@ -528,6 +532,8 @@ Parameters:
 <dl>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
+    <dt><code>format</code></dt>
+    <dd>Optional. String. Image format. Must be <code>bmp</code>, <code>gif</code>, <code>jpg</code>, <code>png</code>, <code>tiff</code>, or <code>webp</code>. Must not be used with <code>method</code> or <code>options</code>.</dd>
     <dt><code>header</code></dt>
     <dd>Optional. String. Markdown. The header.</dd>
     <dt><code>height</code></dt>
@@ -576,6 +582,7 @@ The `paige/image` shortcode provides a figure with an image.
 ```
 {{< paige/image
     alt="My alt" >}}
+    format="webp"
     height="10rem"
     link="https://github.com/willfaught/paige"
     maxheight="10rem"
@@ -595,6 +602,8 @@ Parameters:
 <dl>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
+    <dt><code>format</code></dt>
+    <dd>Optional. String. Image format. Must be <code>bmp</code>, <code>gif</code>, <code>jpg</code>, <code>png</code>, <code>tiff</code>, or <code>webp</code>. Must not be used with <code>method</code> or <code>options</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>

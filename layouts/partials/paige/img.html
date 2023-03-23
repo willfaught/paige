@@ -5,6 +5,7 @@
 {{ $crossorigin := $params.crossorigin | default "anonymous" }}
 {{ $fetchpriority := $params.fetchpriority }}
 {{ $fingerprint := $params.fingerprint | default true }}
+{{ $format := $params.format }}
 {{ $height := $params.height }}
 {{ $loading := $params.loading | default "lazy" }}
 {{ $maxheight := $params.maxheight }}
@@ -31,6 +32,11 @@
 {{ end }}
 
 {{ with $resource }}
+    {{ if and (not $method) (not $options) $format }}
+        {{ $method = "resize" }}
+        {{ $options = printf "%dx%d %s" $resource.Width $resource.Height $format }}
+    {{ end }}
+
     {{ if and $method $options }}
         {{ if eq $method "crop" }}
             {{ $resource = $resource.Crop $options }}
