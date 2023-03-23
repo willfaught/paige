@@ -561,6 +561,27 @@ Parameters:
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
 
+### Icon
+
+The `paige/icon` shortcode provides a web font icon.
+
+```
+{{< paige/icon class="bi bi-github" name="GitHub" url="https://github.com/willfaught/paige" >}}
+```
+
+Inner content: None.
+
+Parameters:
+
+<dl>
+    <dt><code>class</code></dt>
+    <dd>Required. Position 0. String. Class attribute value.</dd>
+    <dt><code>name</code></dt>
+    <dd>Optional. String. The screen reader description.</dd>
+    <dt><code>url</code></dt>
+    <dd>Optional. String. URL. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
+</dl>
+
 ### Vimeo
 
 The `paige/vimeo` shortcode provides a responsive Vimeo video.
@@ -889,6 +910,8 @@ Shortcode classes:
     <dd>The container element of <code>paige/figure</code> shortcodes.</dd>
     <dt><code>.paige-gallery</code></dt>
     <dd>The container element of <code>paige/gallery</code> shortcodes.</dd>
+    <dt><code>.paige-icon</code></dt>
+    <dd>The container element of <code>paige/icon</code> shortcodes.</dd>
     <dt><code>.paige-image</code></dt>
     <dd>The container element of <code>paige/image</code> shortcodes.</dd>
     <dt><code>.paige-quote</code></dt>

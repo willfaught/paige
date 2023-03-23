@@ -1,0 +1,23 @@
+{{ $class := .Get 0 | default (.Get "class") }}
+{{ $name := .Get "name" }}
+{{ $url := .Get "url" }}
+
+{{ if not $class }}
+    {{ errorf "paige/icon: invalid class" }}
+{{ end }}
+
+<span class="paige-icon">
+    {{ with $url -}}
+        {{- if hasPrefix . "mailto:" -}}
+            <a href="#" data-a="{{ base64Encode (index (split . `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split . `@`) 1) }}" onclick="this.href = atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)">
+        {{- else -}}
+            <a href="{{ . }}">
+        {{- end -}}
+    {{- end -}}
+
+    <i class="{{ $class }}">{{ with $name }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
+
+    {{- if $url -}}
+        </a>
+    {{- end }}
+</span>
