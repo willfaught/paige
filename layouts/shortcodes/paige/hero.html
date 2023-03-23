@@ -16,13 +16,12 @@
         {{ $classes := split $imageclass " "}}
 
         {{ if $stretch }}
-            {{ $classes = $classes | append "w-100" }}
+            {{ $classes = $classes | append "object-fit-cover w-100" }}
         {{ else }}
             {{ $classes = $classes | append "mw-100" }}
         {{ end }}
 
         {{ $imageclass = delimit $classes " " }}
-        {{ $style := cond ($stretch | not) "" "object-fit: cover" }}
 
         <p {{ if or (not $stretch) $width }} class="text-center paige-hero-image" {{ end }}>
             {{ partial "paige/img.html" (dict
@@ -35,7 +34,6 @@
                 "maxwidth" $maxwidth
                 "page" $page
                 "src" .
-                "style" $style
                 "title" $title
                 "width" $width
             ) }}
