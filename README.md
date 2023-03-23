@@ -356,31 +356,6 @@ Example `content/tags/_index.md`:
 layout: "paige/cloud"
 ```
 
-### Home
-
-The `paige/home` layout provides a home page.
-
-Example `content/_index.md`:
-
-```yaml
-layout: "paige/home"
-paige:
-  home:
-    blurb: "" # Displayed below the greeting
-    greeting: "" # Displayed below the image
-    image:
-      alt: "" # Image alt
-      height: "" # CSS unit; image height
-      stretch: false # Stretch the image fully horizontally if true; center the image otherwise
-      url: "" # Local or remote resource glob
-      width: "" # CSS unit; image width
-  social:
-    examplesite:
-      class: "" # Examples are "bi bi-emoji-smile" and "fa-regular fa-face-smile"
-      name: "" # Example is "Example"
-      url: "" # Example is "https://example.com/username"
-```
-
 The assigned values shown are the default values.
 
 ### Search
