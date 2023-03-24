@@ -7,6 +7,7 @@
 {{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
+{{ $template := $params.template }}
 
 {{ $enablesourcemap := not hugo.IsProduction }}
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
@@ -16,7 +17,13 @@
 {{ end }}
 
 {{ with partial "paige/resource.html" (dict "page" $page "url" $href) }}
-    {{ $resource := resources.ExecuteAsTemplate $href (or $page dict) . }}
+    {{ $resource := . }}
+
+    {{ if $template }}
+        {{ $split := path.Split $href }}
+        {{ $join := path.Join $split.Dir (print (sha1 $page) "-" $split.File) }}
+        {{ $resource = resources.ExecuteAsTemplate $join (or $page dict) . }}
+    {{ end }}
 
     {{ if $sass }}
         {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $includepaths "outputStyle" $outputstyle "transpiler" "dartsass") }}
