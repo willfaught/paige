@@ -1,0 +1,48 @@
+paige_breadcrumbs:
+  other: 面包屑
+
+paige_collections:
+  other: 收藏品
+
+paige_figure:
+  other: 数字
+
+paige_aria_page_link:
+  other: 链接至此页
+
+paige_aria_section_link:
+  other: 链接至本节
+
+paige_minutes:
+  one: 分钟
+  other: 几分钟
+
+paige_noscript:
+  other: 需要 JavaScript 
+
+paige_pages:
+  other: 页数
+
+paige_pinned_page:
+  other: 固定页面
+
+paige_search_button:
+  other: 搜索
+
+paige_search_error:
+  other: 错误
+
+paige_search_input:
+  other: 询问
+
+paige_search_nothing:
+  other: 搜索没有结果
+
+paige_search_searching:
+  other: 搜索...
+
+paige_search_something:
+  other: 搜索到一些结果。
+
+paige_sections:
+  other: 部分
