@@ -3,7 +3,7 @@
 {{ with .Ancestors }}
     <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="mt-3" id="paige-breadcrumbs">
         <div class="d-flex justify-content-center">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb mb-0">
                 {{ range .Reverse }}
                     <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title | markdownify}}</a></li>
                 {{ end }}
