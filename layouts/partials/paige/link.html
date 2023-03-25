@@ -22,7 +22,7 @@
     {{ if $template }}
         {{ $split := path.Split $href }}
         {{ $join := path.Join $split.Dir (print (sha1 $page) "-" $split.File) }}
-        {{ $resource = resources.ExecuteAsTemplate $join (or $page dict) . }}
+        {{ $resource = resources.ExecuteAsTemplate $join $page . }}
     {{ end }}
 
     {{ if $sass }}
