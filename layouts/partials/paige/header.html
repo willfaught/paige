@@ -1,14 +1,16 @@
 {{ $page := . }}
 
-<header id="paige-header">
-    {{ if templates.Exists "partials/paige/header-first.html" }}
-        {{ partial "paige/header-first.html" $page }}
-    {{ end }}
+{{ if or $page.Ancestors site.Menus.main }}
+    <header id="paige-header">
+        {{ if templates.Exists "partials/paige/header-first.html" }}
+            {{ partial "paige/header-first.html" $page }}
+        {{ end }}
 
-    {{ partial "paige/menu.html" $page }}
-    {{ partial "paige/breadcrumbs.html" . }}
+        {{ partial "paige/menu.html" $page }}
+        {{ partial "paige/breadcrumbs.html" . }}
 
-    {{ if templates.Exists "partials/paige/header-last.html" }}
-        {{ partial "paige/header-last.html" $page }}
-    {{ end }}
-</header>
+        {{ if templates.Exists "partials/paige/header-last.html" }}
+            {{ partial "paige/header-last.html" $page }}
+        {{ end }}
+    </header>
+{{ end }}
