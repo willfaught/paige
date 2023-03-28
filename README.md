@@ -94,27 +94,7 @@ Please share your deployed sites by [posting links](https://github.com/willfaugh
     $ sudo snap install hugo
     ```
 
-2. [Install Node](https://nodejs.org/en/download/).
-
-    For Homebrew on Mac:
-
-    ```sh
-    $ brew install node
-    ```
-
-    For Chocolatey on Windows:
-
-    ```sh
-    $ choco install nodejs
-    ```
-
-    For Snap on Linux:
-
-    ```sh
-    $ sudo snap install node
-    ```
-
-3. [Install Embedded Dart Sass](https://github.com/sass/dart-sass-embedded/releases).
+2. [Install Embedded Dart Sass](https://github.com/sass/dart-sass-embedded/releases).
 
     For Homebrew on Mac:
 
@@ -134,13 +114,13 @@ Please share your deployed sites by [posting links](https://github.com/willfaugh
     $ sudo snap install dart-sass-embedded
     ```
 
-4. Create a site:
+3. Create a site:
 
     ```sh
     $ hugo new site yourproject
     ```
 
-5. Create a post:
+4. Create a post:
 
     ```sh
     $ cd yourproject

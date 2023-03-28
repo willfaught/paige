@@ -26,7 +26,6 @@ jobs:
       - name: Build
         run: |
           cd exampleSite
-          npm install
           hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --themesDir ../..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -46,7 +45,6 @@ jobs:
   #     - name: Build
   #       run: |
   #         cd exampleSite
-  #         npm install
   #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --themesDir ../..
   deploy:
     environment:
