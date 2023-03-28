@@ -131,14 +131,6 @@ See [Hugo's quick start guide](https://gohugo.io/getting-started/quick-start/) f
 
 ## Install
 
-Example `config.yaml`:
-
-```yaml
-module:
-  imports:
-  - path: "github.com/willfaught/paige"
-```
-
 Install:
 
 ```sh
@@ -152,6 +144,14 @@ Update:
 ```sh
 $ cd yourproject
 $ hugo mod get -u
+```
+
+Example `config.yaml`:
+
+```yaml
+module:
+  imports:
+  - path: "github.com/willfaught/paige"
 ```
 
 ## Run
