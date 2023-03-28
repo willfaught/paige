@@ -524,15 +524,17 @@ The `paige/image` shortcode provides a figure with an image.
 
 ```
 {{< paige/image
-    alt="My alt" >}}
-    format="webp"
+    alt="My alt"
+    breakpoints=true
+    densities="1x 1.5x 2x 2.5x 3x"
     height="10rem"
     link="https://github.com/willfaught/paige"
     maxheight="10rem"
     maxwidth="10rem"
-    method="resize"
-    options="550x webp picture Lanczos"
+    process="resize 550x webp picture lanczos"
+    sizes="(max-width: 123px) 123px, 456px"
     src="me.jpg"
+    srcset="pic-123.jpg 123w, pic-456.jpg 456w"
     title="My title"
     width="10rem"
 >}}
@@ -545,8 +547,10 @@ Parameters:
 <dl>
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
-    <dt><code>format</code></dt>
-    <dd>Optional. String. Image format. Must be <code>bmp</code>, <code>gif</code>, <code>jpg</code>, <code>png</code>, <code>tiff</code>, or <code>webp</code>. Must not be used with <code>method</code> or <code>options</code>.</dd>
+    <dt><code>breakpoints</code></dt>
+    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint.</dd>
+    <dt><code>densities</code></dt>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density is the size of the original image. Examples: <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, <code>0.5x 1.33x 6x 10x</code>. Must not be set with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>
@@ -555,12 +559,14 @@ Parameters:
     <dd>Optional. String. CSS value. Image maximum height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Image maximum width.</dd>
-    <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Must be specified with <code>options</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
-    <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Must be specified with <code>method</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
+    <dt><code>process</code></dt>
+    <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
+    <dt><code>sizes</code></dt>
+    <dd>Optional. String. The img sizes attribute value.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image source.</dd>
+    <dt><code>srcset</code></dt>
+    <dd>Optional. String. The img srcset attribute value.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>

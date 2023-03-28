@@ -1,12 +1,14 @@
 {{ $alt := .Get "alt" }}
-{{ $format := .Get "format" }}
+{{ $breakpoints := .Get "breakpoints" }}
+{{ $densities := .Get "densities" }}
 {{ $height := .Get "height" }}
 {{ $link := .Get "link" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
-{{ $method := .Get "method" }}
-{{ $options := .Get "options" }}
+{{ $process := .Get "process" }}
+{{ $sizes := .Get "sizes" }}
 {{ $src := .Get 0 | default (.Get "src") }}
+{{ $srcset := .Get "srcset" }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 
@@ -16,15 +18,17 @@
 
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt
+    "breakpoints" $breakpoints
     "class" "img-fluid"
-    "format" $format
+    "densities" $densities
     "height" $height
     "maxheight" $maxheight
     "maxwidth" $maxwidth
-    "method" $method
-    "options" $options
+    "process" $process
     "page" .Page
+    "sizes" $sizes
     "src" $src
+    "srcset" $srcset
     "title" $title
     "width" $width
 ) }}
