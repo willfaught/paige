@@ -46,11 +46,11 @@ Our default branch is for development of our Bootstrap 5 release. Head to the [`
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/twbs/bootstrap/archive/v5.3.0-alpha1.zip)
+- [Download the latest release](https://github.com/twbs/bootstrap/archive/v5.3.0-alpha2.zip)
 - Clone the repo: `git clone https://github.com/twbs/bootstrap.git`
-- Install with [npm](https://www.npmjs.com/): `npm install bootstrap@v5.3.0-alpha1`
-- Install with [yarn](https://yarnpkg.com/): `yarn add bootstrap@v5.3.0-alpha1`
-- Install with [Composer](https://getcomposer.org/): `composer require twbs/bootstrap:5.3.0-alpha1`
+- Install with [npm](https://www.npmjs.com/): `npm install bootstrap@v5.3.0-alpha2`
+- Install with [yarn](https://yarnpkg.com/): `yarn add bootstrap@v5.3.0-alpha2`
+- Install with [Composer](https://getcomposer.org/): `composer require twbs/bootstrap:5.3.0-alpha2`
 - Install with [NuGet](https://www.nuget.org/): CSS: `Install-Package bootstrap` Sass: `Install-Package bootstrap.sass`
 
 Read the [Getting started page](https://getbootstrap.com/docs/5.3/getting-started/introduction/) for information on the framework contents, templates, examples, and more.
@@ -72,7 +72,6 @@ Read the [Getting started page](https://getbootstrap.com/docs/5.3/getting-starte
 [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=SkxZcStBeExEdVJqQ2hWYnlWckpkNmNEY213SFp6WHFETWk2bGFuY3pCbz0tLXhqbHJsVlZhQnRBdEpod3NLSDMzaHc9PQ==--3d0b75245708616eb93113221beece33e680b229)](https://www.browserstack.com/automate/public-build/SkxZcStBeExEdVJqQ2hWYnlWckpkNmNEY213SFp6WHFETWk2bGFuY3pCbz0tLXhqbHJsVlZhQnRBdEpod3NLSDMzaHc9PQ==--3d0b75245708616eb93113221beece33e680b229)
 [![Backers on Open Collective](https://img.shields.io/opencollective/backers/bootstrap?logo=opencollective&logoColor=fff)](#backers)
 [![Sponsors on Open Collective](https://img.shields.io/opencollective/sponsors/bootstrap?logo=opencollective&logoColor=fff)](#sponsors)
-![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/twbs/bootstrap)
 
 
 ## What's included
@@ -145,7 +144,7 @@ Have a bug or a feature request? Please first read the [issue guidelines](https:
 
 Bootstrap's documentation, included in this repo in the root directory, is built with [Hugo](https://gohugo.io/) and publicly hosted on GitHub Pages at <https://getbootstrap.com/>. The docs may also be run locally.
 
-Documentation search is powered by [Algolia's DocSearch](https://docsearch.algolia.com/). Working on our search? Be sure to set `debug: true` in `site/assets/js/search.js`.
+Documentation search is powered by [Algolia's DocSearch](https://docsearch.algolia.com/).
 
 ### Running documentation locally
 
@@ -244,4 +243,4 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 ## Copyright and license
 
-Code and documentation copyright 2011–2022 the [Bootstrap Authors](https://github.com/twbs/bootstrap/graphs/contributors). Code released under the [MIT License](https://github.com/twbs/bootstrap/blob/main/LICENSE). Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
+Code and documentation copyright 2011–2023 the [Bootstrap Authors](https://github.com/twbs/bootstrap/graphs/contributors). Code released under the [MIT License](https://github.com/twbs/bootstrap/blob/main/LICENSE). Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
