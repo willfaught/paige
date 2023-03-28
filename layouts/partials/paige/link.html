@@ -20,9 +20,10 @@
     {{ $resource := . }}
 
     {{ if $template }}
+        {{ $context := dict "color" ($page.Param "paige.color" | default "#0d6efd") }}
         {{ $split := path.Split $href }}
-        {{ $join := path.Join $split.Dir (print (sha1 $page) "-" $split.File) }}
-        {{ $resource = resources.ExecuteAsTemplate $join $page . }}
+        {{ $join := path.Join $split.Dir (print (printf "%#v" $context | sha1) "-" $split.File) }}
+        {{ $resource = resources.ExecuteAsTemplate $join $context . }}
     {{ end }}
 
     {{ if $sass }}

@@ -1,6 +1,6 @@
-{{ $page := . }}
+{{ $params := . }}
 
 $color-mode-type: media-query;
-$primary: {{ $page.Param "paige.color" | default "#0d6efd" }};
+$primary: {{ $params.color }};
 
 @import "bootstrap";
