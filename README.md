@@ -21,18 +21,24 @@ It's a versatile canvas that serves most web needs.
 - Blog
 - Bootstrap
 - Categories
+- Code shortcode
 - Comments
 - Customizable
 - Dark color scheme
 - E-mail protection
 - Facebook sharing
+- Figure shortcode
+- Gallery shortcode
 - Header links
+- Icon shortcode
+- Image shortcode
 - Landing page
 - Languages
 - Light color scheme
 - Math typesetting
 - Menu
 - Minimal design
+- Quote shortcode
 - RSS with full content
 - Responsive
 - Right-to-left languages
@@ -47,6 +53,8 @@ It's a versatile canvas that serves most web needs.
 - Tags
 - Twitter sharing
 - Validated with [PageSpeed](https://pagespeed.web.dev/report?url=https%3A%2F%2Fwillfaught.com%2Fpaige%2F&form_factor=desktop) and [Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwillfaught.com%2Fpaige%2F)
+- Vimeo shortcode
+- YouTube shortcode
 
 ## Community
 
