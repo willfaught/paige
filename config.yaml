@@ -19,8 +19,6 @@ module:
   - source: "static"
     target: "static"
   # Bootstrap
-  - source: "assets/_paige/bootstrap/scss/_vendor"
-    target: "assets/_paige/bootstrap/scss/vendor"
   - source: "paige/node_modules/bootstrap/dist/css"
     target: "assets/_paige/bootstrap"
     includeFiles: ["/bootstrap.css"]
