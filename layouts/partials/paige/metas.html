@@ -21,7 +21,11 @@
 {{ end }}
 
 <meta content="{{ $page.Param `paige.color` | default `#0d6efd` }}" name="msapplication-TileColor">
-<meta content="{{ (resources.Get `browserconfig.xml` | resources.ExecuteAsTemplate `browserconfig.xml` .).RelPermalink }}" name="msapplication-config">
+
+{{ if fileExists "assets/browserconfig.xml" }}
+    <meta content="{{ (resources.Get `browserconfig.xml` | resources.ExecuteAsTemplate `browserconfig.xml` .).RelPermalink }}" name="msapplication-config">
+{{ end }}
+
 <meta content="{{ $page.Param `paige.color` | default `#0d6efd` }}" name="theme-color">
 <meta content="width=device-width, initial-scale=1" name="viewport">
 
