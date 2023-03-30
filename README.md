@@ -300,8 +300,6 @@ Example `content/tags/_index.md`:
 layout: "paige/cloud"
 ```
 
-The assigned values shown are the default values.
-
 ### Search
 
 The `paige/search` layout provides a search page.
