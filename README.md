@@ -261,6 +261,7 @@ paige:
 
 An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
+A menu item with the URL `/` only matches a `/` path.
 
 Example `config.yaml`:
 
