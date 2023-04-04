@@ -178,6 +178,8 @@ paige:
       account_id: ""
     clicky: # See https://clicky.com
       account_id: ""
+    counter: # See https://counter.dev/
+      account_id: ""
     fathom: # See https://usefathom.com
       account_id: ""
     finteza: # See https://finteza.com
