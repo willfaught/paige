@@ -168,6 +168,8 @@ There is a single parameter object with sensible defaults that can be overridden
 ```yaml
 paige:
   analytics:
+    beam: # See https://beamanalytics.io/
+      token: ""
     chartbeat: # See https://chartbeat.com
       account_id: ""
       domain: ""
