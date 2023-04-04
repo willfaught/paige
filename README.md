@@ -190,6 +190,8 @@ paige:
       host_url: ""
     mixpanel: # See https://mixpanel.com
       token: ""
+    pirsch: # See https://pirsch.io/
+      identification_code: ""
     plausible: # See https://plausible.io
       account_id: ""
     woopra: # See https://woopra.com
