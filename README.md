@@ -174,6 +174,8 @@ paige:
       account_id: ""
       domain: ""
     disabled: false # Disable all analytics
+    clarity: # See https://clarity.microsoft.com/
+      account_id: ""
     clicky: # See https://clicky.com
       account_id: ""
     fathom: # See https://usefathom.com
