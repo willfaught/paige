@@ -1,0 +1,5 @@
+{{ $page := . }}
+
+{{ with $page.Param "paige.analytics.beam" }}
+    <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="{{ .token }}" async></script>
+{{ end }}
