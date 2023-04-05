@@ -166,17 +166,17 @@ There is a single parameter object with sensible defaults that can be overridden
 ```yaml
 paige:
   analytics:
-    beam: # See https://beamanalytics.io/
+    beam: # See https://beamanalytics.io
       token: ""
     chartbeat: # See https://chartbeat.com
       account_id: ""
       domain: ""
     disabled: false # Disable all analytics
-    clarity: # See https://clarity.microsoft.com/
+    clarity: # See https://clarity.microsoft.com
       account_id: ""
     clicky: # See https://clicky.com
       account_id: ""
-    counter: # See https://counter.dev/
+    counter: # See https://counter.dev
       account_id: ""
     fathom: # See https://usefathom.com
       account_id: ""
@@ -190,7 +190,7 @@ paige:
       host_url: ""
     mixpanel: # See https://mixpanel.com
       token: ""
-    pirsch: # See https://pirsch.io/
+    pirsch: # See https://pirsch.io
       identification_code: ""
     plausible: # See https://plausible.io
       account_id: ""
