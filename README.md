@@ -180,6 +180,7 @@ paige:
       account_id: ""
     counter: # See https://counter.dev
       account_id: ""
+      utc_offset: "" # GMT +/- local timezone
     fathom: # See https://usefathom.com
       account_id: ""
     finteza: # See https://finteza.com
