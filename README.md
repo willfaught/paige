@@ -163,105 +163,125 @@ See [Hugo's quick start guide](https://gohugo.io/getting-started/quick-start/) f
 
 There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
 
-```yaml
-paige:
-  analytics:
-    beam: # See https://beamanalytics.io
-      token: ""
-    chartbeat: # See https://chartbeat.com
-      account_id: ""
-      domain: ""
-    disabled: false # Disable all analytics
-    clarity: # See https://clarity.microsoft.com
-      account_id: ""
-    clicky: # See https://clicky.com
-      account_id: ""
-    counter: # See https://counter.dev
-      account_id: ""
-      utc_offset: "" # Local UTC offset; examples are "-7", "0", "7"
-    fathom: # See https://usefathom.com
-      account_id: ""
-    finteza: # See https://finteza.com
-      account_id: ""
-      script_url: ""
-    hotjar: # See https://hotjar.com
-      account_id: ""
-    matomo: # See https://matomo.org
-      account_id: ""
-      host_url: ""
-    mixpanel: # See https://mixpanel.com
-      token: ""
-    pirsch: # See https://pirsch.io
-      identification_code: ""
-    plausible: # See https://plausible.io
-      account_id: ""
-    woopra: # See https://woopra.com
-      domain: ""
-    yandex: # See https://metrica.yandex.com
-      account_id: ""
-  color: "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
-  comments:
-    cactus: # See https://cactus.chat
-      account_id: ""
-    commento: # See https://commento.io
-      script_url: ""
-    disabled: false # Disable all comments
-    hyvor: # See https://hyvor.com
-      account_id: ""
-    intensedebate: # See https://intensedebate.com
-      account_id: ""
-    isso: # See https://isso-comments.de
-      script_url: ""
-    remark42: # See https://remark42.com
-      host_url: ""
-      site_id: ""
-    replybox: # See https://getreplybox.com
-      account_id: ""
-    utterances: # See https://utteranc.es
-      github_repo: ""
-  date:
-    format: ":date_long" # Hugo date format
-    source: "published" # Displayed date in single pages; must be "published" or "modified"
-  git:
-    commit_url: "" # Example is "https://github.com/willfaught/paige/commit/%s"
-  math: false # Enable math typesetting
-  menu:
-    breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
-    style: "pills" # Must be "links", "pills", "tabs", or "underline"
-  rss:
-    hide_page: false
-    managing_editor: ""
-    web_master: ""
-  search:
-    hide_page: false
-  style: "" # CSS included at the end of the stylesheet, before style-last.css
+```toml
+[paige]
+color = "#0d6efd" # Bootstrap primary color; theme color for Safari and Windows
+math = false # Enable math typesetting
+style = "" # CSS included at the end of the stylesheet, before style-last.css
+
+[paige.analytics]
+disabled = false # Disable all analytics
+
+[paige.analytics.chartbeat] # See https://chartbeat.com
+account_id = ""
+domain = ""
+
+[paige.analytics.clicky] # See https://clicky.com
+account_id = ""
+
+[paige.analytics.fathom] # See https://usefathom.com
+account_id = ""
+
+[paige.analytics.finteza] # See https://finteza.com
+account_id = ""
+script_url = ""
+
+[paige.analytics.hotjar] # See https://hotjar.com
+account_id = ""
+
+[paige.analytics.matomo] # See https://matomo.org
+account_id = ""
+host_url = ""
+
+[paige.analytics.mixpanel] # See https://mixpanel.com
+token = ""
+
+[paige.analytics.plausible] # See https://plausible.io
+account_id = ""
+
+[paige.analytics.woopra] # See https://woopra.com
+domain = ""
+
+[paige.analytics.yandex] # See https://metrica.yandex.com
+account_id = ""
+
+[paige.comments]
+disabled = false # Disable all comments
+
+[paige.comments.cactus] # See https://cactus.chat
+account_id = ""
+
+[paige.comments.commento] # See https://commento.io
+script_url = ""
+
+[paige.comments.hyvor] # See https://hyvor.com
+account_id = ""
+
+[paige.comments.intensedebate] # See https://intensedebate.com
+account_id = ""
+
+[paige.comments.isso] # See https://isso-comments.de
+script_url = ""
+
+[paige.comments.remark42] # See https://remark42.com
+host_url = ""
+site_id = ""
+
+[paige.comments.replybox] # See https://getreplybox.com
+account_id = ""
+
+[paige.comments.utterances] # See https://utteranc.es
+github_repo = ""
+
+[paige.date]
+format = ":date_long" # Hugo date format
+source = "published" # Displayed date in single pages; must be "published" or "modified"
+
+[paige.git]
+commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
+
+[paige.menu]
+breakpoint = "sm" # Bootstrap breakpoint at which to display all menu items
+style = "pills" # Must be "links", "pills", "tabs", or "underline"
+
+[paige.rss]
+hide_page = false
+managing_editor = ""
+web_master = ""
+
+[paige.search]
+hide_page = false
 ```
 
 The assigned values shown are the default values.
 
 Optional site parameters:
 
-```yaml
-authors:
-  will-faught:
-    name: "Will Faught"
-    default: false # Credit this author in pages that have no authors parameter
+```toml
+[authors.will-faught]
+name = "Will Faught"
+default = false # Credit this author in pages that have no authors parameter
 ```
 
 Optional page parameters:
 
-```yaml
-authors:
-- "will-faught" # Credit the corresponding author in the site parameters
-- author: "will-faught" # Credit the corresponding author in the site parameters
-- name: "Will Faught" # Credit this author
-link: "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
-paige:
-  alert: "Alert!" # Markdown displayed before the page body (defaults to primary alert type)
-  alert:
-    message: "Alert!" # Markdown displayed before the page body
-    type: "primary" # Bootstrap alert type
-  pin: true # Display this page before the rest
+```toml
+authors = ["will-faught"] # Credit the corresponding author in the site parameters
+link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
+
+[[authors]]
+author = "will-faught" # Credit the corresponding author in the site parameters
+
+[[authors]]
+name = "Will Faught" # Credit this author
+
+[paige]
+alert = "Alert!" # Markdown displayed before the page body (defaults to primary alert type)
+pin = true # Display this page before the rest
+
+[paige.alert]
+message = "Alert!" # Markdown displayed before the page body
+type = "primary" # Bootstrap alert type
 ```
 
 ## Features
@@ -270,30 +290,35 @@ An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
 
-Example `config.yaml`:
+Example `config.toml`:
 
-```yaml
-languages:
-  en:
-    menu:
-      main:
-      - identifier: "home"
-        name: "Home"
-        url: "/"
-        weight: 10
-      - identifier: "blog"
-        name: "Blog"
-        url: "/blog/"
-        weight: 20
-      - identifier: "tags"
-        name: "Tags"
-        url: "/tags/"
-        weight: 30
-      - identifier: "search"
-        name: "Search"
-        url: "/search/"
-        weight: 40
-    weight: 10
+```toml
+[languages.en]
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/blog/"
+weight = 20
+
+[[languages.en.menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 30
+
+[[languages.en.menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 40
 ```
 
 ## Layouts
@@ -304,26 +329,26 @@ The `paige/cloud` layout provides a link cloud for sub-pages.
 
 Example `content/tags/_index.md`:
 
-```yaml
-layout: "paige/cloud"
+```toml
+layout = "paige/cloud"
 ```
 
 ### Search
 
 The `paige/search` layout provides a search page.
 
-Example `config.yaml`:
+Example `config.toml`:
 
-```yaml
-outputs:
-  home: ["html", "json", "rss"]
+```toml
+[outputs]
+home = ["html", "json", "rss"]
 ```
 
 Example `content/search.md`:
 
-```yaml
-layout: "paige/search"
-title: "Search"
+```toml
+layout = "paige/search"
+title = "Search"
 ```
 
 ## Shortcodes
