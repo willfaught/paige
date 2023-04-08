@@ -285,8 +285,6 @@ message = "Alert!" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert type
 ```
 
-## Features
-
 An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
