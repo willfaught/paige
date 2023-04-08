@@ -218,7 +218,7 @@ paige:
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items
-    style: "pills" # Must be "links", "pills", or "underline"
+    style: "pills" # Must be "links", "pills", "tabs", or "underline"
   rss:
     hide_page: false
     managing_editor: ""
