@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: |
           cd exampleSite
-          hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --themesDir ../..
+          hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --theme paige --themesDir ../..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -45,7 +45,7 @@ jobs:
   #     - name: Build
   #       run: |
   #         cd exampleSite
-  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --themesDir ../..
+  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify --theme paige --themesDir ../..
   deploy:
     environment:
       name: github-pages
