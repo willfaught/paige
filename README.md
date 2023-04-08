@@ -437,8 +437,6 @@ Parameters:
     <dd>Optional. String. CSS value. Image maximum width.</dd>
     <dt><code>process</code></dt>
     <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
-    <dt><code>stretch</code></dt>
-    <dd>Optional. Boolean. Whether to stretch the image fully horizontally.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>

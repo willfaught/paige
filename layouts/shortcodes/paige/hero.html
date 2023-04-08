@@ -8,23 +8,12 @@
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $page := .Page }}
 {{ $process := .Get "process" }}
-{{ $stretch := .Get "stretch" }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 
 <div class="paige-hero">
     {{ with $image }}
-        {{ $classes := split $imageclass " "}}
-
-        {{ if $stretch }}
-            {{ $classes = $classes | append "object-fit-cover w-100" }}
-        {{ else }}
-            {{ $classes = $classes | append "mw-100" }}
-        {{ end }}
-
-        {{ $imageclass = delimit $classes " " }}
-
-        <p {{ if or (not $stretch) $width }} class="text-center paige-hero-image" {{ end }}>
+        <p class="text-center paige-hero-image">
             {{ partial "paige/img.html" (dict
                 "alt" $alt
                 "class" $imageclass
