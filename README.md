@@ -75,7 +75,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
 ## Setup
 
-1. [Install Hugo](https://gohugo.io/installation/) (the extended version is required).
+1. [Install Hugo](https://gohugo.io/installation/) (the extended version).
 
     For Homebrew on Mac:
 
