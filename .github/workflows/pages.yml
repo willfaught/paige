@@ -50,6 +50,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.pages.outputs.base_url }}
+    if: github.ref == 'refs/heads/master'
     needs: build-linux
     runs-on: ubuntu-latest
     steps:
