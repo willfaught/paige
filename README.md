@@ -324,14 +324,7 @@ title: "Search"
 The `paige/code` shortcode provides a figure with code.
 
 ```
-{{< paige/code lang="html" options="linenos=true" >}}
-<!doctype html>
-<html lang="en">
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /paige/code >}}
+{{< paige/code lang="" options="" >}} {{< /paige/code >}}
 ```
 
 Inner content: Required. String. The code.
@@ -350,19 +343,7 @@ Parameters:
 The `paige/figure` shortcode provides a figure with content.
 
 ```
-{{< paige/figure
-    caption="My caption"
-    float="left"
-    height="10rem"
-    horizontal="center"
-    maxwidth="10rem"
-    number=0
-    numbered=false
-    vertical="center"
-    width="10rem"
->}}
-My content
-{{< /paige/figure >}}
+{{< paige/figure caption="" float="" height="" horizontal="" maxwidth="" number=0 numbered=false vertical="" width="" >}} {{< /paige/figure >}}
 ```
 
 Inner content: Required. String. Markdown. The content.
@@ -395,25 +376,7 @@ Parameters:
 The `paige/gallery` shortcode provides a figure with a collection of images.
 
 ```
-{{< paige/gallery
-    align="center"
-    format="webp"
-    height="10rem"
-    images="*.jpg"
-    justify="center"
-    maxheight="10rem"
-    maxwidth="10rem"
-    method="resize"
-    options="550x webp picture Lanczos"
-    type="list"
-    width="10rem"
-/>}}
-
-{{< paige/gallery >}}
-{{< paige/image src="1.jpg" >}}
-{{< paige/image src="2.jpg" >}}
-{{< paige/image src="3.jpg" >}}
-{{< /paige/gallery >}}
+{{< paige/gallery align="" format="" height="" images="" justify="" maxheight="" maxwidth="" method="" options="" type="" width="" >}} {{< /paige/gallery >}}
 ```
 
 Inner content: Optional. String. HTML.
@@ -450,20 +413,7 @@ Parameters:
 The `paige/hero` shortcode provides a hero section.
 
 ```
-{{< paige/hero
-    alt="My alt"
-    format="webp"
-    header="My header"
-    height="10rem"
-    image="https://github.com/willfaught/paige"
-    imageclass="rounded-4 shadow"
-    maxheight="10rem"
-    maxwidth="10rem"
-    title="My title"
-    width="10rem"
->}}
-My content
-{{< /paige/hero >}}
+{{< paige/hero alt="" format="" header="" height="" image="" imageclass="" maxheight="" maxwidth="" title="" width="" >}} {{< /paige/hero >}}
 ```
 
 Inner content: Optional. String. Markdown. The body.
@@ -500,7 +450,7 @@ Parameters:
 The `paige/icon` shortcode provides a web font icon.
 
 ```
-{{< paige/icon class="bi bi-github" name="GitHub" url="https://github.com/willfaught/paige" >}}
+{{< paige/icon class="" name="" url="" >}}
 ```
 
 Inner content: None.
@@ -509,11 +459,11 @@ Parameters:
 
 <dl>
     <dt><code>class</code></dt>
-    <dd>Required. Position 0. String. Class attribute value.</dd>
+    <dd>Required. Position 0. String. Class attribute value. Example is <code>bi bi-github</code>.</dd>
     <dt><code>name</code></dt>
-    <dd>Optional. String. The screen reader description.</dd>
+    <dd>Optional. String. The screen reader description. Example is <code>GitHub</code></dd>
     <dt><code>url</code></dt>
-    <dd>Optional. String. URL. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
+    <dd>Optional. String. URL. Example is <code>https://github.com/willfaught/paige</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
 
 ### Image
@@ -521,21 +471,7 @@ Parameters:
 The `paige/image` shortcode provides a figure with an image.
 
 ```
-{{< paige/image
-    alt="My alt"
-    breakpoints=true
-    densities="1x 1.5x 2x 2.5x 3x"
-    height="10rem"
-    link="https://github.com/willfaught/paige"
-    maxheight="10rem"
-    maxwidth="10rem"
-    process="resize 550x webp picture lanczos"
-    sizes="(max-width: 123px) 123px, 456px"
-    src="me.jpg"
-    srcset="pic-123.jpg 123w, pic-456.jpg 456w"
-    title="My title"
-    width="10rem"
->}}
+{{< paige/image alt="" breakpoints=false densities="" height="" link="" maxheight="" maxwidth="" process="" sizes="" src="" srcset="" title="" width="" >}}
 ```
 
 Inner content: None.
@@ -576,9 +512,7 @@ Parameters:
 The `paige/quote` shortcode provides a figure with a quotation.
 
 ```
-{{< paige/quote >}}
-My content
-{{< /paige/quote >}}
+{{< paige/quote >}} {{< /paige/quote >}}
 ```
 
 Inner content: Required. String. Markdown. The quotation.
@@ -590,34 +524,7 @@ Parameters: None.
 The `paige/vimeo` shortcode provides a responsive Vimeo video.
 
 ```
-{{< paige/vimeo
-    autopause=true
-    autoplay=false
-    background=false
-    byline=true
-    color="00adef"
-    controls=true
-    description="My description"
-    dnt=false
-    fullscreen=true
-    height="10rem"
-    keyboard=true
-    loop=false
-    maxheight="10rem"
-    maxwidth="10rem"
-    muted=false
-    pip=false
-    playsinline=true
-    portrait=true
-    quality="auto"
-    speed=false
-    texttrack=false
-    time="1m2s"
-    title=true
-    transparent=true
-    video="644036051"
-    width="10rem"
->}}
+{{< paige/vimeo autopause=false autoplay=false background=false byline=false color="" controls=false description="" dnt=false fullscreen=false height="" keyboard=false loop=false maxheight="" maxwidth="" muted=false pip=false playsinline=false portrait=false quality="" speed=false texttrack=false time="" title=false transparent=false video="" width="" >}}
 ```
 
 Inner content: None.
@@ -686,22 +593,7 @@ See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/3600014944
 The `paige/youtube` shortcode provides a responsive YouTube video.
 
 ```
-{{< paige/youtube
-    autoplay=false
-    controls=true
-    description="YouTube video"
-    end=0
-    fullscreen=true
-    height="10rem"
-    list="PL2WkvfelorAFjpzGUWc4OWAWmiJpwL97L"
-    loop=false
-    maxheight="10rem"
-    maxwidth="10rem"
-    mute=false
-    start=0
-    video="dQw4w9WgXcQ"
-    width="10rem"
->}}
+{{< paige/youtube autoplay=false controls=false description="" end=0 fullscreen=false height="" list="" loop=false maxheight="" maxwidth="" mute=false start=0 video="" width="" >}}
 ```
 
 Inner content: None.
