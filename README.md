@@ -943,7 +943,7 @@ try the following in your `layouts/partials/paige/style-first.css`:
 
 ```
 
-## Design
+## Implementation
 
 The HTML author is the page authors.
 
@@ -967,8 +967,6 @@ The copyright notice, title, and description can be Markdown. Markup is stripped
 The page title is displayed in an `h1` tag, so page content headers must start with `h2`.
 
 The page date is the publish date.
-
-## Implementation
 
 The following NPM packages are used:
 
