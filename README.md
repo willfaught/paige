@@ -35,6 +35,7 @@ It's a versatile canvas that serves most web needs.
 - Gallery shortcode
 - Header links
 - Icon shortcode
+- Icons shortcode
 - Image shortcode
 - Landing page
 - Languages
@@ -540,6 +541,20 @@ Parameters:
     <dt><code>url</code></dt>
     <dd>Optional. String. URL. Example is <code>https://github.com/willfaught/paige</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
+
+### Icons
+
+The `paige/icons` shortcode presents a sequence of `paige/icon`.
+
+```
+{{< paige/icons >}}
+
+{{< /paige/icons >}}
+```
+
+Inner content: The sequence of `paige/icon`.
+
+Parameters: None.
 
 ### Image
 
