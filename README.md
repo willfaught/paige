@@ -290,7 +290,7 @@ An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
 
-Example `yoursite/config.toml`:
+Example configuration in `yoursite/config.toml`:
 
 ```toml
 [languages.en]
@@ -327,7 +327,7 @@ weight = 40
 
 The `paige/cloud` layout provides a link cloud for sub-pages.
 
-Example `yoursite/content/tags/_index.md`:
+Example configuration in `yoursite/content/tags/_index.md`:
 
 ```toml
 layout = "paige/cloud"
@@ -337,14 +337,14 @@ layout = "paige/cloud"
 
 The `paige/search` layout provides a search page.
 
-Example `yoursite/config.toml`:
+Example configuration in `yoursite/config.toml`:
 
 ```toml
 [outputs]
 home = ["html", "json", "rss"]
 ```
 
-Example `yoursite/content/search.md`:
+Example configuration in `yoursite/content/search.md`:
 
 ```toml
 layout = "paige/search"
