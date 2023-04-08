@@ -73,7 +73,7 @@ please share it by [posting code or screenshots](https://github.com/willfaught/p
 If you deploy a site,
 please share it by [posting a link](https://github.com/willfaught/paige/discussions/12).
 
-## Get started with Hugo
+## Setup
 
 1. [Install Hugo](https://gohugo.io/installation/) (the extended version is required).
 
@@ -125,42 +125,35 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
     ```sh
     $ cd yourproject
-    $ hugo new my-post.md
+    $ hugo new yourpost.md
+    ```
+
+5. Install the Paige module:
+
+    ```sh
+    $ cd yourproject
+    $ hugo mod init github.com/youraccount/yourproject
+    $ hugo mod get github.com/willfaught/paige
+    ```
+
+6. Import the Paige module:
+
+    ```sh
+    $ cd yourproject
+    $ cat >>config.toml <<EOF
+    [[module.imports]]
+    path = "github.com/willfaught/paige"
+    EOF
+    ```
+
+7. Build and run the site:
+
+    ```sh
+    $ cd yourproject
+    $ hugo server -D
     ```
 
 See [Hugo's quick start guide](https://gohugo.io/getting-started/quick-start/) for more information.
-
-## Install
-
-Install:
-
-```sh
-$ cd yourproject
-$ hugo mod init github.com/youraccount/yourproject
-$ hugo mod get github.com/willfaught/paige
-```
-
-Update:
-
-```sh
-$ cd yourproject
-$ hugo mod get -u
-```
-
-Example `config.yaml`:
-
-```yaml
-module:
-  imports:
-  - path: "github.com/willfaught/paige"
-```
-
-## Run
-
-```sh
-$ cd yourproject
-$ hugo server -D
-```
 
 ## Configure
 
