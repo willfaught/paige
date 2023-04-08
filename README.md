@@ -471,53 +471,6 @@ Parameters:
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
 
-### Hero
-
-The `paige/hero` shortcode provides a hero section.
-
-```
-{{< paige/hero
-    alt=""
-    header=""
-    height=""
-    image=""
-    imageclass=""
-    maxheight=""
-    maxwidth=""
-    process=""
-    title=""
-    width="" >}}
-
-{{< /paige/hero >}}
-```
-
-Inner content: Optional. String. Markdown. The body.
-
-Parameters:
-
-<dl>
-    <dt><code>alt</code></dt>
-    <dd>Optional. String. Plain text. Image alt.</dd>
-    <dt><code>header</code></dt>
-    <dd>Optional. String. Markdown. The header.</dd>
-    <dt><code>height</code></dt>
-    <dd>Optional. String. CSS value. Image height.</dd>
-    <dt><code>image</code></dt>
-    <dd>Optional. String. URL. Image source.</dd>
-    <dt><code>imageclass</code></dt>
-    <dd>Optional. String. Image class.</dd>
-    <dt><code>maxheight</code></dt>
-    <dd>Optional. String. CSS value. Image maximum height.</dd>
-    <dt><code>maxwidth</code></dt>
-    <dd>Optional. String. CSS value. Image maximum width.</dd>
-    <dt><code>process</code></dt>
-    <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
-    <dt><code>title</code></dt>
-    <dd>Optional. String. Plain text. Image title.</dd>
-    <dt><code>width</code></dt>
-    <dd>Optional. String. CSS value. Image width.</dd>
-</dl>
-
 ### Icon
 
 The `paige/icon` shortcode provides a web font icon.
