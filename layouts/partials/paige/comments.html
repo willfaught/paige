@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ if $page.Param "paige.comments.disabled" | not }}
+{{ if $page.Param "paige.comments.disable" | not }}
     {{ template "_internal/disqus.html" $page }}
     {{ partial "paige/comments/cactus.html" $page }}
     {{ partial "paige/comments/commento.html" $page }}

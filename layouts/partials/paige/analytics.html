@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ if $page.Param "paige.analytics.disabled" | not }}
+{{ if $page.Param "paige.analytics.disable" | not }}
     {{ partial "paige/analytics/beam.html" $page }}
     {{ partial "paige/analytics/chartbeat.html" $page }}
     {{ partial "paige/analytics/clarity.html" $page }}

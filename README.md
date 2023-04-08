@@ -170,7 +170,7 @@ math = false # Enable math typesetting
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.analytics]
-disabled = false # Disable all analytics
+disable = false # Disable all analytics
 
 [paige.analytics.chartbeat] # See https://chartbeat.com
 account_id = ""
@@ -206,7 +206,7 @@ domain = ""
 account_id = ""
 
 [paige.comments]
-disabled = false # Disable all comments
+disable = false # Disable all comments
 
 [paige.comments.cactus] # See https://cactus.chat
 account_id = ""
