@@ -162,6 +162,8 @@ See [Hugo's quick start guide](https://gohugo.io/getting-started/quick-start/) f
 
 ## Configure
 
+### Parameters
+
 There is a single parameter object with sensible defaults that can be overridden in site or page parameters:
 
 ```toml
@@ -284,6 +286,8 @@ pin = true # Display this page before the rest
 message = "Alert!" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert type
 ```
+
+### Menu
 
 An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
