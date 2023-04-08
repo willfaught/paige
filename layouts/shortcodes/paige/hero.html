@@ -1,6 +1,5 @@
 {{ $alt := .Get "alt" }}
 {{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" | markdownify }}
-{{ $format := .Get "format" }}
 {{ $header := .Get "header" | markdownify }}
 {{ $height := .Get "height" }}
 {{ $image := .Get "image" }}
@@ -8,6 +7,7 @@
 {{ $maxheight := .Get "maxheight" | default "20rem" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $page := .Page }}
+{{ $process := .Get "process" }}
 {{ $stretch := .Get "stretch" }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
@@ -29,12 +29,12 @@
                 "alt" $alt
                 "class" $imageclass
                 "fetchpriority" "high"
-                "format" $format
                 "height" $height
                 "loading" "eager"
                 "maxheight" $maxheight
                 "maxwidth" $maxwidth
                 "page" $page
+                "process" $process
                 "src" .
                 "title" $title
                 "width" $width
