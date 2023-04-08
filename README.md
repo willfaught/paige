@@ -430,7 +430,7 @@ Parameters:
     <dt><code>image</code></dt>
     <dd>Optional. String. URL. Image source.</dd>
     <dt><code>imageclass</code></dt>
-    <dd>Optional. String. Class attribute value.</dd>
+    <dd>Optional. String. Image class.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Image maximum height.</dd>
     <dt><code>maxwidth</code></dt>
@@ -457,7 +457,7 @@ Parameters:
 
 <dl>
     <dt><code>class</code></dt>
-    <dd>Required. Position 0. String. Class attribute value. Example is <code>bi bi-github</code>.</dd>
+    <dd>Required. Position 0. String. <code>&lt;i&gt;</code> class. Example is <code>bi bi-github</code>.</dd>
     <dt><code>name</code></dt>
     <dd>Optional. String. The screen reader description. Example is <code>GitHub</code></dd>
     <dt><code>url</code></dt>
@@ -494,11 +494,11 @@ Parameters:
     <dt><code>process</code></dt>
     <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
     <dt><code>sizes</code></dt>
-    <dd>Optional. String. The img sizes attribute value.</dd>
+    <dd>Optional. String. Image sizes.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>srcset</code></dt>
-    <dd>Optional. String. The img srcset attribute value.</dd>
+    <dd>Optional. String. Image srcset.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>
