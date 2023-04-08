@@ -5,7 +5,7 @@ Powerful, pliable pixel perfection. An advanced Hugo theme. [Try it out.](https:
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/willfaught/paige/raw/master/images/screenshot-dark.jpg">
     <source media="(prefers-color-scheme: light)" srcset="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg">
-    <img alt="Screenshot" src="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg" style="margin-bottom: 8px">
+    <img alt="Screenshot" src="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg">
 </picture>
 
 Paige is designed to put your content front and center,
