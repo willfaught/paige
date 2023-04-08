@@ -566,14 +566,17 @@ Parameters:
 The `paige/quote` shortcode provides a figure with a quotation.
 
 ```
-{{< paige/quote >}}
+{{< paige/quote cite="" >}}
 
 {{< /paige/quote >}}
 ```
 
 Inner content: Required. String. Markdown. The quotation.
 
-Parameters: None.
+Parameters:
+
+<dt><code>cite</code></dt>
+<dd>Optional. String. Plain text. Citation.</dd>
 
 ### Vimeo
 
