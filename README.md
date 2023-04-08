@@ -538,7 +538,7 @@ Parameters:
     <dt><code>breakpoints</code></dt>
     <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint.</dd>
     <dt><code>densities</code></dt>
-    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density is the size of the original image. Examples: <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, <code>0.5x 1.33x 6x 10x</code>. Must not be set with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density is the size of the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, <code>0.5x 1.33x 6x 10x</code>. Must not be set with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>
