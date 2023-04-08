@@ -214,7 +214,7 @@ paige:
     format: ":date_long" # Hugo date format
     source: "published" # Displayed date in single pages; must be "published" or "modified"
   git:
-    commit_url_prefix: "" # Example is "https://github.com/willfaught/paige/commit/"
+    commit_url: "" # Example is "https://github.com/willfaught/paige/commit/%s"
   math: false # Enable math typesetting
   menu:
     breakpoint: "sm" # Bootstrap breakpoint at which to display all menu items

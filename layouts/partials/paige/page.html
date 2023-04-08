@@ -19,8 +19,8 @@
 {{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.RelPermalink }}
 
-{{ if and (.Param "paige.git.commit_url_prefix") .GitInfo }}
-    {{ $commiturl = print (.Param "paige.git.commit_url_prefix") .GitInfo.Hash }}
+{{ if and (.Param "paige.git.commit_url") .GitInfo }}
+    {{ $commiturl = printf (.Param "paige.git.commit_url") .GitInfo.Hash }}
 {{ end }}
 
 {{ if $draft }}
