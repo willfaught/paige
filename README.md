@@ -324,7 +324,11 @@ title: "Search"
 The `paige/code` shortcode provides a figure with code.
 
 ```
-{{< paige/code lang="" options="" >}} {{< /paige/code >}}
+{{< paige/code
+    lang=""
+    options="" >}}
+
+{{< /paige/code >}}
 ```
 
 Inner content: Required. String. The code.
@@ -343,7 +347,18 @@ Parameters:
 The `paige/figure` shortcode provides a figure with content.
 
 ```
-{{< paige/figure caption="" float="" height="" horizontal="" maxwidth="" number=0 numbered=false vertical="" width="" >}} {{< /paige/figure >}}
+{{< paige/figure
+    caption=""
+    float=""
+    height=""
+    horizontal=""
+    maxwidth=""
+    number=0
+    numbered=false
+    vertical=""
+    width="" >}}
+
+{{< /paige/figure >}}
 ```
 
 Inner content: Required. String. Markdown. The content.
@@ -376,7 +391,20 @@ Parameters:
 The `paige/gallery` shortcode provides a figure with a collection of images.
 
 ```
-{{< paige/gallery align="" format="" height="" images="" justify="" maxheight="" maxwidth="" method="" options="" type="" width="" >}} {{< /paige/gallery >}}
+{{< paige/gallery
+    align=""
+    format=""
+    height=""
+    images=""
+    justify=""
+    maxheight=""
+    maxwidth=""
+    method=""
+    options=""
+    type=""
+    width="" >}}
+
+{{< /paige/gallery >}}
 ```
 
 Inner content: Optional. String. HTML.
@@ -413,7 +441,19 @@ Parameters:
 The `paige/hero` shortcode provides a hero section.
 
 ```
-{{< paige/hero alt="" header="" height="" image="" imageclass="" maxheight="" maxwidth="" process="" title="" width="" >}} {{< /paige/hero >}}
+{{< paige/hero
+    alt=""
+    header=""
+    height=""
+    image=""
+    imageclass=""
+    maxheight=""
+    maxwidth=""
+    process=""
+    title=""
+    width="" >}}
+
+{{< /paige/hero >}}
 ```
 
 Inner content: Optional. String. Markdown. The body.
@@ -448,7 +488,10 @@ Parameters:
 The `paige/icon` shortcode provides a web font icon.
 
 ```
-{{< paige/icon class="" name="" url="" >}}
+{{< paige/icon
+    class=""
+    name=""
+    url="" >}}
 ```
 
 Inner content: None.
@@ -469,7 +512,20 @@ Parameters:
 The `paige/image` shortcode provides a figure with an image.
 
 ```
-{{< paige/image alt="" breakpoints=false densities="" height="" link="" maxheight="" maxwidth="" process="" sizes="" src="" srcset="" title="" width="" >}}
+{{< paige/image
+    alt=""
+    breakpoints=false
+    densities=""
+    height=""
+    link=""
+    maxheight=""
+    maxwidth=""
+    process=""
+    sizes=""
+    src=""
+    srcset=""
+    title=""
+    width="" >}}
 ```
 
 Inner content: None.
@@ -510,7 +566,9 @@ Parameters:
 The `paige/quote` shortcode provides a figure with a quotation.
 
 ```
-{{< paige/quote >}} {{< /paige/quote >}}
+{{< paige/quote >}}
+
+{{< /paige/quote >}}
 ```
 
 Inner content: Required. String. Markdown. The quotation.
@@ -522,7 +580,33 @@ Parameters: None.
 The `paige/vimeo` shortcode provides a responsive Vimeo video.
 
 ```
-{{< paige/vimeo autopause=false autoplay=false background=false byline=false color="" controls=false description="" dnt=false fullscreen=false height="" keyboard=false loop=false maxheight="" maxwidth="" muted=false pip=false playsinline=false portrait=false quality="" speed=false texttrack=false time="" title=false transparent=false video="" width="" >}}
+{{< paige/vimeo
+    autopause=false
+    autoplay=false
+    background=false
+    byline=false
+    color=""
+    controls=false
+    description=""
+    dnt=false
+    fullscreen=false
+    height=""
+    keyboard=false
+    loop=false
+    maxheight=""
+    maxwidth=""
+    muted=false
+    pip=false
+    playsinline=false
+    portrait=false
+    quality=""
+    speed=false
+    texttrack=false
+    time=""
+    title=false
+    transparent=false
+    video=""
+    width="" >}}
 ```
 
 Inner content: None.
@@ -591,7 +675,21 @@ See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/3600014944
 The `paige/youtube` shortcode provides a responsive YouTube video.
 
 ```
-{{< paige/youtube autoplay=false controls=false description="" end=0 fullscreen=false height="" list="" loop=false maxheight="" maxwidth="" mute=false start=0 video="" width="" >}}
+{{< paige/youtube
+    autoplay=false
+    controls=false
+    description=""
+    end=0
+    fullscreen=false
+    height=""
+    list=""
+    loop=false
+    maxheight=""
+    maxwidth=""
+    mute=false
+    start=0
+    video=""
+    width="" >}}
 ```
 
 Inner content: None.
