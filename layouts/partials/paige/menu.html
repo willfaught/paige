@@ -3,6 +3,7 @@
 {{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
 {{ $breakpoint := $page.Param "paige.menu.breakpoint" | default "sm" }}
 {{ $pills := false }}
+{{ $underline := false }}
 
 {{ if eq $basepath "/" }}
     {{ $basepath = "" }}
@@ -13,6 +14,8 @@
 {{ with $page.Param "paige.menu.style" }}
     {{ if eq . "pills" }}
         {{ $pills = true }}
+    {{ else if eq . "underline" }}
+        {{ $underline = true }}
     {{ else if ne . "links" }}
         {{ errorf "paige/menu: invalid menu style: %q" . }}
     {{ end }}
@@ -26,7 +29,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
-            <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ end }}">
+            <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ else if $underline }} nav-underline {{ end }}">
                 {{ range . }}
                     {{ $menupath := strings.TrimPrefix $basepath .URL }}
                     {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
