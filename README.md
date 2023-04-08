@@ -432,7 +432,7 @@ Parameters:
     <dt><code>imageclass</code></dt>
     <dd>Optional. String. Class attribute value.</dd>
     <dt><code>maxheight</code></dt>
-    <dd>Optional. String. CSS value. Image maximum height. Default is <code>20rem</code>.</dd>
+    <dd>Optional. String. CSS value. Image maximum height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Image maximum width.</dd>
     <dt><code>process</code></dt>
