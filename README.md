@@ -538,7 +538,7 @@ Parameters:
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>breakpoints</code></dt>
-    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint.</dd>
+    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not be set with <code>densities</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>densities</code></dt>
     <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not be set with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>height</code></dt>
@@ -552,11 +552,11 @@ Parameters:
     <dt><code>process</code></dt>
     <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
     <dt><code>sizes</code></dt>
-    <dd>Optional. String. Image sizes.</dd>
+    <dd>Optional. String. Image sizes. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>srcset</code></dt>
-    <dd>Optional. String. Image srcset.</dd>
+    <dd>Optional. String. Image srcset. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>
