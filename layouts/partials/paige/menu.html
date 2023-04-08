@@ -2,7 +2,6 @@
 
 {{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
 {{ $breakpoint := $page.Param "paige.menu.breakpoint" | default "sm" }}
-{{ $links := false }}
 {{ $pills := false }}
 
 {{ if eq $basepath "/" }}
@@ -12,11 +11,9 @@
 {{ $pagepath := strings.TrimPrefix $basepath $page.RelPermalink }}
 
 {{ with $page.Param "paige.menu.style" }}
-    {{ if eq . "links" }}
-        {{ $links = true }}
-    {{ else if eq . "pills" }}
+    {{ if eq . "pills" }}
         {{ $pills = true }}
-    {{ else }}
+    {{ else if ne . "links" }}
         {{ errorf "paige/menu: invalid menu style: %q" . }}
     {{ end }}
 {{ else }}
@@ -37,7 +34,7 @@
                     {{ $sectionprefix := (and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section))) }}
                     {{ $active := or $home $menuprefix $sectionprefix }}
 
-                    <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} link-secondary {{ end }} {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+                    <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
                 {{ end }}
             </div>
         </div>
