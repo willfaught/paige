@@ -178,7 +178,7 @@ paige:
       account_id: ""
     counter: # See https://counter.dev
       account_id: ""
-      utc_offset: "" # GMT +/- local timezone
+      utc_offset: "" # Local UTC offset; examples are "-7", "0", "7"
     fathom: # See https://usefathom.com
       account_id: ""
     finteza: # See https://finteza.com
