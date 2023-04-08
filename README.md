@@ -290,7 +290,7 @@ An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
 
-Example `config.toml`:
+Example `yoursite/config.toml`:
 
 ```toml
 [languages.en]
@@ -327,7 +327,7 @@ weight = 40
 
 The `paige/cloud` layout provides a link cloud for sub-pages.
 
-Example `content/tags/_index.md`:
+Example `yoursite/content/tags/_index.md`:
 
 ```toml
 layout = "paige/cloud"
@@ -337,14 +337,14 @@ layout = "paige/cloud"
 
 The `paige/search` layout provides a search page.
 
-Example `config.toml`:
+Example `yoursite/config.toml`:
 
 ```toml
 [outputs]
 home = ["html", "json", "rss"]
 ```
 
-Example `content/search.md`:
+Example `yoursite/content/search.md`:
 
 ```toml
 layout = "paige/search"
@@ -768,20 +768,20 @@ Parameters:
 
 ### Include
 
-| If this file exists in the site            | It is included at               |
-| ------------------------------------------ | ------------------------------- |
-| `layouts/partials/paige/body-first.html`   | The beginning of the body tag   |
-| `layouts/partials/paige/body-last.html`    | The end of the body tag         |
-| `layouts/partials/paige/footer-first.html` | The beginning of the footer tag |
-| `layouts/partials/paige/footer-last.html`  | The end of the footer tag       |
-| `layouts/partials/paige/head-first.html`   | The beginning of the head tag   |
-| `layouts/partials/paige/head-last.html`    | The end of the head tag         |
-| `layouts/partials/paige/header-first.html` | The beginning of the header tag |
-| `layouts/partials/paige/header-last.html`  | The end of the header tag       |
-| `layouts/partials/paige/main-first.html`   | The beginning of the main tag   |
-| `layouts/partials/paige/main-last.html`    | The end of the main tag         |
-| `layouts/partials/paige/style-first.css`   | The beginning of the style tag  |
-| `layouts/partials/paige/style-last.css`    | The end of the style tag        |
+| If this file exists                                 | It is included at               |
+| --------------------------------------------------- | ------------------------------- |
+| `yoursite/layouts/partials/paige/body-first.html`   | The beginning of the body tag   |
+| `yoursite/layouts/partials/paige/body-last.html`    | The end of the body tag         |
+| `yoursite/layouts/partials/paige/footer-first.html` | The beginning of the footer tag |
+| `yoursite/layouts/partials/paige/footer-last.html`  | The end of the footer tag       |
+| `yoursite/layouts/partials/paige/head-first.html`   | The beginning of the head tag   |
+| `yoursite/layouts/partials/paige/head-last.html`    | The end of the head tag         |
+| `yoursite/layouts/partials/paige/header-first.html` | The beginning of the header tag |
+| `yoursite/layouts/partials/paige/header-last.html`  | The end of the header tag       |
+| `yoursite/layouts/partials/paige/main-first.html`   | The beginning of the main tag   |
+| `yoursite/layouts/partials/paige/main-last.html`    | The end of the main tag         |
+| `yoursite/layouts/partials/paige/style-first.css`   | The beginning of the style tag  |
+| `yoursite/layouts/partials/paige/style-last.css`    | The end of the style tag        |
 
 ### Override
 
