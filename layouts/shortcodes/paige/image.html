@@ -1,8 +1,11 @@
 {{ $alt := .Get "alt" }}
 {{ $breakpoints := .Get "breakpoints" }}
+{{ $class := .Get "class" }}
 {{ $densities := .Get "densities" }}
+{{ $fetchpriority := .Get "fetchpriority" }}
 {{ $height := .Get "height" }}
 {{ $link := .Get "link" }}
+{{ $loading := .Get "loading" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $process := .Get "process" }}
@@ -16,12 +19,23 @@
     {{ errorf "paige/image: no content" }}
 {{ end }}
 
+{{ if $class }}
+    {{ $class = split $class " " }}
+{{ else }}
+    {{ $class = slice }}
+{{ end }}
+
+{{ $class = $class | append "img-fluid" | uniq | sort }}
+{{ $class = delimit $class " " }}
+
 {{ $content := partial "paige/img.html" (dict
     "alt" $alt
     "breakpoints" $breakpoints
-    "class" "img-fluid"
+    "class" $class
     "densities" $densities
+    "fetchpriority" $fetchpriority
     "height" $height
+    "loading" $loading
     "maxheight" $maxheight
     "maxwidth" $maxwidth
     "process" $process
