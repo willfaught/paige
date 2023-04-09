@@ -71,17 +71,17 @@ Result:
 
 {{< paige/image maxwidth="10rem" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 
-## Method and options parameters
+## Process parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/image link="https://github.com/willfaught/paige" method="resize" options="550x webp picture Lanczos" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+{{</* paige/image process="550x lanczos picture resize webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 ```
 
 Result:
 
-{{< paige/image link="https://github.com/willfaught/paige" method="resize" options="550x webp picture Lanczos" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+{{< paige/image process="550x lanczos picture resize webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 
 ## Src parameter
 
