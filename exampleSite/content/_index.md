@@ -31,6 +31,6 @@ title: "Paige"
     <a class="lead" href="https://github.com/willfaught/paige">Install it now.</a>
 </p>
 
-{{< paige/icons >}}
-{{< paige/icon class="bi bi-github" name="GitHub" url="https://github.com/willfaught/paige" >}}
-{{< /paige/icons >}}
+<div class="column-gap-3 d-flex display-6 justify-content-center mb-3">
+    {{< paige/icon class="bi bi-github" name="GitHub" url="https://github.com/willfaught/paige" >}}
+</div>
