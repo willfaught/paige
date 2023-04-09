@@ -429,14 +429,12 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
 ```
 {{< paige/gallery
     align=""
-    format=""
     height=""
     images=""
     justify=""
     maxheight=""
     maxwidth=""
-    method=""
-    options=""
+    process=""
     type=""
     width="" >}}
 
@@ -450,8 +448,6 @@ Parameters:
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>.</dd>
-    <dt><code>format</code></dt>
-    <dd>Optional. String. Image format. Must be <code>bmp</code>, <code>gif</code>, <code>jpg</code>, <code>png</code>, <code>tiff</code>, or <code>webp</code>. Must not be used with <code>method</code> or <code>options</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>images</code></dt>
@@ -462,10 +458,8 @@ Parameters:
     <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum image width.</dd>
-    <dt><code>method</code></dt>
-    <dd>Optional. String. Hugo image processing method. Must be <code>crop</code>, <code>fill</code>, <code>fit</code>, or <code>resize</code>. Default is <code>resize</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a>.</dd>
-    <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo image processing options. Default is <code>550x webp picture Lanczos</code>. See the <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>.</dd>
+    <dt><code>process</code></dt>
+    <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Grid and list layouts use the horizontal axis as the main axis, and the vertical axis as the cross axis. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>

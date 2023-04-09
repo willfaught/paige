@@ -197,17 +197,17 @@ Result:
 
 {{< paige/gallery images="*-2.jpg" maxwidth="20rem" />}}
 
-## Method and options parameters
+## Process parameter
 
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="*-2.jpg" method="fill" options="550x550 r90 webp picture Lanczos" /*/>}}
+{{</* paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r90 webp" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="*-2.jpg" method="fill" options="550x550 r90 webp picture Lanczos" />}}
+{{< paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r90 webp" />}}
 
 ## Type
 

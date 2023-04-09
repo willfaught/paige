@@ -1,12 +1,10 @@
 {{ $align := .Get "align" | default "center" }}
-{{ $format := .Get "format" }}
 {{ $height := .Get "height" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
-{{ $method := .Get "method" | default "resize" }}
-{{ $options := .Get "options" | default "550x webp picture Lanczos" }}
+{{ $process := .Get "process" }}
 {{ $type := .Get "type" | default "rows" }}
 {{ $width := .Get "width" }}
 
@@ -45,12 +43,10 @@
                             {{ partial "paige/a.html" (dict
                                 "content" (partial "paige/img.html" (dict
                                     "class" "img-fluid"
-                                    "format" $format
                                     "height" $height
                                     "maxheight" $maxheight
                                     "maxwidth" $maxwidth
-                                    "method" $method
-                                    "options" $options
+                                    "process" $process
                                     "resource" .
                                     "width" $width
                                 ))
@@ -70,12 +66,10 @@
                     {{ partial "paige/a.html" (dict
                         "content" (partial "paige/img.html" (dict
                             "class" "img-fluid"
-                            "format" $format
                             "height" $height
                             "maxheight" $maxheight
                             "maxwidth" $maxwidth
-                            "method" $method
-                            "options" $options
+                            "process" $process
                             "resource" .
                             "width" $width
                         ))
