@@ -13,9 +13,7 @@ paige:
 title: "Paige"
 ---
 
-{{< paige/figure >}}
-{{< paige/image alt="Landscape" class="object-fit-cover rounded-4 shadow w-100" fetchpriority="high" loading="eager" maxheight="20rem" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
-{{< /paige/figure >}}
+{{< paige/image alt="Landscape" class="object-fit-cover rounded-4 shadow" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" >}}
 
 <p class="display-5 fw-bold h2 text-center">An advanced Hugo theme</p>
 
