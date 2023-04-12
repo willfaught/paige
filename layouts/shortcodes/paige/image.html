@@ -16,7 +16,7 @@
 {{ $width := .Get "width" }}
 
 {{ if not $src }}
-    {{ errorf "paige/image: no content" }}
+    {{ errorf "paige/image: no src" }}
 {{ end }}
 
 {{ if $class }}
