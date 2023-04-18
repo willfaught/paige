@@ -921,7 +921,6 @@ try the following in your `layouts/partials/paige/style-first.css`:
 .paige-summary {
     display: none;
 }
-
 ```
 
 ## Implementation
