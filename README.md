@@ -323,6 +323,9 @@ url = "/search/"
 weight = 40
 ```
 
+If you intend for the menu to be sufficient for all navigation,
+see [how to hide other navigation features](#menu-navigation-only).
+
 ## Layouts
 
 ### Cloud
@@ -921,6 +924,34 @@ try the following in `yoursite/layouts/partials/paige/style-first.css`:
 .paige-summary {
     display: none;
 }
+```
+
+### Menu navigation only
+
+If you configure a menu, and intend for it to be sufficient for all navigation,
+you should hide the breadcrumbs on every page,
+and hide the collection, section, and page lists on the home page if you use the default home page layout.
+
+To hide the breadcrumbs on every page,
+try the following in `yoursite/layouts/partials/paige/style-first.css`:
+
+```css
+#paige-breadcrumbs {
+    display: none;
+}
+```
+
+To hide the collection, section, and page lists on the home page,
+try the following in `yoursite/content/_index.md`:
+
+```toml
+[paige]
+style = """
+#paige-collections,
+#paige-sections,
+#paige-pages {
+    display: none;
+}"""
 ```
 
 ## Implementation
