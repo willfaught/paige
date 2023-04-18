@@ -903,7 +903,7 @@ If you hide `#paige-credit`, please credit this project in a post to help others
 
 By default, everything is shown.
 If you want a more minimal look,
-try the following in your `layouts/partials/paige/style-first.css`:
+try the following in `yoursite/layouts/partials/paige/style-first.css`:
 
 ```css
 #paige-authors,
