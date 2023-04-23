@@ -35,7 +35,9 @@ It's a versatile canvas that serves most web needs.
 - Gallery shortcode
 - Header links
 - Icon shortcode
+- Image pixel densities
 - Image shortcode
+- Image size breakpoints
 - Landing page
 - Languages
 - Light color scheme
@@ -43,7 +45,7 @@ It's a versatile canvas that serves most web needs.
 - Menu
 - Minimal design
 - Quote shortcode
-- RSS with full content
+- RSS with full page content
 - Responsive
 - Right-to-left languages
 - SEO
