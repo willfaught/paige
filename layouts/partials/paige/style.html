@@ -13,20 +13,6 @@ body, html {
     display: flex;
 }
 
-.paige-content, #paige-content {
-    counter-reset: paige-figure;
-}
-
-.paige-content > blockquote, #paige-content > blockquote {
-    padding: 0.5rem 1rem;
-    border-left: 0.25rem solid var(--bs-border-color);
-    padding-right: 0.25rem;
-}
-
-.paige-content > blockquote p:last-of-type, #paige-content > blockquote p:last-of-type {
-    margin-bottom: 0;
-}
-
 .paige-figure {
     margin-bottom: 1rem;
 }
@@ -90,6 +76,20 @@ body, html {
 
 .paige-video {
     margin-bottom: 1rem;
+}
+
+#paige-content {
+    counter-reset: paige-figure;
+}
+
+#paige-content blockquote {
+    padding: 0.5rem 1rem;
+    border-left: 0.25rem solid var(--bs-border-color);
+    padding-right: 0.25rem;
+}
+
+#paige-content blockquote > p:last-of-type {
+    margin-bottom: 0;
 }
 
 @media (prefers-color-scheme: dark) {
