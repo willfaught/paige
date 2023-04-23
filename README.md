@@ -815,12 +815,8 @@ Page identifiers:
 Page and sub-page classes:
 
 <dl>
-    <dt><code>.paige-article</code></dt>
-    <dd>The article.</dd>
     <dt><code>.paige-authors</code></dt>
     <dd>The authors.</dd>
-    <dt><code>.paige-content</code></dt>
-    <dd>The content.</dd>
     <dt><code>.paige-date</code></dt>
     <dd>The date.</dd>
     <dt><code>.paige-date-header</code></dt>
@@ -843,8 +839,6 @@ Page and sub-page classes:
     <dd>The summary.</dd>
     <dt><code>.paige-title</code></dt>
     <dd>The title.</dd>
-    <dt><code>.paige-toc</code></dt>
-    <dd>The table of contents.</dd>
 </dl>
 
 Kind classes:
