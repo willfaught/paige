@@ -9,7 +9,7 @@
 {{ $type := $params.type }}
 
 {{ if not $src }}
-    {{ errorf "paige/script: no src" }}
+    {{ errorf "layouts/partials/paige/script.html: no src" }}
 {{ end }}
 
 {{ with partial "paige/resource.html" $src }}

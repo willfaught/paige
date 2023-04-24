@@ -27,7 +27,7 @@
 {{ $width := .Get "width" }}
 
 {{ if not $video }}
-    {{ errorf "paige/vimeo: no video" }}
+    {{ errorf "layouts/shortcodes/paige/vimeo.html: no video" }}
 {{ end }}
 
 {{ $params := slice }}

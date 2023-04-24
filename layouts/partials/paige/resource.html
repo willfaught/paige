@@ -5,7 +5,7 @@
 {{ if (urls.Parse $url).Scheme }}
     {{ with resources.GetRemote $url }}
         {{ with .Err }}
-            {{ errorf "paige/resource: cannot get remote resource %q: %v" $url . }}
+            {{ errorf "layouts/partials/paige/resource.html: cannot get remote resource %q: %v" $url . }}
         {{ else }}
             {{ $result = . }}
         {{ end }}

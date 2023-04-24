@@ -15,7 +15,7 @@
 {{ $width := .Get "width" }}
 
 {{ if not $video }}
-    {{ errorf "paige/youtube: no video" }}
+    {{ errorf "layouts/shortcodes/paige/youtube.html: no video" }}
 {{ end }}
 
 {{ $host := cond site.Config.Privacy.YouTube.PrivacyEnhanced "www.youtube-nocookie.com" "www.youtube.com" }}

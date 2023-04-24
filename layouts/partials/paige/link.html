@@ -12,7 +12,7 @@
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 
 {{ if not $href }}
-    {{ errorf "paige/link: no href" }}
+    {{ errorf "layouts/partials/paige/link.html: no href" }}
 {{ end }}
 
 {{ with partial "paige/resource.html" $href }}

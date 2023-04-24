@@ -3,7 +3,7 @@
 {{ $options := .Get "options" }}
 
 {{ if not $content }}
-    {{ errorf "paige/code: no content" }}
+    {{ errorf "layouts/shortcodes/paige/code.html: no content" }}
 {{ end }}
 
 <div class="paige-code">{{ highlight $content $lang $options }}</div>

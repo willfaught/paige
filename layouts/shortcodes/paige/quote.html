@@ -2,7 +2,7 @@
 {{ $content := .Inner | replaceRE "^\n" "" | replaceRE "\n$" "" | markdownify }}
 
 {{ if not $content }}
-    {{ errorf "paige/quote: no content" }}
+    {{ errorf "layouts/shortcodes/paige/quote.html: no content" }}
 {{ end }}
 
 <div class="paige-quote">

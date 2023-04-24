@@ -3,7 +3,7 @@
 {{ $url := .Get "url" }}
 
 {{ if not $class }}
-    {{ errorf "paige/icon: no class" }}
+    {{ errorf "layouts/shortcodes/paige/icon.html: no class" }}
 {{ end }}
 
 <span class="paige-icon">
