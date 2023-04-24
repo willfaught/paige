@@ -379,9 +379,9 @@ Parameters:
 
 <dl>
     <dt><code>lang</code></dt>
-    <dd>Optional. Position 0. String. Chroma language code. Default is <code>plaintext</code>. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">codes</a>.</dd>
+    <dd>Optional. Position 0. String. Chroma <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">language code</a>. Default is <code>plaintext</code>.</dd>
     <dt><code>options</code></dt>
-    <dd>Optional. String. Hugo highlight options. See the <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a>.</dd>
+    <dd>Optional. String. Hugo <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">highlight options</a>.</dd>
 </dl>
 
 ### Figure
