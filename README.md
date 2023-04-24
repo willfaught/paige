@@ -363,7 +363,7 @@ title = "Search"
 
 ### Code
 
-The `paige/code` shortcode provides a figure with code.
+The `paige/code` shortcode provides highlighted code.
 
 ```
 {{< paige/code
@@ -386,7 +386,7 @@ Parameters:
 
 ### Figure
 
-The `paige/figure` shortcode provides a figure with content.
+The `paige/figure` shortcode provides a figure.
 
 ```
 {{< paige/figure
@@ -430,7 +430,7 @@ Parameters:
 
 ### Gallery
 
-The `paige/gallery` shortcode provides a figure with a collection of images.
+The `paige/gallery` shortcode provides an arrangement of images.
 
 ```
 {{< paige/gallery
@@ -507,7 +507,7 @@ Parameters:
 
 ### Image
 
-The `paige/image` shortcode provides a figure with an image.
+The `paige/image` shortcode provides an image.
 
 ```
 {{< paige/image
@@ -573,7 +573,7 @@ Parameters:
 
 ### Quote
 
-The `paige/quote` shortcode provides a figure with a quotation.
+The `paige/quote` shortcode provides a quotation.
 
 ```
 {{< paige/quote
@@ -591,7 +591,7 @@ Parameters:
 
 ### Vimeo
 
-The `paige/vimeo` shortcode provides a responsive Vimeo video.
+The `paige/vimeo` shortcode provides a Vimeo video.
 
 ```
 {{< paige/vimeo
@@ -686,7 +686,7 @@ See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/3600014944
 
 ### YouTube
 
-The `paige/youtube` shortcode provides a responsive YouTube video.
+The `paige/youtube` shortcode provides a YouTube video.
 
 ```
 {{< paige/youtube
