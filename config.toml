@@ -1,0 +1,85 @@
+[module.hugoVersion]
+min = "0.111.3"
+extended = true
+
+# Default mounts
+
+[[module.mounts]]
+source = "archetypes"
+target = "archetypes"
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "data"
+target = "data"
+
+[[module.mounts]]
+source = "i18n"
+target = "i18n"
+
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+# Bootstrap
+
+[[module.mounts]]
+source = "paige/node_modules/bootstrap/dist/css"
+target = "assets/css/paige/bootstrap"
+includeFiles = ["bootstrap.css"]
+
+[[module.mounts]]
+source = "paige/node_modules/bootstrap/dist/js"
+target = "assets/js/paige/bootstrap"
+includeFiles = ["bootstrap.bundle.js"]
+
+[[module.mounts]]
+source = "paige/node_modules/bootstrap/js/dist"
+target = "assets/js/paige/bootstrap"
+
+[[module.mounts]]
+source = "paige/node_modules/bootstrap/scss"
+target = "assets/css/paige/bootstrap"
+
+# Bootstrap Icons
+
+[[module.mounts]]
+source = "paige/node_modules/bootstrap-icons/font/fonts"
+target = "static/css/paige/bootstrap-icons/fonts"
+
+[[module.mounts]]
+source = "paige/node_modules/bootstrap-icons/font"
+target = "assets/css/paige/bootstrap-icons"
+includeFiles = ["bootstrap-icons.css"]
+
+# Katex
+
+[[module.mounts]]
+source = "paige/node_modules/katex/dist/contrib"
+target = "assets/js/paige/katex"
+includeFiles = ["auto-render.min.js"]
+
+[[module.mounts]]
+source = "paige/node_modules/katex/dist/fonts"
+target = "static/css/paige/katex/fonts"
+
+[[module.mounts]]
+source = "paige/node_modules/katex/dist"
+target = "assets/css/paige/katex"
+includeFiles = ["katex.min.css"]
+
+[[module.mounts]]
+source = "paige/node_modules/katex/dist"
+target = "assets/js/paige/katex"
+includeFiles = ["katex.min.js"]
