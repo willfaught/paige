@@ -4,7 +4,6 @@
 {{ $defer := $params.defer | default "defer" }}
 {{ $integrity := $params.integrity }}
 {{ $onload := $params.onload | safeJS }}
-{{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $src := $params.src }}
 {{ $type := $params.type }}
@@ -13,7 +12,7 @@
     {{ errorf "paige/script: no src" }}
 {{ end }}
 
-{{ with partial "paige/resource.html" (dict "page" $page "url" $src) }}
+{{ with partial "paige/resource.html" $src }}
     {{ $resource := . | minify | fingerprint }}
     {{ $integrity = $resource.Data.Integrity }}
     {{ $src = $resource.RelPermalink }}

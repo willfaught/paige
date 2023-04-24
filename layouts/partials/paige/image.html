@@ -60,7 +60,7 @@
 {{ $style = delimit $style "; " }}
 
 {{ if and (not $resource) $src }}
-    {{ $resource = partial "paige/resource.html" (dict "page" page "url" $src) }}
+    {{ $resource = partial "paige/resource.html" $src }}
 {{ end }}
 
 {{ if $resource }}
