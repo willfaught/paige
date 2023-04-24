@@ -5,6 +5,7 @@
 {{ $fetchpriority := .Get "fetchpriority" }}
 {{ $height := .Get "height" }}
 {{ $link := .Get "link" }}
+{{ $linked := .Get "linked" }}
 {{ $loading := .Get "loading" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
@@ -15,43 +16,22 @@
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 
-{{ if not $src }}
-    {{ errorf "paige/image: no src" }}
-{{ end }}
-
-{{ if $class }}
-    {{ $class = split $class " " }}
-{{ else }}
-    {{ $class = slice }}
-{{ end }}
-
-{{ $class = $class | append "img-fluid" | uniq | sort }}
-{{ $class = delimit $class " " }}
-
-{{ $content := partial "paige/img.html" (dict
+{{ partial "paige/image.html" (dict
     "alt" $alt
     "breakpoints" $breakpoints
     "class" $class
     "densities" $densities
     "fetchpriority" $fetchpriority
     "height" $height
+    "link" $link
+    "linked" $linked
     "loading" $loading
     "maxheight" $maxheight
     "maxwidth" $maxwidth
     "process" $process
-    "page" .Page
     "sizes" $sizes
     "src" $src
     "srcset" $srcset
     "title" $title
     "width" $width
 ) }}
-
-{{ if $link }}
-    {{ $content = partial "paige/a.html" (dict
-        "content" $content
-        "href" $link
-    ) }}
-{{ end }}
-
-<div class="paige-image">{{ $content }}</div>

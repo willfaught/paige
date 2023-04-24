@@ -23,6 +23,30 @@ Result:
 
 {{< paige/image alt="Landscape" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 
+## Class parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image class="rounded-5" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image class="rounded-5" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
+## Fetchpriority parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image fetchpriority="high" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image fetchpriority="high" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
 ## Height parameter
 
 Code:
@@ -46,6 +70,54 @@ Code:
 Result:
 
 {{< paige/image link="https://github.com/willfaught/paige" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
+## Linked parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image linked="unprocessed" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image linked="unprocessed" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/image linked="default" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image linked="default" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/image linked="r180" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image linked="r180" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
+## Loading parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image loading="eager" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image loading="eager" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 
 ## Maxheight parameter
 
@@ -72,6 +144,18 @@ Result:
 {{< paige/image maxwidth="10rem" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 
 ## Process parameter
+
+Code:
+
+```go-text-template
+{{</* paige/image process="default" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+```
+
+Result:
+
+{{< paige/image process="default" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+
+---
 
 Code:
 

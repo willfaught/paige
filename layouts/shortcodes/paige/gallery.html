@@ -1,7 +1,10 @@
 {{ $align := .Get "align" | default "center" }}
+{{ $fetchpriority := .Get "fetchpriority" }}
 {{ $height := .Get "height" }}
 {{ $images := .Get 0 | default (.Get "images") }}
 {{ $justify := .Get "justify" | default "center" }}
+{{ $linked := .Get "linked" }}
+{{ $loading := .Get "loading" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $process := .Get "process" }}
@@ -40,17 +43,16 @@
                 {{ else }}
                     {{ range $resources }}
                         <div class="col">
-                            {{ partial "paige/a.html" (dict
-                                "content" (partial "paige/img.html" (dict
-                                    "class" "img-fluid"
-                                    "height" $height
-                                    "maxheight" $maxheight
-                                    "maxwidth" $maxwidth
-                                    "process" $process
-                                    "resource" .
-                                    "width" $width
-                                ))
-                                "href" .RelPermalink
+                            {{ partial "paige/image.html" (dict
+                                "fetchpriority" $fetchpriority
+                                "height" $height
+                                "linked" $linked
+                                "loading" $loading
+                                "maxheight" $maxheight
+                                "maxwidth" $maxwidth
+                                "process" $process
+                                "resource" .
+                                "width" $width
                             ) }}
                         </div>
                     {{ end }}
@@ -63,17 +65,16 @@
                 {{ . }}
             {{ else }}
                 {{ range $resources }}
-                    {{ partial "paige/a.html" (dict
-                        "content" (partial "paige/img.html" (dict
-                            "class" "img-fluid"
-                            "height" $height
-                            "maxheight" $maxheight
-                            "maxwidth" $maxwidth
-                            "process" $process
-                            "resource" .
-                            "width" $width
-                        ))
-                        "href" .RelPermalink
+                    {{ partial "paige/image.html" (dict
+                        "fetchpriority" $fetchpriority
+                        "height" $height
+                        "linked" $linked
+                        "loading" $loading
+                        "maxheight" $maxheight
+                        "maxwidth" $maxwidth
+                        "process" $process
+                        "resource" .
+                        "width" $width
                     ) }}
                 {{ end }}
             {{ end }}

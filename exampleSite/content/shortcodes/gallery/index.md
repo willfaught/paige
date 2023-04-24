@@ -65,6 +65,30 @@ Result:
 {{< paige/image height="10rem" src="2-2.jpg" >}}
 {{< /paige/gallery >}}
 
+## Fetchpriority parameter
+
+Code:
+
+```go-text-template
+{{</* paige/gallery fetchpriority="high" images="*-2.jpg" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery fetchpriority="high" images="*-2.jpg" />}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/gallery fetchpriority="low" images="*-2.jpg" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery fetchpriority="low" images="*-2.jpg" />}}
+
 ## Height parameter
 
 Code:
@@ -149,6 +173,66 @@ Result:
 
 {{< paige/gallery images="*-2.jpg" justify="end" />}}
 
+## Linked parameter
+
+Code:
+
+```go-text-template
+{{</* paige/gallery images="*-2.jpg" linked="unprocessed" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" linked="unprocessed" />}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/gallery images="*-2.jpg" linked="default" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" linked="default" />}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/gallery images="*-2.jpg" linked="r180" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" linked="r180" />}}
+
+## Loading parameter
+
+Code:
+
+```go-text-template
+{{</* paige/gallery images="*-2.jpg" loading="eager" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" loading="eager" />}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/gallery images="*-2.jpg" loading="lazy" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" loading="lazy" />}}
+
 ## Maxheight parameter
 
 Code:
@@ -202,12 +286,24 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r90 webp" /*/>}}
+{{</* paige/gallery images="*-2.jpg" process="default" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r90 webp" />}}
+{{< paige/gallery images="*-2.jpg" process="default" />}}
+
+---
+
+Code:
+
+```go-text-template
+{{</* paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r180 webp" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r180 webp" />}}
 
 ## Type
 

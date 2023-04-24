@@ -38,6 +38,7 @@ It's a versatile canvas that serves most web needs.
 - Image pixel densities
 - Image shortcode
 - Image size breakpoints
+- Image thumbnails
 - Landing page
 - Languages
 - Light color scheme
@@ -434,9 +435,12 @@ The `paige/gallery` shortcode provides a figure with a collection of images.
 ```
 {{< paige/gallery
     align=""
+    fetchpriority=""
     height=""
     images=""
     justify=""
+    linked=""
+    loading=""
     maxheight=""
     maxwidth=""
     process=""
@@ -453,18 +457,24 @@ Parameters:
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>.</dd>
+    <dt><code>fetchpriority</code></dt>
+    <dd>Optional. String. Must be <code>high</code> or <code>low</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>images</code></dt>
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
     <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>.</dd>
+    <dt><code>linked</code></dt>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>unprocessed</code>, it is unprocessed. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
+    <dt><code>loading</code></dt>
+    <dd>Optional. String. Must be <code>eager</code> or <code>lazy</code> (default).</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>process</code></dt>
-    <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Grid and list layouts use the horizontal axis as the main axis, and the vertical axis as the cross axis. Must be <code>grid</code> or <code>list</code>. Default is <code>list</code>.</dd>
     <dt><code>width</code></dt>
@@ -503,9 +513,13 @@ The `paige/image` shortcode provides a figure with an image.
 {{< paige/image
     alt=""
     breakpoints=false
+    class=""
     densities=""
+    fetchpriority=""
     height=""
     link=""
+    linked=""
+    loading=""
     maxheight=""
     maxwidth=""
     process=""
@@ -525,18 +539,26 @@ Parameters:
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>breakpoints</code></dt>
     <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not be set with <code>densities</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dt><code>class</code></dt>
+    <dd>Optional. String. Class attribute value.</dd>
     <dt><code>densities</code></dt>
     <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not be set with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dt><code>fetchpriority</code></dt>
+    <dd>Optional. String. Must be <code>high</code> or <code>low</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>
-    <dd>Optional. String. URL. Image link.</dd>
+    <dd>Optional. String. URL. Image link. Must not use with <code>linked</code>.</dd>
+    <dt><code>linked</code></dt>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>unprocessed</code>, it is unprocessed. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. Must not use with <code>link</code>.</dd>
+    <dt><code>loading</code></dt>
+    <dd>Optional. String. Must be <code>eager</code> or <code>lazy</code> (default).</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Image maximum height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Image maximum width.</dd>
     <dt><code>process</code></dt>
-    <dd>Optional. String or boolean. If a string, it is the Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together. If no method is specified, resize is used. If no image dimensions are given, the originals are used. If a boolean that is true, the Hugo image processing method resize is used, and the default Hugo image processing options are used.</dd>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
     <dt><code>sizes</code></dt>
     <dd>Optional. String. Image sizes. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>src</code></dt>
@@ -554,7 +576,8 @@ Parameters:
 The `paige/quote` shortcode provides a figure with a quotation.
 
 ```
-{{< paige/quote cite="" >}}
+{{< paige/quote
+    cite="" >}}
 
 {{< /paige/quote >}}
 ```
