@@ -21,10 +21,10 @@ module:
   # Bootstrap
   - source: "paige/node_modules/bootstrap/dist/css"
     target: "assets/css/paige/bootstrap"
-    includeFiles: ["/bootstrap.css"]
+    includeFiles: ["bootstrap.css"]
   - source: "paige/node_modules/bootstrap/dist/js"
     target: "assets/js/paige/bootstrap"
-    includeFiles: ["/bootstrap.bundle.js"]
+    includeFiles: ["bootstrap.bundle.js"]
   - source: "paige/node_modules/bootstrap/js/dist"
     target: "assets/js/paige/bootstrap"
   - source: "paige/node_modules/bootstrap/scss"
@@ -34,16 +34,16 @@ module:
     target: "static/css/paige/bootstrap-icons/fonts"
   - source: "paige/node_modules/bootstrap-icons/font"
     target: "assets/css/paige/bootstrap-icons"
-    includeFiles: ["/bootstrap-icons.css"]
+    includeFiles: ["bootstrap-icons.css"]
   # Katex
   - source: "paige/node_modules/katex/dist/contrib"
     target: "assets/js/paige/katex"
-    includeFiles: ["/auto-render.min.js"]
+    includeFiles: ["auto-render.min.js"]
   - source: "paige/node_modules/katex/dist/fonts"
     target: "static/css/paige/katex/fonts"
   - source: "paige/node_modules/katex/dist"
     target: "assets/css/paige/katex"
-    includeFiles: ["/katex.min.css"]
+    includeFiles: ["katex.min.css"]
   - source: "paige/node_modules/katex/dist"
     target: "assets/js/paige/katex"
-    includeFiles: ["/katex.min.js"]
+    includeFiles: ["katex.min.js"]
