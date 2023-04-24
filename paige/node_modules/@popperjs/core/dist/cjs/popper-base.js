@@ -1,5 +1,5 @@
 /**
- * @popperjs/core v2.11.6 - MIT License
+ * @popperjs/core v2.11.7 - MIT License
  */
 
 'use strict';
@@ -46,7 +46,7 @@ var round = Math.round;
 function getUAString() {
   var uaData = navigator.userAgentData;
 
-  if (uaData != null && uaData.brands) {
+  if (uaData != null && uaData.brands && Array.isArray(uaData.brands)) {
     return uaData.brands.map(function (item) {
       return item.brand + "/" + item.version;
     }).join(' ');

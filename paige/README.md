@@ -37,31 +37,3 @@ If you update Bootstrap:
      @import "containers";
      @import "grid";
     ```
-
-3. Apply this patch if needed:
-
-    ```diff
-    diff --git a/paige/node_modules/bootstrap/scss/_carousel.scss b/paige/node_modules/bootstrap/scss/_carousel.scss
-    index b17d27f493b..0ac8f8714fb 100644
-    --- a/paige/node_modules/bootstrap/scss/_carousel.scss
-    +++ b/paige/node_modules/bootstrap/scss/_carousel.scss
-    @@ -230,9 +230,15 @@
-
-     @if $enable-dark-mode {
-       @include color-mode(dark) {
-    -    .carousel,
-    -    &.carousel {
-    -      @include carousel-dark();
-    +    @if $color-mode-type == "media-query" {
-    +      .carousel {
-    +        @include carousel-dark();
-    +      }
-    +    } @else {
-    +      .carousel,
-    +      &.carousel {
-    +        @include carousel-dark();
-    +      }
-         }
-       }
-     }
-    ```
