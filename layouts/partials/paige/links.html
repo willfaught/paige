@@ -32,11 +32,11 @@
     <link href="{{ (resources.Get `site.webmanifest` | resources.ExecuteAsTemplate `site.webmanifest` .).RelPermalink | safeURL }}" rel="manifest">
 {{ end }}
 
-{{ partial "paige/link.html" (dict "href" "_paige/bootstrap/paige.scss" "page" $page "sass" true "template" true) }}
-{{ partial "paige/link.html" (dict "href" "_paige/bootstrap-icons/bootstrap-icons.css") }}
+{{ partial "paige/link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true) }}
+{{ partial "paige/link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css") }}
 
 {{ if $page.Param "paige.math" }}
-    {{ partial "paige/link.html" (dict "href" "_paige/katex/katex.min.css") }}
+    {{ partial "paige/link.html" (dict "href" "css/paige/katex/katex.min.css") }}
 {{ end }}
 
 {{ if .AlternativeOutputFormats }}

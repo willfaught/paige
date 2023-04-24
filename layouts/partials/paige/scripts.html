@@ -28,11 +28,11 @@ function paigeResize() {
 paigeResize();
 addEventListener("resize", paigeResize);
 </script>
-{{ partial "paige/script.html" (dict "src" "_paige/bootstrap/bootstrap.bundle.js") }}
+{{ partial "paige/script.html" (dict "src" "js/paige/bootstrap/bootstrap.bundle.js") }}
 
 {{ if $page.Param "paige.math" }}
-    {{ partial "paige/script.html" (dict "src" "_paige/katex/katex.min.js") }}
-    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "_paige/katex/auto-render.min.js") }}
+    {{ partial "paige/script.html" (dict "src" "js/paige/katex/katex.min.js") }}
+    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "src" "js/paige/katex/auto-render.min.js") }}
 {{ end }}
 
 {{ partial "paige/analytics.html" $page }}
