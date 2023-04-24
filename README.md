@@ -468,7 +468,7 @@ Parameters:
     <dt><code>linked</code></dt>
     <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>unprocessed</code>, it is unprocessed. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
     <dt><code>loading</code></dt>
-    <dd>Optional. String. Must be <code>eager</code> or <code>lazy</code> (default).</dd>
+    <dd>Optional. String. Must be <code>eager</code> (default) or <code>lazy</code>.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
@@ -552,7 +552,7 @@ Parameters:
     <dt><code>linked</code></dt>
     <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>unprocessed</code>, it is unprocessed. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. Must not use with <code>link</code>.</dd>
     <dt><code>loading</code></dt>
-    <dd>Optional. String. Must be <code>eager</code> or <code>lazy</code> (default).</dd>
+    <dd>Optional. String. Must be <code>eager</code> (default) or <code>lazy</code>.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Image maximum height.</dd>
     <dt><code>maxwidth</code></dt>
