@@ -435,6 +435,8 @@ The `paige/gallery` shortcode provides an arrangement of images.
 ```
 {{< paige/gallery
     align=""
+    breakpoints=""
+    densities=""
     fetchpriority=""
     height=""
     images=""
@@ -457,6 +459,10 @@ Parameters:
 <dl>
     <dt><code>align</code></dt>
     <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>.</dd>
+    <dt><code>breakpoints</code></dt>
+    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not use with <code>densities</code>.</dd>
+    <dt><code>densities</code></dt>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not use with <code>breakpoints</code>.</dd>
     <dt><code>fetchpriority</code></dt>
     <dd>Optional. String. Must be <code>high</code> or <code>low</code>.</dd>
     <dt><code>height</code></dt>
@@ -538,11 +544,11 @@ Parameters:
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>breakpoints</code></dt>
-    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not be set with <code>densities</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not use with <code>densities</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>class</code></dt>
     <dd>Optional. String. Class attribute value.</dd>
     <dt><code>densities</code></dt>
-    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not be set with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not use with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>fetchpriority</code></dt>
     <dd>Optional. String. Must be <code>high</code> or <code>low</code>.</dd>
     <dt><code>height</code></dt>

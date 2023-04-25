@@ -1,4 +1,6 @@
 {{ $align := .Get "align" | default "center" }}
+{{ $breakpoints := .Get "breakpoints" }}
+{{ $densities := .Get "densities" }}
 {{ $fetchpriority := .Get "fetchpriority" }}
 {{ $height := .Get "height" }}
 {{ $images := .Get 0 | default (.Get "images") }}
@@ -44,6 +46,8 @@
                     {{ range $resources }}
                         <div class="col">
                             {{ partial "paige/image.html" (dict
+                                "breakpoints" $breakpoints
+                                "densities" $densities
                                 "fetchpriority" $fetchpriority
                                 "height" $height
                                 "linked" $linked
@@ -66,6 +70,8 @@
             {{ else }}
                 {{ range $resources }}
                     {{ partial "paige/image.html" (dict
+                        "breakpoints" $breakpoints
+                        "densities" $densities
                         "fetchpriority" $fetchpriority
                         "height" $height
                         "linked" $linked
