@@ -70,23 +70,21 @@
                     {{ . }}
                 {{ else }}
                     {{ range $resources }}
-                        <div class="col">
-                            {{ partial "paige/image.html" (dict
-                                "breakpoints" $breakpoints
-                                "class" $class
-                                "densities" $densities
-                                "fetchpriority" $fetchpriority
-                                "height" $height
-                                "linked" $linked
-                                "loading" $loading
-                                "maxheight" $maxheight
-                                "maxwidth" $maxwidth
-                                "process" $process
-                                "resource" .
-                                "style" (print $style "; height: auto; max-width: 100%")
-                                "width" $width
-                            ) }}
-                        </div>
+                        {{ partial "paige/image.html" (dict
+                            "breakpoints" $breakpoints
+                            "class" $class
+                            "densities" $densities
+                            "fetchpriority" $fetchpriority
+                            "height" $height
+                            "linked" $linked
+                            "loading" $loading
+                            "maxheight" $maxheight
+                            "maxwidth" $maxwidth
+                            "process" $process
+                            "resource" .
+                            "style" (print $style "; height: auto; max-width: 100%")
+                            "width" $width
+                        ) }}
                     {{ end }}
                 {{ end }}
             </div>
