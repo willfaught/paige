@@ -310,6 +310,18 @@ Result:
 Code:
 
 ```go-text-template
+{{</* paige/gallery images="*.jpg" maxheight="10rem" type="filled-rows" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*.jpg" maxheight="10rem" type="filled-rows" />}}
+
+---
+
+Code:
+
+```go-text-template
 {{</* paige/gallery images="*.jpg" type="grid" /*/>}}
 ```
 

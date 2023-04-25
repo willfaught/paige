@@ -37,7 +37,30 @@
 {{ end }}
 
 <div class="paige-gallery">
-    {{ if eq $type "grid" }}
+    {{ if eq $type "filled-rows" }}
+        <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
+            {{ with $inner }}
+                {{ . }}
+            {{ else }}
+                {{ range $resources }}
+                    {{ partial "paige/image.html" (dict
+                        "breakpoints" $breakpoints
+                        "densities" $densities
+                        "fetchpriority" $fetchpriority
+                        "height" $height
+                        "linked" $linked
+                        "loading" $loading
+                        "maxheight" $maxheight
+                        "maxwidth" $maxwidth
+                        "process" $process
+                        "resource" .
+                        "style" "flex: 1 1 auto; object-fit: cover"
+                        "width" $width
+                    ) }}
+                {{ end }}
+            {{ end }}
+        </div>
+    {{ else if eq $type "grid" }}
         <div class="container-fluid overflow-hidden px-0">
             <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
                 {{ with $inner }}
@@ -56,6 +79,7 @@
                                 "maxwidth" $maxwidth
                                 "process" $process
                                 "resource" .
+                                "style" "height: auto; max-width: 100%"
                                 "width" $width
                             ) }}
                         </div>
@@ -80,6 +104,7 @@
                         "maxwidth" $maxwidth
                         "process" $process
                         "resource" .
+                        "style" "height: auto; max-width: 100%"
                         "width" $width
                     ) }}
                 {{ end }}

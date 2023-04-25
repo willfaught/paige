@@ -16,20 +16,12 @@
 {{ $sizes := $params.sizes }}
 {{ $src := $params.src }}
 {{ $srcset := $params.srcset }}
+{{ $style := $params.style }}
 {{ $title := $params.title }}
 {{ $width := $params.width }}
 
 {{ $intrinsicheight := "" }}
 {{ $intrinsicwidth := "" }}
-
-{{ if $class }}
-    {{ $class = split $class " " }}
-{{ else }}
-    {{ $class = slice }}
-{{ end }}
-
-{{ $class = $class | append "img-fluid" | uniq | sort }}
-{{ $class = delimit $class " " }}
 
 {{ if and (or $height $maxheight) (not (or $maxwidth $width)) }}
     {{ $width = "auto" }}
@@ -39,7 +31,23 @@
     {{ $height = "auto" }}
 {{ end }}
 
-{{ $style := slice }}
+{{ if $style }}
+    {{ $mapped := slice }}
+
+    {{ range split $style ";" }}
+        {{ $s := . | strings.TrimLeft " " | strings.TrimRight " " }}
+
+        {{ if not $s }}
+            {{ continue }}
+        {{ end }}
+
+        {{ $mapped = $mapped | append $s }}
+    {{ end }}
+
+    {{ $style = $mapped }}
+{{ else }}
+    {{ $style = slice }}
+{{ end }}
 
 {{ if $height }}
     {{ $style = $style | append (print "height: " $height) }}
@@ -57,7 +65,7 @@
     {{ $style = $style | append (print "width: " $width) }}
 {{ end }}
 
-{{ $style = delimit $style "; " }}
+{{ $style = delimit ($style | uniq | sort) "; " }}
 
 {{ if and (not $resource) $src }}
     {{ $resource = partial "paige/resource.html" $src }}
@@ -277,4 +285,4 @@
     {{ $content = partial "paige/a.html" (dict "content" $content "href" $link) }}
 {{ end }}
 
-<div class="paige-image">{{ $content }}</div>
+<span class="paige-image">{{ $content }}</span>
