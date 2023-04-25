@@ -436,6 +436,7 @@ The `paige/gallery` shortcode provides an arrangement of images.
 {{< paige/gallery
     align=""
     breakpoints=""
+    class=""
     densities=""
     fetchpriority=""
     height=""
@@ -446,6 +447,7 @@ The `paige/gallery` shortcode provides an arrangement of images.
     maxheight=""
     maxwidth=""
     process=""
+    style=""
     type=""
     width="" >}}
 
@@ -461,6 +463,8 @@ Parameters:
     <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>.</dd>
     <dt><code>breakpoints</code></dt>
     <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not use with <code>densities</code>.</dd>
+    <dt><code>class</code></dt>
+    <dd>Optional. String. Image class. Merged with implementation.</dd>
     <dt><code>densities</code></dt>
     <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not use with <code>breakpoints</code>.</dd>
     <dt><code>fetchpriority</code></dt>
@@ -481,6 +485,8 @@ Parameters:
     <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>process</code></dt>
     <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
+    <dt><code>style</code></dt>
+    <dd>Optional. String. CSS. Image style. Merged with implementation.</dd>
     <dt><code>type</code></dt>
     <dd>Optional. String. Type of layout. Must be <code>filled-rows</code>, <code>grid</code>, or <code>rows</code> (default).</dd>
     <dt><code>width</code></dt>

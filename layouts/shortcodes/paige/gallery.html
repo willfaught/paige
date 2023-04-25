@@ -1,5 +1,6 @@
 {{ $align := .Get "align" | default "center" }}
 {{ $breakpoints := .Get "breakpoints" }}
+{{ $class := .Get "class" }}
 {{ $densities := .Get "densities" }}
 {{ $fetchpriority := .Get "fetchpriority" }}
 {{ $height := .Get "height" }}
@@ -10,6 +11,7 @@
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
 {{ $process := .Get "process" }}
+{{ $style := .Get "style" }}
 {{ $type := .Get "type" | default "rows" }}
 {{ $width := .Get "width" }}
 
@@ -45,6 +47,7 @@
                 {{ range $resources }}
                     {{ partial "paige/image.html" (dict
                         "breakpoints" $breakpoints
+                        "class" $class
                         "densities" $densities
                         "fetchpriority" $fetchpriority
                         "height" $height
@@ -54,7 +57,7 @@
                         "maxwidth" $maxwidth
                         "process" $process
                         "resource" .
-                        "style" "flex: 1 1 auto; object-fit: cover"
+                        "style" (print $style "; flex: 1 1 auto; object-fit: cover")
                         "width" $width
                     ) }}
                 {{ end }}
@@ -70,6 +73,7 @@
                         <div class="col">
                             {{ partial "paige/image.html" (dict
                                 "breakpoints" $breakpoints
+                                "class" $class
                                 "densities" $densities
                                 "fetchpriority" $fetchpriority
                                 "height" $height
@@ -79,7 +83,7 @@
                                 "maxwidth" $maxwidth
                                 "process" $process
                                 "resource" .
-                                "style" "height: auto; max-width: 100%"
+                                "style" (print $style "; height: auto; max-width: 100%")
                                 "width" $width
                             ) }}
                         </div>
@@ -95,6 +99,7 @@
                 {{ range $resources }}
                     {{ partial "paige/image.html" (dict
                         "breakpoints" $breakpoints
+                        "class" $class
                         "densities" $densities
                         "fetchpriority" $fetchpriority
                         "height" $height
@@ -104,7 +109,7 @@
                         "maxwidth" $maxwidth
                         "process" $process
                         "resource" .
-                        "style" "height: auto; max-width: 100%"
+                        "style" (print $style "; height: auto; max-width: 100%")
                         "width" $width
                     ) }}
                 {{ end }}
