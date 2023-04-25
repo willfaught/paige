@@ -482,7 +482,7 @@ Parameters:
     <dt><code>process</code></dt>
     <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
     <dt><code>type</code></dt>
-    <dd>Optional. String. Type of layout. Grid and rows layouts use the horizontal axis as the main axis, and the vertical axis as the cross axis. Must be <code>grid</code> or <code>rows</code> (default).</dd>
+    <dd>Optional. String. Type of layout. Must be <code>grid</code> or <code>rows</code> (default).</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
