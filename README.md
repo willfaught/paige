@@ -160,7 +160,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ hugo server -D
     ```
 
-See Hugo's [install](https://gohugo.io/installation/), [start](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
+See Hugo's [installation](https://gohugo.io/installation/), [getting started](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
 
 ## Configure
 
