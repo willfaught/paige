@@ -970,7 +970,8 @@ style = """
 #paige-sections,
 #paige-pages {
     display: none;
-}"""
+}
+"""
 ```
 
 ## Implementation
