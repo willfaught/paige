@@ -13,6 +13,7 @@
 {{ $sizes := .Get "sizes" }}
 {{ $src := .Get 0 | default (.Get "src") }}
 {{ $srcset := .Get "srcset" }}
+{{ $style := .Get "style" }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 
@@ -32,6 +33,7 @@
     "sizes" $sizes
     "src" $src
     "srcset" $srcset
+    "style" $style
     "title" $title
     "width" $width
 ) }}

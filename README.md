@@ -532,6 +532,7 @@ The `paige/image` shortcode provides an image.
     sizes=""
     src=""
     srcset=""
+    style=""
     title=""
     width="" >}}
 ```
@@ -571,6 +572,8 @@ Parameters:
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>srcset</code></dt>
     <dd>Optional. String. Image srcset. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
+    <dt><code>style</code></dt>
+    <dd>Optional. String. CSS. Image style. Merged with implementation.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. String. Plain text. Image title.</dd>
     <dt><code>width</code></dt>
