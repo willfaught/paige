@@ -450,7 +450,7 @@ The `paige/gallery` shortcode provides an arrangement of images.
 {{< /paige/gallery >}}
 ```
 
-Inner content: Optional. String. HTML.
+Inner content: Optional. String. HTML. The images.
 
 Parameters:
 
