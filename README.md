@@ -240,7 +240,6 @@ github_repo = ""
 
 [paige.date]
 format = ":date_long" # Hugo date format
-source = "published" # Displayed date in single pages; must be "published" or "modified"
 
 [paige.git]
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"

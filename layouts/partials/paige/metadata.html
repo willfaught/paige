@@ -3,7 +3,7 @@
 {{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := $page.Params.categories | default slice | uniq }}
 {{ $commiturl := "" }}
-{{ $date := cond (eq ($page.Param "paige.date.source" | default "published") "published") $page.PublishDate $page.Lastmod }}
+{{ $date := $page.PublishDate }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
 {{ $link := $page.Params.link }}
