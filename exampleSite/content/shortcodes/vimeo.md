@@ -4,7 +4,6 @@ categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige Vimeo shortcode."
 tags: ["videos", "vimeo"]
 title: "Vimeo Shortcode"
-weight: 70
 ---
 
 Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.

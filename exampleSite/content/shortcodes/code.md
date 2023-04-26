@@ -4,7 +4,6 @@ categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige code shortcode."
 tags: ["code", "figures"]
 title: "Code Shortcode"
-weight: 30
 ---
 
 Paige provides a `paige/code` shortcode for displaying code.

@@ -4,7 +4,6 @@ categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige YouTube shortcode."
 tags: ["videos", "youtube"]
 title: "YouTube Shortcode"
-weight: 60
 ---
 
 Paige provides a `paige/youtube` shortcode for playing YouTube videos.

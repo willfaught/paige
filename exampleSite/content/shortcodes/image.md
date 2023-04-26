@@ -4,7 +4,6 @@ categories: ["paige", "shortcodes"]
 description: "Demonstration of the Paige image shortcode."
 tags: ["figures", "images"]
 title: "Image Shortcode"
-weight: 40
 ---
 
 Paige provides a `paige/image` shortcode for displaying an image.
