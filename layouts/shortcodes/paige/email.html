@@ -1,0 +1,12 @@
+{{ $address := .Get "address" }}
+{{ $text := .Get "text" }}
+
+{{ if not $address }}
+    {{ errorf "layouts/shortcodes/paige/email.html: no address" }}
+{{ end }}
+
+{{ if not $text }}
+    {{ errorf "layouts/shortcodes/paige/email.html: no text" }}
+{{ end }}
+
+<a href="#" data-a="{{ base64Encode (index (split $address `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $address `@`) 1) }}" onclick="this.href = 'mailto:' + atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)">{{ $text }}</a>

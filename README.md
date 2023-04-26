@@ -29,7 +29,7 @@ It's a versatile canvas that serves most web needs.
 - Comments
 - Customizable
 - Dark color scheme
-- E-mail protection
+- Email shortcode
 - Facebook sharing
 - Figure shortcode
 - Gallery shortcode
@@ -382,6 +382,27 @@ Parameters:
     <dd>Optional. Position 0. String. Chroma <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">language code</a>. Default is <code>plaintext</code>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">highlight options</a>.</dd>
+</dl>
+
+### Email
+
+The `paige/email` shortcode hides e-mail addresses from robots.
+
+```
+{{< paige/email
+    address=""
+    text="" >}}
+```
+
+Inner content: None.
+
+Parameters:
+
+<dl>
+    <dt><code>address</code></dt>
+    <dd>Required. String. The e-mail address.</dd>
+    <dt><code>text</code></dt>
+    <dd>Required. String. The anchor text.</dd>
 </dl>
 
 ### Figure
