@@ -11,6 +11,7 @@
 {{ $loading := $params.loading }}
 {{ $maxheight := $params.maxheight }}
 {{ $maxwidth := $params.maxwidth }}
+{{ $page := $params.page }}
 {{ $process := $params.process }}
 {{ $resource := $params.resource }}
 {{ $sizes := $params.sizes }}
@@ -68,7 +69,7 @@
 {{ $style = delimit ($style | uniq | sort) "; " }}
 
 {{ if and (not $resource) $src }}
-    {{ $resource = partial "paige/resource.html" $src }}
+    {{ $resource = partial "paige/resource.html" (dict "page" $page "url" $src) }}
 {{ end }}
 
 {{ if $resource }}

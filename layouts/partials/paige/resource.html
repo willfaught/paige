@@ -1,4 +1,7 @@
-{{ $url := . }}
+{{ $params := . }}
+
+{{ $page := $params.page }}
+{{ $url := $params.url }}
 
 {{ $result := "" }}
 
@@ -12,11 +15,11 @@
     {{ end }}
 {{ end }}
 
-{{ if and (not $result) page }}
-    {{ with page.Resources.GetMatch $url }}
+{{ if and (not $result) $page }}
+    {{ with $page.Resources.GetMatch $url }}
         {{ $result = . }}
     {{ else }}
-        {{ with page.Resources.Get $url }}
+        {{ with $page.Resources.Get $url }}
             {{ $result = . }}
         {{ end }}
     {{ end }}

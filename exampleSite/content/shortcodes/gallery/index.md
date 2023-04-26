@@ -369,6 +369,7 @@ Result:
 Code:
 
 ```go-text-template
+{{</* paige/figure caption="Gallery" /*/>}}
 {{</* paige/gallery */>}}
 {{</* paige/figure caption="Image 1" /*/>}}
 {{</* paige/image src="1-2.jpg" /*/>}}
@@ -383,10 +384,12 @@ Code:
 {{</* paige/image src="4.jpg" /*/>}}
 {{</* /paige/figure */>}}
 {{</* /paige/gallery */>}}
+{{</* /paige/figure */>}}
 ```
 
 Result:
 
+{{< paige/figure caption="Gallery" >}}
 {{< paige/gallery >}}
 {{< paige/figure caption="Image 1" >}}
 {{< paige/image src="1-2.jpg" >}}
@@ -401,3 +404,4 @@ Result:
 {{< paige/image src="4.jpg" >}}
 {{< /paige/figure >}}
 {{< /paige/gallery >}}
+{{< /paige/figure >}}

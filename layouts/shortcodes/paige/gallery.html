@@ -10,6 +10,7 @@
 {{ $loading := .Get "loading" }}
 {{ $maxheight := .Get "maxheight" }}
 {{ $maxwidth := .Get "maxwidth" }}
+{{ $page := .Page }}
 {{ $process := .Get "process" }}
 {{ $style := .Get "style" }}
 {{ $type := .Get "type" | default "rows" }}
@@ -38,14 +39,16 @@
     {{ end }}
 {{ end }}
 
+{{/* The markup below cannot be indented due to Markdown. */}}
+
 <div class="paige-gallery">
     {{ if eq $type "filled-rows" }}
-        <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
+<div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
             {{ with $inner }}
                 {{ . }}
             {{ else }}
                 {{ range $resources }}
-                    {{ partial "paige/image.html" (dict
+                    {{- partial "paige/image.html" (dict
                         "breakpoints" $breakpoints
                         "class" $class
                         "densities" $densities
@@ -55,22 +58,23 @@
                         "loading" $loading
                         "maxheight" $maxheight
                         "maxwidth" $maxwidth
+                        "page" $page
                         "process" $process
                         "resource" .
                         "style" (print $style "; flex: 1 1 auto; object-fit: cover")
                         "width" $width
-                    ) }}
+                    ) -}}
                 {{ end }}
             {{ end }}
         </div>
     {{ else if eq $type "grid" }}
-        <div class="container-fluid overflow-hidden px-0">
-            <div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
+<div class="container-fluid overflow-hidden px-0">
+<div class="align-items-{{ $align }} gx-3 gy-3 justify-content-{{ $justify }} row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6">
                 {{ with $inner }}
                     {{ . }}
                 {{ else }}
                     {{ range $resources }}
-                        {{ partial "paige/image.html" (dict
+                        {{- partial "paige/image.html" (dict
                             "breakpoints" $breakpoints
                             "class" $class
                             "densities" $densities
@@ -80,22 +84,23 @@
                             "loading" $loading
                             "maxheight" $maxheight
                             "maxwidth" $maxwidth
+                            "page" $page
                             "process" $process
                             "resource" .
                             "style" (print $style "; height: auto; max-width: 100%")
                             "width" $width
-                        ) }}
+                        ) -}}
                     {{ end }}
                 {{ end }}
-            </div>
-        </div>
+</div>
+</div>
     {{ else if eq $type "rows" }}
-        <div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
+<div class="align-items-{{ $align }} column-gap-3 d-flex flex-wrap justify-content-{{ $justify }} row-gap-3">
             {{ with $inner }}
                 {{ . }}
             {{ else }}
                 {{ range $resources }}
-                    {{ partial "paige/image.html" (dict
+                    {{- partial "paige/image.html" (dict
                         "breakpoints" $breakpoints
                         "class" $class
                         "densities" $densities
@@ -105,14 +110,15 @@
                         "loading" $loading
                         "maxheight" $maxheight
                         "maxwidth" $maxwidth
+                        "page" $page
                         "process" $process
                         "resource" .
                         "style" (print $style "; height: auto; max-width: 100%")
                         "width" $width
-                    ) }}
+                    ) -}}
                 {{ end }}
             {{ end }}
-        </div>
+</div>
     {{ else }}
         {{ errorf "layouts/shortcodes/paige/gallery.html: invalid type: %q" $type }}
     {{ end }}

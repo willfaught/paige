@@ -4,6 +4,7 @@
 {{ $href := $params.href }}
 {{ $includepaths := $params.includepaths }}
 {{ $integrity := $params.integrity }}
+{{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
 {{ $template := $params.template }}
@@ -15,7 +16,7 @@
     {{ errorf "layouts/partials/paige/link.html: no href" }}
 {{ end }}
 
-{{ with partial "paige/resource.html" $href }}
+{{ with partial "paige/resource.html" (dict "page" $page "url" $href) }}
     {{ $resource := . }}
 
     {{ if $template }}

@@ -33,7 +33,7 @@
 {{ end }}
 
 {{ partial "paige/link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true) }}
-{{ partial "paige/link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css") }}
+{{ partial "paige/link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css" "page" $page) }}
 
 {{ if $page.Param "paige.math" }}
     {{ partial "paige/link.html" (dict "href" "css/paige/katex/katex.min.css") }}
