@@ -16,7 +16,7 @@
     {{ $commiturl = printf ($page.Param "paige.git.commit_url") $page.GitInfo.Hash }}
 {{ end }}
 
-<div class="w-100" id="paige-metadata">
+<div id="paige-metadata">
     {{ with $title }}
         <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
     {{ end }}
