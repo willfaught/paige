@@ -20,7 +20,7 @@ Code:
 
 Result:
 
-<p>{{< paige/icon class="bi bi-github" >}}</p>
+<p>Icon: {{< paige/icon class="bi bi-github" >}}</p>
 
 ---
 
@@ -32,7 +32,7 @@ Code:
 
 Result:
 
-<p class="display-1">{{< paige/icon class="bi bi-github" >}}</p>
+<p class="display-1">Icon: {{< paige/icon class="bi bi-github" >}}</p>
 
 ## Name parameter
 
