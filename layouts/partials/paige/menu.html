@@ -33,7 +33,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse justify-content-center mt-3 mt-{{ $breakpoint }}-0 navbar-collapse" id="paige-menu-toggler">
-            <div class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
+            <ul class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                 {{ range . }}
                     {{ $menupath := strings.TrimPrefix $basepath .URL }}
                     {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
@@ -41,9 +41,26 @@
                     {{ $sectionprefix := (and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section))) }}
                     {{ $active := or $home $menuprefix $sectionprefix }}
 
-                    <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ end }} nav-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+                    <li class="nav-item {{ if .Children }} dropdown {{ end }}">
+                        <a {{ if $active }} aria-current="page" {{ end }} {{ if .Children }} aria-expanded="false" {{ end }} class="{{ if $active }} active {{ end }} {{ if .Params.paige.disabled }} disabled {{ end }} nav-link {{ if .Children }} dropdown-toggle {{ end }}" {{ if .Children }} data-bs-toggle="dropdown" {{ end }} href="{{ if .Children -}} # {{- else -}} {{ .URL | safeURL }} {{- end }}" {{ if .Children }} role="button" {{ end }}>{{ .Name }}</a>
+
+                        {{ with .Children }}
+                            <ul class="dropdown-menu">
+                                {{ range . }}
+                                    <li>
+                                        <a class="{{ if .Params.paige.disabled }} disabled {{ end }} dropdown-item" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+                                    </li>
+                                    {{ if .Params.paige.divider_below }}
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                    {{ end }}
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+                    </li>
                 {{ end }}
-            </div>
+            </ul>
         </div>
     </nav>
 {{ end }}

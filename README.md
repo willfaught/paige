@@ -313,6 +313,33 @@ url = "/blog/"
 weight = 20
 
 [[languages.en.menu.main]]
+identifier = "life"
+name = "Life"
+parent = "blog"
+url = "/blog/life/"
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = "work"
+name = "Work"
+parent = "blog"
+url = "/blog/work/"
+weight = 20
+
+[languages.en.menu.main.params.paige]
+divider_below = true
+
+[[languages.en.menu.main]]
+identifier = "interests"
+name = "Interests"
+parent = "blog"
+url = "/blog/interests/"
+weight = 30
+
+[languages.en.menu.main.params.paige]
+disabled = true
+
+[[languages.en.menu.main]]
 identifier = "tags"
 name = "Tags"
 url = "/tags/"
