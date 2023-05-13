@@ -36,9 +36,9 @@
             <ul class="align-items-center flex-column flex-{{ $breakpoint }}-row justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                 {{ range . }}
                     {{ $menupath := strings.TrimPrefix $basepath .URL }}
-                    {{ $home := (and (eq $menupath "/") (eq $pagepath "/")) }}
-                    {{ $menuprefix := (and (ne $menupath "/") (hasPrefix $pagepath $menupath)) }}
-                    {{ $sectionprefix := (and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section))) }}
+                    {{ $home := and (eq $menupath "/") (eq $pagepath "/") }}
+                    {{ $menuprefix := and (ne $menupath "/") (hasPrefix $pagepath $menupath) }}
+                    {{ $sectionprefix := and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section)) }}
                     {{ $active := or $home $menuprefix $sectionprefix }}
 
                     <li class="nav-item {{ if .Children }} dropdown {{ end }}">
