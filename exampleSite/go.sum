@@ -8,3 +8,7 @@ github.com/willfaught/paige v0.60.0 h1:p5gx602vXPH3mczOFSoFSs+UO/DmKEf05/lk+D8jA
 github.com/willfaught/paige v0.60.0/go.mod h1:0Nt8ifl7UVYQIBaMtpZmg+BrQHHzFNqKcrBoA2Oo4/E=
 github.com/willfaught/paige v0.61.0 h1:85FU/2sO5/p1wsrCcWmtmz2pw7nOLv8EA4Qaq6ApaGU=
 github.com/willfaught/paige v0.61.0/go.mod h1:0Nt8ifl7UVYQIBaMtpZmg+BrQHHzFNqKcrBoA2Oo4/E=
+github.com/willfaught/paige v0.61.1 h1:eh5NJcc1a4FdnlP5hqCpLY50YBZ0cQESy6tbZSbG14A=
+github.com/willfaught/paige v0.61.1/go.mod h1:0Nt8ifl7UVYQIBaMtpZmg+BrQHHzFNqKcrBoA2Oo4/E=
+github.com/willfaught/paige v0.62.0 h1:gFO4eF+oTXTRBjKsiAavDx5JwoGvYRkqdeCABJKKfSs=
+github.com/willfaught/paige v0.62.0/go.mod h1:0Nt8ifl7UVYQIBaMtpZmg+BrQHHzFNqKcrBoA2Oo4/E=
