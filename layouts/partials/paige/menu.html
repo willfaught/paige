@@ -2,6 +2,7 @@
 
 {{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
 {{ $breakpoint := $page.Param "paige.menu.breakpoint" | default "sm" }}
+{{ $links := false }}
 {{ $pills := false }}
 {{ $tabs := false }}
 {{ $underline := false }}
@@ -13,14 +14,14 @@
 {{ $pagepath := strings.TrimPrefix $basepath $page.RelPermalink }}
 
 {{ with $page.Param "paige.menu.style" }}
-    {{ if eq . "pills" }}
-        {{ $pills = true }}
+    {{ if eq . "links" }}
+        {{ $links = true }}
     {{ else if eq . "tabs" }}
         {{ $tabs = true }}
     {{ else if eq . "underline" }}
         {{ $underline = true }}
-    {{ else if ne . "links" }}
-        {{ errorf "layouts/partials/paige/menu.html: invalid menu style: %q" . }}
+    {{ else }}
+        {{ $pills = true }}
     {{ end }}
 {{ else }}
     {{ $pills = true }}
