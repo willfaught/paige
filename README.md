@@ -147,7 +147,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
     ```sh
     $ cd yourproject
-    $ cat >>config.toml <<EOF
+    $ cat >>hugo.toml <<EOF
     [[module.imports]]
     path = "github.com/willfaught/paige"
     EOF
