@@ -294,7 +294,7 @@ An optional menu can be configured.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
 
-Example configuration in `yoursite/config.toml`:
+Example configuration in `yoursite/hugo.toml`:
 
 ```toml
 [languages.en]
@@ -371,7 +371,7 @@ layout = "paige/cloud"
 
 The `paige/search` layout provides a search page.
 
-Example configuration in `yoursite/config.toml`:
+Example configuration in `yoursite/hugo.toml`:
 
 ```toml
 [outputs]
