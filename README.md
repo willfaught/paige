@@ -107,7 +107,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     For Homebrew on Mac:
 
     ```sh
-    $ brew install sass/sass/dart-sass-embedded
+    $ brew install sass/sass/dart-sass-embedded@1.62.1
     ```
 
     For Chocolatey on Windows:
