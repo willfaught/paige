@@ -26,7 +26,6 @@ jobs:
       - name: Build
         run: |
           cd exampleSite
-          echo "replace github.com/willfaught/paige => ../" >>go.mod
           hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
