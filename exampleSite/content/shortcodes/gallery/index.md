@@ -18,7 +18,7 @@ Code:
 {{</* paige/gallery align="start" */>}}
 {{</* paige/image height="20rem" src="1-2.jpg" */>}}
 {{</* paige/image height="10rem" src="2-2.jpg" */>}}
-{{</* /paige/gallery /*/>}}
+{{</* /paige/gallery */>}}
 ```
 
 Result:
@@ -36,7 +36,7 @@ Code:
 {{</* paige/gallery align="center" */>}}
 {{</* paige/image height="20rem" src="1-2.jpg" */>}}
 {{</* paige/image height="10rem" src="2-2.jpg" */>}}
-{{</* /paige/gallery /*/>}}
+{{</* /paige/gallery */>}}
 ```
 
 Result:
@@ -54,7 +54,7 @@ Code:
 {{</* paige/gallery align="end" */>}}
 {{</* paige/image height="20rem" src="1-2.jpg" */>}}
 {{</* paige/image height="10rem" src="2-2.jpg" */>}}
-{{</* /paige/gallery /*/>}}
+{{</* /paige/gallery */>}}
 ```
 
 Result:
@@ -369,19 +369,19 @@ Result:
 Code:
 
 ```go-text-template
-{{</* paige/figure caption="Gallery" /*/>}}
+{{</* paige/figure caption="Gallery" */>}}
 {{</* paige/gallery */>}}
-{{</* paige/figure caption="Image 1" /*/>}}
-{{</* paige/image src="1-2.jpg" /*/>}}
+{{</* paige/figure caption="Image 1" */>}}
+{{</* paige/image src="1-2.jpg" */>}}
 {{</* /paige/figure */>}}
-{{</* paige/figure caption="Image 2" /*/>}}
-{{</* paige/image src="2-2.jpg" /*/>}}
+{{</* paige/figure caption="Image 2" */>}}
+{{</* paige/image src="2-2.jpg" */>}}
 {{</* /paige/figure */>}}
-{{</* paige/figure caption="Image 3" /*/>}}
-{{</* paige/image src="3.jpg" /*/>}}
+{{</* paige/figure caption="Image 3" */>}}
+{{</* paige/image src="3.jpg" */>}}
 {{</* /paige/figure */>}}
-{{</* paige/figure caption="Image 4" /*/>}}
-{{</* paige/image src="4.jpg" /*/>}}
+{{</* paige/figure caption="Image 4" */>}}
+{{</* paige/image src="4.jpg" */>}}
 {{</* /paige/figure */>}}
 {{</* /paige/gallery */>}}
 {{</* /paige/figure */>}}
