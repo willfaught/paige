@@ -5,7 +5,7 @@
         <div id="graphcomment"></div>
         <script type="text/javascript">
         var __semio__params = {
-            graphcommentId: "{{ $page.Param "paige.comments.graphcomment.account_id" | safeJS }}",
+            graphcommentId: "{{ $page.Param `paige.comments.graphcomment.account_id` | safeJS }}",
             behaviour: {
                 uid: "{{ $page.RelPermalink | safeJS }}"
             }
