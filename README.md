@@ -211,6 +211,9 @@ host_url = ""
 [paige.analytics.mixpanel] # See https://mixpanel.com
 token = ""
 
+[paige.analytics.pirsch] # See https://pirsch.io
+identification_code = ""
+
 [paige.analytics.plausible] # See https://plausible.io
 account_id = ""
 
