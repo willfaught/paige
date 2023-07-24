@@ -219,6 +219,9 @@ account_id = ""
 [paige.comments.commento] # See https://commento.io
 script_url = ""
 
+[paige.comments.graphcomment] # See https://graphcomment.com
+account_id = ""
+
 [paige.comments.hyvor] # See https://hyvor.com
 account_id = ""
 
