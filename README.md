@@ -177,6 +177,9 @@ style = "" # CSS included at the end of the stylesheet, before style-last.css
 [paige.analytics]
 disable = false # Disable all analytics
 
+[paige.analytics.beam] # See https://beamanalytics.io
+token = ""
+
 [paige.analytics.chartbeat] # See https://chartbeat.com
 account_id = ""
 domain = ""
