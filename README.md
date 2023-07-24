@@ -535,7 +535,7 @@ Parameters:
     <dt><code>style</code></dt>
     <dd>Optional. String. CSS. Image style. Merged with implementation.</dd>
     <dt><code>type</code></dt>
-    <dd>Optional. String. Type of layout. Must be <code>filled-rows</code>, <code>grid</code>, or <code>rows</code> (default).</dd>
+    <dd>Optional. String. Type of layout. Must be <code>grid</code> or <code>rows</code> (default).</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
