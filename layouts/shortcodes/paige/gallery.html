@@ -49,7 +49,7 @@
 {{ . }}
 {{ else }}
 {{ range $resources }}
-{{- partial "paige/image.html" (dict
+{{ partial "paige/image.html" (dict
     "breakpoints" $breakpoints
     "class" $class
     "densities" $densities
@@ -64,7 +64,7 @@
     "resource" .
     "style" (print $style "; height: auto; max-width: 100%")
     "width" $width
-) -}}
+) }}
 {{ end }}
 {{ end }}
 </div>
@@ -75,7 +75,7 @@
 {{ . }}
 {{ else }}
 {{ range $resources }}
-{{- partial "paige/image.html" (dict
+{{ partial "paige/image.html" (dict
     "breakpoints" $breakpoints
     "class" $class
     "densities" $densities
@@ -90,7 +90,7 @@
     "resource" .
     "style" (print $style "; height: auto; max-width: 100%")
     "width" $width
-) -}}
+) }}
 {{ end }}
 {{ end }}
 </div>
