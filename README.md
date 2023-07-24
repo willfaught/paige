@@ -184,6 +184,9 @@ token = ""
 account_id = ""
 domain = ""
 
+[paige.analytics.clarity] # See https://clarity.microsoft.com
+account_id = ""
+
 [paige.analytics.clicky] # See https://clicky.com
 account_id = ""
 
