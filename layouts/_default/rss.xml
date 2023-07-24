@@ -8,7 +8,7 @@
     {{ $pages = $pages | first $limit }}
 {{ end }}
 
-{{ $pages = where $pages "Params.paige.rss.hide" "ne" true }}
+{{ $pages = where $pages "Params.paige.rss.hide_page" "ne" true }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
