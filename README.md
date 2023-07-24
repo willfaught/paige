@@ -190,6 +190,10 @@ account_id = ""
 [paige.analytics.clicky] # See https://clicky.com
 account_id = ""
 
+[paige.analytics.counter] # See https://counter.dev
+account_id = ""
+utc_offset = ""
+
 [paige.analytics.fathom] # See https://usefathom.com
 account_id = ""
 
