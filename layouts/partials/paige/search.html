@@ -64,7 +64,7 @@ if (paigeQueryElement !== null) {
 
 function paigeSearch(queryText) {
     paigeShow(paigeSearchingElement);
-    fetch("/index.json").then(function (response) {
+    fetch("{{ absURL `index.json` | safeJS }}").then(function (response) {
         if (response.status !== 200) {
             console.log("Cannot load /index.json", response);
             paigeHide(paigeSearchingElement);
