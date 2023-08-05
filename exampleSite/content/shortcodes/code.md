@@ -14,7 +14,7 @@ Paige provides a `paige/code` shortcode for displaying code.
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/code */>}}
 q = 'q = %r; print(q %% q)'; print(q % q)
 {{</* /paige/code */>}}
@@ -30,7 +30,7 @@ q = 'q = %r; print(q %% q)'; print(q % q)
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/code */>}}
                        ---
                     -        --
@@ -82,7 +82,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/code lang="c" */>}}
 float Q_rsqrt( float number )
 {
@@ -127,7 +127,7 @@ float Q_rsqrt( float number )
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/code options="linenos=true,hl_lines=10" */>}}
 float Q_rsqrt( float number )
 {
@@ -171,7 +171,7 @@ float Q_rsqrt( float number )
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Quine" */>}}
 {{</* paige/code options="linenos=true,hl_lines=10" */>}}
 q = 'q = %r; print(q %% q)'; print(q % q)

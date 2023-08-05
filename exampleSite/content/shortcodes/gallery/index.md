@@ -14,7 +14,7 @@ Paige provides a `paige/gallery` shortcode for displaying a list of images.
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery align="start" */>}}
 {{</* paige/image height="20rem" src="1-2.jpg" */>}}
 {{</* paige/image height="10rem" src="2-2.jpg" */>}}
@@ -32,7 +32,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery align="center" */>}}
 {{</* paige/image height="20rem" src="1-2.jpg" */>}}
 {{</* paige/image height="10rem" src="2-2.jpg" */>}}
@@ -50,7 +50,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery align="end" */>}}
 {{</* paige/image height="20rem" src="1-2.jpg" */>}}
 {{</* paige/image height="10rem" src="2-2.jpg" */>}}
@@ -68,7 +68,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery fetchpriority="high" images="*-2.jpg" /*/>}}
 ```
 
@@ -80,7 +80,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery fetchpriority="low" images="*-2.jpg" /*/>}}
 ```
 
@@ -92,7 +92,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery height="10rem" images="*-2.jpg" /*/>}}
 ```
 
@@ -104,7 +104,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery height="20rem" images="*-2.jpg" /*/>}}
 ```
 
@@ -116,7 +116,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="1-2.jpg" /*/>}}
 ```
 
@@ -128,7 +128,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" /*/>}}
 ```
 
@@ -140,7 +140,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" justify="start" /*/>}}
 ```
 
@@ -152,7 +152,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" justify="center" /*/>}}
 ```
 
@@ -164,7 +164,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" justify="end" /*/>}}
 ```
 
@@ -176,7 +176,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" linked="unprocessed" /*/>}}
 ```
 
@@ -188,7 +188,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" linked="default" /*/>}}
 ```
 
@@ -200,7 +200,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" linked="r180" /*/>}}
 ```
 
@@ -212,7 +212,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" loading="eager" /*/>}}
 ```
 
@@ -224,7 +224,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" loading="lazy" /*/>}}
 ```
 
@@ -236,7 +236,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" maxheight="10rem" /*/>}}
 ```
 
@@ -248,7 +248,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" maxheight="20rem" /*/>}}
 ```
 
@@ -260,7 +260,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" maxwidth="10rem" /*/>}}
 ```
 
@@ -272,7 +272,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" maxwidth="20rem" /*/>}}
 ```
 
@@ -284,7 +284,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" process="default" /*/>}}
 ```
 
@@ -296,7 +296,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r180 webp" /*/>}}
 ```
 
@@ -308,7 +308,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*.jpg" type="grid" /*/>}}
 ```
 
@@ -320,7 +320,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*.jpg" maxheight="10rem" type="rows" /*/>}}
 ```
 
@@ -332,7 +332,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" width="10rem" /*/>}}
 ```
 
@@ -344,7 +344,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/gallery images="*-2.jpg" width="20rem" /*/>}}
 ```
 
@@ -356,7 +356,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Gallery" */>}}
 {{</* paige/gallery */>}}
 {{</* paige/figure caption="Image 1" */>}}

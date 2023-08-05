@@ -14,7 +14,7 @@ Paige provides a `paige/figure` shortcode for displaying content.
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -30,7 +30,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -46,7 +46,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure float="start" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -68,7 +68,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure float="end" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -90,7 +90,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure float="start" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -120,7 +120,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure float="start" */>}}
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="20rem" */>}}
 {{</* /paige/figure */>}}
@@ -142,7 +142,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure float="end" */>}}
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="20rem" */>}}
 {{</* /paige/figure */>}}
@@ -164,7 +164,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure float="start" */>}}
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="20rem" */>}}
 {{</* /paige/figure */>}}
@@ -194,7 +194,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" horizontal="start" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -226,7 +226,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" maxwidth="5rem" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -242,7 +242,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" maxwidth="20rem" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -258,7 +258,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" number=7 */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -274,7 +274,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" number="G" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -290,7 +290,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" numbered=true */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -322,7 +322,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 <div class="column-gap-3 d-flex justify-content-between" style="height: 20rem">
 
 {{</* paige/figure caption="Hickory Dickory Dock" vertical="start" */>}}
@@ -362,7 +362,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" width="5rem" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}
@@ -378,7 +378,7 @@ Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Hickory Dickory Dock" width="20rem" */>}}
 Hickory dickory dock.<br>The mouse ran up the clock.<br>The clock struck one,<br>The mouse ran down,<br>Hickory dickory dock.
 {{</* /paige/figure */>}}

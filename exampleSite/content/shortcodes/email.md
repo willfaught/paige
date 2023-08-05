@@ -14,7 +14,7 @@ Paige provides a `paige/email` shortcode that hides e-mail addresses from robots
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/email address="example@example.com" text="E-mail me" */>}}
 ```
 

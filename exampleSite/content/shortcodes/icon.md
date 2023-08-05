@@ -14,7 +14,7 @@ Paige provides a `paige/icon` shortcode for displaying a web font icon.
 
 Code:
 
-```go-text-template
+```go-html-template
 <p class="display-1">Icon: {{</* paige/icon class="bi bi-github" */>}}</p>
 ```
 
@@ -26,7 +26,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p class="display-1">Icon: {{</* paige/icon class="bi bi-github" name="GitHub" */>}}</p>
 ```
 
@@ -38,7 +38,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p class="display-1">Icon: {{</* paige/icon class="bi bi-github" url="https://github.com/willfaught/paige" */>}}</p>
 ```
 

@@ -14,7 +14,7 @@ Paige provides a `paige/youtube` shortcode for playing YouTube videos.
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube "dQw4w9WgXcQ" */>}}
 ```
 
@@ -26,7 +26,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube autoplay=true video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -38,7 +38,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube controls=true video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -50,7 +50,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube description="My title" video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -62,7 +62,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube end=20 video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -74,7 +74,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube fullscreen=false video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -86,7 +86,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube height="10rem" video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -98,7 +98,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube list="PLOstxpSiJGlClyRnCiubdXJcUvwgHcrVH" video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -110,7 +110,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube loop=true video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -122,7 +122,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube maxheight="10rem" video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -134,7 +134,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube maxwidth="50%" video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -146,7 +146,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube mute=true video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -158,7 +158,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube start=10 video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -170,7 +170,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube video="dQw4w9WgXcQ" */>}}
 ```
 
@@ -182,7 +182,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/youtube video="dQw4w9WgXcQ" width="50%" */>}}
 ```
 
@@ -194,7 +194,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="YouTube" */>}}
 {{</* paige/youtube video="dQw4w9WgXcQ" */>}}
 {{</* /paige/figure */>}}

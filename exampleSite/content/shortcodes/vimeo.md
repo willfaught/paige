@@ -14,7 +14,7 @@ Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo "644036051" */>}}
 ```
 
@@ -26,7 +26,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo autopause=false video="644036051" */>}}
 ```
 
@@ -38,7 +38,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo autoplay=true video="644036051" */>}}
 ```
 
@@ -50,7 +50,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo background=true video="644036051" */>}}
 ```
 
@@ -62,7 +62,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo byline=false video="644036051" */>}}
 ```
 
@@ -74,7 +74,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo color="ff0000" video="644036051" */>}}
 ```
 
@@ -86,7 +86,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo controls=false video="644036051" */>}}
 ```
 
@@ -98,7 +98,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo description="My description" video="644036051" */>}}
 ```
 
@@ -110,7 +110,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo dnt=true video="644036051" */>}}
 ```
 
@@ -122,7 +122,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo fullscreen=false video="644036051" */>}}
 ```
 
@@ -134,7 +134,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo height="10rem" video="644036051" */>}}
 ```
 
@@ -146,7 +146,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo keyboard=false video="644036051" */>}}
 ```
 
@@ -158,7 +158,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo loop=true video="644036051" */>}}
 ```
 
@@ -170,7 +170,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo maxheight="10rem" video="644036051" */>}}
 ```
 
@@ -182,7 +182,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo maxwidth="50%" video="644036051" */>}}
 ```
 
@@ -194,7 +194,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo muted=true video="644036051" */>}}
 ```
 
@@ -206,7 +206,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo pip=true video="644036051" */>}}
 ```
 
@@ -218,7 +218,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo playsinline=false video="644036051" */>}}
 ```
 
@@ -230,7 +230,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo portrait=false video="644036051" */>}}
 ```
 
@@ -242,7 +242,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo quality="720p" video="644036051" */>}}
 ```
 
@@ -254,7 +254,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo speed=true video="644036051" */>}}
 ```
 
@@ -266,7 +266,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo texttrack=true video="644036051" */>}}
 ```
 
@@ -278,7 +278,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo time="1m2s" video="644036051" */>}}
 ```
 
@@ -290,7 +290,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo title=false video="644036051" */>}}
 ```
 
@@ -302,7 +302,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo transparent=false video="644036051" */>}}
 ```
 
@@ -314,7 +314,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo video="644036051" */>}}
 ```
 
@@ -326,7 +326,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/vimeo video="644036051" width="50%" */>}}
 ```
 
@@ -338,7 +338,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Vimeo" */>}}
 {{</* paige/vimeo video="644036051" */>}}
 {{</* /paige/figure */>}}

@@ -14,7 +14,7 @@ Paige provides a `paige/image` shortcode for displaying an image.
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image alt="Landscape" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -30,7 +30,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image class="rounded-5" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -46,7 +46,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image fetchpriority="high" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -62,7 +62,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image height="10rem" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -78,7 +78,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image link="https://github.com/willfaught/paige" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -94,7 +94,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image linked="unprocessed" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -110,7 +110,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image linked="default" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -126,7 +126,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image linked="r180" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -142,7 +142,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image loading="eager" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -158,7 +158,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image maxheight="10rem" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -174,7 +174,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image maxwidth="10rem" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -190,7 +190,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image process="default" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -206,7 +206,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image process="550x lanczos picture resize webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -222,7 +222,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 </p>
@@ -238,7 +238,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" title="Landscape" */>}}
 </p>
@@ -254,7 +254,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 <p>
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="50%" */>}}
 </p>
@@ -270,7 +270,7 @@ Result:
 
 Code:
 
-```go-text-template
+```go-html-template
 {{</* paige/figure caption="Landscape" */>}}
 {{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 {{</* /paige/figure */>}}
