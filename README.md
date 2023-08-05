@@ -639,11 +639,11 @@ Parameters:
     <dt><code>process</code></dt>
     <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
     <dt><code>sizes</code></dt>
-    <dd>Optional. String. Image sizes. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
+    <dd>Optional. String. Image <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes">sizes</a>. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>src</code></dt>
     <dd>Required. Position 0. String. URL. Image source.</dd>
     <dt><code>srcset</code></dt>
-    <dd>Optional. String. Image srcset. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
+    <dd>Optional. String. Image <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset">srcset</a>. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>style</code></dt>
     <dd>Optional. String. CSS. Image style. Merged with implementation.</dd>
     <dt><code>title</code></dt>
