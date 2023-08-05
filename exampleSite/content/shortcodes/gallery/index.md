@@ -64,6 +64,42 @@ Result:
 {{< paige/image height="10rem" src="2-2.jpg" >}}
 {{< /paige/gallery >}}
 
+## Breakpoints parameter
+
+Code:
+
+```go-html-template
+{{</* paige/gallery breakpoints=true images="*-2.jpg" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery breakpoints=true images="*-2.jpg" />}}
+
+## Class parameter
+
+Code:
+
+```go-html-template
+{{</* paige/gallery class="rounded-5" images="*-2.jpg" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery class="rounded-5" images="*-2.jpg" />}}
+
+## Densities parameter
+
+Code:
+
+```go-html-template
+{{</* paige/gallery densities="1x 2x 3x" images="*-2.jpg" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery densities="1x 2x 3x" images="*-2.jpg" />}}
+
 ## Fetchpriority parameter
 
 Code:
@@ -303,6 +339,18 @@ Code:
 Result:
 
 {{< paige/gallery images="*-2.jpg" process="300x300 center crop lanczos picture r180 webp" />}}
+
+## Style parameter
+
+Code:
+
+```go-html-template
+{{</* paige/gallery images="*-2.jpg" style="filter: grayscale(100%)" /*/>}}
+```
+
+Result:
+
+{{< paige/gallery images="*-2.jpg" style="filter: grayscale(100%)" />}}
 
 ## Type
 

@@ -26,6 +26,22 @@ Result:
 {{< paige/image alt="Landscape" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 </p>
 
+## Breakpoints parameter
+
+Code:
+
+```go-html-template
+<p>
+{{</* paige/image breakpoints=true src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+</p>
+```
+
+Result:
+
+<p>
+{{< paige/image breakpoints=true src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+</p>
+
 ## Class parameter
 
 Code:
@@ -40,6 +56,22 @@ Result:
 
 <p>
 {{< paige/image class="rounded-5" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+</p>
+
+## Densities parameter
+
+Code:
+
+```go-html-template
+<p>
+{{</* paige/image densities="1x 2x 3x" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+</p>
+```
+
+Result:
+
+<p>
+{{< paige/image densities="1x 2x 3x" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 </p>
 
 ## Fetchpriority parameter
@@ -218,6 +250,26 @@ Result:
 {{< paige/image process="550x lanczos picture resize webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 </p>
 
+## Sizes parameter
+
+Code:
+
+```go-html-template
+<p>
+{{</* paige/image
+    sizes="(max-width: 576px) 550px, (max-width: 992px) 936px, 1296px"
+    src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+</p>
+```
+
+Result:
+
+<p>
+{{< paige/image
+    sizes="(max-width: 576px) 550px, (max-width: 992px) 936px, 1296px"
+    src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+</p>
+
 ## Src parameter
 
 Code:
@@ -232,6 +284,43 @@ Result:
 
 <p>
 {{< paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+</p>
+
+## Srcset parameter
+
+Code:
+
+```go-html-template
+<p>
+{{</* paige/image
+    src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296"
+    srcset="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=550 550w,
+        https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=936 936w" */>}}
+</p>
+```
+
+Result:
+
+<p>
+{{< paige/image
+    src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296"
+    srcset="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=550 550w, https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=936 936w" >}}
+</p>
+
+## Style parameter
+
+Code:
+
+```go-html-template
+<p>
+{{</* paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" style="filter: grayscale(100%)" */>}}
+</p>
+```
+
+Result:
+
+<p>
+{{< paige/image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" style="filter: grayscale(100%)" >}}
 </p>
 
 ## Title parameter
