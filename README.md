@@ -501,7 +501,7 @@ The `paige/gallery` shortcode provides an arrangement of images.
 ```
 {{< paige/gallery
     align=""
-    breakpoints=""
+    breakpoints=false
     class=""
     densities=""
     fetchpriority=""
