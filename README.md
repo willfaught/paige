@@ -140,7 +140,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     ```sh
     $ cd yourproject
     $ hugo mod init github.com/youraccount/yourproject
-    $ hugo mod get github.com/willfaught/paige
+    $ hugo mod get github.com/willfaught/paige@latest
     ```
 
 6. Import the Paige module:
