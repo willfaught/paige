@@ -216,9 +216,11 @@
                 {{ $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $imagewidth) }}
             {{ end }}
 
-            {{ $sizes = $sizes | append (print $maxwidth "px") }}
-            {{ $sizes = delimit $sizes ", " }}
-            {{ $srcset = delimit $srcset ", " }}
+            {{ if $sizes }}
+                {{ $sizes = $sizes | append (print $maxwidth "px") }}
+                {{ $sizes = delimit $sizes ", " }}
+                {{ $srcset = delimit $srcset ", " }}
+            {{ end }}
         {{ end }}
     {{ end }}
 {{ else }}
