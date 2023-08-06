@@ -16,16 +16,16 @@ Code:
 
 ```go-html-template
 {{</* paige/gallery align="start" */>}}
-{{</* paige/image height="20rem" src="1-2.jpg" */>}}
-{{</* paige/image height="10rem" src="2-2.jpg" */>}}
+{{</* paige/image height="20rem" src="01-2.jpg" */>}}
+{{</* paige/image height="10rem" src="02-2.jpg" */>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery align="start" >}}
-{{< paige/image height="20rem" src="1-2.jpg" >}}
-{{< paige/image height="10rem" src="2-2.jpg" >}}
+{{< paige/image height="20rem" src="01-2.jpg" >}}
+{{< paige/image height="10rem" src="02-2.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -34,16 +34,16 @@ Code:
 
 ```go-html-template
 {{</* paige/gallery align="center" */>}}
-{{</* paige/image height="20rem" src="1-2.jpg" */>}}
-{{</* paige/image height="10rem" src="2-2.jpg" */>}}
+{{</* paige/image height="20rem" src="01-2.jpg" */>}}
+{{</* paige/image height="10rem" src="02-2.jpg" */>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery align="center" >}}
-{{< paige/image height="20rem" src="1-2.jpg" >}}
-{{< paige/image height="10rem" src="2-2.jpg" >}}
+{{< paige/image height="20rem" src="01-2.jpg" >}}
+{{< paige/image height="10rem" src="02-2.jpg" >}}
 {{< /paige/gallery >}}
 
 ---
@@ -52,16 +52,16 @@ Code:
 
 ```go-html-template
 {{</* paige/gallery align="end" */>}}
-{{</* paige/image height="20rem" src="1-2.jpg" */>}}
-{{</* paige/image height="10rem" src="2-2.jpg" */>}}
+{{</* paige/image height="20rem" src="01-2.jpg" */>}}
+{{</* paige/image height="10rem" src="02-2.jpg" */>}}
 {{</* /paige/gallery */>}}
 ```
 
 Result:
 
 {{< paige/gallery align="end" >}}
-{{< paige/image height="20rem" src="1-2.jpg" >}}
-{{< paige/image height="10rem" src="2-2.jpg" >}}
+{{< paige/image height="20rem" src="01-2.jpg" >}}
+{{< paige/image height="10rem" src="02-2.jpg" >}}
 {{< /paige/gallery >}}
 
 ## Breakpoints parameter
@@ -408,16 +408,16 @@ Code:
 {{</* paige/figure caption="Gallery" */>}}
 {{</* paige/gallery */>}}
 {{</* paige/figure caption="Image 1" */>}}
-{{</* paige/image src="1-2.jpg" */>}}
+{{</* paige/image src="01-2.jpg" */>}}
 {{</* /paige/figure */>}}
 {{</* paige/figure caption="Image 2" */>}}
-{{</* paige/image src="2-2.jpg" */>}}
+{{</* paige/image src="02-2.jpg" */>}}
 {{</* /paige/figure */>}}
 {{</* paige/figure caption="Image 3" */>}}
-{{</* paige/image src="3.jpg" */>}}
+{{</* paige/image src="03.jpg" */>}}
 {{</* /paige/figure */>}}
 {{</* paige/figure caption="Image 4" */>}}
-{{</* paige/image src="4.jpg" */>}}
+{{</* paige/image src="04.jpg" */>}}
 {{</* /paige/figure */>}}
 {{</* /paige/gallery */>}}
 {{</* /paige/figure */>}}
@@ -428,16 +428,16 @@ Result:
 {{< paige/figure caption="Gallery" >}}
 {{< paige/gallery >}}
 {{< paige/figure caption="Image 1" >}}
-{{< paige/image src="1-2.jpg" >}}
+{{< paige/image src="01-2.jpg" >}}
 {{< /paige/figure >}}
 {{< paige/figure caption="Image 2" >}}
-{{< paige/image src="2-2.jpg" >}}
+{{< paige/image src="02-2.jpg" >}}
 {{< /paige/figure >}}
 {{< paige/figure caption="Image 3" >}}
-{{< paige/image src="3.jpg" >}}
+{{< paige/image src="03.jpg" >}}
 {{< /paige/figure >}}
 {{< paige/figure caption="Image 4" >}}
-{{< paige/image src="4.jpg" >}}
+{{< paige/image src="04.jpg" >}}
 {{< /paige/figure >}}
 {{< /paige/gallery >}}
 {{< /paige/figure >}}
