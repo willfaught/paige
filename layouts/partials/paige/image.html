@@ -198,7 +198,7 @@
                 {{ $imagewidth := index . 0 }}
                 {{ $viewwidth := index . 1 }}
 
-                {{ if ge $imagewidth $smallerresource.Width }}
+                {{ if gt $imagewidth $smallerresource.Width }}
                     {{ continue }}
                 {{ end }}
 
