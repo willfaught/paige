@@ -1,0 +1,99 @@
+baseurl = "https://example.com"
+copyright = "© Will Faught"
+enablerobotstxt = true
+languagecode = "en-us"
+paginate = 50
+timezone = "America/Los_Angeles"
+titlecasestyle = "Go"
+
+[languages.en]
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = "content"
+name = "Content"
+url = "/content/"
+weight = 20
+
+[[languages.en.menu.main]]
+identifier = "layouts"
+name = "Layouts"
+url = "/layouts/"
+weight = 30
+
+[[languages.en.menu.main]]
+identifier = "shortcodes"
+name = "Shortcodes"
+url = "/shortcodes/"
+weight = 40
+
+[[languages.en.menu.main]]
+identifier = "customization"
+name = "Customization"
+url = "/customization/"
+weight = 50
+
+[[languages.en.menu.main]]
+identifier = "authors"
+name = "Authors"
+url = "/authors/"
+weight = 60
+
+[[languages.en.menu.main]]
+identifier = "series"
+name = "Series"
+url = "/series/"
+weight = 70
+
+[[languages.en.menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 80
+
+[[languages.en.menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 90
+
+[[languages.en.menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 100
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+[markup.tableofcontents]
+endlevel = 6
+ordered = true
+startlevel = 2
+
+[[module.imports]]
+path = "github.com/willfaught/paige"
+
+[outputs]
+home = ["html", "json", "rss"]
+
+[params.authors.will-faught]
+name = "Will Faught"
+
+[params.paige.git]
+commit_url = "https://github.com/willfaught/paige/commit/%s"
+
+[taxonomies]
+author = "authors"
+category = "categories"
+series = "series"
+tag = "tags"
