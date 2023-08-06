@@ -69,12 +69,12 @@ Result:
 Code:
 
 ```go-html-template
-{{</* paige/gallery breakpoints=true images="*-2.jpg" /*/>}}
+{{</* paige/gallery breakpoints=true images="large/*.jpg" /*/>}}
 ```
 
 Result:
 
-{{< paige/gallery breakpoints=true images="*-2.jpg" />}}
+{{< paige/gallery breakpoints=true images="large/*.jpg" />}}
 
 ## Class parameter
 
