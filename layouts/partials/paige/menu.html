@@ -1,7 +1,6 @@
 {{ $page := . }}
 
 {{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
-{{ $breakpoint := $page.Param "paige.menu.breakpoint" | default "sm" }}
 {{ $links := false }}
 {{ $pills := false }}
 {{ $tabs := false }}

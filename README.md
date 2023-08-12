@@ -271,7 +271,6 @@ format = ":date_long" # Hugo date format
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
 
 [paige.menu]
-breakpoint = "sm" # Bootstrap breakpoint at which to display all menu items
 style = "pills" # Must be "links", "pills", "tabs", or "underline"
 
 [paige.rss]
