@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $basepath := path.Clean (urls.Parse site.BaseURL).Path }}
+{{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
 {{ $pills := false }}
 {{ $tabs := false }}
 {{ $underline := false }}

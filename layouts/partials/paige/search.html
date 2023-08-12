@@ -64,9 +64,9 @@ if (paigeQueryElement !== null) {
 
 function paigeSearch(queryText) {
     paigeShow(paigeSearchingElement);
-    fetch("{{ absURL `index.json` | safeJS }}").then(function (response) {
+    fetch("{{ relLangURL `index.json` | safeJS }}").then(function (response) {
         if (response.status !== 200) {
-            console.log("Cannot load /index.json", response);
+            console.log("Cannot load {{ relLangURL `index.json` | safeJS }}", response);
             paigeHide(paigeSearchingElement);
             paigeShow(paigeErrorElement);
             return;
