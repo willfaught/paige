@@ -102,24 +102,24 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ sudo snap install hugo
     ```
 
-2. [Install Embedded Dart Sass](https://github.com/sass/dart-sass-embedded/releases).
+2. [Install Dart Sass](https://github.com/sass/dart-sass/releases).
 
     For Homebrew on Mac:
 
     ```sh
-    $ brew install sass/sass/dart-sass-embedded@1.62.1
+    $ brew install sass/sass/sass
     ```
 
     For Chocolatey on Windows:
 
     ```sh
-    $ choco install dart-sass-embedded
+    $ choco install sass
     ```
 
     For Snap on Linux:
 
     ```sh
-    $ sudo snap install dart-sass-embedded
+    $ sudo snap install dart-sass
     ```
 
 3. Create a site:
