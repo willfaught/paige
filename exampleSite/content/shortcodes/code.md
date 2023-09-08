@@ -173,7 +173,7 @@ Code:
 
 ```go-html-template
 {{</* paige/figure caption="Quine" */>}}
-{{</* paige/code options="linenos=true,hl_lines=10" */>}}
+{{</* paige/code lang="python" */>}}
 q = 'q = %r; print(q %% q)'; print(q % q)
 {{</* /paige/code */>}}
 {{</* /paige/figure */>}}
