@@ -50,7 +50,7 @@
                 {{ if .Content }}
                     <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
                 {{ else if .Description }}
-                    <description>{{ .Description | markdownify | html }}</description>
+                    <description>{{ .Description | markdownify | safeHTML }}</description>
                 {{ end }}
                 {{ with .Permalink }}
                     <guid>{{ . }}</guid>
@@ -60,7 +60,7 @@
                     <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
                 {{ end }}
                 {{ with .Title }}
-                    <title>{{ . | markdownify | plainify | htmlUnescape }}</title>
+                    <title>{{ . | markdownify | plainify | htmlUnescape | safeHTML }}</title>
                 {{ end }}
             </item>
         {{ end }}

@@ -1,5 +1,5 @@
-{{ $caption := .Get 0 | default (.Get "caption") | markdownify }}
-{{ $content := .Inner | markdownify }}
+{{ $caption := .Get 0 | default (.Get "caption") | markdownify | safeHTML }}
+{{ $content := .Inner | markdownify | safeHTML }}
 {{ $float := .Get "float" }}
 {{ $horizontal := .Get "horizontal" | default "center" }}
 {{ $maxwidth := .Get "maxwidth" }}
