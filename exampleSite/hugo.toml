@@ -88,9 +88,14 @@ home = ["html", "json", "rss"]
 
 [params.authors.will-faught]
 name = "Will Faught"
+default = true
 
 [params.paige.git]
 commit_url = "https://github.com/willfaught/paige/commit/%s"
+
+[params.paige.rss]
+managing_editor = "Will Faught"
+web_master = "Will Faught"
 
 [taxonomies]
 author = "authors"
