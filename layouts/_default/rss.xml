@@ -50,7 +50,7 @@
                 {{ if .Content }}
                     <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
                 {{ else if .Description }}
-                    <description>{{ .Description | markdownify | safeHTML }}</description>
+                    <description>{{ printf "<![CDATA[%s]]>" (.Description | markdownify) | safeHTML }}</description>
                 {{ end }}
                 {{ with .Permalink }}
                     <guid>{{ . }}</guid>
