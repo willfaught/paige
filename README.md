@@ -1091,7 +1091,7 @@ The following NPM packages are used:
 
 - [bootstrap](https://www.npmjs.com/package/bootstrap/v/5.3.2)
 - [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons/v/1.11.0)
-- [katex](https://www.npmjs.com/package/katex/v/0.16.7)
+- [katex](https://www.npmjs.com/package/katex/v/0.16.8)
 
 Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way,
 optionally prefixed with one or more underscores, are reserved.

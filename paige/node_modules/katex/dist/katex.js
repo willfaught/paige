@@ -50,13 +50,19 @@ __webpack_require__.d(__webpack_exports__, {
  * If possible, a caller should provide a Token or ParseNode with information
  * about where in the source string the problem occurred.
  */
-var ParseError = // Error position based on passed-in Token or ParseNode.
+var ParseError = // Error start position based on passed-in Token or ParseNode.
+// Length of affected text based on passed-in Token or ParseNode.
+// The underlying error message without any context added.
 function ParseError(message, // The error message
 token // An object providing position information
 ) {
+  this.name = void 0;
   this.position = void 0;
+  this.length = void 0;
+  this.rawMessage = void 0;
   var error = "KaTeX parse error: " + message;
   var start;
+  var end;
   var loc = token && token.loc;
 
   if (loc && loc.start <= loc.end) {
@@ -65,7 +71,7 @@ token // An object providing position information
     var input = loc.lexer.input; // Prepend some information
 
     start = loc.start;
-    var end = loc.end;
+    end = loc.end;
 
     if (start === input.length) {
       error += " at end of input: ";
@@ -95,14 +101,20 @@ token // An object providing position information
     error += left + underlined + right;
   } // Some hackery to make ParseError a prototype of Error
   // See http://stackoverflow.com/a/8460753
+  // $FlowFixMe
 
 
   var self = new Error(error);
   self.name = "ParseError"; // $FlowFixMe
 
-  self.__proto__ = ParseError.prototype; // $FlowFixMe
-
+  self.__proto__ = ParseError.prototype;
   self.position = start;
+
+  if (start != null && end != null) {
+    self.length = end - start;
+  }
+
+  self.rawMessage = message;
   return self;
 }; // $FlowFixMe More hackery
 
@@ -18695,7 +18707,7 @@ var renderToHTMLTree = function renderToHTMLTree(expression, options) {
   /**
    * Current KaTeX version
    */
-  version: "0.16.7",
+  version: "0.16.8",
 
   /**
    * Renders the given LaTeX into an HTML+MathML combination, and adds
