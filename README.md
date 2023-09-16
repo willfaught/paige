@@ -1089,7 +1089,7 @@ The page date is the publish date.
 
 The following NPM packages are used:
 
-- [bootstrap](https://www.npmjs.com/package/bootstrap/v/5.3.0)
+- [bootstrap](https://www.npmjs.com/package/bootstrap/v/5.3.2)
 - [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons/v/1.10.5)
 - [katex](https://www.npmjs.com/package/katex/v/0.16.7)
 

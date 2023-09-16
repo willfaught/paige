@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.0",
+    "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.10.5",
     "katex": "^0.16.7"
   }
