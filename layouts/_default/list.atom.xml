@@ -54,10 +54,8 @@
     {{ end }}
     <id>{{ $id }}</id>
     {{ printf `<link href="%s" rel="self" type="application/atom+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
-    {{ range $page.AlternativeOutputFormats }}
-        {{ if eq .Rel "alternate" }}
-            {{ printf `<link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
-        {{ end }}
+    {{ with $page.AlternativeOutputFormats.Get "html" }}
+        {{ printf `<link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
     {{ end }}
     {{ range $t := $page.Translations }}
         {{ range .OutputFormats }}
