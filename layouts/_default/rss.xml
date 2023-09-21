@@ -14,6 +14,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         {{ printf `<atom:link href="%s" rel="self" type="application/rss+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
+        {{ range $page.AlternativeOutputFormats }}
+            {{ if eq .Rel "alternate" }}
+                {{ printf `<atom:link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
+            {{ end }}
+        {{ end }}
         {{ with site.Copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
