@@ -85,7 +85,9 @@ startlevel = 2
 path = "github.com/willfaught/paige"
 
 [outputs]
-home = ["html", "json", "rss"]
+home = ["atom", "html", "json", "rss"]
+section = ["atom", "html", "rss"]
+taxonomy = ["atom", "html", "rss"]
 
 [params.authors.will-faught]
 default = true
@@ -95,6 +97,11 @@ url = "https://willfaught.com/paige"
 
 [params.paige.git]
 commit_url = "https://github.com/willfaught/paige/commit/%s"
+
+[[params.paige.feed.atom.authors]]
+email = "will.faught@example.com"
+name = "Will Faught"
+url = "https://willfaught.com/paige"
 
 [params.paige.feed.rss]
 managing_editor = "Will Faught"

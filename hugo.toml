@@ -1,3 +1,6 @@
+[mediatypes."application/atom+xml"]
+suffixes = ["xml"]
+
 [module.hugoversion]
 min = "0.111.3"
 extended = true
@@ -83,6 +86,16 @@ includeFiles = ["katex.min.css"]
 source = "paige/node_modules/katex/dist"
 target = "assets/js/paige/katex"
 includeFiles = ["katex.min.js"]
+
+[outputformats.atom]
+basename = "atom"
+ishtml = false
+isplaintext = false
+mediatype = "application/atom+xml"
+name = "atom"
+nougly = true
+permalinkable = false
+rel = "alternate"
 
 [outputformats.rss]
 basename = "rss"

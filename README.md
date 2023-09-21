@@ -20,6 +20,7 @@ It's a versatile canvas that serves most web needs.
 
 - Accessibility
 - Analytics
+- Atom feed
 - Authors
 - Automatic switching between light and dark color schemes
 - Blog
@@ -270,6 +271,10 @@ format = ":date_long" # Hugo date format
 
 [paige.feed]
 hide_page = false
+
+[paige.feed.atom]
+link_to_page = false # Link to the page instead of the front matter link, if present
+page_link = "⏎" # If a front matter link is present, and link_to_page is false, link to the page with this text
 
 [paige.feed.rss]
 managing_editor = ""
