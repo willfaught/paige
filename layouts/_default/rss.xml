@@ -8,7 +8,7 @@
     {{ $pages = $pages | first $limit }}
 {{ end }}
 
-{{ $pages = where $pages "Params.paige.rss.hide_page" "ne" true }}
+{{ $pages = where $pages "Params.paige.feed.hide_page" "ne" true }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -27,13 +27,13 @@
             <lastBuildDate>{{ $page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
         {{ end }}
         <link>{{ $page.Permalink }}</link>
-        {{ with $page.Param "paige.rss.managing_editor" }}
+        {{ with $page.Param "paige.feed.rss.managing_editor" }}
             <managingEditor>{{ . }}</managingEditor>
         {{ end }}
         {{ with $title }}
             <title>{{ . }}</title>
         {{ end }}
-        {{ with $page.Param "paige.rss.web_master" }}
+        {{ with $page.Param "paige.feed.rss.web_master" }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
         {{ range $pages }}

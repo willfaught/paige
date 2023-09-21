@@ -93,7 +93,7 @@ default = true
 [params.paige.git]
 commit_url = "https://github.com/willfaught/paige/commit/%s"
 
-[params.paige.rss]
+[params.paige.feed.rss]
 managing_editor = "Will Faught"
 web_master = "Will Faught"
 

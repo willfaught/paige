@@ -268,16 +268,18 @@ github_repo = ""
 [paige.date]
 format = ":date_long" # Hugo date format
 
+[paige.feed]
+hide_page = false
+
+[paige.feed.rss]
+managing_editor = ""
+web_master = ""
+
 [paige.git]
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
 
 [paige.menu]
 style = "pills" # Must be "links", "pills", "tabs", or "underline"
-
-[paige.rss]
-hide_page = false
-managing_editor = ""
-web_master = ""
 
 [paige.search]
 hide_page = false
