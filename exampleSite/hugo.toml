@@ -4,6 +4,7 @@ enablerobotstxt = true
 languagecode = "en-us"
 paginate = 50
 timezone = "America/Los_Angeles"
+title = "Paige"
 titlecasestyle = "Go"
 
 [languages.en]
