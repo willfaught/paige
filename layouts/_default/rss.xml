@@ -4,7 +4,7 @@
 {{ $pages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := partial "paige/title.html" $page }}
 
-{{ if ge $limit 1 }}
+{{ if ge $limit 0 }}
     {{ $pages = $pages | first $limit }}
 {{ end }}
 
