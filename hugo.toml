@@ -83,3 +83,13 @@ includeFiles = ["katex.min.css"]
 source = "paige/node_modules/katex/dist"
 target = "assets/js/paige/katex"
 includeFiles = ["katex.min.js"]
+
+[outputformats.rss]
+basename = "rss"
+ishtml = false
+isplaintext = false
+mediatype = "application/rss+xml"
+name = "rss"
+nougly = true
+permalinkable = false
+rel = "alternate"
