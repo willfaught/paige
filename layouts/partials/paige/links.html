@@ -40,8 +40,7 @@
 {{ end }}
 
 {{ if .AlternativeOutputFormats }}
-    {{ $title := partial "paige/title.html" $page }}
     {{ range .AlternativeOutputFormats }}
-        <link href="{{ .Permalink | safeURL }}" rel="{{ .Rel }}" title="{{ $title }}" type="{{ .MediaType.Type }}">
+        {{ printf `<link href="%s" rel="%s" type="%s">` (.Permalink | safeURL) .Rel .MediaType | safeHTML }}
     {{ end }}
 {{ end }}
