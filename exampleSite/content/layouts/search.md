@@ -3,6 +3,9 @@ authors: ["will-faught"]
 categories: ["layouts", "paige"]
 description: "Demonstration of the Paige search layout."
 layout: "paige/search"
+paige:
+  feed:
+    hide_page: true
 tags: ["search"]
 title: "Search Layout"
 weight: 20
