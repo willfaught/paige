@@ -1,6 +1,7 @@
 ---
 authors: ["will-faught"]
 categories: ["paige", "shortcodes"]
+date: "2023-09-18T21:34:51-07:00"
 description: "Demonstration of the Paige code shortcode."
 tags: ["code", "figures"]
 title: "Code Shortcode"
