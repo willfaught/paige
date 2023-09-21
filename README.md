@@ -46,7 +46,7 @@ It's a versatile canvas that serves most web needs.
 - Menu
 - Minimal design
 - Quote shortcode
-- RSS feed with full page content
+- RSS feed
 - Responsive
 - Right-to-left languages
 - SEO
