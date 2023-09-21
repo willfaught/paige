@@ -291,8 +291,10 @@ Optional site parameters:
 
 ```toml
 [authors.will-faught]
-name = "Will Faught"
 default = false # Credit this author in pages that have no authors parameter
+email = "will.faught@example.com"
+name = "Will Faught"
+url = "https://willfaught.com/paige"
 ```
 
 Optional page parameters:
@@ -304,8 +306,10 @@ link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the t
 [[authors]]
 author = "will-faught" # Credit the corresponding author in the site parameters
 
-[[authors]]
-name = "Will Faught" # Credit this author
+[[authors]] # Credit this author
+email = "will.faught@example.com"
+name = "Will Faught"
+url = "https://willfaught.com/paige"
 
 [paige]
 alert = "Alert!" # Markdown displayed before the page body (defaults to primary alert type)

@@ -87,8 +87,10 @@ path = "github.com/willfaught/paige"
 home = ["html", "json", "rss"]
 
 [params.authors.will-faught]
-name = "Will Faught"
 default = true
+email = "will.faught@example.com"
+name = "Will Faught"
+url = "https://willfaught.com/paige"
 
 [params.paige.git]
 commit_url = "https://github.com/willfaught/paige/commit/%s"

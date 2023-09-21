@@ -4,27 +4,37 @@
 
 {{ if $page.Params.authors }}
     {{ range $page.Params.authors }}
+        {{ $email := "" }}
         {{ $id := "" }}
         {{ $name := "" }}
+        {{ $url := "" }}
 
         {{ if reflect.IsMap . }}
             {{ with .author }}
                 {{ $id = . }}
-                {{ $name = (index site.Params.authors .).name }}
+                {{ $author := index site.Params.authors $id }}
+                {{ $email = $author.email }}
+                {{ $name = $author.name }}
+                {{ $url = $author.url }}
             {{ else }}
+                {{ $email = .email }}
                 {{ $name = .name }}
+                {{ $url = .url }}
             {{ end }}
         {{ else }}
             {{ $id = . }}
-            {{ $name = (index site.Params.authors .).name }}
+            {{ $author := index site.Params.authors $id }}
+            {{ $email = $author.email }}
+            {{ $name = $author.name }}
+            {{ $url = $author.url }}
         {{ end }}
 
-        {{ $result = $result | append (dict "id" $id "name" $name) }}
+        {{ $result = $result | append (dict "email" $email "id" $id "name" $name "url" $url) }}
     {{ end }}
 {{ else if site.Params.authors }}
     {{ range $k, $v := site.Params.authors }}
         {{ if eq $v.default true }}
-            {{ $result = $result | append (dict "id" $k "name" $v.name) }}
+            {{ $result = $result | append (dict "email" $v.email "id" $k "name" $v.name "url" $v.url) }}
         {{ end }}
     {{ end }}
 {{ end }}
