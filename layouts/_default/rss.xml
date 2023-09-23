@@ -46,9 +46,7 @@
         {{ with $page.Param "paige.feed.rss.managing_editor" }}
             <managingEditor>{{ . }}</managingEditor>
         {{ end }}
-        {{ with $title }}
-            <title>{{ . }}</title>
-        {{ end }}
+        <title>{{ $title }}</title>
         {{ with $page.Param "paige.feed.rss.web_master" }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
