@@ -35,7 +35,7 @@
     {{ $subpages = $subpages | first $limit }}
 {{ end }}
 
-{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 <rss version="2.0">
     <channel>
         {{ with $copyright }}
