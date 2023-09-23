@@ -70,6 +70,7 @@
 
         {{ range $subpage := $subpages }}
             <item>
+                {{ $author := "" }}
                 {{ $authors := partial "paige/authors.html" . }}
                 {{ $description := .Content }}
                 {{ $guid := "" }}
@@ -80,17 +81,14 @@
 
                 {{ $link := cond $paramlink .Params.link .Permalink }}
 
-                {{ with $authors }}
+                {{ if $authors }}
                     {{ $primary := index . 0 }}
-                    {{ $author := "" }}
 
                     {{ if and $primary.name $primary.email }}
                         {{ $author = printf "%s (%s)" $primary.name $primary.email }}
                     {{ else if $primary.email }}
                         {{ $author = $primary.email }}
                     {{ end }}
-
-                    <author>{{ $author }}</author>
                 {{ end }}
 
                 {{ if $description }}
@@ -105,8 +103,8 @@
                     {{ $description = .Description | markdownify}}
                 {{ end }}
 
-                {{ with $description }}
-                    <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
+                {{ if and (not $description) (not $title) }}
+                    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
 
                 {{ if .Params.id }}
@@ -123,6 +121,15 @@
                 {{ end }}
 
                 {{ $guids = merge (dict $guid .RelPermalink) $guids }}
+
+                {{ with $author }}
+                    <author>{{ . }}</author>
+                {{ end }}
+
+                {{ with $description }}
+                    <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
+                {{ end }}
+
                 <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
 
                 {{ with $link }}
@@ -135,10 +142,6 @@
 
                 {{ with $title }}
                     <title>{{ . }}</title>
-                {{ end }}
-
-                {{ if and (not $description) (not $title) }}
-                    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
             </item>
         {{ end }}
