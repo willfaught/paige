@@ -1,0 +1,8 @@
+{{ $page := . }}
+{{ $max := "" }}
+{{ range $page.RegularPages }}
+    {{ if or (not $max) (lt $max .PublishDate) }}
+        {{ $max = .PublishDate }}
+    {{ end }}
+{{ end }}
+{{ return $max }}
