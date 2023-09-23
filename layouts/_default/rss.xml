@@ -105,7 +105,9 @@
                     {{ $description = .Description | markdownify}}
                 {{ end }}
 
-                <description>{{ printf "<![CDATA[%s]]>" $description | safeHTML }}</description>
+                {{ with $description }}
+                    <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
+                {{ end }}
 
                 {{ if .Params.id }}
                     {{ $guid = .Params.id }}
