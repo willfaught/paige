@@ -68,7 +68,7 @@
                 {{ $authors := partial "paige/authors.html" . }}
                 {{ $description := .Content }}
                 {{ $guid := "" }}
-                {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) }}
+                {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
                 {{ $permalink := false }}
                 {{ $pubdate := .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 MST" }}
                 {{ $title := .Title | markdownify | plainify }}
