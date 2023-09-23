@@ -3,6 +3,9 @@ authors: ["will-faught"]
 categories: ["paige", "shortcodes"]
 date: "2023-09-18T21:34:58-07:00"
 description: "Demonstration of the Paige email shortcode."
+paige:
+  feed:
+    hide_paige: true
 tags: ["email"]
 title: "Email Shortcode"
 ---
