@@ -41,13 +41,14 @@
         {{ range $pages }}
             <item>
                 {{ with partial "paige/authors.html" . }}
-                    {{ $authors := slice }}
-
-                    {{ range . }}
-                        {{ $authors = $authors | append .name }}
+                    {{ $primary := index . 0 }}
+                    {{ $author := "" }}
+                    {{ if and $primary.name $primary.email }}
+                        {{ $author = printf `%s <%s>` $primary.name $primary.email }}
+                    {{ else if $primary.email }}
+                        {{ $author = $primary.email }}
                     {{ end }}
-
-                    <author>{{ delimit $authors ", " }}</author>
+                    <author>{{ $author }}</author>
                 {{ end }}
                 {{ if .Content }}
                     <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
