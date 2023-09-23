@@ -2,8 +2,22 @@
 
 {{ $description := $page.Description }}
 {{ $limit := site.Config.Services.RSS.Limit }}
+{{ $pagetitle := $page.Title | markdownify | plainify }}
+{{ $sitetitle := site.Title | markdownify | plainify }}
 {{ $subpages := (cond $page.IsHome site $page).RegularPages }}
-{{ $title := partial "paige/title.html" $page }}
+{{ $title := "" }}
+
+{{ if and $pagetitle $sitetitle }}
+    {{ if $page.IsHome }}
+        {{ $title = $pagetitle | safeHTML }}
+    {{ else }}
+        {{ $title = printf "%s · %s" $pagetitle $sitetitle | safeHTML }}
+    {{ end }}
+{{ else if $pagetitle }}
+    {{ $title = $pagetitle | safeHTML }}
+{{ else if $sitetitle }}
+    {{ $title = $sitetitle | safeHTML }}
+{{ end }}
 
 {{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
 
