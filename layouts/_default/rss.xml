@@ -37,27 +37,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         {{ printf `<atom:link href="%s" rel="self" type="application/rss+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
+
         {{ with $html }}
             {{ printf `<atom:link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
         {{ end }}
+
         {{ with $copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
+
         <description>{{ $description }}</description>
+
         {{ with $language }}
             <language>{{ . }}</language>
         {{ end }}
+
         {{ with $lastbuilddate }}
             <lastBuildDate>{{ . }}</lastBuildDate>
         {{ end }}
+
         <link>{{ $link }}</link>
+
         {{ with $managingeditor }}
             <managingEditor>{{ . }}</managingEditor>
         {{ end }}
+
         <title>{{ $title }}</title>
+
         {{ with $webmaster }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
+
         {{ range $subpage := $subpages }}
             <item>
                 {{ $authors := partial "paige/authors.html" . }}
@@ -67,17 +77,22 @@
                 {{ $permalink := false }}
                 {{ $pubdate := .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 MST" }}
                 {{ $title := .Title | markdownify | plainify }}
+
                 {{ $link := cond $paramlink .Params.link .Permalink }}
+
                 {{ with $authors }}
                     {{ $primary := index . 0 }}
                     {{ $author := "" }}
+
                     {{ if and $primary.name $primary.email }}
                         {{ $author = printf `%s <%s>` $primary.name $primary.email }}
                     {{ else if $primary.email }}
                         {{ $author = $primary.email }}
                     {{ end }}
+
                     <author>{{ $author }}</author>
                 {{ end }}
+
                 {{ if $description }}
                     {{ if $paramlink }}
                         {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
@@ -85,10 +100,13 @@
                         {{ $description = print $description $footer }}
                     {{ end }}
                 {{ end }}
+
                 {{ if not $description }}
                     {{ $description = .Description | markdownify}}
                 {{ end }}
+
                 <description>{{ printf "<![CDATA[%s]]>" $description | safeHTML }}</description>
+
                 {{ if .Params.id }}
                     {{ $guid = .Params.id }}
                 {{ else if not .Date.IsZero }}
@@ -97,20 +115,26 @@
                     {{ $guid = .RelPermalink }}
                     {{ $permalink = false }}
                 {{ end }}
+
                 {{ with index $guids $guid }}
                     {{ warnf "layouts/_default/rss.xml: Pages %s and %s have the same GUID" . $subpage.RelPermalink }}
                 {{ end }}
+
                 {{ $guids = merge (dict $guid .RelPermalink) $guids }}
                 <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
+
                 {{ with $link }}
                     <link>{{ . }}</link>
                 {{ end }}
+
                 {{ with $pubdate }}
                     <pubDate>{{ . }}</pubDate>
                 {{ end }}
+
                 {{ with $title }}
                     <title>{{ . }}</title>
                 {{ end }}
+
                 {{ if and (not .Description) (not .Title) }}
                     {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
