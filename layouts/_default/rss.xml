@@ -1,5 +1,6 @@
 {{ $page := . }}
 
+{{ $description := $page.Description }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $pages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := partial "paige/title.html" $page }}
@@ -20,7 +21,7 @@
         {{ with site.Copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
-        <description>{{ with $title -}} {{- . -}} {{- else -}} Recent content {{- end }}</description>
+        <description>{{ with $description -}} {{- . -}} {{- else -}} Recent content {{- end }}</description>
         {{ with site.LanguageCode | default site.Language.Lang }}
             <language>{{ . }}</language>
         {{ end }}
