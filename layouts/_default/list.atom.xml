@@ -10,7 +10,7 @@
 {{ $pagetitle := $page.Title | markdownify }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $sitetitle := site.Title | markdownify }}
-{{ $subpages := (cond $page.IsHome site $page).RegularPages }}
+{{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
 {{ $title := "" }}
 {{ $updated := site.LastChange.Format $format }}
@@ -23,7 +23,11 @@
     {{ $id = $page.Permalink }}
 {{ end }}
 
-{{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
+{{ range (cond $page.IsHome site $page).RegularPages }}
+    {{ if not (.Param "paige.feed.hide_page") }}
+        {{ $subpages = $subpages | append . }}
+    {{ end }}
+{{ end }}
 
 {{ if gt $limit 0 }}
     {{ $subpages = $subpages | first $limit }}

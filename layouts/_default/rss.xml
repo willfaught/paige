@@ -12,11 +12,15 @@
 {{ $managingeditor := $page.Param "paige.feed.rss.managing_editor" }}
 {{ $pagetitle := $page.Title | markdownify | plainify }}
 {{ $sitetitle := site.Title | markdownify | plainify }}
-{{ $subpages := (cond $page.IsHome site $page).RegularPages }}
+{{ $subpages := slice }}
 {{ $title := "" }}
 {{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
 
-{{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
+{{ range (cond $page.IsHome site $page).RegularPages }}
+    {{ if not (.Param "paige.feed.hide_page") }}
+        {{ $subpages = $subpages | append . }}
+    {{ end }}
+{{ end }}
 
 {{ if gt $limit 0 }}
     {{ $subpages = $subpages | first $limit }}
