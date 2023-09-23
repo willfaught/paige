@@ -3,7 +3,7 @@
 {{ $copyright := site.Copyright }}
 {{ $description := or $page.Description "Recent content" }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
-{{ $lastbuilddate := (partial "paige/changed.html" $page).Format "Mon, 02 Jan 2006 15:04:05 -0700" }}
+{{ $lastbuilddate := (partial "paige/changed.html" $page).Format "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := $page.Permalink }}
