@@ -9,7 +9,7 @@
 {{ $subpages := (cond $page.IsHome site $page).RegularPages }}
 {{ $subtitle := $page.Description }}
 {{ $title := "" }}
-{{ $updated := time site.LastChange }}
+{{ $updated := site.LastChange }}
 
 {{ if and $pagetitle $sitetitle }}
     {{ if $page.IsHome }}
