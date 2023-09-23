@@ -38,7 +38,8 @@
         {{ with $page.Param "paige.feed.rss.web_master" }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
-        {{ range $pages }}
+        {{ $guids := dict }}
+        {{ range $subpage := $pages }}
             <item>
                 {{ $title := .Title | markdownify | plainify }}
                 {{ with partial "paige/authors.html" . }}
@@ -73,6 +74,10 @@
                     {{ $guid = .RelPermalink }}
                     {{ $permalink = false }}
                 {{ end }}
+                {{ with index $guids $guid }}
+                    {{ warnf "layouts/_default/rss.xml: Pages %s and %s have the same GUID" . $subpage.RelPermalink }}
+                {{ end }}
+                {{ $guids = merge (dict $guid .RelPermalink) $guids }}
                 <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
                 {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
                     <link>{{ .Params.link | safeURL }}</link>
