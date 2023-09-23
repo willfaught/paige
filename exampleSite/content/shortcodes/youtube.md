@@ -5,7 +5,7 @@ date: "2023-09-18T21:35:40-07:00"
 description: "Demonstration of the Paige YouTube shortcode."
 paige:
   feed:
-    hide_paige: true
+    hide_page: true
 tags: ["videos", "youtube"]
 title: "YouTube Shortcode"
 ---
