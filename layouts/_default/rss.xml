@@ -53,8 +53,8 @@
                 {{ end }}
                 {{ $description := .Content }}
                 {{ if $description }}
-                    {{ if and .Params.link (not (.Param "paige.feed.rss.link_to_page")) }}
-                        {{ $link := or (.Param "paige.feed.rss.page_link" | markdownify) "⏎" }}
+                    {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
+                        {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
                         {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink $title $link }}
                         {{ $description = print $description $footer }}
                     {{ end }}
@@ -74,7 +74,7 @@
                     {{ $permalink = false }}
                 {{ end }}
                 <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
-                {{ if and .Params.link (not (.Param "paige.feed.atom.link_to_page")) }}
+                {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
                     <link>{{ .Params.link | safeURL }}</link>
                 {{ else }}
                     <link>{{ .Permalink | safeURL }}</link>
