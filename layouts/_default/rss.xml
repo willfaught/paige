@@ -2,9 +2,9 @@
 
 {{ $copyright := site.Copyright }}
 {{ $description := or $page.Description "Recent content" }}
+{{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $guids := dict }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
-{{ $lastbuilddate := (partial "paige/changed.html" $page).Format "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := $page.Permalink }}
@@ -14,6 +14,8 @@
 {{ $subpages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := "" }}
 {{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
+
+{{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
 
 {{ if and $pagetitle $sitetitle }}
     {{ if $page.IsHome }}
@@ -70,7 +72,7 @@
                 {{ $guid := "" }}
                 {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
                 {{ $permalink := false }}
-                {{ $pubdate := .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 MST" }}
+                {{ $pubdate := .PublishDate.Format $format }}
                 {{ $title := .Title | markdownify | plainify }}
 
                 {{ $link := cond $paramlink .Params.link .Permalink }}
