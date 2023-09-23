@@ -137,7 +137,7 @@
                     <title>{{ . }}</title>
                 {{ end }}
 
-                {{ if and (not .Description) (not .Title) }}
+                {{ if and (not $description) (not $title) }}
                     {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
             </item>
