@@ -2,6 +2,7 @@
 
 {{ $copyright := site.Copyright }}
 {{ $description := or $page.Description "Recent content" }}
+{{ $guids := dict }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
 {{ $lastbuilddate := (partial "paige/changed.html" $page).Format "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
@@ -57,7 +58,6 @@
         {{ with $webmaster }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
-        {{ $guids := dict }}
         {{ range $subpage := $subpages }}
             <item>
                 {{ $title := .Title | markdownify | plainify }}
