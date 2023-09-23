@@ -75,7 +75,7 @@
 
                 {{ $link := cond $paramlink .Params.link .Permalink }}
 
-                {{ if $authors }}
+                {{ with $authors }}
                     {{ $primary := index . 0 }}
 
                     {{ if and $primary.name $primary.email }}
