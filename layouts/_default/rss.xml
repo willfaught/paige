@@ -40,6 +40,7 @@
         {{ end }}
         {{ range $pages }}
             <item>
+                {{ $title := .Title | markdownify | plainify }}
                 {{ with partial "paige/authors.html" . }}
                     {{ $primary := index . 0 }}
                     {{ $author := "" }}
@@ -50,11 +51,18 @@
                     {{ end }}
                     <author>{{ $author }}</author>
                 {{ end }}
-                {{ if .Content }}
-                    <description>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</description>
-                {{ else if .Description }}
-                    <description>{{ printf "<![CDATA[%s]]>" (.Description | markdownify) | safeHTML }}</description>
+                {{ $description := .Content }}
+                {{ if $description }}
+                    {{ if and .Params.link (not (.Param "paige.feed.rss.link_to_page")) }}
+                        {{ $link := or (.Param "paige.feed.rss.page_link" | markdownify) "⏎" }}
+                        {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink $title $link }}
+                        {{ $description = print $description $footer }}
+                    {{ end }}
                 {{ end }}
+                {{ if not $description }}
+                    {{ $description = .Description | markdownify}}
+                {{ end }}
+                <description>{{ printf "<![CDATA[%s]]>" $description | safeHTML }}</description>
                 {{ $guid := "" }}
                 {{ $permalink := false }}
                 {{ if .Params.id }}
@@ -74,8 +82,8 @@
                 {{ with .PublishDate }}
                     <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
                 {{ end }}
-                {{ with .Title }}
-                    <title>{{ . | markdownify | plainify | htmlUnescape | safeHTML }}</title>
+                {{ with $title }}
+                    <title>{{ . | safeHTML }}</title>
                 {{ end }}
                 {{ if and (not .Description) (not .Title) }}
                     {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
