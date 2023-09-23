@@ -274,6 +274,14 @@ hide_page = false
 link_to_page = false # Link to the page instead of the front matter link, if present
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, link to the page with this text
 
+[paige.feed.atom]
+authors = []
+# Example is:
+# [[paige.feed.atom.authors]]
+# email = "will.faught@example.com"
+# name = "Will Faught
+# url = "https://willfaught.com/paige"
+
 [paige.feed.rss]
 managing_editor = "" # Example is "Will Faught <will.faught@example.com>"
 web_master = "" # Example is "Will Faught <will.faught@example.com>"
