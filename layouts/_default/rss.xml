@@ -28,13 +28,13 @@
             <lastBuildDate>{{ $page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
         {{ end }}
         <link>{{ $page.Permalink }}</link>
-        {{ with $page.Param "paige.feed.rss.managing_editor" }}
+        {{ with $page.Param "paige.feed.rss.managing_editor_email" }}
             <managingEditor>{{ . }}</managingEditor>
         {{ end }}
         {{ with $title }}
             <title>{{ . }}</title>
         {{ end }}
-        {{ with $page.Param "paige.feed.rss.web_master" }}
+        {{ with $page.Param "paige.feed.rss.web_master_email" }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
         {{ range $pages }}

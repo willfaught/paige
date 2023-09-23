@@ -277,8 +277,8 @@ link_to_page = false # Link to the page instead of the front matter link, if pre
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, link to the page with this text
 
 [paige.feed.rss]
-managing_editor = ""
-web_master = ""
+managing_editor_email = ""
+web_master_email = ""
 
 [paige.git]
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"

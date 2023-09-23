@@ -104,8 +104,8 @@ name = "Will Faught"
 url = "https://willfaught.com/paige"
 
 [params.paige.feed.rss]
-managing_editor = "Will Faught"
-web_master = "Will Faught"
+managing_editor_email = "will.faught@example.com"
+web_master_email = "will.faught@example.com"
 
 [taxonomies]
 author = "authors"
