@@ -1,8 +1,14 @@
 {{ $page := . }}
 {{ $max := "" }}
+
 {{ range $page.RegularPages }}
-    {{ if or (not $max) (lt $max .PublishDate) }}
-        {{ $max = .PublishDate }}
+    {{ if or (not $max) (lt $max .Lastmod) }}
+        {{ $max = .Lastmod }}
     {{ end }}
 {{ end }}
+
+{{ if not $max }}
+    {{ $max = $page.Lastmod }}
+{{ end }}
+
 {{ return $max }}
