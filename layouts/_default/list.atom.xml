@@ -50,7 +50,7 @@
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
-<feed xmlns="http://www.w3.org/2005/Atom" {{ with $language }} xml:lang="{{ . }}" {{ end }}>
+<feed {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns="http://www.w3.org/2005/Atom">
     {{ range $authors }}
         <author>
             {{ with .email }}
