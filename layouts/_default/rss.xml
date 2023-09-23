@@ -34,14 +34,8 @@
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
     <channel>
-        {{ printf `<atom:link href="%s" rel="self" type="application/rss+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
-
-        {{ with $html }}
-            {{ printf `<atom:link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
-        {{ end }}
-
         {{ with $copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
