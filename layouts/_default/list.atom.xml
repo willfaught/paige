@@ -36,15 +36,19 @@
             {{ with .email }}
                 <email>{{ . }}</email>
             {{ end }}
+
             {{ with .name }}
                 <name>{{ . }}</name>
             {{ end }}
+
             {{ with .url }}
                 <uri>{{ . }}</uri>
             {{ end }}
         </author>
     {{ end }}
+
     {{ $id := "" }}
+
     {{ if .Params.id }}
         {{ $id = .Params.id }}
     {{ else if not $page.Date.IsZero }}
@@ -52,11 +56,14 @@
     {{ else }}
         {{ $id = .Permalink }}
     {{ end }}
+
     <id>{{ $id }}</id>
     {{ printf `<link href="%s" rel="self" type="application/atom+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
+
     {{ with $page.AlternativeOutputFormats.Get "html" }}
         {{ printf `<link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
     {{ end }}
+
     {{ range $t := $page.Translations }}
         {{ range .OutputFormats }}
             {{ if eq .Rel "alternate" }}
@@ -64,18 +71,24 @@
             {{ end }}
         {{ end }}
     {{ end }}
+
     {{ with $rights }}
         <rights type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML }}</rights>
     {{ end }}
+
     {{ with $subtitle }}
         <subtitle type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML}}</subtitle>
     {{ end }}
+
     {{ if not $title }}
         {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" $page.RelPermalink }}
     {{ end }}
+
     {{ printf `<title type="html"><![CDATA[%s]]></title>` ($title | markdownify) | safeHTML }}
     <updated>{{ $updated.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+
     {{ $ids := dict }}
+
     {{ range $subpage := $subpages }}
         <entry>
             {{ with partial "paige/authors.html" . }}
@@ -84,25 +97,33 @@
                         {{ with .email }}
                             <email>{{ . }}</email>
                         {{ end }}
+
                         {{ with .name }}
                             <name>{{ . }}</name>
                         {{ end }}
+
                         {{ with .url }}
                             <uri>{{ . }}</uri>
                         {{ end }}
                     </author>
                 {{ end }}
             {{ end }}
+
             {{ $content := .Content }}
+
             {{ if $content }}
                 {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
                     {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
                     {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink .Title $link }}
+
                     {{ $content = print $content $footer }}
                 {{ end }}
+
                 <content type="html">{{ printf "<![CDATA[%s]]>" $content | safeHTML }}</content>
             {{ end }}
+
             {{ $id := "" }}
+
             {{ if .Params.id }}
                 {{ $id = .Params.id }}
             {{ else if not .Date.IsZero }}
@@ -110,16 +131,20 @@
             {{ else }}
                 {{ $id = .RelPermalink }}
             {{ end }}
+
             {{ with index $ids $id }}
                 {{ warnf "layouts/_default/list.atom.xml: Pages %s and %s have the same ID" . $subpage.RelPermalink }}
             {{ end }}
+
             {{ $ids = merge (dict $id .RelPermalink) $ids }}
             <id>{{ $id }}</id>
+
             {{ range .OutputFormats }}
                 {{ if eq .Rel "alternate" }}
                     {{ printf `<link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
                 {{ end }}
             {{ end }}
+
             {{ range $t := .Translations }}
                 {{ range .OutputFormats }}
                     {{ if eq .Rel "alternate" }}
@@ -127,27 +152,35 @@
                     {{ end }}
                 {{ end }}
             {{ end }}
+
             {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
                 <link href="{{ .Params.link | safeURL }}" rel="alternate" type="text/html"/>
             {{ else }}
                 <link href="{{ .Permalink | safeURL }}" rel="alternate" type="text/html"/>
             {{ end }}
+
             {{ if not .PublishDate.IsZero }}
                 <published>{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}</published>
             {{ end }}
+
             {{ with site.Copyright }}
                 <rights type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML }}</rights>
             {{ end }}
+
             {{ with .Description }}
                 <summary type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML }}</summary>
             {{ end }}
+
             {{ if not .Title }}
                 {{ warnf "layouts/_default/list.atom.xml: %s: Page %s does not have a title" .RelPermalink }}
             {{ end }}
+
             {{ printf `<title type="html"><![CDATA[%s]]></title>` (.Title | markdownify) | safeHTML }}
+
             {{ if .Lastmod.IsZero }}
                 {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date" .RelPermalink }}
             {{ end }}
+
             <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
         </entry>
     {{ end }}

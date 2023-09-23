@@ -91,6 +91,7 @@
                     {{ if $paramlink }}
                         {{ $pagelink := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
                         {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink $title $pagelink }}
+
                         {{ $description = print $description $footer }}
                     {{ end }}
                 {{ end }}
