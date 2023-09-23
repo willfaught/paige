@@ -17,14 +17,14 @@
 
 {{ if and $pagetitle $sitetitle }}
     {{ if $page.IsHome }}
-        {{ $title = $pagetitle | safeHTML }}
+        {{ $title = $pagetitle }}
     {{ else }}
-        {{ $title = printf "%s · %s" $pagetitle $sitetitle | safeHTML }}
+        {{ $title = printf "%s · %s" $pagetitle $sitetitle }}
     {{ end }}
 {{ else if $pagetitle }}
-    {{ $title = $pagetitle | safeHTML }}
+    {{ $title = $pagetitle }}
 {{ else if $sitetitle }}
-    {{ $title = $sitetitle | safeHTML }}
+    {{ $title = $sitetitle }}
 {{ end }}
 
 {{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
