@@ -60,8 +60,15 @@
         {{ end }}
         {{ range $subpage := $subpages }}
             <item>
+                {{ $authors := partial "paige/authors.html" . }}
+                {{ $description := .Content }}
+                {{ $guid := "" }}
+                {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) }}
+                {{ $permalink := false }}
+                {{ $pubdate := .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 MST" }}
                 {{ $title := .Title | markdownify | plainify }}
-                {{ with partial "paige/authors.html" . }}
+                {{ $link := cond $paramlink .Params.link .Permalink }}
+                {{ with $authors }}
                     {{ $primary := index . 0 }}
                     {{ $author := "" }}
                     {{ if and $primary.name $primary.email }}
@@ -71,9 +78,8 @@
                     {{ end }}
                     <author>{{ $author }}</author>
                 {{ end }}
-                {{ $description := .Content }}
                 {{ if $description }}
-                    {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
+                    {{ if $paramlink }}
                         {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
                         {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink $title $link }}
                         {{ $description = print $description $footer }}
@@ -83,8 +89,6 @@
                     {{ $description = .Description | markdownify}}
                 {{ end }}
                 <description>{{ printf "<![CDATA[%s]]>" $description | safeHTML }}</description>
-                {{ $guid := "" }}
-                {{ $permalink := false }}
                 {{ if .Params.id }}
                     {{ $guid = .Params.id }}
                 {{ else if not .Date.IsZero }}
@@ -98,16 +102,14 @@
                 {{ end }}
                 {{ $guids = merge (dict $guid .RelPermalink) $guids }}
                 <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
-                {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
-                    <link>{{ .Params.link | safeURL }}</link>
-                {{ else }}
-                    <link>{{ .Permalink | safeURL }}</link>
+                {{ with $link }}
+                    <link>{{ . }}</link>
                 {{ end }}
-                {{ with .PublishDate }}
-                    <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+                {{ with $pubdate }}
+                    <pubDate>{{ . }}</pubDate>
                 {{ end }}
                 {{ with $title }}
-                    <title>{{ . | safeHTML }}</title>
+                    <title>{{ . }}</title>
                 {{ end }}
                 {{ if and (not .Description) (not .Title) }}
                     {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
