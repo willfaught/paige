@@ -75,6 +75,9 @@
                 {{ with .Title }}
                     <title>{{ . | markdownify | plainify | htmlUnescape | safeHTML }}</title>
                 {{ end }}
+                {{ if and (not .Description) (not .Title) }}
+                    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
+                {{ end }}
             </item>
         {{ end }}
     </channel>
