@@ -1,11 +1,18 @@
 {{ $page := . }}
 
-{{ $description := $page.Description }}
+{{ $copyright := site.Copyright }}
+{{ $description := or $page.Description "Recent content" }}
+{{ $html := $page.AlternativeOutputFormats.Get "html" }}
+{{ $lastbuilddate := and $page.PublishDate (not $page.PublishDate.IsZero) ($page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700") }}
+{{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
+{{ $link := $page.Permalink }}
+{{ $managingeditor := $page.Param "paige.feed.rss.managing_editor" }}
 {{ $pagetitle := $page.Title | markdownify | plainify }}
 {{ $sitetitle := site.Title | markdownify | plainify }}
 {{ $subpages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := "" }}
+{{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
 
 {{ if and $pagetitle $sitetitle }}
     {{ if $page.IsHome }}
@@ -29,25 +36,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         {{ printf `<atom:link href="%s" rel="self" type="application/rss+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
-        {{ with $page.AlternativeOutputFormats.Get "html" }}
+        {{ with $html }}
             {{ printf `<atom:link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
         {{ end }}
-        {{ with site.Copyright }}
+        {{ with $copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
-        <description>{{ with $description -}} {{- . -}} {{- else -}} Recent content {{- end }}</description>
-        {{ with site.LanguageCode | default site.Language.Lang }}
+        <description>{{ $description }}</description>
+        {{ with $language }}
             <language>{{ . }}</language>
         {{ end }}
-        {{ if and $page.PublishDate (not $page.PublishDate.IsZero) }}
-            <lastBuildDate>{{ $page.PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+        {{ with $lastbuilddate }}
+            <lastBuildDate>{{ . }}</lastBuildDate>
         {{ end }}
-        <link>{{ $page.Permalink }}</link>
-        {{ with $page.Param "paige.feed.rss.managing_editor" }}
+        <link>{{ $link }}</link>
+        {{ with $managingeditor }}
             <managingEditor>{{ . }}</managingEditor>
         {{ end }}
         <title>{{ $title }}</title>
-        {{ with $page.Param "paige.feed.rss.web_master" }}
+        {{ with $webmaster }}
             <webMaster>{{ . }}</webMaster>
         {{ end }}
         {{ $guids := dict }}
