@@ -2,13 +2,13 @@
 
 {{ $description := $page.Description }}
 {{ $limit := site.Config.Services.RSS.Limit }}
-{{ $pages := (cond $page.IsHome site $page).RegularPages }}
+{{ $subpages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := partial "paige/title.html" $page }}
 
-{{ $pages = where $pages "Params.paige.feed.hide_page" "ne" true }}
+{{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
 
 {{ if ge $limit 0 }}
-    {{ $pages = $pages | first $limit }}
+    {{ $subpages = $subpages | first $limit }}
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
@@ -39,7 +39,7 @@
             <webMaster>{{ . }}</webMaster>
         {{ end }}
         {{ $guids := dict }}
-        {{ range $subpage := $pages }}
+        {{ range $subpage := $subpages }}
             <item>
                 {{ $title := .Title | markdownify | plainify }}
                 {{ with partial "paige/authors.html" . }}
