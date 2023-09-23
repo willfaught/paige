@@ -7,7 +7,7 @@
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
-{{ $link := $page.Permalink }}
+{{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $managingeditor := $page.Param "paige.feed.rss.managing_editor" }}
 {{ $pagetitle := $page.Title | markdownify | plainify }}
 {{ $sitetitle := site.Title | markdownify | plainify }}
@@ -16,6 +16,12 @@
 {{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
 
 {{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
+
+{{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
+
+{{ if ge $limit 0 }}
+    {{ $subpages = $subpages | first $limit }}
+{{ end }}
 
 {{ if and $pagetitle $sitetitle }}
     {{ if $page.IsHome }}
@@ -29,14 +35,8 @@
     {{ $title = $sitetitle }}
 {{ end }}
 
-{{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
-
-{{ if ge $limit 0 }}
-    {{ $subpages = $subpages | first $limit }}
-{{ end }}
-
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
-<rss version="2.0">
+<rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }}>
     <channel>
         {{ with $copyright }}
             <copyright>{{ . }}</copyright>
@@ -87,13 +87,11 @@
                     {{ end }}
                 {{ end }}
 
-                {{ if $description }}
-                    {{ if $paramlink }}
-                        {{ $pagelink := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
-                        {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink $title $pagelink }}
+                {{ if and $description $paramlink }}
+                    {{ $pagelink := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
+                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink $title $pagelink }}
 
-                        {{ $description = print $description $footer }}
-                    {{ end }}
+                    {{ $description = print $description $footer }}
                 {{ end }}
 
                 {{ if not $description }}
@@ -109,7 +107,7 @@
                 {{ else if not .Date.IsZero }}
                     {{ $guid = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format "2006-01-02T15:04:05Z07:00") }}
                 {{ else }}
-                    {{ $guid = .RelPermalink }}
+                    {{ $guid = .Permalink }}
                     {{ $permalink = false }}
                 {{ end }}
 

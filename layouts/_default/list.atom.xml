@@ -1,26 +1,26 @@
 {{ $page := . }}
 
 {{ $authors := $page.Param "paige.feed.atom.authors" }}
-{{ $lang := site.LanguageCode | default site.Language.Lang }}
+{{ $format := "2006-01-02T15:04:05Z07:00" }}
+{{ $html := $page.AlternativeOutputFormats.Get "html" }}
+{{ $id := "" }}
+{{ $ids := dict }}
+{{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $pagetitle := $page.Title | markdownify }}
-{{ $rights := site.Copyright }}
+{{ $rights := site.Copyright | markdownify }}
 {{ $sitetitle := site.Title | markdownify }}
 {{ $subpages := (cond $page.IsHome site $page).RegularPages }}
-{{ $subtitle := $page.Description }}
+{{ $subtitle := $page.Description | markdownify }}
 {{ $title := "" }}
-{{ $updated := site.LastChange }}
+{{ $updated := site.LastChange.Format $format }}
 
-{{ if and $pagetitle $sitetitle }}
-    {{ if $page.IsHome }}
-        {{ $title = $pagetitle | safeHTML }}
-    {{ else }}
-        {{ $title = printf "%s · %s" $pagetitle $sitetitle | safeHTML }}
-    {{ end }}
-{{ else if $pagetitle }}
-    {{ $title = $pagetitle | safeHTML }}
-{{ else if $sitetitle }}
-    {{ $title = $sitetitle | safeHTML }}
+{{ if $page.Params.id }}
+    {{ $id = $page.Params.id }}
+{{ else if not $page.Date.IsZero }}
+    {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format $format) }}
+{{ else }}
+    {{ $id = $page.Permalink }}
 {{ end }}
 
 {{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
@@ -29,8 +29,24 @@
     {{ $subpages = $subpages | first $limit }}
 {{ end }}
 
+{{ if and $pagetitle $sitetitle }}
+    {{ if $page.IsHome }}
+        {{ $title = $pagetitle }}
+    {{ else }}
+        {{ $title = printf "%s · %s" $pagetitle $sitetitle }}
+    {{ end }}
+{{ else if $pagetitle }}
+    {{ $title = $pagetitle }}
+{{ else if $sitetitle }}
+    {{ $title = $sitetitle }}
+{{ end }}
+
+{{ if not $title }}
+    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" $page.RelPermalink }}
+{{ end }}
+
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
-<feed xmlns="http://www.w3.org/2005/Atom" {{ with $lang }} xml:lang="{{ . }}" {{ end }}>
+<feed xmlns="http://www.w3.org/2005/Atom" {{ with $language }} xml:lang="{{ . }}" {{ end }}>
     {{ range $authors }}
         <author>
             {{ with .email }}
@@ -47,50 +63,77 @@
         </author>
     {{ end }}
 
-    {{ $id := "" }}
-
-    {{ if .Params.id }}
-        {{ $id = .Params.id }}
-    {{ else if not $page.Date.IsZero }}
-        {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format "2006-01-02T15:04:05Z07:00") }}
-    {{ else }}
-        {{ $id = .Permalink }}
-    {{ end }}
-
     <id>{{ $id }}</id>
-    {{ printf `<link href="%s" rel="self" type="application/atom+xml"/>` ($page.Permalink | safeURL) | safeHTML }}
 
-    {{ with $page.AlternativeOutputFormats.Get "html" }}
-        {{ printf `<link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
+    {{ range $page.OutputFormats }}
+        {{ $rel := cond (eq .Permalink $page.Permalink) "self" .Rel }}
+
+        {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
     {{ end }}
 
     {{ range $t := $page.Translations }}
         {{ range .OutputFormats }}
-            {{ if eq .Rel "alternate" }}
-                {{ printf `<link href="%s" hreflang="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) $t.Lang .MediaType | safeHTML }}
-            {{ end }}
+            {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
         {{ end }}
     {{ end }}
 
     {{ with $rights }}
-        <rights type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML }}</rights>
+        <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
     {{ end }}
 
     {{ with $subtitle }}
-        <subtitle type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML}}</subtitle>
+        <subtitle type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML}}</subtitle>
     {{ end }}
 
-    {{ if not $title }}
-        {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" $page.RelPermalink }}
-    {{ end }}
-
-    {{ printf `<title type="html"><![CDATA[%s]]></title>` ($title | markdownify) | safeHTML }}
-    <updated>{{ $updated.Format "2006-01-02T15:04:05Z07:00" }}</updated>
-
-    {{ $ids := dict }}
+    {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+    <updated>{{ $updated }}</updated>
 
     {{ range $subpage := $subpages }}
         <entry>
+            {{ $content := .Content }}
+            {{ $id := "" }}
+            {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
+            {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
+            {{ $rights := site.Copyright | markdownify }}
+            {{ $summary := .Description | markdownify }}
+            {{ $title := .Title | markdownify }}
+            {{ $updated := .Lastmod.Format $format }}
+
+            {{ $link := cond $paramlink .Params.link .Permalink }}
+
+            {{ if and $content $paramlink }}
+                {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
+                {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink .Title $link }}
+
+                {{ $content = print $content $footer }}
+            {{ end }}
+
+            {{ if not $content }}
+                {{ $content = .Description | markdownify}}
+            {{ end }}
+
+            {{ if .Params.id }}
+                {{ $id = .Params.id }}
+            {{ else if not .Date.IsZero }}
+                {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format $format) }}
+            {{ else }}
+                {{ $id = .RelPermalink }}
+            {{ end }}
+
+            {{ with index $ids $id }}
+                {{ warnf "layouts/_default/list.atom.xml: Pages %s and %s have the same ID" . $subpage.RelPermalink }}
+            {{ end }}
+
+            {{ $ids = merge (dict $id .RelPermalink) $ids }}
+
+            {{ if not $title }}
+                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" .RelPermalink }}
+            {{ end }}
+
+            {{ if .Lastmod.IsZero }}
+                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date" .RelPermalink }}
+            {{ end }}
+
             {{ with partial "paige/authors.html" . }}
                 {{ range . }}
                     <author>
@@ -109,79 +152,39 @@
                 {{ end }}
             {{ end }}
 
-            {{ $content := .Content }}
-
-            {{ if $content }}
-                {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
-                    {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
-                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink .Title $link }}
-
-                    {{ $content = print $content $footer }}
-                {{ end }}
-
-                <content type="html">{{ printf "<![CDATA[%s]]>" $content | safeHTML }}</content>
+            {{ with $content }}
+                <content type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</content>
             {{ end }}
 
-            {{ $id := "" }}
-
-            {{ if .Params.id }}
-                {{ $id = .Params.id }}
-            {{ else if not .Date.IsZero }}
-                {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format "2006-01-02T15:04:05Z07:00") }}
-            {{ else }}
-                {{ $id = .RelPermalink }}
-            {{ end }}
-
-            {{ with index $ids $id }}
-                {{ warnf "layouts/_default/list.atom.xml: Pages %s and %s have the same ID" . $subpage.RelPermalink }}
-            {{ end }}
-
-            {{ $ids = merge (dict $id .RelPermalink) $ids }}
             <id>{{ $id }}</id>
 
-            {{ range .OutputFormats }}
-                {{ if eq .Rel "alternate" }}
-                    {{ printf `<link href="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) .MediaType | safeHTML }}
-                {{ end }}
+            {{ range $page.OutputFormats }}
+                {{ $rel := cond (eq .Permalink $page.Permalink) "self" .Rel }}
+
+                {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
             {{ end }}
 
-            {{ range $t := .Translations }}
+            {{ range $t := $page.Translations }}
                 {{ range .OutputFormats }}
-                    {{ if eq .Rel "alternate" }}
-                        {{ printf `<link href="%s" hreflang="%s" rel="alternate" type="%s"/>` (.Permalink | safeURL) $t.Lang .MediaType | safeHTML }}
-                    {{ end }}
+                    {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
                 {{ end }}
             {{ end }}
 
-            {{ if and .Params.link (not (.Param "paige.feed.link_to_page")) }}
-                <link href="{{ .Params.link | safeURL }}" rel="alternate" type="text/html"/>
-            {{ else }}
-                <link href="{{ .Permalink | safeURL }}" rel="alternate" type="text/html"/>
+            {{ with $published }}
+                <published>{{ . }}</published>
             {{ end }}
 
-            {{ if not .PublishDate.IsZero }}
-                <published>{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}</published>
+            {{ with $rights }}
+                <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
             {{ end }}
 
-            {{ with site.Copyright }}
-                <rights type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML }}</rights>
+            {{ with $summary }}
+                <summary type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</summary>
             {{ end }}
 
-            {{ with .Description }}
-                <summary type="html">{{ printf "<![CDATA[%s]]>" (. | markdownify) | safeHTML }}</summary>
-            {{ end }}
+            {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
 
-            {{ if not .Title }}
-                {{ warnf "layouts/_default/list.atom.xml: %s: Page %s does not have a title" .RelPermalink }}
-            {{ end }}
-
-            {{ printf `<title type="html"><![CDATA[%s]]></title>` (.Title | markdownify) | safeHTML }}
-
-            {{ if .Lastmod.IsZero }}
-                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date" .RelPermalink }}
-            {{ end }}
-
-            <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+            <updated>{{ $updated }}</updated>
         </entry>
     {{ end }}
 </feed>
