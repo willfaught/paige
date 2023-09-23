@@ -85,7 +85,7 @@
                     {{ $author := "" }}
 
                     {{ if and $primary.name $primary.email }}
-                        {{ $author = printf `%s <%s>` $primary.name $primary.email }}
+                        {{ $author = printf "%s (%s)" $primary.name $primary.email }}
                     {{ else if $primary.email }}
                         {{ $author = $primary.email }}
                     {{ end }}
