@@ -53,9 +53,21 @@
                 {{ else if .Description }}
                     <description>{{ printf "<![CDATA[%s]]>" (.Description | markdownify) | safeHTML }}</description>
                 {{ end }}
-                {{ with .Permalink }}
-                    <guid>{{ . }}</guid>
-                    <link>{{ . }}</link>
+                {{ $guid := "" }}
+                {{ $permalink := false }}
+                {{ if .Params.id }}
+                    {{ $guid = .Params.id }}
+                {{ else if not .Date.IsZero }}
+                    {{ $guid = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format "2006-01-02T15:04:05Z07:00") }}
+                {{ else }}
+                    {{ $guid = .RelPermalink }}
+                    {{ $permalink = false }}
+                {{ end }}
+                <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
+                {{ if and .Params.link (not (.Param "paige.feed.atom.link_to_page")) }}
+                    <link>{{ .Params.link | safeURL }}</link>
+                {{ else }}
+                    <link>{{ .Permalink | safeURL }}</link>
                 {{ end }}
                 {{ with .PublishDate }}
                     <pubDate>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
