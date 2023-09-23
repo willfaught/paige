@@ -6,6 +6,7 @@
 {{ $guids := dict }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
+{{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $managingeditor := $page.Param "paige.feed.rss.managing_editor" }}
@@ -14,8 +15,6 @@
 {{ $subpages := (cond $page.IsHome site $page).RegularPages }}
 {{ $title := "" }}
 {{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
-
-{{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
 
 {{ $subpages = where $subpages "Params.paige.feed.hide_page" "ne" true }}
 
