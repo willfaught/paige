@@ -166,7 +166,7 @@
 
             <id>{{ $id }}</id>
 
-            {{ range $page.OutputFormats }}
+            {{ range .OutputFormats }}
                 {{ $rel := cond (eq .Permalink $page.Permalink) "self" .Rel }}
 
                 {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "self") (eq $rel "via") }}
@@ -174,7 +174,7 @@
                 {{ end }}
             {{ end }}
 
-            {{ range $t := $page.Translations }}
+            {{ range $t := .Translations }}
                 {{ range .OutputFormats }}
                     {{ if or (eq .Rel "alternate") (eq .Rel "enclosure") (eq .Rel "related") (eq .Rel "self") (eq .Rel "via") }}
                         {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
