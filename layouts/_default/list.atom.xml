@@ -174,7 +174,9 @@
                 {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
                 {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "via") }}
-                    {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
+                    {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
+
+                    {{ printf `<link href="%s" rel="%s" type="%s"/>` $href $rel .MediaType | safeHTML }}
                 {{ end }}
             {{ end }}
 
