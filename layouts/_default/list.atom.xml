@@ -43,9 +43,7 @@
     {{ $title = $pagetitle }}
 {{ else if $sitetitle }}
     {{ $title = $sitetitle }}
-{{ end }}
-
-{{ if not $title }}
+{{ else }}
     {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" $page.RelPermalink }}
 {{ end }}
 

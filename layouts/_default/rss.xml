@@ -36,6 +36,8 @@
     {{ $title = $pagetitle }}
 {{ else if $sitetitle }}
     {{ $title = $sitetitle }}
+{{ else }}
+    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title" $page.RelPermalink }}
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
