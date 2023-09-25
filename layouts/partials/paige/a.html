@@ -3,6 +3,9 @@
 {{ $class := $params.class }}
 {{ $content := $params.content }}
 {{ $href := $params.href }}
+{{ $page := $params.page }}
 {{ $style := $params.style }}
 
-<a {{ with $class }} class="{{ . }}" {{ end }} {{ with $href }} href="{{ . | safeURL }}" {{ end }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }}>{{ $content }}</a>
+{{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
+
+<a {{ with $class }} class="{{ . }}" {{ end }} {{ with $href }} href="{{ . | safeURL }}" {{ end }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $target }} target="{{ . }}" {{ end }}>{{ $content }}</a>

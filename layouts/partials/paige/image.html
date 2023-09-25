@@ -283,9 +283,9 @@
     {{ end }}
 
     {{ $resource = $resource | fingerprint }}
-    {{ $content = partial "paige/a.html" (dict "content" $content "href" $resource.RelPermalink) }}
+    {{ $content = partial "paige/a.html" (dict "content" $content "href" $resource.RelPermalink "page" $page) }}
 {{ else if $link }}
-    {{ $content = partial "paige/a.html" (dict "content" $content "href" $link) }}
+    {{ $content = partial "paige/a.html" (dict "content" $content "href" $link "page" $page) }}
 {{ end }}
 
 <span class="paige-image">{{ $content }}</span>
