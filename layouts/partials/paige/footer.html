@@ -1,11 +1,13 @@
 {{ $page := . }}
 
+{{ $copyright := site.Copyright | markdownify }}
+
 <footer class="mb-3" id="paige-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
 
-    {{ with site.Copyright | markdownify }}
+    {{ with $copyright }}
         <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
     {{ end }}
 
