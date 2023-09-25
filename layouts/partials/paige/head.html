@@ -1,5 +1,21 @@
 {{ $page := . }}
 
+{{ $pagetitle := $page.Title | markdownify | plainify }}
+{{ $sitetitle := site.Title | markdownify | plainify }}
+{{ $title := "" }}
+
+{{ if and $pagetitle $sitetitle }}
+    {{ if $page.IsHome }}
+        {{ $title = $pagetitle }}
+    {{ else }}
+        {{ $title = printf "%s · %s" $pagetitle $sitetitle }}
+    {{ end }}
+{{ else if $pagetitle }}
+    {{ $title = $pagetitle }}
+{{ else if $sitetitle }}
+    {{ $title = $sitetitle }}
+{{ end }}
+
 <head>
     {{ if templates.Exists "partials/paige/head-first.html" }}
         {{ partial "paige/head-first.html" $page }}
@@ -7,7 +23,7 @@
 
     {{ partial "paige/metas.html" $page }}
 
-    <title>{{ partial "paige/title.html" $page }}</title>
+    <title>{{ $title }}</title>
 
     {{ partial "paige/links.html" $page }}
     {{ partial "paige/style.html" $page }}
