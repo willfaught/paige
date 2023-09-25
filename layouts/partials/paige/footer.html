@@ -5,7 +5,7 @@
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
 
-    {{ with site.Copyright | markdownify | safeHTML }}
+    {{ with site.Copyright | markdownify }}
         <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
     {{ end }}
 
