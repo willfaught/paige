@@ -53,33 +53,33 @@
         <div class="mb-3">
             {{ with $series }}
                 <p class="mb-0 text-center text-secondary" id="paige-series">
-                    {{ range $i, $name := . -}}
-                        {{- if gt $i 0 }}, {{ end -}}
+                    {{ range $i, $name := . }}
+                        {{ if gt $i 0 }}, {{ end }}
 
-                        {{- with site.GetPage (print "series/" $name) -}}
+                        {{ with site.GetPage (print "series/" $name) }}
                             <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title | default $name }}</a>
-                        {{- else -}}
-                            {{- $name -}}
-                        {{- end -}}
-                    {{- end }}
+                        {{ else }}
+                            {{ $name }}
+                        {{ end }}
+                    {{ end }}
                 </p>
             {{ end }}
 
             {{ with $authors }}
                 <p class="mb-0 text-center text-secondary" id="paige-authors">
-                    {{ range $i, $author := . -}}
-                        {{- if gt $i 0 }}, {{ end -}}
+                    {{ range $i, $author := . }}
+                        {{ if gt $i 0 }}, {{ end }}
 
-                        {{- with $author.id -}}
-                            {{- with site.GetPage (print "authors/" .) -}}
+                        {{ with $author.id }}
+                            {{ with site.GetPage (print "authors/" .) }}
                                 <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title | default $author.name }}</a>
-                            {{- else -}}
-                                {{- $author.name -}}
-                            {{- end -}}
-                        {{- else -}}
-                            {{- $author.name -}}
-                        {{- end -}}
-                    {{- end }}
+                            {{ else }}
+                                {{ $author.name }}
+                            {{ end }}
+                        {{ else }}
+                            {{ $author.name }}
+                        {{ end }}
+                    {{ end }}
                 </p>
             {{ end }}
 
