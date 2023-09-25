@@ -41,7 +41,7 @@
         {{ end }}
 
         {{ $unpinned := complement $pinned . }}
-        {{ $pagegroups := $unpinned.ByPublishDate.Reverse.GroupByPublishDate "January 2006" }}
+        {{ $pagegroups := $unpinned.GroupByPublishDate "January 2006" }}
         {{ $pager := $page.Paginate $pagegroups }}
 
         {{ range $pager.PageGroups }}
