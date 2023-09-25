@@ -86,7 +86,7 @@
             {{ with $date }}
                 <p class="mb-0 text-center text-secondary" id="paige-date">
                     {{ with $commiturl }}
-                        <a class="link-secondary" href="{{ . }}">
+                        <a class="link-secondary" href="{{ . }}" {{ with partial "paige/target.html" (dict "page" $page "url" .) }} target="{{ . }}" {{ end }}>
                     {{ end }}
 
                     <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>

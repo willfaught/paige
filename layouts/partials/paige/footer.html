@@ -10,7 +10,7 @@
     {{ end }}
 
     <p class="mb-0 text-center" id="paige-credit">
-        <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>
+        <a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" {{ with partial "paige/target.html" (dict "page" $page "url" "https://github.com/willfaught/paige") }} target="{{ . }}" {{ end }}>Paige Theme</a>
     </p>
 
     {{ if templates.Exists "partials/paige/footer-last.html" }}
