@@ -23,7 +23,9 @@
 
     {{ partial "paige/metas.html" $page }}
 
-    <title>{{ $title }}</title>
+    {{ with $title }}
+        <title>{{ . }}</title>
+    {{ end }}
 
     {{ partial "paige/links.html" $page }}
     {{ partial "paige/style.html" $page }}
