@@ -3,10 +3,12 @@
 {{ $authors := $page.Param "paige.feed.atom.authors" }}
 {{ $format := "2006-01-02T15:04:05Z07:00" }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
+{{ $icon := absLangURL ($page.Param "paige.feed.atom.icon") }}
 {{ $id := "" }}
 {{ $ids := dict }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
+{{ $logo := absLangURL ($page.Param "paige.feed.atom.logo") }}
 {{ $pagetitle := $page.Title | markdownify }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $sitetitle := site.Title | markdownify }}
@@ -65,6 +67,10 @@
         </author>
     {{ end }}
 
+    {{ with $icon }}
+        <icon>{{ . }}</icon>
+    {{ end }}
+
     <id>{{ $id }}</id>
 
     {{ range $page.OutputFormats }}
@@ -87,6 +93,10 @@
                 {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
             {{ end }}
         {{ end }}
+    {{ end }}
+
+    {{ with $logo }}
+        <logo>{{ . }}</logo>
     {{ end }}
 
     {{ with $rights }}

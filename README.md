@@ -281,6 +281,8 @@ authors = []
 # email = "will.faught@example.com"
 # name = "Will Faught
 # url = "https://willfaught.com/paige"
+icon = "" # Example is "/icon.webp"
+logo = "" # Example is "/logo.webp"
 
 [paige.feed.rss]
 managing_editor = "" # Example is "Will Faught <will.faught@example.com>"
