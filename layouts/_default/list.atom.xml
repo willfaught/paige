@@ -46,7 +46,7 @@
 {{ else if $sitetitle }}
     {{ $title = $sitetitle }}
 {{ else }}
-    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" $page.RelPermalink }}
+    {{ warnf "layouts/_default/list.atom.xml: page %s does not have a title" $page.RelPermalink }}
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
@@ -143,17 +143,17 @@
             {{ end }}
 
             {{ with index $ids $id }}
-                {{ warnf "layouts/_default/list.atom.xml: Pages %s and %s have the same ID" . $subpage.RelPermalink }}
+                {{ warnf "layouts/_default/list.atom.xml: pages %s and %s have the same ID" . $subpage.RelPermalink }}
             {{ end }}
 
             {{ $ids = merge (dict $id .RelPermalink) $ids }}
 
             {{ if not $title }}
-                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title" .RelPermalink }}
+                {{ warnf "layouts/_default/list.atom.xml: page %s does not have a title" .RelPermalink }}
             {{ end }}
 
             {{ if .Lastmod.IsZero }}
-                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date" .RelPermalink }}
+                {{ warnf "layouts/_default/list.atom.xml: page %s does not have a modified date" .RelPermalink }}
             {{ end }}
 
             {{ with partial "paige/authors.html" . }}

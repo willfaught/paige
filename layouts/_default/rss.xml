@@ -37,7 +37,7 @@
 {{ else if $sitetitle }}
     {{ $title = $sitetitle }}
 {{ else }}
-    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title" $page.RelPermalink }}
+    {{ warnf "layouts/_default/rss.xml: page %s does not have a title" $page.RelPermalink }}
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
@@ -109,7 +109,7 @@
                 {{ $description = $description | replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) }}
 
                 {{ if and (not $description) (not $title) }}
-                    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description" .RelPermalink }}
+                    {{ warnf "layouts/_default/rss.xml: page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
 
                 {{ if .Params.id }}
@@ -122,7 +122,7 @@
                 {{ end }}
 
                 {{ with index $guids $guid }}
-                    {{ warnf "layouts/_default/rss.xml: Pages %s and %s have the same GUID" . $subpage.RelPermalink }}
+                    {{ warnf "layouts/_default/rss.xml: pages %s and %s have the same GUID" . $subpage.RelPermalink }}
                 {{ end }}
 
                 {{ $guids = merge (dict $guid .RelPermalink) $guids }}
