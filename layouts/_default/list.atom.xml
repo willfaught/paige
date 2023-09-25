@@ -14,7 +14,6 @@
 {{ $sitetitle := site.Title | markdownify }}
 {{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
-{{ $title := "" }}
 {{ $updated := site.LastChange.Format $format }}
 
 {{ if $page.Params.id }}
@@ -35,17 +34,15 @@
     {{ $subpages = $subpages | first $limit }}
 {{ end }}
 
-{{ if and $pagetitle $sitetitle }}
-    {{ if $page.IsHome }}
-        {{ $title = $pagetitle }}
-    {{ else }}
-        {{ $title = printf "%s · %s" $pagetitle $sitetitle }}
-    {{ end }}
-{{ else if $pagetitle }}
-    {{ $title = $pagetitle }}
-{{ else if $sitetitle }}
-    {{ $title = $sitetitle }}
-{{ else }}
+{{ $titles := slice ($page.Title | markdownify) }}
+
+{{ range .Ancestors }}
+    {{ $titles = $titles | append (.Title | markdownify) }}
+{{ end }}
+
+{{ $title := delimit $titles " · " }}
+
+{{ if not $title }}
     {{ warnf "layouts/_default/list.atom.xml: page %s does not have a title" $page.RelPermalink }}
 {{ end }}
 

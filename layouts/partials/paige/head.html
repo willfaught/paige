@@ -1,20 +1,12 @@
 {{ $page := . }}
 
-{{ $pagetitle := $page.Title | markdownify | plainify }}
-{{ $sitetitle := site.Title | markdownify | plainify }}
-{{ $title := "" }}
+{{ $titles := slice ($page.Title | markdownify | plainify) }}
 
-{{ if and $pagetitle $sitetitle }}
-    {{ if $page.IsHome }}
-        {{ $title = $pagetitle }}
-    {{ else }}
-        {{ $title = printf "%s · %s" $pagetitle $sitetitle }}
-    {{ end }}
-{{ else if $pagetitle }}
-    {{ $title = $pagetitle }}
-{{ else if $sitetitle }}
-    {{ $title = $sitetitle }}
+{{ range .Ancestors }}
+    {{ $titles = $titles | append (.Title | markdownify | plainify) }}
 {{ end }}
+
+{{ $title := delimit $titles " · " }}
 
 <head>
     {{ if templates.Exists "partials/paige/head-first.html" }}
