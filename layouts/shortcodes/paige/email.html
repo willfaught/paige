@@ -1,4 +1,4 @@
-{{ $address := .Get "address" }}
+{{ $address := .Get 0 | default (.Get "address") }}
 {{ $content := .Inner | markdownify }}
 
 {{ if not $address }}

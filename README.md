@@ -472,7 +472,7 @@ Parameters:
 
 <dl>
     <dt><code>address</code></dt>
-    <dd>Required. String. The e-mail address.</dd>
+    <dd>Required. Position 0. String. The e-mail address.</dd>
 </dl>
 
 ### Figure
