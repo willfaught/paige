@@ -1,6 +1,9 @@
 {{ $external := false }}
+
 {{ if (urls.Parse .Destination).IsAbs }}
     {{ $external = not (strings.HasSuffix .Destination site.BaseURL) }}
 {{ end }}
+
 {{ $newtab := and $external site.Params.paige.external_link_new_tab }}
+
 <a {{ with .Destination }} href="{{ . }}" {{ end }} {{ if $newtab }} target="_blank" {{ end }} {{ with .Title }} title="{{ . }}" {{ end }}>{{ .Text }}</a>
