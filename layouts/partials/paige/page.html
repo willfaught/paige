@@ -5,7 +5,7 @@
 {{ $commiturl := "" }}
 {{ $date := $page.PublishDate }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
-{{ $description := $page.Description | markdownify | safeHTML }}
+{{ $description := $page.Description | markdownify }}
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $flags := slice }}
@@ -14,9 +14,9 @@
 {{ $pinned := $page.Params.paige.pin }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.Params.series }}
-{{ $summary := $page.Summary | plainify | htmlUnescape | safeHTML }}
+{{ $summary := $page.Summary | plainify | htmlUnescape }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
-{{ $title := $page.Title | markdownify | safeHTML }}
+{{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.RelPermalink }}
 
 {{ if and (.Param "paige.git.commit_url") .GitInfo }}

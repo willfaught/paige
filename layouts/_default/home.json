@@ -5,11 +5,11 @@
 {{- $page.Scratch.Add "paige_index" (dict
     "categories" .Params.categories
     "date" .PublishDate
-    "description" (.Description | markdownify | plainify | htmlUnescape | safeHTML)
+    "description" (.Description | markdownify | plainify | htmlUnescape)
     "keywords" .Params.keywords
     "link" .RelPermalink
     "tags" .Params.tags
-    "text" (strings.TrimRight " " (replace (.Plain | htmlUnescape | safeHTML) "\n" " "))
-    "title" (.Title | markdownify | plainify | htmlUnescape | safeHTML)) -}}
+    "text" (strings.TrimRight " " (replace (.Plain | htmlUnescape) "\n" " "))
+    "title" (.Title | markdownify | plainify | htmlUnescape)) -}}
 {{- end -}}
 {{- $page.Scratch.Get "paige_index" | jsonify -}}
