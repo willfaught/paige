@@ -8,7 +8,7 @@
 
 <span class="paige-icon">
     {{ with $url }}
-        <a href="{{ . }}">
+        <a href="{{ . }}" {{ with $name }} title="{{ . }}" {{ end }}>
     {{ end }}
 
     <i class="{{ $class }}">{{ with $name }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
