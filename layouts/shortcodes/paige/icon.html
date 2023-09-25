@@ -2,13 +2,15 @@
 {{ $title := .Get "title" }}
 {{ $url := .Get "url" }}
 
+{{ $target := partial "paige/target.html" (dict "page" .Page "url" $url) }}
+
 {{ if not $class }}
     {{ errorf "layouts/shortcodes/paige/icon.html: no class" }}
 {{ end }}
 
 <span class="paige-icon">
     {{ with $url }}
-        <a href="{{ . }}" {{ with $title }} title="{{ . }}" {{ end }}>
+        <a href="{{ . }}" {{ with $target }} target="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}>
     {{ end }}
 
     <i class="{{ $class }}">{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>

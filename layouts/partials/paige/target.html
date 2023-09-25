@@ -1,0 +1,8 @@
+{{ $params := . }}
+
+{{ $page := $params.page }}
+{{ $url := $params.url }}
+
+{{ $external := cond (urls.Parse $url).IsAbs (not (strings.HasSuffix $url site.BaseURL)) false }}
+
+{{ return cond (and $external ($page.Param "paige.external_link_new_tab" | not | not)) "_blank" "" }}
