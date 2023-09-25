@@ -591,7 +591,7 @@ The `paige/icon` shortcode provides a web font icon.
 ```
 {{< paige/icon
     class=""
-    name=""
+    title=""
     url="" >}}
 ```
 
@@ -602,8 +602,8 @@ Parameters:
 <dl>
     <dt><code>class</code></dt>
     <dd>Required. Position 0. String. <code>&lt;i&gt;</code> class. Example is <code>bi bi-github</code>.</dd>
-    <dt><code>name</code></dt>
-    <dd>Optional. String. The screen reader description. Example is <code>GitHub</code>.</dd>
+    <dt><code>title</code></dt>
+    <dd>Optional. String. The screen reader description and anchor title. Example is <code>GitHub</code>.</dd>
     <dt><code>url</code></dt>
     <dd>Optional. String. URL. Example is <code>https://github.com/willfaught/paige</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>

@@ -1,5 +1,5 @@
 {{ $class := .Get 0 | default (.Get "class") }}
-{{ $name := .Get "name" }}
+{{ $title := .Get "title" }}
 {{ $url := .Get "url" }}
 
 {{ if not $class }}
@@ -8,10 +8,10 @@
 
 <span class="paige-icon">
     {{ with $url }}
-        <a href="{{ . }}" {{ with $name }} title="{{ . }}" {{ end }}>
+        <a href="{{ . }}" {{ with $title }} title="{{ . }}" {{ end }}>
     {{ end }}
 
-    <i class="{{ $class }}">{{ with $name }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
+    <i class="{{ $class }}">{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
 
     {{ if $url }}
         </a>

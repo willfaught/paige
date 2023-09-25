@@ -23,17 +23,17 @@ Result:
 
 <p class="display-1">Icon: {{< paige/icon class="bi bi-github" >}}</p>
 
-## Name parameter
+## Title parameter
 
 Code:
 
 ```go-html-template
-<p class="display-1">Icon: {{</* paige/icon class="bi bi-github" name="GitHub" */>}}</p>
+<p class="display-1">Icon: {{</* paige/icon class="bi bi-github" title="GitHub" */>}}</p>
 ```
 
 Result:
 
-<p class="display-1">Icon: {{< paige/icon class="bi bi-github" name="GitHub" >}}</p>
+<p class="display-1">Icon: {{< paige/icon class="bi bi-github" title="GitHub" >}}</p>
 
 ## Url parameter
 
