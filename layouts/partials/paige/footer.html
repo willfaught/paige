@@ -2,6 +2,7 @@
 
 {{ $copyright := site.Copyright | markdownify }}
 {{ $href := "https://github.com/willfaught/paige" }}
+{{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
 
 <footer class="mb-3" id="paige-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
@@ -13,7 +14,7 @@
     {{ end }}
 
     <p class="mb-0 text-center" id="paige-credit">
-        <a class="link-secondary text-decoration-none" href="{{ $href }}" {{ with partial "paige/target.html" (dict "page" $page "url" $href) }} target="{{ . }}" {{ end }}>Paige Theme</a>
+        <a class="link-secondary text-decoration-none" href="{{ $href }}" {{ with $target }} target="{{ . }}" {{ end }}>Paige Theme</a>
     </p>
 
     {{ if templates.Exists "partials/paige/footer-last.html" }}
