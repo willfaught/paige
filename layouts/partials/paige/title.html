@@ -1,8 +1,8 @@
 {{ $page := . }}
 
-{{ $pagetitle := $page.Title | markdownify | plainify | htmlUnescape }}
+{{ $pagetitle := $page.Title | markdownify | plainify }}
 {{ $result := "" }}
-{{ $sitetitle := site.Title | markdownify | plainify | htmlUnescape }}
+{{ $sitetitle := site.Title | markdownify | plainify }}
 
 {{ if and $pagetitle $sitetitle }}
     {{ if .IsHome }}

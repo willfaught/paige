@@ -14,7 +14,7 @@
 {{ $pinned := $page.Params.paige.pin }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.Params.series }}
-{{ $summary := $page.Summary | plainify | htmlUnescape }}
+{{ $summary := $page.Summary | plainify }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
 {{ $title := $page.Title | markdownify }}
 {{ $titlelink := $page.RelPermalink }}
