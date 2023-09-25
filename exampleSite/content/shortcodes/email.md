@@ -14,14 +14,14 @@ Paige provides a `paige/email` shortcode that hides e-mail addresses from robots
 
 <!--more-->
 
-## Address and text parameters
+## Address and content parameters
 
 Code:
 
 ```go-html-template
-{{</* paige/email address="example@example.com" text="E-mail me" */>}}
+{{</* paige/email address="example@example.com" */>}}E-mail me{{</* /paige/email */>}}
 ```
 
 Result:
 
-{{< paige/email address="example@example.com" text="E-mail me" >}}
+{{< paige/email address="example@example.com" >}}E-mail me{{< /paige/email >}}

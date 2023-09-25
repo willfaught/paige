@@ -461,19 +461,18 @@ The `paige/email` shortcode hides e-mail addresses from robots.
 
 ```
 {{< paige/email
-    address=""
-    text="" >}}
+    address="" >}}
+
+{{< /paige/email >}}
 ```
 
-Inner content: None.
+Inner content: Required. String. Markdown. The content.
 
 Parameters:
 
 <dl>
     <dt><code>address</code></dt>
     <dd>Required. String. The e-mail address.</dd>
-    <dt><code>text</code></dt>
-    <dd>Required. String. The anchor text.</dd>
 </dl>
 
 ### Figure
