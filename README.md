@@ -285,8 +285,8 @@ icon = "" # Example is "/icon.webp"
 logo = "" # Example is "/logo.webp"
 
 [paige.feed.rss]
-managing_editor = "" # Example is "Will Faught <will.faught@example.com>"
-web_master = "" # Example is "Will Faught <will.faught@example.com>"
+managing_editor = "" # Example is "will.faught@example.com (Will Faught)"
+web_master = "" # Example is "will.faught@example.com (Will Faught)"
 
 [paige.git]
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
