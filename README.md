@@ -280,7 +280,7 @@ authors = []
 # [[paige.feed.atom.authors]]
 # email = "will.faught@example.com"
 # name = "Will Faught
-# url = "https://willfaught.com/paige"
+# url = "https://github.com/willfaught/paige"
 icon = "" # Example is "/icon.webp"
 logo = "" # Example is "/logo.webp"
 
