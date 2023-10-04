@@ -88,6 +88,7 @@ path = "github.com/willfaught/paige"
 home = ["atom", "html", "json", "rss"]
 section = ["atom", "html", "rss"]
 taxonomy = ["atom", "html", "rss"]
+term = ["atom", "html", "rss"]
 
 [params.authors.will-faught]
 default = true
