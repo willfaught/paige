@@ -9,4 +9,4 @@ title: "Link"
 weight: 80
 ---
 
-That takes you to the home page.
+It takes you to the home page.
