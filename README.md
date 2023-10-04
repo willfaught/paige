@@ -291,6 +291,11 @@ web_master = "" # Example is "will.faught@example.com (Will Faught)"
 [paige.git]
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
 
+[paige.link] # A link placed at the top of the footer for pages with files
+content = "" # Example is "Edit this page"
+hide_page = false
+url = "" # Example is "https://github.com/willfaught/paige/edit/master/content/%s"
+
 [paige.menu]
 style = "pills" # Must be "links", "pills", "tabs", or "underline"
 
@@ -915,6 +920,8 @@ Page identifiers:
     <dd>The header.</dd>
     <dt><code>#paige-keywords</code></dt>
     <dd>The keywords.</dd>
+    <dt><code>#paige-link</code></dt>
+    <dd>The file link. See the <code>paige.link</code> configuration.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
     <dt><code>#paige-menu</code></dt>

@@ -2,11 +2,23 @@
 
 {{ $copyright := site.Copyright | markdownify }}
 {{ $href := "https://github.com/willfaught/paige" }}
+{{ $linkcontent := $page.Param "paige.link.content" | markdownify }}
+{{ $linkurl := $page.Param "paige.link.url" }}
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
+
+{{ if and $linkurl $page.File }}
+    {{ $linkurl = printf $linkurl $page.File.Path | safeURL }}
+{{ end }}
 
 <footer class="mb-3" id="paige-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
         {{ partial "paige/footer-first.html" . }}
+    {{ end }}
+
+    {{ if and $linkcontent $linkurl (not ($page.Param "paige.link.hide_page")) }}
+        <p class="text-center" id="paige-link">
+            <a class="link-secondary" href="{{ $linkurl }}">{{ $linkcontent }}</a>
+        </p>
     {{ end }}
 
     {{ with $copyright }}
