@@ -4,10 +4,10 @@ enablerobotstxt = true
 languagecode = "en-us"
 paginate = 50
 timezone = "America/Los_Angeles"
-title = "Paige"
 titlecasestyle = "Go"
 
 [languages.en]
+title = "Paige"
 weight = 10
 
 [[languages.en.menu.main]]
