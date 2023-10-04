@@ -191,14 +191,14 @@
                 {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "via") }}
                     {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
 
-                    {{ printf `<link href="%s" rel="%s" type="%s"/>` $href $rel .MediaType | safeHTML }}
+                    <link href="{{ $href }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                 {{ end }}
             {{ end }}
 
             {{ range $t := .Translations }}
                 {{ range .OutputFormats }}
                     {{ if or (eq .Rel "alternate") (eq .Rel "enclosure") (eq .Rel "related") (eq .Rel "via") }}
-                        {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
+                        <link href="{{ .Permalink }}" hreflang="{{ $t.Lang }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
                     {{ end }}
                 {{ end }}
             {{ end }}
