@@ -216,7 +216,6 @@
             {{ end }}
 
             {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
-
             <updated>{{ $updated }}</updated>
         </entry>
     {{ end }}
