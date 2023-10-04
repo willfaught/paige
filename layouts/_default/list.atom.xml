@@ -3,12 +3,12 @@
 {{ $authors := $page.Param "paige.feed.atom.authors" }}
 {{ $format := "2006-01-02T15:04:05Z07:00" }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
-{{ $icon := absLangURL ($page.Param "paige.feed.atom.icon") }}
+{{ $icon := $page.Param "paige.feed.atom.icon" }}
 {{ $id := "" }}
 {{ $ids := dict }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
-{{ $logo := absLangURL ($page.Param "paige.feed.atom.logo") }}
+{{ $logo := $page.Param "paige.feed.atom.logo" }}
 {{ $pagetitle := $page.Title | markdownify }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $sitetitle := site.Title | markdownify }}
@@ -16,12 +16,20 @@
 {{ $subtitle := $page.Description | markdownify }}
 {{ $updated := site.LastChange.Format $format }}
 
+{{ if $icon }}
+    {{ $icon = absLangURL $icon }}
+{{ end }}
+
 {{ if $page.Params.id }}
     {{ $id = $page.Params.id }}
 {{ else if not $page.Date.IsZero }}
     {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format $format) }}
 {{ else }}
     {{ $id = $page.Permalink }}
+{{ end }}
+
+{{ if $logo }}
+    {{ $logo = absLangURL $logo }}
 {{ end }}
 
 {{ range (cond $page.IsHome site $page).RegularPages }}
