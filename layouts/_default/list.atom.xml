@@ -144,7 +144,7 @@
             {{ else if not .Date.IsZero }}
                 {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format $format) }}
             {{ else }}
-                {{ $id = .RelPermalink }}
+                {{ $id = .Permalink }}
             {{ end }}
 
             {{ with index $ids $id }}
