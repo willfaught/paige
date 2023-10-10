@@ -15,7 +15,7 @@
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
 
-    {{ if and $linkcontent $linkurl (not ($page.Param "paige.link.hide_page")) }}
+    {{ if and $linkcontent $linkurl (not ($page.Param "paige.link.disable")) }}
         <p class="text-center" id="paige-link">
             <a class="link-secondary" href="{{ $linkurl }}">{{ $linkcontent }}</a>
         </p>
