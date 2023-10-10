@@ -305,6 +305,8 @@ hide_page = false
 
 The assigned values shown are the default values.
 
+The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
+
 Optional site parameters:
 
 ```toml
