@@ -288,15 +288,15 @@ logo = "" # Example is "/logo.webp"
 managing_editor = "" # Example is "will.faught@example.com (Will Faught)"
 web_master = "" # Example is "will.faught@example.com (Will Faught)"
 
-[paige.git]
-commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
-
-[paige.link] # A link placed at the top of the footer for pages with files
+[paige.file_link] # A link placed at the top of the footer for pages with files
 content = "" # Example is "Edit this page"
 disable = false
 url = ""
 # The formatting verb "%s" is replaced with the path to the file relative to the content directory.
 # Example is "https://github.com/willfaught/paige/edit/master/content/%s".
+
+[paige.git]
+commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
 
 [paige.menu]
 style = "pills" # Must be "links", "pills", "tabs", or "underline"

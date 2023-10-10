@@ -2,8 +2,8 @@
 
 {{ $copyright := site.Copyright | markdownify }}
 {{ $href := "https://github.com/willfaught/paige" }}
-{{ $linkcontent := $page.Param "paige.link.content" | markdownify }}
-{{ $linkurl := $page.Param "paige.link.url" }}
+{{ $linkcontent := $page.Param "paige.file_link.content" | markdownify }}
+{{ $linkurl := $page.Param "paige.file_link.url" }}
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
 
 {{ if and $linkurl $page.File }}
@@ -15,7 +15,7 @@
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
 
-    {{ if and $linkcontent $linkurl (not ($page.Param "paige.link.disable")) }}
+    {{ if and $linkcontent $linkurl (not ($page.Param "paige.file_link.disable")) }}
         <p class="text-center" id="paige-link">
             <a class="link-secondary" href="{{ $linkurl }}">{{ $linkcontent }}</a>
         </p>
