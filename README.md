@@ -22,7 +22,6 @@ It's a versatile canvas that serves most web needs.
 - Analytics
 - Atom feed
 - Authors
-- Automatic switching between light and dark color schemes
 - Blog
 - Bootstrap
 - Categories
