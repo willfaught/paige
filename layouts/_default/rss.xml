@@ -2,6 +2,7 @@
 
 {{ $copyright := site.Copyright }}
 {{ $description := or $page.Description "Recent content" }}
+{{ $feed := replaceRE `/atom\.xml$` `/rss.xml` $page.Permalink }}
 {{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $guids := dict }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
@@ -40,7 +41,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 <rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        {{ printf `<atom:link href="%s" rel="self" type="application/rss+xml"/>` $page.Permalink | safeHTML }}
+        <atom:link href="{{ $feed }}" rel="self" type="application/rss+xml"/>
 
         {{ with $copyright }}
             <copyright>{{ . }}</copyright>
