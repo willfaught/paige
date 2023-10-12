@@ -108,6 +108,11 @@ url = "https://willfaught.com/paige"
 managing_editor = "will.faught@example.com (Will Faught)"
 web_master = "will.faught@example.com (Will Faught)"
 
+[params.paige.file_link]
+content = "Edit this page"
+disable = true
+url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+
 [taxonomies]
 author = "authors"
 category = "categories"

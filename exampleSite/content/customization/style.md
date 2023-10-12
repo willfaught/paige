@@ -4,6 +4,8 @@ categories: ["customization", "paige"]
 date: "2023-01-01"
 description: "Demonstration of Paige customization that styles data."
 paige:
+  file_link:
+    disable: false
   style: |
     #paige-authors,
     #paige-credit,
@@ -25,6 +27,7 @@ paige:
     #paige-content { font-style: italic; }
     #paige-date { font-style: italic; }
     #paige-description { font-style: italic; }
+    #paige-file-link { font-style: italic; }
     #paige-keywords { font-style: italic; }
     #paige-reading-time { font-style: italic; }
     #paige-series { font-style: italic; }
@@ -54,6 +57,8 @@ This page has the following parameters:
 
 ```yaml
 paige:
+  file_link:
+    disable: false
   style: |
     #paige-authors,
     #paige-credit,
@@ -75,6 +80,7 @@ paige:
     #paige-content { font-style: italic; }
     #paige-date { font-style: italic; }
     #paige-description { font-style: italic; }
+    #paige-file-link { font-style: italic; }
     #paige-keywords { font-style: italic; }
     #paige-reading-time { font-style: italic; }
     #paige-series { font-style: italic; }

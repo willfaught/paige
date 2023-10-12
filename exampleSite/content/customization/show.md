@@ -4,6 +4,8 @@ categories: ["customization", "paige"]
 date: "2023-02-01"
 description: "Demonstration of Paige customization that shows data."
 paige:
+  file_link:
+    disable: false
   style: |
     #paige-authors,
     #paige-credit,
@@ -36,6 +38,8 @@ This page has the following parameters:
 
 ```yaml
 paige:
+  file_link:
+    disable: false
   style: |
     #paige-authors,
     #paige-credit,

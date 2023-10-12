@@ -3,6 +3,8 @@ authors: ["will-faught"]
 categories: ["customization", "paige"]
 description: "Demonstrations of Paige customization."
 paige:
+  file_link:
+    disable: false
   style: |
     #paige-authors,
     #paige-credit,
@@ -35,6 +37,8 @@ This page has the following parameters:
 
 ```yaml
 paige:
+  file_link:
+    disable: false
   style: |
     #paige-authors,
     #paige-credit,
