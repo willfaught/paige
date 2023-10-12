@@ -169,6 +169,8 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
 See Hugo's [installation](https://gohugo.io/installation/), [getting started](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
 
+See the [minimal look](#minimal-look), [narrow look](#narrow-look), and [menu navigation only](#menu-navigation-only) sections for common customizations.
+
 ## Configure
 
 ### Parameters
