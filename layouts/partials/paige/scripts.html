@@ -1,33 +1,5 @@
 {{ $page := . }}
 
-<script>
-function paigeResize() {
-    var e = document.querySelector("#paige-content");
-    if (!e) {
-        return;
-    }
-    var mw = getComputedStyle(e).maxWidth;
-    var w;
-    if (mw === "100%") {
-        var e = document.querySelector("#paige-root");
-        var s = getComputedStyle(e);
-        var px = parseFloat(s.paddingLeft) + parseFloat(s.paddingRight);
-        var bx = parseFloat(s.borderLeftWidth) + parseFloat(s.borderRightWidth);
-        w = e.offsetWidth - px - bx;
-    } else {
-        w = parseFloat(mw.substring(0, mw.length - 2));
-    }
-    var es = document.querySelectorAll(".paige-video");
-    for (var i = 0; i < es.length; i++) {
-        var e = es[i];
-        if (!e.style.height && !e.style.width) {
-            e.style.width = w + "px";
-        }
-    }
-}
-paigeResize();
-addEventListener("resize", paigeResize);
-</script>
 {{ partial "paige/script.html" (dict "page" $page "src" "js/paige/bootstrap/bootstrap.bundle.js") }}
 
 {{ if $page.Param "paige.math" }}
