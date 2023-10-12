@@ -122,7 +122,7 @@
     {{ $smallerresource = $smallerresource | fingerprint }}
     {{ $intrinsicheight = $smallerresource.Height }}
     {{ $intrinsicwidth = $smallerresource.Width }}
-    {{ $src = $smallerresource.RelPermalink }}
+    {{ $src = $smallerresource.Permalink }}
 
     {{ if and (not $sizes) (not $srcset) }}
         {{ $partialresource := "" }}
@@ -224,7 +224,7 @@
         {{ end }}
     {{ end }}
 {{ else }}
-    {{ $src = relLangURL $src }}
+    {{ $src = absLangURL $src }}
 {{ end }}
 
 {{ $content := partial "paige/img.html" (dict
