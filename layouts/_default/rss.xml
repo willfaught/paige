@@ -11,8 +11,8 @@
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $managingeditor := $page.Param "paige.feed.rss.managing_editor" }}
-{{ $pagetitle := $page.Title | markdownify | plainify }}
-{{ $sitetitle := site.Title | markdownify | plainify }}
+{{ $pagetitle := $page.Title | markdownify | plainify | htmlUnescape }}
+{{ $sitetitle := site.Title | markdownify | plainify | htmlUnescape }}
 {{ $subpages := slice }}
 {{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
 
@@ -78,7 +78,7 @@
                 {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
                 {{ $permalink := false }}
                 {{ $pubdate := .PublishDate.Format $format }}
-                {{ $title := .Title | markdownify | plainify }}
+                {{ $title := .Title | markdownify | plainify | htmlUnescape }}
 
                 {{ $link := cond $paramlink .Params.link .Permalink }}
 
