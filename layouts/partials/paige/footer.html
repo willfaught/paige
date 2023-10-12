@@ -16,7 +16,7 @@
     {{ end }}
 
     {{ if and $linkcontent $linkurl (not ($page.Param "paige.file_link.disable")) }}
-        <p class="text-center" id="paige-link">
+        <p class="text-center" id="paige-file-link">
             <a class="link-secondary" href="{{ $linkurl }}">{{ $linkcontent }}</a>
         </p>
     {{ end }}

@@ -919,14 +919,14 @@ Page identifiers:
     <dd>The date.</dd>
     <dt><code>#paige-description</code></dt>
     <dd>The description.</dd>
+    <dt><code>#paige-file-link</code></dt>
+    <dd>The file link. See the <code>paige.link</code> configuration.</dd>
     <dt><code>#paige-footer</code></dt>
     <dd>The footer.</dd>
     <dt><code>#paige-header</code></dt>
     <dd>The header.</dd>
     <dt><code>#paige-keywords</code></dt>
     <dd>The keywords.</dd>
-    <dt><code>#paige-link</code></dt>
-    <dd>The file link. See the <code>paige.link</code> configuration.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
     <dt><code>#paige-menu</code></dt>
