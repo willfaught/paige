@@ -47,7 +47,7 @@
         {{ range $pager.PageGroups }}
             <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
 
-            {{ range .Pages }}
+            {{ range .Pages.ByWeight }}
                 {{ partial "paige/page.html" . }}
             {{ end }}
         {{ end }}
