@@ -92,11 +92,9 @@ basename = "atom"
 isplaintext = true
 mediatype = "application/atom+xml"
 name = "atom"
-nougly = true
 
 [outputformats.rss]
 basename = "rss"
 isplaintext = true
 mediatype = "application/rss+xml"
 name = "rss"
-nougly = true
