@@ -90,7 +90,7 @@ includeFiles = ["katex.min.js"]
 [outputformats.atom]
 basename = "atom"
 ishtml = false
-isplaintext = false
+isplaintext = true
 mediatype = "application/atom+xml"
 name = "atom"
 nougly = true
@@ -100,7 +100,7 @@ rel = "alternate"
 [outputformats.rss]
 basename = "rss"
 ishtml = false
-isplaintext = false
+isplaintext = true
 mediatype = "application/rss+xml"
 name = "rss"
 nougly = true
