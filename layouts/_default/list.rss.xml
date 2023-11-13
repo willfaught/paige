@@ -2,7 +2,7 @@
 
 {{ $copyright := site.Copyright }}
 {{ $description := or $page.Description "Recent content" }}
-{{ $feed := replaceRE `/atom\.xml$` `/rss.xml` $page.Permalink }}
+{{ $feed := ($page.OutputFormats.Get "rss").Permalink }}
 {{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $guids := dict }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
