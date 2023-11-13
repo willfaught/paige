@@ -89,20 +89,14 @@ includeFiles = ["katex.min.js"]
 
 [outputformats.atom]
 basename = "atom"
-ishtml = false
 isplaintext = true
 mediatype = "application/atom+xml"
 name = "atom"
 nougly = true
-permalinkable = false
-rel = "alternate"
 
 [outputformats.rss]
 basename = "rss"
-ishtml = false
 isplaintext = true
 mediatype = "application/rss+xml"
 name = "rss"
 nougly = true
-permalinkable = false
-rel = "alternate"
