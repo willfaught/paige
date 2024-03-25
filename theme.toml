@@ -23,7 +23,7 @@ features = [
   "twitter sharing"
 ]
 homepage = "https://github.com/willfaught/paige"
-license = "Apache-2.0"
+license = "MIT"
 licenselink = "https://www.apache.org/licenses/LICENSE-2.0"
 name = "Paige"
 tags = [

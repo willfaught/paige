@@ -1146,5 +1146,5 @@ optionally prefixed with one or more underscores, are reserved.
 ## Project
 
 Created by [Will Faught](https://willfaught.com).
-Released under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+Released under the [MIT License](https://spdx.org/licenses/MIT.html).
 Hosted at https://github.com/willfaught/paige.
