@@ -43,8 +43,6 @@
     {{ partial "paige/link.html" (dict "href" "css/paige/katex/katex.min.css") }}
 {{ end }}
 
-{{ if .AlternativeOutputFormats }}
-    {{ range .AlternativeOutputFormats }}
-        {{ printf `<link href="%s" rel="%s" type="%s">` (.Permalink | safeURL) .Rel .MediaType | safeHTML }}
-    {{ end }}
+{{ range $page.AlternativeOutputFormats }}
+    {{ printf `<link href="%s" rel="%s" type="%s">` (.Permalink | safeURL) .Rel .MediaType | safeHTML }}
 {{ end }}
