@@ -254,9 +254,6 @@ account_id = ""
 [paige.comments.isso] # See https://isso-comments.de
 script_url = ""
 
-[paige.comments.muut] # See https://muut.com
-account_id = ""
-
 [paige.comments.remark42] # See https://remark42.com
 host_url = ""
 site_id = ""
