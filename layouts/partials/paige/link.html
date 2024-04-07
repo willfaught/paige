@@ -1,5 +1,6 @@
 {{ $params := . }}
 
+{{ $context := $params.context }}
 {{ $crossorigin := $params.crossorigin | default "anonymous" }}
 {{ $href := $params.href }}
 {{ $includepaths := $params.includepaths }}
@@ -20,7 +21,6 @@
     {{ $resource := . }}
 
     {{ if $template }}
-        {{ $context := dict "color" (page.Param "paige.color" | default "#0d6efd") }}
         {{ $split := path.Split $href }}
         {{ $join := path.Join $split.Dir (print (printf "%#v" $context | sha1) "-" $split.File) }}
         {{ $resource = resources.ExecuteAsTemplate $join $context . }}

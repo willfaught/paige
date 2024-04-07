@@ -180,6 +180,7 @@ There is a single parameter object with sensible defaults that can be overridden
 ```toml
 [paige]
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
+color_scheme = "auto" # Must be "auto", "dark", or "light"
 external_link_new_tab = false # Open external links in new tabs
 math = false # Enable math typesetting
 style = "" # CSS included at the end of the stylesheet, before style-last.css

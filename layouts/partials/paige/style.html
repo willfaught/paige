@@ -93,6 +93,13 @@ body, html {
     margin-bottom: 0;
 }
 
+{{ $colorscheme := $page.Param "paige.color_scheme" }}
+
+{{ if eq $colorscheme "dark" }}
+    {{ partial "paige/dark.css" $page | safeCSS }}
+{{ else if eq $colorscheme "light" }}
+    {{ partial "paige/light.css" $page | safeCSS }}
+{{ else }}
 @media (prefers-color-scheme: dark) {
     {{ partial "paige/dark.css" $page | safeCSS }}
 }
@@ -100,6 +107,7 @@ body, html {
 @media (prefers-color-scheme: light) {
     {{ partial "paige/light.css" $page | safeCSS }}
 }
+{{ end }}
 
 @media (prefers-reduced-motion: reduce) {
     .paige-header-link {
