@@ -428,7 +428,7 @@ Example configuration in `yoursite/hugo.toml`:
 
 ```toml
 [outputs]
-home = ["html", "json", "rss"]
+home = ["atom", "html", "paige-search", "rss"]
 ```
 
 Example configuration in `yoursite/content/search.md`:

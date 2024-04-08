@@ -98,3 +98,9 @@ basename = "rss"
 isplaintext = true
 mediatype = "application/rss+xml"
 name = "rss"
+
+[outputformats.paige-search]
+basename = "paige-search"
+isplaintext = true
+mediatype = "application/json"
+notalternative = true
