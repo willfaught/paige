@@ -183,6 +183,8 @@ color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windo
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 external_link_new_tab = false # Open external links in new tabs
 math = false # Enable math typesetting
+site_title = "" # Appears above the menu, above the site description, if set
+site_description = "" # Appears above the menu, below the site title, if set
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.analytics]

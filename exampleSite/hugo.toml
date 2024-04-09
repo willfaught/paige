@@ -96,6 +96,10 @@ email = "will.faught@example.com"
 name = "Will Faught"
 url = "https://willfaught.com/paige"
 
+[params.paige]
+site_title = "Paige"
+site_description = "Powerful, pliable pixel perfection"
+
 [params.paige.git]
 commit_url = "https://github.com/willfaught/paige/commit/%s"
 
