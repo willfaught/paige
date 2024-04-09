@@ -27,7 +27,7 @@ paige:
 </div>
 
 <p class="text-center">
-    <a class="lead" href="https://github.com/willfaught/paige">Install it now.</a>
+    <a class="lead" href="https://github.com/willfaught/paige">Get started!</a>
 </p>
 
 <div class="column-gap-3 d-flex display-6 justify-content-center mb-3">
