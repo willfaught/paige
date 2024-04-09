@@ -300,7 +300,7 @@ url = ""
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
 
 [paige.menu]
-style = "pills" # Must be "links", "pills", "tabs", or "underline"
+style = "links" # Must be "links", "pills", "tabs", or "underline"
 
 [paige.search]
 hide_page = false

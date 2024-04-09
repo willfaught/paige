@@ -1,6 +1,7 @@
 {{ $page := . }}
 
 {{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
+{{ $links := false }}
 {{ $pills := false }}
 {{ $tabs := false }}
 {{ $underline := false }}
@@ -18,11 +19,11 @@
         {{ $tabs = true }}
     {{ else if eq . "underline" }}
         {{ $underline = true }}
-    {{ else if ne . "links" }}
-        {{ errorf "layouts/partials/paige/menu.html: invalid menu style: %q" . }}
+    {{ else }}
+        {{ $links = true }}
     {{ end }}
 {{ else }}
-    {{ $pills = true }}
+    {{ $links = true }}
 {{ end }}
 
 {{ with site.Menus.main }}
