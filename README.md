@@ -1104,40 +1104,6 @@ style = """
 """
 ```
 
-## Implementation
-
-The HTML author is the page authors.
-
-The HTML description is the page description.
-
-The HTML keywords is a union of the page keywords, tags, and categories.
-
-The HTML title is the page title, followed by a middle dot, followed by the site title.
-If one is missing, the other is used without the middle dot.
-For the home page, the title is the page title, or the site title otherwise.
-
-The HTML body has a header, a body, and a footer.
-The header has the menu.
-The body has the page article.
-The footer has the copyright notice and the theme link.
-The article has the page metadata, table of contents, and content.
-The metadata has the page title, description, terms, authors, date, and reading time.
-
-The copyright notice, title, and description can be Markdown. Markup is stripped for HTML and RSS titles.
-
-The page title is displayed in an `h1` tag, so page content headers must start with `h2`.
-
-The page date is the publish date.
-
-The following NPM packages are used:
-
-- [bootstrap](https://www.npmjs.com/package/bootstrap/v/5.3.2)
-- [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons/v/1.11.0)
-- [katex](https://www.npmjs.com/package/katex/v/0.16.8)
-
-Hugo names, HTML names, CSS names, and JavaScript names that begin with "paige" capitalized in any way,
-optionally prefixed with one or more underscores, are reserved.
-
 ## Credits
 
 - Photos by [Lanty](https://unsplash.com/@photos_by_lanty)
