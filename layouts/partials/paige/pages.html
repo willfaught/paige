@@ -48,11 +48,14 @@
         {{ end }}
 
         {{ $unpinned := complement $pinned . }}
-        {{ $pagegroups := $unpinned.GroupByPublishDate "January 2006" }}
-        {{ $pager := $page.Paginate $pagegroups }}
+        {{ $pagecollection := $unpinned.GroupByPublishDate "January 2006" }}
+        {{ $pager := $page.Paginate $pagecollection }}
+        {{ $pagegroups := $pager.PageGroups}}
 
-        {{ range $pager.PageGroups }}
-            <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
+        {{ range $pagegroups }}
+            {{ if gt (len $pagegroups) 1 }}
+                <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
+            {{ end }}
 
             {{ range .Pages.ByWeight }}
                 {{ partial "paige/page.html" . }}
