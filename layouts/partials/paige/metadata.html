@@ -8,7 +8,7 @@
 {{ $description := $page.Description | markdownify }}
 {{ $link := $page.Params.link }}
 {{ $readingtime := $page.ReadingTime }}
-{{ $series := $page.Params.series }}
+{{ $series := $page.Params.series | default slice | uniq }}
 {{ $tags := $page.Params.tags | default slice | uniq }}
 {{ $title := $page.Title | markdownify }}
 
