@@ -1,8 +1,15 @@
 {{ $page := . }}
 
-{{ $collections := cond $page.IsHome site.Taxonomies slice }}
+{{ $collections := slice }}
 {{ $sections := where $page.Pages "Kind" "section" }}
 {{ $pages := where $page.Pages "Kind" "in" (slice "page" "term") }}
+{{ $taxonomies := cond $page.IsHome site.Taxonomies slice }}
+
+{{ range $k, $v := $taxonomies }}
+    {{ if gt (len $v) 0 }}
+        {{ $collections = $collections | append $k }}
+    {{ end }}
+{{ end }}
 
 {{ with $collections }}
     <div id="paige-collections">
@@ -10,8 +17,8 @@
             <h2 class="h4 text-center" id="paige-collections-header">{{ i18n "paige_collections" }}</h2>
         {{ end }}
 
-        {{ range $k, $v := . }}
-            {{ partial "paige/page.html" (site.GetPage $k) }}
+        {{ range . }}
+            {{ partial "paige/page.html" (site.GetPage .) }}
         {{ end }}
     </div>
 {{ end }}
