@@ -1,12 +1,26 @@
 {{ $page := . }}
 
-{{ $titles := slice ($page.Title | markdownify | plainify | htmlUnescape) }}
+{{ $title := $page.Title }}
 
-{{ range .Ancestors }}
-    {{ $titles = $titles | append (.Title | markdownify | plainify | htmlUnescape) }}
+{{ if and $page.IsHome (not $title) }}
+    {{ $title = $page.Param "paige.site_title" | default (site.Title) }}
 {{ end }}
 
-{{ $title := delimit $titles " · " }}
+{{ $title = $title | markdownify | plainify | htmlUnescape }}
+
+{{ $titles := slice $title }}
+
+{{ range .Ancestors }}
+    {{ $title := .Title }}
+
+    {{ if and .IsHome (not $title) }}
+        {{ $title = $page.Param "paige.site_title" | default (site.Title) }}
+    {{ end }}
+
+    {{ $titles = $titles | append ($title | markdownify | plainify | htmlUnescape) }}
+{{ end }}
+
+{{ $title = delimit $titles " · " }}
 
 <head>
     {{ if templates.Exists "partials/paige/head-first.html" }}
