@@ -1,9 +1,9 @@
 {{ $page := . }}
 
-{{ $titles := slice ($page.Title | markdownify | plainify) }}
+{{ $titles := slice ($page.Title | markdownify | plainify | htmlUnescape) }}
 
 {{ range .Ancestors }}
-    {{ $titles = $titles | append (.Title | markdownify | plainify) }}
+    {{ $titles = $titles | append (.Title | markdownify | plainify | htmlUnescape) }}
 {{ end }}
 
 {{ $title := delimit $titles " · " }}

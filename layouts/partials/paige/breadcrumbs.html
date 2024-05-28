@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-center">
             <ol class="breadcrumb mb-0">
                 {{ range .Reverse }}
-                    <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title | markdownify | plainify }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title | markdownify | plainify | htmlUnescape }}</a></li>
                 {{ end }}
             </ol>
         </div>
