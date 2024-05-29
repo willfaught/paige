@@ -3,11 +3,10 @@
 {{ $collections := slice }}
 {{ $sections := where $page.Pages "Kind" "section" }}
 {{ $pages := where $page.Pages "Kind" "in" (slice "page" "term") }}
-{{ $taxonomies := cond $page.IsHome site.Taxonomies slice }}
 
-{{ range $k, $v := $taxonomies }}
-    {{ if gt (len $v) 0 }}
-        {{ $collections = $collections | append $k }}
+{{ range $name, $taxonomy := cond $page.IsHome site.Taxonomies slice }}
+    {{ if gt (len $taxonomy) 0 }}
+        {{ $collections = $collections | append $taxonomy.Page }}
     {{ end }}
 {{ end }}
 
@@ -18,7 +17,7 @@
         {{ end }}
 
         {{ range . }}
-            {{ partial "paige/page.html" (site.GetPage .) }}
+            {{ partial "paige/page.html" . }}
         {{ end }}
     </div>
 {{ end }}
