@@ -164,15 +164,15 @@
             {{ with partial "paige/authors.html" . }}
                 {{ range . }}
                     <author>
-                        {{ with .email }}
+                        {{ with .Params.email }}
                             <email>{{ . }}</email>
                         {{ end }}
 
-                        {{ with .name }}
+                        {{ with .Params.Title }}
                             <name>{{ . }}</name>
                         {{ end }}
 
-                        {{ with .url }}
+                        {{ with .Params.url }}
                             <uri>{{ . }}</uri>
                         {{ end }}
                     </author>

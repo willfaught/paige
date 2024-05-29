@@ -90,12 +90,6 @@ section = ["atom", "html", "rss"]
 taxonomy = ["atom", "html", "rss"]
 term = ["atom", "html", "rss"]
 
-[params.authors.will-faught]
-default = true
-email = "will.faught@example.com"
-name = "Will Faught"
-url = "https://willfaught.com/paige"
-
 [params.paige]
 site_title = "Paige"
 site_description = "Powerful, pliable pixel perfection"

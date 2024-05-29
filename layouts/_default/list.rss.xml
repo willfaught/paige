@@ -85,10 +85,10 @@
                 {{ with $authors }}
                     {{ $primary := index . 0 }}
 
-                    {{ if and $primary.name $primary.email }}
-                        {{ $author = printf "%s (%s)" $primary.email $primary.name }}
-                    {{ else if $primary.email }}
-                        {{ $author = $primary.email }}
+                    {{ if and $primary.Params.email $primary.Title }}
+                        {{ $author = printf "%s (%s)" $primary.Params.email $primary.Title }}
+                    {{ else if $primary.Params.email }}
+                        {{ $author = $primary.Params.email }}
                     {{ end }}
                 {{ end }}
 

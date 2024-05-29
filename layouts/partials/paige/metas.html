@@ -6,7 +6,7 @@
     {{ $authors := slice }}
 
     {{ range . }}
-        {{ $authors = $authors | append .name }}
+        {{ $authors = $authors | append .Title }}
     {{ end }}
 
     <meta content="{{ delimit $authors `, ` }}" name="author">

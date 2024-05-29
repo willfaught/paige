@@ -304,29 +304,10 @@ The assigned values shown are the default values.
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
 
-Optional site parameters:
+Parameters specific to pages:
 
 ```toml
-[authors.will-faught]
-default = false # Credit this author in pages that have no authors parameter
-email = "will.faught@example.com"
-name = "Will Faught"
-url = "https://willfaught.com/paige"
-```
-
-Optional page parameters:
-
-```toml
-authors = ["will-faught"] # Credit the corresponding author in the site parameters
 link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
-
-[[authors]]
-author = "will-faught" # Credit the corresponding author in the site parameters
-
-[[authors]] # Credit this author
-email = "will.faught@example.com"
-name = "Will Faught"
-url = "https://willfaught.com/paige"
 
 [paige]
 alert = "Alert!" # Markdown displayed before the page body (defaults to primary alert type)
@@ -403,6 +384,15 @@ weight = 40
 
 If you intend for the menu to be sufficient for all navigation,
 see [how to hide other navigation features](#menu-navigation-only).
+
+### Taxonomies
+
+Support for authors, categories, series, and tags taxonomies is built in.
+
+Set `default` to `true` in the front matter of an author term page for that author to be credited in regular pages that have no authors parameter.
+A default author must be referenced at least once explicitly in a regular page.
+
+The `email` and `url` parameters in the front matter of an author term page are used in feeds if present.
 
 ## Layouts
 

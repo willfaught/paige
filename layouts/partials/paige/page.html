@@ -84,15 +84,7 @@
             {{ range $i, $author := . -}}
                 {{- if gt $i 0 }}, {{ end -}}
 
-                {{- with $author.id -}}
-                    {{- with site.GetPage (print "authors/" .) -}}
-                        <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title | default $author.name }}</a>
-                    {{- else -}}
-                        {{- $author.name -}}
-                    {{- end -}}
-                {{- else -}}
-                    {{- $author.name -}}
-                {{- end -}}
+                <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{- end }}
         </p>
     {{ end }}
