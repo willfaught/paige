@@ -60,7 +60,7 @@
     {{ end }}
 
     {{ if or $categories $tags }}
-        <p class="mb-0 paige-keywords text-center">
+        <p class="mb-0 paige-keywords text-center text-secondary">
             {{ $terms := slice }}
 
             {{ range $categories }}
@@ -71,15 +71,17 @@
                 {{ $terms = $terms | append (dict "name" . "url" (printf "tags/%v/" . | relLangURL | string)) }}
             {{ end }}
 
-            {{ range sort $terms "name" }}
-                {{ $name := .name }}
+            {{ range $i, $term := sort $terms "name" -}}
+                {{- if gt $i 0 }}, {{ end -}}
 
-                {{ with site.GetPage .url }}
-                    {{ $name = .Title }}
-                {{ end }}
+                {{- $title := $term.name -}}
 
-                <a class="badge paige-keyword text-bg-secondary text-decoration-none" href="{{ .url | safeURL }}">{{ $name }}</a>
-            {{ end }}
+                {{- with (site.GetPage $term.url).Title -}}
+                    {{- $title = . -}}
+                {{- end -}}
+
+                <a class="link-secondary" href="{{ .url | safeURL }}">{{ $title }}</a>
+            {{- end }}
         </p>
     {{ end }}
 
