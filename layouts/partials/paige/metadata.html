@@ -1,15 +1,15 @@
 {{ $page := . }}
 
 {{ $authors := partial "paige/authors.html" $page }}
-{{ $categories := $page.Params.categories | default slice | uniq }}
+{{ $categories := $page.GetTerms "categories" }}
 {{ $commiturl := "" }}
 {{ $date := $page.PublishDate }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
 {{ $link := $page.Params.link }}
 {{ $readingtime := $page.ReadingTime }}
-{{ $series := $page.Params.series | default slice | uniq }}
-{{ $tags := $page.Params.tags | default slice | uniq }}
+{{ $series := $page.GetTerms "series" }}
+{{ $tags := $page.GetTerms "tags" }}
 {{ $title := $page.Title | markdownify }}
 
 {{ if and ($page.Param "paige.git.commit_url") $page.GitInfo }}
@@ -29,40 +29,20 @@
         <div class="mb-3">
             {{ if or $categories $tags }}
                 <p class="mb-0 text-center text-secondary" id="paige-keywords">
-                    {{ $terms := slice }}
-
-                    {{ range $categories }}
-                        {{ $terms = $terms | append (dict "name" . "url" (printf "categories/%v/" . | relLangURL | string)) }}
-                    {{ end }}
-
-                    {{ range $tags }}
-                        {{ $terms = $terms | append (dict "name" . "url" (printf "tags/%v/" . | relLangURL | string)) }}
-                    {{ end }}
-
-                    {{ range $i, $term := sort $terms "name" -}}
+                    {{ range $i, $term := sort (append $categories $tags) "LinkTitle" -}}
                         {{- if gt $i 0 }}, {{ end -}}
 
-                        {{- $title := $term.name -}}
-
-                        {{- with (site.GetPage $term.url).Title -}}
-                            {{- $title = . -}}
-                        {{- end -}}
-
-                        <a class="link-secondary" href="{{ .url | safeURL }}">{{ $title }}</a>
+                        <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
                     {{- end }}
                 </p>
             {{ end }}
 
             {{ with $series }}
                 <p class="mb-0 text-center text-secondary" id="paige-series">
-                    {{ range $i, $name := . -}}
+                    {{ range $i, $series := . -}}
                         {{- if gt $i 0 }}, {{ end -}}
 
-                        {{- with site.GetPage (print "series/" $name) -}}
-                            <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title | default $name }}</a>
-                        {{- else -}}
-                            {{- $name -}}
-                        {{- end -}}
+                        <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
                     {{- end }}
                 </p>
             {{ end }}
