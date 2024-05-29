@@ -62,7 +62,7 @@
     {{ if or $categories $tags }}
         <p class="mb-0 paige-keywords text-center text-secondary">
             {{ range $i, $term := sort (append $categories $tags) "LinkTitle" -}}
-                {{- if gt $i 0 }}, {{ end -}}
+                {{- if gt $i 0 }} · {{ end -}}
 
                 <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
             {{- end }}
@@ -72,7 +72,7 @@
     {{ with $series }}
         <p class="mb-0 paige-series text-center text-secondary">
             {{ range $i, $series := . -}}
-                {{- if gt $i 0 }}, {{ end -}}
+                {{- if gt $i 0 }} · {{ end -}}
 
                 <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{- end }}
@@ -82,7 +82,7 @@
     {{ with $authors }}
         <p class="mb-0 paige-authors text-center text-secondary">
             {{ range $i, $author := . -}}
-                {{- if gt $i 0 }}, {{ end -}}
+                {{- if gt $i 0 }} · {{ end -}}
 
                 <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{- end }}

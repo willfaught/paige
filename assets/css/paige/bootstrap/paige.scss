@@ -7,6 +7,7 @@
     $color-mode-type: media-query;
 {{ end }}
 
+$breadcrumb-divider: quote("·");
 $primary: {{ $color }};
 
 @import "bootstrap";
