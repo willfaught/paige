@@ -46,18 +46,29 @@
             {{ partial "paige/page.html" . }}
         {{ end }}
 
+        {{ $pager := false }}
         {{ $unpinned := complement $pinned . }}
-        {{ $pagecollection := $unpinned.GroupByPublishDate "January 2006" }}
-        {{ $pager := $page.Paginate $pagecollection }}
-        {{ $pagegroups := $pager.PageGroups}}
+        {{ $weighted := where $unpinned "Weight" "gt" 0 }}
 
-        {{ range $pagegroups }}
-            {{ if gt (len $pagegroups) 1 }}
-                <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
-            {{ end }}
+        {{ if $weighted }}
+            {{ $pager = $page.Paginate $unpinned.ByWeight }}
 
-            {{ range .Pages.ByWeight }}
+            {{ range $pager.Pages }}
                 {{ partial "paige/page.html" . }}
+            {{ end }}
+        {{ else }}
+            {{ $pager = $page.Paginate ($unpinned.GroupByPublishDate "January 2006") }}
+
+            {{ $pagegroups := $pager.PageGroups }}
+
+            {{ range $pagegroups }}
+                {{ if gt (len $pagegroups) 1 }}
+                    <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
+                {{ end }}
+
+                {{ range .Pages.ByWeight }}
+                    {{ partial "paige/page.html" . }}
+                {{ end }}
             {{ end }}
         {{ end }}
     </div>
