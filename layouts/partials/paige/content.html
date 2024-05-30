@@ -3,5 +3,5 @@
 {{ $content := $page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` (printf `${1} <a aria-label="%v" class="paige-header-link text-decoration-none" href="#${2}">#</a>${3}` (i18n "paige_aria_section_link")) | safeHTML }}
 
 {{ with $content }}
-    <div id="paige-content">{{ . }}</div>
+    <div class="mw-100" id="paige-content">{{ . }}</div>
 {{ end }}

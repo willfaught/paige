@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
-    <div id="paige-toc">
+    <div class="mw-100" id="paige-toc">
         <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
             {{ $page.TableOfContents }}
         </div>
