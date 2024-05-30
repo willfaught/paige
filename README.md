@@ -917,12 +917,18 @@ Page identifiers:
     <dd>The menu.</dd>
     <dt><code>#paige-metadata</code></dt>
     <dd>The metadata.</dd>
+    <dt><code>#paige-next</code></dt>
+    <dd>The next page link.</dd>
     <dt><code>#paige-pages</code></dt>
     <dd>The pages.</dd>
     <dt><code>#paige-pages-header</code></dt>
     <dd>The pages header.</dd>
     <dt><code>#paige-pagination</code></dt>
     <dd>The sub-page pagination links.</dd>
+    <dt><code>#paige-prev</code></dt>
+    <dd>The previous page link.</dd>
+    <dt><code>#paige-prev-next</code></dt>
+    <dd>The container of the previous and next page links.</dd>
     <dt><code>#paige-reading-time</code></dt>
     <dd>The reading time.</dd>
     <dt><code>#paige-root</code></dt>

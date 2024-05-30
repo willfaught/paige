@@ -15,6 +15,22 @@
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
 
+    {{ if or $page.PrevInSection $page.NextInSection }}
+        <div class="mb-3" id="paige-prev-next">
+            {{ if $page.PrevInSection }}
+                <p class="mb-0 text-center text-secondary" id="paige-prev">
+                    <a class="link-secondary" href="{{ $page.Prev.Permalink }}">&larr; {{ $page.PrevInSection.Title }}</a>
+                </p>
+            {{ end }}
+
+            {{ if $page.NextInSection }}
+                <p class="mb-0 text-center text-secondary" id="paige-next">
+                    <a class="link-secondary" href="{{ $page.Next.Permalink }}">{{ $page.NextInSection.Title }} &rarr;</a>
+                </p>
+            {{ end }}
+        </div>
+    {{ end }}
+
     {{ if and $linkcontent $linkurl (not ($page.Param "paige.file_link.disable")) }}
         <p class="text-center" id="paige-file-link">
             <a class="link-secondary" href="{{ $linkurl }}">{{ $linkcontent }}</a>
