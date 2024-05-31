@@ -1,9 +1,9 @@
 {{ $page := . }}
 
 {{ $copyright := site.Copyright | markdownify }}
-{{ $href := "https://github.com/willfaught/paige" }}
+{{ $theme := "https://github.com/willfaught/paige" }}
 {{ $fileediturl := $page.Param "paige.file_edit_url" }}
-{{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
+{{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
 
 {{ if and $fileediturl $page.File }}
     {{ $fileediturl = printf $fileediturl $page.File.Path }}
@@ -41,7 +41,7 @@
     {{ end }}
 
     <p class="mb-0 text-center" id="paige-credit">
-        <a class="link-secondary text-decoration-none" href="{{ $href }}" {{ with $target }} target="{{ . }}" {{ end }}>Paige Theme</a>
+        <a class="link-secondary text-decoration-none" href="{{ $theme }}" {{ with $target }} target="{{ . }}" {{ end }}>Paige Theme</a>
     </p>
 
     {{ if templates.Exists "partials/paige/footer-last.html" }}
