@@ -3,6 +3,7 @@
 {{ $copyright := site.Copyright | markdownify }}
 {{ $theme := "https://github.com/willfaught/paige" }}
 {{ $fileediturl := $page.Param "paige.file_edit_url" }}
+
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
 
 {{ if and $fileediturl $page.File }}
