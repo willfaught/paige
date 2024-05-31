@@ -96,9 +96,6 @@ file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSi
 site_title = "Paige"
 site_description = "Powerful, pliable pixel perfection"
 
-[params.paige.git]
-commit_url = "https://github.com/willfaught/paige/commit/%s"
-
 [[params.paige.feed.atom.authors]]
 email = "will.faught@example.com"
 name = "Will Faught"

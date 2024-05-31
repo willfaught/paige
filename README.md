@@ -285,9 +285,6 @@ logo = "" # Example is "/logo.webp"
 managing_editor = "" # Example is "will.faught@example.com (Will Faught)"
 web_master = "" # Example is "will.faught@example.com (Will Faught)"
 
-[paige.git]
-commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"
-
 [paige.menu]
 style = "links" # Must be "links", "pills", "tabs", or "underline"
 

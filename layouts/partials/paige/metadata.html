@@ -2,7 +2,6 @@
 
 {{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := $page.GetTerms "categories" }}
-{{ $commiturl := "" }}
 {{ $date := $page.PublishDate }}
 {{ $dateformat := $page.Param "paige.date.format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
@@ -12,10 +11,6 @@
 {{ $tags := $page.GetTerms "tags" }}
 {{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
 {{ $title := $page.Title | markdownify }}
-
-{{ if and ($page.Param "paige.git.commit_url") $page.GitInfo }}
-    {{ $commiturl = printf ($page.Param "paige.git.commit_url") $page.GitInfo.Hash }}
-{{ end }}
 
 <div class="mw-100" id="paige-metadata">
     {{ with $title }}
@@ -66,15 +61,7 @@
 
             {{ with $date }}
                 <p class="mb-0 text-center text-secondary" id="paige-date">
-                    {{ with $commiturl }}
-                        <a class="link-secondary" href="{{ . }}" {{ with partial "paige/target.html" (dict "page" $page "url" .) }} target="{{ . }}" {{ end }}>
-                    {{ end }}
-
                     <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
-
-                    {{ if $commiturl }}
-                        </a>
-                    {{ end }}
                 </p>
             {{ end }}
 
