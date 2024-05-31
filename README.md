@@ -895,8 +895,12 @@ Page identifiers:
     <dd>The date.</dd>
     <dt><code>#paige-description</code></dt>
     <dd>The description.</dd>
-    <dt><code>#paige-file-link</code></dt>
-    <dd>The file link. See the <code>paige.link</code> configuration.</dd>
+    <dt><code>#paige-file</code></dt>
+    <dd>The file links.</dd>
+    <dt><code>#paige-file-edit</code></dt>
+    <dd>The file edit link.</dd>
+    <dt><code>#paige-file-history</code></dt>
+    <dd>The file history link.</dd>
     <dt><code>#paige-footer</code></dt>
     <dd>The footer.</dd>
     <dt><code>#paige-header</code></dt>

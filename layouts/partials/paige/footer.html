@@ -39,15 +39,15 @@
     {{ end }}
 
     {{ if and $page.File (or $fileediturl $filehistoryurl) }}
-    <div class="mb-3" id="paige-file-links">
+    <div class="mb-3" id="paige-file">
         {{ if $fileediturl }}
-            <p class="mb-0 text-center" id="paige-file-link">
+            <p class="mb-0 text-center" id="paige-file-edit">
                 <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
             </p>
         {{ end }}
 
         {{ if $filehistoryurl }}
-            <p class="mb-0 text-center" id="paige-file-link">
+            <p class="mb-0 text-center" id="paige-file-history">
                 <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
             </p>
         {{ end }}
