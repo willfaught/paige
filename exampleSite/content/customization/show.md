@@ -4,8 +4,6 @@ categories: ["customization", "paige"]
 date: "2023-02-01"
 description: "Demonstration of Paige customization that shows data."
 paige:
-  file_link:
-    disable: false
   style: |
     #paige-authors,
     #paige-credit,

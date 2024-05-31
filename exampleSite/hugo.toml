@@ -91,6 +91,8 @@ taxonomy = ["atom", "html", "rss"]
 term = ["atom", "html", "rss"]
 
 [params.paige]
+file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 site_title = "Paige"
 site_description = "Powerful, pliable pixel perfection"
 
@@ -105,11 +107,6 @@ url = "https://willfaught.com/paige"
 [params.paige.feed.rss]
 managing_editor = "will.faught@example.com (Will Faught)"
 web_master = "will.faught@example.com (Will Faught)"
-
-[params.paige.file_link]
-content = "Edit this page"
-disable = true
-url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 
 [taxonomies]
 author = "authors"

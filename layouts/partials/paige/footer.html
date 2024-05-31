@@ -2,12 +2,11 @@
 
 {{ $copyright := site.Copyright | markdownify }}
 {{ $href := "https://github.com/willfaught/paige" }}
-{{ $linkcontent := $page.Param "paige.file_link.content" | markdownify }}
-{{ $linkurl := $page.Param "paige.file_link.url" }}
+{{ $fileediturl := $page.Param "paige.file_edit_url" }}
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
 
-{{ if and $linkurl $page.File }}
-    {{ $linkurl = printf $linkurl $page.File.Path | safeURL }}
+{{ if and $fileediturl $page.File }}
+    {{ $fileediturl = printf $fileediturl $page.File.Path }}
 {{ end }}
 
 <footer class="mb-3" id="paige-footer">
@@ -31,9 +30,9 @@
         </div>
     {{ end }}
 
-    {{ if and $linkcontent $linkurl (not ($page.Param "paige.file_link.disable")) }}
+    {{ if $fileediturl }}
         <p class="text-center" id="paige-file-link">
-            <a class="link-secondary" href="{{ $linkurl }}">{{ $linkcontent }}</a>
+            <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
         </p>
     {{ end }}
 

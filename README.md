@@ -176,6 +176,7 @@ There is a single parameter object with sensible defaults that can be overridden
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 external_link_new_tab = false # Open external links in new tabs
+file_edit_url = "" # Example is "https://github.com/willfaught/paige/edit/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
 math = false # Enable math typesetting
 site_title = "" # Appears above the menu, above the site description, if set
@@ -283,13 +284,6 @@ logo = "" # Example is "/logo.webp"
 [paige.feed.rss]
 managing_editor = "" # Example is "will.faught@example.com (Will Faught)"
 web_master = "" # Example is "will.faught@example.com (Will Faught)"
-
-[paige.file_link] # A link placed at the top of the footer for pages with files
-content = "" # Example is "Edit this page"
-disable = false
-url = ""
-# The formatting verb "%s" is replaced with the path to the file relative to the content directory.
-# Example is "https://github.com/willfaught/paige/edit/master/content/%s".
 
 [paige.git]
 commit_url = "" # Example is "https://github.com/willfaught/paige/commit/%s"

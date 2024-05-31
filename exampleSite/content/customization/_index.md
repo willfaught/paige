@@ -3,8 +3,6 @@ authors: ["will-faught"]
 categories: ["customization", "paige"]
 description: "Demonstrations of Paige customization."
 paige:
-  file_link:
-    disable: false
   style: |
     #paige-authors,
     #paige-credit,
