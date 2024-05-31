@@ -16,6 +16,7 @@
 {{ $series := $page.GetTerms "series" }}
 {{ $summary := $page.Summary | markdownify | plainify | htmlUnescape }}
 {{ $tags := $page.GetTerms "tags" }}
+{{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
 {{ $title := $page.Title | markdownify | plainify | htmlUnescape }}
 {{ $titlelink := $page.RelPermalink }}
 
@@ -62,9 +63,15 @@
     {{ if or $categories $tags }}
         <p class="mb-0 paige-keywords text-center text-secondary">
             {{ range $i, $term := sort (append $categories $tags) "LinkTitle" -}}
-                {{- if gt $i 0 }} · {{ end -}}
+                {{- if $textkeywords -}}
+                    {{- if gt $i 0 }} · {{ end -}}
 
-                <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                    <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                {{- else -}}
+                    {{- if gt $i 0 }} {{ end -}}
+
+                    <a class="badge paige-keyword text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                {{- end -}}
             {{- end }}
         </p>
     {{ end }}
