@@ -3,25 +3,17 @@
 {{ $authors := $page.Param "paige.feed.atom.authors" }}
 {{ $format := "2006-01-02T15:04:05Z07:00" }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
-{{ $icon := $page.Param "paige.feed.atom.icon" }}
+{{ $icon := $page.Param "paige.feed.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
-{{ $logo := $page.Param "paige.feed.atom.logo" }}
+{{ $logo := $page.Param "paige.feed.atom.logo" | absLangURL }}
 {{ $pagetitle := $page.Title | markdownify }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $sitetitle := site.Title | markdownify }}
 {{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
 {{ $updated := site.LastChange.Format $format }}
-
-{{ if $icon }}
-    {{ $icon = absLangURL $icon }}
-{{ end }}
-
-{{ if $logo }}
-    {{ $logo = absLangURL $logo }}
-{{ end }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
     {{ if not (.Param "paige.feed.hide_page") }}
