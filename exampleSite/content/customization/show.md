@@ -26,6 +26,7 @@ paige:
 series: ["demo"]
 tags: ["show", "singles"]
 title: "Show Data"
+weight: 10
 ---
 
 This site hides some single page data by default. This page shows it all.
