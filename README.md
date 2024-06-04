@@ -180,6 +180,7 @@ external_link_new_tab = false # Open external links in new tabs
 file_edit_url = "" # Example is "https://github.com/willfaught/paige/edit/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
 math = false # Enable math typesetting
+menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 site_title = "" # Appears above the menu, above the site description, if set
 site_description = "" # Appears above the menu, below the site title, if set
 style = "" # CSS included at the end of the stylesheet, before style-last.css
@@ -282,9 +283,6 @@ logo = "" # Example is "/logo.webp"
 [paige.feed.rss]
 managing_editor = "" # Example is "will.faught@example.com (Will Faught)"
 web_master = "" # Example is "will.faught@example.com (Will Faught)"
-
-[paige.menu]
-style = "links" # Must be "links", "pills", "tabs", or "underline"
 
 [paige.search]
 hide_page = false

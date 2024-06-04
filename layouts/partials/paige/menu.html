@@ -12,7 +12,7 @@
 
 {{ $pagepath := strings.TrimPrefix $basepath $page.RelPermalink }}
 
-{{ with $page.Param "paige.menu.style" }}
+{{ with $page.Param "paige.menu_style" }}
     {{ if eq . "pills" }}
         {{ $pills = true }}
     {{ else if eq . "tabs" }}
