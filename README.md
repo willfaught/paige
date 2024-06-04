@@ -1002,6 +1002,8 @@ Shortcode classes:
 <dl>
     <dt><code>.paige-code</code></dt>
     <dd>The container element of <code>paige/code</code> shortcodes.</dd>
+    <dt><code>.paige-email</code></dt>
+    <dd>The container element of <code>paige/email</code> shortcodes.</dd>
     <dt><code>.paige-figure</code></dt>
     <dd>The container element of <code>paige/figure</code> shortcodes.</dd>
     <dt><code>.paige-gallery</code></dt>
