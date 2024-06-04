@@ -5,30 +5,6 @@
     {{ partial "paige/style-first.css" $page | safeCSS }}
 {{ end }}
 
-.highlight .chroma .hl, .highlight .chroma .lnt {
-    display: flex;
-}
-
-.paige-figure,
-.paige-gallery,
-.paige-image,
-.paige-quote,
-.paige-video {
-    margin-bottom: 1rem;
-}
-
-.paige-figure .paige-quote,
-.paige-figure .paige-video,
-.paige-figure .highlight pre.chroma,
-.paige-figure .highlight .chroma pre,
-.paige-figure .paige-quote > blockquote,
-.paige-figure > figure > div > :last-child,
-.paige-gallery .paige-figure,
-.paige-gallery .paige-image,
-blockquote > p:last-of-type {
-    margin-bottom: 0;
-}
-
 .paige-figure-numbered {
     counter-increment: paige-figure;
 }
@@ -46,8 +22,15 @@ blockquote > p:last-of-type {
     transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
 }
 
-.paige-header-link:focus, .paige-header-link:hover, :hover > .paige-header-link, :target > .paige-header-link {
-    opacity: 1;
+.paige-quote .blockquote-footer {
+    margin-top: 0;
+}
+
+.paige-quote blockquote {
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 .paige-video {
@@ -60,15 +43,35 @@ blockquote {
     border-right: 0.25rem solid var(--bs-body-bg);
 }
 
-.paige-quote blockquote {
-    border-left: 0;
-    border-right: 0;
-    margin-bottom: 0;
-    padding: 0;
+.highlight .chroma .hl, .highlight .chroma .lnt {
+    display: flex;
 }
 
-.paige-quote .blockquote-footer {
-    margin-top: 0;
+.paige-figure .paige-quote,
+.paige-figure .paige-video,
+.paige-figure .highlight pre.chroma,
+.paige-figure .highlight .chroma pre,
+.paige-figure .paige-quote > blockquote,
+.paige-figure > figure > div > :last-child,
+.paige-gallery .paige-figure,
+.paige-gallery .paige-image,
+blockquote > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.paige-figure,
+.paige-gallery,
+.paige-image,
+.paige-quote,
+.paige-video {
+    margin-bottom: 1rem;
+}
+
+.paige-header-link:focus,
+.paige-header-link:hover,
+:hover > .paige-header-link,
+:target > .paige-header-link {
+    opacity: 1;
 }
 
 {{ $colorscheme := $page.Param "paige.color_scheme" }}
