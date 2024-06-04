@@ -29,6 +29,9 @@ paige_pages:
 paige_pinned_page:
   other: Pinned page
 
+paige_recent_content:
+  other: Recent content
+
 paige_search_button:
   other: Search
 
