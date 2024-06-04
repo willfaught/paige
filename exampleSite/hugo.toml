@@ -93,8 +93,8 @@ term = ["atom", "html", "rss"]
 [params.paige]
 file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
-site_title = "Paige"
 site_description = "Powerful, pliable pixel perfection"
+site_title = "Paige"
 
 [[params.paige.feed.atom.authors]]
 email = "will.faught@example.com"
