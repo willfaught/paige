@@ -2,7 +2,7 @@
 
 {{ $result := $page.GetTerms "authors" }}
 
-{{ if and $page.IsPage (not $result) site.Taxonomies.authors }}
+{{ if and (not $result) $page.IsPage site.Taxonomies.authors }}
     {{ range $id, $taxonomy := site.Taxonomies.authors }}
         {{ if eq $taxonomy.Page.Params.default true }}
             {{ $result = $result | append $taxonomy.Page }}
