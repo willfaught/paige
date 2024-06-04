@@ -4,7 +4,6 @@
 {{ $description := or $page.Description "Recent content" }}
 {{ $feed := ($page.OutputFormats.Get "rss").Permalink }}
 {{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
-{{ $guids := dict }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
@@ -108,12 +107,6 @@
                 {{ if and (not $description) (not $title) }}
                     {{ warnf "layouts/_default/rss.xml: page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
-
-                {{ with index $guids $guid }}
-                    {{ warnf "layouts/_default/rss.xml: pages %s and %s have the same GUID" . $subpage.RelPermalink }}
-                {{ end }}
-
-                {{ $guids = merge (dict $guid .RelPermalink) $guids }}
 
                 {{ with $author }}
                     <author>{{ . }}</author>

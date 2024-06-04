@@ -4,8 +4,7 @@
 {{ $format := "2006-01-02T15:04:05Z07:00" }}
 {{ $html := $page.AlternativeOutputFormats.Get "html" }}
 {{ $icon := $page.Param "paige.feed.atom.icon" }}
-{{ $id := "" }}
-{{ $ids := dict }}
+{{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $logo := $page.Param "paige.feed.atom.logo" }}
@@ -18,14 +17,6 @@
 
 {{ if $icon }}
     {{ $icon = absLangURL $icon }}
-{{ end }}
-
-{{ if $page.Params.id }}
-    {{ $id = printf "%s?id=%v" (urls.JoinPath site.BaseURL "/") $page.Params.id }}
-{{ else if not $page.Date.IsZero }}
-    {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host ($page.Date.Format "2006-01-02") ($page.Date.Format $format) }}
-{{ else }}
-    {{ $id = $page.Permalink }}
 {{ end }}
 
 {{ if $logo }}
@@ -118,7 +109,7 @@
     {{ range $subpage := $subpages }}
         <entry>
             {{ $content := .Content }}
-            {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
+            {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
             {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
             {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
             {{ $rights := site.Copyright | markdownify }}
@@ -138,12 +129,6 @@
             {{ if not $content }}
                 {{ $content = .Description | markdownify}}
             {{ end }}
-
-            {{ with index $ids $id }}
-                {{ warnf "layouts/_default/list.atom.xml: pages %s and %s have the same ID" . $subpage.RelPermalink }}
-            {{ end }}
-
-            {{ $ids = merge (dict $id .RelPermalink) $ids }}
 
             {{ if not $title }}
                 {{ warnf "layouts/_default/list.atom.xml: page %s does not have a title" .RelPermalink }}
