@@ -54,7 +54,7 @@
     {{ end }}
 {{ end }}
 
-{{/* The markup below cannot be indented due to Markdown. */}}
+{{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}
 
 <div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} h-100 justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
 <figure class="{{ if $table }} d-table {{ end }} mb-0" {{ with $widths }} style="{{ . | safeCSS }}" {{ end }}>
