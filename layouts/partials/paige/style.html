@@ -12,10 +12,12 @@
 .paige-figure,
 .paige-gallery,
 .paige-image,
+.paige-quote,
 .paige-video {
     margin-bottom: 1rem;
 }
 
+.paige-figure .paige-quote,
 .paige-figure .paige-video,
 .paige-figure .highlight pre.chroma,
 .paige-figure .highlight .chroma pre,
@@ -56,6 +58,17 @@
     padding: 0.5rem 1rem;
     border-left: 0.25rem solid var(--bs-border-color);
     border-right: 0.25rem solid var(--bs-body-bg);
+}
+
+.paige-quote blockquote {
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.paige-quote .blockquote-footer {
+    margin-top: 0;
 }
 
 {{ $colorscheme := $page.Param "paige.color_scheme" }}
