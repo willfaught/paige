@@ -302,7 +302,7 @@ pin = true # Display this page before the rest
 
 [paige.alert]
 message = "Alert!" # Markdown displayed before the page body
-type = "primary" # Bootstrap alert type
+type = "primary" # Bootstrap alert class
 ```
 
 ### Menu
