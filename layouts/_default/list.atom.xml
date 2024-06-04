@@ -118,7 +118,7 @@
     {{ range $subpage := $subpages }}
         <entry>
             {{ $content := .Content }}
-            {{ $id := "" }}
+            {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
             {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
             {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
             {{ $rights := site.Copyright | markdownify }}
@@ -137,14 +137,6 @@
 
             {{ if not $content }}
                 {{ $content = .Description | markdownify}}
-            {{ end }}
-
-            {{ if .Params.id }}
-                {{ $id = printf "%s?id=%v" (urls.JoinPath site.BaseURL "/") .Params.id }}
-            {{ else if not .Date.IsZero }}
-                {{ $id = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format $format) }}
-            {{ else }}
-                {{ $id = .Permalink }}
             {{ end }}
 
             {{ with index $ids $id }}

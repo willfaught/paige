@@ -74,9 +74,8 @@
                 {{ $author := "" }}
                 {{ $authors := partial "paige/authors.html" . }}
                 {{ $description := .Content }}
-                {{ $guid := "" }}
+                {{ $guid := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
                 {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
-                {{ $permalink := false }}
                 {{ $pubdate := .PublishDate.Format $format }}
                 {{ $title := .Title | markdownify | plainify | htmlUnescape }}
 
@@ -110,15 +109,6 @@
                     {{ warnf "layouts/_default/rss.xml: page %s does not have a title or description" .RelPermalink }}
                 {{ end }}
 
-                {{ if .Params.id }}
-                    {{ $guid = .Params.id }}
-                {{ else if not .Date.IsZero }}
-                    {{ $guid = printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.Date.Format "2006-01-02") (.Date.Format "2006-01-02T15:04:05Z07:00") }}
-                {{ else }}
-                    {{ $guid = .Permalink }}
-                    {{ $permalink = false }}
-                {{ end }}
-
                 {{ with index $guids $guid }}
                     {{ warnf "layouts/_default/rss.xml: pages %s and %s have the same GUID" . $subpage.RelPermalink }}
                 {{ end }}
@@ -133,7 +123,7 @@
                     <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
                 {{ end }}
 
-                <guid {{ if not $permalink }} isPermaLink="false" {{ end }}>{{ $guid }}</guid>
+                <guid isPermaLink="false">{{ $guid }}</guid>
 
                 {{ with $link }}
                     <link>{{ . }}</link>
