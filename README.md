@@ -175,6 +175,7 @@ There is a single parameter object with sensible defaults that can be overridden
 [paige]
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
 color_scheme = "auto" # Must be "auto", "dark", or "light"
+date_format = ":date_long" # Hugo date format
 external_link_new_tab = false # Open external links in new tabs
 file_edit_url = "" # Example is "https://github.com/willfaught/paige/edit/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
@@ -262,9 +263,6 @@ account_id = ""
 
 [paige.comments.utterances] # See https://utteranc.es
 github_repo = ""
-
-[paige.date]
-format = ":date_long" # Hugo date format
 
 [paige.feed]
 hide_page = false
