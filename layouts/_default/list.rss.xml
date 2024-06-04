@@ -4,7 +4,7 @@
 {{ $description := or $page.Description "Recent content" }}
 {{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
-{{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
+{{ $lastbuilddate := false }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $managingeditor := $page.Param "paige.feed.rss.managing_editor" }}
@@ -12,6 +12,10 @@
 {{ $webmaster := $page.Param "paige.feed.rss.web_master" }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
+    {{ if or (and (not $lastbuilddate) (not .Lastmod.IsZero)) (and $lastbuilddate (lt $lastbuilddate .Lastmod)) }}
+        {{ $lastbuilddate = .Lastmod }}
+    {{ end }}
+
     {{ if not (.Param "paige.feed.hide_page") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}
