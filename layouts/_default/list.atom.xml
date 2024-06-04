@@ -23,7 +23,7 @@
     {{ $logo = absLangURL $logo }}
 {{ end }}
 
-{{ range (cond $page.IsHome site $page).RegularPages }}
+{{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
     {{ if not (.Param "paige.feed.hide_page") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}

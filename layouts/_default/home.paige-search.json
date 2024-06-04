@@ -2,7 +2,7 @@
 
 {{- $page.Scratch.Add "paige_index" slice -}}
 
-{{- range where site.RegularPages "Params.paige.search.hide_page" "ne" true -}}
+{{- range where $page.RegularPagesRecursive.ByPublishDate.Reverse "Params.paige.search.hide_page" "ne" true -}}
     {{- $page.Scratch.Add "paige_index" (dict
         "categories" .Params.categories
         "date" .PublishDate
