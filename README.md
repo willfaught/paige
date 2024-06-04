@@ -177,7 +177,7 @@ color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windo
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 date_format = ":date_long" # Hugo date format
 external_link_new_tab = false # Open external links in new tabs
-file_edit_url = "" # Example is "https://github.com/willfaught/paige/edit/master/content/%s"
+file_edit_url = "" # Example: "https://github.com/willfaught/paige/edit/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
 math = false # Enable math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
@@ -272,17 +272,17 @@ page_link = "⏎" # If a front matter link is present, and link_to_page is false
 
 [paige.feed.atom]
 authors = []
-# Example is:
+# Example:
 # [[paige.feed.atom.authors]]
 # email = "will.faught@example.com"
 # name = "Will Faught
 # url = "https://github.com/willfaught/paige"
-icon = "" # Example is "/icon.webp"
-logo = "" # Example is "/logo.webp"
+icon = "" # Example: "/icon.webp"
+logo = "" # Example: "/logo.webp"
 
 [paige.feed.rss]
-managing_editor = "" # Example is "will.faught@example.com (Will Faught)"
-web_master = "" # Example is "will.faught@example.com (Will Faught)"
+managing_editor = "" # Example: "will.faught@example.com (Will Faught)"
+web_master = "" # Example: "will.faught@example.com (Will Faught)"
 
 [paige.search]
 hide_page = false
@@ -583,11 +583,11 @@ Parameters:
 
 <dl>
     <dt><code>class</code></dt>
-    <dd>Required. Position 0. String. <code>&lt;i&gt;</code> class. Example is <code>bi bi-github</code>.</dd>
+    <dd>Required. Position 0. String. <code>&lt;i&gt;</code> class. Example: <code>bi bi-github</code>.</dd>
     <dt><code>title</code></dt>
-    <dd>Optional. String. The screen reader description and anchor title. Example is <code>GitHub</code>.</dd>
+    <dd>Optional. String. The screen reader description and anchor title. Example: <code>GitHub</code>.</dd>
     <dt><code>url</code></dt>
-    <dd>Optional. String. URL. Example is <code>https://github.com/willfaught/paige</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
+    <dd>Optional. String. URL. Example: <code>https://github.com/willfaught/paige</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
 
 ### Image
