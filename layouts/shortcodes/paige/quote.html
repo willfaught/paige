@@ -5,10 +5,12 @@
     {{ errorf "layouts/shortcodes/paige/quote.html: no content" }}
 {{ end }}
 
-<div class="paige-quote">
-    <blockquote class="blockquote">{{ $content }}</blockquote>
+{{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}
 
-    {{ with $cite }}
-        <div class="blockquote-footer">{{ . }}</div>
-    {{ end }}
+<div class="paige-quote">
+<blockquote class="blockquote">{{ $content }}</blockquote>
+
+{{ with $cite }}
+<div class="blockquote-footer">{{ . }}</div>
+{{ end }}
 </div>
