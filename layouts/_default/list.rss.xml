@@ -2,7 +2,6 @@
 
 {{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
 {{ $description := or $page.Description "Recent content" }}
-{{ $feed := ($page.OutputFormats.Get "rss").Permalink }}
 {{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $lastbuilddate := (partial "paige/changed.html" $page).Format $format }}
@@ -37,7 +36,27 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 <rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <atom:link href="{{ $feed }}" rel="self" type="application/rss+xml"/>
+        {{ range $page.OutputFormats }}
+            {{ $rel := .Rel }}
+
+            {{ if eq .Permalink $page.Permalink }}
+                {{ $rel = "self" }}
+            {{ else if eq $rel "canonical" }}
+                {{ $rel = "alternate" }}
+            {{ end }}
+
+            {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "self") (eq $rel "via") }}
+                {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
+            {{ end }}
+        {{ end }}
+
+        {{ range $t := $page.Translations }}
+            {{ range .OutputFormats }}
+                {{ if or (eq .Rel "alternate") (eq .Rel "enclosure") (eq .Rel "related") (eq .Rel "via") }}
+                    {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
 
         {{ with $copyright }}
             <copyright>{{ . }}</copyright>
