@@ -25,7 +25,7 @@
         <div class="mb-3">
             {{ if or $categories $tags }}
                 <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
-                    {{ range $i, $term := sort (append $categories $tags) "LinkTitle" -}}
+                    {{ range $i, $term := sort (append $categories $tags) "Title" -}}
                         {{- if $textkeywords -}}
                             {{- if gt $i 0 }} · {{ end -}}
 
