@@ -298,7 +298,7 @@ Parameters specific to pages:
 link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 
 [paige]
-pin = true # Display this page before the rest
+pin = true # Order this page before the rest
 
 [paige.alert]
 message = "Alert!" # Markdown displayed before the page body
