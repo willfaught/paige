@@ -2,14 +2,14 @@
 authors: ["will-faught"]
 categories: ["content", "paige"]
 date: "2023-09-18T21:21:05-07:00"
-description: "A complex alert."
+description: "An alert."
 paige:
   alert:
     message: "Get more information <a href=\"#\" class=\"alert-link\">here</a>."
-    type: "danger"
+    type: "primary"
 tags: ["alerts"]
-title: "Complex Alert"
-weight: 70
+title: "Alert"
+weight: 60
 ---
 
 This page has the following parameters:
@@ -18,5 +18,5 @@ This page has the following parameters:
 paige:
   alert:
     message: "Get more information <a href=\"#\" class=\"alert-link\">here</a>."
-    type: "danger"
+    type: "primary"
 ```
