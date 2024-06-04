@@ -17,24 +17,26 @@
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 
-{{ partial "paige/image.html" (dict
-    "alt" $alt
-    "breakpoints" $breakpoints
-    "class" $class
-    "densities" $densities
-    "fetchpriority" $fetchpriority
-    "height" $height
-    "link" $link
-    "linked" $linked
-    "loading" $loading
-    "maxheight" $maxheight
-    "maxwidth" $maxwidth
-    "page" .Page
-    "process" $process
-    "sizes" $sizes
-    "src" $src
-    "srcset" $srcset
-    "style" $style
-    "title" $title
-    "width" $width
-) }}
+<div class="paige-image">
+    {{ partial "paige/image.html" (dict
+        "alt" $alt
+        "breakpoints" $breakpoints
+        "class" $class
+        "densities" $densities
+        "fetchpriority" $fetchpriority
+        "height" $height
+        "link" $link
+        "linked" $linked
+        "loading" $loading
+        "maxheight" $maxheight
+        "maxwidth" $maxwidth
+        "page" .Page
+        "process" $process
+        "sizes" $sizes
+        "src" $src
+        "srcset" $srcset
+        "style" $style
+        "title" $title
+        "width" $width
+    ) }}
+</div>
