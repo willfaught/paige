@@ -1,7 +1,7 @@
 ---
 authors: ["will-faught"]
 categories: ["customization", "paige"]
-date: "2023-02-01"
+date: "2023-09-18T21:21:05-07:00"
 description: "Demonstration of Paige customization that shows data."
 paige:
   style: |
