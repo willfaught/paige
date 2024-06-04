@@ -34,7 +34,7 @@
 {{ $title := delimit $titles " · " }}
 
 {{ if not $title }}
-    {{ warnf "layouts/_default/rss.xml: page %s does not have a title" $page.RelPermalink }}
+    {{ warnf "layouts/_default/list.rss.xml: page %s does not have a title" $page.RelPermalink }}
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
