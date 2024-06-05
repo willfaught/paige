@@ -35,7 +35,7 @@ jobs:
       - name: Build
         run: |
           cd exampleSite
-          hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify
+          hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -55,7 +55,7 @@ jobs:
   #       run: |
   #         cd exampleSite
   #         echo "replace github.com/willfaught/paige => ../" >>go.mod
-  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --enableGitInfo --environment production --minify
+  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify
   deploy:
     environment:
       name: github-pages
