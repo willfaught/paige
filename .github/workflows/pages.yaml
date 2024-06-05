@@ -43,6 +43,9 @@ jobs:
   #       run: choco install hugo-extended
   #     - name: Setup Sass
   #       run: choco install dart-sass-embedded
+  #     - id: pages
+  #       name: Setup Pages
+  #       uses: actions/configure-pages@v5
   #     - name: Build
   #       run: |
   #         cd exampleSite
