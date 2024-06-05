@@ -40,13 +40,13 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Menu
 - Minimal design
 - Quote shortcode
-- RSS feed
 - Responsive
 - Right-to-left languages
-- SEO
+- RSS feed
 - Safari and Firefox Reader View support
 - Search
 - Sections
+- SEO
 - Series
 - Single column
 - Social links
