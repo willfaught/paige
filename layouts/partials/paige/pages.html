@@ -73,7 +73,7 @@
                     <h3 class="h5 paige-date-header text-center">{{ .Key }}</h3>
                 {{ end }}
 
-                {{ range .Pages.ByWeight }}
+                {{ range .Pages.ByPublishDate.Reverse }}
                     {{ partial "paige/page.html" . }}
                 {{ end }}
             {{ end }}
