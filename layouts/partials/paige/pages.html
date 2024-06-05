@@ -39,7 +39,7 @@
             <h2 class="{{ $h2size }} text-center" id="paige-collections-header">{{ i18n "paige_collections" }}</h2>
         {{ end }}
 
-        {{ range . }}
+        {{ range .ByWeight }}
             {{ partial "paige/page.html" . }}
         {{ end }}
     </div>
@@ -51,7 +51,7 @@
             <h2 class="{{ $h2size }} text-center" id="paige-sections-header">{{ i18n "paige_sections" }}</h2>
         {{ end }}
 
-        {{ range . }}
+        {{ range .ByWeight }}
             {{ partial "paige/page.html" . }}
         {{ end }}
     </div>
