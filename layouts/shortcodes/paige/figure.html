@@ -56,7 +56,8 @@
 
 {{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}
 
-<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} h-100 justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }} paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
+<div class="paige-figure {{ if $numbered }} paige-figure-numbered {{ end }}">
+<div class="align-items-{{ $vertical }} d-flex {{ with $float }} float-{{ . }} {{ end }} h-100 justify-content-{{ $horizontal }} {{ with $sidemargin }} {{ . }} {{ end }}">
 <figure class="{{ if $table }} d-table {{ end }} mb-0" {{ with $widths }} style="{{ . | safeCSS }}" {{ end }}>
 <div class="d-flex justify-content-{{ $horizontal }} text-{{ $horizontal }}">{{ $content }}</div>
 
@@ -64,4 +65,5 @@
 <figcaption class="figure-caption mt-2 text-{{ $horizontal }}" {{ if $table }} style="caption-side: bottom; display: table-caption" {{ end }}>{{ $caption }}</figcaption>
 {{ end }}
 </figure>
+</div>
 </div>
