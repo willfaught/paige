@@ -1065,12 +1065,11 @@ you should hide the breadcrumbs on every page,
 and hide the collection, section, and page lists on the home page if you use the default home page layout.
 
 To hide the breadcrumbs on every page,
-try the following in `yoursite/layouts/partials/paige/style-first.css`:
+try the following in `yoursite/hugo.toml`:
 
-```css
-#paige-breadcrumbs {
-    display: none;
-}
+```toml
+[params.paige]
+style = "#paige-breadcrumbs { display: none; }"
 ```
 
 To hide the collection, section, and page lists on the home page,
