@@ -24,7 +24,7 @@ features = [
 ]
 homepage = "https://github.com/willfaught/paige"
 license = "MIT"
-licenselink = "https://www.apache.org/licenses/LICENSE-2.0"
+licenselink = "https://github.com/willfaught/paige/blob/master/LICENSE"
 name = "Paige"
 tags = [
   "blog",
