@@ -44,7 +44,7 @@
 
 <div class="{{ $class }}">
     {{ with $title }}
-        <p class="mb-0 paige-title text-center">{{ if $pinned -}} <i class="bi bi-pin-fill text-primary" style="margin-left: -2.5ch; position: absolute"><span class="visually-hidden">{{ i18n "paige_pinned_page" }}</span></i> {{ end }}<a href="{{ $titlelink }}">{{ . }}</a></p>
+        <p class="mb-0 paige-title text-center">{{ if $pinned -}} <i class="bi bi-pin-fill text-secondary" style="margin-left: -2.5ch; position: absolute"><span class="visually-hidden">{{ i18n "paige_pinned_page" }}</span></i> {{ end }}<a href="{{ $titlelink }}">{{ . }}</a></p>
     {{ end }}
 
     {{ with $description }}
