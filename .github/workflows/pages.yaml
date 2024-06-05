@@ -22,7 +22,7 @@ jobs:
       - name: Setup Hugo
         run: sudo snap install hugo
       - name: Setup Sass
-        run: sudo snap install dart-sass-embedded
+        run: sudo snap install dart-sass
       - id: pages
         name: Setup Pages
         uses: actions/configure-pages@v5
