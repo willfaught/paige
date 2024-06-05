@@ -21,7 +21,7 @@ paige:
     .paige-summary {
         display: block;
     }
-series: ["demo"]
+series: ["series-demo"]
 tags: ["sections"]
 title: "Customization"
 ---

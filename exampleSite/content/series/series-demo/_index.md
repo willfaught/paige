@@ -1,4 +1,4 @@
 ---
 description: "Demonstration of a series."
-title: "Demo Series"
+title: "Series Demo"
 ---

@@ -23,7 +23,7 @@ paige:
     .paige-summary {
         display: block;
     }
-series: ["demo"]
+series: ["series-demo"]
 tags: ["show", "singles"]
 title: "Show Data"
 weight: 10

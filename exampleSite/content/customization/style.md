@@ -41,7 +41,7 @@ paige:
     .paige-keyword { font-style: italic; }
     .paige-series { font-style: italic; }
     .paige-summary { font-style: italic; }
-series: ["demo"]
+series: ["series-demo"]
 tags: ["singles", "style"]
 title: "Style Data"
 weight: 20
