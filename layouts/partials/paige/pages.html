@@ -5,8 +5,8 @@
 {{ $manypagegroups := false }}
 {{ $pagegroups := slice }}
 {{ $pager := false }}
-{{ $pages := where $page.Pages "Kind" "in" (slice "page" "term") }}
-{{ $sections := where $page.Pages "Kind" "section" }}
+{{ $pages := $page.RegularPages }}
+{{ $sections := $page.Sections }}
 
 {{ range $name, $taxonomy := cond $page.IsHome site.Taxonomies slice }}
     {{ if gt (len $taxonomy) 0 }}
