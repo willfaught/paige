@@ -1077,13 +1077,7 @@ try the following in `yoursite/content/_index.md`:
 
 ```toml
 [paige]
-style = """
-#paige-collections,
-#paige-sections,
-#paige-pages {
-    display: none;
-}
-"""
+style = "#paige-collections, #paige-sections, #paige-pages { display: none; }"
 ```
 
 ## Credits
