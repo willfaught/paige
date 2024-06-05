@@ -63,7 +63,7 @@
             <h2 class="{{ $h2size }} text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
         {{ end }}
 
-        {{ range $pinned.ByPublishDate.Reverse }}
+        {{ range $pinned.ByWeight }}
             {{ partial "paige/page.html" . }}
         {{ end }}
 
