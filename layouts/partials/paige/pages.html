@@ -3,10 +3,10 @@
 {{ $collections := slice }}
 {{ $h2size := "h4" }}
 {{ $manypagegroups := false }}
-{{ $sections := where $page.Pages "Kind" "section" }}
 {{ $pagegroups := slice }}
 {{ $pager := false }}
 {{ $pages := where $page.Pages "Kind" "in" (slice "page" "term") }}
+{{ $sections := where $page.Pages "Kind" "section" }}
 
 {{ range $name, $taxonomy := cond $page.IsHome site.Taxonomies slice }}
     {{ if gt (len $taxonomy) 0 }}
