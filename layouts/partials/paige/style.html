@@ -9,12 +9,12 @@
     counter-increment: paige-figure-numbered;
 }
 
-.paige-figure-numbered figcaption:empty::before {
-    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure-numbered);
-}
-
 .paige-figure-numbered figcaption::before {
     content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure-numbered) ": ";
+}
+
+.paige-figure-numbered figcaption:empty::before {
+    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure-numbered);
 }
 
 .paige-header-link {
