@@ -1,5 +1,5 @@
 ---
-authors: ["will-faught"]
+authors: ["author-demo"]
 categories: ["content", "paige"]
 date: "2023-09-18T21:32:52-07:00"
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."

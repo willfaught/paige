@@ -1,5 +1,5 @@
 ---
-authors: ["will-faught"]
+authors: ["author-demo"]
 categories: ["customization", "paige"]
 description: "Demonstrations of Paige customization."
 paige:

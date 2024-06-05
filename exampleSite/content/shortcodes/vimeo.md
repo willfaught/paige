@@ -1,5 +1,5 @@
 ---
-authors: ["will-faught"]
+authors: ["author-demo"]
 categories: ["paige", "shortcodes"]
 date: "2023-09-18T21:35:34-07:00"
 description: "Demonstration of the Paige Vimeo shortcode."

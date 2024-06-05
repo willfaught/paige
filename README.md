@@ -177,7 +177,7 @@ color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windo
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 date_format = ":date_long" # Hugo date format
 external_link_new_tab = false # Open external links in new tabs
-file_edit_url = "" # Example: "https://github.com/willfaught/paige/edit/master/content/%s"
+file_edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
 math = false # Enable math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
@@ -274,15 +274,15 @@ page_link = "⏎" # If a front matter link is present, and link_to_page is false
 authors = []
 # Example:
 # [[paige.feed.atom.authors]]
-# email = "will.faught@example.com"
-# name = "Will Faught"
-# url = "https://github.com/willfaught/paige"
+# email = "example@example.com"
+# name = "John Doe"
+# url = "https://github.com/account/project"
 icon = "" # Example: "/icon.webp"
 logo = "" # Example: "/logo.webp"
 
 [paige.feed.rss]
-managing_editor = "" # Example: "will.faught@example.com (Will Faught)"
-web_master = "" # Example: "will.faught@example.com (Will Faught)"
+managing_editor = "" # Example: "example@example.com (John Doe)"
+web_master = "" # Example: "example@example.com (John Doe)"
 
 [paige.search]
 hide_page = false
@@ -586,7 +586,7 @@ Parameters:
     <dt><code>title</code></dt>
     <dd>Optional. String. The screen reader description and anchor title. Example: <code>GitHub</code>.</dd>
     <dt><code>url</code></dt>
-    <dd>Optional. String. URL. Example: <code>https://github.com/willfaught/paige</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
+    <dd>Optional. String. URL. Example: <code>https://github.com/account/project</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
 
 ### Image

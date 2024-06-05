@@ -1,5 +1,5 @@
 ---
-authors: ["will-faught"]
+authors: ["author-demo"]
 categories: ["content", "paige"]
 date: "2023-09-24T21:29:30-07:00"
 description: "A front matter link."

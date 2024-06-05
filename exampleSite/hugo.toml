@@ -97,13 +97,13 @@ site_description = "Powerful, pliable pixel perfection"
 site_title = "Paige"
 
 [[params.paige.feed.atom.authors]]
-email = "will.faught@example.com"
-name = "Will Faught"
-url = "https://willfaught.com/paige"
+email = "example@example.com"
+name = "John Doe"
+url = "https://example.com"
 
 [params.paige.feed.rss]
-managing_editor = "will.faught@example.com (Will Faught)"
-web_master = "will.faught@example.com (Will Faught)"
+managing_editor = "example@example.com (John Doe)"
+web_master = "example@example.com (John Doe)"
 
 [taxonomies]
 author = "authors"

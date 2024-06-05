@@ -1,5 +1,5 @@
 ---
-authors: ["will-faught"]
+authors: ["author-demo"]
 categories: ["content", "paige"]
 date: "2023-09-18T21:33:03-07:00"
 description: "A brief guide to setup KaTeX."
