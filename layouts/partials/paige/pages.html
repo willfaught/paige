@@ -9,9 +9,7 @@
 {{ $sections := $page.Sections }}
 
 {{ range $name, $taxonomy := cond $page.IsHome site.Taxonomies slice }}
-    {{ if gt (len $taxonomy) 0 }}
-        {{ $collections = $collections | append $taxonomy.Page }}
-    {{ end }}
+    {{ $collections = $collections | append $taxonomy.Page }}
 {{ end }}
 
 {{ if and (not $pages) (in (slice "taxonomy" "term") $page.Kind) }}
