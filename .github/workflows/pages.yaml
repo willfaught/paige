@@ -3,61 +3,62 @@ concurrency:
   group: "pages"
 defaults:
   run:
-    shell: bash
+    shell: "bash"
 jobs:
   build-linux:
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Hugo
-        run: sudo snap install hugo
-      - name: Setup Sass
-        run: sudo snap install dart-sass
-      - id: pages
-        name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+      - name: "Setup Hugo"
+        run: "sudo snap install hugo"
+      - name: "Setup Sass"
+        run: "sudo snap install dart-sass"
+      - id: "pages"
+        name: "Setup Pages"
+        uses: "actions/configure-pages@v5"
+      - name: "Build"
         run: |
           cd exampleSite
           hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: "Upload artifact"
+        uses: "actions/upload-pages-artifact@v3"
         with:
-          path: ./exampleSite/public
+          path: "./exampleSite/public"
   # build-windows:
-  #   runs-on: windows-latest
+  #   name: "Build Windows"
+  #   runs-on: "windows-latest"
   #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
-  #     - name: Setup Hugo
-  #       run: choco install hugo-extended
-  #     - name: Setup Sass
-  #       run: choco install dart-sass-embedded
-  #     - id: pages
-  #       name: Setup Pages
-  #       uses: actions/configure-pages@v5
-  #     - name: Build
+  #     - name: "Checkout"
+  #       uses: "actions/checkout@v4"
+  #     - name: "Setup Hugo"
+  #       run: "choco install hugo-extended"
+  #     - name: "Setup Sass"
+  #       run: "choco install dart-sass-embedded"
+  #     - id: "pages"
+  #       name: "Setup Pages"
+  #       uses: "actions/configure-pages@v5"
+  #     - name: "Build"
   #       run: |
   #         cd exampleSite
   #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify
   deploy:
     environment:
-      name: github-pages
-      url: ${{ steps.pages.outputs.base_url }}
-    if: github.ref == 'refs/heads/master'
-    needs: build-linux
-    runs-on: ubuntu-latest
+      name: "github-pages"
+      url: "${{ steps.pages.outputs.base_url }}"
+    if: "github.ref == 'refs/heads/master'"
+    needs: "build-linux"
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-name: Deploy Hugo site to Pages
+      - name: "Deploy to GitHub Pages"
+        id: "deployment"
+        uses: "actions/deploy-pages@v4"
+name: "Deploy Hugo site to Pages"
 on:
   push:
     branches: ["**"]
   workflow_dispatch:
 permissions:
-  contents: read
-  id-token: write
-  pages: write
+  contents: "read"
+  id-token: "write"
+  pages: "write"
