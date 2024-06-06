@@ -5,7 +5,7 @@ defaults:
   run:
     shell: "bash"
 jobs:
-  build-linux:
+  build:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout"
@@ -47,7 +47,7 @@ jobs:
       name: "github-pages"
       url: "${{ steps.pages.outputs.base_url }}"
     if: "github.ref == 'refs/heads/master'"
-    needs: "build-linux"
+    needs: "build"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Deploy to GitHub Pages"
