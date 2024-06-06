@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: "Deploy Pages"
         uses: "actions/deploy-pages@v4"
-name: "Deploy Hugo site to Pages"
+name: "GitHub Pages"
 on:
   push:
     branches: ["**"]
