@@ -21,7 +21,7 @@
     {{ partial "paige/image.html" (dict
         "alt" $alt
         "breakpoints" $breakpoints
-        "class" $class
+        "class" (printf "img-fluid %s" $class)
         "densities" $densities
         "fetchpriority" $fetchpriority
         "height" $height
