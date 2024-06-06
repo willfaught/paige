@@ -163,7 +163,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
 See Hugo's [installation](https://gohugo.io/installation/), [getting started](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
 
-See the [minimal look](#minimal-look), [narrow look](#narrow-look), and [menu navigation only](#menu-navigation-only) sections for common customizations.
+See the [minimal look](#minimal-look), [narrow look](#narrow-look), [narrow-and-wide look](#narrow-and-wide-look), and [menu navigation only](#menu-navigation-only) sections for common customizations.
 
 ## Configure
 
@@ -1057,6 +1057,25 @@ try the following in `yoursite/hugo.toml`:
 ```toml
 [params.paige]
 style = "#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }"
+```
+
+### Narrow-and-wide look
+
+By default, the content expands to fill the whole window.
+This can result in very long lines, depending on the window width.
+To use [the recommended line length of 66 characters](https://en.wikipedia.org/wiki/Line_length#Printed_text) (40rem)
+for all content except media,
+try the following in `yoursite/hugo.toml`:
+
+```toml
+[params.paige]
+style = """
+#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
+#paige-content > img,
+#paige-content > .paige-image,
+#paige-content > .paige-vimeo,
+#paige-content > .paige-youtube { max-width: 100%; }
+"""
 ```
 
 ### Menu navigation only
