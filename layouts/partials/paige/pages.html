@@ -14,6 +14,10 @@
     {{ end }}
 {{ end }}
 
+{{ if and (not $pages) (in (slice "taxonomy" "term") $page.Kind) }}
+    {{ $pages = $page.Pages }}
+{{ end }}
+
 {{ $pinned := where $pages "Params.paige.pin" true }}
 
 {{ $unpinned := complement $pinned $pages }}
