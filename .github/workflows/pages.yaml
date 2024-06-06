@@ -1,12 +1,3 @@
-name: Deploy Hugo site to Pages
-on:
-  push:
-    branches: ["**"]
-  workflow_dispatch:
-permissions:
-  contents: read
-  id-token: write
-  pages: write
 concurrency:
   cancel-in-progress: true
   group: "pages"
@@ -61,3 +52,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+name: Deploy Hugo site to Pages
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+  pages: write
