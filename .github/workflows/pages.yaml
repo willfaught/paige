@@ -52,7 +52,7 @@ jobs:
     needs: "build"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Deploy to GitHub Pages"
+      - name: "Deploy Pages"
         id: "deployment"
         uses: "actions/deploy-pages@v4"
 name: "Deploy Hugo site to Pages"
