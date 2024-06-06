@@ -1051,12 +1051,12 @@ try the following in `yoursite/layouts/partials/paige/style-first.css`:
 
 By default, the content expands to fill the whole window.
 This can result in very long lines, depending on the window width.
-To use [the recommended line length of 66 characters](https://en.wikipedia.org/wiki/Line_length#Printed_text),
+To use [the recommended line length of 66 characters](https://en.wikipedia.org/wiki/Line_length#Printed_text) (40rem),
 try the following in `yoursite/hugo.toml`:
 
 ```toml
 [params.paige]
-style = "#paige-content { width: 66ch; }"
+style = "#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }"
 ```
 
 ### Menu navigation only
