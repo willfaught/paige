@@ -1033,6 +1033,7 @@ try the following in `yoursite/layouts/partials/paige/style-first.css`:
 #paige-collections,
 #paige-credit,
 #paige-keywords,
+#paige-prev-next,
 #paige-reading-time,
 #paige-series,
 #paige-toc,
