@@ -89,7 +89,35 @@
     {{ if or $pager.HasPrev $pager.HasNext }}
         <div id="paige-pagination">
             <div class="d-flex justify-content-center">
-                {{ partial "paige/pagination.html" $page }}
+                <nav aria-label="{{ i18n `paige_page_list_navigation` }}">
+                    <ul class="pagination">
+                        {{ with $page.Paginator }}
+                            {{ if and (ne .PageNumber .First.PageNumber) (ne .First.PageNumber .Prev.PageNumber) }}
+                                <li class="page-item">
+                                    <a aria-label="{{ i18n `paige_first` }}" class="page-link" href="{{ .First.URL }}"><span aria-hidden="true">&laquo;</span></a>
+                                </li>
+                            {{ end }}
+
+                            {{ with .Prev }}
+                                <li class="page-item">
+                                    <a aria-label="{{ i18n `paige_previous` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&lsaquo;</span></a>
+                                </li>
+                            {{ end }}
+
+                            {{ with .Next }}
+                                <li class="page-item">
+                                    <a aria-label="{{ i18n `paige_next` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&rsaquo;</span></a>
+                                </li>
+                            {{ end }}
+
+                            {{ if and (ne .PageNumber .Last.PageNumber) (ne .Last.PageNumber .Next.PageNumber) }}
+                                <li class="page-item">
+                                    <a aria-label="{{ i18n `paige_last` }}" class="page-link" href="{{ .Last.URL }}"><span aria-hidden="true">&raquo;</span></a>
+                                </li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </nav>
             </div>
         </div>
     {{ end }}

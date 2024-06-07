@@ -16,18 +16,33 @@ paige_edit_history:
 paige_edit_this_page:
   other: Edit this page
 
+paige_first:
+  other: First
+
+paige_last:
+  other: Last
+
 paige_minutes:
   one: minute
   other: minutes
 
+paige_next:
+  other: Next
+
 paige_noscript:
   other: JavaScript is required.
+
+paige_page_list_navigation:
+  other: Page list navigation
 
 paige_pages:
   other: Pages
 
 paige_pinned_page:
   other: Pinned page
+
+paige_previous:
+  other: Previous
 
 paige_recent_content:
   other: Recent content
