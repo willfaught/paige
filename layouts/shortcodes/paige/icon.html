@@ -8,14 +8,16 @@
     {{ errorf "layouts/shortcodes/paige/icon.html: no class" }}
 {{ end }}
 
+{{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}
+
 <span class="paige-icon">
-    {{ with $url }}
-        <a href="{{ . }}" {{ with $target }} target="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}>
-    {{ end }}
+{{ with $url }}
+<a href="{{ . }}" {{ with $target }} target="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}>
+{{ end }}
 
-    <i class="{{ $class }}">{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
+<i class="{{ $class }}">{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
 
-    {{ if $url }}
-        </a>
-    {{ end }}
+{{ if $url }}
+</a>
+{{ end }}
 </span>
