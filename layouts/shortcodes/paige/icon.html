@@ -11,13 +11,13 @@
 {{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}
 
 <span class="paige-icon">
-{{ with $url }}
+{{- with $url -}}
 <a href="{{ . }}" {{ with $target }} target="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}>
-{{ end }}
+{{- end -}}
 
 <i class="{{ $class }}">{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
 
-{{ if $url }}
+{{- if $url -}}
 </a>
-{{ end }}
+{{- end -}}
 </span>
