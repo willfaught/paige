@@ -16,7 +16,6 @@ paige:
     #paige-toc,
     .paige-authors,
     .paige-date,
-    .paige-date-header,
     .paige-keywords,
     .paige-reading-time,
     .paige-series,
@@ -37,14 +36,13 @@ paige:
     #paige-credit { font-style: italic; }
     .paige-authors { font-style: italic; }
     .paige-date { font-style: italic; }
-    .paige-date-header { font-style: italic; }
     .paige-keyword { font-style: italic; }
     .paige-series { font-style: italic; }
     .paige-summary { font-style: italic; }
 series: ["series-demo"]
 tags: ["singles", "style"]
 title: "Style Data"
-weight: 20
+weight: 10
 ---
 
 This site uses the default styles on the other pages. This page changes them.
@@ -71,7 +69,6 @@ paige:
     #paige-toc,
     .paige-authors,
     .paige-date,
-    .paige-date-header,
     .paige-keywords,
     .paige-reading-time,
     .paige-series,
@@ -92,7 +89,6 @@ paige:
     #paige-credit { font-style: italic; }
     .paige-authors { font-style: italic; }
     .paige-date { font-style: italic; }
-    .paige-date-header { font-style: italic; }
     .paige-keyword { font-style: italic; }
     .paige-series { font-style: italic; }
     .paige-summary { font-style: italic; }

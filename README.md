@@ -297,9 +297,6 @@ Parameters specific to pages:
 ```toml
 link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
 
-[paige]
-pin = true # Order this page before the rest
-
 [paige.alert]
 message = "Alert!" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert class
@@ -943,8 +940,6 @@ Page and sub-page classes:
     <dd>The authors.</dd>
     <dt><code>.paige-date</code></dt>
     <dd>The date.</dd>
-    <dt><code>.paige-date-header</code></dt>
-    <dd>The date headers.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The description.</dd>
     <dt><code>.paige-keyword</code></dt>

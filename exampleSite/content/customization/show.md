@@ -16,7 +16,6 @@ paige:
     #paige-toc,
     .paige-authors,
     .paige-date,
-    .paige-date-header,
     .paige-keywords,
     .paige-reading-time,
     .paige-series,
@@ -26,7 +25,7 @@ paige:
 series: ["series-demo"]
 tags: ["show", "singles"]
 title: "Show Data"
-weight: 10
+weight: 20
 ---
 
 This site hides some single page data by default. This page shows it all.
@@ -53,7 +52,6 @@ paige:
     #paige-toc,
     .paige-authors,
     .paige-date,
-    .paige-date-header,
     .paige-keywords,
     .paige-reading-time,
     .paige-series,

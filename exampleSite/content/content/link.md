@@ -6,7 +6,7 @@ description: "A front matter link."
 link: "https://willfaught.com/paige"
 tags: ["link"]
 title: "Link"
-weight: 70
+weight: 20
 ---
 
 It takes you to the home page.
