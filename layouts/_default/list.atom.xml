@@ -10,7 +10,7 @@
 {{ $rights := site.Copyright | markdownify }}
 {{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
-{{ $updated := site.LastChange.Format $format }}
+{{ $updated := site.Lastmod.Format $format }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
     {{ if not (.Param "paige.feed.hide_page") }}
