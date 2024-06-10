@@ -14,25 +14,25 @@
                         {{ with $page.Paginator }}
                             {{ if and (ne .PageNumber .First.PageNumber) (ne .First.PageNumber .Prev.PageNumber) }}
                                 <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_first` }}" class="page-link" href="{{ .First.URL }}"><span aria-hidden="true">&laquo;</span></a>
+                                    <a aria-label="{{ i18n `paige_first` }}" class="page-link" href="{{ .First.URL }}"><span aria-hidden="true">&#x2B05;</span></a>
                                 </li>
                             {{ end }}
 
                             {{ with .Prev }}
                                 <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_previous` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&lsaquo;</span></a>
+                                    <a aria-label="{{ i18n `paige_previous` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&larr;</span></a>
                                 </li>
                             {{ end }}
 
                             {{ with .Next }}
                                 <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_next` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&rsaquo;</span></a>
+                                    <a aria-label="{{ i18n `paige_next` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&rarr;</span></a>
                                 </li>
                             {{ end }}
 
                             {{ if and (ne .PageNumber .Last.PageNumber) (ne .Last.PageNumber .Next.PageNumber) }}
                                 <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_last` }}" class="page-link" href="{{ .Last.URL }}"><span aria-hidden="true">&raquo;</span></a>
+                                    <a aria-label="{{ i18n `paige_last` }}" class="page-link" href="{{ .Last.URL }}"><span aria-hidden="true">&#x27A1;</span></a>
                                 </li>
                             {{ end }}
                         {{ end }}
