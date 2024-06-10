@@ -12,10 +12,10 @@
 
 <span class="paige-icon">
 {{- with $url -}}
-<a href="{{ . }}" {{ with $target }} target="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}>
+<a href="{{ . }}" {{ with $target }} target="{{ . }}" {{ end }}>
 {{- end -}}
 
-<i class="{{ $class }}">{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
+<i class="{{ $class }}" {{ with $title }} title="{{ . }}" {{ end }}>{{ with $title }}<span class="visually-hidden">{{ . }}</span>{{ end }}</i>
 
 {{- if $url -}}
 </a>
