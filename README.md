@@ -185,6 +185,10 @@ site_title = "" # Appears above the menu, above the site description, if set
 site_description = "" # Appears above the menu, below the site title, if set
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
+[paige.alert]
+message = "Alert!" # Markdown displayed before the page body
+type = "primary" # Bootstrap alert class
+
 [paige.analytics]
 disable = false # Disable all analytics
 
@@ -296,10 +300,6 @@ Parameters specific to pages:
 
 ```toml
 link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
-
-[paige.alert]
-message = "Alert!" # Markdown displayed before the page body
-type = "primary" # Bootstrap alert class
 ```
 
 ### Menu
