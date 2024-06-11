@@ -858,6 +858,9 @@ replace the use of `paige/article.html` in `single.html` with the use of
 `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`,
 then replace that use of `paige/metadata.html` with your own design.
 
+There are default favicon files in the static directory that were [generated](https://realfavicongenerator.net).
+To override them, put your favicon files in the same places.
+
 ### Extend
 
 Use CSS selectors to extend the default styling.
