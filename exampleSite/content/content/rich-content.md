@@ -8,7 +8,7 @@ paige:
     hide_page: true
 tags: ["shortcodes", "privacy"]
 title: "Rich Content"
-weight: 70
+weight: 20
 ---
 
 <!--

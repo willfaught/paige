@@ -5,7 +5,7 @@ date: "2023-09-18T21:32:52-07:00"
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags: ["markdown", "css", "html"]
 title: "Markdown Syntax Guide"
-weight: 80
+weight: 10
 ---
 
 <!--

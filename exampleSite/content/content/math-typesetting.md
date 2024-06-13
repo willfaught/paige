@@ -7,7 +7,7 @@ paige:
   math: true
 tags: ["katex", "math", "typesetting"]
 title: "Math Typesetting"
-weight: 50
+weight: 40
 ---
 
 <!--

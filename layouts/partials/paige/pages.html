@@ -61,8 +61,16 @@
 
 {{ with $collections }}
     {{ $ordered := slice }}
+    {{ $weights := .GroupBy "Weight" }}
 
-    {{ range (.GroupBy "Weight").Reverse }}
+    {{ range $i, $e := $weights }}
+        {{ if eq $e.Key 0 }}
+            {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+
+    {{ range $weights }}
         {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
             {{ range .Pages.ByTitle }}
                 {{ $ordered = $ordered | append . }}
@@ -93,8 +101,16 @@
 
 {{ with $sections }}
     {{ $ordered := slice }}
+    {{ $weights := .GroupBy "Weight" }}
 
-    {{ range (.GroupBy "Weight").Reverse }}
+    {{ range $i, $e := $weights }}
+        {{ if eq $e.Key 0 }}
+            {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+
+    {{ range $weights }}
         {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
             {{ range .Pages.ByTitle }}
                 {{ $ordered = $ordered | append . }}
@@ -125,8 +141,16 @@
 
 {{ with $pages }}
     {{ $ordered := slice }}
+    {{ $weights := .GroupBy "Weight" }}
 
-    {{ range ($pages.GroupBy "Weight").Reverse }}
+    {{ range $i, $e := $weights }}
+        {{ if eq $e.Key 0 }}
+            {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+
+    {{ range $weights }}
         {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
             {{ range .Pages.ByTitle }}
                 {{ $ordered = $ordered | append . }}

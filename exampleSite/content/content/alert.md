@@ -9,7 +9,7 @@ paige:
     type: "primary"
 tags: ["alerts"]
 title: "Alert"
-weight: 30
+weight: 60
 ---
 
 This page has the following parameters:
