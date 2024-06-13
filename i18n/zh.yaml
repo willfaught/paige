@@ -5,7 +5,7 @@ paige_collections:
   other: 收藏品
 
 paige_figure:
-  other: 数字
+  other: 图表
 
 paige_aria_section_link:
   other: 链接至本节
@@ -30,13 +30,13 @@ paige_next:
   other: 下一页
 
 paige_noscript:
-  other: 需要 JavaScript 
+  other: 需要 JavaScript
 
 paige_page_list_navigation:
   other: 页面列表导航
 
 paige_pages:
-  other: 页数
+  other: 页面
 
 paige_previous:
   other: 上一页
@@ -51,16 +51,16 @@ paige_search_error:
   other: 错误
 
 paige_search_input:
-  other: 询问
+  other: 输入
 
 paige_search_nothing:
-  other: 搜索没有结果
+  other: 没有搜索结果
 
 paige_search_searching:
-  other: 搜索...
+  other: 搜索中...
 
 paige_search_something:
-  other: 搜索到一些结果。
+  other: 搜索到一些结果
 
 paige_sections:
   other: 部分
