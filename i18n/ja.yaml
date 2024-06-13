@@ -1,0 +1,66 @@
+paige_breadcrumbs:
+  other: パンくずリスト
+
+paige_collections:
+  other: コレクション
+
+paige_figure:
+  other: 図
+
+paige_aria_section_link:
+  other: このセクションへのリンク
+
+paige_edit_history:
+  other: 編集履歴
+
+paige_edit_this_page:
+  other: このページを編集
+
+paige_first:
+  other: 最初
+
+paige_last:
+  other: 最後
+
+paige_minutes:
+  one: 分
+  other: 分
+
+paige_next:
+  other: 次へ
+
+paige_noscript:
+  other: JavaScriptが必要です
+
+paige_page_list_navigation:
+  other: ページリストのナビゲーション
+
+paige_pages:
+  other: ページ
+
+paige_previous:
+  other: 前へ
+
+paige_recent_content:
+  other: 最近のコンテンツ
+
+paige_search_button:
+  other: 検索
+
+paige_search_error:
+  other: エラー
+
+paige_search_input:
+  other: クエリ
+
+paige_search_nothing:
+  other: 該当なし
+
+paige_search_searching:
+  other: 検索中...
+
+paige_search_something:
+  other: 何か見つかりました
+
+paige_sections:
+  other: セクション
