@@ -1,0 +1,66 @@
+paige_breadcrumbs:
+  other: Fil d'Ariane
+
+paige_collections:
+  other: Collections
+
+paige_figure:
+  other: Figure
+
+paige_aria_section_link:
+  other: Lien vers cette section
+
+paige_edit_history:
+  other: Historique des modifications
+
+paige_edit_this_page:
+  other: Modifier cette page
+
+paige_first:
+  other: Premier
+
+paige_last:
+  other: Dernier
+
+paige_minutes:
+  one: minute
+  other: minutes
+
+paige_next:
+  other: Suivant
+
+paige_noscript:
+  other: JavaScript est requis.
+
+paige_page_list_navigation:
+  other: Navigation de la liste des pages
+
+paige_pages:
+  other: Pages
+
+paige_previous:
+  other: Précédent
+
+paige_recent_content:
+  other: Contenu récent
+
+paige_search_button:
+  other: Rechercher
+
+paige_search_error:
+  other: Erreur
+
+paige_search_input:
+  other: Requête
+
+paige_search_nothing:
+  other: Aucun résultat
+
+paige_search_searching:
+  other: Recherche en cours
+
+paige_search_something:
+  other: Un résultat trouvé
+
+paige_sections:
+  other: Sections
