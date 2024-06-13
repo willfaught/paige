@@ -858,8 +858,43 @@ replace the use of `paige/article.html` in `single.html` with the use of
 `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`,
 then replace that use of `paige/metadata.html` with your own design.
 
-There are default favicon files in the static directory that were [generated](https://realfavicongenerator.net).
-To override them, put your favicon files in the same places.
+To change the favicon, override these files:
+
+- `static/android-chrome-192x192.png`
+- `static/android-chrome-512x512.png`
+- `static/apple-touch-icon-114x114-precomposed.png`
+- `static/apple-touch-icon-114x114.png`
+- `static/apple-touch-icon-120x120-precomposed.png`
+- `static/apple-touch-icon-120x120.png`
+- `static/apple-touch-icon-144x144-precomposed.png`
+- `static/apple-touch-icon-144x144.png`
+- `static/apple-touch-icon-152x152-precomposed.png`
+- `static/apple-touch-icon-152x152.png`
+- `static/apple-touch-icon-180x180-precomposed.png`
+- `static/apple-touch-icon-180x180.png`
+- `static/apple-touch-icon-57x57-precomposed.png`
+- `static/apple-touch-icon-57x57.png`
+- `static/apple-touch-icon-60x60-precomposed.png`
+- `static/apple-touch-icon-60x60.png`
+- `static/apple-touch-icon-72x72-precomposed.png`
+- `static/apple-touch-icon-72x72.png`
+- `static/apple-touch-icon-76x76-precomposed.png`
+- `static/apple-touch-icon-76x76.png`
+- `static/apple-touch-icon-precomposed.png`
+- `static/apple-touch-icon.png`
+- `static/favicon-16x16.png`
+- `static/favicon-32x32.png`
+- `static/favicon.ico`
+- `static/favicon.png`
+- `static/favicon.svg`
+- `static/mstile-144x144.png`
+- `static/mstile-150x150.png`
+- `static/mstile-310x150.png`
+- `static/mstile-310x310.png`
+- `static/mstile-70x70.png`
+- `static/safari-pinned-tab.svg`
+
+You can [generate](https://realfavicongenerator.net) favicon files.
 
 To change the syntax highlighting style, override these files:
 
