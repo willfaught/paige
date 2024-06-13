@@ -1,0 +1,66 @@
+paige_breadcrumbs:
+  other: Навигационная цепочка
+
+paige_collections:
+  other: Коллекции
+
+paige_figure:
+  other: Рисунок
+
+paige_aria_section_link:
+  other: Ссылка на этот раздел
+
+paige_edit_history:
+  other: История изменений
+
+paige_edit_this_page:
+  other: Редактировать эту страницу
+
+paige_first:
+  other: Первый
+
+paige_last:
+  other: Последний
+
+paige_minutes:
+  one: минута
+  other: минуты
+
+paige_next:
+  other: Следующий
+
+paige_noscript:
+  other: Требуется JavaScript
+
+paige_page_list_navigation:
+  other: Навигация по списку страниц
+
+paige_pages:
+  other: Страницы
+
+paige_previous:
+  other: Предыдущий
+
+paige_recent_content:
+  other: Недавнее содержимое
+
+paige_search_button:
+  other: Искать
+
+paige_search_error:
+  other: Ошибка
+
+paige_search_input:
+  other: Запрос
+
+paige_search_nothing:
+  other: Ничего не найдено
+
+paige_search_searching:
+  other: Поиск...
+
+paige_search_something:
+  other: Что-то найдено
+
+paige_sections:
+  other: Разделы
