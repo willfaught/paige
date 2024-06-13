@@ -30,7 +30,7 @@ paige_next:
   other: Next
 
 paige_noscript:
-  other: JavaScript is required.
+  other: JavaScript is required
 
 paige_page_list_navigation:
   other: Page list navigation
