@@ -10,15 +10,39 @@ paige_figure:
 paige_aria_section_link:
   other: 链接至本节
 
+paige_edit_history:
+  other: 编辑历史
+
+paige_edit_this_page:
+  other: 编辑此页
+
+paige_first:
+  other: 第一
+
+paige_last:
+  other: 最后
+
 paige_minutes:
   one: 分钟
   other: 几分钟
 
+paige_next:
+  other: 下一页
+
 paige_noscript:
   other: 需要 JavaScript 
 
+paige_page_list_navigation:
+  other: 页面列表导航
+
 paige_pages:
   other: 页数
+
+paige_previous:
+  other: 上一页
+
+paige_recent_content:
+  other: 最新内容
 
 paige_search_button:
   other: 搜索
