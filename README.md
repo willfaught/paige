@@ -861,6 +861,11 @@ then replace that use of `paige/metadata.html` with your own design.
 There are default favicon files in the static directory that were [generated](https://realfavicongenerator.net).
 To override them, put your favicon files in the same places.
 
+To change the syntax highlighting style, override these files:
+
+- `layouts/partials/paige/dark.css`
+- `layouts/partials/paige/light.css`
+
 ### Extend
 
 Use CSS selectors to extend the default styling.
