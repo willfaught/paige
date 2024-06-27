@@ -1,7 +1,7 @@
 {{- $now := now -}}
 +++
 categories = []
-date = "{{ .Date }}"
+date = {{ .Date }}
 description = ""
 draft = true
 link = ""
