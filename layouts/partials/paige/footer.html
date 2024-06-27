@@ -24,15 +24,15 @@
 
     {{ if or $page.PrevInSection $page.NextInSection }}
         <div class="mb-3" id="paige-prev-next">
-            {{ with $page.NextInSection }}
-                <p class="mb-0 text-center text-secondary" id="paige-prev">
-                    &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
-                </p>
-            {{ end }}
-
             {{ with $page.PrevInSection }}
                 <p class="mb-0 text-center text-secondary" id="paige-next">
                     <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;
+                </p>
+            {{ end }}
+
+            {{ with $page.NextInSection }}
+                <p class="mb-0 text-center text-secondary" id="paige-prev">
+                    &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
                 </p>
             {{ end }}
         </div>
