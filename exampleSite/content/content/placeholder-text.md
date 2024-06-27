@@ -1,15 +1,14 @@
----
-authors: ["author-demo"]
-categories: ["content", "paige"]
-date: "2023-09-18T21:33:16-07:00"
-description: "Lorem Ipsum Dolor Si Amet."
-paige:
-  feed:
-    hide_page: true
-tags: ["markdown", "text"]
-title: "Placeholder Text"
-weight: 30
----
++++
+authors = ["author-demo"]
+categories = ["content", "paige"]
+date = "2023-09-18T21:33:16-07:00"
+description = "Lorem Ipsum Dolor Si Amet."
+tags = ["markdown", "text"]
+title = "Placeholder Text"
+weight = 30
+[paige.feed]
+hide_page = true
++++
 
 <!--
 The MIT License (MIT)

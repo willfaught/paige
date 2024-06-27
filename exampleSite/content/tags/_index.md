@@ -1,5 +1,5 @@
----
-description: "Browse by tag."
-layout: "paige/cloud"
-title: "Tags"
----
++++
+description = "Browse by tag."
+layout = "paige/cloud"
+title = "Tags"
++++

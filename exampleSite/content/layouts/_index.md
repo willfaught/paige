@@ -1,4 +1,4 @@
----
-description: "Demonstrations of Paige layouts."
-title: "Layouts"
----
++++
+description = "Demonstrations of Paige layouts."
+title = "Layouts"
++++

@@ -1,4 +1,4 @@
----
-description: "Demonstration of a category."
-title: "Paige"
----
++++
+description = "Demonstration of a category."
+title = "Paige"
++++

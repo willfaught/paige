@@ -1,14 +1,14 @@
----
-authors: ["author-demo"]
-categories: ["content", "paige"]
-date: "2023-09-18T21:33:03-07:00"
-description: "A brief guide to setup KaTeX."
-paige:
-  math: true
-tags: ["katex", "math", "typesetting"]
-title: "Math Typesetting"
-weight: 40
----
++++
+authors = ["author-demo"]
+categories = ["content", "paige"]
+date = "2023-09-18T21:33:03-07:00"
+description = "A brief guide to setup KaTeX."
+tags = ["katex", "math", "typesetting"]
+title = "Math Typesetting"
+weight = 40
+[paige]
+math = true
++++
 
 <!--
 The MIT License (MIT)

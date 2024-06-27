@@ -1,4 +1,4 @@
----
-description: "Demonstration of a series."
-title: "Series Demo"
----
++++
+description = "Demonstration of a series."
+title = "Series Demo"
++++

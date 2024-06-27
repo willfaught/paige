@@ -1,6 +1,5 @@
----
-paige:
-  feed:
-    hide_page: true
-title: Banana
----
++++
+title = "Banana"
+[paige.feed]
+hide_page = true
++++

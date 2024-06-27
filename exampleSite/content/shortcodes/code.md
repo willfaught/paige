@@ -1,11 +1,11 @@
----
-authors: ["author-demo"]
-categories: ["paige", "shortcodes"]
-date: "2023-09-18T21:34:51-07:00"
-description: "Demonstration of the Paige code shortcode."
-tags: ["code", "figures"]
-title: "Code Shortcode"
----
++++
+authors = ["author-demo"]
+categories = ["paige", "shortcodes"]
+date = "2023-09-18T21:34:51-07:00"
+description = "Demonstration of the Paige code shortcode."
+tags = ["code", "figures"]
+title = "Code Shortcode"
++++
 
 Paige provides a `paige/code` shortcode for displaying code.
 

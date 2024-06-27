@@ -1,4 +1,4 @@
----
-description: "Browse by author."
-title: "Authors"
----
++++
+description = "Browse by author."
+title = "Authors"
++++

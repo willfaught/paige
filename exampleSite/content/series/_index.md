@@ -1,4 +1,4 @@
----
-description: "Browse by series."
-title: "Series"
----
++++
+description = "Browse by series."
+title = "Series"
++++

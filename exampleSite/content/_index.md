@@ -1,16 +1,17 @@
----
-paige:
-  search:
-    hide_page: true
-  style: |
-    #paige-collections,
-    #paige-metadata,
-    #paige-sections,
-    #paige-pages {
-        display: none;
-    }
-title: "Paige"
----
++++
+title = "Paige"
+[paige]
+style = """
+#paige-collections,
+#paige-metadata,
+#paige-sections,
+#paige-pages {
+    display: none;
+}
+"""
+[paige.search]
+hide_page = true
++++
 
 <p>{{% paige/image alt="Landscape" breakpoints=true class="object-fit-cover rounded-4 shadow-lg" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" %}}</p>
 

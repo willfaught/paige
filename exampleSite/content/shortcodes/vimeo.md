@@ -1,14 +1,13 @@
----
-authors: ["author-demo"]
-categories: ["paige", "shortcodes"]
-date: "2023-09-18T21:35:34-07:00"
-description: "Demonstration of the Paige Vimeo shortcode."
-paige:
-  feed:
-    hide_page: true
-tags: ["videos", "vimeo"]
-title: "Vimeo Shortcode"
----
++++
+authors = ["author-demo"]
+categories = ["paige", "shortcodes"]
+date = "2023-09-18T21:35:34-07:00"
+description = "Demonstration of the Paige Vimeo shortcode."
+tags = ["videos", "vimeo"]
+title = "Vimeo Shortcode"
+[paige.feed]
+hide_page = true
++++
 
 Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.
 

@@ -1,6 +1,5 @@
----
-paige:
-  feed:
-    hide_page: true
-title: Apple
----
++++
+title = "Apple"
+[paige.feed]
+hide_page = true
++++

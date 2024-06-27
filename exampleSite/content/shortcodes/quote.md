@@ -1,11 +1,11 @@
----
-authors: ["author-demo"]
-categories: ["paige", "shortcodes"]
-date: "2023-09-18T21:35:28-07:00"
-description: "Demonstration of the Paige quote shortcode."
-tags: ["figures", "quotations"]
-title: "Quote Shortcode"
----
++++
+authors = ["author-demo"]
+categories = ["paige", "shortcodes"]
+date = "2023-09-18T21:35:28-07:00"
+description = "Demonstration of the Paige quote shortcode."
+tags = ["figures", "quotations"]
+title = "Quote Shortcode"
++++
 
 Paige provides a `paige/quote` shortcode for displaying a quotation.
 

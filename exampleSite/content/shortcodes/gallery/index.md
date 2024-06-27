@@ -1,14 +1,13 @@
----
-authors: ["author-demo"]
-categories: ["paige", "shortcodes"]
-date: "2023-09-18T21:34:01-07:00"
-description: "Demonstration of the Paige gallery shortcode."
-paige:
-  feed:
-    hide_page: true
-tags: ["figures", "gallery", "images"]
-title: "Gallery Shortcode"
----
++++
+authors = ["author-demo"]
+categories = ["paige", "shortcodes"]
+date = "2023-09-18T21:34:01-07:00"
+description = "Demonstration of the Paige gallery shortcode."
+tags = ["figures", "gallery", "images"]
+title = "Gallery Shortcode"
+[paige.feed]
+hide_page = true
++++
 
 Paige provides a `paige/gallery` shortcode for displaying a list of images.
 

@@ -1,11 +1,11 @@
----
-authors: ["author-demo"]
-categories: ["paige", "shortcodes"]
-date: "2023-09-18T21:35:15-07:00"
-description: "Demonstration of the Paige icon shortcode."
-tags: ["icon", "web font"]
-title: "Icon Shortcode"
----
++++
+authors = ["author-demo"]
+categories = ["paige", "shortcodes"]
+date = "2023-09-18T21:35:15-07:00"
+description = "Demonstration of the Paige icon shortcode."
+tags = ["icon", "web font"]
+title = "Icon Shortcode"
++++
 
 Paige provides a `paige/icon` shortcode for displaying a web font icon.
 

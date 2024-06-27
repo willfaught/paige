@@ -1,14 +1,13 @@
----
-authors: ["author-demo"]
-categories: ["paige", "shortcodes"]
-date: "2023-09-18T21:35:40-07:00"
-description: "Demonstration of the Paige YouTube shortcode."
-paige:
-  feed:
-    hide_page: true
-tags: ["videos", "youtube"]
-title: "YouTube Shortcode"
----
++++
+authors = ["author-demo"]
+categories = ["paige", "shortcodes"]
+date = "2023-09-18T21:35:40-07:00"
+description = "Demonstration of the Paige YouTube shortcode."
+tags = ["videos", "youtube"]
+title = "YouTube Shortcode"
+[paige.feed]
+hide_page = true
++++
 
 Paige provides a `paige/youtube` shortcode for playing YouTube videos.
 

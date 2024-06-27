@@ -1,15 +1,14 @@
----
-authors: ["author-demo"]
-categories: ["content", "paige"]
-date: "2023-09-18T21:33:24-07:00"
-description: "A brief description of Hugo Shortcodes."
-paige:
-  feed:
-    hide_page: true
-tags: ["shortcodes", "privacy"]
-title: "Rich Content"
-weight: 20
----
++++
+authors = ["author-demo"]
+categories = ["content", "paige"]
+date = "2023-09-18T21:33:24-07:00"
+description = "A brief description of Hugo Shortcodes."
+tags = ["privacy", "shortcodes"]
+title = "Rich Content"
+weight = 20
+[paige.feed]
+hide_page = true
++++
 
 <!--
 The MIT License (MIT)
