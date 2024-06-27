@@ -12,29 +12,25 @@
                 <nav aria-label="{{ i18n `paige_page_list_navigation` }}">
                     <ul class="pagination">
                         {{ with $page.Paginator }}
-                            {{ if and (ne .PageNumber .First.PageNumber) (ne .First.PageNumber .Prev.PageNumber) }}
-                                <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_first` }}" class="page-link" href="{{ .First.URL }}"><span aria-hidden="true">&#x2B05;</span></a>
-                                </li>
-                            {{ end }}
+                            <li class="page-item {{ if eq .PageNumber .First.PageNumber }} disabled {{ end }}">
+                                <a aria-label="{{ i18n `paige_first` }}" class="page-link" href="{{ .First.URL }}"><span aria-hidden="true">&#x2B05;</span></a>
+                            </li>
 
-                            {{ with .Prev }}
-                                <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_previous` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&larr;</span></a>
-                                </li>
-                            {{ end }}
+                            <li class="page-item {{ if not .Prev }} disabled {{ end }}">
+                                <a {{ if .Prev }} aria-label="{{ i18n `paige_previous` }}" {{ end }} class="page-link" {{ with .Prev }} href="{{ .URL }}" {{ end }}>
+                                    <span aria-hidden="true">&larr;</span>
+                                </a>
+                            </li>
 
-                            {{ with .Next }}
-                                <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_next` }}" class="page-link" href="{{ .URL }}"><span aria-hidden="true">&rarr;</span></a>
-                                </li>
-                            {{ end }}
+                            <li class="page-item {{ if not .Next }} disabled {{ end }}">
+                                <a {{ if .Next }} aria-label="{{ i18n `paige_next` }}" {{ end }} class="page-link" {{ with .Next }} href="{{ .URL }}" {{ end }}>
+                                    <span aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
 
-                            {{ if and (ne .PageNumber .Last.PageNumber) (ne .Last.PageNumber .Next.PageNumber) }}
-                                <li class="page-item">
-                                    <a aria-label="{{ i18n `paige_last` }}" class="page-link" href="{{ .Last.URL }}"><span aria-hidden="true">&#x27A1;</span></a>
-                                </li>
-                            {{ end }}
+                            <li class="page-item {{ if eq .PageNumber .Last.PageNumber }} disabled {{ end }}">
+                                <a aria-label="{{ i18n `paige_last` }}" class="page-link" href="{{ .Last.URL }}"><span aria-hidden="true">&#x27A1;</span></a>
+                            </li>
                         {{ end }}
                     </ul>
                 </nav>
