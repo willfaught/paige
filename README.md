@@ -970,6 +970,10 @@ Page identifiers:
     <dd>The sections header.</dd>
     <dt><code>#paige-series</code></dt>
     <dd>The series.</dd>
+    <dt><code>#paige-site-description</code></dt>
+    <dd>The site description.</dd>
+    <dt><code>#paige-site-title</code></dt>
+    <dd>The site title.</dd>
     <dt><code>#paige-title</code></dt>
     <dd>The title.</dd>
     <dt><code>#paige-toc</code></dt>
