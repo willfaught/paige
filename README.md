@@ -376,6 +376,16 @@ Support for authors, categories, series, and tags taxonomies is built in.
 Set `default` to `true` in the front matter of an author term page for that author to be credited in regular pages that have no authors parameter.
 A default author must be referenced at least once explicitly in a regular page.
 
+To disable the rendering of author pages, add this to `yoursite/hugo.toml`:
+
+```toml
+[[cascade]]
+[cascade._target]
+path = '{/authors,/authors/**}'
+[cascade.build]
+render = 'never'
+```
+
 The `email` and `url` parameters in the front matter of an author term page are used in feeds if present.
 
 ## Layouts
