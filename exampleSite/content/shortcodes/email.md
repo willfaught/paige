@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-date = "2023-09-18T21:34:58-07:00"
+date = 2023-09-18T21:34:58-07:00
 description = "Demonstration of the Paige email shortcode."
 tags = ["email"]
 title = "Email Shortcode"

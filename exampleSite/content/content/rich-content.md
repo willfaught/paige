@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["content", "paige"]
-date = "2023-09-18T21:33:24-07:00"
+date = 2023-09-18T21:33:24-07:00
 description = "A brief description of Hugo Shortcodes."
 tags = ["privacy", "shortcodes"]
 title = "Rich Content"

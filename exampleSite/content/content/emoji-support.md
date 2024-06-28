@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["content", "paige"]
-date = "2023-09-18T21:32:40-07:00"
+date = 2023-09-18T21:32:40-07:00
 description = "Guide to emoji usage in Hugo."
 tags = ["emoji"]
 title = "Emoji Support"
