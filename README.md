@@ -178,6 +178,7 @@ color_scheme = "auto" # Must be "auto", "dark", or "light"
 date_format = ":date_long" # Hugo date format
 external_link_new_tab = false # Open external links in new tabs
 file_edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
+file_history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
 math = false # Enable math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
