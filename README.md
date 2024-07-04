@@ -17,7 +17,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Atom feed
 - Authors
 - Blog
-- Bootstrap
+- Bootstrap styles and icons
 - Categories
 - Code shortcode
 - Comments

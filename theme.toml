@@ -6,7 +6,7 @@ features = [
   "atom feed",
   "authors",
   "blog",
-  "bootstrap",
+  "bootstrap styles and icons",
   "categories",
   "code shortcode",
   "comments",
