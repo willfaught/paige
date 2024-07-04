@@ -382,9 +382,9 @@ To disable the rendering of author pages, add this to `yoursite/hugo.toml`:
 ```toml
 [[cascade]]
 [cascade._target]
-path = '{/authors,/authors/**}'
+path = "{/authors,/authors/**}"
 [cascade.build]
-render = 'never'
+render = "never"
 ```
 
 The `email` and `url` parameters in the front matter of an author term page are used in feeds if present.
