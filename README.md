@@ -119,28 +119,28 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 3. Create a site:
 
     ```sh
-    $ hugo new site yourproject
+    $ hugo new site yoursite
     ```
 
 4. Create a post:
 
     ```sh
-    $ cd yourproject
+    $ cd yoursite
     $ hugo new yourpost.md
     ```
 
 5. Install the Paige module:
 
     ```sh
-    $ cd yourproject
-    $ hugo mod init github.com/youraccount/yourproject
+    $ cd yoursite
+    $ hugo mod init github.com/youraccount/yoursite
     $ hugo mod get github.com/willfaught/paige@latest
     ```
 
 6. Import the Paige module:
 
     ```sh
-    $ cd yourproject
+    $ cd yoursite
     $ cat >>hugo.toml <<EOF
     [[module.imports]]
     path = "github.com/willfaught/paige"
@@ -150,14 +150,14 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 7. Build and run the site:
 
     ```sh
-    $ cd yourproject
+    $ cd yoursite
     $ hugo server -D
     ```
 
 8. Update the Paige module:
 
     ```sh
-    $ cd yourproject
+    $ cd yoursite
     $ hugo mod get github.com/willfaught/paige@latest
     ```
 
