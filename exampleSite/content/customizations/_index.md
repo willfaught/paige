@@ -1,10 +1,10 @@
 +++
 authors = ["author-demo"]
 categories = ["customization", "paige"]
-description = "Demonstrations of customization."
+description = "Demonstrations of customizations."
 series = ["series-demo"]
 tags = ["sections"]
-title = "Customization"
+title = "Customizations"
 [paige]
 style = """
 #paige-authors,

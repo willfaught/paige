@@ -35,9 +35,9 @@ url = "/shortcodes/"
 weight = 40
 
 [[languages.en.menu.main]]
-identifier = "customization"
-name = "Customization"
-url = "/customization/"
+identifier = "customizations"
+name = "Customizations"
+url = "/customizations/"
 weight = 50
 
 [[languages.en.menu.main]]
