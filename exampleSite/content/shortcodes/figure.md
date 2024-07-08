@@ -6,7 +6,7 @@ tags = ["figures"]
 title = "Figure"
 +++
 
-The `paige/figure` shortcode displays content.
+The `paige/figure` shortcode displays content in a figure.
 
 <!--more-->
 
