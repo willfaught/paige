@@ -433,7 +433,7 @@ The `paige/code` shortcode provides highlighted code.
 {{< /paige/code >}}
 ```
 
-Inner content: Required. String. The code.
+Body: Required. String. The code.
 
 Parameters:
 
@@ -455,7 +455,7 @@ The `paige/email` shortcode hides e-mail addresses from robots.
 {{< /paige/email >}}
 ```
 
-Inner content: Required. String. Markdown. The content.
+Body: Required. String. Markdown. The content.
 
 Parameters:
 
@@ -483,7 +483,7 @@ The `paige/figure` shortcode provides a figure.
 {{< /paige/figure >}}
 ```
 
-Inner content: Required. String. Markdown. The content.
+Body: Required. String. Markdown. The content.
 
 Parameters:
 
@@ -534,7 +534,7 @@ The `paige/gallery` shortcode provides an arrangement of images.
 {{< /paige/gallery >}}
 ```
 
-Inner content: Optional. String. HTML. The images.
+Body: Optional. String. HTML. The images.
 
 Parameters:
 
@@ -584,7 +584,7 @@ The `paige/icon` shortcode provides a web font icon.
     url="" >}}
 ```
 
-Inner content: None.
+Body: None.
 
 Parameters:
 
@@ -623,7 +623,7 @@ The `paige/image` shortcode provides an image.
     width="" >}}
 ```
 
-Inner content: None.
+Body: None.
 
 Parameters:
 
@@ -677,7 +677,7 @@ The `paige/quote` shortcode provides a quotation.
 {{< /paige/quote >}}
 ```
 
-Inner content: Required. String. Markdown. The quotation.
+Body: Required. String. Markdown. The quotation.
 
 Parameters:
 
@@ -695,7 +695,7 @@ It must contain one `paige/tabs/buttons` shortcode, and then one `paige/tabs/pan
 {{< /paige/tabs >}}
 ```
 
-Inner content: Required. String. HTML. The tab buttons and tab panes.
+Body: Required. String. HTML. The tab buttons and tab panes.
 
 Parameters: None.
 
@@ -709,7 +709,7 @@ Each `paige/tabs/button` shortcode corresponds to the `paige/tabs/pane` shortcod
 {{< /paige/tabs/buttons >}}
 ```
 
-Inner content: Required. String. HTML. The tab buttons.
+Body: Required. String. HTML. The tab buttons.
 
 Parameters: None.
 
@@ -721,7 +721,7 @@ The `paige/tabs/button` shortcode provides a tab button.
 {{< /paige/tabs/button >}}
 ```
 
-Inner content: Required. String. Markdown. The tab button content.
+Body: Required. String. Markdown. The tab button content.
 
 Parameters: None.
 
@@ -735,7 +735,7 @@ Each `paige/tabs/pane` shortcode corresponds to the `paige/tabs/button` shortcod
 {{< /paige/tabs/panes >}}
 ```
 
-Inner content: Required. String. HTML. The tab panes.
+Body: Required. String. HTML. The tab panes.
 
 Parameters: None.
 
@@ -747,7 +747,7 @@ The `paige/tabs/pane` shortcode provides a tab pane.
 {{< /paige/tabs/pane >}}
 ```
 
-Inner content: Required. String. Markdown. The tab pane content.
+Body: Required. String. Markdown. The tab pane content.
 
 Parameters: None.
 
@@ -785,7 +785,7 @@ The `paige/vimeo` shortcode provides a Vimeo video.
     width="" >}}
 ```
 
-Inner content: None.
+Body: None.
 
 Parameters:
 
@@ -868,7 +868,7 @@ The `paige/youtube` shortcode provides a YouTube video.
     width="" >}}
 ```
 
-Inner content: None.
+Body: None.
 
 Parameters:
 
