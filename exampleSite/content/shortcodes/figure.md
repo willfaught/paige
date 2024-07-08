@@ -5,8 +5,6 @@ date = 2023-09-18T21:35:10-07:00
 description = "Demonstration of the Paige figure shortcode."
 tags = ["figures"]
 title = "Figure Shortcode"
-[paige.feed]
-hide_page = true
 +++
 
 Paige provides a `paige/figure` shortcode for displaying content.
