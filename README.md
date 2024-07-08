@@ -433,8 +433,6 @@ The `paige/code` shortcode provides highlighted code.
 {{< /paige/code >}}
 ```
 
-Body: Required. String. The code.
-
 Parameters:
 
 <dl>
@@ -443,6 +441,8 @@ Parameters:
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">highlight options</a>.</dd>
 </dl>
+
+Body: Required. String. The code.
 
 ### Email
 
@@ -455,14 +455,14 @@ The `paige/email` shortcode hides e-mail addresses from robots.
 {{< /paige/email >}}
 ```
 
-Body: Required. String. Markdown. The content.
-
 Parameters:
 
 <dl>
     <dt><code>address</code></dt>
     <dd>Required. Position 0. String. The e-mail address.</dd>
 </dl>
+
+Body: Required. String. Markdown. The content.
 
 ### Figure
 
@@ -482,8 +482,6 @@ The `paige/figure` shortcode provides a figure.
 
 {{< /paige/figure >}}
 ```
-
-Body: Required. String. Markdown. The content.
 
 Parameters:
 
@@ -507,6 +505,8 @@ Parameters:
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Total width.</dd>
 </dl>
+
+Body: Required. String. Markdown. The content.
 
 ### Gallery
 
@@ -533,8 +533,6 @@ The `paige/gallery` shortcode provides an arrangement of images.
 
 {{< /paige/gallery >}}
 ```
-
-Body: Optional. String. HTML. The images.
 
 Parameters:
 
@@ -573,6 +571,8 @@ Parameters:
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
 
+Body: Optional. String. HTML. The images.
+
 ### Icon
 
 The `paige/icon` shortcode provides a web font icon.
@@ -584,8 +584,6 @@ The `paige/icon` shortcode provides a web font icon.
     url="" >}}
 ```
 
-Body: None.
-
 Parameters:
 
 <dl>
@@ -596,6 +594,8 @@ Parameters:
     <dt><code>url</code></dt>
     <dd>Optional. String. URL. Example: <code>https://github.com/account/project</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
+
+Body: None.
 
 ### Image
 
@@ -622,8 +622,6 @@ The `paige/image` shortcode provides an image.
     title=""
     width="" >}}
 ```
-
-Body: None.
 
 Parameters:
 
@@ -666,6 +664,8 @@ Parameters:
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
 
+Body: None.
+
 ### Quote
 
 The `paige/quote` shortcode provides a quotation.
@@ -677,12 +677,12 @@ The `paige/quote` shortcode provides a quotation.
 {{< /paige/quote >}}
 ```
 
-Body: Required. String. Markdown. The quotation.
-
 Parameters:
 
 <dt><code>cite</code></dt>
 <dd>Optional. String. Plain text. Citation.</dd>
+
+Body: Required. String. Markdown. The quotation.
 
 ### Tabs
 
@@ -695,9 +695,9 @@ It must contain one `paige/tabs/buttons` shortcode, and then one `paige/tabs/pan
 {{< /paige/tabs >}}
 ```
 
-Body: Required. String. HTML. The tab buttons and tab panes.
-
 Parameters: None.
+
+Body: Required. String. HTML. The tab buttons and tab panes.
 
 The `paige/tabs/buttons` shortcode provides tab buttons.
 It must contain one or more `paige/tabs/button` shortcodes.
@@ -709,9 +709,9 @@ Each `paige/tabs/button` shortcode corresponds to the `paige/tabs/pane` shortcod
 {{< /paige/tabs/buttons >}}
 ```
 
-Body: Required. String. HTML. The tab buttons.
-
 Parameters: None.
+
+Body: Required. String. HTML. The tab buttons.
 
 The `paige/tabs/button` shortcode provides a tab button.
 
@@ -721,9 +721,9 @@ The `paige/tabs/button` shortcode provides a tab button.
 {{< /paige/tabs/button >}}
 ```
 
-Body: Required. String. Markdown. The tab button content.
-
 Parameters: None.
+
+Body: Required. String. Markdown. The tab button content.
 
 The `paige/tabs/panes` shortcode provides tab panes.
 It must contain one or more `paige/tabs/pane` shortcodes.
@@ -735,9 +735,9 @@ Each `paige/tabs/pane` shortcode corresponds to the `paige/tabs/button` shortcod
 {{< /paige/tabs/panes >}}
 ```
 
-Body: Required. String. HTML. The tab panes.
-
 Parameters: None.
+
+Body: Required. String. HTML. The tab panes.
 
 The `paige/tabs/pane` shortcode provides a tab pane.
 
@@ -747,9 +747,9 @@ The `paige/tabs/pane` shortcode provides a tab pane.
 {{< /paige/tabs/pane >}}
 ```
 
-Body: Required. String. Markdown. The tab pane content.
-
 Parameters: None.
+
+Body: Required. String. Markdown. The tab pane content.
 
 ### Vimeo
 
@@ -784,8 +784,6 @@ The `paige/vimeo` shortcode provides a Vimeo video.
     video=""
     width="" >}}
 ```
-
-Body: None.
 
 Parameters:
 
@@ -844,6 +842,8 @@ Parameters:
     <dd>Optional. String. CSS value. Video width.</dd>
 </dl>
 
+Body: None.
+
 See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Player-parameters-overview) for more detail.
 
 ### YouTube
@@ -867,8 +867,6 @@ The `paige/youtube` shortcode provides a YouTube video.
     video=""
     width="" >}}
 ```
-
-Body: None.
 
 Parameters:
 
@@ -902,6 +900,8 @@ Parameters:
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Video width.</dd>
 </dl>
+
+Body: None.
 
 ## Customize
 
