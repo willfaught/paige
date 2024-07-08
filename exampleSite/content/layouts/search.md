@@ -5,7 +5,6 @@ description = "Demonstration of the search layout."
 layout = "paige/search"
 tags = ["search"]
 title = "Search"
-weight = 20
 [paige.feed]
 hide_page = true
 +++
