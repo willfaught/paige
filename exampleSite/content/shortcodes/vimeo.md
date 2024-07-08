@@ -3,7 +3,7 @@ authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
 description = "Demonstration of the Paige Vimeo shortcode."
 tags = ["videos", "vimeo"]
-title = "Vimeo Shortcode"
+title = "Vimeo"
 +++
 
 Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.

@@ -3,7 +3,7 @@ authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
 description = "Demonstration of the Paige gallery shortcode."
 tags = ["figures", "gallery", "images"]
-title = "Gallery Shortcode"
+title = "Gallery"
 +++
 
 Paige provides a `paige/gallery` shortcode for displaying a list of images.

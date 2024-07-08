@@ -3,7 +3,7 @@ authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
 description = "Demonstration of the Paige tabs shortcodes."
 tags = ["figures", "tabs"]
-title = "Tabs Shortcode"
+title = "Tabs"
 +++
 
 Paige provides a `paige/tabs` shortcode for displaying content in tabs.

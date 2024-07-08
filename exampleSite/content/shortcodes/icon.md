@@ -3,7 +3,7 @@ authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
 description = "Demonstration of the Paige icon shortcode."
 tags = ["icon", "web font"]
-title = "Icon Shortcode"
+title = "Icon"
 +++
 
 Paige provides a `paige/icon` shortcode for displaying a web font icon.

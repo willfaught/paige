@@ -3,7 +3,7 @@ authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
 description = "Demonstration of the Paige email shortcode."
 tags = ["email"]
-title = "Email Shortcode"
+title = "Email"
 +++
 
 Paige provides a `paige/email` shortcode that hides e-mail addresses from robots.
