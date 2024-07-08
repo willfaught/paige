@@ -1,5 +1,5 @@
 {{ $cite := .Get 0 | default (.Get "cite") }}
-{{ $content := .InnerDeindent | replaceRE "^\n" "" | replaceRE "\n$" "" | markdownify }}
+{{ $content := trim .InnerDeindent "\f\n\r\v" | markdownify }}
 
 {{ if not $content }}
     {{ errorf "layouts/shortcodes/paige/quote.html: no content" }}
