@@ -1,0 +1,11 @@
+{{ $content := chomp .Inner }}
+
+{{ if not (.Page.Scratch.Get "paige-tabs") }}
+    {{ .Page.Scratch.Set "paige-tabs" 0 }}
+{{ end }}
+
+{{ .Page.Scratch.Add "paige-tabs" 1 }}
+
+<div class="paige-tabs">
+    {{ $content }}
+</div>

@@ -684,6 +684,29 @@ Parameters:
 <dt><code>cite</code></dt>
 <dd>Optional. String. Plain text. Citation.</dd>
 
+### Tabs
+
+The `paige/tabs` shortcodes provide tabbed content.
+
+```
+{{< paige/tabs >}}
+    {{< paige/tabs/buttons >}}
+        {{< paige/tabs/button >}}A{{< /paige/tabs/button >}}
+        {{< paige/tabs/button >}}B{{< /paige/tabs/button >}}
+        {{< paige/tabs/button >}}C{{< /paige/tabs/button >}}
+    {{< /paige/tabs/buttons >}}
+    {{< paige/tabs/panes >}}
+        {{< paige/tabs/pane >}}1{{< /paige/tabs/pane >}}
+        {{< paige/tabs/pane >}}2{{< /paige/tabs/pane >}}
+        {{< paige/tabs/pane >}}3{{< /paige/tabs/pane >}}
+    {{< /paige/tabs/panes >}}
+{{< /paige/tabs >}}
+```
+
+Inner content: Required. String. Markdown.
+
+Parameters: None.
+
 ### Vimeo
 
 The `paige/vimeo` shortcode provides a Vimeo video.

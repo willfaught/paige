@@ -1,0 +1,9 @@
+{{ $content := chomp .Inner }}
+
+{{ .Page.Scratch.Set "paige-tabs-pane" 0 }}
+
+<div class="paige-tab-panes">
+    <div class="tab-content">
+        {{ $content }}
+    </div>
+</div>

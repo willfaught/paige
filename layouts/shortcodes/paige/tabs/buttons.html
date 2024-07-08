@@ -1,0 +1,9 @@
+{{ $content := chomp .Inner }}
+
+{{ .Page.Scratch.Set "paige-tabs-button" 0 }}
+
+<div class="paige-tab-buttons">
+    <ul class="mb-3 nav nav-tabs" role="tablist">
+        {{ $content }}
+    </ul>
+</div>
