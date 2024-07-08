@@ -686,24 +686,68 @@ Parameters:
 
 ### Tabs
 
-The `paige/tabs` shortcodes provide tabbed content.
+The `paige/tabs` shortcode provides tab buttons and tab panes.
+It must contain one `paige/tabs/buttons` shortcode, and then one `paige/tabs/panes` shortcode.
 
 ```
 {{< paige/tabs >}}
-    {{< paige/tabs/buttons >}}
-        {{< paige/tabs/button >}}A{{< /paige/tabs/button >}}
-        {{< paige/tabs/button >}}B{{< /paige/tabs/button >}}
-        {{< paige/tabs/button >}}C{{< /paige/tabs/button >}}
-    {{< /paige/tabs/buttons >}}
-    {{< paige/tabs/panes >}}
-        {{< paige/tabs/pane >}}1{{< /paige/tabs/pane >}}
-        {{< paige/tabs/pane >}}2{{< /paige/tabs/pane >}}
-        {{< paige/tabs/pane >}}3{{< /paige/tabs/pane >}}
-    {{< /paige/tabs/panes >}}
+
 {{< /paige/tabs >}}
 ```
 
-Inner content: Required. String. Markdown.
+Inner content: Required. String. HTML. The tab buttons and tab panes.
+
+Parameters: None.
+
+The `paige/tabs/buttons` shortcode provides tab buttons.
+It must contain one or more `paige/tabs/button` shortcodes.
+Each `paige/tabs/button` shortcode corresponds to the `paige/tabs/pane` shortcode in the same position.
+
+```
+{{< paige/tabs/buttons >}}
+
+{{< /paige/tabs/buttons >}}
+```
+
+Inner content: Required. String. HTML. The tab buttons.
+
+Parameters: None.
+
+The `paige/tabs/button` shortcode provides a tab button.
+
+```
+{{< paige/tabs/button >}}
+
+{{< /paige/tabs/button >}}
+```
+
+Inner content: Required. String. Markdown. The tab button content.
+
+Parameters: None.
+
+The `paige/tabs/panes` shortcode provides tab panes.
+It must contain one or more `paige/tabs/pane` shortcodes.
+Each `paige/tabs/pane` shortcode corresponds to the `paige/tabs/button` shortcode in the same position.
+
+```
+{{< paige/tabs/panes >}}
+
+{{< /paige/tabs/panes >}}
+```
+
+Inner content: Required. String. HTML. The tab panes.
+
+Parameters: None.
+
+The `paige/tabs/pane` shortcode provides a tab pane.
+
+```
+{{< paige/tabs/pane >}}
+
+{{< /paige/tabs/pane >}}
+```
+
+Inner content: Required. String. Markdown. The tab pane content.
 
 Parameters: None.
 
