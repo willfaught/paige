@@ -679,8 +679,10 @@ The `paige/quote` shortcode provides a quotation.
 
 Parameters:
 
-<dt><code>cite</code></dt>
-<dd>Optional. String. Plain text. Citation.</dd>
+<dl>
+    <dt><code>cite</code></dt>
+    <dd>Optional. String. Plain text. Citation.</dd>
+</dl>
 
 Body: Required. String. Markdown. The quotation.
 
