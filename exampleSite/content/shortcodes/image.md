@@ -6,7 +6,7 @@ tags = ["figures", "images"]
 title = "Image"
 +++
 
-Paige provides a `paige/image` shortcode for displaying an image.
+The `paige/image` shortcode displays an image.
 
 <!--more-->
 

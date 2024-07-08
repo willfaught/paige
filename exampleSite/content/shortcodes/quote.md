@@ -6,7 +6,7 @@ tags = ["figures", "quotations"]
 title = "Quote"
 +++
 
-Paige provides a `paige/quote` shortcode for displaying a quotation.
+The `paige/quote` shortcode displays a quotation.
 
 <!--more-->
 

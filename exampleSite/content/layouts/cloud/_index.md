@@ -7,7 +7,7 @@ tags = ["cloud"]
 title = "Cloud"
 +++
 
-Paige provides a `paige/cloud` layout for taxonomy pages with lots of terms.
+The `paige/cloud` layout displays list page links as a link cloud.
 
 <!--more-->
 

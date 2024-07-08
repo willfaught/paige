@@ -6,7 +6,7 @@ tags = ["code", "figures"]
 title = "Code"
 +++
 
-Paige provides a `paige/code` shortcode for displaying code.
+The `paige/code` shortcode displays code.
 
 <!--more-->
 

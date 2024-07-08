@@ -6,7 +6,7 @@ tags = ["email"]
 title = "Email"
 +++
 
-Paige provides a `paige/email` shortcode that hides e-mail addresses from robots.
+The `paige/email` shortcode hides e-mail addresses from robots.
 
 <!--more-->
 

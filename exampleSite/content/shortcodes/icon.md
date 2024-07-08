@@ -6,7 +6,7 @@ tags = ["icon", "web font"]
 title = "Icon"
 +++
 
-Paige provides a `paige/icon` shortcode for displaying a web font icon.
+The `paige/icon` shortcode displays a web font icon.
 
 <!--more-->
 

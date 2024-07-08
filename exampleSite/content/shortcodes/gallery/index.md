@@ -6,7 +6,7 @@ tags = ["figures", "gallery", "images"]
 title = "Gallery"
 +++
 
-Paige provides a `paige/gallery` shortcode for displaying a list of images.
+The `paige/gallery` shortcode displays a list of images.
 
 <!--more-->
 

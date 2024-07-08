@@ -9,7 +9,7 @@ title = "Search"
 hide_page = true
 +++
 
-Paige provides a `paige/search` layout for site search.
+The `paige/search` layout provides site search.
 
 <!--more-->
 

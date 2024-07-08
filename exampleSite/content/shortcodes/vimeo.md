@@ -6,7 +6,7 @@ tags = ["videos", "vimeo"]
 title = "Vimeo"
 +++
 
-Paige provides a `paige/vimeo` shortcode for playing Vimeo videos.
+The `paige/vimeo` shortcode plays a Vimeo video.
 
 <!--more-->
 

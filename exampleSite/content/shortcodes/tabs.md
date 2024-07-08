@@ -6,7 +6,7 @@ tags = ["figures", "tabs"]
 title = "Tabs"
 +++
 
-Paige provides a `paige/tabs` shortcode for displaying content in tabs.
+The `paige/tabs` shortcode displays content in tabs.
 
 <!--more-->
 
