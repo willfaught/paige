@@ -18,7 +18,7 @@ Example `config.yaml`:
 
 ```yaml
 outputs:
-  home: ["html", "json", "rss"]
+  home: ["atom", "html", "paige-search", "rss"]
 ```
 
 Example `content/layouts/search.md`:
