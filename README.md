@@ -51,6 +51,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Single column
 - Social links
 - Table of contents
+- Tab shortcode
 - Tags
 - Twitter sharing
 - Validated with [PageSpeed](https://pagespeed.web.dev/report?url=https%3A%2F%2Fwillfaught.com%2Fpaige%2F&form_factor=desktop) and [Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwillfaught.com%2Fpaige%2F)

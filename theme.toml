@@ -39,6 +39,7 @@ features = [
   "series",
   "single column",
   "social links",
+  "tab shortcode",
   "table of contents",
   "tags",
   "twitter sharing",
