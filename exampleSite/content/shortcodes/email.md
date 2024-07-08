@@ -10,7 +10,7 @@ Paige provides a `paige/email` shortcode that hides e-mail addresses from robots
 
 <!--more-->
 
-## Address and content parameters
+## Address parameter
 
 Code:
 
