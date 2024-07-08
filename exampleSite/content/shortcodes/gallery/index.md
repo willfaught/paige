@@ -1,7 +1,6 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-date = 2023-09-18T21:34:01-07:00
 description = "Demonstration of the Paige gallery shortcode."
 tags = ["figures", "gallery", "images"]
 title = "Gallery Shortcode"

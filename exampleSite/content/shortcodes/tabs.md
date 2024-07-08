@@ -1,7 +1,6 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-date = 2024-07-06T22:37:00-07:00
 description = "Demonstration of the Paige tabs shortcodes."
 tags = ["figures", "tabs"]
 title = "Tabs Shortcode"

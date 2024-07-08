@@ -85,10 +85,10 @@ startlevel = 2
 path = "github.com/willfaught/paige"
 
 [outputs]
-home = ["atom", "html", "paige-search", "rss"]
-section = ["atom", "html", "rss"]
-taxonomy = ["atom", "html", "rss"]
-term = ["atom", "html", "rss"]
+home = ["html", "paige-search"]
+section = ["html"]
+taxonomy = ["html"]
+term = ["html"]
 
 [params.paige]
 file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
