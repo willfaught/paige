@@ -4,7 +4,7 @@ categories = ["layouts", "paige"]
 description = "Demonstration of the search layout."
 layout = "paige/search"
 tags = ["search"]
-title = "Search Layout"
+title = "Search"
 weight = 20
 [paige.feed]
 hide_page = true
@@ -26,7 +26,7 @@ Example `content/layouts/search.md`:
 ```yaml
 ---
 layout: "paige/search"
-title: "Search Layout"
+title: "Search"
 ---
 ```
 
