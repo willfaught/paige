@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-description = "Demonstration of the Paige email shortcode."
+description = "Demonstration of the email shortcode."
 tags = ["email"]
 title = "Email"
 +++

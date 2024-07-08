@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["customization", "paige"]
-description = "Demonstrations of Paige customization."
+description = "Demonstrations of customization."
 series = ["series-demo"]
 tags = ["sections"]
 title = "Customization"

@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-description = "Demonstration of the Paige Vimeo shortcode."
+description = "Demonstration of the Vimeo shortcode."
 tags = ["videos", "vimeo"]
 title = "Vimeo"
 +++

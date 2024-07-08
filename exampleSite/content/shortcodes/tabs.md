@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-description = "Demonstration of the Paige tabs shortcodes."
+description = "Demonstration of the tabs shortcodes."
 tags = ["figures", "tabs"]
 title = "Tabs"
 +++

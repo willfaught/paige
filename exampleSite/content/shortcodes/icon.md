@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["paige", "shortcodes"]
-description = "Demonstration of the Paige icon shortcode."
+description = "Demonstration of the icon shortcode."
 tags = ["icon", "web font"]
 title = "Icon"
 +++

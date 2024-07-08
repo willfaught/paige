@@ -1,4 +1,4 @@
 +++
-description = "Demonstrations of Paige content."
+description = "Demonstrations of content."
 title = "Content"
 +++

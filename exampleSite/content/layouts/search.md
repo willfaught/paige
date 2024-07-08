@@ -1,7 +1,7 @@
 +++
 authors = ["author-demo"]
 categories = ["layouts", "paige"]
-description = "Demonstration of the Paige search layout."
+description = "Demonstration of the search layout."
 layout = "paige/search"
 tags = ["search"]
 title = "Search Layout"

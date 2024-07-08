@@ -1,4 +1,4 @@
 +++
-description = "Demonstrations of Paige shortcodes."
+description = "Demonstrations of shortcodes."
 title = "Shortcodes"
 +++

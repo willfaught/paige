@@ -2,7 +2,7 @@
 authors = ["author-demo"]
 categories = ["customization", "paige"]
 date = 2023-09-18T20:21:05-07:00
-description = "Demonstration of Paige customization that styles data."
+description = "Demonstration of customization that styles data."
 series = ["series-demo"]
 tags = ["singles", "style"]
 title = "Style Data"
