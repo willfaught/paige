@@ -1,4 +1,4 @@
-{{ $content := chomp .Inner | markdownify }}
+{{ $content := chomp .InnerDeindent | markdownify }}
 {{ $tabcount := .Page.Scratch.Get "paige-tabs" | default 0 }}
 
 {{ if not $content }}

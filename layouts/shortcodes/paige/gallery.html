@@ -16,7 +16,7 @@
 {{ $type := .Get "type" | default "rows" }}
 {{ $width := .Get "width" }}
 
-{{ $inner := chomp .Inner }}
+{{ $inner := chomp .InnerDeindent }}
 {{ $resources := slice }}
 
 {{ if and (not $images) (not $inner) }}

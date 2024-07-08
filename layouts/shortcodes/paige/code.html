@@ -1,4 +1,4 @@
-{{ $content := .Inner | replaceRE "^\n" "" }}
+{{ $content := .InnerDeindent | replaceRE "^\n" "" }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $options := .Get "options" }}
 

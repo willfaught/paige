@@ -1,5 +1,5 @@
 {{ $address := .Get 0 | default (.Get "address") }}
-{{ $content := .Inner | markdownify }}
+{{ $content := .InnerDeindent | markdownify }}
 
 {{ if not $address }}
     {{ errorf "layouts/shortcodes/paige/email.html: no address" }}

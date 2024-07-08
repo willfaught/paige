@@ -1,4 +1,4 @@
-{{ $content := chomp .Inner }}
+{{ $content := chomp .InnerDeindent }}
 
 {{ if not (.Page.Scratch.Get "paige-tabs") }}
     {{ .Page.Scratch.Set "paige-tabs" 0 }}
