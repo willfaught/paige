@@ -2,7 +2,7 @@
 authors = ["author-demo"]
 categories = ["customization", "paige"]
 date = 2023-09-18T21:21:05-07:00
-description = "Demonstration of customization that shows data."
+description = "Demonstration of a customization that shows all data."
 series = ["series-demo"]
 tags = ["show", "singles"]
 title = "Show Data"
@@ -29,7 +29,7 @@ style = """
 """
 +++
 
-This site hides some single page data by default. This page shows it all.
+This page shows some data that the rest of the site hides.
 
 <!--more-->
 

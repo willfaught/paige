@@ -2,7 +2,7 @@
 authors = ["author-demo"]
 categories = ["customization", "paige"]
 date = 2023-09-18T20:21:05-07:00
-description = "Demonstration of customization that styles data."
+description = "Demonstration of a customization that styles all data."
 series = ["series-demo"]
 tags = ["singles", "style"]
 title = "Style Data"
@@ -46,7 +46,7 @@ style = """
 """
 +++
 
-This site uses the default styles on the other pages. This page changes them.
+This page styles some data differently than the rest of the site.
 
 <!--more-->
 
