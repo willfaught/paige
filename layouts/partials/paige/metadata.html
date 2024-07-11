@@ -22,7 +22,7 @@
     {{ end }}
 
     {{ if or $authors $categories $date $readingtime $series $tags }}
-        <div class="mb-3">
+        <div id="paige-metadata-rest">
             {{ if or $categories $tags }}
                 <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
                     {{ range $i, $term := sort (append $categories $tags) "Title" -}}
