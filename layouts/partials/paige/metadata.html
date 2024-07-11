@@ -2,7 +2,7 @@
 
 {{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := $page.GetTerms "categories" }}
-{{ $date := $page.PublishDate }}
+{{ $date := and $page.IsPage $page.PublishDate }}
 {{ $dateformat := $page.Param "paige.date_format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
 {{ $link := $page.Params.link }}
