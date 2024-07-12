@@ -29,7 +29,7 @@
 {{ end }}
 
 {{ if or $page.Ancestors site.Menus.main }}
-    <header class="mt-3" id="paige-header">
+    <header class="my-3" id="paige-header">
         {{ if templates.Exists "partials/paige/header-first.html" }}
             {{ partial "paige/header-first.html" $page }}
         {{ end }}
