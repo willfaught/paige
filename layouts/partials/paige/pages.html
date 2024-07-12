@@ -81,13 +81,13 @@
 
         {{ if or $sections $pages }}
             {{ range $ordered }}
-                {{ partial "paige/page.html" . }}
+                {{ partial "paige/list-item.html" . }}
             {{ end }}
         {{ else }}
             {{ $pager := $page.Paginate $ordered }}
 
             {{ range $pager.Pages }}
-                {{ partial "paige/page.html" . }}
+                {{ partial "paige/list-item.html" . }}
             {{ end }}
 
             {{ template "pagination" (dict "page" $page "pager" $pager) }}
@@ -121,13 +121,13 @@
 
         {{ if $pages }}
             {{ range $ordered }}
-                {{ partial "paige/page.html" . }}
+                {{ partial "paige/list-item.html" . }}
             {{ end }}
         {{ else }}
             {{ $pager := $page.Paginate $ordered }}
 
             {{ range $pager.Pages }}
-                {{ partial "paige/page.html" . }}
+                {{ partial "paige/list-item.html" . }}
             {{ end }}
 
             {{ template "pagination" (dict "page" $page "pager" $pager) }}
@@ -162,7 +162,7 @@
         {{ $pager := $page.Paginate $ordered }}
 
         {{ range $pager.Pages }}
-            {{ partial "paige/page.html" . }}
+            {{ partial "paige/list-item.html" . }}
         {{ end }}
 
         {{ template "pagination" (dict "page" $page "pager" $pager) }}
