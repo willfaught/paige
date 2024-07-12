@@ -182,6 +182,7 @@ external_link_new_tab = false # Open external links in new tabs
 file_edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
 file_history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
+license = "" # Example: "CC BY 4.0 License", "CC BY-NC 4.0 License", "MIT License"
 math = false # Enable math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 site_title = "" # Appears above the menu, above the site description, if set
@@ -1024,6 +1025,8 @@ Page identifiers:
     <dd>The header.</dd>
     <dt><code>#paige-keywords</code></dt>
     <dd>The keywords.</dd>
+    <dt><code>#paige-license</code></dt>
+    <dd>The license.</dd>
     <dt><code>#paige-main</code></dt>
     <dd>The main.</dd>
     <dt><code>#paige-menu</code></dt>
