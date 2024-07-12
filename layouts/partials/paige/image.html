@@ -283,9 +283,9 @@
     {{ end }}
 
     {{ $resource = $resource | fingerprint }}
-    {{ $content = partial "paige/a.html" (dict "content" $content "href" $resource.RelPermalink "page" $page) }}
+    {{ $content = partial "paige/tag-a.html" (dict "content" $content "href" $resource.RelPermalink "page" $page) }}
 {{ else if $link }}
-    {{ $content = partial "paige/a.html" (dict "content" $content "href" $link "page" $page) }}
+    {{ $content = partial "paige/tag-a.html" (dict "content" $content "href" $link "page" $page) }}
 {{ end }}
 
 {{ $content }}
