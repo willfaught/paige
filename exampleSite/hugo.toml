@@ -91,6 +91,7 @@ taxonomy = ["html"]
 term = ["html"]
 
 [params.paige]
+credit = ""
 file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 site_description = "Powerful, pliable pixel perfection"

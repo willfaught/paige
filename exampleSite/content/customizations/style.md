@@ -7,9 +7,9 @@ series = ["series-demo"]
 tags = ["singles", "style"]
 title = "Style Data"
 [paige]
+credit = "Paige Theme"
 style = """
 #paige-authors,
-#paige-credit,
 #paige-date,
 #paige-file,
 #paige-keywords,
@@ -36,7 +36,6 @@ style = """
 #paige-title { font-style: italic; }
 #paige-toc { font-style: italic; }
 #paige-copyright { font-style: italic; }
-#paige-credit { font-style: italic; }
 .paige-authors { font-style: italic; }
 .paige-date { font-style: italic; }
 .paige-keyword { font-style: italic; }
@@ -55,11 +54,11 @@ This page has the following parameters:
 
 ```yaml
 paige:
+  credit: "Paige Theme"
   file_link:
     disable: false
   style: |
     #paige-authors,
-    #paige-credit,
     #paige-date,
     #paige-file,
     #paige-keywords,
@@ -86,7 +85,6 @@ paige:
     #paige-title { font-style: italic; }
     #paige-toc { font-style: italic; }
     #paige-copyright { font-style: italic; }
-    #paige-credit { font-style: italic; }
     .paige-authors { font-style: italic; }
     .paige-date { font-style: italic; }
     .paige-keyword { font-style: italic; }

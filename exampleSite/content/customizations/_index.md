@@ -6,9 +6,9 @@ series = ["series-demo"]
 tags = ["sections"]
 title = "Customizations"
 [paige]
+credit = "Paige Theme"
 style = """
 #paige-authors,
-#paige-credit,
 #paige-date,
 #paige-file,
 #paige-keywords,
@@ -36,11 +36,11 @@ This page has the following parameters:
 
 ```yaml
 paige:
+  credit: "Paige Theme"
   file_link:
     disable: false
   style: |
     #paige-authors,
-    #paige-credit,
     #paige-date,
     #paige-file,
     #paige-keywords,

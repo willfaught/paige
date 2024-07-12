@@ -176,6 +176,7 @@ There is a single parameter object with sensible defaults that can be overridden
 [paige]
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
 color_scheme = "auto" # Must be "auto", "dark", or "light"
+credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
 external_link_new_tab = false # Open external links in new tabs
 file_edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
@@ -1145,8 +1146,6 @@ Shortcode classes:
     <dd>The container element of <code>paige/youtube</code> shortcodes.</dd>
 </dl>
 
-If you hide `#paige-credit`, please credit this project in a post to help others find it.
-
 ### Minimal look
 
 By default, everything is shown.
@@ -1156,7 +1155,6 @@ try the following in `yoursite/layouts/partials/paige/style-first.css`:
 ```css
 #paige-authors,
 #paige-collections,
-#paige-credit,
 #paige-keywords,
 #paige-prev-next,
 #paige-reading-time,
