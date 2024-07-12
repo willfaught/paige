@@ -36,11 +36,11 @@
 {{ $colorscheme := $page.Param "paige.color_scheme" | default "auto" }}
 {{ $context := dict "color" $color "color_scheme" $colorscheme }}
 
-{{ partial "paige/link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true "context" $context) }}
-{{ partial "paige/link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css" "page" $page) }}
+{{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true "context" $context) }}
+{{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css" "page" $page) }}
 
 {{ if $page.Param "paige.math" }}
-    {{ partial "paige/link.html" (dict "href" "css/paige/katex/katex.min.css") }}
+    {{ partial "paige/tag-link.html" (dict "href" "css/paige/katex/katex.min.css") }}
 {{ end }}
 
 {{ range $page.AlternativeOutputFormats }}
