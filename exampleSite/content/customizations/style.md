@@ -6,7 +6,6 @@ description = "Demonstration of a customization that styles all data."
 series = ["series-demo"]
 tags = ["singles", "style"]
 title = "Style Data"
-weight = 10
 [paige]
 style = """
 #paige-authors,
