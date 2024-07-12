@@ -31,7 +31,7 @@
 {{ $styles = delimit $styles "; " }}
 
 <div class="{{ $class }}" {{ with $styles }} style="{{ . | safeCSS }}" {{ end }}>
-    {{ partial "paige/iframe.html" (dict
+    {{ partial "paige/tag-iframe.html" (dict
         "fullscreen" $fullscreen
         "referrerpolicy" $referrerpolicy
         "src" $src
