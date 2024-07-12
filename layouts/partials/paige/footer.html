@@ -17,7 +17,7 @@
     {{ end }}
 {{ end }}
 
-<footer class="mb-3" id="paige-footer">
+<footer class="mb-3 text-center text-secondary" id="paige-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
@@ -25,13 +25,13 @@
     {{ if or $page.PrevInSection $page.NextInSection }}
         <div class="mb-3" id="paige-prev-next">
             {{ with $page.PrevInSection }}
-                <p class="mb-0 text-center text-secondary" id="paige-next">
+                <p class="mb-0" id="paige-next">
                     <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;
                 </p>
             {{ end }}
 
             {{ with $page.NextInSection }}
-                <p class="mb-0 text-center text-secondary" id="paige-prev">
+                <p class="mb-0" id="paige-prev">
                     &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
                 </p>
             {{ end }}
@@ -41,13 +41,13 @@
     {{ if and $page.File (or $fileediturl $filehistoryurl) }}
     <div class="mb-3" id="paige-file">
         {{ if $fileediturl }}
-            <p class="mb-0 text-center" id="paige-file-edit">
+            <p class="mb-0" id="paige-file-edit">
                 <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
             </p>
         {{ end }}
 
         {{ if $filehistoryurl }}
-            <p class="mb-0 text-center" id="paige-file-history">
+            <p class="mb-0" id="paige-file-history">
                 <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
             </p>
         {{ end }}
@@ -55,10 +55,10 @@
     {{ end }}
 
     {{ with $copyright }}
-        <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
+        <p class="mb-0" id="paige-copyright">{{ . }}</p>
     {{ end }}
 
-    <p class="mb-0 text-center" id="paige-credit">
+    <p class="mb-0" id="paige-credit">
         <a class="link-secondary text-decoration-none" href="{{ $theme }}" {{ with $target }} target="{{ . }}" {{ end }}>Paige Theme</a>
     </p>
 
