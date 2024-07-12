@@ -1059,6 +1059,8 @@ Page identifiers:
     <dd>The series.</dd>
     <dt><code>#paige-site-description</code></dt>
     <dd>The site description.</dd>
+    <dt><code>#paige-site-footer</code></dt>
+    <dd>The container of the site copyright, license, and credit content.</dd>
     <dt><code>#paige-site-title</code></dt>
     <dd>The site title.</dd>
     <dt><code>#paige-title</code></dt>

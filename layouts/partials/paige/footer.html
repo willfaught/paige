@@ -62,16 +62,20 @@
     </div>
     {{ end }}
 
-    {{ with $copyright }}
-        <p class="mb-0" id="paige-copyright">{{ . }}</p>
-    {{ end }}
+    {{ if or $copyright $credit $license }}
+        <div class="mb-3" id="paige-site-footer">
+            {{ with $copyright }}
+                <p class="mb-0" id="paige-copyright">{{ . }}</p>
+            {{ end }}
 
-    {{ with $license }}
-        <p class="mb-0" id="paige-license">{{ . }}</p>
-    {{ end }}
+            {{ with $license }}
+                <p class="mb-0" id="paige-license">{{ . }}</p>
+            {{ end }}
 
-    {{ with $credit }}
-        <p class="mb-0" id="paige-credit">{{ . }}</p>
+            {{ with $credit }}
+                <p class="mb-0" id="paige-credit">{{ . }}</p>
+            {{ end }}
+        </div>
     {{ end }}
 
     {{ if templates.Exists "partials/paige/footer-last.html" }}
