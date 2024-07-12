@@ -1,5 +1,0 @@
-{{ $page := . }}
-
-{{ with $page.Param "paige.alert" }}
-    <div class="alert alert-{{ .type }}" role="alert">{{ .message | markdownify }}</div>
-{{ end }}

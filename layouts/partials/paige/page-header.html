@@ -1,7 +1,10 @@
 {{ $page := . }}
 
 {{ partial "paige/page-metadata.html" $page }}
-{{ partial "paige/alert.html" $page }}
+
+{{ with $page.Param "paige.alert" }}
+    <div class="alert alert-{{ .type }}" role="alert">{{ .message | markdownify }}</div>
+{{ end }}
 
 {{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
     <div class="mw-100" id="paige-toc">
