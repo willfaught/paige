@@ -1,6 +1,7 @@
 {{ $page := . }}
 
 {{ $class := slice }}
+{{ $content := $page.Content | replaceRE `(<h[1-6] id="([^"]+)".+)(</h[1-6]+>)` (printf `${1}<a aria-label="%s" class="paige-header-link" href="#${2}"></a>${3}` (i18n "paige_aria_section_link")) }}
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
@@ -45,6 +46,9 @@
 <article {{ with $class }} class="{{ . }}" {{ end }} id="paige-article">
     <div class="align-items-center d-flex flex-column mb-0">
         {{ partial "paige/page-header.html" $page }}
-        {{ partial "paige/content.html" $page }}
+
+        {{ with $content }}
+            <div class="mw-100" id="paige-content">{{ . | safeHTML }}</div>
+        {{ end }}
     </div>
 </article>
