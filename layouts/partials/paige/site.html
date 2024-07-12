@@ -1,8 +1,16 @@
 {{ $page := . }}
 
-{{ with $page.Param "paige.site_title" }}
-    <p class="display-1 fw-bold mb-2 text-center" id="paige-site-title">{{ . | markdownify }}</p>
-{{ end }}
-{{ with $page.Param "paige.site_description" }}
-    <p class="lead text-center" id="paige-site-description">{{ . | markdownify }}</p>
+{{ $description := $page.Param "paige.site_description" }}
+{{ $title := $page.Param "paige.site_title" }}
+
+{{ if or $description $title }}
+    <div class="mb-3" id="paige-site-header">
+        {{ with $title }}
+            <p class="display-1 fw-bold mb-2 text-center" id="paige-site-title">{{ . | markdownify }}</p>
+        {{ end }}
+
+        {{ with $description }}
+            <p class="lead text-center" id="paige-site-description">{{ . | markdownify }}</p>
+        {{ end }}
+    </div>
 {{ end }}
