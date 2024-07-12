@@ -1,10 +1,10 @@
 {{ $page := . }}
 
-{{ partial "paige/script.html" (dict "page" $page "src" "js/paige/bootstrap/bootstrap.bundle.js") }}
+{{ partial "paige/tag-script.html" (dict "page" $page "src" "js/paige/bootstrap/bootstrap.bundle.js") }}
 
 {{ if $page.Param "paige.math" }}
-    {{ partial "paige/script.html" (dict "page" $page "src" "js/paige/katex/katex.min.js") }}
-    {{ partial "paige/script.html" (dict "onload" "renderMathInElement(document.body);" "page" $page "src" "js/paige/katex/auto-render.min.js") }}
+    {{ partial "paige/tag-script.html" (dict "page" $page "src" "js/paige/katex/katex.min.js") }}
+    {{ partial "paige/tag-script.html" (dict "onload" "renderMathInElement(document.body);" "page" $page "src" "js/paige/katex/auto-render.min.js") }}
 {{ end }}
 
 {{ partial "paige/analytics.html" $page }}
