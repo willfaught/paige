@@ -3,7 +3,7 @@
 {{ $ancestors := $page.Ancestors }}
 {{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
 {{ $description := $page.Param "paige.site_description" | markdownify }}
-{{ $first := templates.Exists "partials/paige/header-first.html" }}
+{{ $first := templates.Exists "partials/paige/site-header-first.html" }}
 {{ $last := templates.Exists "partials/paige/header-last.html" }}
 {{ $links := false }}
 {{ $menu := site.Menus.main }}
@@ -35,7 +35,7 @@
 {{ if or $ancestors $description $first $last $menu $title }}
     <header class="my-3" id="paige-site-header">
         {{ if $first }}
-            {{ partial "paige/header-first.html" $page }}
+            {{ partial "paige/site-header-first.html" $page }}
         {{ end }}
 
         {{ with $title }}

@@ -912,20 +912,20 @@ Body: None.
 
 ### Include
 
-| If this file exists                                 | It is included at               |
-| --------------------------------------------------- | ------------------------------- |
-| `yoursite/layouts/partials/paige/body-first.html`   | The beginning of the body tag   |
-| `yoursite/layouts/partials/paige/body-last.html`    | The end of the body tag         |
-| `yoursite/layouts/partials/paige/footer-first.html` | The beginning of the footer tag |
-| `yoursite/layouts/partials/paige/footer-last.html`  | The end of the footer tag       |
-| `yoursite/layouts/partials/paige/head-first.html`   | The beginning of the head tag   |
-| `yoursite/layouts/partials/paige/head-last.html`    | The end of the head tag         |
-| `yoursite/layouts/partials/paige/header-first.html` | The beginning of the header tag |
-| `yoursite/layouts/partials/paige/header-last.html`  | The end of the header tag       |
-| `yoursite/layouts/partials/paige/main-first.html`   | The beginning of the main tag   |
-| `yoursite/layouts/partials/paige/main-last.html`    | The end of the main tag         |
-| `yoursite/layouts/partials/paige/style-first.css`   | The beginning of the style tag  |
-| `yoursite/layouts/partials/paige/style-last.css`    | The end of the style tag        |
+| If this file exists                                      | It is included at                    |
+| ---------------------------------------------------------| -------------------------------------|
+| `yoursite/layouts/partials/paige/body-first.html`        | The beginning of the body tag        |
+| `yoursite/layouts/partials/paige/body-last.html`         | The end of the body tag              |
+| `yoursite/layouts/partials/paige/footer-first.html`      | The beginning of the footer tag      |
+| `yoursite/layouts/partials/paige/footer-last.html`       | The end of the footer tag            |
+| `yoursite/layouts/partials/paige/head-first.html`        | The beginning of the head tag        |
+| `yoursite/layouts/partials/paige/head-last.html`         | The end of the head tag              |
+| `yoursite/layouts/partials/paige/header-last.html`       | The end of the header tag            |
+| `yoursite/layouts/partials/paige/main-first.html`        | The beginning of the main tag        |
+| `yoursite/layouts/partials/paige/main-last.html`         | The end of the main tag              |
+| `yoursite/layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
+| `yoursite/layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
+| `yoursite/layouts/partials/paige/style-last.css`         | The end of the style tag             |
 
 ### Override
 
