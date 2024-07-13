@@ -33,13 +33,13 @@
 {{ end }}
 
 {{ if or $ancestors $description $first $last $menu $title }}
-    <header class="my-3" id="paige-header">
+    <header class="my-3" id="paige-site-header">
         {{ if $first }}
             {{ partial "paige/header-first.html" $page }}
         {{ end }}
 
         {{ if or $description $title }}
-            <div class="mb-3 text-center" id="paige-site-header">
+            <div class="mb-3 text-center">
                 {{ with $title }}
                     <p class="display-1 fw-bold mb-2" id="paige-site-title">{{ . | markdownify }}</p>
                 {{ end }}

@@ -1021,8 +1021,6 @@ Page identifiers:
     <dd>The file history link.</dd>
     <dt><code>#paige-footer</code></dt>
     <dd>The footer.</dd>
-    <dt><code>#paige-header</code></dt>
-    <dd>The header.</dd>
     <dt><code>#paige-keywords</code></dt>
     <dd>The keywords.</dd>
     <dt><code>#paige-license</code></dt>
@@ -1062,7 +1060,7 @@ Page identifiers:
     <dt><code>#paige-site-footer</code></dt>
     <dd>The container of the site copyright, license, and credit.</dd>
     <dt><code>#paige-site-header</code></dt>
-    <dd>The container of the site title and description.</dd>
+    <dd>The site header that contains the site title, description, menu, and breadcrumbs.</dd>
     <dt><code>#paige-site-title</code></dt>
     <dd>The site title.</dd>
     <dt><code>#paige-title</code></dt>
