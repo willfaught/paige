@@ -982,6 +982,8 @@ Use CSS selectors to extend the default styling.
 Page identifiers:
 
 <dl>
+    <dt><code>#paige-alert</code></dt>
+    <dd>The page alert.</dd>
     <dt><code>#paige-article</code></dt>
     <dd>The article.</dd>
     <dt><code>#paige-authors</code></dt>

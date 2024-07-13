@@ -74,7 +74,7 @@
     {{ end }}
 
     {{ with $page.Param "paige.alert" }}
-        <div class="alert alert-{{ .type }} my-3" role="alert">{{ .message | markdownify }}</div>
+        <div class="alert alert-{{ .type }} my-3" id="paige-alert" role="alert">{{ .message | markdownify }}</div>
     {{ end }}
 
     {{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
