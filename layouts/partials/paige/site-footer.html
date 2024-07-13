@@ -15,28 +15,26 @@
     {{ $credit = markdownify $credit }}
 {{ end }}
 
-<footer class="my-3" id="paige-site-footer">
-    {{ if $first }}
-        {{ partial "paige/footer-first.html" . }}
-    {{ end }}
+{{ if or $copyright $credit $first $last $license }}
+    <footer class="my-3" id="paige-site-footer">
+        {{ if $first }}
+            {{ partial "paige/footer-first.html" . }}
+        {{ end }}
 
-    {{ if or $copyright $credit $license }}
-        <div class="mb-3" id="paige-site-footer">
-            {{ with $copyright }}
-                <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
-            {{ end }}
+        {{ with $copyright }}
+            <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
+        {{ end }}
 
-            {{ with $license }}
-                <p class="mb-0 text-center text-secondary" id="paige-license">{{ . }}</p>
-            {{ end }}
+        {{ with $license }}
+            <p class="mb-0 text-center text-secondary" id="paige-license">{{ . }}</p>
+        {{ end }}
 
-            {{ with $credit }}
-                <p class="mb-0 text-center text-secondary" id="paige-credit">{{ . }}</p>
-            {{ end }}
-        </div>
-    {{ end }}
+        {{ with $credit }}
+            <p class="mb-0 text-center text-secondary" id="paige-credit">{{ . }}</p>
+        {{ end }}
 
-    {{ if $last }}
-        {{ partial "paige/footer-last.html" . }}
-    {{ end }}
-</footer>
+        {{ if $last }}
+            {{ partial "paige/footer-last.html" . }}
+        {{ end }}
+    </footer>
+{{ end }}
