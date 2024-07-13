@@ -1010,8 +1010,6 @@ Page identifiers:
     <dd>The file edit link.</dd>
     <dt><code>#paige-file-history</code></dt>
     <dd>The file history link.</dd>
-    <dt><code>#paige-footer</code></dt>
-    <dd>The footer.</dd>
     <dt><code>#paige-keywords</code></dt>
     <dd>The keywords.</dd>
     <dt><code>#paige-license</code></dt>
