@@ -24,7 +24,7 @@
     {{ end }}
 
     {{ if or $authors $date $keywords $readingtime $series }}
-        <div id="paige-metadata-rest">
+        <div class="my-3" id="paige-metadata-rest">
             {{ with $keywords }}
                 <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
                     {{ range $i, $term := . -}}
@@ -74,11 +74,11 @@
     {{ end }}
 
     {{ with $page.Param "paige.alert" }}
-        <div class="alert alert-{{ .type }}" role="alert">{{ .message | markdownify }}</div>
+        <div class="alert alert-{{ .type }} my-3" role="alert">{{ .message | markdownify }}</div>
     {{ end }}
 
     {{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
-        <div class="mw-100" id="paige-toc">
+        <div class="my-3" id="paige-toc">
             <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
                 {{ $page.TableOfContents }}
             </div>
