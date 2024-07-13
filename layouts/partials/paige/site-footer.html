@@ -13,7 +13,7 @@
     {{ $credit = markdownify $credit }}
 {{ end }}
 
-<footer class="mb-3 text-center text-secondary" id="paige-footer">
+<footer class="my-3 text-center text-secondary" id="paige-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
