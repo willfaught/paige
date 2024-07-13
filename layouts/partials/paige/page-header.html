@@ -12,7 +12,7 @@
 {{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
 {{ $title := $page.Title | markdownify }}
 
-<div class="mw-100" id="paige-metadata">
+<header class="mw-100 align-items-center d-flex flex-column" id="paige-page-header">
     {{ with $title }}
         <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
     {{ end }}
@@ -70,16 +70,16 @@
             {{ end }}
         </div>
     {{ end }}
-</div>
 
-{{ with $page.Param "paige.alert" }}
-    <div class="alert alert-{{ .type }}" role="alert">{{ .message | markdownify }}</div>
-{{ end }}
+    {{ with $page.Param "paige.alert" }}
+        <div class="alert alert-{{ .type }}" role="alert">{{ .message | markdownify }}</div>
+    {{ end }}
 
-{{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
-    <div class="mw-100" id="paige-toc">
-        <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
-            {{ $page.TableOfContents }}
+    {{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
+        <div class="mw-100" id="paige-toc">
+            <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
+                {{ $page.TableOfContents }}
+            </div>
         </div>
-    </div>
-{{ end }}
+    {{ end }}
+</header>
