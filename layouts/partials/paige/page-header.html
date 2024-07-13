@@ -17,7 +17,7 @@
 {{ $keywords := sort (append $categories $tags) "Title" }}
 
 {{ if or $authors $date $description $keywords $readingtime $series $table $title }}
-    <header class="mw-100 align-items-center d-flex flex-column" id="paige-page-header">
+    <header class="align-items-center d-flex flex-column mw-100" id="paige-page-header">
         {{ with $title }}
             <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
         {{ end }}
