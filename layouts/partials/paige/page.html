@@ -41,7 +41,7 @@
     {{ end }}
 {{ end }}
 
-{{ $class = delimit ($class | uniq) " " }}
+{{ $class = delimit ($class | uniq | sort) " " }}
 
 <article class="{{ $class }}" id="paige-article">
     {{ partial "paige/page-header.html" $page }}
