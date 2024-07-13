@@ -47,7 +47,7 @@
         {{ end }}
 
         {{ with $menu }}
-            <nav class="my-3">
+            <nav class="my-3" id="paige-menu">
                 <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                     {{ range . }}
                         {{ $menupath := strings.TrimPrefix $basepath .URL }}
