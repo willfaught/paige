@@ -1,5 +1,6 @@
 {{ $page := . }}
 
+{{ $alert := $page.Param "paige.alert" }}
 {{ $authors := partial "paige/authors.html" $page }}
 {{ $categories := $page.GetTerms "categories" }}
 {{ $date := and $page.IsPage $page.PublishDate }}
@@ -8,80 +9,83 @@
 {{ $link := $page.Params.link }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.GetTerms "series" }}
+{{ $table := and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
 {{ $tags := $page.GetTerms "tags" }}
 {{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
 {{ $title := $page.Title | markdownify }}
 
 {{ $keywords := sort (append $categories $tags) "Title" }}
 
-<header class="mw-100 align-items-center d-flex flex-column" id="paige-page-header">
-    {{ with $title }}
-        <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
-    {{ end }}
+{{ if or $authors $date $description $keywords $readingtime $series $table $title }}
+    <header class="mw-100 align-items-center d-flex flex-column" id="paige-page-header">
+        {{ with $title }}
+            <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
+        {{ end }}
 
-    {{ with $description }}
-        <p class="lead text-center" id="paige-description">{{ . }}</p>
-    {{ end }}
+        {{ with $description }}
+            <p class="lead text-center" id="paige-description">{{ . }}</p>
+        {{ end }}
 
-    {{ if or $authors $date $keywords $readingtime $series }}
-        <div class="my-3" id="paige-metadata-rest">
-            {{ with $keywords }}
-                <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
-                    {{ range $i, $term := . -}}
-                        {{- if $textkeywords -}}
+        {{ if or $authors $date $keywords $readingtime $series }}
+            <div class="my-3" id="paige-metadata-rest">
+                {{ with $keywords }}
+                    <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
+                        {{ range $i, $term := . -}}
+                            {{- if $textkeywords -}}
+                                {{- if gt $i 0 }} · {{ end -}}
+
+                                <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                            {{- else -}}
+                                {{- if gt $i 0 }} {{ end -}}
+
+                                <a class="badge paige-keyword text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                            {{- end -}}
+                        {{- end }}
+                    </p>
+                {{ end }}
+
+                {{ with $series }}
+                    <p class="mb-0 text-center text-secondary" id="paige-series">
+                        {{ range $i, $series := . -}}
                             {{- if gt $i 0 }} · {{ end -}}
 
-                            <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
-                        {{- else -}}
-                            {{- if gt $i 0 }} {{ end -}}
+                            <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{- end }}
+                    </p>
+                {{ end }}
 
-                            <a class="badge paige-keyword text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
-                        {{- end -}}
-                    {{- end }}
-                </p>
-            {{ end }}
+                {{ with $authors }}
+                    <p class="mb-0 text-center text-secondary" id="paige-authors">
+                        {{ range $i, $author := . -}}
+                            {{- if gt $i 0 }} · {{ end -}}
 
-            {{ with $series }}
-                <p class="mb-0 text-center text-secondary" id="paige-series">
-                    {{ range $i, $series := . -}}
-                        {{- if gt $i 0 }} · {{ end -}}
+                            <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{- end }}
+                    </p>
+                {{ end }}
 
-                        <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    {{- end }}
-                </p>
-            {{ end }}
+                {{ with $date }}
+                    <p class="mb-0 text-center text-secondary" id="paige-date">
+                        <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+                    </p>
+                {{ end }}
 
-            {{ with $authors }}
-                <p class="mb-0 text-center text-secondary" id="paige-authors">
-                    {{ range $i, $author := . -}}
-                        {{- if gt $i 0 }} · {{ end -}}
-
-                        <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    {{- end }}
-                </p>
-            {{ end }}
-
-            {{ with $date }}
-                <p class="mb-0 text-center text-secondary" id="paige-date">
-                    <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
-                </p>
-            {{ end }}
-
-            {{ with $readingtime }}
-                <p class="mb-0 text-center text-secondary" id="paige-reading-time">{{ . }} {{ i18n "paige_minutes" . }}</p>
-            {{ end }}
-        </div>
-    {{ end }}
-
-    {{ with $page.Param "paige.alert" }}
-        <div class="alert alert-{{ .type }} my-3" id="paige-alert" role="alert">{{ .message | markdownify }}</div>
-    {{ end }}
-
-    {{ if and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) }}
-        <div class="my-3" id="paige-toc">
-            <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
-                {{ $page.TableOfContents }}
+                {{ with $readingtime }}
+                    <p class="mb-0 text-center text-secondary" id="paige-reading-time">{{ . }} {{ i18n "paige_minutes" . }}</p>
+                {{ end }}
             </div>
-        </div>
-    {{ end }}
-</header>
+        {{ end }}
+
+        {{ with $alert }}
+            <div class="alert alert-{{ .type }} my-3" id="paige-alert" role="alert">{{ .message | markdownify }}</div>
+        {{ end }}
+
+        {{ if $table }}
+            <div class="my-3" id="paige-toc">
+                <div class="border mb-3 pe-3 ps-3 pt-3 rounded">
+                    {{ $page.TableOfContents }}
+                </div>
+            </div>
+        {{ end }}
+    </header>
+{{ end }}
