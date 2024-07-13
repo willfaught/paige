@@ -2,14 +2,14 @@
 
 {{ $ancestors := $page.Ancestors }}
 {{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
-{{ $description := $page.Param "paige.site_description" }}
+{{ $description := $page.Param "paige.site_description" | markdownify }}
 {{ $first := templates.Exists "partials/paige/header-first.html" }}
 {{ $last := templates.Exists "partials/paige/header-last.html" }}
 {{ $links := false }}
 {{ $menu := site.Menus.main }}
 {{ $pills := false }}
 {{ $tabs := false }}
-{{ $title := $page.Param "paige.site_title" }}
+{{ $title := $page.Param "paige.site_title" | markdownify }}
 {{ $underline := false }}
 
 {{ if eq $basepath "/" }}
@@ -39,11 +39,11 @@
         {{ end }}
 
         {{ with $title }}
-            <p class="display-1 fw-bold mb-2 text-center" id="paige-site-title">{{ . | markdownify }}</p>
+            <p class="display-1 fw-bold mb-2 text-center" id="paige-site-title">{{ . }}</p>
         {{ end }}
 
         {{ with $description }}
-            <p class="lead text-center" id="paige-site-description">{{ . | markdownify }}</p>
+            <p class="lead text-center" id="paige-site-description">{{ . }}</p>
         {{ end }}
 
         {{ with $menu }}
