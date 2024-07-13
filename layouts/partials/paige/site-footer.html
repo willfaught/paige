@@ -13,7 +13,7 @@
     {{ $credit = markdownify $credit }}
 {{ end }}
 
-<footer class="my-3 text-center text-secondary" id="paige-site-footer">
+<footer class="my-3" id="paige-site-footer">
     {{ if templates.Exists "partials/paige/footer-first.html" }}
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
@@ -21,15 +21,15 @@
     {{ if or $copyright $credit $license }}
         <div class="mb-3" id="paige-site-footer">
             {{ with $copyright }}
-                <p class="mb-0" id="paige-copyright">{{ . }}</p>
+                <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
             {{ end }}
 
             {{ with $license }}
-                <p class="mb-0" id="paige-license">{{ . }}</p>
+                <p class="mb-0 text-center text-secondary" id="paige-license">{{ . }}</p>
             {{ end }}
 
             {{ with $credit }}
-                <p class="mb-0" id="paige-credit">{{ . }}</p>
+                <p class="mb-0 text-center text-secondary" id="paige-credit">{{ . }}</p>
             {{ end }}
         </div>
     {{ end }}
