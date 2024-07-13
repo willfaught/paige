@@ -39,15 +39,15 @@
         {{ end }}
 
         {{ with $title }}
-            <p class="display-1 fw-bold mb-2 text-center" id="paige-site-title">{{ . }}</p>
+            <p class="display-1 fw-bold mb-2 mt-3 text-center" id="paige-site-title">{{ . }}</p>
         {{ end }}
 
         {{ with $description }}
-            <p class="lead text-center" id="paige-site-description">{{ . }}</p>
+            <p class="lead mb-3 mt-2 text-center" id="paige-site-description">{{ . }}</p>
         {{ end }}
 
         {{ with $menu }}
-            <nav>
+            <nav class="my-3">
                 <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                     {{ range . }}
                         {{ $menupath := strings.TrimPrefix $basepath .URL }}
@@ -81,7 +81,7 @@
         {{ end }}
 
         {{ with $ancestors }}
-            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="mt-3" id="paige-breadcrumbs">
+            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="my-3" id="paige-breadcrumbs">
                 <div class="d-flex justify-content-center">
                     <ol class="breadcrumb mb-0">
                         {{ $reverse := .Reverse }}
