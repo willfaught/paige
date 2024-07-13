@@ -22,6 +22,9 @@ paige_first:
 paige_last:
   other: Último
 
+paige_menu:
+  other: Menú
+
 paige_minutes:
   one: minuto
   other: minutos

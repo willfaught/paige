@@ -22,6 +22,9 @@ paige_first:
 paige_last:
   other: 最後
 
+paige_menu:
+  other: メニュー
+
 paige_minutes:
   one: 分
   other: 分

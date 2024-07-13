@@ -22,6 +22,9 @@ paige_first:
 paige_last:
   other: الأخير
 
+paige_menu:
+  other: قائمة
+
 paige_minutes:
   one: دقيقة
   other: دقائق

@@ -22,6 +22,9 @@ paige_first:
 paige_last:
   other: শেষ
 
+paige_menu:
+  other: মেনু
+
 paige_minutes:
   one: মিনিট
   other: মিনিট

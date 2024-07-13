@@ -22,6 +22,9 @@ paige_first:
 paige_last:
   other: 最后
 
+paige_menu:
+  other: 菜单
+
 paige_minutes:
   one: 分钟
   other: 几分钟
