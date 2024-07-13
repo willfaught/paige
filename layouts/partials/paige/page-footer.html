@@ -2,57 +2,64 @@
 
 {{ $fileediturl := $page.Param "paige.file_edit_url" }}
 {{ $filehistoryurl := $page.Param "paige.file_history_url" }}
+{{ $file := false }}
+{{ $first := templates.Exists "partials/paige/page-footer-first.html" }}
+{{ $last := templates.Exists "partials/paige/page-footer-last.html" }}
 {{ $next := $page.NextInSection }}
 {{ $prev := $page.PrevInSection }}
 
 {{ if $page.File }}
     {{ if $fileediturl }}
+        {{ $file = true }}
         {{ $fileediturl = printf $fileediturl $page.File.Path }}
     {{ end }}
 
     {{ if $filehistoryurl }}
+        {{ $file = true }}
         {{ $filehistoryurl = printf $filehistoryurl $page.File.Path }}
     {{ end }}
 {{ end }}
 
-<footer class="mt-3 text-center text-secondary" id="paige-page-footer">
-    {{ if templates.Exists "partials/paige/page-footer-first.html" }}
-        {{ partial "paige/page-footer-first.html" . }}
-    {{ end }}
+{{ if or $file $first $last $next $prev }}
+    <footer class="mt-3 mw-100 text-center text-secondary" id="paige-page-footer">
+        {{ if $first }}
+            {{ partial "paige/page-footer-first.html" . }}
+        {{ end }}
 
-    {{ if or $next $prev }}
-        <div class="mb-3" id="paige-prev-next">
-            {{ with $prev }}
-                <p class="mb-0" id="paige-next">
-                    <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;
+        {{ if or $next $prev }}
+            <div class="mb-3" id="paige-prev-next">
+                {{ with $prev }}
+                    <p class="mb-0" id="paige-next">
+                        <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;
+                    </p>
+                {{ end }}
+
+                {{ with $next }}
+                    <p class="mb-0" id="paige-prev">
+                        &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
+                    </p>
+                {{ end }}
+            </div>
+        {{ end }}
+
+        {{ if $file }}
+        <div id="paige-file">
+            {{ if $fileediturl }}
+                <p class="mb-0" id="paige-file-edit">
+                    <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
                 </p>
             {{ end }}
 
-            {{ with $next }}
-                <p class="mb-0" id="paige-prev">
-                    &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ if $filehistoryurl }}
+                <p class="mb-0" id="paige-file-history">
+                    <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
                 </p>
             {{ end }}
         </div>
-    {{ end }}
-
-    {{ if and $page.File (or $fileediturl $filehistoryurl) }}
-    <div id="paige-file">
-        {{ if $fileediturl }}
-            <p class="mb-0" id="paige-file-edit">
-                <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
-            </p>
         {{ end }}
 
-        {{ if $filehistoryurl }}
-            <p class="mb-0" id="paige-file-history">
-                <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
-            </p>
+        {{ if $last }}
+            {{ partial "paige/page-footer-last.html" . }}
         {{ end }}
-    </div>
-    {{ end }}
-
-    {{ if templates.Exists "partials/paige/page-footer-last.html" }}
-        {{ partial "paige/page-footer-last.html" . }}
-    {{ end }}
-</footer>
+    </footer>
+{{ end }}
