@@ -62,6 +62,12 @@
                             {{ with .Children }}
                                 <ul class="dropdown-menu">
                                     {{ range . }}
+                                        {{ if .Params.paige.divider_above }}
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                        {{ end }}
+
                                         <li>
                                             <a class="{{ if .Params.paige.disabled }} disabled {{ end }} dropdown-item" href="{{ .URL | safeURL }}" {{ with partial "paige/target.html" (dict "page" $page "url" .URL) }} target="{{ . }}" {{ end }}>{{ .Name }}</a>
                                         </li>

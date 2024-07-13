@@ -331,11 +331,14 @@ url = "/blog/"
 weight = 20
 
 [[languages.en.menu.main]]
-identifier = "life"
-name = "Life"
+identifier = "personal"
+name = "Personal"
 parent = "blog"
-url = "/blog/life/"
+url = "/blog/personal/"
 weight = 10
+
+[languages.en.menu.main.params.paige]
+divider_below = true
 
 [[languages.en.menu.main]]
 identifier = "work"
@@ -345,7 +348,7 @@ url = "/blog/work/"
 weight = 20
 
 [languages.en.menu.main.params.paige]
-divider_below = true
+disabled = true
 
 [[languages.en.menu.main]]
 identifier = "interests"
@@ -355,19 +358,7 @@ url = "/blog/interests/"
 weight = 30
 
 [languages.en.menu.main.params.paige]
-disabled = true
-
-[[languages.en.menu.main]]
-identifier = "tags"
-name = "Tags"
-url = "/tags/"
-weight = 30
-
-[[languages.en.menu.main]]
-identifier = "search"
-name = "Search"
-url = "/search/"
-weight = 40
+divider_above = true
 ```
 
 If you intend for the menu to be sufficient for all navigation,
