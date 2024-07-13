@@ -26,24 +26,8 @@
             {{ partial "paige/page-footer-first.html" . }}
         {{ end }}
 
-        {{ if or $next $prev }}
-            <div class="mb-3" id="paige-prev-next">
-                {{ with $prev }}
-                    <p class="mb-0" id="paige-next">
-                        <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;
-                    </p>
-                {{ end }}
-
-                {{ with $next }}
-                    <p class="mb-0" id="paige-prev">
-                        &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
-                    </p>
-                {{ end }}
-            </div>
-        {{ end }}
-
         {{ if $file }}
-            <div id="paige-file">
+            <div class="mb-3" id="paige-file">
                 {{ if $fileediturl }}
                     <p class="mb-0" id="paige-file-edit">
                         <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
@@ -53,6 +37,22 @@
                 {{ if $filehistoryurl }}
                     <p class="mb-0" id="paige-file-history">
                         <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
+                    </p>
+                {{ end }}
+            </div>
+        {{ end }}
+
+        {{ if or $next $prev }}
+            <div id="paige-prev-next">
+                {{ with $prev }}
+                    <p class="mb-0" id="paige-next">
+                        <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;
+                    </p>
+                {{ end }}
+
+                {{ with $next }}
+                    <p class="mb-0" id="paige-prev">
+                        &lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a>
                     </p>
                 {{ end }}
             </div>
