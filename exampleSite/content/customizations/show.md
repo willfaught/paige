@@ -10,6 +10,7 @@ title = "Show Data"
 credit = "Paige Theme"
 style = """
 #paige-authors,
+#paige-breadcrumbs,
 #paige-date,
 #paige-file,
 #paige-keywords,
@@ -43,6 +44,7 @@ paige:
     disable: false
   style: |
     #paige-authors,
+    #paige-breadcrumbs,
     #paige-date,
     #paige-file,
     #paige-keywords,
