@@ -12,6 +12,8 @@
 {{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
 {{ $title := $page.Title | markdownify }}
 
+{{ $keywords := sort (append $categories $tags) "Title" }}
+
 <header class="mw-100 align-items-center d-flex flex-column" id="paige-page-header">
     {{ with $title }}
         <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
@@ -21,11 +23,11 @@
         <p class="lead text-center" id="paige-description">{{ . }}</p>
     {{ end }}
 
-    {{ if or $authors $categories $date $readingtime $series $tags }}
+    {{ if or $authors $date $keywords $readingtime $series }}
         <div id="paige-metadata-rest">
-            {{ if or $categories $tags }}
+            {{ with $keywords }}
                 <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
-                    {{ range $i, $term := sort (append $categories $tags) "Title" -}}
+                    {{ range $i, $term := . -}}
                         {{- if $textkeywords -}}
                             {{- if gt $i 0 }} · {{ end -}}
 
