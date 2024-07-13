@@ -50,5 +50,7 @@
         {{ with $content }}
             <div class="mw-100" id="paige-content">{{ . | safeHTML }}</div>
         {{ end }}
+
+        {{ partial "paige/page-footer.html" $page }}
     </div>
 </article>
