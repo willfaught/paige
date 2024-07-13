@@ -2,6 +2,8 @@
 
 {{ $copyright := site.Copyright | markdownify }}
 {{ $credit := $page.Param "paige.credit" }}
+{{ $first := templates.Exists "partials/paige/footer-first.html" }}
+{{ $last := templates.Exists "partials/paige/footer-last.html" }}
 {{ $theme := "https://github.com/willfaught/paige" }}
 {{ $license := $page.Param "paige.license" | markdownify }}
 
@@ -14,7 +16,7 @@
 {{ end }}
 
 <footer class="my-3" id="paige-site-footer">
-    {{ if templates.Exists "partials/paige/footer-first.html" }}
+    {{ if $first }}
         {{ partial "paige/footer-first.html" . }}
     {{ end }}
 
@@ -34,7 +36,7 @@
         </div>
     {{ end }}
 
-    {{ if templates.Exists "partials/paige/footer-last.html" }}
+    {{ if $last }}
         {{ partial "paige/footer-last.html" . }}
     {{ end }}
 </footer>
