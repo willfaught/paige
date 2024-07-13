@@ -1022,8 +1022,6 @@ Page identifiers:
     <dd>The menu.</dd>
     <dt><code>#paige-metadata</code></dt>
     <dd>The metadata.</dd>
-    <dt><code>#paige-metadata-rest</code></dt>
-    <dd>The metadata except for the title and description.</dd>
     <dt><code>#paige-next</code></dt>
     <dd>The next page link.</dd>
     <dt><code>#paige-pages</code></dt>

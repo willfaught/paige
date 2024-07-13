@@ -27,7 +27,7 @@
         {{ end }}
 
         {{ if or $authors $date $keywords $readingtime $series }}
-            <div class="my-3" id="paige-metadata-rest">
+            <div class="my-3">
                 {{ with $keywords }}
                     <p class="{{ if $textkeywords }} mb-0 {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
                         {{ range $i, $term := . -}}
