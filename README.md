@@ -913,6 +913,8 @@ Body: None.
 | `yoursite/layouts/partials/paige/head-last.html`         | The end of the head tag              |
 | `yoursite/layouts/partials/paige/main-first.html`        | The beginning of the main tag        |
 | `yoursite/layouts/partials/paige/main-last.html`         | The end of the main tag              |
+| `yoursite/layouts/partials/paige/page-header-first.html` | The beginning of the page header tag |
+| `yoursite/layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
 | `yoursite/layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
 | `yoursite/layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
 | `yoursite/layouts/partials/paige/style-first.css`        | The beginning of the style tag       |

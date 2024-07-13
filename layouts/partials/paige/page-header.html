@@ -6,6 +6,8 @@
 {{ $date := and $page.IsPage $page.PublishDate }}
 {{ $dateformat := $page.Param "paige.date_format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify }}
+{{ $first := templates.Exists "partials/paige/page-header-first.html" }}
+{{ $last := templates.Exists "partials/paige/page-header-last.html" }}
 {{ $link := $page.Params.link }}
 {{ $readingtime := $page.ReadingTime }}
 {{ $series := $page.GetTerms "series" }}
@@ -16,8 +18,12 @@
 
 {{ $keywords := sort (append $categories $tags) "Title" }}
 
-{{ if or $authors $date $description $keywords $readingtime $series $table $title }}
+{{ if or $authors $date $description $first $keywords $last $readingtime $series $table $title }}
     <header class="align-items-center d-flex flex-column mw-100" id="paige-page-header">
+        {{ if $first }}
+            {{ partial "paige/page-header-first.html" . }}
+        {{ end }}
+
         {{ with $title }}
             <h1 class="fw-bold text-center" id="paige-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
         {{ end }}
@@ -86,6 +92,10 @@
                     {{ $page.TableOfContents }}
                 </div>
             </div>
+        {{ end }}
+
+        {{ if $last }}
+            {{ partial "paige/page-header-last.html" . }}
         {{ end }}
     </header>
 {{ end }}
