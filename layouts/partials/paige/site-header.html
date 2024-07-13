@@ -38,16 +38,12 @@
             {{ partial "paige/header-first.html" $page }}
         {{ end }}
 
-        {{ if or $description $title }}
-            <div class="mb-3 text-center">
-                {{ with $title }}
-                    <p class="display-1 fw-bold mb-2" id="paige-site-title">{{ . | markdownify }}</p>
-                {{ end }}
+        {{ with $title }}
+            <p class="display-1 fw-bold mb-2 text-center" id="paige-site-title">{{ . | markdownify }}</p>
+        {{ end }}
 
-                {{ with $description }}
-                    <p class="lead" id="paige-site-description">{{ . | markdownify }}</p>
-                {{ end }}
-            </div>
+        {{ with $description }}
+            <p class="lead text-center" id="paige-site-description">{{ . | markdownify }}</p>
         {{ end }}
 
         {{ with $menu }}
