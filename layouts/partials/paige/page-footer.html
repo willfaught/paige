@@ -43,19 +43,19 @@
         {{ end }}
 
         {{ if $file }}
-        <div id="paige-file">
-            {{ if $fileediturl }}
-                <p class="mb-0" id="paige-file-edit">
-                    <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
-                </p>
-            {{ end }}
+            <div id="paige-file">
+                {{ if $fileediturl }}
+                    <p class="mb-0" id="paige-file-edit">
+                        <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
+                    </p>
+                {{ end }}
 
-            {{ if $filehistoryurl }}
-                <p class="mb-0" id="paige-file-history">
-                    <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
-                </p>
-            {{ end }}
-        </div>
+                {{ if $filehistoryurl }}
+                    <p class="mb-0" id="paige-file-history">
+                        <a class="link-secondary" href="{{ $filehistoryurl | safeURL }}">{{ i18n "paige_edit_history" }}</a>
+                    </p>
+                {{ end }}
+            </div>
         {{ end }}
 
         {{ if $last }}
