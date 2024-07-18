@@ -9,7 +9,7 @@ title = "Show Data"
 [paige]
 credit = "Paige Theme"
 edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
-file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
 [paige.list_page]
 hide_authors = false
@@ -45,7 +45,7 @@ This page has the following parameters:
 [paige]
 credit = "Paige Theme"
 edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
-file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
 [paige.list_page]
 hide_authors = false
