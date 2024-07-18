@@ -8,7 +8,7 @@ hide_sections = true
 hide_title = true
 +++
 
-{{< paige/image alt="Landscape" breakpoints=true class="mt-3 object-fit-cover rounded-4 shadow-lg" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" >}}
+{{< paige/image alt="Landscape" breakpoints=true class="mt-3 object-fit-cover rounded-4 shadow" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" >}}
 
 <h1 class="display-5 fw-bold mb-2 text-center">An advanced Hugo theme</h1>
 
