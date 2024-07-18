@@ -8,40 +8,52 @@ tags = ["singles", "style"]
 title = "Style Data"
 [paige]
 credit = "Paige Theme"
+file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+license = "MIT License"
 style = """
 #paige-authors,
+#paige-breadcrumbs,
+#paige-content,
+#paige-copyright,
+#paige-credit,
 #paige-date,
+#paige-description,
 #paige-file,
 #paige-keywords,
-#paige-prev-next,
+#paige-license,
+#paige-menu,
+#paige-page-title,
+#paige-page-description,
 #paige-reading-time,
 #paige-series,
-#paige-toc,
-.paige-authors,
-.paige-date,
-.paige-keywords,
-.paige-reading-time,
-.paige-series,
-.paige-summary {
-    display: block;
+#paige-siblings,
+#paige-site-title,
+#paige-site-description,
+#paige-toc {
+    font-style: italic;
 }
-#paige-authors { font-style: italic; }
-#paige-content { font-style: italic; }
-#paige-date { font-style: italic; }
-#paige-description { font-style: italic; }
-#paige-file { font-style: italic; }
-#paige-keywords { font-style: italic; }
-#paige-reading-time { font-style: italic; }
-#paige-series { font-style: italic; }
-#paige-title { font-style: italic; }
-#paige-toc { font-style: italic; }
-#paige-copyright { font-style: italic; }
-.paige-authors { font-style: italic; }
-.paige-date { font-style: italic; }
-.paige-keyword { font-style: italic; }
-.paige-series { font-style: italic; }
-.paige-summary { font-style: italic; }
 """
+[paige.list_page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_reading_time = false
+hide_series = false
+hide_summary = false
+[paige.page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_next = false
+hide_prev = false
+hide_reading_time = false
+hide_series = false
+hide_toc = false
+[paige.site]
+hide_breadcrumbs = false
+hide_credit = false
+hide_license = false
 +++
 
 This page styles some data differently than the rest of the site.
@@ -52,42 +64,53 @@ This page styles some data differently than the rest of the site.
 
 This page has the following parameters:
 
-```yaml
-paige:
-  credit: "Paige Theme"
-  file_link:
-    disable: false
-  style: |
-    #paige-authors,
-    #paige-date,
-    #paige-file,
-    #paige-keywords,
-    #paige-prev-next,
-    #paige-reading-time,
-    #paige-series,
-    #paige-toc,
-    .paige-authors,
-    .paige-date,
-    .paige-keywords,
-    .paige-reading-time,
-    .paige-series,
-    .paige-summary {
-        display: block;
-    }
-    #paige-authors { font-style: italic; }
-    #paige-content { font-style: italic; }
-    #paige-date { font-style: italic; }
-    #paige-description { font-style: italic; }
-    #paige-file { font-style: italic; }
-    #paige-keywords { font-style: italic; }
-    #paige-reading-time { font-style: italic; }
-    #paige-series { font-style: italic; }
-    #paige-title { font-style: italic; }
-    #paige-toc { font-style: italic; }
-    #paige-copyright { font-style: italic; }
-    .paige-authors { font-style: italic; }
-    .paige-date { font-style: italic; }
-    .paige-keyword { font-style: italic; }
-    .paige-series { font-style: italic; }
-    .paige-summary { font-style: italic; }
+```toml
+[paige]
+credit = "Paige Theme"
+file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+license = "MIT License"
+style = """
+#paige-authors,
+#paige-breadcrumbs,
+#paige-content,
+#paige-copyright,
+#paige-credit,
+#paige-date,
+#paige-description,
+#paige-file,
+#paige-keywords,
+#paige-license,
+#paige-menu,
+#paige-page-title,
+#paige-page-description,
+#paige-reading-time,
+#paige-series,
+#paige-siblings,
+#paige-site-title,
+#paige-site-description,
+#paige-toc {
+    font-style: italic;
+}
+"""
+[paige.list_page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_reading_time = false
+hide_series = false
+hide_summary = false
+[paige.page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_next = false
+hide_prev = false
+hide_reading_time = false
+hide_series = false
+hide_toc = false
+[paige.site]
+hide_breadcrumbs = false
+hide_credit = false
+hide_license = false
 ```

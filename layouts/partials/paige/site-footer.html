@@ -1,36 +1,38 @@
 {{ $page := . }}
 
-{{ $copyright := site.Copyright | markdownify }}
+{{ $copyright := $page.Param "paige.copyright" | default site.Copyright | markdownify | and ($page.Param "paige.site.hide_copyright" | not) }}
 {{ $credit := $page.Param "paige.credit" }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
+{{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.hide_license" | not) }}
 {{ $theme := "https://github.com/willfaught/paige" }}
-{{ $license := $page.Param "paige.license" | markdownify }}
 
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
 
 {{ if eq $credit nil }}
-    {{ $credit = `<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>` | markdownify }}
+    {{ $credit = `<a class="link-secondary text-decoration-none" href="{{ $theme }}" {{ with $target }} target="{{ . }}" {{ end }}>Paige Theme</a>` | markdownify }}
 {{ else }}
     {{ $credit = markdownify $credit }}
 {{ end }}
 
+{{ $credit = $credit | and ($page.Param "paige.site.hide_credit" | not) }}
+
 {{ if or $copyright $credit $first $last $license }}
-    <footer class="my-3" id="paige-site-footer">
+    <footer id="paige-site-footer">
         {{ if $first }}
             {{ partial "paige/footer-first.html" . }}
         {{ end }}
 
         {{ with $copyright }}
-            <p class="mb-0 text-center text-secondary" id="paige-copyright">{{ . }}</p>
+            <p class="paige-row-narrow text-center text-secondary" id="paige-copyright">{{ . }}</p>
         {{ end }}
 
         {{ with $license }}
-            <p class="mb-0 text-center text-secondary" id="paige-license">{{ . }}</p>
+            <p class="paige-row-narrow text-center text-secondary" id="paige-license">{{ . }}</p>
         {{ end }}
 
         {{ with $credit }}
-            <p class="mb-0 text-center text-secondary" id="paige-credit">{{ . }}</p>
+            <p class="paige-row-narrow text-center text-secondary" id="paige-credit">{{ . }}</p>
         {{ end }}
 
         {{ if $last }}

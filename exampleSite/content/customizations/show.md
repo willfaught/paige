@@ -8,25 +8,29 @@ tags = ["show", "singles"]
 title = "Show Data"
 [paige]
 credit = "Paige Theme"
-style = """
-#paige-authors,
-#paige-breadcrumbs,
-#paige-date,
-#paige-file,
-#paige-keywords,
-#paige-prev-next,
-#paige-reading-time,
-#paige-series,
-#paige-toc,
-.paige-authors,
-.paige-date,
-.paige-keywords,
-.paige-reading-time,
-.paige-series,
-.paige-summary {
-    display: block;
-}
-"""
+file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+license = "MIT License"
+[paige.list_page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_reading_time = false
+hide_series = false
+hide_summary = false
+[paige.page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_next = false
+hide_prev = false
+hide_reading_time = false
+hide_series = false
+hide_toc = false
+[paige.site]
+hide_breadcrumbs = false
+hide_credit = false
+hide_license = false
 +++
 
 This page shows some data that the rest of the site hides.
@@ -37,27 +41,30 @@ This page shows some data that the rest of the site hides.
 
 This page has the following parameters:
 
-```yaml
-paige:
-  credit: "Paige Theme"
-  file_link:
-    disable: false
-  style: |
-    #paige-authors,
-    #paige-breadcrumbs,
-    #paige-date,
-    #paige-file,
-    #paige-keywords,
-    #paige-prev-next,
-    #paige-reading-time,
-    #paige-series,
-    #paige-toc,
-    .paige-authors,
-    .paige-date,
-    .paige-keywords,
-    .paige-reading-time,
-    .paige-series,
-    .paige-summary {
-        display: block;
-    }
+```toml
+[paige]
+credit = "Paige Theme"
+file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+license = "MIT License"
+[paige.list_page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_reading_time = false
+hide_series = false
+hide_summary = false
+[paige.page]
+hide_authors = false
+hide_date = false
+hide_keywords = false
+hide_next = false
+hide_prev = false
+hide_reading_time = false
+hide_series = false
+hide_toc = false
+[paige.site]
+hide_breadcrumbs = false
+hide_credit = false
+hide_license = false
 ```

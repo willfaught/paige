@@ -1,19 +1,14 @@
 +++
 title = "Paige"
-[paige]
-style = """
-#paige-collections,
-#paige-metadata,
-#paige-sections,
-#paige-pages {
-    display: none;
-}
-"""
-[paige.search]
-hide_page = true
+[paige.list_page]
+hide_collections = true
+hide_pages = true
+hide_sections = true
+[paige.page]
+hide_title = true
 +++
 
-<p>{{% paige/image alt="Landscape" breakpoints=true class="object-fit-cover rounded-4 shadow-lg" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" %}}</p>
+{{< paige/image alt="Landscape" breakpoints=true class="mt-3 object-fit-cover rounded-4 shadow-lg" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" >}}
 
 <h1 class="display-5 fw-bold mb-2 text-center">An advanced Hugo theme</h1>
 
@@ -29,6 +24,6 @@ hide_page = true
     <a href="https://github.com/willfaught/paige">Get started!</a>
 </p>
 
-<div class="column-gap-3 d-flex display-6 justify-content-center mb-3">
+<div class="column-gap-3 d-flex display-6 justify-content-center">
     {{< paige/icon class="bi bi-github" title="GitHub" url="https://github.com/willfaught/paige" >}}
 </div>

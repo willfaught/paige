@@ -40,8 +40,8 @@
 {{ end }}
 
 {{ $collections := slice }}
-{{ $pages := $page.RegularPages }}
-{{ $sections := $page.Sections }}
+{{ $pages := $page.RegularPages | and ($page.Param "paige.list_page.hide_pages" | not) }}
+{{ $sections := $page.Sections | and ($page.Param "paige.list_page.hide_sections" | not) }}
 
 {{ if $page.IsHome }}
     {{ range $name, $taxonomy := site.Taxonomies }}
@@ -50,6 +50,8 @@
         {{ end }}
     {{ end }}
 {{ end }}
+
+{{ $collections = $collections | and ($page.Param "paige.list_page.hide_collections" | not) }}
 
 {{ if and (not $pages) (in (slice "taxonomy" "term") $page.Kind) }}
     {{ $pages = $page.Pages }}

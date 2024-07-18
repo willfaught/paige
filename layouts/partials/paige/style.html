@@ -39,14 +39,6 @@
     padding: 0;
 }
 
-#paige-content > * {
-    margin-bottom: 1rem;
-}
-
-#paige-content > :last-child {
-    margin-bottom: 0;
-}
-
 blockquote {
     padding: 0.5rem 1rem;
     border-left: 0.25rem solid var(--bs-border-color);
@@ -63,6 +55,7 @@ th {
     display: flex;
 }
 
+.paige-row-narrow:not(:last-child),
 .paige-figure .paige-quote,
 .paige-figure .paige-video,
 .paige-figure .highlight pre.chroma,
@@ -79,7 +72,10 @@ blockquote > p:last-of-type {
 .paige-gallery,
 .paige-image,
 .paige-quote,
+.paige-row-narrow:last-child,
+.paige-row-wide,
 .paige-video,
+#paige-content > *,
 table {
     margin-bottom: 1rem;
 }

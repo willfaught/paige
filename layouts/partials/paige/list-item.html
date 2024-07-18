@@ -1,21 +1,21 @@
 {{ $page := . }}
 
-{{ $authors := partial "paige/authors.html" $page }}
+{{ $authors := partial "paige/authors.html" $page | and ($page.Parent.Param "paige.list_page.hide_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
-{{ $date := $page.PublishDate }}
-{{ $dateformat := $page.Param "paige.date_format" | default ":date_long" }}
-{{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
+{{ $date := $page.PublishDate | and ($page.Parent.Param "paige.list_page.hide_date" | not) }}
+{{ $dateformat := $page.Parent.Param "paige.date_format" | default ":date_long" }}
+{{ $description := $page.Description | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.list_page.hide_description" | not) }}
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $flags := slice }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
-{{ $readingtime := $page.ReadingTime }}
-{{ $series := $page.GetTerms "series" }}
-{{ $summary := $page.Summary | markdownify | plainify | htmlUnescape }}
+{{ $readingtime := $page.ReadingTime | and ($page.Parent.Param "paige.list_page.hide_reading_time" | not) }}
+{{ $series := $page.GetTerms "series" | and ($page.Parent.Param "paige.list_page.hide_series" | not) }}
+{{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.list_page.hide_summary" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
-{{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
-{{ $title := $page.Title | markdownify | plainify | htmlUnescape }}
+{{ $textkeywords := eq ($page.Parent.Param "paige.keyword_style" | default "text") "text" }}
+{{ $title := $page.Title | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.list_page.hide_title" | not) }}
 {{ $titlelink := $page.RelPermalink }}
 
 {{ if $draft }}
@@ -38,25 +38,25 @@
     {{ $flags = $flags | append "paige-published" }}
 {{ end }}
 
-{{ $flags = delimit ($flags | uniq) " " }}
-{{ $class := delimit (slice "mb-3" "paige-page" "w-100" | append $flags | uniq | sort) " " }}
+{{ $class := delimit (slice "paige-page" "w-100" | append $flags | uniq | sort) " " }}
+{{ $keywords := sort (append $categories $tags) "Title" | and ($page.Parent.Param "paige.list_page.hide_keywords" | not) }}
 
 <div class="{{ $class }}">
     {{ with $title }}
-        <p class="mb-0 paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
+        <p class="paige-row-narrow paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
     {{ end }}
 
     {{ with $description }}
-        <p class="mb-0 paige-description text-center">{{ . }}</p>
+        <p class="paige-description paige-row-narrow text-center">{{ . }}</p>
     {{ end }}
 
     {{ with $summary }}
-        <p class="fst-italic mb-0 paige-summary text-center">{{ . }}</p>
+        <p class="fst-italic paige-row-narrow paige-summary text-center">{{ . }}</p>
     {{ end }}
 
-    {{ if or $categories $tags }}
-        <p class="mb-0 paige-keywords text-center text-secondary">
-            {{ range $i, $term := sort (append $categories $tags) "LinkTitle" -}}
+    {{ with $keywords }}
+        <p class="paige-keywords paige-row-narrow text-center text-secondary">
+            {{ range $i, $term := . -}}
                 {{- if $textkeywords -}}
                     {{- if gt $i 0 }} · {{ end -}}
 
@@ -71,7 +71,7 @@
     {{ end }}
 
     {{ with $series }}
-        <p class="mb-0 paige-series text-center text-secondary">
+        <p class="paige-row-narrow paige-series text-center text-secondary">
             {{ range $i, $series := . -}}
                 {{- if gt $i 0 }} · {{ end -}}
 
@@ -81,7 +81,7 @@
     {{ end }}
 
     {{ with $authors }}
-        <p class="mb-0 paige-authors text-center text-secondary">
+        <p class="paige-authors text-center paige-row-narrow text-secondary">
             {{ range $i, $author := . -}}
                 {{- if gt $i 0 }} · {{ end -}}
 
@@ -91,12 +91,12 @@
     {{ end }}
 
     {{ with $date }}
-        <p class="mb-0 paige-date text-center text-secondary">
+        <p class="paige-date text-center paige-row-narrow text-secondary">
             <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
         </p>
     {{ end }}
 
     {{ with $readingtime }}
-        <p class="mb-0 paige-reading-time text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
+        <p class="paige-reading-time paige-row-narrow text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
     {{ end }}
 </div>

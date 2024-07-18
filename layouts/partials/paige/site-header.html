@@ -1,15 +1,15 @@
 {{ $page := . }}
 
-{{ $ancestors := $page.Ancestors }}
 {{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
-{{ $description := $page.Param "paige.site_description" | markdownify }}
+{{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.hide_breadcrumbs" | not) }}
+{{ $description := $page.Param "paige.description" | markdownify | and ($page.Param "paige.site.hide_description" | not) }}
 {{ $first := templates.Exists "partials/paige/site-header-first.html" }}
 {{ $last := templates.Exists "partials/paige/site-header-last.html" }}
 {{ $links := false }}
-{{ $menu := site.Menus.main }}
+{{ $menu := site.Menus.main | and ($page.Param "paige.site.hide_menu" | not) }}
 {{ $pills := false }}
 {{ $tabs := false }}
-{{ $title := $page.Param "paige.site_title" | markdownify }}
+{{ $title := $page.Param "paige.title" | default site.Title | markdownify | and ($page.Param "paige.site.hide_title" | not) }}
 {{ $underline := false }}
 
 {{ if eq $basepath "/" }}
@@ -32,22 +32,22 @@
     {{ $links = true }}
 {{ end }}
 
-{{ if or $ancestors $description $first $last $menu $title }}
-    <header class="my-3" id="paige-site-header">
+{{ if or $breadcrumbs $description $first $last $menu $title }}
+    <header id="paige-site-header">
         {{ if $first }}
             {{ partial "paige/site-header-first.html" $page }}
         {{ end }}
 
         {{ with $title }}
-            <p class="display-1 fw-bold mb-2 mt-3 text-center" id="paige-site-title">{{ . }}</p>
+            <div class="display-1 fw-bold {{ if $description }} mb-2 {{ end }} paige-row-wide text-center" id="paige-site-title">{{ . }}</div>
         {{ end }}
 
         {{ with $description }}
-            <p class="lead mb-3 mt-2 text-center" id="paige-site-description">{{ . }}</p>
+            <div class="lead paige-row-wide text-center" id="paige-site-description">{{ . }}</div>
         {{ end }}
 
         {{ with $menu }}
-            <nav aria-label="{{ i18n `paige_menu` }}" class="my-3" id="paige-menu">
+            <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                 <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                     {{ range . }}
                         {{ $menupath := strings.TrimPrefix $basepath .URL }}
@@ -86,8 +86,8 @@
             </nav>
         {{ end }}
 
-        {{ with $ancestors }}
-            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="my-3" id="paige-breadcrumbs">
+        {{ with $breadcrumbs }}
+            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-wide" id="paige-breadcrumbs">
                 <div class="d-flex justify-content-center">
                     <ol class="breadcrumb mb-0">
                         {{ $reverse := .Reverse }}
@@ -98,7 +98,7 @@
                             {{ $title := $ancestor.Title }}
 
                             {{ if and (eq $i $last) (not $title) }}
-                                {{ $title = $page.Param "paige.site_title" | default (site.Title) }}
+                                {{ $title = $page.Param "paige.title" | default (site.Title) }}
                             {{ end }}
 
                             <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ $title | markdownify | plainify | htmlUnescape }}</a></li>

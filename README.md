@@ -178,6 +178,7 @@ color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windo
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
+description = "" # Site description. Appears above the menu, below the site title, if set.
 external_link_new_tab = false # Open external links in new tabs
 file_edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
 file_history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
@@ -185,8 +186,7 @@ keyword_style = "text" # Must be "text" or "pills"
 license = "" # Example: "CC BY 4.0 License", "CC BY-NC 4.0 License", "MIT License"
 math = false # Enable math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
-site_title = "" # Appears above the menu, above the site description, if set
-site_description = "" # Appears above the menu, below the site title, if set
+title = "" # Site title. Appears above the menu, above the site description, if set.
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.alert]
@@ -291,6 +291,43 @@ logo = "" # Example: "/logo.webp"
 [paige.feed.rss]
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
+
+[params.paige.list_page]
+hide_authors = false
+hide_collections = false
+hide_date = false
+hide_description = false
+hide_keywords = false
+hide_pages = false
+hide_reading_time = false
+hide_sections = false
+hide_series = false
+hide_summary = false
+hide_title = false
+
+[params.paige.page]
+hide_alert = false
+hide_authors = false
+hide_date = false
+hide_description = false
+hide_edit = false
+hide_history = false
+hide_keywords = false
+hide_next = false
+hide_prev = false
+hide_reading_time = false
+hide_series = false
+hide_title = false
+hide_toc = false
+
+[params.paige.site]
+hide_breadcrumbs = false
+hide_copyright = false
+hide_credit = false
+hide_description = false
+hide_license = false
+hide_menu = false
+hide_title = false
 
 [paige.search]
 hide_page = false
@@ -907,14 +944,16 @@ Body: None.
 | ---------------------------------------------------------| -------------------------------------|
 | `yoursite/layouts/partials/paige/body-first.html`        | The beginning of the body tag        |
 | `yoursite/layouts/partials/paige/body-last.html`         | The end of the body tag              |
-| `yoursite/layouts/partials/paige/footer-first.html`      | The beginning of the footer tag      |
-| `yoursite/layouts/partials/paige/footer-last.html`       | The end of the footer tag            |
 | `yoursite/layouts/partials/paige/head-first.html`        | The beginning of the head tag        |
 | `yoursite/layouts/partials/paige/head-last.html`         | The end of the head tag              |
-| `yoursite/layouts/partials/paige/main-first.html`        | The beginning of the main tag        |
-| `yoursite/layouts/partials/paige/main-last.html`         | The end of the main tag              |
+| `yoursite/layouts/partials/paige/page-footer-first.html` | The beginning of the page footer tag |
+| `yoursite/layouts/partials/paige/page-footer-last.html`  | The end of the page footer tag       |
 | `yoursite/layouts/partials/paige/page-header-first.html` | The beginning of the page header tag |
 | `yoursite/layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
+| `yoursite/layouts/partials/paige/site-first.html`        | The beginning of the main tag        |
+| `yoursite/layouts/partials/paige/site-last.html`         | The end of the main tag              |
+| `yoursite/layouts/partials/paige/site-footer-first.html` | The beginning of the site footer tag |
+| `yoursite/layouts/partials/paige/site-footer-last.html`  | The end of the site footer tag       |
 | `yoursite/layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
 | `yoursite/layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
 | `yoursite/layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
@@ -986,81 +1025,79 @@ Page identifiers:
 <dl>
     <dt><code>#paige-alert</code></dt>
     <dd>The page alert.</dd>
-    <dt><code>#paige-article</code></dt>
-    <dd>The article.</dd>
     <dt><code>#paige-authors</code></dt>
-    <dd>The authors.</dd>
+    <dd>The page authors.</dd>
     <dt><code>#paige-breadcrumbs</code></dt>
-    <dd>The breadcrumbs.</dd>
+    <dd>The site breadcrumbs.</dd>
     <dt><code>#paige-collections</code></dt>
-    <dd>The collections.</dd>
+    <dd>The site collection pages.</dd>
     <dt><code>#paige-collections-header</code></dt>
-    <dd>The collections header.</dd>
+    <dd>The site collection pages header.</dd>
     <dt><code>#paige-comments</code></dt>
-    <dd>The comments.</dd>
+    <dd>The page comments.</dd>
     <dt><code>#paige-content</code></dt>
-    <dd>The content.</dd>
+    <dd>The page content.</dd>
     <dt><code>#paige-copyright</code></dt>
-    <dd>The copyright.</dd>
+    <dd>The site copyright.</dd>
     <dt><code>#paige-credit</code></dt>
-    <dd>The credit.</dd>
+    <dd>The site credit.</dd>
     <dt><code>#paige-date</code></dt>
-    <dd>The date.</dd>
-    <dt><code>#paige-description</code></dt>
-    <dd>The description.</dd>
+    <dd>The page date.</dd>
+    <dt><code>#paige-edit</code></dt>
+    <dd>The page edit link.</dd>
     <dt><code>#paige-file</code></dt>
-    <dd>The file links.</dd>
-    <dt><code>#paige-file-edit</code></dt>
-    <dd>The file edit link.</dd>
-    <dt><code>#paige-file-history</code></dt>
-    <dd>The file history link.</dd>
+    <dd>The page edit and history links.</dd>
+    <dt><code>#paige-history</code></dt>
+    <dd>The page history link.</dd>
     <dt><code>#paige-keywords</code></dt>
-    <dd>The keywords.</dd>
+    <dd>The page keywords.</dd>
     <dt><code>#paige-license</code></dt>
-    <dd>The license.</dd>
-    <dt><code>#paige-main</code></dt>
-    <dd>The main.</dd>
+    <dd>The site license.</dd>
     <dt><code>#paige-menu</code></dt>
-    <dd>The menu.</dd>
+    <dd>The site menu.</dd>
     <dt><code>#paige-metadata</code></dt>
-    <dd>The metadata.</dd>
+    <dd>The page metadata.</dd>
     <dt><code>#paige-next</code></dt>
     <dd>The next page link.</dd>
+    <dt><code>#paige-page-description</code></dt>
+    <dd>The page description.</dd>
+    <dt><code>#paige-page-footer</code></dt>
+    <dd>The page footer that contains the page edit, history, next, and previous links.</dd>
+    <dt><code>#paige-page-header</code></dt>
+    <dd>The page header that contains the page title, description, metadata, and table of contents.</dd>
+    <dt><code>#paige-page-title</code></dt>
+    <dd>The page title.</dd>
     <dt><code>#paige-pages</code></dt>
-    <dd>The pages.</dd>
+    <dd>The page sub-pages.</dd>
     <dt><code>#paige-pages-header</code></dt>
-    <dd>The pages header.</dd>
+    <dd>The page sub-pages header.</dd>
     <dt><code>#paige-pagination</code></dt>
-    <dd>The sub-page pagination links.</dd>
+    <dd>The pagination of sub-pages.</dd>
     <dt><code>#paige-prev</code></dt>
     <dd>The previous page link.</dd>
-    <dt><code>#paige-prev-next</code></dt>
-    <dd>The container of the previous and next page links.</dd>
     <dt><code>#paige-reading-time</code></dt>
-    <dd>The reading time.</dd>
-    <dt><code>#paige-root</code></dt>
-    <dd>The outermost element in the body.</dd>
+    <dd>The page reading time.</dd>
     <dt><code>#paige-sections</code></dt>
-    <dd>The sections.</dd>
+    <dd>The page section sub-pages.</dd>
     <dt><code>#paige-sections-header</code></dt>
-    <dd>The sections header.</dd>
+    <dd>The page section sub-pages header.</dd>
     <dt><code>#paige-series</code></dt>
-    <dd>The series.</dd>
+    <dd>The page series.</dd>
+    <dt><code>#paige-siblings</code></dt>
+    <dd>The page next and previous links.</dd>
     <dt><code>#paige-site-description</code></dt>
     <dd>The site description.</dd>
     <dt><code>#paige-site-footer</code></dt>
-    <dd>The container of the site copyright, license, and credit.</dd>
+    <dd>The site footer that contains the site copyright, license, and credit.</dd>
     <dt><code>#paige-site-header</code></dt>
     <dd>The site header that contains the site title, description, menu, and breadcrumbs.</dd>
     <dt><code>#paige-site-title</code></dt>
     <dd>The site title.</dd>
-    <dt><code>#paige-title</code></dt>
-    <dd>The title.</dd>
     <dt><code>#paige-toc</code></dt>
     <dd>The table of contents.</dd>
 </dl>
 
-Page and sub-page classes:
+Sub-page field classes:
 
 <dl>
     <dt><code>.paige-authors</code></dt>
@@ -1069,8 +1106,6 @@ Page and sub-page classes:
     <dd>The date.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The description.</dd>
-    <dt><code>.paige-keyword</code></dt>
-    <dd>A keyword.</dd>
     <dt><code>.paige-keywords</code></dt>
     <dd>The keywords.</dd>
     <dt><code>.paige-metadata</code></dt>
@@ -1102,7 +1137,7 @@ Page kind classes:
     <dd>The container element of pages with kind "term".</dd>
 </dl>
 
-Status classes:
+Page status classes:
 
 <dl>
     <dt><code>.paige-draft</code></dt>
@@ -1146,24 +1181,26 @@ Shortcode classes:
 
 By default, everything is shown.
 If you want a more minimal look,
-try the following in `yoursite/layouts/partials/paige/style-first.css`:
+try the following in `yoursite/hugo.toml`:
 
-```css
-#paige-authors,
-#paige-collections,
-#paige-keywords,
-#paige-prev-next,
-#paige-reading-time,
-#paige-series,
-#paige-toc,
-.paige-authors,
-.paige-date,
-.paige-keywords,
-.paige-reading-time,
-.paige-series,
-.paige-summary {
-    display: none;
-}
+```toml
+[params.paige.list_page]
+hide_authors = true
+hide_date = true
+hide_keywords = true
+hide_reading_time = true
+hide_series = true
+hide_summary = true
+
+[params.paige.page]
+hide_authors = true
+hide_date = true
+hide_keywords = true
+hide_next = true
+hide_prev = true
+hide_reading_time = true
+hide_series = true
+hide_toc = true
 ```
 
 ### Narrow look

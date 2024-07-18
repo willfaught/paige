@@ -1,14 +1,19 @@
 baseurl = "https://example.com"
-copyright = "© Will Faught"
 enablerobotstxt = true
-languagecode = "en-us"
 paginate = 50
 timezone = "America/Los_Angeles"
 titlecasestyle = "Go"
 
 [languages.en]
-title = "Paige"
+languagecode = "en-us"
+languagedirection = "ltr"
+languagename = "English"
 weight = 10
+
+[languages.en.params.paige]
+copyright = "© Will Faught"
+description = "Powerful, pliable pixel perfection"
+title = "Paige"
 
 [[languages.en.menu.main]]
 identifier = "home"
@@ -90,12 +95,28 @@ section = ["html"]
 taxonomy = ["html"]
 term = ["html"]
 
-[params.paige]
-credit = ""
-file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
-file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
-site_description = "Powerful, pliable pixel perfection"
-site_title = "Paige"
+[params.paige.list_page]
+hide_authors = true
+hide_date = true
+hide_keywords = true
+hide_reading_time = true
+hide_series = true
+hide_summary = true
+
+[params.paige.page]
+hide_authors = true
+hide_date = true
+hide_keywords = true
+hide_next = true
+hide_prev = true
+hide_reading_time = true
+hide_series = true
+hide_toc = true
+
+[params.paige.site]
+hide_breadcrumbs = true
+hide_credit = true
+hide_license = true
 
 [[params.paige.feed.atom.authors]]
 email = "example@example.com"
