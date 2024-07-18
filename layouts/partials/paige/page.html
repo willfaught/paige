@@ -29,15 +29,15 @@
 
 {{ with $page.Kind }}
     {{ if eq . "home" }}
-        {{ $class = $class | append "paige-home" }}
+        {{ $class = $class | append "paige-kind-home" }}
     {{ else if eq . "section" }}
-        {{ $class = $class | append "paige-list" }}
+        {{ $class = $class | append "paige-kind-section" }}
     {{ else if eq . "page" }}
-        {{ $class = $class | append "paige-single" }}
+        {{ $class = $class | append "paige-kind-page" }}
     {{ else if eq . "taxonomy" }}
-        {{ $class = $class | append "paige-taxonomy" }}
+        {{ $class = $class | append "paige-kind-taxonomy" }}
     {{ else if eq . "term" }}
-        {{ $class = $class | append "paige-term" }}
+        {{ $class = $class | append "paige-kind-term" }}
     {{ end }}
 {{ end }}
 

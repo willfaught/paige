@@ -1087,18 +1087,18 @@ Page and sub-page classes:
     <dd>The title.</dd>
 </dl>
 
-Kind classes:
+Page kind classes:
 
 <dl>
-    <dt><code>.paige-home</code></dt>
+    <dt><code>.paige-kind-home</code></dt>
     <dd>The container element of pages with kind "home".</dd>
-    <dt><code>.paige-list</code></dt>
+    <dt><code>.paige-kind-section</code></dt>
     <dd>The container element of pages with kind "section".</dd>
-    <dt><code>.paige-single</code></dt>
+    <dt><code>.paige-kind-page</code></dt>
     <dd>The container element of pages with kind "page".</dd>
-    <dt><code>.paige-taxonomy</code></dt>
+    <dt><code>.paige-kind-taxonomy</code></dt>
     <dd>The container element of pages with kind "taxonomy".</dd>
-    <dt><code>.paige-term</code></dt>
+    <dt><code>.paige-kind-term</code></dt>
     <dd>The container element of pages with kind "term".</dd>
 </dl>
 
