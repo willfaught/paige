@@ -25,15 +25,15 @@
 
         {{ if or $edit $history }}
             <div id="paige-file">
-                {{ if $edit }}
+                {{ with $edit }}
                     <div class="paige-row-narrow text-center text-secondary" id="paige-edit">
-                        <a class="link-secondary" href="{{ $edit | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
+                        <a class="link-secondary" href="{{ . | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
                     </div>
                 {{ end }}
 
-                {{ if $history }}
+                {{ with $history }}
                     <div class="paige-row-narrow text-center text-secondary" id="paige-history">
-                        <a class="link-secondary" href="{{ $history | safeURL }}">{{ i18n "paige_edit_history" }}</a>
+                        <a class="link-secondary" href="{{ . | safeURL }}">{{ i18n "paige_edit_history" }}</a>
                     </div>
                 {{ end }}
             </div>
