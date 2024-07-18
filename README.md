@@ -179,8 +179,8 @@ color_scheme = "auto" # Must be "auto", "dark", or "light"
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
 description = "" # Site description. Appears above the menu, below the site title, if set.
+edit = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
 external_link_new_tab = false # Open external links in new tabs
-file_edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
 file_history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 keyword_style = "text" # Must be "text" or "pills"
 license = "" # Example: "CC BY 4.0 License", "CC BY-NC 4.0 License", "MIT License"

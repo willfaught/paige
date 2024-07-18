@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $fileediturl := $page.Param "paige.file_edit_url" | and ($page.Param "paige.page.hide_edit" | not) }}
+{{ $edit := $page.Param "paige.edit" | and ($page.Param "paige.page.hide_edit" | not) }}
 {{ $filehistoryurl := $page.Param "paige.file_history_url" | and ($page.Param "paige.page.hide_history" | not) }}
 {{ $first := templates.Exists "partials/paige/page-footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/page-footer-last.html" }}
@@ -8,8 +8,8 @@
 {{ $prev := $page.PrevInSection | and ($page.Param "paige.page.hide_prev" | not) }}
 
 {{ if $page.File }}
-    {{ if $fileediturl }}
-        {{ $fileediturl = printf $fileediturl $page.File.Path }}
+    {{ if $edit }}
+        {{ $edit = printf $edit $page.File.Path }}
     {{ end }}
 
     {{ if $filehistoryurl }}
@@ -17,17 +17,17 @@
     {{ end }}
 {{ end }}
 
-{{ if or $fileediturl $filehistoryurl $first $last $next $prev }}
+{{ if or $edit $filehistoryurl $first $last $next $prev }}
     <footer class="mw-100" id="paige-page-footer">
         {{ if $first }}
             {{ partial "paige/page-footer-first.html" . }}
         {{ end }}
 
-        {{ if or $fileediturl $filehistoryurl }}
+        {{ if or $edit $filehistoryurl }}
             <div id="paige-file">
-                {{ if $fileediturl }}
+                {{ if $edit }}
                     <div class="paige-row-narrow text-center text-secondary" id="paige-edit">
-                        <a class="link-secondary" href="{{ $fileediturl | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
+                        <a class="link-secondary" href="{{ $edit | safeURL }}">{{ i18n "paige_edit_this_page" }}</a>
                     </div>
                 {{ end }}
 

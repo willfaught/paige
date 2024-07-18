@@ -8,7 +8,7 @@ tags = ["show", "singles"]
 title = "Show Data"
 [paige]
 credit = "Paige Theme"
-file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
 [paige.list_page]
@@ -44,7 +44,7 @@ This page has the following parameters:
 ```toml
 [paige]
 credit = "Paige Theme"
-file_edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 file_history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
 [paige.list_page]
