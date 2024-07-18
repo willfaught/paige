@@ -1175,7 +1175,9 @@ try the following in `yoursite/hugo.toml`:
 
 ```toml
 [params.paige]
-style = "#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }"
+style = """
+#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
+"""
 ```
 
 ### Narrow-and-wide look
@@ -1208,7 +1210,9 @@ try the following in `yoursite/hugo.toml`:
 
 ```toml
 [params.paige]
-style = "#paige-breadcrumbs { display: none; }"
+style = """
+#paige-breadcrumbs { display: none; }
+"""
 ```
 
 To hide the collection, section, and page lists on the home page,
@@ -1216,7 +1220,9 @@ try the following in `yoursite/content/_index.md`:
 
 ```toml
 [paige]
-style = "#paige-collections, #paige-sections, #paige-pages { display: none; }"
+style = """
+#paige-collections, #paige-sections, #paige-pages { display: none; }
+"""
 ```
 
 ## Credits
