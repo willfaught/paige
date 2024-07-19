@@ -4,8 +4,6 @@ categories = ["content", "paige"]
 description = "Lorem Ipsum Dolor Si Amet."
 tags = ["markdown", "text"]
 title = "Placeholder Text"
-[paige.feed]
-hide_page = true
 +++
 
 <!--

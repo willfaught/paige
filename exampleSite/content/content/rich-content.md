@@ -4,8 +4,6 @@ categories = ["content", "paige"]
 description = "A brief description of Hugo Shortcodes."
 tags = ["privacy", "shortcodes"]
 title = "Rich Content"
-[paige.feed]
-hide_page = true
 +++
 
 <!--

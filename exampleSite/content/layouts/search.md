@@ -5,8 +5,6 @@ description = "Demonstration of the search layout."
 layout = "paige/search"
 tags = ["search"]
 title = "Search"
-[paige.feed]
-hide_page = true
 +++
 
 The `paige/search` layout provides site search.
