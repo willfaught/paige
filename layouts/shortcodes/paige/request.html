@@ -1,0 +1,16 @@
+{{- $method := .Get "method" | default "get" -}}
+{{- $url := .Get 0 | default (.Get "url") -}}
+
+{{- if not $url -}}
+    {{- errorf "layouts/shortcodes/paige/request.html: no url" -}}
+{{- end -}}
+
+{{- with resources.GetRemote $url (dict "method" $method) -}}
+    {{- with .Err -}}
+        {{- errorf "layouts/shortcodes/paige/request.html: cannot request remote resource %q: %v" $url . -}}
+    {{- else -}}
+        {{- strings.TrimRight "\f\n\r\t\v " .Content -}}
+    {{- end -}}
+{{- else -}}
+    {{- errorf "layouts/shortcodes/paige/request.html: cannot request remote resource %q" $url -}}
+{{- end -}}

@@ -717,6 +717,27 @@ Parameters:
 
 Body: Required. String. Markdown. The quotation.
 
+### Request
+
+The `paige/request` shortcode provides the content for a URL.
+
+```
+{{< paige/request
+    method=""
+    url="" >}}
+```
+
+Parameters:
+
+<dl>
+    <dt><code>method</code></dt>
+    <dd>Optional. String. HTTP method. Default is <code>get</code>.</dd>
+    <dt><code>url</code></dt>
+    <dd>Required. String. URL.</dd>
+</dl>
+
+Body: None.
+
 ### Tabs
 
 The `paige/tabs` shortcode provides tab buttons and tab panes.
