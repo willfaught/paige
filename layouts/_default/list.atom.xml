@@ -13,7 +13,7 @@
 {{ $updated := site.Lastmod.Format $format }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
-    {{ if not (.Param "paige.feed.hide_page") }}
+    {{ if not (.Param "paige.feed.disable") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}
 {{ end }}

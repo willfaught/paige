@@ -274,7 +274,7 @@ account_id = ""
 github_repo = ""
 
 [paige.feed]
-hide_page = false
+disable = false # Exclude the page from feeds
 link_to_page = false # Link to the page instead of the front matter link, if present
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, then link to the page with this text
 
@@ -293,44 +293,44 @@ managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
 [params.paige.list_page]
-hide_authors = false
-hide_collections = false
-hide_date = false
-hide_description = false
-hide_keywords = false
-hide_pages = false
-hide_reading_time = false
-hide_sections = false
-hide_series = false
-hide_summary = false
-hide_title = false
+disable_authors = false
+disable_collections = false
+disable_date = false
+disable_description = false
+disable_keywords = false
+disable_pages = false
+disable_reading_time = false
+disable_sections = false
+disable_series = false
+disable_summary = false
+disable_title = false
 
 [params.paige.page]
-hide_alert = false
-hide_authors = false
-hide_date = false
-hide_description = false
-hide_edit = false
-hide_history = false
-hide_keywords = false
-hide_next = false
-hide_prev = false
-hide_reading_time = false
-hide_series = false
-hide_title = false
-hide_toc = false
+disable_alert = false
+disable_authors = false
+disable_date = false
+disable_description = false
+disable_edit = false
+disable_history = false
+disable_keywords = false
+disable_next = false
+disable_prev = false
+disable_reading_time = false
+disable_series = false
+disable_title = false
+disable_toc = false
 
 [params.paige.site]
-hide_breadcrumbs = false
-hide_copyright = false
-hide_credit = false
-hide_description = false
-hide_license = false
-hide_menu = false
-hide_title = false
+disable_breadcrumbs = false
+disable_copyright = false
+disable_credit = false
+disable_description = false
+disable_license = false
+disable_menu = false
+disable_title = false
 
 [paige.search]
-hide_page = false
+disable = false # Exclude the page from search
 ```
 
 The assigned values shown are the default values.
@@ -1206,22 +1206,22 @@ try the following in `yoursite/hugo.toml`:
 
 ```toml
 [params.paige.list_page]
-hide_authors = true
-hide_date = true
-hide_keywords = true
-hide_reading_time = true
-hide_series = true
-hide_summary = true
+disable_authors = true
+disable_date = true
+disable_keywords = true
+disable_reading_time = true
+disable_series = true
+disable_summary = true
 
 [params.paige.page]
-hide_authors = true
-hide_date = true
-hide_keywords = true
-hide_next = true
-hide_prev = true
-hide_reading_time = true
-hide_series = true
-hide_toc = true
+disable_authors = true
+disable_date = true
+disable_keywords = true
+disable_next = true
+disable_prev = true
+disable_reading_time = true
+disable_series = true
+disable_toc = true
 ```
 
 ### Narrow look

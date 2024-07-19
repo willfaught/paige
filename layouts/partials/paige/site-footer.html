@@ -1,10 +1,10 @@
 {{ $page := . }}
 
-{{ $copyright := $page.Param "paige.copyright" | default site.Copyright | markdownify | and ($page.Param "paige.site.hide_copyright" | not) }}
+{{ $copyright := $page.Param "paige.copyright" | default site.Copyright | markdownify | and ($page.Param "paige.site.disable_copyright" | not) }}
 {{ $credit := $page.Param "paige.credit" }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
-{{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.hide_license" | not) }}
+{{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.disable_license" | not) }}
 {{ $theme := "https://github.com/willfaught/paige" }}
 
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
@@ -15,7 +15,7 @@
     {{ $credit = markdownify $credit }}
 {{ end }}
 
-{{ $credit = $credit | and ($page.Param "paige.site.hide_credit" | not) }}
+{{ $credit = $credit | and ($page.Param "paige.site.disable_credit" | not) }}
 
 {{ if or $copyright $credit $first $last $license }}
     <footer id="paige-site-footer">

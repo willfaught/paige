@@ -35,25 +35,25 @@ style = """
 }
 """
 [paige.list_page]
-hide_authors = false
-hide_date = false
-hide_keywords = false
-hide_reading_time = false
-hide_series = false
-hide_summary = false
+disable_authors = false
+disable_date = false
+disable_keywords = false
+disable_reading_time = false
+disable_series = false
+disable_summary = false
 [paige.page]
-hide_authors = false
-hide_date = false
-hide_keywords = false
-hide_next = false
-hide_prev = false
-hide_reading_time = false
-hide_series = false
-hide_toc = false
+disable_authors = false
+disable_date = false
+disable_keywords = false
+disable_next = false
+disable_prev = false
+disable_reading_time = false
+disable_series = false
+disable_toc = false
 [paige.site]
-hide_breadcrumbs = false
-hide_credit = false
-hide_license = false
+disable_breadcrumbs = false
+disable_credit = false
+disable_license = false
 +++
 
 This page styles some data differently than the rest of the site.
@@ -94,23 +94,23 @@ style = """
 }
 """
 [paige.list_page]
-hide_authors = false
-hide_date = false
-hide_keywords = false
-hide_reading_time = false
-hide_series = false
-hide_summary = false
+disable_authors = false
+disable_date = false
+disable_keywords = false
+disable_reading_time = false
+disable_series = false
+disable_summary = false
 [paige.page]
-hide_authors = false
-hide_date = false
-hide_keywords = false
-hide_next = false
-hide_prev = false
-hide_reading_time = false
-hide_series = false
-hide_toc = false
+disable_authors = false
+disable_date = false
+disable_keywords = false
+disable_next = false
+disable_prev = false
+disable_reading_time = false
+disable_series = false
+disable_toc = false
 [paige.site]
-hide_breadcrumbs = false
-hide_credit = false
-hide_license = false
+disable_breadcrumbs = false
+disable_credit = false
+disable_license = false
 ```

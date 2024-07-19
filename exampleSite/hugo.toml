@@ -96,27 +96,27 @@ taxonomy = ["html"]
 term = ["html"]
 
 [params.paige.list_page]
-hide_authors = true
-hide_date = true
-hide_keywords = true
-hide_reading_time = true
-hide_series = true
-hide_summary = true
+disable_authors = true
+disable_date = true
+disable_keywords = true
+disable_reading_time = true
+disable_series = true
+disable_summary = true
 
 [params.paige.page]
-hide_authors = true
-hide_date = true
-hide_keywords = true
-hide_next = true
-hide_prev = true
-hide_reading_time = true
-hide_series = true
-hide_toc = true
+disable_authors = true
+disable_date = true
+disable_keywords = true
+disable_next = true
+disable_prev = true
+disable_reading_time = true
+disable_series = true
+disable_toc = true
 
 [params.paige.site]
-hide_breadcrumbs = true
-hide_credit = true
-hide_license = true
+disable_breadcrumbs = true
+disable_credit = true
+disable_license = true
 
 [[params.paige.feed.atom.authors]]
 email = "example@example.com"

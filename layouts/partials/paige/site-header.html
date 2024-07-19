@@ -1,15 +1,15 @@
 {{ $page := . }}
 
 {{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
-{{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.hide_breadcrumbs" | not) }}
-{{ $description := $page.Param "paige.description" | markdownify | and ($page.Param "paige.site.hide_description" | not) }}
+{{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.disable_breadcrumbs" | not) }}
+{{ $description := $page.Param "paige.description" | markdownify | and ($page.Param "paige.site.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/site-header-first.html" }}
 {{ $last := templates.Exists "partials/paige/site-header-last.html" }}
 {{ $links := false }}
-{{ $menu := site.Menus.main | and ($page.Param "paige.site.hide_menu" | not) }}
+{{ $menu := site.Menus.main | and ($page.Param "paige.site.disable_menu" | not) }}
 {{ $pills := false }}
 {{ $tabs := false }}
-{{ $title := $page.Param "paige.title" | default site.Title | markdownify | and ($page.Param "paige.site.hide_title" | not) }}
+{{ $title := $page.Param "paige.title" | default site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
 {{ $underline := false }}
 
 {{ if eq $basepath "/" }}
