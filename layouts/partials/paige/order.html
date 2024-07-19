@@ -1,0 +1,23 @@
+{{ $params := . }}
+
+{{ $pages := $params.pages }}
+
+{{ $result := slice }}
+{{ $weights := $pages.GroupBy "Weight" }}
+
+{{ range $i, $e := $weights }}
+    {{ if eq $e.Key 0 }}
+        {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
+        {{ break }}
+    {{ end }}
+{{ end }}
+
+{{ range $weights }}
+    {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
+        {{ range .Pages.ByTitle }}
+            {{ $result = $result | append . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $result }}

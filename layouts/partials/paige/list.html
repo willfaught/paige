@@ -58,23 +58,7 @@
 {{ end }}
 
 {{ with $collections }}
-    {{ $ordered := slice }}
-    {{ $weights := .GroupBy "Weight" }}
-
-    {{ range $i, $e := $weights }}
-        {{ if eq $e.Key 0 }}
-            {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
-            {{ break }}
-        {{ end }}
-    {{ end }}
-
-    {{ range $weights }}
-        {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
-            {{ range .Pages.ByTitle }}
-                {{ $ordered = $ordered | append . }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+    {{ $ordered := partial "paige/order.html" (dict "pages" .) }}
 
     <div id="paige-collections">
         {{ if or $sections $pages }}
@@ -98,23 +82,7 @@
 {{ end }}
 
 {{ with $sections }}
-    {{ $ordered := slice }}
-    {{ $weights := .GroupBy "Weight" }}
-
-    {{ range $i, $e := $weights }}
-        {{ if eq $e.Key 0 }}
-            {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
-            {{ break }}
-        {{ end }}
-    {{ end }}
-
-    {{ range $weights }}
-        {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
-            {{ range .Pages.ByTitle }}
-                {{ $ordered = $ordered | append . }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+    {{ $ordered := partial "paige/order.html" (dict "pages" .) }}
 
     <div id="paige-sections">
         {{ if or $collections $pages }}
@@ -138,23 +106,7 @@
 {{ end }}
 
 {{ with $pages }}
-    {{ $ordered := slice }}
-    {{ $weights := .GroupBy "Weight" }}
-
-    {{ range $i, $e := $weights }}
-        {{ if eq $e.Key 0 }}
-            {{ $weights = slice | append (first $i $weights) | append (after (add $i 1) $weights) | append $e }}
-            {{ break }}
-        {{ end }}
-    {{ end }}
-
-    {{ range $weights }}
-        {{ range (sort (.Pages.GroupBy "PublishDate") "Key").Reverse }}
-            {{ range .Pages.ByTitle }}
-                {{ $ordered = $ordered | append . }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+    {{ $ordered := partial "paige/order.html" (dict "pages" .) }}
 
     <div id="paige-pages">
         {{ if or $collections $sections }}
