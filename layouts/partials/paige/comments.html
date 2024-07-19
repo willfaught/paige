@@ -1,6 +1,12 @@
 {{ $page := . }}
 
-{{ if $page.Param "paige.comments.disable" | not }}
+{{ $disable := $page.Param "paige.comments.disable" }}
+{{ $disablekinds := $page.Param "paige.comments.disable_kinds" }}
+
+{{ $enabled := $disable | not }}
+{{ $enabledkind := or (not $disablekinds) (not (in $disablekinds $page.Kind)) }}
+
+{{ if and $enabled $enabledkind }}
     {{ template "_internal/disqus.html" $page }}
     {{ partial "paige/comments/cactus.html" $page }}
     {{ partial "paige/comments/commento.html" $page }}

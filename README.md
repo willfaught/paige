@@ -244,6 +244,7 @@ account_id = ""
 
 [paige.comments]
 disable = false # Disable all comments
+disable_kinds = [] # Page kinds to disable comments for. Examples: ["list"], ["page", "term"].
 
 [paige.comments.cactus] # See https://cactus.chat
 account_id = ""
