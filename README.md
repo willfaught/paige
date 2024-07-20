@@ -997,7 +997,7 @@ To change the favicon, override these files:
 - `static/mstile-70x70.png`
 - `static/safari-pinned-tab.svg`
 
-You can [generate](https://realfavicongenerator.net) favicon files.
+You can generate these favicon files [here](https://realfavicongenerator.net).
 
 To change the syntax highlighting style, override these files:
 
