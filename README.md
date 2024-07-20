@@ -949,17 +949,17 @@ Body: None.
 
 ### Override
 
-Most code is in partials that are included by the layouts.
-Elements can be added, changed, or removed easily by overriding the corresponding layout or partial.
+Most code is in partial templates that the layout templates use.
+Code can be added, changed, or removed easily by overriding the corresponding layout or partial template.
 
-For example, the layouts `list.html`, `single.html`, `taxonomy.html`, and `term.html`
-include the partial `paige/article.html`.
-`paige/article.html` includes the partials `paige/metadata.html`, `paige/toc.html`, and `paige/content.html`.
-To change the page title for those layouts, change `paige/metadata.html`.
-To change the page title for `single.html`,
-replace the use of `paige/article.html` in `single.html` with the use of
-`paige/metadata.html`, `paige/toc.html`, and `paige/content.html`,
-then replace that use of `paige/metadata.html` with your own design.
+For example, `layouts/_default/list.html` and `layouts/_default/single.html` include `layouts/partial/paige/page.html`.
+`layouts/partial/paige/page.html` includes `layouts/partial/paige/page-header.html`.
+To change the page title for those layout templates, change `layouts/partial/paige/page-header.html`.
+
+To change the page title for `layouts/_default/single.html` only,
+replace the inclusion of `layouts/partial/paige/page.html` in `layouts/_default/single.html` with its content,
+then in that, replace the inclusion of `layouts/partial/paige/page-header.html` with its content,
+then in that, change the page title.
 
 To change the favicon, override these files:
 
