@@ -15,66 +15,6 @@ copyright = "© Will Faught"
 description = "Powerful, pliable pixel perfection"
 title = "Paige"
 
-[[languages.en.menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = 10
-
-[[languages.en.menu.main]]
-identifier = "content"
-name = "Content"
-url = "/content/"
-weight = 20
-
-[[languages.en.menu.main]]
-identifier = "layouts"
-name = "Layouts"
-url = "/layouts/"
-weight = 30
-
-[[languages.en.menu.main]]
-identifier = "shortcodes"
-name = "Shortcodes"
-url = "/shortcodes/"
-weight = 40
-
-[[languages.en.menu.main]]
-identifier = "customizations"
-name = "Customizations"
-url = "/customizations/"
-weight = 50
-
-[[languages.en.menu.main]]
-identifier = "authors"
-name = "Authors"
-url = "/authors/"
-weight = 60
-
-[[languages.en.menu.main]]
-identifier = "series"
-name = "Series"
-url = "/series/"
-weight = 70
-
-[[languages.en.menu.main]]
-identifier = "categories"
-name = "Categories"
-url = "/categories/"
-weight = 80
-
-[[languages.en.menu.main]]
-identifier = "tags"
-name = "Tags"
-url = "/tags/"
-weight = 90
-
-[[languages.en.menu.main]]
-identifier = "search"
-name = "Search"
-url = "/search/"
-weight = 100
-
 [markup.goldmark.renderer]
 unsafe = true
 
