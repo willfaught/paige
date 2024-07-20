@@ -2,7 +2,7 @@
 
 {{ with $page.Param "paige.comments.utterances" }}
     <div class="mb-3" id="paige-comments">
-        <script src="https://utteranc.es/client.js" repo="{{ .github_repo }}" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
+        <script async crossorigin="anonymous" issue-term="pathname" repo="{{ .github_repo }}" src="https://utteranc.es/client.js" theme="preferred-color-scheme"></script>
         <noscript>{{ i18n "paige_noscript" }}</noscript>
     </div>
 {{ end }}
