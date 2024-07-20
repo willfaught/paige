@@ -277,6 +277,7 @@ site = ""
 
 [paige.comments.utterances] # See https://utteranc.es
 repo = ""
+theme = ""
 
 [paige.feed]
 disable = false # Exclude the page from feeds
