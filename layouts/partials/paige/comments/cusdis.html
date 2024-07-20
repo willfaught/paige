@@ -1,0 +1,6 @@
+{{ $page := . }}
+
+{{ with $page.Param "paige.comments.cusdis" }}
+    <div class="mb-3" data-app-id="{{ .app_id }}" data-host="{{ .host_url }}" data-page-id="{{ $page.RelPermalink }}" data-page-title="{{ $page.Title }}" data-page-url="{{ $page.Permalink }}" id="cusdis_thread"></div>
+    <script async src="{{ .script_url | default `https://cusdis.com/js/cusdis.es.js` }}"></script>
+{{ end }}

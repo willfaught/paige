@@ -252,6 +252,10 @@ account_id = ""
 [paige.comments.commento] # See https://commento.io
 script_url = ""
 
+[paige.comments.cusdis] # See https://cusdis.com
+app_id = ""
+host_url = ""
+
 [paige.comments.graphcomment] # See https://graphcomment.com
 account_id = ""
 
