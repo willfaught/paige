@@ -346,7 +346,7 @@ link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the t
 
 ### Menu
 
-An optional menu can be configured.
+The menu can be configured using the `main` menu.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
 
