@@ -334,70 +334,36 @@ disable_title = false
 disable = false # Exclude the page from search
 ```
 
-The assigned values shown are the default values.
-
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
+
+The assigned values shown are the default values.
 
 Parameters specific to pages:
 
 ```toml
-link = "https://youtu.be/dQw4w9WgXcQ" # The reference for an anchor around the title
+link = "" # The reference for an anchor around the title. Example: "https://youtu.be/dQw4w9WgXcQ".
 ```
+
+The assigned values shown are the default values.
+
+Parameters specific to menus:
+
+```toml
+[paige]
+disabled = false
+divider_above = false
+divider_below = false
+header_above = ""
+header_below = ""
+```
+
+The assigned values shown are the default values.
 
 ### Menu
 
 The menu can be configured using the `main` menu.
 The active menu item has a URL that is a prefix of the path of the current page.
 A menu item with the URL `/` only matches a `/` path.
-
-Example configuration in `yoursite/hugo.toml`:
-
-```toml
-[languages.en]
-weight = 10
-
-[[languages.en.menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = 10
-
-[[languages.en.menu.main]]
-identifier = "blog"
-name = "Blog"
-url = "/blog/"
-weight = 20
-
-[[languages.en.menu.main]]
-identifier = "personal"
-name = "Personal"
-parent = "blog"
-url = "/blog/personal/"
-weight = 10
-
-[languages.en.menu.main.params.paige]
-divider_below = true
-
-[[languages.en.menu.main]]
-identifier = "work"
-name = "Work"
-parent = "blog"
-url = "/blog/work/"
-weight = 20
-
-[languages.en.menu.main.params.paige]
-disabled = true
-
-[[languages.en.menu.main]]
-identifier = "interests"
-name = "Interests"
-parent = "blog"
-url = "/blog/interests/"
-weight = 30
-
-[languages.en.menu.main.params.paige]
-divider_above = true
-```
 
 If you intend for the menu to be sufficient for all navigation,
 see [how to hide other navigation features](#menu-navigation-only).

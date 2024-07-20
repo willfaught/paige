@@ -69,6 +69,12 @@
                                                 </li>
                                             {{ end }}
 
+                                            {{ with .Params.paige.header_above }}
+                                                <li>
+                                                    <h6 class="dropdown-header">{{ . }}</h6>
+                                                </li>
+                                            {{ end }}
+
                                             <li>
                                                 <a class="{{ if .Params.paige.disabled }} disabled {{ end }} dropdown-item" href="{{ .URL | safeURL }}" {{ with partial "paige/target.html" (dict "page" $page "url" .URL) }} target="{{ . }}" {{ end }}>{{ .Name }}</a>
                                             </li>
@@ -76,6 +82,12 @@
                                             {{ if .Params.paige.divider_below }}
                                                 <li>
                                                     <hr class="dropdown-divider">
+                                                </li>
+                                            {{ end }}
+
+                                            {{ with .Params.paige.header_below }}
+                                                <li>
+                                                    <h6 class="dropdown-header">{{ . }}</h6>
                                                 </li>
                                             {{ end }}
                                         {{ end }}
