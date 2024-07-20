@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ if $page.Param "paige.comments.cactus" }}
+{{ with $page.Param "paige.comments.cactus" }}
     <div class="mb-3" id="paige-comments">
         <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
         <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
@@ -10,7 +10,7 @@
             node: document.getElementById("comment-section"),
             defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
             serverName: "cactus.chat",
-            siteName: "{{ $page.Param `paige.comments.cactus.account_id` | safeJS }}",
+            siteName: "{{ .account_id | safeJS }}",
             commentSectionId: "{{ $page.RelPermalink | safeJS }}"
         })
         </script>

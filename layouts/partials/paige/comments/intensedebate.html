@@ -1,9 +1,9 @@
 {{ $page := . }}
 
-{{ if $page.Param "paige.comments.intensedebate" }}
+{{ with $page.Param "paige.comments.intensedebate" }}
     <div class="mb-3" id="paige-comments">
         <script>
-        var idcomments_acct = "{{ $page.Param "paige.comments.intensedebate.account_id" | safeJS }}";
+        var idcomments_acct = "{{ .account_id | safeJS }}";
         var idcomments_post_id = "{{ $page.RelPermalink | safeJS }}";
         var idcomments_post_url = "{{ $page.Permalink | safeJS }}";
         </script>
