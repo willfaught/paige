@@ -247,7 +247,7 @@ disable = false # Disable all comments
 disable_kinds = [] # Page kinds to disable comments for. Examples: ["list"], ["page", "term"].
 
 [paige.comments.cactus] # See https://cactus.chat
-account_id = ""
+site_name = ""
 
 [paige.comments.commento] # See https://commento.io
 script_url = ""
@@ -260,7 +260,7 @@ host_url = ""
 account_id = ""
 
 [paige.comments.hyvor] # See https://hyvor.com
-account_id = ""
+website = ""
 
 [paige.comments.intensedebate] # See https://intensedebate.com
 account_id = ""
@@ -273,10 +273,10 @@ host_url = ""
 site_id = ""
 
 [paige.comments.replybox] # See https://getreplybox.com
-account_id = ""
+site = ""
 
 [paige.comments.utterances] # See https://utteranc.es
-github_repo = ""
+repo = ""
 
 [paige.feed]
 disable = false # Exclude the page from feeds

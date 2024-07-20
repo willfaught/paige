@@ -5,7 +5,7 @@
         <div id="replybox"></div>
         <script>
         window.replybox = {
-            site: "{{ .account_id | safeJS }}",
+            site: "{{ .site | safeJS }}",
             identifier: "{{ $page.RelPermalink | safeJS }}"
         };
         </script>
