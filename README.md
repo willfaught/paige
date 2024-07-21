@@ -431,7 +431,8 @@ The `paige/code` shortcode provides highlighted code.
 ```
 {{< paige/code
     lang=""
-    options="" >}}
+    options=""
+    unescape=false >}}
 
 {{< /paige/code >}}
 ```
@@ -443,6 +444,8 @@ Parameters:
     <dd>Optional. Position 0. String. Chroma <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">language code</a>. Default is <code>plaintext</code>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">highlight options</a>.</dd>
+    <dt><code>unescape</code></dt>
+    <dd>Optional. Boolean. Whether to reverse the HTML escaping in the body. Useful for when the request shortcode is used in the body.</dd>
 </dl>
 
 Body: Required. String. The code.

@@ -167,6 +167,38 @@ float Q_rsqrt( float number )
 }
 {{< /paige/code >}}
 
+## Unescape parameter
+
+Code:
+
+```go-html-template
+{{</* paige/code unescape=false */>}}
+{{</* paige/request "[...]" */>}}
+{{</* /paige/code */>}}
+```
+
+Result:
+
+{{< paige/code unescape=false >}}
+{{< paige/request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
+{{< /paige/code >}}
+
+---
+
+Code:
+
+```go-html-template
+{{</* paige/code unescape=true */>}}
+{{</* paige/request "[...]" */>}}
+{{</* /paige/code */>}}
+```
+
+Result:
+
+{{< paige/code unescape=true >}}
+{{< paige/request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
+{{< /paige/code >}}
+
 ## Figure
 
 Code:
