@@ -1,4 +1,4 @@
-{{ $content := trim .InnerDeindent "\f\n\r\v" }}
+{{ $content := .InnerDeindent | strings.TrimLeft "\f\n\r\v" | strings.TrimRight "\f\n\r\t\v " }}
 {{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
 {{ $options := .Get "options" }}
 
