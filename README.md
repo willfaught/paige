@@ -1007,7 +1007,7 @@ To change the favicon, override these files:
 
 You can generate these favicon files [here](https://realfavicongenerator.net).
 
-To change the syntax highlighting style, override these files:
+To change the syntax highlighting styles, override these files [with your own](https://gohugo.io/content-management/syntax-highlighting/#generate-syntax-highlighter-css):
 
 - `layouts/partials/paige/dark.css`
 - `layouts/partials/paige/light.css`
