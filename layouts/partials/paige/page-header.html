@@ -18,7 +18,7 @@
 
 {{ $keywords := sort (append $categories $tags) "Title" | and ($page.Param "paige.page.disable_keywords" | not) }}
 
-{{ if or $authors $date $description $first $keywords $last $readingtime $series $title $toc }}
+{{ if or $alert $authors $date $description $first $keywords $last $readingtime $series $title $toc }}
     <header class="mw-100" id="paige-page-header">
         <div class="align-items-center d-flex flex-column">
             {{ if $first }}
