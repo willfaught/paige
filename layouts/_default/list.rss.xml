@@ -34,7 +34,7 @@
 {{ $title := delimit $titles " · " }}
 
 {{ if not $title }}
-    {{ warnf "layouts/_default/list.rss.xml: page %s does not have a title" $page.RelPermalink }}
+    {{ warnf "layouts/_default/list.rss.xml: Page %s does not have a title. The rss output requires a title. Either set the page's title parameter, or disable the rss output." $page.RelPermalink }}
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
@@ -125,7 +125,7 @@
                 {{ $description = $description | replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) }}
 
                 {{ if and (not $description) (not $title) }}
-                    {{ warnf "layouts/_default/rss.xml: page %s does not have a title or description" .RelPermalink }}
+                    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description. The rss output requires a title or description. Either set the page's title or description parameters, or disable the rss output." .RelPermalink }}
                 {{ end }}
 
                 {{ with $author }}
