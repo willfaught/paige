@@ -1242,20 +1242,18 @@ To hide the breadcrumbs on every page,
 try the following in `yoursite/hugo.toml`:
 
 ```toml
-[params.paige]
-style = """
-#paige-breadcrumbs { display: none; }
-"""
+[params.paige.site]
+disable_breadcrumbs = true
 ```
 
 To hide the collection, section, and page lists on the home page,
 try the following in `yoursite/content/_index.md`:
 
 ```toml
-[paige]
-style = """
-#paige-collections, #paige-sections, #paige-pages { display: none; }
-"""
+[params.paige.list_page]
+disable_collections = true
+disable_pages = true
+disable_sections = true
 ```
 
 ## Credits
