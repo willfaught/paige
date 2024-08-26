@@ -60,7 +60,7 @@
                 {{- if $textkeywords -}}
                     {{- if gt $i 0 }} · {{ end -}}
 
-                    <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                    <a class="link-secondary paige-keyword" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
                 {{- else -}}
                     {{- if gt $i 0 }} {{ end -}}
 

@@ -41,11 +41,11 @@
                                 {{- if $textkeywords -}}
                                     {{- if gt $i 0 }} · {{ end -}}
 
-                                    <a class="link-secondary" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                                    <a class="link-secondary paige-keyword" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
                                 {{- else -}}
                                     {{- if gt $i 0 }} {{ end -}}
 
-                                    <a class="badge text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                                    <a class="badge paige-keyword text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
                                 {{- end -}}
                             {{- end }}
                         </p>
