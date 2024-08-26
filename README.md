@@ -1093,7 +1093,20 @@ Page identifiers:
     <dd>The table of contents.</dd>
 </dl>
 
-Sub-page field classes:
+Page classes:
+
+<dl>
+    <dt><code>.paige-keyword</code></dt>
+    <dd>A keyword.</dd>
+    <dt><code>.paige-keyword-category</code></dt>
+    <dd>A category keyword.</dd>
+    <dt><code>.paige-keyword-tag</code></dt>
+    <dd>A tag keyword.</dd>
+    <dt><code>.paige-keywords</code></dt>
+    <dd>The keywords.</dd>
+</dl>
+
+Sub-page classes:
 
 <dl>
     <dt><code>.paige-authors</code></dt>
@@ -1102,8 +1115,6 @@ Sub-page field classes:
     <dd>The date.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The description.</dd>
-    <dt><code>.paige-keywords</code></dt>
-    <dd>The keywords.</dd>
     <dt><code>.paige-metadata</code></dt>
     <dd>The metadata.</dd>
     <dt><code>.paige-page</code></dt>
