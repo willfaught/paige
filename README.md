@@ -8,7 +8,7 @@ Powerful, pliable pixel perfection. An advanced Hugo theme. [Try it out.](https:
     <img alt="Screenshot" src="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg">
 </picture>
 
-Paige is designed to put your content front and center, avoiding the typical clutter. The look is seamless and smooth, scalable and readable, portable and efficient. The layout is minimal and responsive, using verticality and white space to delineate and highlight each part of the page. The implementation is flexible and extensible. It’s a versatile canvas that serves most web needs.
+Paige is designed to put your content front and center, avoiding the typical clutter. The look is seamless and smooth, scalable and readable, portable and efficient. The layout is minimal and responsive, using verticality and white space to delineate and highlight each part of the page. The implementation is flexible and extensible. It’s a versatile canvas that serves most needs.
 
 ## Features
 
