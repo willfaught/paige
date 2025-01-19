@@ -141,7 +141,9 @@
                                 {{ $title = $page.Param "paige.title" | default (site.Title) }}
                             {{ end }}
 
-                            <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ $title | markdownify | plainify | htmlUnescape }}</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ .RelPermalink }}">{{ $title | markdownify | plainify | htmlUnescape }}</a>
+                            </li>
                         {{ end }}
                     </ol>
                 </div>
