@@ -53,7 +53,7 @@
                         {{ range . }}
                             {{ $menupath := strings.TrimPrefix $basepath .URL }}
 
-                            {{ $home := and (eq $menupath "/") (eq $pagepath "/") }}
+                            {{ $home := and (eq $menupath "/") (eq $page.Section "") }}
                             {{ $menuprefix := and (ne $menupath "/") (hasPrefix $pagepath $menupath) }}
                             {{ $sectionprefix := and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section)) }}
 
@@ -115,7 +115,7 @@
                         {{ range $ordered }}
                             {{ $menupath := strings.TrimPrefix $basepath .RelPermalink }}
 
-                            {{ $home := and (eq $menupath "/") (eq $pagepath "/") }}
+                            {{ $home := and (eq $menupath "/") (eq $page.Section "") }}
                             {{ $menuprefix := and (ne $menupath "/") (hasPrefix $pagepath $menupath) }}
                             {{ $sectionprefix := and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section)) }}
 
