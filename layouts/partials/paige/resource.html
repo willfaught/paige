@@ -6,11 +6,13 @@
 {{ $result := "" }}
 
 {{ if (urls.Parse $url).Scheme }}
-    {{ with resources.GetRemote $url }}
+    {{ with try (resources.GetRemote $url) }}
         {{ with .Err }}
             {{ errorf "layouts/partials/paige/resource.html: cannot get remote resource %q: %v" $url . }}
-        {{ else }}
+        {{ else with .Value }}
             {{ $result = . }}
+        {{ else }}
+            {{ errorf "layouts/partials/paige/resource.html: remote resource %q not found" $url }}
         {{ end }}
     {{ end }}
 {{ end }}
