@@ -10,7 +10,13 @@
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
 
 {{ if eq $credit nil }}
-    {{ $credit = `<a class="link-secondary text-decoration-none" href="{{ $theme }}" {{ with $target }} target="{{ . }}" {{ end }}>Paige Theme</a>` | markdownify }}
+    {{ $targetString := "" }}
+
+    {{ with $target }}
+        {{ $targetString = printf ` target="%s"` . }}
+    {{ end }}
+
+    {{ $credit = printf `<a class="link-secondary text-decoration-none" href="%s"%s>Paige Theme</a>` $theme $targetString | safeHTML }}
 {{ else }}
     {{ $credit = markdownify $credit }}
 {{ end }}
