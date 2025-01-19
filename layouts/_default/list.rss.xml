@@ -112,7 +112,7 @@
 
                 {{ if and $description $paramlink }}
                     {{ $pagelink := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
-                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape $title) $pagelink }}
+                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape $title) $pagelink | safeHTML }}
 
                     {{ $description = print $description $footer }}
                 {{ end }}
