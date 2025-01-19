@@ -27,7 +27,9 @@
     {{ end }}
 
     {{ if $sass }}
-        {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $includepaths "outputStyle" $outputstyle "transpiler" "dartsass") }}
+        {{/* TODO: Remove the silenceDeprecations option when Bootstrap is updated beyond v5.3.3. */}}
+
+        {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $includepaths "outputStyle" $outputstyle "silenceDeprecations" (slice "color-functions" "global-builtin" "import" "mixed-decls") "transpiler" "dartsass") }}
     {{ end }}
 
     {{ $resource = $resource | minify | fingerprint }}
