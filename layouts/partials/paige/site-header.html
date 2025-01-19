@@ -102,15 +102,15 @@
                     </ul>
                 </nav>
             {{ else }}
-                {{ $ordered := site.Sections }}
+                {{ $pages := site.Sections }}
 
                 {{ range $name, $taxonomy := site.Taxonomies }}
                     {{ if and $taxonomy.Page $taxonomy.Page.RelPermalink }}
-                        {{ $ordered = $ordered | append $taxonomy.Page }}
+                        {{ $pages = $pages | append $taxonomy.Page }}
                     {{ end }}
                 {{ end }}
 
-                {{ $ordered = sort $ordered "Title" }}
+                {{ $pages = sort $pages "Title" }}
 
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
@@ -120,7 +120,7 @@
                             <a {{ if $homemenuactive }} aria-current="page" {{ end }} class="{{ if $homemenuactive }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ $titleconfig }}</a>
                         </li>
 
-                        {{ range $ordered }}
+                        {{ range $pages }}
                             {{ $menupath := strings.TrimPrefix $basepath .RelPermalink }}
 
                             {{ $home := and (eq $menupath "/") (eq $page.Section "") }}
