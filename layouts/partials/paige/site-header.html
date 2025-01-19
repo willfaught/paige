@@ -1,5 +1,7 @@
 {{ $page := . }}
 
+{{ $titleconfig := $page.Param "paige.title" | default site.Title }}
+
 {{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
 {{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.disable_breadcrumbs" | not) }}
 {{ $description := $page.Param "paige.description" | markdownify | and ($page.Param "paige.site.disable_description" | not) }}
@@ -9,7 +11,7 @@
 {{ $menu := $page.Param "paige.site.disable_menu" | not }}
 {{ $pills := false }}
 {{ $tabs := false }}
-{{ $title := $page.Param "paige.title" | default site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
+{{ $title := $titleconfig | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
 {{ $underline := false }}
 
 {{ if eq $basepath "/" }}
@@ -100,7 +102,7 @@
                     </ul>
                 </nav>
             {{ else }}
-                {{ $ordered := slice site.Home | append site.Sections }}
+                {{ $ordered := site.Sections }}
 
                 {{ range $name, $taxonomy := site.Taxonomies }}
                     {{ if and $taxonomy.Page $taxonomy.Page.RelPermalink }}
@@ -112,6 +114,12 @@
 
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
+                        {{ $homemenuactive := eq $page.Section "" }}
+
+                        <li class="nav-item">
+                            <a {{ if $homemenuactive }} aria-current="page" {{ end }} class="{{ if $homemenuactive }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ $titleconfig }}</a>
+                        </li>
+
                         {{ range $ordered }}
                             {{ $menupath := strings.TrimPrefix $basepath .RelPermalink }}
 
