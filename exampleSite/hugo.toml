@@ -1,6 +1,5 @@
 baseurl = "https://example.com"
 enablerobotstxt = true
-paginate = 50
 timezone = "America/Los_Angeles"
 titlecasestyle = "Go"
 
@@ -34,6 +33,9 @@ home = ["html", "paige-search"]
 section = ["html"]
 taxonomy = ["html"]
 term = ["html"]
+
+[pagination]
+pagersize = 50
 
 [params.paige.list_page]
 disable_authors = true
