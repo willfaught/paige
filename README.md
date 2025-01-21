@@ -49,7 +49,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - SEO
 - Series
 - Single column
-- Social links
+- Social media links
 - Table of contents
 - Tab shortcode
 - Tags
