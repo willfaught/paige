@@ -314,6 +314,7 @@ disable_title = false
 [paige.page]
 disable_alert = false
 disable_authors = false
+disable_auto_schema = false # Disable the automatic SEO JSON-LD schema generation
 disable_date = false
 disable_description = false
 disable_edit = false
@@ -326,7 +327,44 @@ disable_series = false
 disable_title = false
 disable_toc = false
 
+# paige.page.base_schema specifies the JSON-LD schema that all page schemas override.
+#
+# Example:
+#
+# [paige.page.base_schema]
+# isAccessibleForFree = true
+# isFamilyFriendly = true
+# [paige.page.base_schema.publisher]
+# "@type" = "Organization"
+# name = "John Doe"
+# url = "https://example.com"
+base_schema = {}
+
+# paige.page.schemas is the page JSON-LD schemas.
+#
+# Examples:
+#
+# [paige.page.schemas]
+# "@context" = "https://schema.org"
+# "@type" = "Book"
+# name = "My Book"
+# url = "https://example.com"
+schemas = []
+
 [paige.site]
+# paige.site.base_schema specifies the JSON-LD schema that all site schemas override.
+#
+# Example:
+#
+# [paige.site.base_schema]
+# isAccessibleForFree = true
+# isFamilyFriendly = true
+# [paige.site.base_schema.publisher]
+# "@type" = "Organization"
+# name = "John Doe"
+# url = "https://example.com"
+base_schema = {}
+
 disable_breadcrumbs = false
 disable_copyright = false
 disable_credit = false
@@ -334,6 +372,17 @@ disable_description = false
 disable_license = false
 disable_menu = false
 disable_title = false
+
+# paige.site.schemas is the site JSON-LD schemas.
+#
+# Examples:
+#
+# [paige.site.schemas]
+# "@context" = "https://schema.org"
+# "@type" = "Organization"
+# name = "Acme"
+# url = "https://example.com"
+schemas = []
 
 [paige.search]
 disable = false # Exclude the page from search
@@ -391,6 +440,18 @@ render = "never"
 ```
 
 The `email` and `url` parameters in the front matter of an author term page are used in feeds if present.
+
+### SEO
+
+The "author", "description", and "keywords" meta tags are generated from the page parameters.
+The keywords are the page parameters "keywords", "categories", and "tags".
+
+A JSON-LD script is generated from the page parameters,
+which can be disabled with `paige.page.disable_auto_schema`.
+Arbitrary schemas can be specified for the site with `paige.site.schemas`
+or for pages with `paige.pages.schemas`, at the site or page level.
+A base schema can be specified for site schemas with `paige.site.base_schema`,
+and for page schemas with `paige.page.base_schema`.
 
 ## Layouts
 

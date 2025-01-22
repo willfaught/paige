@@ -1,0 +1,154 @@
+{{ $page := . }}
+
+{{ $auto := $page.Param "paige.page.disable_auto_schema" | not }}
+{{ $pagebase := $page.Param "paige.page.base_schema" }}
+{{ $sitebase := $page.Param "paige.site.base_schema" }}
+
+{{ range $page.Param "paige.site.schemas" }}
+    <script type="application/ld+json">{{ merge $sitebase . | jsonify | safeJS }}</script>
+{{ end }}
+
+{{ range $page.Param "paige.page.schemas" }}
+    <script type="application/ld+json">{{ merge $pagebase . | jsonify | safeJS }}</script>
+{{ end }}
+
+{{ if $auto }}
+    {{ $audios := $page.Params.audio | default slice}}
+    {{ $authors := $page.GetTerms "authors" }}
+    {{ $images := $page.Params.images | default slice }}
+    {{ $keywords := sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories) }}
+    {{ $license := $page.Param "paige.license" | markdownify | plainify }}
+    {{ $schema := newScratch }}
+    {{ $videos := $page.Params.videos | default slice }}
+
+    {{ $schema.Set "@context" "https://schema.org" }}
+    {{ $schema.Set "@type" "Article" }}
+    {{ $schema.Set "url" $page.Permalink }}
+
+    {{ with $page.Summary }}
+        {{ $schema.Set "abstract" (. | plainify | chomp) }}
+    {{ end }}
+
+    {{ with $page.Description }}
+        {{ $schema.Set "alternativeHeadline" (plainify .) }}
+    {{ end }}
+
+    {{ with $page.CurrentSection.Title }}
+        {{ $schema.Set "articleSection" . }}
+    {{ end }}
+
+    {{ with $audios }}
+        {{ $audioObjects := slice }}
+
+        {{ range $audios }}
+            {{ $audioObjects = $audioObjects | append (dict "@type" "AudioObject" "url" .) }}
+        {{ end }}
+
+        {{ $schema.Set "audio" $audioObjects }}
+    {{ end }}
+
+    {{ with $authors }}
+        {{ $authorObjects := slice }}
+
+        {{ range $authors }}
+            {{ $authoremail := cond (. | not | not) .Params.email "" }}
+            {{ $authorname := cond (. | not | not) .Params.name "" }}
+            {{ $authorurl := cond (. | not | not) .Params.url "" }}
+
+            {{ if or $authoremail $authorname $authorurl }}
+                {{ $authorSchema := newScratch }}
+
+                {{ with $authoremail }}
+                    {{ $authorSchema.Set "email" . }}
+                {{ end }}
+
+                {{ with $authorname }}
+                    {{ $authorSchema.Set "name" . }}
+                {{ end }}
+
+                {{ with $authorurl }}
+                    {{ $authorSchema.Set "url" . }}
+                {{ end }}
+
+                {{ $authorSchema.Set "@type" "Person" }}
+                {{ $authorObjects = $authorObjects | append $authorSchema.Values }}
+            {{ end }}
+        {{ end }}
+
+        {{ $schema.Set "author" $authorObjects }}
+    {{ end }}
+
+    {{ with site.Copyright }}
+        {{ $schema.Set "copyrightNotice" (plainify .) }}
+    {{ end }}
+
+    {{ if and (not $page.Date.IsZero) (ne $page.Date $page.PublishDate) }}
+        {{ $schema.Set "dateCreated" $page.Date }}
+    {{ end }}
+
+    {{ if not $page.Lastmod.IsZero }}
+        {{ $schema.Set "dateModified" $page.Lastmod }}
+    {{ end }}
+
+    {{ with and (not $page.PublishDate.IsZero) (ne $page.Date $page.PublishDate) }}
+        {{ $schema.Set "datePublished" $page.PublishDate }}
+    {{ end }}
+
+    {{ with $page.Description }}
+        {{ $schema.Set "description" (plainify .) }}
+    {{ end }}
+
+    {{ if not $page.ExpiryDate.IsZero }}
+        {{ $schema.Set "expiresAt" $page.ExpiryDate }}
+    {{ end }}
+
+    {{ with $page.Title }}
+        {{ $schema.Set "headline" (plainify .) }}
+    {{ end }}
+
+    {{ with $images }}
+        {{ $imageObjects := slice }}
+
+        {{ range $images }}
+            {{ $imageObjects = $imageObjects | append (dict "@type" "ImageObject" "url" .) }}
+        {{ end }}
+
+        {{ $schema.Set "image" $imageObjects }}
+    {{ end }}
+
+    {{ with site.Language }}
+        {{ $schema.Set "inLanguage" .Lang }}
+    {{ end }}
+
+    {{ with $keywords }}
+        {{ $schema.Set "keywords" . }}
+    {{ end }}
+
+    {{ with $license }}
+        {{ $schema.Set "license" (plainify .) }}
+    {{ end }}
+
+    {{ with $page.Title }}
+        {{ $schema.Set "name" (plainify .) }}
+    {{ end }}
+
+    {{ with $page.ReadingTime }}
+        {{ $schema.Set "timeRequired" (printf "PT%dM" .) }}
+    {{ end }}
+
+    {{ with $videos }}
+        {{ $videoObjects := slice }}
+
+        {{ range $videos }}
+            {{ $videoObjects = $videoObjects | append (dict "@type" "VideoObject" "url" .) }}
+        {{ end }}
+
+        {{ $schema.Set "video" $videoObjects }}
+    {{ end }}
+
+    {{ with $page.WordCount }}
+        {{ $schema.Set "wordCount" . }}
+    {{ end }}
+
+    <script type="application/ld+json">{{ merge $pagebase $schema.Values | jsonify | safeJS }}</script>
+{{ end }}
