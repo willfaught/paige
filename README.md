@@ -298,7 +298,7 @@ logo = "" # Example: "/logo.webp"
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
-[params.paige.list_page]
+[paige.list_page]
 disable_authors = false
 disable_collections = false
 disable_date = false
@@ -311,7 +311,7 @@ disable_series = false
 disable_summary = false
 disable_title = false
 
-[params.paige.page]
+[paige.page]
 disable_alert = false
 disable_authors = false
 disable_date = false
@@ -326,7 +326,7 @@ disable_series = false
 disable_title = false
 disable_toc = false
 
-[params.paige.site]
+[paige.site]
 disable_breadcrumbs = false
 disable_copyright = false
 disable_credit = false
