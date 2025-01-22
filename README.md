@@ -340,6 +340,17 @@ disable_toc = false
 # url = "https://example.com"
 base_schema = {}
 
+# paige.page.microdata specifies the SEO microdata non-property attributes (all except itemprop) for the web page.
+#
+# Example:
+#
+# [paige.page.microdata]
+# itemid = "123"
+# itemref = "foo"
+# itemscope = ""
+# itemtype = "https://schema.org/Chapter
+microdata = {}
+
 # paige.page.schemas is the page JSON-LD schemas.
 #
 # Examples:
@@ -452,6 +463,9 @@ Arbitrary schemas can be specified for the site with `paige.site.schemas`
 or for pages with `paige.pages.schemas`, at the site or page level.
 A base schema can be specified for site schemas with `paige.site.base_schema`,
 and for page schemas with `paige.page.base_schema`.
+
+HTML microdata is generated from the page parameters
+if the non-property attributes are specified in `paige.page.microdata`.
 
 ## Layouts
 

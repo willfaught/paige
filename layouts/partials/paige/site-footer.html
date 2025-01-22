@@ -5,6 +5,7 @@
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
 {{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.disable_license" | not) }}
+{{ $microdata := $page.Params.paige.page.microdata }}
 {{ $theme := "https://github.com/willfaught/paige" }}
 
 {{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
@@ -30,7 +31,7 @@
         {{ end }}
 
         {{ with $copyright }}
-            <p class="paige-row-narrow text-center text-secondary" id="paige-copyright">{{ . }}</p>
+            <p class="paige-row-narrow text-center text-secondary" id="paige-copyright" {{ if $microdata }} itemprop="copyrightNotice" {{ end }}>{{ . }}</p>
         {{ end }}
 
         {{ with $license }}

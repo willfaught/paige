@@ -9,6 +9,7 @@
 {{ $first := templates.Exists "partials/paige/page-header-first.html" }}
 {{ $last := templates.Exists "partials/paige/page-header-last.html" }}
 {{ $link := $page.Params.link }}
+{{ $microdata := $page.Params.paige.page.microdata }}
 {{ $readingtime := $page.ReadingTime | and ($page.Param "paige.page.disable_reading_time" | not) }}
 {{ $series := $page.GetTerms "series" | and ($page.Param "paige.page.disable_series" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
@@ -26,11 +27,11 @@
             {{ end }}
 
             {{ with $title }}
-                <h1 class="fw-bold" id="paige-page-title">{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
+                <h1 class="fw-bold" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
             {{ end }}
 
             {{ with $description }}
-                <p class="lead paige-row-wide" id="paige-page-description">{{ . }}</p>
+                <p class="lead paige-row-wide" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
             {{ end }}
 
             {{ if or $authors $date $keywords $readingtime $series }}
@@ -49,11 +50,11 @@
                                 {{- if $textkeywords -}}
                                     {{- if gt $i 0 }} · {{ end -}}
 
-                                    <a class="link-secondary paige-keyword paige-keyword-{{ $kind }}" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                                    <a class="link-secondary paige-keyword paige-keyword-{{ $kind }}" href="{{ .RelPermalink | safeURL }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .Title }}</a>
                                 {{- else -}}
                                     {{- if gt $i 0 }} {{ end -}}
 
-                                    <a class="badge paige-keyword paige-keyword-{{ $kind }} text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+                                    <a class="badge paige-keyword paige-keyword-{{ $kind }} text-bg-secondary text-decoration-none" href="{{ .RelPermalink | safeURL }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .Title }}</a>
                                 {{- end -}}
                             {{- end }}
                         </p>
@@ -64,7 +65,7 @@
                             {{ range $i, $series := . -}}
                                 {{- if gt $i 0 }} · {{ end -}}
 
-                                <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .Title }}</a>
                             {{- end }}
                         </p>
                     {{ end }}
@@ -74,19 +75,19 @@
                             {{ range $i, $author := . -}}
                                 {{- if gt $i 0 }} · {{ end -}}
 
-                                <a class="link-secondary" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="author" {{ end }}>{{ .Title }}</a>
                             {{- end }}
                         </p>
                     {{ end }}
 
                     {{ with $date }}
                         <p class="paige-row-narrow text-center text-secondary" id="paige-date">
-                            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+                            <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $dateformat . }}</time>
                         </p>
                     {{ end }}
 
                     {{ with $readingtime }}
-                        <p class="paige-row-narrow text-center text-secondary" id="paige-reading-time">{{ . }} {{ i18n "paige_minutes" . }}</p>
+                        <p class="paige-row-narrow text-center text-secondary" id="paige-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
                     {{ end }}
                 </div>
             {{ end }}
