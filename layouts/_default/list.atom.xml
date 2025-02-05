@@ -126,7 +126,7 @@
                 {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date. The atom output requires a modified date. Either set the page's date parameter, or set the page's paige.feed.disable parameter to true, or disable the atom output." .RelPermalink }}
             {{ end }}
 
-            {{ with partial "paige/authors.html" . }}
+            {{ with partial "paige/func-authors.html" . }}
                 {{ range . }}
                     <author>
                         {{ with .Params.paige.author.email }}

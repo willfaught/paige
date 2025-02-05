@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $authors := partial "paige/authors.html" $page | and ($page.Parent.Param "paige.list_page.disable_authors" | not) }}
+{{ $authors := partial "paige/func-authors.html" $page | and ($page.Parent.Param "paige.list_page.disable_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
 {{ $date := $page.PublishDate | and ($page.Parent.Param "paige.list_page.disable_date" | not) }}
 {{ $dateformat := $page.Parent.Param "paige.date_format" | default ":date_long" }}
