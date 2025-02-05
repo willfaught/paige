@@ -8,11 +8,11 @@
 {{ if (urls.Parse $url).Scheme }}
     {{ with try (resources.GetRemote $url) }}
         {{ with .Err }}
-            {{ errorf "layouts/partials/paige/resource.html: cannot get remote resource %q: %v" $url . }}
+            {{ errorf "layouts/partials/paige/func-resource.html: cannot get remote resource %q: %v" $url . }}
         {{ else with .Value }}
             {{ $result = . }}
         {{ else }}
-            {{ errorf "layouts/partials/paige/resource.html: remote resource %q not found" $url }}
+            {{ errorf "layouts/partials/paige/func-resource.html: remote resource %q not found" $url }}
         {{ end }}
     {{ end }}
 {{ end }}

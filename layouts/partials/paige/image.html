@@ -69,7 +69,7 @@
 {{ $style = delimit ($style | uniq | sort) "; " }}
 
 {{ if and (not $resource) $src }}
-    {{ $resource = partial "paige/resource.html" (dict "page" $page "url" $src) }}
+    {{ $resource = partial "paige/func-resource.html" (dict "page" $page "url" $src) }}
 {{ end }}
 
 {{ if $resource }}

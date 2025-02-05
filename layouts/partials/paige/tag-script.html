@@ -13,7 +13,7 @@
     {{ errorf "layouts/partials/paige/tag-script.html: no src" }}
 {{ end }}
 
-{{ with partial "paige/resource.html" (dict "page" $page "url" $src) }}
+{{ with partial "paige/func-resource.html" (dict "page" $page "url" $src) }}
     {{ $resource := . | minify | fingerprint }}
     {{ $integrity = $resource.Data.Integrity }}
     {{ $src = $resource.RelPermalink }}
