@@ -14,7 +14,7 @@
 
 {{ if $auto }}
     {{ $audios := $page.Params.audio | default slice}}
-    {{ $authors := $page.GetTerms "authors" }}
+    {{ $authors := partial "paige/authors.html" $page }}
     {{ $images := $page.Params.images | default slice }}
     {{ $keywords := sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories) }}
     {{ $license := $page.Param "paige.license" | markdownify | plainify }}
@@ -51,9 +51,9 @@
         {{ $authorObjects := slice }}
 
         {{ range $authors }}
-            {{ $authoremail := cond (. | not | not) .Params.email "" }}
-            {{ $authorname := cond (. | not | not) .Params.name "" }}
-            {{ $authorurl := cond (. | not | not) .Params.url "" }}
+            {{ $authoremail := cond (. | not | not) .Params.paige.author.email "" }}
+            {{ $authorname := cond (. | not | not) .Params.paige.author.name "" }}
+            {{ $authorurl := cond (. | not | not) .Params.paige.author.url "" }}
 
             {{ if or $authoremail $authorname $authorurl }}
                 {{ $authorSchema := newScratch }}

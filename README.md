@@ -411,6 +411,17 @@ link = "" # The reference for an anchor around the title. Example: "https://yout
 
 The assigned values shown are the default values.
 
+Parameters specific to author term pages (if the "authors" taxonomy is configured):
+
+```toml
+[paige.author]
+email = "" # Example: example@example.com
+name = "" # Example: John Doe
+url = "" # Example: https://example.com
+```
+
+The assigned values shown are the default values.
+
 Parameters specific to menus:
 
 ```toml
