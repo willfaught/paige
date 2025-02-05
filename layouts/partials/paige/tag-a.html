@@ -6,6 +6,6 @@
 {{ $page := $params.page }}
 {{ $style := $params.style }}
 
-{{ $target := partial "paige/target.html" (dict "page" $page "url" $href) }}
+{{ $target := partial "paige/func-target.html" (dict "page" $page "url" $href) }}
 
 <a {{ with $class }} class="{{ . }}" {{ end }} {{ with $href }} href="{{ . | safeURL }}" {{ end }} {{ with $style }} style="{{ . | safeCSS }}" {{ end }} {{ with $target }} target="{{ . }}" {{ end }}>{{ $content }}</a>

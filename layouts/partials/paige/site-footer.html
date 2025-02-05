@@ -8,7 +8,7 @@
 {{ $microdata := $page.Params.paige.page.microdata }}
 {{ $theme := "https://github.com/willfaught/paige" }}
 
-{{ $target := partial "paige/target.html" (dict "page" $page "url" $theme) }}
+{{ $target := partial "paige/func-target.html" (dict "page" $page "url" $theme) }}
 
 {{ if eq $credit nil }}
     {{ $targetString := "" }}

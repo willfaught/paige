@@ -2,7 +2,7 @@
 {{ $title := .Get "title" }}
 {{ $url := .Get "url" }}
 
-{{ $target := partial "paige/target.html" (dict "page" .Page "url" $url) }}
+{{ $target := partial "paige/func-target.html" (dict "page" .Page "url" $url) }}
 
 {{ if not $class }}
     {{ errorf "layouts/shortcodes/paige/icon.html: no class" }}
