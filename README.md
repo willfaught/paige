@@ -176,6 +176,7 @@ There is a single parameter object with sensible defaults that can be overridden
 [paige]
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
 color_scheme = "auto" # Must be "auto", "dark", or "light"
+copyright = "" # Appears below the page, above the site credit, if set. Defaults to the site copyright.
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
 description = "" # Site description. Appears above the menu, below the site title, if set.
@@ -401,7 +402,7 @@ disable = false # Exclude the page from search
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
 
-The assigned values shown are the default values.
+The assigned values shown are the default values unless otherwise specified.
 
 Parameters specific to pages:
 
