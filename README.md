@@ -298,7 +298,7 @@ logo = "" # Example: "/logo.webp"
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
-[paige.list_page]
+[paige.subpage]
 disable_authors = false
 disable_collections = false
 disable_date = false
@@ -1277,7 +1277,7 @@ If you want a more minimal look,
 try the following in `yoursite/hugo.toml`:
 
 ```toml
-[params.paige.list_page]
+[params.paige.subpage]
 disable_authors = true
 disable_date = true
 disable_keywords = true
@@ -1347,7 +1347,7 @@ To hide the collection, section, and page lists on the home page,
 try the following in `yoursite/content/_index.md`:
 
 ```toml
-[params.paige.list_page]
+[params.paige.subpage]
 disable_collections = true
 disable_pages = true
 disable_sections = true

@@ -11,7 +11,7 @@ credit = "Paige Theme"
 edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
-[paige.list_page]
+[paige.subpage]
 disable_authors = false
 disable_date = false
 disable_keywords = false
@@ -47,7 +47,7 @@ credit = "Paige Theme"
 edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
-[paige.list_page]
+[paige.subpage]
 disable_authors = false
 disable_date = false
 disable_keywords = false

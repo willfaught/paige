@@ -37,14 +37,6 @@ term = ["html"]
 [pagination]
 pagersize = 50
 
-[params.paige.list_page]
-disable_authors = true
-disable_date = true
-disable_keywords = true
-disable_reading_time = true
-disable_series = true
-disable_summary = true
-
 [params.paige.page]
 disable_authors = true
 disable_date = true
@@ -58,6 +50,14 @@ disable_toc = true
 [params.paige.site]
 disable_breadcrumbs = true
 disable_credit = true
+
+[params.paige.subpage]
+disable_authors = true
+disable_date = true
+disable_keywords = true
+disable_reading_time = true
+disable_series = true
+disable_summary = true
 
 [[params.paige.feed.atom.authors]]
 email = "example@example.com"
