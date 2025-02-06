@@ -58,19 +58,17 @@
 {{ end }}
 
 {{ with $collections }}
-    {{ $ordered := partial "paige/order.html" (dict "pages" .) }}
-
     <div id="paige-collections">
         {{ if or $sections $pages }}
             <h2 class="h5 text-center" id="paige-collections-header">{{ i18n "paige_collections" }}</h2>
         {{ end }}
 
         {{ if or $sections $pages }}
-            {{ range $ordered }}
+            {{ range . }}
                 {{ partial "paige/list-item.html" . }}
             {{ end }}
         {{ else }}
-            {{ $pager := $page.Paginate $ordered }}
+            {{ $pager := $page.Paginate . }}
 
             {{ range $pager.Pages }}
                 {{ partial "paige/list-item.html" . }}
@@ -82,19 +80,17 @@
 {{ end }}
 
 {{ with $sections }}
-    {{ $ordered := partial "paige/order.html" (dict "pages" .) }}
-
     <div id="paige-sections">
         {{ if or $collections $pages }}
             <h2 class="h5 text-center" id="paige-sections-header">{{ i18n "paige_sections" }}</h2>
         {{ end }}
 
         {{ if $pages }}
-            {{ range $ordered }}
+            {{ range . }}
                 {{ partial "paige/list-item.html" . }}
             {{ end }}
         {{ else }}
-            {{ $pager := $page.Paginate $ordered }}
+            {{ $pager := $page.Paginate . }}
 
             {{ range $pager.Pages }}
                 {{ partial "paige/list-item.html" . }}
@@ -106,14 +102,12 @@
 {{ end }}
 
 {{ with $pages }}
-    {{ $ordered := partial "paige/order.html" (dict "pages" .) }}
-
     <div id="paige-pages">
         {{ if or $collections $sections }}
             <h2 class="h5 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
         {{ end }}
 
-        {{ $pager := $page.Paginate $ordered }}
+        {{ $pager := $page.Paginate . }}
 
         {{ range $pager.Pages }}
             {{ partial "paige/list-item.html" . }}
