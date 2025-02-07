@@ -2,16 +2,15 @@
 
 {{ $context := $params.context }}
 {{ $crossorigin := $params.crossorigin | default "anonymous" }}
+{{ $enablesourcemap := not hugo.IsProduction }}
 {{ $href := $params.href }}
 {{ $includepaths := $params.includepaths }}
 {{ $integrity := $params.integrity }}
+{{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
 {{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
 {{ $template := $params.template }}
-
-{{ $enablesourcemap := not hugo.IsProduction }}
-{{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 
 {{ if not $href }}
     {{ errorf "layouts/partials/paige/tag-link.html: no href" }}
