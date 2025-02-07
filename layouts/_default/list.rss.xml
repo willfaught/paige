@@ -16,7 +16,7 @@
         {{ $build = .Lastmod }}
     {{ end }}
 
-    {{ if not (.Param "paige.feeds.disable") }}
+    {{ if not (.Param "paige.feeds.exclude") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}
 {{ end }}

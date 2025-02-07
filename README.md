@@ -281,7 +281,7 @@ repo = ""
 theme = ""
 
 [paige.feeds]
-disable = false # Exclude the page from feeds
+exclude = false # Exclude this page from feeds
 link_to_page = false # Link to the page instead of the front matter link, if present
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, then link to the page with this text
 
