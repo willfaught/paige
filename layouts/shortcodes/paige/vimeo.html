@@ -108,7 +108,7 @@
     {{ $params = $params | append "transparent=0" }}
 {{ end }}
 
-{{ $params = delimit ($params | sort) "&" }}
+{{ $params = delimit (sort $params) "&" }}
 
 {{ $src := print "https://player.vimeo.com/video/" $video }}
 
