@@ -1,5 +1,0 @@
-{{ $page := . }}
-
-{{ with $page.Param "paige.analytics.plausible" }}
-    <script data-domain="{{ .account_id }}" defer src="https://plausible.io/js/script.js"></script>
-{{ end }}

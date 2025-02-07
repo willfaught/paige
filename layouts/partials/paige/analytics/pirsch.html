@@ -1,5 +1,0 @@
-{{ $page := . }}
-
-{{ with $page.Param "paige.analytics.pirsch" }}
-    <script defer type="text/javascript" src="https://api.pirsch.io/pirsch.js" id="pirschjs" data-code="{{ .identification_code }}"></script>
-{{ end }}

@@ -13,7 +13,6 @@ Paige is designed to put your content front and center, avoiding the typical clu
 ## Features
 
 - Accessibility
-- Analytics
 - Atom feed
 - Authors
 - Blog
@@ -193,55 +192,6 @@ style = "" # CSS included at the end of the stylesheet, before style-last.css
 [paige.alert]
 message = "Alert!" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert class
-
-[paige.analytics]
-disable = false # Disable all analytics
-
-[paige.analytics.beam] # See https://beamanalytics.io
-token = ""
-
-[paige.analytics.chartbeat] # See https://chartbeat.com
-account_id = ""
-domain = ""
-
-[paige.analytics.clarity] # See https://clarity.microsoft.com
-account_id = ""
-
-[paige.analytics.clicky] # See https://clicky.com
-account_id = ""
-
-[paige.analytics.counter] # See https://counter.dev
-account_id = ""
-utc_offset = ""
-
-[paige.analytics.fathom] # See https://usefathom.com
-account_id = ""
-
-[paige.analytics.finteza] # See https://finteza.com
-account_id = ""
-script_url = ""
-
-[paige.analytics.hotjar] # See https://hotjar.com
-account_id = ""
-
-[paige.analytics.matomo] # See https://matomo.org
-account_id = ""
-host_url = ""
-
-[paige.analytics.mixpanel] # See https://mixpanel.com
-token = ""
-
-[paige.analytics.pirsch] # See https://pirsch.io
-identification_code = ""
-
-[paige.analytics.plausible] # See https://plausible.io
-account_id = ""
-
-[paige.analytics.woopra] # See https://woopra.com
-domain = ""
-
-[paige.analytics.yandex] # See https://metrica.yandex.com
-account_id = ""
 
 [paige.comments]
 disable = false # Disable all comments

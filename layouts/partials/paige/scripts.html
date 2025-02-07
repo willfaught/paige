@@ -7,7 +7,6 @@
     {{ partial "paige/tag-script.html" (dict "onload" "renderMathInElement(document.body);" "page" $page "src" "js/paige/katex/auto-render.min.js") }}
 {{ end }}
 
-{{ partial "paige/analytics.html" $page }}
 {{ partial "paige/schemas.html" $page }}
 
 <noscript>{{ i18n "paige_noscript" }}</noscript>

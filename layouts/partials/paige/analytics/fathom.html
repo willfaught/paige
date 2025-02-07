@@ -1,5 +1,0 @@
-{{ $page := . }}
-
-{{ with $page.Param "paige.analytics.fathom" }}
-    <script data-site="{{ .account_id }}" defer src="https://cdn.usefathom.com/script.js"></script>
-{{ end }}
