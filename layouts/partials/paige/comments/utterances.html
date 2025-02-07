@@ -1,8 +1,0 @@
-{{ $page := . }}
-
-{{ with $page.Param "paige.comments.utterances" }}
-    <div class="mb-3" id="paige-comments">
-        <script async crossorigin="anonymous" issue-term="{{ .RelPermalink }}" repo="{{ .repo }}" src="https://utteranc.es/client.js" theme="{{ .theme }}"></script>
-        <noscript>{{ i18n "paige_noscript" }}</noscript>
-    </div>
-{{ end }}

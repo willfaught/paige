@@ -8,7 +8,6 @@ features = [
   "bootstrap styles and icons",
   "categories",
   "code shortcode",
-  "comments",
   "customizable",
   "dark color scheme",
   "email shortcode",

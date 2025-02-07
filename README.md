@@ -19,7 +19,6 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Bootstrap styles and icons
 - Categories
 - Code shortcode
-- Comments
 - Customizable
 - Dark color scheme
 - Email shortcode
@@ -192,43 +191,6 @@ style = "" # CSS included at the end of the stylesheet, before style-last.css
 [paige.alert]
 message = "Alert!" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert class
-
-[paige.comments]
-disable = false # Disable all comments
-disable_kinds = [] # Page kinds to disable comments for. Examples: ["list"], ["page", "term"].
-
-[paige.comments.cactus] # See https://cactus.chat
-site_name = ""
-
-[paige.comments.commento] # See https://commento.io
-script_url = ""
-
-[paige.comments.cusdis] # See https://cusdis.com
-app_id = ""
-host_url = ""
-
-[paige.comments.graphcomment] # See https://graphcomment.com
-account_id = ""
-
-[paige.comments.hyvor] # See https://hyvor.com
-website = ""
-
-[paige.comments.intensedebate] # See https://intensedebate.com
-account_id = ""
-
-[paige.comments.isso] # See https://isso-comments.de
-script_url = ""
-
-[paige.comments.remark42] # See https://remark42.com
-host_url = ""
-site_id = ""
-
-[paige.comments.replybox] # See https://getreplybox.com
-site = ""
-
-[paige.comments.utterances] # See https://utteranc.es
-repo = ""
-theme = ""
 
 [paige.feeds]
 exclude = false # Exclude this page from feeds
@@ -1066,8 +1028,6 @@ Page identifiers:
     <dd>The site collection pages.</dd>
     <dt><code>#paige-collections-header</code></dt>
     <dd>The site collection pages header.</dd>
-    <dt><code>#paige-comments</code></dt>
-    <dd>The page comments.</dd>
     <dt><code>#paige-content</code></dt>
     <dd>The page content.</dd>
     <dt><code>#paige-copyright</code></dt>
