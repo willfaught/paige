@@ -39,16 +39,16 @@
         {{ end }}
 
         {{ with $title }}
-            <div class="display-1 fw-bold {{ if $description }} mb-2 {{ end }} paige-row-wide text-center" id="paige-site-title">{{ . }}</div>
+            <div class="display-1 fw-bold {{ if $description }} mb-2 {{ end }} paige-row-tall text-center" id="paige-site-title">{{ . }}</div>
         {{ end }}
 
         {{ with $description }}
-            <div class="lead paige-row-wide text-center" id="paige-site-description">{{ . }}</div>
+            <div class="lead paige-row-tall text-center" id="paige-site-description">{{ . }}</div>
         {{ end }}
 
         {{ if $menu }}
             {{ with site.Menus.main }}
-                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
+                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                         {{ range . }}
                             {{ $menuPath := strings.TrimPrefix $basePath .URL }}
@@ -110,7 +110,7 @@
 
                 {{ $pages = sort $pages "LinkTitle" }}
 
-                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
+                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                         {{ with $title }}
                             {{ $active := eq $page.Section "" }}
@@ -139,7 +139,7 @@
         {{ end }}
 
         {{ with $breadcrumbs }}
-            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-wide" id="paige-breadcrumbs">
+            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-tall" id="paige-breadcrumbs">
                 <div class="d-flex justify-content-center">
                     <ol class="breadcrumb mb-0">
                         {{ $reverse := .Reverse }}

@@ -31,7 +31,7 @@
             {{ end }}
 
             {{ with $description }}
-                <p class="lead paige-row-wide" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
+                <p class="lead paige-row-tall" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
             {{ end }}
 
             {{ if or $authors $date $keywords $time $series }}
@@ -93,11 +93,11 @@
             {{ end }}
 
             {{ with $alert }}
-                <div class="alert alert-{{ .type }} paige-row-wide" id="paige-alert" role="alert">{{ .message | markdownify }}</div>
+                <div class="alert alert-{{ .type }} paige-row-tall" id="paige-alert" role="alert">{{ .message | markdownify }}</div>
             {{ end }}
 
             {{ if $toc }}
-                <div class="paige-row-wide" id="paige-toc">
+                <div class="paige-row-tall" id="paige-toc">
                     <div class="border pe-3 ps-3 pt-3 rounded">
                         {{ $page.TableOfContents }}
                     </div>
