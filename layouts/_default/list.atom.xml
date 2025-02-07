@@ -1,19 +1,19 @@
 {{ $page := . }}
 
-{{ $authors := $page.Param "paige.feed.atom.authors" }}
+{{ $authors := $page.Param "paige.feeds.atom.authors" }}
 {{ $format := "2006-01-02T15:04:05Z07:00" }}
-{{ $icon := $page.Param "paige.feed.atom.icon" | absLangURL }}
+{{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
-{{ $logo := $page.Param "paige.feed.atom.logo" | absLangURL }}
+{{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
 {{ $updated := site.Lastmod.Format $format }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
-    {{ if not (.Param "paige.feed.disable") }}
+    {{ if not (.Param "paige.feeds.disable") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}
 {{ end }}
@@ -98,7 +98,7 @@
     {{ range $subpage := $subpages }}
         <entry>
             {{ $content := .Content }}
-            {{ $external := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
+            {{ $external := and .Params.link (not (.Param "paige.feeds.link_to_page")) | not | not }}
             {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
             {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
             {{ $summary := .Description | markdownify }}
@@ -108,7 +108,7 @@
             {{ $link := cond $external .Params.link .Permalink }}
 
             {{ if and $content $external }}
-                {{ $text := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
+                {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
                 {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape .Title) $text | safeHTML }}
 
@@ -124,7 +124,7 @@
             {{ end }}
 
             {{ if .Lastmod.IsZero }}
-                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date. The atom output requires a modified date. Either set the page's date parameter, or set the page's paige.feed.disable parameter to true, or disable the atom output." .RelPermalink }}
+                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date. The atom output requires a modified date. Either set the page's date parameter, or set the page's paige.feeds.disable parameter to true, or disable the atom output." .RelPermalink }}
             {{ end }}
 
             {{ with partial "paige/func-authors.html" . }}

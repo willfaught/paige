@@ -59,12 +59,12 @@ disable_reading_time = true
 disable_series = true
 disable_summary = true
 
-[[params.paige.feed.atom.authors]]
+[[params.paige.feeds.atom.authors]]
 email = "example@example.com"
 name = "John Doe"
 url = "https://example.com"
 
-[params.paige.feed.rss]
+[params.paige.feeds.rss]
 managing_editor = "example@example.com (John Doe)"
 web_master = "example@example.com (John Doe)"
 

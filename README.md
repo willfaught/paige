@@ -280,22 +280,22 @@ site = ""
 repo = ""
 theme = ""
 
-[paige.feed]
+[paige.feeds]
 disable = false # Exclude the page from feeds
 link_to_page = false # Link to the page instead of the front matter link, if present
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, then link to the page with this text
 
-[paige.feed.atom]
+[paige.feeds.atom]
 authors = []
 # Example:
-# [[paige.feed.atom.authors]]
+# [[paige.feeds.atom.authors]]
 # email = "example@example.com"
 # name = "John Doe"
 # url = "https://github.com/account/project"
 icon = "" # Example: "/icon.webp"
 logo = "" # Example: "/logo.webp"
 
-[paige.feed.rss]
+[paige.feeds.rss]
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 

@@ -3,12 +3,12 @@
 {{ $build := false }}
 {{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
 {{ $description := or $page.Description (i18n "paige_recent_content") }}
-{{ $editor := $page.Param "paige.feed.rss.managing_editor" }}
+{{ $editor := $page.Param "paige.feeds.rss.managing_editor" }}
 {{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
-{{ $master := $page.Param "paige.feed.rss.web_master" }}
+{{ $master := $page.Param "paige.feeds.rss.web_master" }}
 {{ $subpages := slice }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
@@ -16,7 +16,7 @@
         {{ $build = .Lastmod }}
     {{ end }}
 
-    {{ if not (.Param "paige.feed.disable") }}
+    {{ if not (.Param "paige.feeds.disable") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}
 {{ end }}
@@ -93,7 +93,7 @@
                 {{ $author := "" }}
                 {{ $authors := partial "paige/func-authors.html" . }}
                 {{ $description := .Content }}
-                {{ $external := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
+                {{ $external := and .Params.link (not (.Param "paige.feeds.link_to_page")) | not | not }}
                 {{ $guid := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
                 {{ $published := .PublishDate.Format $format }}
                 {{ $title := .Title | markdownify | plainify | htmlUnescape }}
@@ -111,7 +111,7 @@
                 {{ end }}
 
                 {{ if and $description $external }}
-                    {{ $text := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
+                    {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
                     {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape $title) $text | safeHTML }}
 
