@@ -1150,10 +1150,10 @@ Page identifiers:
     <dd>The page header that contains the page title, description, metadata, and table of contents.</dd>
     <dt><code>#paige-page-title</code></dt>
     <dd>The page title.</dd>
-    <dt><code>#paige-pages</code></dt>
+    <dt><code>#paige-subpages</code></dt>
     <dd>The page sub-pages.</dd>
-    <dt><code>#paige-pages-header</code></dt>
-    <dd>The page sub-pages header.</dd>
+    <dt><code>#paige-subpages-header</code></dt>
+    <dd>The page subpages header.</dd>
     <dt><code>#paige-pagination</code></dt>
     <dd>The pagination of sub-pages.</dd>
     <dt><code>#paige-prev</code></dt>

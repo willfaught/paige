@@ -102,9 +102,9 @@
 {{ end }}
 
 {{ with $pages }}
-    <div id="paige-pages">
+    <div id="paige-subpages">
         {{ if or $collections $sections }}
-            <h2 class="h5 text-center" id="paige-pages-header">{{ i18n "paige_pages" }}</h2>
+            <h2 class="h5 text-center" id="paige-subpages-header">{{ i18n "paige_pages" }}</h2>
         {{ end }}
 
         {{ $pager := $page.Paginate . }}
