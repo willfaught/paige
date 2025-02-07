@@ -114,11 +114,13 @@
 
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
-                        {{ $homemenuactive := eq $page.Section "" }}
+                        {{ with $titleconfig }}
+                            {{ $homemenuactive := eq $page.Section "" }}
 
-                        <li class="nav-item">
-                            <a {{ if $homemenuactive }} aria-current="page" {{ end }} class="{{ if $homemenuactive }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ $titleconfig }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a {{ if $homemenuactive }} aria-current="page" {{ end }} class="{{ if $homemenuactive }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ . }}</a>
+                            </li>
+                        {{ end }}
 
                         {{ range $pages }}
                             {{ $menupath := strings.TrimPrefix $basepath .RelPermalink }}
