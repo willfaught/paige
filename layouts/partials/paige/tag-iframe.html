@@ -5,4 +5,4 @@
 {{ $src := $params.src }}
 {{ $title := $params.title }}
 
-<iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} {{ with $src }} src="{{ . | safeURL }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}></iframe>
+<iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} {{ with $src }} src="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}></iframe>

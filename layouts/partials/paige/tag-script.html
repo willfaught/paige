@@ -22,4 +22,4 @@
     {{ $src = relLangURL $src }}
 {{ end }}
 
-<script {{ with $origin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}" {{ with $type }} {{ printf `type="%v"` . | safeHTMLAttr }} {{ end }}></script>
+<script {{ with $origin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src }}" {{ with $type }} {{ printf `type="%v"` . | safeHTMLAttr }} {{ end }}></script>

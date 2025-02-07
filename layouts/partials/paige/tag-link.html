@@ -38,4 +38,4 @@
     {{ $href = relLangURL $href }}
 {{ end }}
 
-<link {{ with $origin }} crossorigin="{{ . }}" {{ end }} href="{{ $href | safeURL }}" {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
+<link {{ with $origin }} crossorigin="{{ . }}" {{ end }} href="{{ $href }}" {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
