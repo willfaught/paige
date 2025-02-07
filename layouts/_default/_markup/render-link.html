@@ -1,7 +1,4 @@
-{{- $href := cond (.Destination | not | not) (printf ` href="%s"` .Destination) "" -}}
-{{- $targetValue := partial "paige/func-target.html" (dict "page" .Page "url" .Destination) -}}
-{{- $title := cond (.Title | not | not) (printf ` title="%s"` .Title) "" -}}
+{{- $external := cond (urls.Parse .Destination).IsAbs (not (strings.HasSuffix .Destination site.BaseURL)) false -}}
+{{- $target := partial "paige/func-target.html" (dict "page" .Page "url" .Destination) -}}
 
-{{- $targetAttr := cond ($targetValue | not | not) (printf ` target="%s"` $targetValue) "" -}}
-
-{{- printf `<a%s%s%s>%s</a>` $href $targetAttr $title .Text | safeHTML -}}
+<a {{ with .Destination }} href="{{ . }}" {{ end }} {{ if $external }} rel="external" {{ end }} {{ with $target }} target="{{ . }}" {{ end }} {{ with .Title }} title="{{ . }}" {{ end }}>{{ .Text }}</a>
