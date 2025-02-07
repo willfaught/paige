@@ -108,7 +108,7 @@
                     {{ end }}
                 {{ end }}
 
-                {{ $pages = sort $pages "Title" }}
+                {{ $pages = sort $pages "LinkTitle" }}
 
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
@@ -130,7 +130,7 @@
                             {{ $active := or $home $menu $section }}
 
                             <li class="nav-item">
-                                <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="{{ .RelPermalink | safeURL }}" {{ with partial "paige/func-target.html" (dict "page" $page "url" .RelPermalink) }} target="{{ . }}" {{ end }}>{{ .Title }}</a>
+                                <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="{{ .RelPermalink | safeURL }}" {{ with partial "paige/func-target.html" (dict "page" $page "url" .RelPermalink) }} target="{{ . }}" {{ end }}>{{ .LinkTitle }}</a>
                             </li>
                         {{ end }}
                     </ul>
@@ -147,7 +147,7 @@
                         {{ $last := sub (len $reverse) 1 }}
 
                         {{ range $i, $ancestor := $reverse }}
-                            {{ $title := $ancestor.Title }}
+                            {{ $title := $ancestor.LinkTitle }}
 
                             {{ if and (eq $i $last) (not $title) }}
                                 {{ $title = $page.Param "paige.title" | default (site.Title) }}

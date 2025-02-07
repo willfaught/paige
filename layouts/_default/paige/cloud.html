@@ -6,9 +6,9 @@
 {{ with $page.Pages }}
     <div id="paige-subpages">
         <ul class="list-inline text-center">
-            {{ range (sort . "Title") }}
+            {{ range (sort . "LinkTitle") }}
                 <li class="list-inline-item">
-                    <a href="{{ .RelPermalink }}">{{ .Title | markdownify | plainify | htmlUnescape }}</a>
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle | markdownify | plainify | htmlUnescape }}</a>
                 </li>
             {{ end }}
         </ul>

@@ -42,11 +42,11 @@
         {{ if or $next $prev }}
             <div id="paige-siblings">
                 {{ with $prev }}
-                    <div class="paige-row-narrow text-center text-secondary" id="paige-next"><a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a> &rsaquo;</div>
+                    <div class="paige-row-narrow text-center text-secondary" id="paige-next"><a class="link-secondary" href="{{ .Permalink }}">{{ .LinkTitle }}</a> &rsaquo;</div>
                 {{ end }}
 
                 {{ with $next }}
-                    <div class="paige-row-narrow text-center text-secondary" id="paige-prev">&lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .Title }}</a></div>
+                    <div class="paige-row-narrow text-center text-secondary" id="paige-prev">&lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .LinkTitle }}</a></div>
                 {{ end }}
             </div>
         {{ end }}
