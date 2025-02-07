@@ -37,7 +37,7 @@
             {{ if or $authors $date $keywords $time $series }}
                 <div id="paige-metadata">
                     {{ with $keywords }}
-                        <p class="{{ if $normal }} paige-row-narrow {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-keywords">
+                        <p class="{{ if $normal }} paige-row-short {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-keywords">
                             {{ range $i, $term := . -}}
                                 {{- $kind := false -}}
 
@@ -61,7 +61,7 @@
                     {{ end }}
 
                     {{ with $series }}
-                        <p class="paige-row-narrow text-center text-secondary" id="paige-series">
+                        <p class="paige-row-short text-center text-secondary" id="paige-series">
                             {{ range $i, $series := . -}}
                                 {{- if gt $i 0 }} · {{ end -}}
 
@@ -71,7 +71,7 @@
                     {{ end }}
 
                     {{ with $authors }}
-                        <p class="paige-row-narrow text-center text-secondary" id="paige-authors">
+                        <p class="paige-row-short text-center text-secondary" id="paige-authors">
                             {{ range $i, $author := . -}}
                                 {{- if gt $i 0 }} · {{ end -}}
 
@@ -81,13 +81,13 @@
                     {{ end }}
 
                     {{ with $date }}
-                        <p class="paige-row-narrow text-center text-secondary" id="paige-date">
+                        <p class="paige-row-short text-center text-secondary" id="paige-date">
                             <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $format . }}</time>
                         </p>
                     {{ end }}
 
                     {{ with $time }}
-                        <p class="paige-row-narrow text-center text-secondary" id="paige-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
+                        <p class="paige-row-short text-center text-secondary" id="paige-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
                     {{ end }}
                 </div>
             {{ end }}

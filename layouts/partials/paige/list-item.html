@@ -43,19 +43,19 @@
 
 <div class="{{ $class }}">
     {{ with $title }}
-        <p class="paige-row-narrow paige-title text-center"><a href="{{ $link }}">{{ . }}</a></p>
+        <p class="paige-row-short paige-title text-center"><a href="{{ $link }}">{{ . }}</a></p>
     {{ end }}
 
     {{ with $description }}
-        <p class="paige-description paige-row-narrow text-center">{{ . }}</p>
+        <p class="paige-description paige-row-short text-center">{{ . }}</p>
     {{ end }}
 
     {{ with $summary }}
-        <p class="fst-italic paige-row-narrow paige-summary text-center">{{ . }}</p>
+        <p class="fst-italic paige-row-short paige-summary text-center">{{ . }}</p>
     {{ end }}
 
     {{ with $keywords }}
-        <p class="paige-keywords paige-row-narrow text-center text-secondary">
+        <p class="paige-keywords paige-row-short text-center text-secondary">
             {{ range $i, $term := . -}}
                 {{- $kind := false -}}
 
@@ -79,7 +79,7 @@
     {{ end }}
 
     {{ with $series }}
-        <p class="paige-row-narrow paige-series text-center text-secondary">
+        <p class="paige-row-short paige-series text-center text-secondary">
             {{ range $i, $series := . -}}
                 {{- if gt $i 0 }} · {{ end -}}
 
@@ -89,7 +89,7 @@
     {{ end }}
 
     {{ with $authors }}
-        <p class="paige-authors text-center paige-row-narrow text-secondary">
+        <p class="paige-authors text-center paige-row-short text-secondary">
             {{ range $i, $author := . -}}
                 {{- if gt $i 0 }} · {{ end -}}
 
@@ -99,12 +99,12 @@
     {{ end }}
 
     {{ with $date }}
-        <p class="paige-date text-center paige-row-narrow text-secondary">
+        <p class="paige-date text-center paige-row-short text-secondary">
             <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $format . }}</time>
         </p>
     {{ end }}
 
     {{ with $time }}
-        <p class="paige-reading-time paige-row-narrow text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
+        <p class="paige-reading-time paige-row-short text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
     {{ end }}
 </div>

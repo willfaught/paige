@@ -22,15 +22,15 @@
         {{ end }}
 
         {{ with $copyright }}
-            <p class="paige-row-narrow text-center text-secondary" id="paige-copyright" {{ if $microdata }} itemprop="copyrightNotice" {{ end }}>{{ . }}</p>
+            <p class="paige-row-short text-center text-secondary" id="paige-copyright" {{ if $microdata }} itemprop="copyrightNotice" {{ end }}>{{ . }}</p>
         {{ end }}
 
         {{ with $license }}
-            <p class="paige-row-narrow text-center text-secondary" id="paige-license">{{ . }}</p>
+            <p class="paige-row-short text-center text-secondary" id="paige-license">{{ . }}</p>
         {{ end }}
 
         {{ with $credit }}
-            <p class="paige-row-narrow text-center text-secondary" id="paige-credit">{{ . }}</p>
+            <p class="paige-row-short text-center text-secondary" id="paige-credit">{{ . }}</p>
         {{ end }}
 
         {{ if $last }}
