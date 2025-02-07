@@ -1,9 +1,8 @@
 {{ $page := . }}
 
-{{ $disable := $page.Param "paige.comments.disable" }}
+{{ $enabled := $page.Param "paige.comments.disable" | not }}
 {{ $disablekinds := $page.Param "paige.comments.disable_kinds" }}
 
-{{ $enabled := $disable | not }}
 {{ $enabledkind := or (not $disablekinds) (not (in $disablekinds $page.Kind)) }}
 
 {{ if and $enabled $enabledkind }}
