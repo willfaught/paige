@@ -1,6 +1,7 @@
 {{- $href := cond (.Destination | not | not) (printf ` href="%s"` .Destination) "" -}}
 {{- $targetvalue := partial "paige/func-target.html" (dict "page" .Page "url" .Destination) -}}
-{{- $targetattr := cond ($targetvalue | not | not) (printf ` target="%s"` $targetvalue) "" -}}
 {{- $title := cond (.Title | not | not) (printf ` title="%s"` .Title) "" -}}
+
+{{- $targetattr := cond ($targetvalue | not | not) (printf ` target="%s"` $targetvalue) "" -}}
 
 {{- printf `<a%s%s%s>%s</a>` $href $targetattr $title .Text | safeHTML -}}
