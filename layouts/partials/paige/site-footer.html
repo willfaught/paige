@@ -6,20 +6,11 @@
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
 {{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.disable_license" | not) }}
 {{ $microdata := $page.Params.paige.page.microdata }}
-{{ $theme := "https://github.com/willfaught/paige" }}
 
-{{ $target := partial "paige/func-target.html" (dict "page" $page "url" $theme) }}
-
-{{ if eq $credit nil }}
-    {{ $targetString := "" }}
-
-    {{ with $target }}
-        {{ $targetString = printf ` target="%s"` . }}
-    {{ end }}
-
-    {{ $credit = printf `<a class="link-secondary text-decoration-none" href="%s"%s>Paige Theme</a>` $theme $targetString | safeHTML }}
-{{ else }}
+{{ if $credit }}
     {{ $credit = markdownify $credit }}
+{{ else }}
+    {{ $credit = `<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" target="_blank">Paige Theme</a>` | safeHTML }}
 {{ end }}
 
 {{ $credit = $credit | and ($page.Param "paige.site.disable_credit" | not) }}
