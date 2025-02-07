@@ -1,5 +1,5 @@
-{{ $autopause := .Get "autopause" | default true }}
-{{ $autoplay := .Get "autoplay" }}
+{{ $autoPause := .Get "autopause" | default true }}
+{{ $autoPlay := .Get "autoplay" }}
 {{ $background := .Get "background" }}
 {{ $byline := .Get "byline" }}
 {{ $color := .Get "color" }}
@@ -10,16 +10,16 @@
 {{ $height := .Get "height" }}
 {{ $keyboard := .Get "keyboard" | default true }}
 {{ $loop := .Get "loop" }}
-{{ $maxheight := .Get "maxheight" }}
-{{ $maxwidth := .Get "maxwidth" }}
+{{ $maxHeight := .Get "maxheight" }}
+{{ $maxWidth := .Get "maxwidth" }}
 {{ $muted := .Get "muted" }}
 {{ $pip := .Get "pip" }}
-{{ $playsinline := .Get "playsinline" | default true }}
+{{ $playsInline := .Get "playsinline" | default true }}
+{{ $policy := .Get "referrerpolicy" | default "no-referrer" }}
 {{ $portrait := .Get "portrait" }}
 {{ $quality := .Get "quality" }}
-{{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer" }}
 {{ $speed := .Get "speed" }}
-{{ $texttrack := .Get "texttrack" }}
+{{ $textTrack := .Get "texttrack" }}
 {{ $time := .Get "time" }}
 {{ $title := .Get "title" }}
 {{ $transparent := .Get "transparent" | default true }}
@@ -32,11 +32,11 @@
 
 {{ $params := slice }}
 
-{{ if not $autopause }}
+{{ if not $autoPause }}
     {{ $params = $params | append "autopause=0" }}
 {{ end }}
 
-{{ if $autoplay }}
+{{ if $autoPlay }}
     {{ $params = $params | append "autoplay=1" }}
 {{ end }}
 
@@ -76,7 +76,7 @@
     {{ $params = $params | append "pip=1" }}
 {{ end }}
 
-{{ if not $playsinline }}
+{{ if not $playsInline }}
     {{ $params = $params | append "playsinline=0" }}
 {{ end }}
 
@@ -92,7 +92,7 @@
     {{ $params = $params | append "speed=1" }}
 {{ end }}
 
-{{ with $texttrack }}
+{{ with $textTrack }}
     {{ $params = $params | append (printf "texttrack=%v" .) }}
 {{ end }}
 
@@ -120,9 +120,9 @@
     {{ partial "paige/video.html" (dict
         "fullscreen" $fullscreen
         "height" $height
-        "maxheight" $maxheight
-        "maxwidth" $maxwidth
-        "referrerpolicy" $referrerpolicy
+        "maxheight" $maxHeight
+        "maxwidth" $maxWidth
+        "referrerpolicy" $policy
         "src" $src
         "title" $description
         "width" $width

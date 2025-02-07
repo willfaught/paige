@@ -1,11 +1,11 @@
 {{ $params := . }}
 
-{{ $crossorigin := $params.crossorigin | default "anonymous" }}
 {{ $defer := $params.defer | default "defer" }}
 {{ $integrity := $params.integrity }}
 {{ $onload := $params.onload | safeJS }}
+{{ $origin := $params.crossorigin | default "anonymous" }}
 {{ $page := $params.page }}
-{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
+{{ $policy := $params.referrerpolicy | default "no-referrer" }}
 {{ $src := $params.src }}
 {{ $type := $params.type }}
 
@@ -22,4 +22,4 @@
     {{ $src = relLangURL $src }}
 {{ end }}
 
-<script {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}" {{ with $type }} {{ printf `type="%v"` . | safeHTMLAttr }} {{ end }}></script>
+<script {{ with $origin }} crossorigin="{{ . }}" {{ end }} {{ with $defer }} defer {{ end }} integrity="{{ $integrity }}" {{ with $onload }} onload="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} src="{{ $src | safeURL }}" {{ with $type }} {{ printf `type="%v"` . | safeHTMLAttr }} {{ end }}></script>

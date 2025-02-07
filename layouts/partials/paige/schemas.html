@@ -1,15 +1,15 @@
 {{ $page := . }}
 
 {{ $auto := $page.Param "paige.page.disable_auto_schema" | not }}
-{{ $pagebase := $page.Param "paige.page.base_schema" }}
-{{ $sitebase := $page.Param "paige.site.base_schema" }}
+{{ $pageBase := $page.Param "paige.page.base_schema" }}
+{{ $siteBase := $page.Param "paige.site.base_schema" }}
 
 {{ range $page.Param "paige.site.schemas" }}
-    <script type="application/ld+json">{{ merge $sitebase . | jsonify | safeJS }}</script>
+    <script type="application/ld+json">{{ merge $siteBase . | jsonify | safeJS }}</script>
 {{ end }}
 
 {{ range $page.Param "paige.page.schemas" }}
-    <script type="application/ld+json">{{ merge $pagebase . | jsonify | safeJS }}</script>
+    <script type="application/ld+json">{{ merge $pageBase . | jsonify | safeJS }}</script>
 {{ end }}
 
 {{ if $auto }}
@@ -38,44 +38,44 @@
     {{ end }}
 
     {{ with $audios }}
-        {{ $audioObjects := slice }}
+        {{ $objects := slice }}
 
         {{ range $audios }}
-            {{ $audioObjects = $audioObjects | append (dict "@type" "AudioObject" "url" .) }}
+            {{ $objects = $objects | append (dict "@type" "AudioObject" "url" .) }}
         {{ end }}
 
-        {{ $schema.Set "audio" $audioObjects }}
+        {{ $schema.Set "audio" $objects }}
     {{ end }}
 
     {{ with $authors }}
-        {{ $authorObjects := slice }}
+        {{ $objects := slice }}
 
         {{ range $authors }}
-            {{ $authoremail := cond (. | not | not) .Params.paige.author.email "" }}
-            {{ $authorname := cond (. | not | not) .Params.paige.author.name "" }}
-            {{ $authorurl := cond (. | not | not) .Params.paige.author.url "" }}
+            {{ $email := cond (. | not | not) .Params.paige.author.email "" }}
+            {{ $name := cond (. | not | not) .Params.paige.author.name "" }}
+            {{ $url := cond (. | not | not) .Params.paige.author.url "" }}
 
-            {{ if or $authoremail $authorname $authorurl }}
-                {{ $authorSchema := newScratch }}
+            {{ if or $email $name $url }}
+                {{ $object := newScratch }}
 
-                {{ with $authoremail }}
-                    {{ $authorSchema.Set "email" . }}
+                {{ with $email }}
+                    {{ $object.Set "email" . }}
                 {{ end }}
 
-                {{ with $authorname }}
-                    {{ $authorSchema.Set "name" . }}
+                {{ with $name }}
+                    {{ $object.Set "name" . }}
                 {{ end }}
 
-                {{ with $authorurl }}
-                    {{ $authorSchema.Set "url" . }}
+                {{ with $url }}
+                    {{ $object.Set "url" . }}
                 {{ end }}
 
-                {{ $authorSchema.Set "@type" "Person" }}
-                {{ $authorObjects = $authorObjects | append $authorSchema.Values }}
+                {{ $object.Set "@type" "Person" }}
+                {{ $objects = $objects | append $object.Values }}
             {{ end }}
         {{ end }}
 
-        {{ $schema.Set "author" $authorObjects }}
+        {{ $schema.Set "author" $objects }}
     {{ end }}
 
     {{ with site.Copyright }}
@@ -107,13 +107,13 @@
     {{ end }}
 
     {{ with $images }}
-        {{ $imageObjects := slice }}
+        {{ $objects := slice }}
 
         {{ range $images }}
-            {{ $imageObjects = $imageObjects | append (dict "@type" "ImageObject" "url" .) }}
+            {{ $objects = $objects | append (dict "@type" "ImageObject" "url" .) }}
         {{ end }}
 
-        {{ $schema.Set "image" $imageObjects }}
+        {{ $schema.Set "image" $objects }}
     {{ end }}
 
     {{ with site.Language }}
@@ -137,18 +137,18 @@
     {{ end }}
 
     {{ with $videos }}
-        {{ $videoObjects := slice }}
+        {{ $objects := slice }}
 
         {{ range $videos }}
-            {{ $videoObjects = $videoObjects | append (dict "@type" "VideoObject" "url" .) }}
+            {{ $objects = $objects | append (dict "@type" "VideoObject" "url" .) }}
         {{ end }}
 
-        {{ $schema.Set "video" $videoObjects }}
+        {{ $schema.Set "video" $objects }}
     {{ end }}
 
     {{ with $page.WordCount }}
         {{ $schema.Set "wordCount" . }}
     {{ end }}
 
-    <script type="application/ld+json">{{ merge $pagebase $schema.Values | jsonify | safeJS }}</script>
+    <script type="application/ld+json">{{ merge $pageBase $schema.Values | jsonify | safeJS }}</script>
 {{ end }}

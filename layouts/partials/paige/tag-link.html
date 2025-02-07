@@ -1,14 +1,14 @@
 {{ $params := . }}
 
 {{ $context := $params.context }}
-{{ $crossorigin := $params.crossorigin | default "anonymous" }}
 {{ $enablesourcemap := not hugo.IsProduction }}
 {{ $href := $params.href }}
-{{ $includepaths := $params.includepaths }}
 {{ $integrity := $params.integrity }}
+{{ $origin := $params.crossorigin | default "anonymous" }}
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
-{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
+{{ $paths := $params.includepaths }}
+{{ $policy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
 {{ $template := $params.template }}
 
@@ -28,7 +28,7 @@
     {{ if $sass }}
         {{/* TODO: Remove the silenceDeprecations option when Bootstrap is updated beyond v5.3.3. */}}
 
-        {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $includepaths "outputStyle" $outputstyle "silenceDeprecations" (slice "color-functions" "global-builtin" "import" "mixed-decls") "transpiler" "dartsass") }}
+        {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $paths "outputStyle" $outputstyle "silenceDeprecations" (slice "color-functions" "global-builtin" "import" "mixed-decls") "transpiler" "dartsass") }}
     {{ end }}
 
     {{ $resource = $resource | minify | fingerprint }}
@@ -38,4 +38,4 @@
     {{ $href = relLangURL $href }}
 {{ end }}
 
-<link {{ with $crossorigin }} crossorigin="{{ . }}" {{ end }} href="{{ $href | safeURL }}" {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $referrerpolicy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
+<link {{ with $origin }} crossorigin="{{ . }}" {{ end }} href="{{ $href | safeURL }}" {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">

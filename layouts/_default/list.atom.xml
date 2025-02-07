@@ -98,19 +98,19 @@
     {{ range $subpage := $subpages }}
         <entry>
             {{ $content := .Content }}
+            {{ $external := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
             {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
-            {{ $paramlink := and .Params.link (not (.Param "paige.feed.link_to_page")) | not | not }}
             {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
             {{ $summary := .Description | markdownify }}
             {{ $title := .Title | markdownify }}
             {{ $updated := .Lastmod.Format $format }}
 
-            {{ $link := cond $paramlink .Params.link .Permalink }}
+            {{ $link := cond $external .Params.link .Permalink }}
 
-            {{ if and $content $paramlink }}
-                {{ $link := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
+            {{ if and $content $external }}
+                {{ $text := or (.Param "paige.feed.page_link" | markdownify) "⏎" }}
 
-                {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape .Title) $link | safeHTML }}
+                {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape .Title) $text | safeHTML }}
 
                 {{ $content = print $content $footer }}
             {{ end }}

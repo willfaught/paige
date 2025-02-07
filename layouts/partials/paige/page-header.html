@@ -4,22 +4,22 @@
 {{ $authors := partial "paige/func-authors.html" $page | and ($page.Param "paige.page.disable_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
 {{ $date := and $page.IsPage $page.PublishDate | and ($page.Param "paige.page.disable_date" | not) }}
-{{ $dateformat := $page.Param "paige.date_format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify | and ($page.Param "paige.page.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/page-header-first.html" }}
+{{ $format := $page.Param "paige.date_format" | default ":date_long" }}
 {{ $last := templates.Exists "partials/paige/page-header-last.html" }}
 {{ $link := $page.Params.link }}
 {{ $microdata := $page.Params.paige.page.microdata }}
-{{ $readingtime := $page.ReadingTime | and ($page.Param "paige.page.disable_reading_time" | not) }}
+{{ $normal := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
 {{ $series := $page.GetTerms "series" | and ($page.Param "paige.page.disable_series" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
-{{ $textkeywords := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
+{{ $time := $page.ReadingTime | and ($page.Param "paige.page.disable_reading_time" | not) }}
 {{ $title := $page.Title | markdownify | and ($page.Param "paige.page.disable_title" | not) }}
 {{ $toc := and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) | and ($page.Param "paige.page.disable_toc" | not) }}
 
 {{ $keywords := sort (append $categories $tags) "Title" | and ($page.Param "paige.page.disable_keywords" | not) }}
 
-{{ if or $alert $authors $date $description $first $keywords $last $readingtime $series $title $toc }}
+{{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc }}
     <header class="mw-100" id="paige-page-header">
         <div class="align-items-center d-flex flex-column">
             {{ if $first }}
@@ -34,10 +34,10 @@
                 <p class="lead paige-row-wide" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
             {{ end }}
 
-            {{ if or $authors $date $keywords $readingtime $series }}
+            {{ if or $authors $date $keywords $time $series }}
                 <div id="paige-metadata">
                     {{ with $keywords }}
-                        <p class="{{ if $textkeywords }} paige-row-narrow {{ end }} text-center {{ if $textkeywords }} text-secondary {{ end }}" id="paige-keywords">
+                        <p class="{{ if $normal }} paige-row-narrow {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-keywords">
                             {{ range $i, $term := . -}}
                                 {{- $kind := false -}}
 
@@ -47,7 +47,7 @@
                                     {{- $kind = "tag" -}}
                                 {{- end -}}
 
-                                {{- if $textkeywords -}}
+                                {{- if $normal -}}
                                     {{- if gt $i 0 }} · {{ end -}}
 
                                     <a class="link-secondary paige-keyword paige-keyword-{{ $kind }}" href="{{ .RelPermalink | safeURL }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .Title }}</a>
@@ -82,11 +82,11 @@
 
                     {{ with $date }}
                         <p class="paige-row-narrow text-center text-secondary" id="paige-date">
-                            <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $dateformat . }}</time>
+                            <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $format . }}</time>
                         </p>
                     {{ end }}
 
-                    {{ with $readingtime }}
+                    {{ with $time }}
                         <p class="paige-row-narrow text-center text-secondary" id="paige-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
                     {{ end }}
                 </div>

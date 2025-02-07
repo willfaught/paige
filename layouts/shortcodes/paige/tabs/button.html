@@ -1,5 +1,5 @@
 {{ $content := chomp .InnerDeindent | markdownify }}
-{{ $tabcount := .Page.Scratch.Get "paige-tabs" | default 0 }}
+{{ $tabs := .Page.Scratch.Get "paige-tabs" | default 0 }}
 
 {{ if not $content }}
     {{ errorf "layouts/shortcodes/paige/tab/button.html: no content" }}
@@ -7,10 +7,10 @@
 
 {{ .Page.Scratch.Add "paige-tabs-button" 1 }}
 
-{{ $buttoncount := .Page.Scratch.Get "paige-tabs-button" }}
+{{ $buttons := .Page.Scratch.Get "paige-tabs-button" }}
 
-{{ $active := eq $buttoncount 1 }}
+{{ $active := eq $buttons 1 }}
 
 <li class="nav-item" role="presentation">
-    <button aria-controls="paige-tabs-{{ $tabcount }}-pane-{{ $buttoncount }}" aria-selected="{{ $active }}" class="{{ if $active }} active {{ end }} nav-link" data-bs-target="#paige-tabs-{{ $tabcount }}-pane-{{ $buttoncount }}" data-bs-toggle="tab" id="paige-tabs-{{ $tabcount }}-button-{{ $buttoncount }}" role="tab" type="button">{{ $content }}</button>
+    <button aria-controls="paige-tabs-{{ $tabs }}-pane-{{ $buttons }}" aria-selected="{{ $active }}" class="{{ if $active }} active {{ end }} nav-link" data-bs-target="#paige-tabs-{{ $tabs }}-pane-{{ $buttons }}" data-bs-toggle="tab" id="paige-tabs-{{ $tabs }}-button-{{ $buttons }}" role="tab" type="button">{{ $content }}</button>
 </li>

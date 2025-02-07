@@ -1,8 +1,6 @@
 {{ $page := . }}
 
-{{ $titleconfig := $page.Param "paige.title" | default site.Title }}
-
-{{ $basepath := path.Clean (urls.Parse (relLangURL "")).Path }}
+{{ $basePath := path.Clean (urls.Parse (relLangURL "")).Path }}
 {{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.disable_breadcrumbs" | not) }}
 {{ $description := $page.Param "paige.description" | markdownify | and ($page.Param "paige.site.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/site-header-first.html" }}
@@ -11,14 +9,14 @@
 {{ $menu := $page.Param "paige.site.disable_menu" | not }}
 {{ $pills := false }}
 {{ $tabs := false }}
-{{ $title := $titleconfig | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
+{{ $title := $page.Param "paige.title" | default site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
 {{ $underline := false }}
 
-{{ if eq $basepath "/" }}
-    {{ $basepath = "" }}
+{{ if eq $basePath "/" }}
+    {{ $basePath = "" }}
 {{ end }}
 
-{{ $pagepath := strings.TrimPrefix $basepath $page.RelPermalink }}
+{{ $pagePath := strings.TrimPrefix $basePath $page.RelPermalink }}
 
 {{ with $page.Param "paige.menu_style" }}
     {{ if eq . "pills" }}
@@ -53,13 +51,13 @@
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                         {{ range . }}
-                            {{ $menupath := strings.TrimPrefix $basepath .URL }}
+                            {{ $menuPath := strings.TrimPrefix $basePath .URL }}
 
-                            {{ $home := and (eq $menupath "/") (eq $page.Section "") }}
-                            {{ $menuprefix := and (ne $menupath "/") (hasPrefix $pagepath $menupath) }}
-                            {{ $sectionprefix := and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section)) }}
+                            {{ $home := and (eq $menuPath "/") (eq $page.Section "") }}
+                            {{ $menu := and (ne $menuPath "/") (hasPrefix $pagePath $menuPath) }}
+                            {{ $section := and (ne $menuPath "/") (hasPrefix $menuPath (printf "/%s/" $page.Section)) }}
 
-                            {{ $active := or $home $menuprefix $sectionprefix }}
+                            {{ $active := or $home $menu $section }}
 
                             <li class="nav-item {{ if .Children }} dropdown {{ end }}">
                                 <a {{ if $active }} aria-current="page" {{ end }} {{ if .Children }} aria-expanded="false" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} {{ if .Params.paige.disabled }} disabled {{ end }} nav-link {{ if .Children }} dropdown-toggle {{ end }} {{ if $links }} text-decoration-underline {{ end }}" {{ if .Children }} data-bs-toggle="dropdown" {{ end }} href="{{ if not .Children -}} {{- .URL | safeURL -}} {{- end }}" {{ if .Children }} role="button" {{ end }} {{ if not .Children }} {{ with partial "paige/func-target.html" (dict "page" $page "url" .URL) }} target="{{ . }}" {{ end }} {{ end }}>{{ .Name | markdownify }}</a>
@@ -114,22 +112,22 @@
 
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-wide" id="paige-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
-                        {{ with $titleconfig }}
-                            {{ $homemenuactive := eq $page.Section "" }}
+                        {{ with $title }}
+                            {{ $active := eq $page.Section "" }}
 
                             <li class="nav-item">
-                                <a {{ if $homemenuactive }} aria-current="page" {{ end }} class="{{ if $homemenuactive }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ . }}</a>
+                                <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ . }}</a>
                             </li>
                         {{ end }}
 
                         {{ range $pages }}
-                            {{ $menupath := strings.TrimPrefix $basepath .RelPermalink }}
+                            {{ $menuPath := strings.TrimPrefix $basePath .RelPermalink }}
 
-                            {{ $home := and (eq $menupath "/") (eq $page.Section "") }}
-                            {{ $menuprefix := and (ne $menupath "/") (hasPrefix $pagepath $menupath) }}
-                            {{ $sectionprefix := and (ne $menupath "/") (hasPrefix $menupath (printf "/%s/" $page.Section)) }}
+                            {{ $home := and (eq $menuPath "/") (eq $page.Section "") }}
+                            {{ $menu := and (ne $menuPath "/") (hasPrefix $pagePath $menuPath) }}
+                            {{ $section := and (ne $menuPath "/") (hasPrefix $menuPath (printf "/%s/" $page.Section)) }}
 
-                            {{ $active := or $home $menuprefix $sectionprefix }}
+                            {{ $active := or $home $menu $section }}
 
                             <li class="nav-item">
                                 <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="{{ .RelPermalink | safeURL }}" {{ with partial "paige/func-target.html" (dict "page" $page "url" .RelPermalink) }} target="{{ . }}" {{ end }}>{{ .Title }}</a>

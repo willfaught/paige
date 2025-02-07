@@ -4,13 +4,13 @@
 {{ $breakpoints := $params.breakpoints }}
 {{ $class := $params.class }}
 {{ $densities := $params.densities }}
-{{ $fetchpriority := $params.fetchpriority }}
+{{ $fetchPriority := $params.fetchpriority }}
 {{ $height := $params.height }}
 {{ $link := $params.link }}
 {{ $linked := $params.linked }}
 {{ $loading := $params.loading }}
-{{ $maxheight := $params.maxheight }}
-{{ $maxwidth := $params.maxwidth }}
+{{ $maxHeight := $params.maxheight }}
+{{ $maxWidth := $params.maxwidth }}
 {{ $page := $params.page }}
 {{ $process := $params.process }}
 {{ $resource := $params.resource }}
@@ -21,14 +21,14 @@
 {{ $title := $params.title }}
 {{ $width := $params.width }}
 
-{{ $intrinsicheight := "" }}
-{{ $intrinsicwidth := "" }}
+{{ $intrinsicHeight := "" }}
+{{ $intrinsicWidth := "" }}
 
-{{ if and (or $height $maxheight) (not (or $maxwidth $width)) }}
+{{ if and (or $height $maxHeight) (not (or $maxWidth $width)) }}
     {{ $width = "auto" }}
 {{ end }}
 
-{{ if and (or $maxwidth $width) (not (or $height $maxheight)) }}
+{{ if and (or $maxWidth $width) (not (or $height $maxHeight)) }}
     {{ $height = "auto" }}
 {{ end }}
 
@@ -54,12 +54,12 @@
     {{ $style = $style | append (print "height: " $height) }}
 {{ end }}
 
-{{ if $maxheight }}
-    {{ $style = $style | append (print "max-height: " $maxheight) }}
+{{ if $maxHeight }}
+    {{ $style = $style | append (print "max-height: " $maxHeight) }}
 {{ end }}
 
-{{ if $maxwidth }}
-    {{ $style = $style | append (print "max-width: " $maxwidth) }}
+{{ if $maxWidth }}
+    {{ $style = $style | append (print "max-width: " $maxWidth) }}
 {{ end }}
 
 {{ if $width }}
@@ -77,7 +77,7 @@
     {{ $options := slice }}
     {{ $quality := "" }}
     {{ $size := "" }}
-    {{ $smallerresource := $resource }}
+    {{ $smallerResource := $resource }}
 
     {{ if $process }}
         {{ range split (lower (cond (eq $process "default") "" $process)) " " }}
@@ -109,33 +109,33 @@
         {{ $smalleroptions := print $size " " $quality " " $options }}
 
         {{ if eq $method "crop" }}
-            {{ $smallerresource = $resource.Crop $smalleroptions }}
+            {{ $smallerResource = $resource.Crop $smalleroptions }}
         {{ else if eq $method "fill" }}
-            {{ $smallerresource = $resource.Fill $smalleroptions }}
+            {{ $smallerResource = $resource.Fill $smalleroptions }}
         {{ else if eq $method "fit" }}
-            {{ $smallerresource = $resource.Fit $smalleroptions }}
+            {{ $smallerResource = $resource.Fit $smalleroptions }}
         {{ else if eq $method "resize" }}
-            {{ $smallerresource = $resource.Resize $smalleroptions }}
+            {{ $smallerResource = $resource.Resize $smalleroptions }}
         {{ end }}
     {{ end }}
 
-    {{ $smallerresource = $smallerresource | fingerprint }}
-    {{ $intrinsicheight = $smallerresource.Height }}
-    {{ $intrinsicwidth = $smallerresource.Width }}
-    {{ $src = $smallerresource.Permalink }}
+    {{ $smallerResource = $smallerResource | fingerprint }}
+    {{ $intrinsicHeight = $smallerResource.Height }}
+    {{ $intrinsicWidth = $smallerResource.Width }}
+    {{ $src = $smallerResource.Permalink }}
 
     {{ if and (not $sizes) (not $srcset) }}
-        {{ $partialresource := "" }}
+        {{ $partialResource := "" }}
 
         {{ if and $method (or $breakpoints $densities) (ne $method "resize") }}
-            {{ $partialoptions := print $size " q100 " $options }}
+            {{ $partialOptions := print $size " q100 " $options }}
 
             {{ if eq $method "crop" }}
-                {{ $partialresource = $resource.Crop $partialoptions }}
+                {{ $partialResource = $resource.Crop $partialOptions }}
             {{ else if eq $method "fill" }}
-                {{ $partialresource = $resource.Fill $partialoptions }}
+                {{ $partialResource = $resource.Fill $partialOptions }}
             {{ else if eq $method "fit" }}
-                {{ $partialresource = $resource.Fit $partialoptions }}
+                {{ $partialResource = $resource.Fit $partialOptions }}
             {{ end }}
         {{ end }}
 
@@ -143,81 +143,81 @@
             {{ $densities = split $densities " " }}
             {{ $srcset = slice }}
 
-            {{ $parseddensities := slice }}
+            {{ $parsedDensities := slice }}
 
             {{ range $densities }}
                 {{ with findRE `^(\d+(\.\d+)?x|\.\d+x)$` . 1 }}
-                    {{ $parseddensities = $parseddensities | append (strings.TrimSuffix "x" (index . 0) | float) }}
+                    {{ $parsedDensities = $parsedDensities | append (strings.TrimSuffix "x" (index . 0) | float) }}
                 {{ else }}
                     {{ errorf "layouts/partials/paige/image.html: invalid pixel density: %q" . }}
                 {{ end }}
             {{ end }}
 
-            {{ $parseddensities = $parseddensities | uniq | sort }}
+            {{ $parsedDensities = $parsedDensities | uniq | sort }}
 
-            {{ if lt (len $parseddensities) 2 }}
+            {{ if lt (len $parsedDensities) 2 }}
                 {{ errorf "layouts/partials/paige/image.html: must have at least two unique pixel densities" }}
             {{ end }}
 
             {{ $base := 0 }}
-            {{ $maxdensity := index $parseddensities (sub (len $parseddensities) 1) }}
+            {{ $maxDensity := index $parsedDensities (sub (len $parsedDensities) 1) }}
 
-            {{ with $partialresource }}
-                {{ $base = div .Width $maxdensity }}
+            {{ with $partialResource }}
+                {{ $base = div .Width $maxDensity }}
             {{ else }}
-                {{ $base = div $smallerresource.Width $maxdensity }}
+                {{ $base = div $smallerResource.Width $maxDensity }}
             {{ end }}
 
-            {{ range $parseddensities }}
-                {{ if eq . $maxdensity }}
+            {{ range $parsedDensities }}
+                {{ if eq . $maxDensity }}
                     {{ continue }}
                 {{ end }}
 
-                {{ $imagewidth := mul $base . | math.Round | int }}
+                {{ $imageWidth := mul $base . | math.Round | int }}
                 {{ $resized := "" }}
 
-                {{ with $partialresource }}
-                    {{ $resized = .Resize (print $imagewidth "x " $quality " " $options) }}
+                {{ with $partialResource }}
+                    {{ $resized = .Resize (print $imageWidth "x " $quality " " $options) }}
                 {{ else }}
-                    {{ $resized = $smallerresource.Resize (print $imagewidth "x q100 " $options) }}
+                    {{ $resized = $smallerResource.Resize (print $imageWidth "x q100 " $options) }}
                 {{ end }}
 
                 {{ $resized = $resized | fingerprint }}
                 {{ $srcset = $srcset | append (printf "%s %gx" $resized.RelPermalink .) }}
             {{ end }}
 
-            {{ $srcset = $srcset | append (printf "%s %gx" $smallerresource.RelPermalink $maxdensity) }}
+            {{ $srcset = $srcset | append (printf "%s %gx" $smallerResource.RelPermalink $maxDensity) }}
             {{ $srcset = delimit $srcset ", " | string }}
         {{ else if $breakpoints }}
             {{ $sizes = slice }}
             {{ $srcset = slice }}
 
-            {{ $maxwidth := 0 }}
+            {{ $maxWidth := 0 }}
 
             {{ range slice (slice 550 576) (slice 696 768) (slice 936 992) (slice 1116 1200) (slice 1296 1400) }}
-                {{ $imagewidth := index . 0 }}
-                {{ $viewwidth := index . 1 }}
+                {{ $imageWidth := index . 0 }}
+                {{ $viewWidth := index . 1 }}
 
-                {{ if gt $imagewidth $smallerresource.Width }}
+                {{ if gt $imageWidth $smallerResource.Width }}
                     {{ continue }}
                 {{ end }}
 
                 {{ $resized := "" }}
 
-                {{ with $partialresource }}
-                    {{ $resized = .Resize (print $imagewidth "x " $quality " " $options) }}
+                {{ with $partialResource }}
+                    {{ $resized = .Resize (print $imageWidth "x " $quality " " $options) }}
                 {{ else }}
-                    {{ $resized = $smallerresource.Resize (print $imagewidth "x q100 " $options) }}
+                    {{ $resized = $smallerResource.Resize (print $imageWidth "x q100 " $options) }}
                 {{ end }}
 
                 {{ $resized = $resized | fingerprint }}
-                {{ $maxwidth = math.Max $maxwidth $imagewidth }}
-                {{ $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $viewwidth $imagewidth) }}
-                {{ $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $imagewidth) }}
+                {{ $maxWidth = math.Max $maxWidth $imageWidth }}
+                {{ $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $viewWidth $imageWidth) }}
+                {{ $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $imageWidth) }}
             {{ end }}
 
             {{ if $sizes }}
-                {{ $sizes = $sizes | append (print $maxwidth "px") }}
+                {{ $sizes = $sizes | append (print $maxWidth "px") }}
                 {{ $sizes = delimit $sizes ", " }}
                 {{ $srcset = delimit $srcset ", " }}
             {{ end }}
@@ -230,15 +230,15 @@
 {{ $content := partial "paige/tag-img.html" (dict
     "alt" $alt
     "class" $class
-    "fetchpriority" $fetchpriority
-    "height" $intrinsicheight
+    "fetchpriority" $fetchPriority
+    "height" $intrinsicHeight
     "loading" $loading
     "sizes" $sizes
     "src" $src
     "srcset" $srcset
     "style" $style
     "title" $title
-    "width" $intrinsicwidth
+    "width" $intrinsicWidth
 ) }}
 
 {{ if $linked }}

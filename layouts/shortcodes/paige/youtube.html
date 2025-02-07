@@ -1,4 +1,4 @@
-{{ $autoplay := .Get "autoplay" }}
+{{ $autoPlay := .Get "autoplay" }}
 {{ $controls := .Get "controls" | default true }}
 {{ $description := .Get "description" | default "YouTube video" }}
 {{ $end := .Get "end" }}
@@ -6,10 +6,10 @@
 {{ $height := .Get "height" }}
 {{ $list := .Get "list" }}
 {{ $loop := .Get "loop" }}
-{{ $maxheight := .Get "maxheight" }}
-{{ $maxwidth := .Get "maxwidth" }}
+{{ $maxHeight := .Get "maxheight" }}
+{{ $maxWidth := .Get "maxwidth" }}
 {{ $mute := .Get "mute" }}
-{{ $referrerpolicy := .Get "referrerpolicy" | default "no-referrer-when-downgrade" }}
+{{ $policy := .Get "referrerpolicy" | default "no-referrer-when-downgrade" }}
 {{ $start := .Get "start" }}
 {{ $video := .Get 0 | default (.Get "video") | default "dQw4w9WgXcQ" }}
 {{ $width := .Get "width" }}
@@ -30,7 +30,7 @@
 
 {{ $params := slice (print "hl=" (site.LanguageCode | default site.Language.Lang)) "modestbranding=1" }}
 
-{{ if $autoplay }}
+{{ if $autoPlay }}
     {{ $params = $params | append "autoplay=1" | append "mute=1" }}
 {{ end }}
 
@@ -74,9 +74,9 @@
     {{ partial "paige/video.html" (dict
         "fullscreen" $fullscreen
         "height" $height
-        "maxheight" $maxheight
-        "maxwidth" $maxwidth
-        "referrerpolicy" $referrerpolicy
+        "maxheight" $maxHeight
+        "maxwidth" $maxWidth
+        "referrerpolicy" $policy
         "src" $src
         "title" $description
         "width" $width

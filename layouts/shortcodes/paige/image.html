@@ -2,13 +2,13 @@
 {{ $breakpoints := .Get "breakpoints" }}
 {{ $class := .Get "class" }}
 {{ $densities := .Get "densities" }}
-{{ $fetchpriority := .Get "fetchpriority" }}
 {{ $height := .Get "height" }}
 {{ $link := .Get "link" }}
 {{ $linked := .Get "linked" }}
 {{ $loading := .Get "loading" }}
-{{ $maxheight := .Get "maxheight" }}
-{{ $maxwidth := .Get "maxwidth" }}
+{{ $maxHeight := .Get "maxheight" }}
+{{ $maxWidth := .Get "maxwidth" }}
+{{ $priority := .Get "fetchpriority" }}
 {{ $process := .Get "process" }}
 {{ $sizes := .Get "sizes" }}
 {{ $src := .Get 0 | default (.Get "src") }}
@@ -23,13 +23,13 @@
         "breakpoints" $breakpoints
         "class" (printf "img-fluid %s" $class)
         "densities" $densities
-        "fetchpriority" $fetchpriority
+        "fetchpriority" $priority
         "height" $height
         "link" $link
         "linked" $linked
         "loading" $loading
-        "maxheight" $maxheight
-        "maxwidth" $maxwidth
+        "maxheight" $maxHeight
+        "maxwidth" $maxWidth
         "page" .Page
         "process" $process
         "sizes" $sizes

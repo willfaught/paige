@@ -3,20 +3,20 @@
 {{ $authors := partial "paige/func-authors.html" $page | and ($page.Parent.Param "paige.subpage.disable_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
 {{ $date := $page.PublishDate | and ($page.Parent.Param "paige.subpage.disable_date" | not) }}
-{{ $dateformat := $page.Parent.Param "paige.date_format" | default ":date_long" }}
 {{ $description := $page.Description | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpage.disable_description" | not) }}
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $flags := slice }}
+{{ $format := $page.Parent.Param "paige.date_format" | default ":date_long" }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
+{{ $link := $page.RelPermalink }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
-{{ $readingtime := $page.ReadingTime | and ($page.Parent.Param "paige.subpage.disable_reading_time" | not) }}
+{{ $normal := eq ($page.Parent.Param "paige.keyword_style" | default "text") "text" }}
 {{ $series := $page.GetTerms "series" | and ($page.Parent.Param "paige.subpage.disable_series" | not) }}
 {{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpage.disable_summary" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
-{{ $textkeywords := eq ($page.Parent.Param "paige.keyword_style" | default "text") "text" }}
+{{ $time := $page.ReadingTime | and ($page.Parent.Param "paige.subpage.disable_reading_time" | not) }}
 {{ $title := $page.Title | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpage.disable_title" | not) }}
-{{ $titlelink := $page.RelPermalink }}
 
 {{ if $draft }}
     {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
@@ -43,7 +43,7 @@
 
 <div class="{{ $class }}">
     {{ with $title }}
-        <p class="paige-row-narrow paige-title text-center"><a href="{{ $titlelink }}">{{ . }}</a></p>
+        <p class="paige-row-narrow paige-title text-center"><a href="{{ $link }}">{{ . }}</a></p>
     {{ end }}
 
     {{ with $description }}
@@ -65,7 +65,7 @@
                     {{- $kind = "tag" -}}
                 {{- end -}}
 
-                {{- if $textkeywords -}}
+                {{- if $normal -}}
                     {{- if gt $i 0 }} · {{ end -}}
 
                     <a class="link-secondary paige-keyword paige-keyword-{{ $kind }}" href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
@@ -100,11 +100,11 @@
 
     {{ with $date }}
         <p class="paige-date text-center paige-row-narrow text-secondary">
-            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $dateformat . }}</time>
+            <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $format . }}</time>
         </p>
     {{ end }}
 
-    {{ with $readingtime }}
+    {{ with $time }}
         <p class="paige-reading-time paige-row-narrow text-center text-secondary">{{ . }} {{ i18n "paige_minutes" . }}</p>
     {{ end }}
 </div>

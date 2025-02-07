@@ -3,9 +3,9 @@
 {{ $class := $params.class | default "paige-video ratio ratio-16x9" }}
 {{ $fullscreen := $params.fullscreen }}
 {{ $height := $params.height }}
-{{ $maxheight := $params.maxheight }}
-{{ $maxwidth := $params.maxwidth }}
-{{ $referrerpolicy := $params.referrerpolicy | default "no-referrer" }}
+{{ $maxHeight := $params.maxheight }}
+{{ $maxWidth := $params.maxwidth }}
+{{ $policy := $params.referrerpolicy | default "no-referrer" }}
 {{ $src := $params.src }}
 {{ $title := $params.title }}
 {{ $width := $params.width }}
@@ -16,12 +16,12 @@
     {{ $styles = $styles | append (print "height: " $height) }}
 {{ end }}
 
-{{ if $maxheight }}
-    {{ $styles = $styles | append (print "max-height: " $maxheight) }}
+{{ if $maxHeight }}
+    {{ $styles = $styles | append (print "max-height: " $maxHeight) }}
 {{ end }}
 
-{{ if $maxwidth }}
-    {{ $styles = $styles | append (print "max-width: " $maxwidth) }}
+{{ if $maxWidth }}
+    {{ $styles = $styles | append (print "max-width: " $maxWidth) }}
 {{ end }}
 
 {{ if $width }}
@@ -33,7 +33,7 @@
 <div class="{{ $class }}" {{ with $styles }} style="{{ . | safeCSS }}" {{ end }}>
     {{ partial "paige/tag-iframe.html" (dict
         "fullscreen" $fullscreen
-        "referrerpolicy" $referrerpolicy
+        "referrerpolicy" $policy
         "src" $src
         "title" $title
     ) }}
