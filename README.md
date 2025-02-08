@@ -176,15 +176,15 @@ color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windo
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
-description = "" # Site description. Appears above the menu, below the site title, if set.
+description = "" # Site description. Appears above the menu and below the site title if set.
 edit = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
 exclude_feeds = false # Exclude this page from feeds
 exclude_search = false # Exclude the page from search
 external_link_new_tab = false # Open external links in new tabs
 history = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
 keyword_style = "text" # Must be "text" or "pills"
-license = "" # Examples: "CC BY 4.0 License", "CC BY-NC 4.0 License", "MIT License"
-math = false # Enable math typesetting
+license = "" # Example: "CC BY 4.0 License"
+math = false # Enables math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
@@ -212,7 +212,7 @@ web_master = "" # Example: "example@example.com (John Doe)"
 
 [paige.page] # Pages
 
-# Front matter values
+# Disable front matter values
 disable_authors = false
 disable_date = false
 disable_description = false
@@ -221,7 +221,7 @@ disable_reading_time = false
 disable_series = false
 disable_title = false
 
-# Other values
+# Disable other values
 disable_edit = false
 disable_history = false
 disable_next = false
@@ -247,7 +247,7 @@ microdata = {} # Microdata non-property attributes (all except itemprop) for the
 # itemscope = ""
 # itemtype = "https://schema.org/Chapter
 schemas = [] # Page JSON-LD schemas
-# Examples:
+# Example:
 # [paige.page.schemas]
 # "@context" = "https://schema.org"
 # "@type" = "Book"
@@ -273,7 +273,7 @@ disable_license = false
 disable_menu = false
 disable_title = false
 schemas = [] # Site JSON-LD schemas
-# Examples:
+# Example:
 # [paige.site.schemas]
 # "@context" = "https://schema.org"
 # "@type" = "Organization"
@@ -282,7 +282,7 @@ schemas = [] # Site JSON-LD schemas
 
 [paige.subpage] # Subpages
 
-# Front matter values
+# Disable front matter values
 disable_authors = false
 disable_date = false
 disable_description = false
@@ -291,10 +291,10 @@ disable_reading_time = false
 disable_series = false
 disable_title = false
 
-# Other values
+# Disable other values
 disable_summary = false
 
-# Kinds
+# Disable page kinds
 disable_collections = false
 disable_pages = false
 disable_sections = false
