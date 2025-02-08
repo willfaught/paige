@@ -18,7 +18,7 @@
 {{ if or $copyright $credit $first $last $license }}
     <footer id="paige-site-footer">
         {{ if $first }}
-            {{ partial "paige/footer-first.html" . }}
+            {{ partial "paige/site-footer-first.html" . }}
         {{ end }}
 
         {{ with $copyright }}
@@ -34,7 +34,7 @@
         {{ end }}
 
         {{ if $last }}
-            {{ partial "paige/footer-last.html" . }}
+            {{ partial "paige/site-footer-last.html" . }}
         {{ end }}
     </footer>
 {{ end }}
