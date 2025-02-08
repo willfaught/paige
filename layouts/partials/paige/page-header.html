@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $alert := $page.Param "paige.alert" | and ($page.Param "paige.page.disable_alert" | not) }}
+{{ $alert := $page.Param "paige.alert" }}
 {{ $authors := partial "paige/func-authors.html" $page | and ($page.Param "paige.page.disable_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
 {{ $date := and $page.IsPage $page.PublishDate | and ($page.Param "paige.page.disable_date" | not) }}

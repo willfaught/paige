@@ -224,7 +224,6 @@ disable_summary = false
 disable_title = false
 
 [paige.page]
-disable_alert = false
 disable_authors = false
 disable_auto_schema = false # Disable the automatic SEO JSON-LD schema generation
 disable_date = false
