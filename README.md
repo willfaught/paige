@@ -178,6 +178,7 @@ credit = '<a class="link-secondary text-decoration-none" href="https://github.co
 date_format = ":date_long" # Hugo date format
 description = "" # Site description. Appears above the menu, below the site title, if set.
 edit = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
+exclude_search = false # Exclude the page from search
 external_link_new_tab = false # Open external links in new tabs
 history = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
 keyword_style = "text" # Must be "text" or "pills"
@@ -305,9 +306,6 @@ disable_title = false
 # name = "Acme"
 # url = "https://example.com"
 schemas = []
-
-[paige.search]
-disable = false # Exclude the page from search
 ```
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
