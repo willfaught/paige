@@ -189,7 +189,7 @@ menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.alert]
-message = "Alert!" # Markdown displayed before the page body
+message = "" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert class
 
 [paige.feeds]
