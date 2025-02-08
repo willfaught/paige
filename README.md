@@ -236,8 +236,8 @@ disable_collections = false
 disable_pages = false
 disable_sections = false
 
-edit_url = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
-history_url = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
+edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
+history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override
