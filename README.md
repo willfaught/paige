@@ -210,38 +210,46 @@ logo = "" # Example: "/logo.webp"
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
-[paige.subpage]
+[paige.subpage] # Subpages
+
+# Front matter values
 disable_authors = false
-disable_collections = false
 disable_date = false
 disable_description = false
 disable_keywords = false
-disable_pages = false
 disable_reading_time = false
-disable_sections = false
 disable_series = false
-disable_summary = false
 disable_title = false
 
-[paige.page]
+# Other values
+disable_summary = false
+
+# Kinds
+disable_collections = false
+disable_pages = false
+disable_sections = false
+
+[paige.page] # Pages
+
+# Front matter values
 disable_authors = false
-disable_auto_schema = false # Disable the automatic SEO JSON-LD schema generation
 disable_date = false
 disable_description = false
+disable_keywords = false
+disable_reading_time = false
+disable_series = false
+disable_title = false
+
+# Other values
 disable_edit = false
 disable_history = false
-disable_keywords = false
 disable_next = false
 disable_prev = false
-disable_reading_time = false
-disable_series = false
-disable_title = false
 disable_toc = false
 
-# paige.page.base_schema specifies the JSON-LD schema that all page schemas override.
-#
+# Schema
+base_schema = {} # JSON-LD schema that all page schemas override
 # Example:
-#
 # [paige.page.base_schema]
 # isAccessibleForFree = true
 # isFamilyFriendly = true
@@ -249,35 +257,26 @@ disable_toc = false
 # "@type" = "Organization"
 # name = "John Doe"
 # url = "https://example.com"
-base_schema = {}
-
-# paige.page.microdata specifies the SEO microdata non-property attributes (all except itemprop) for the web page.
-#
+disable_auto_schema = false # Disables the automatic JSON-LD schema generation
+microdata = {} # Microdata non-property attributes (all except itemprop) for the web page
 # Example:
-#
 # [paige.page.microdata]
 # itemid = "123"
 # itemref = "foo"
 # itemscope = ""
 # itemtype = "https://schema.org/Chapter
-microdata = {}
-
-# paige.page.schemas is the page JSON-LD schemas.
-#
+schemas = [] # Page JSON-LD schemas
 # Examples:
-#
 # [paige.page.schemas]
 # "@context" = "https://schema.org"
 # "@type" = "Book"
 # name = "My Book"
 # url = "https://example.com"
-schemas = []
 
-[paige.site]
-# paige.site.base_schema specifies the JSON-LD schema that all site schemas override.
-#
+[paige.site] # Site
+
+base_schema = {} # JSON-LD schema that all site schemas override
 # Example:
-#
 # [paige.site.base_schema]
 # isAccessibleForFree = true
 # isFamilyFriendly = true
@@ -285,8 +284,6 @@ schemas = []
 # "@type" = "Organization"
 # name = "John Doe"
 # url = "https://example.com"
-base_schema = {}
-
 disable_breadcrumbs = false
 disable_copyright = false
 disable_credit = false
@@ -294,17 +291,13 @@ disable_description = false
 disable_license = false
 disable_menu = false
 disable_title = false
-
-# paige.site.schemas is the site JSON-LD schemas.
-#
+schemas = [] # Site JSON-LD schemas
 # Examples:
-#
 # [paige.site.schemas]
 # "@context" = "https://schema.org"
 # "@type" = "Organization"
 # name = "Acme"
 # url = "https://example.com"
-schemas = []
 ```
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
