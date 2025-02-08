@@ -173,18 +173,9 @@ There is a single parameter object with sensible defaults that can be overridden
 ```toml
 [paige]
 
-color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
-color_scheme = "auto" # Must be "auto", "dark", or "light"
-credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
-date_format = ":date_long" # Hugo date format
-description = "" # Site description. Appears above the menu and below the site title if set.
 exclude_feeds = false # Exclude this page from feeds
 exclude_search = false # Exclude the page from search
-external_link_new_tab = false # Open external links in new tabs
-keyword_style = "text" # Must be "text" or "pills"
-license = "" # Example: "CC BY 4.0 License"
 math = false # Enables math typesetting
-menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.alert]
@@ -267,16 +258,28 @@ schemas = [] # Page JSON-LD schemas
 
 [paige.site]
 
-# Disable values
+# Behavior
+external_link_new_tab = false # Open external links in new tabs
+
+# Content
+date_format = ":date_long" # Hugo date format
+
+# Features
 disable_copyright = false
 disable_credit = false
 disable_description = false
 disable_license = false
 disable_title = false
 
-# Disable navigation
+# Navigation
 disable_breadcrumbs = false
 disable_menu = false
+
+# Presentation
+color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
+color_scheme = "auto" # Must be "auto", "dark", or "light"
+keyword_style = "text" # Must be "text" or "pills"
+menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 
 # Schema
 base_schema = {} # JSON-LD schema that all site schemas override
@@ -295,6 +298,11 @@ schemas = [] # Site JSON-LD schemas
 # "@type" = "Organization"
 # name = "Acme"
 # url = "https://example.com"
+
+# Values
+credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
+description = "" # Site description. Appears above the menu and below the site title if set.
+license = "" # Example: "CC BY 4.0 License"
 
 [paige.subpages]
 
