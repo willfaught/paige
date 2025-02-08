@@ -4,6 +4,7 @@ timezone = "America/Los_Angeles"
 titlecasestyle = "Go"
 
 [languages.en]
+copyright = "© Will Faught"
 languagecode = "en-us"
 languagedirection = "ltr"
 languagename = "English"
@@ -11,7 +12,6 @@ title = "Paige"
 weight = 10
 
 [languages.en.params.paige]
-copyright = "© Will Faught"
 description = "Powerful, pliable pixel perfection"
 
 [markup.goldmark.renderer]

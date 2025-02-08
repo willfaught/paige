@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $copyright := $page.Param "paige.copyright" | default site.Copyright | markdownify | and ($page.Param "paige.site.disable_copyright" | not) }}
+{{ $copyright := site.Copyright | markdownify | and ($page.Param "paige.site.disable_copyright" | not) }}
 {{ $credit := $page.Param "paige.credit" }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
