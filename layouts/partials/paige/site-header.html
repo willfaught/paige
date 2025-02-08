@@ -34,9 +34,7 @@
 
 {{ if or $breadcrumbs $description $first $last $menu $title }}
     <header id="paige-site-header">
-        {{ if $first }}
-            {{ partial "paige/site-header-first.html" $page }}
-        {{ end }}
+        {{ partial "paige/func-include.html" (dict "name" "site-header-first%s.html" "page" $page) }}
 
         {{ with $title }}
             <div class="display-1 fw-bold {{ if $description }} mb-2 {{ end }} paige-row-tall text-center" id="paige-site-title">{{ . }}</div>
@@ -162,8 +160,6 @@
             </nav>
         {{ end }}
 
-        {{ if $last }}
-            {{ partial "paige/site-header-last.html" $page }}
-        {{ end }}
+        {{ partial "paige/func-include.html" (dict "name" "site-header-last%s.html" "page" $page) }}
     </header>
 {{ end }}

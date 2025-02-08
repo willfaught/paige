@@ -17,9 +17,7 @@
 
 {{ if or $copyright $credit $first $last $license }}
     <footer id="paige-site-footer">
-        {{ if $first }}
-            {{ partial "paige/site-footer-first.html" . }}
-        {{ end }}
+        {{ partial "paige/func-include.html" (dict "name" "site-footer-first%s.html" "page" $page) }}
 
         {{ with $copyright }}
             <p class="paige-row-short text-center text-secondary" id="paige-copyright" {{ if $microdata }} itemprop="copyrightNotice" {{ end }}>{{ . }}</p>
@@ -33,8 +31,6 @@
             <p class="paige-row-short text-center text-secondary" id="paige-credit">{{ . }}</p>
         {{ end }}
 
-        {{ if $last }}
-            {{ partial "paige/site-footer-last.html" . }}
-        {{ end }}
+        {{ partial "paige/func-include.html" (dict "name" "site-footer-last%s.html" "page" $page) }}
     </footer>
 {{ end }}

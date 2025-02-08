@@ -1,0 +1,25 @@
+{{ $params := . }}
+
+{{ $name := $params.name }}
+{{ $page := $params.page }}
+
+{{ $partial := print "paige/" (printf $name "") }}
+
+{{ $file := print "partials/" $partial }}
+
+{{ if templates.Exists $file }}
+    {{ partial $partial $page }}
+{{ end }}
+
+{{ range slice "home" "page" "section" "taxonomy" "term" }}
+    {{ $partial := print "paige/" (printf $name (print "-" .)) }}
+
+    {{ $file := print "partials/" $partial }}
+
+    {{ $exists := templates.Exists $file }}
+    {{ $matches := eq $page.Kind . }}
+
+    {{ if and $exists $matches }}
+        {{ partial $partial $page }}
+    {{ end }}
+{{ end }}

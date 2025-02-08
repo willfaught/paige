@@ -935,6 +935,8 @@ Body: None.
 
 ### Include
 
+Files can be included in many places in HTML.
+
 | If this file exists                                      | It is included at                    |
 | ---------------------------------------------------------| -------------------------------------|
 | `yoursite/layouts/partials/paige/body-first.html`        | The beginning of the body tag        |
@@ -953,6 +955,22 @@ Body: None.
 | `yoursite/layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
 | `yoursite/layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
 | `yoursite/layouts/partials/paige/style-last.css`         | The end of the style tag             |
+
+There are kind variants of include files that are included only when the file kind matches the page kind.
+
+| If this file exists                                     | It is included when         |
+| --------------------------------------------------------| ----------------------------|
+| `yoursite/layouts/partials/paige/[PLACE]-home.html`     | The page kind is "home"     |
+| `yoursite/layouts/partials/paige/[PLACE]-page.html`     | The page kind is "page"     |
+| `yoursite/layouts/partials/paige/[PLACE]-section.html`  | The page kind is "section"  |
+| `yoursite/layouts/partials/paige/[PLACE]-taxonomy.html` | The page kind is "taxonomy" |
+| `yoursite/layouts/partials/paige/[PLACE]-term.html`     | The page kind is "term"     |
+
+Above, the place placeholder must be "body-first", "body-last", "head-first", etc.
+
+Kind variants are included right after their counterpart non-kind variant.
+
+The argument for the templates is the page.
 
 ### Override
 

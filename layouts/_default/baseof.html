@@ -14,32 +14,21 @@
     {{ partial "paige/tag-head.html" $page }}
     {{ partial "paige/tag-body.html" $page }}
 
-        {{ if templates.Exists "partials/paige/body-first.html" }}
-            {{ partial "paige/body-first.html" $page }}
-        {{ end }}
+        {{ partial "paige/func-include.html" (dict "name" "body-first%s.html" "page" $page) }}
 
         <div class="container">
             <div class="row">
                 <div class="col mt-3" id="paige-site" {{ with $itemAttrs }} {{ $itemAttrs | safeHTMLAttr }} {{ end }}>
-                    {{ if templates.Exists "partials/paige/site-first.html" }}
-                        {{ partial "paige/site-first.html" $page }}
-                    {{ end }}
-
+                    {{ partial "paige/func-include.html" (dict "name" "site-first%s.html" "page" $page) }}
                     {{ partial "paige/site-header.html" $page }}
                     {{ block "main" $page }}{{ end }}
                     {{ partial "paige/site-footer.html" $page }}
-
-                    {{ if templates.Exists "partials/paige/site-last.html" }}
-                        {{ partial "paige/site-last.html" $page }}
-                    {{ end }}
+                    {{ partial "paige/func-include.html" (dict "name" "site-last%s.html" "page" $page) }}
                 </div>
             </div>
         </div>
 
         {{ partial "paige/scripts.html" $page }}
-
-        {{ if templates.Exists "partials/paige/body-last.html" }}
-            {{ partial "paige/body-last.html" $page }}
-        {{ end }}
+        {{ partial "paige/func-include.html" (dict "name" "body-last%s.html" "page" $page) }}
     </body>
 </html>

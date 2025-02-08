@@ -22,9 +22,7 @@
 {{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc }}
     <header class="mw-100" id="paige-page-header">
         <div class="align-items-center d-flex flex-column">
-            {{ if $first }}
-                {{ partial "paige/page-header-first.html" . }}
-            {{ end }}
+            {{ partial "paige/func-include.html" (dict "name" "page-header-first%s.html" "page" $page) }}
 
             {{ with $title }}
                 <h1 class="fw-bold" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
@@ -104,9 +102,7 @@
                 </div>
             {{ end }}
 
-            {{ if $last }}
-                {{ partial "paige/page-header-last.html" . }}
-            {{ end }}
+            {{ partial "paige/func-include.html" (dict "name" "page-header-last%s.html" "page" $page) }}
         </div>
     </header>
 {{ end }}
