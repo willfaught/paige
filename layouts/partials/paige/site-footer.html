@@ -10,7 +10,7 @@
 {{ if $credit }}
     {{ $credit = markdownify $credit }}
 {{ else }}
-    {{ $credit = `<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" target="_blank">Paige Theme</a>` | safeHTML }}
+    {{ $credit = `<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>` | safeHTML }}
 {{ end }}
 
 {{ $credit = $credit | and ($page.Param "paige.site.disable_credit" | not) }}

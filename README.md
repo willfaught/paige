@@ -174,7 +174,7 @@ There is a single parameter object with sensible defaults that can be overridden
 [paige]
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
 color_scheme = "auto" # Must be "auto", "dark", or "light"
-credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige" target="_blank">Paige Theme</a>'
+credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
 description = "" # Site description. Appears above the menu, below the site title, if set.
 edit = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
