@@ -172,6 +172,7 @@ There is a single parameter object with sensible defaults that can be overridden
 
 ```toml
 [paige]
+
 color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windows
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
@@ -187,14 +188,17 @@ menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.alert]
+
 message = "" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert class
 
 [paige.feeds]
+
 link_to_page = false # Link to the page instead of the front matter link, if present
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, then link to the page with this text
 
 [paige.feeds.atom]
+
 authors = []
 # Example:
 # [[paige.feeds.atom.authors]]
@@ -205,6 +209,7 @@ icon = "" # Example: "/icon.webp"
 logo = "" # Example: "/logo.webp"
 
 [paige.feeds.rss]
+
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
@@ -225,6 +230,11 @@ disable_history = false
 disable_next = false
 disable_prev = false
 disable_toc = false
+
+# Disable subpage kinds (collections are considered subpages of the home page)
+disable_collections = false
+disable_pages = false
+disable_sections = false
 
 edit_url = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
 history_url = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
@@ -255,8 +265,20 @@ schemas = [] # Page JSON-LD schemas
 # name = "My Book"
 # url = "https://example.com"
 
-[paige.site] # Site
+[paige.site]
 
+# Disable values
+disable_copyright = false
+disable_credit = false
+disable_description = false
+disable_license = false
+disable_title = false
+
+# Disable navigation
+disable_breadcrumbs = false
+disable_menu = false
+
+# Schema
 base_schema = {} # JSON-LD schema that all site schemas override
 # Example:
 # [paige.site.base_schema]
@@ -266,13 +288,6 @@ base_schema = {} # JSON-LD schema that all site schemas override
 # "@type" = "Organization"
 # name = "John Doe"
 # url = "https://example.com"
-disable_breadcrumbs = false
-disable_copyright = false
-disable_credit = false
-disable_description = false
-disable_license = false
-disable_menu = false
-disable_title = false
 schemas = [] # Site JSON-LD schemas
 # Example:
 # [paige.site.schemas]
@@ -294,11 +309,6 @@ disable_title = false
 
 # Disable other values
 disable_summary = false
-
-# Disable page kinds
-disable_collections = false
-disable_pages = false
-disable_sections = false
 ```
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
