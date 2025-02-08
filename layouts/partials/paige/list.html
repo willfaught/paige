@@ -40,8 +40,8 @@
 {{ end }}
 
 {{ $collections := slice }}
-{{ $pages := $page.RegularPages | and ($page.Param "paige.subpage.disable_pages" | not) }}
-{{ $sections := $page.Sections | and ($page.Param "paige.subpage.disable_sections" | not) }}
+{{ $pages := $page.RegularPages | and ($page.Param "paige.subpages.disable_pages" | not) }}
+{{ $sections := $page.Sections | and ($page.Param "paige.subpages.disable_sections" | not) }}
 
 {{ if $page.IsHome }}
     {{ range $name, $taxonomy := site.Taxonomies }}
@@ -51,7 +51,7 @@
     {{ end }}
 {{ end }}
 
-{{ $collections = $collections | and ($page.Param "paige.subpage.disable_collections" | not) }}
+{{ $collections = $collections | and ($page.Param "paige.subpages.disable_collections" | not) }}
 
 {{ if and (not $pages) (in (slice "taxonomy" "term") $page.Kind) }}
     {{ $pages = $page.Pages }}

@@ -51,7 +51,7 @@ disable_toc = true
 disable_breadcrumbs = true
 disable_credit = true
 
-[params.paige.subpage]
+[params.paige.subpages]
 disable_authors = true
 disable_date = true
 disable_keywords = true

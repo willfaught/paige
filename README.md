@@ -296,7 +296,7 @@ schemas = [] # Site JSON-LD schemas
 # name = "Acme"
 # url = "https://example.com"
 
-[paige.subpage] # Subpages
+[paige.subpages]
 
 # Disable front matter values
 disable_authors = false
@@ -1205,7 +1205,7 @@ If you want a more minimal look,
 try the following in `yoursite/hugo.toml`:
 
 ```toml
-[params.paige.subpage]
+[params.paige.subpages]
 disable_authors = true
 disable_date = true
 disable_keywords = true
@@ -1275,7 +1275,7 @@ To hide the collection, section, and page lists on the home page,
 try the following in `yoursite/content/_index.md`:
 
 ```toml
-[params.paige.subpage]
+[params.paige.subpages]
 disable_collections = true
 disable_pages = true
 disable_sections = true

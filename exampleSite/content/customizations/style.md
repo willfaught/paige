@@ -34,7 +34,7 @@ style = """
     font-style: italic;
 }
 """
-[paige.subpage]
+[paige.subpages]
 disable_authors = false
 disable_date = false
 disable_keywords = false
@@ -93,7 +93,7 @@ style = """
     font-style: italic;
 }
 """
-[paige.subpage]
+[paige.subpages]
 disable_authors = false
 disable_date = false
 disable_keywords = false

@@ -1,9 +1,9 @@
 {{ $page := . }}
 
-{{ $authors := partial "paige/func-authors.html" $page | and ($page.Parent.Param "paige.subpage.disable_authors" | not) }}
+{{ $authors := partial "paige/func-authors.html" $page | and ($page.Parent.Param "paige.subpages.disable_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
-{{ $date := $page.PublishDate | and ($page.Parent.Param "paige.subpage.disable_date" | not) }}
-{{ $description := $page.Description | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpage.disable_description" | not) }}
+{{ $date := $page.PublishDate | and ($page.Parent.Param "paige.subpages.disable_date" | not) }}
+{{ $description := $page.Description | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_description" | not) }}
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $flags := slice }}
@@ -12,11 +12,11 @@
 {{ $link := $page.RelPermalink }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
 {{ $normal := eq ($page.Parent.Param "paige.keyword_style" | default "text") "text" }}
-{{ $series := $page.GetTerms "series" | and ($page.Parent.Param "paige.subpage.disable_series" | not) }}
-{{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpage.disable_summary" | not) }}
+{{ $series := $page.GetTerms "series" | and ($page.Parent.Param "paige.subpages.disable_series" | not) }}
+{{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_summary" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
-{{ $time := $page.ReadingTime | and ($page.Parent.Param "paige.subpage.disable_reading_time" | not) }}
-{{ $title := $page.LinkTitle | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpage.disable_title" | not) }}
+{{ $time := $page.ReadingTime | and ($page.Parent.Param "paige.subpages.disable_reading_time" | not) }}
+{{ $title := $page.LinkTitle | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_title" | not) }}
 
 {{ if $draft }}
     {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
@@ -39,7 +39,7 @@
 {{ end }}
 
 {{ $class := delimit (slice "paige-page" "w-100" | append $flags | uniq | sort) " " }}
-{{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Parent.Param "paige.subpage.disable_keywords" | not) }}
+{{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Parent.Param "paige.subpages.disable_keywords" | not) }}
 
 <div class="{{ $class }}">
     {{ with $title }}

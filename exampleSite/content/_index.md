@@ -1,6 +1,6 @@
 +++
 title = "Paige"
-[paige.subpage]
+[paige.subpages]
 disable_collections = true
 disable_pages = true
 disable_sections = true
