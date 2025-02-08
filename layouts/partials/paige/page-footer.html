@@ -2,7 +2,7 @@
 
 {{ $edit := $page.Param "paige.page.edit_url" | and ($page.Param "paige.page.disable_edit" | not) }}
 {{ $first := templates.Exists "partials/paige/page-footer-first.html" }}
-{{ $history := $page.Param "paige.history" | and ($page.Param "paige.page.disable_history" | not) }}
+{{ $history := $page.Param "paige.page.history_url" | and ($page.Param "paige.page.disable_history" | not) }}
 {{ $last := templates.Exists "partials/paige/page-footer-last.html" }}
 {{ $next := $page.NextInSection | and ($page.Param "paige.page.disable_next" | not) }}
 {{ $prev := $page.PrevInSection | and ($page.Param "paige.page.disable_prev" | not) }}

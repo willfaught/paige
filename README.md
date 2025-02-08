@@ -180,7 +180,6 @@ description = "" # Site description. Appears above the menu and below the site t
 exclude_feeds = false # Exclude this page from feeds
 exclude_search = false # Exclude the page from search
 external_link_new_tab = false # Open external links in new tabs
-history = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
 keyword_style = "text" # Must be "text" or "pills"
 license = "" # Example: "CC BY 4.0 License"
 math = false # Enables math typesetting
@@ -228,6 +227,7 @@ disable_prev = false
 disable_toc = false
 
 edit_url = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
+history_url = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
 
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override
