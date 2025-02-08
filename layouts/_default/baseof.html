@@ -1,13 +1,13 @@
 {{ $page := . }}
 
-{{ $itemAttrs := slice }}
+{{ $attrs := slice }}
 {{ $microdata := $page.Params.paige.page.microdata }}
 
 {{ range $k, $v := $microdata }}
-    {{ $itemAttrs = $itemAttrs | append (printf `%s="%v"` $k $v) }}
+    {{ $attrs = $attrs | append (printf `%s="%v"` $k $v) }}
 {{ end }}
 
-{{ $itemAttrs = delimit (sort $itemAttrs) " " }}
+{{ $attrs = delimit (sort $attrs) " " }}
 
 <!doctype html>
 {{ partial "paige/tag-html.html" $page }}
@@ -18,7 +18,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col mt-3" id="paige-site" {{ with $itemAttrs }} {{ $itemAttrs | safeHTMLAttr }} {{ end }}>
+                <div class="col mt-3" id="paige-site" {{ with $attrs }} {{ $attrs | safeHTMLAttr }} {{ end }}>
                     {{ partial "paige/func-include.html" (dict "name" "site-first%s.html" "page" $page) }}
                     {{ partial "paige/site-header.html" $page }}
                     {{ block "main" $page }}{{ end }}
