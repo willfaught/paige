@@ -206,27 +206,24 @@ web_master = "" # Example: "example@example.com (John Doe)"
 
 [paige.pages]
 
-# Disable front matter values
+# Content
 disable_authors = false
+disable_collections = false
 disable_date = false
 disable_description = false
-disable_keywords = false
-disable_reading_time = false
-disable_series = false
-disable_title = false
-
-# Disable other values
 disable_edit = false
 disable_history = false
+disable_keywords = false
 disable_next = false
+disable_pages = false
 disable_prev = false
+disable_reading_time = false
+disable_sections = false
+disable_series = false
+disable_title = false
 disable_toc = false
 
-# Disable subpage kinds (collections are considered subpages of the home page)
-disable_collections = false
-disable_pages = false
-disable_sections = false
-
+# Navigation
 edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
 history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 
@@ -259,12 +256,10 @@ schemas = [] # Page JSON-LD schemas
 [paige.site]
 
 # Behavior
+date_format = ":date_long" # Hugo date format
 external_link_new_tab = false # Open external links in new tabs
 
 # Content
-date_format = ":date_long" # Hugo date format
-
-# Features
 disable_copyright = false
 disable_credit = false
 disable_description = false
@@ -306,17 +301,14 @@ license = "" # Example: "CC BY 4.0 License"
 
 [paige.subpages]
 
-# Disable front matter values
 disable_authors = false
 disable_date = false
 disable_description = false
 disable_keywords = false
 disable_reading_time = false
 disable_series = false
-disable_title = false
-
-# Disable other values
 disable_summary = false
+disable_title = false
 ```
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
