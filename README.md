@@ -213,7 +213,7 @@ logo = "" # Example: "/logo.webp"
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
-[paige.page] # Pages
+[paige.pages]
 
 # Disable front matter values
 disable_authors = false
@@ -242,24 +242,24 @@ history_url = "" # File history URL. Example: "https://github.com/account/projec
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override
 # Example:
-# [paige.page.base_schema]
+# [paige.pages.base_schema]
 # isAccessibleForFree = true
 # isFamilyFriendly = true
-# [paige.page.base_schema.publisher]
+# [paige.pages.base_schema.publisher]
 # "@type" = "Organization"
 # name = "John Doe"
 # url = "https://example.com"
 disable_auto_schema = false # Disables the automatic JSON-LD schema generation
 microdata = {} # Microdata non-property attributes (all except itemprop) for the web page
 # Example:
-# [paige.page.microdata]
+# [paige.pages.microdata]
 # itemid = "123"
 # itemref = "foo"
 # itemscope = ""
 # itemtype = "https://schema.org/Chapter
 schemas = [] # Page JSON-LD schemas
 # Example:
-# [paige.page.schemas]
+# [paige.pages.schemas]
 # "@context" = "https://schema.org"
 # "@type" = "Book"
 # name = "My Book"
@@ -381,14 +381,14 @@ The "author", "description", and "keywords" meta tags are generated from the pag
 The keywords are the page parameters "keywords", "categories", and "tags".
 
 A JSON-LD script is generated from the page parameters,
-which can be disabled with `paige.page.disable_auto_schema`.
+which can be disabled with `paige.pages.disable_auto_schema`.
 Arbitrary schemas can be specified for the site with `paige.site.schemas`
 or for pages with `paige.pages.schemas`, at the site or page level.
 A base schema can be specified for site schemas with `paige.site.base_schema`,
-and for page schemas with `paige.page.base_schema`.
+and for page schemas with `paige.pages.base_schema`.
 
 HTML microdata is generated from the page parameters
-if the non-property attributes are specified in `paige.page.microdata`.
+if the non-property attributes are specified in `paige.pages.microdata`.
 
 ## Layouts
 
@@ -1213,7 +1213,7 @@ disable_reading_time = true
 disable_series = true
 disable_summary = true
 
-[params.paige.page]
+[params.paige.pages]
 disable_authors = true
 disable_date = true
 disable_keywords = true

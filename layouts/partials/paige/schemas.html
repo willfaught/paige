@@ -1,14 +1,14 @@
 {{ $page := . }}
 
-{{ $auto := $page.Param "paige.page.disable_auto_schema" | not }}
-{{ $pageBase := $page.Param "paige.page.base_schema" }}
+{{ $auto := $page.Param "paige.pages.disable_auto_schema" | not }}
+{{ $pageBase := $page.Param "paige.pages.base_schema" }}
 {{ $siteBase := $page.Param "paige.site.base_schema" }}
 
 {{ range $page.Param "paige.site.schemas" }}
     <script type="application/ld+json">{{ merge $siteBase . | jsonify | safeJS }}</script>
 {{ end }}
 
-{{ range $page.Param "paige.page.schemas" }}
+{{ range $page.Param "paige.pages.schemas" }}
     <script type="application/ld+json">{{ merge $pageBase . | jsonify | safeJS }}</script>
 {{ end }}
 

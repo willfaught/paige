@@ -37,7 +37,7 @@ term = ["html"]
 [pagination]
 pagersize = 50
 
-[params.paige.page]
+[params.paige.pages]
 disable_authors = true
 disable_date = true
 disable_keywords = true

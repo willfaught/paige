@@ -4,7 +4,7 @@ title = "Paige"
 disable_collections = true
 disable_pages = true
 disable_sections = true
-[paige.page]
+[paige.pages]
 disable_title = true
 +++
 

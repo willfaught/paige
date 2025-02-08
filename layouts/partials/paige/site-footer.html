@@ -5,7 +5,7 @@
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
 {{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.disable_license" | not) }}
-{{ $microdata := $page.Params.paige.page.microdata }}
+{{ $microdata := $page.Params.paige.pages.microdata }}
 
 {{ if $credit }}
     {{ $credit = markdownify $credit }}

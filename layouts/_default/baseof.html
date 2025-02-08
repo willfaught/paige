@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ $attrs := slice }}
-{{ $microdata := $page.Params.paige.page.microdata }}
+{{ $microdata := $page.Params.paige.pages.microdata }}
 
 {{ range $k, $v := $microdata }}
     {{ $attrs = $attrs | append (printf `%s="%v"` $k $v) }}

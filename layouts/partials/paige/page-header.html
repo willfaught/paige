@@ -1,23 +1,23 @@
 {{ $page := . }}
 
 {{ $alert := $page.Param "paige.alert" }}
-{{ $authors := partial "paige/func-authors.html" $page | and ($page.Param "paige.page.disable_authors" | not) }}
+{{ $authors := partial "paige/func-authors.html" $page | and ($page.Param "paige.pages.disable_authors" | not) }}
 {{ $categories := $page.GetTerms "categories" }}
-{{ $date := and $page.IsPage $page.PublishDate | and ($page.Param "paige.page.disable_date" | not) }}
-{{ $description := $page.Description | markdownify | and ($page.Param "paige.page.disable_description" | not) }}
+{{ $date := and $page.IsPage $page.PublishDate | and ($page.Param "paige.pages.disable_date" | not) }}
+{{ $description := $page.Description | markdownify | and ($page.Param "paige.pages.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/page-header-first.html" }}
 {{ $format := $page.Param "paige.date_format" | default ":date_long" }}
 {{ $last := templates.Exists "partials/paige/page-header-last.html" }}
 {{ $link := $page.Params.link }}
-{{ $microdata := $page.Params.paige.page.microdata }}
+{{ $microdata := $page.Params.paige.pages.microdata }}
 {{ $normal := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
-{{ $series := $page.GetTerms "series" | and ($page.Param "paige.page.disable_series" | not) }}
+{{ $series := $page.GetTerms "series" | and ($page.Param "paige.pages.disable_series" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
-{{ $time := $page.ReadingTime | and ($page.Param "paige.page.disable_reading_time" | not) }}
-{{ $title := $page.LinkTitle | markdownify | and ($page.Param "paige.page.disable_title" | not) }}
-{{ $toc := and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) | and ($page.Param "paige.page.disable_toc" | not) }}
+{{ $time := $page.ReadingTime | and ($page.Param "paige.pages.disable_reading_time" | not) }}
+{{ $title := $page.LinkTitle | markdownify | and ($page.Param "paige.pages.disable_title" | not) }}
+{{ $toc := and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) | and ($page.Param "paige.pages.disable_toc" | not) }}
 
-{{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Param "paige.page.disable_keywords" | not) }}
+{{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Param "paige.pages.disable_keywords" | not) }}
 
 {{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc }}
     <header class="mw-100" id="paige-page-header">

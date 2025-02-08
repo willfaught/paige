@@ -41,7 +41,7 @@ disable_keywords = false
 disable_reading_time = false
 disable_series = false
 disable_summary = false
-[paige.page]
+[paige.pages]
 disable_authors = false
 disable_date = false
 disable_keywords = false
@@ -100,7 +100,7 @@ disable_keywords = false
 disable_reading_time = false
 disable_series = false
 disable_summary = false
-[paige.page]
+[paige.pages]
 disable_authors = false
 disable_date = false
 disable_keywords = false
