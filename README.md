@@ -177,7 +177,6 @@ color_scheme = "auto" # Must be "auto", "dark", or "light"
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
 date_format = ":date_long" # Hugo date format
 description = "" # Site description. Appears above the menu and below the site title if set.
-edit = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
 exclude_feeds = false # Exclude this page from feeds
 exclude_search = false # Exclude the page from search
 external_link_new_tab = false # Open external links in new tabs
@@ -227,6 +226,8 @@ disable_history = false
 disable_next = false
 disable_prev = false
 disable_toc = false
+
+edit_url = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
 
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override

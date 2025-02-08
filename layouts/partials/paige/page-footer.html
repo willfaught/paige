@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $edit := $page.Param "paige.edit" | and ($page.Param "paige.page.disable_edit" | not) }}
+{{ $edit := $page.Param "paige.page.edit_url" | and ($page.Param "paige.page.disable_edit" | not) }}
 {{ $first := templates.Exists "partials/paige/page-footer-first.html" }}
 {{ $history := $page.Param "paige.history" | and ($page.Param "paige.page.disable_history" | not) }}
 {{ $last := templates.Exists "partials/paige/page-footer-last.html" }}
