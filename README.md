@@ -178,6 +178,7 @@ credit = '<a class="link-secondary text-decoration-none" href="https://github.co
 date_format = ":date_long" # Hugo date format
 description = "" # Site description. Appears above the menu, below the site title, if set.
 edit = "" # File edit URL. Example: "https://github.com/account/project/edit/master/content/%s".
+exclude_feeds = false # Exclude this page from feeds
 exclude_search = false # Exclude the page from search
 external_link_new_tab = false # Open external links in new tabs
 history = "" # File history URL. Example: "https://github.com/account/project/commits/master/content/%s".
@@ -192,7 +193,6 @@ message = "Alert!" # Markdown displayed before the page body
 type = "primary" # Bootstrap alert class
 
 [paige.feeds]
-exclude = false # Exclude this page from feeds
 link_to_page = false # Link to the page instead of the front matter link, if present
 page_link = "⏎" # If a front matter link is present, and link_to_page is false, then link to the page with this text
 
