@@ -210,25 +210,6 @@ logo = "" # Example: "/logo.webp"
 managing_editor = "" # Example: "example@example.com (John Doe)"
 web_master = "" # Example: "example@example.com (John Doe)"
 
-[paige.subpage] # Subpages
-
-# Front matter values
-disable_authors = false
-disable_date = false
-disable_description = false
-disable_keywords = false
-disable_reading_time = false
-disable_series = false
-disable_title = false
-
-# Other values
-disable_summary = false
-
-# Kinds
-disable_collections = false
-disable_pages = false
-disable_sections = false
-
 [paige.page] # Pages
 
 # Front matter values
@@ -298,6 +279,25 @@ schemas = [] # Site JSON-LD schemas
 # "@type" = "Organization"
 # name = "Acme"
 # url = "https://example.com"
+
+[paige.subpage] # Subpages
+
+# Front matter values
+disable_authors = false
+disable_date = false
+disable_description = false
+disable_keywords = false
+disable_reading_time = false
+disable_series = false
+disable_title = false
+
+# Other values
+disable_summary = false
+
+# Kinds
+disable_collections = false
+disable_pages = false
+disable_sections = false
 ```
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
