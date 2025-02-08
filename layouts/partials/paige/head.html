@@ -3,7 +3,7 @@
 {{ $title := $page.Title }}
 
 {{ if and $page.IsHome (not $title) }}
-    {{ $title = $page.Param "paige.title" | default (site.Title) }}
+    {{ $title = site.Title }}
 {{ end }}
 
 {{ $title = $title | markdownify | plainify | htmlUnescape }}
@@ -14,7 +14,7 @@
     {{ $title := .Title }}
 
     {{ if and .IsHome (not $title) }}
-        {{ $title = $page.Param "paige.title" | default (site.Title) }}
+        {{ $title = site.Title }}
     {{ end }}
 
     {{ $titles = $titles | append ($title | markdownify | plainify | htmlUnescape) }}

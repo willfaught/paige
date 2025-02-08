@@ -9,7 +9,7 @@
 {{ $menu := $page.Param "paige.site.disable_menu" | not }}
 {{ $pills := false }}
 {{ $tabs := false }}
-{{ $title := $page.Param "paige.title" | default site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
+{{ $title := site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
 {{ $underline := false }}
 
 {{ if eq $basePath "/" }}
@@ -148,7 +148,7 @@
                             {{ $title := $ancestor.LinkTitle }}
 
                             {{ if and (eq $i $last) (not $title) }}
-                                {{ $title = $page.Param "paige.title" | default (site.Title) }}
+                                {{ $title = site.Title }}
                             {{ end }}
 
                             <li class="breadcrumb-item">

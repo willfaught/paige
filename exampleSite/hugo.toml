@@ -7,12 +7,12 @@ titlecasestyle = "Go"
 languagecode = "en-us"
 languagedirection = "ltr"
 languagename = "English"
+title = "Paige"
 weight = 10
 
 [languages.en.params.paige]
 copyright = "© Will Faught"
 description = "Powerful, pliable pixel perfection"
-title = "Paige"
 
 [markup.goldmark.renderer]
 unsafe = true

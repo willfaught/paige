@@ -185,7 +185,6 @@ keyword_style = "text" # Must be "text" or "pills"
 license = "" # Examples: "CC BY 4.0 License", "CC BY-NC 4.0 License", "MIT License"
 math = false # Enable math typesetting
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
-title = "" # Site title. Appears above the menu, above the site description, if set.
 style = "" # CSS included at the end of the stylesheet, before style-last.css
 
 [paige.alert]
