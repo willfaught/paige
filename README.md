@@ -175,8 +175,8 @@ There is a single parameter object with sensible defaults that can be overridden
 
 exclude_feeds = false # Exclude this page from feeds
 exclude_search = false # Exclude the page from search
-math = false # Enables math typesetting
-style = "" # CSS included at the end of the stylesheet, before style-last.css
+math = false # Enables math typesetting for this page
+style = "" # CSS included at the end of the stylesheet, before style-last.css, for this page
 
 [paige.alert]
 
