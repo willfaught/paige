@@ -40,7 +40,7 @@
 {{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true "context" $context) }}
 {{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css" "page" $page) }}
 
-{{ if $page.Param "paige.math" }}
+{{ if $page.Param "paige.enable_math" }}
     {{ partial "paige/tag-link.html" (dict "href" "css/paige/katex/katex.min.css") }}
 {{ end }}
 

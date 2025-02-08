@@ -2,7 +2,7 @@
 
 {{ partial "paige/tag-script.html" (dict "page" $page "src" "js/paige/bootstrap/bootstrap.bundle.js") }}
 
-{{ if $page.Param "paige.math" }}
+{{ if $page.Param "paige.enable_math" }}
     {{ partial "paige/tag-script.html" (dict "page" $page "src" "js/paige/katex/katex.min.js") }}
     {{ partial "paige/tag-script.html" (dict "onload" "renderMathInElement(document.body);" "page" $page "src" "js/paige/katex/auto-render.min.js") }}
 {{ end }}
