@@ -67,3 +67,7 @@ paige_search_something:
 
 paige_sections:
   other: Разделы
+
+paige_words:
+  one: слово
+  other: слова

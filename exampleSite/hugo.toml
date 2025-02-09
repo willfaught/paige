@@ -55,6 +55,7 @@ disable_prev = true
 disable_reading_time = true
 disable_series = true
 disable_toc = true
+disable_word_count = true
 
 [paige.pages.base_schema]
 isAccessibleForFree = true
@@ -71,6 +72,7 @@ disable_keywords = true
 disable_reading_time = true
 disable_series = true
 disable_summary = true
+disable_word_count = true
 
 [taxonomies]
 author = "authors"

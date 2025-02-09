@@ -16,10 +16,11 @@
 {{ $time := $page.ReadingTime | and ($page.Param "paige.pages.disable_reading_time" | not) }}
 {{ $title := $page.LinkTitle | markdownify | and ($page.Param "paige.pages.disable_title" | not) }}
 {{ $toc := and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) | and ($page.Param "paige.pages.disable_toc" | not) }}
+{{ $words := $page.WordCount | and ($page.Param "paige.pages.disable_word_count" | not) }}
 
 {{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Param "paige.pages.disable_keywords" | not) }}
 
-{{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc }}
+{{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc $words }}
     <header class="mw-100" id="paige-page-header">
         <div class="align-items-center d-flex flex-column">
             {{ partial "paige/func-include.html" (dict "name" "page-header-first%s.html" "page" $page) }}
@@ -82,6 +83,10 @@
                         <p class="paige-row-short text-center text-secondary" id="paige-page-date">
                             <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $format . }}</time>
                         </p>
+                    {{ end }}
+
+                    {{ with $words }}
+                        <p class="paige-row-short text-center text-secondary" id="paige-page-word-count" {{ if $microdata }} itemprop="wordCount" {{ end }}>{{ . }} {{ i18n "paige_words" . }}</p>
                     {{ end }}
 
                     {{ with $time }}

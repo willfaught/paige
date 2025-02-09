@@ -20,6 +20,7 @@ disable_reading_time = false
 disable_series = false
 disable_title = false
 disable_toc = false
+disable_word_count = false
 [paige.pages.base_schema]
 isAccessibleForFree = true
 isFamilyFriendly = true
@@ -89,6 +90,7 @@ disable_reading_time = false
 disable_series = false
 disable_title = false
 disable_toc = false
+disable_word_count = false
 
 [paige.pages.base_schema]
 

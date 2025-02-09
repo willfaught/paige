@@ -17,6 +17,7 @@
 {{ $tags := $page.GetTerms "tags" }}
 {{ $time := $page.ReadingTime | and ($page.Parent.Param "paige.subpages.disable_reading_time" | not) }}
 {{ $title := $page.LinkTitle | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_title" | not) }}
+{{ $words := $page.WordCount | and ($page.Parent.Param "paige.subpages.disable_word_count" | not) }}
 
 {{ if $draft }}
     {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
@@ -102,6 +103,10 @@
         <p class="paige-page-date text-center paige-row-short text-secondary">
             <time datetime="{{ .Format `2006-01-02` }}">{{ time.Format $format . }}</time>
         </p>
+    {{ end }}
+
+    {{ with $words }}
+        <p class="paige-page-word-count paige-row-short text-center text-secondary">{{ . }} {{ i18n "paige_words" . }}</p>
     {{ end }}
 
     {{ with $time }}

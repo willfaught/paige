@@ -67,3 +67,7 @@ paige_search_something:
 
 paige_sections:
   other: Seções
+
+paige_words:
+  one: palavra
+  other: palavras

@@ -222,6 +222,7 @@ disable_sections = false
 disable_series = false
 disable_title = false
 disable_toc = false
+disable_word_count = false
 
 # Navigation
 edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
@@ -309,6 +310,7 @@ disable_reading_time = false
 disable_series = false
 disable_summary = false
 disable_title = false
+disable_word_count = false
 ```
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
@@ -1087,6 +1089,8 @@ Page identifiers:
     <dd>The page title.</dd>
     <dt><code>#paige-page-toc</code></dt>
     <dd>The page table of contents.</dd>
+    <dt><code>#paige-page-word-count</code></dt>
+    <dd>The page word count.</dd>
 </dl>
 
 Site identifiers:
@@ -1146,6 +1150,8 @@ Subpage classes:
     <dd>The summary.</dd>
     <dt><code>.paige-title</code></dt>
     <dd>The title.</dd>
+    <dt><code>.paige-page-word-count</code></dt>
+    <dd>The word count.</dd>
 </dl>
 
 Page kind classes:
@@ -1217,6 +1223,7 @@ disable_keywords = true
 disable_reading_time = true
 disable_series = true
 disable_summary = true
+disable_word_count = true
 
 [params.paige.pages]
 disable_authors = true
@@ -1227,6 +1234,7 @@ disable_prev = true
 disable_reading_time = true
 disable_series = true
 disable_toc = true
+disable_word_count = true
 ```
 
 ### Narrow look
