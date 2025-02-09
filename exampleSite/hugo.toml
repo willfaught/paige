@@ -11,7 +11,7 @@ languagename = "English"
 title = "Paige"
 weight = 10
 
-[languages.en.params.paige]
+[languages.en.params.paige.site]
 description = "Powerful, pliable pixel perfection"
 
 [markup.goldmark.renderer]
