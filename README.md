@@ -17,6 +17,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Authors
 - Blog
 - Bootstrap styles and icons
+- Breadcrumbs
 - Categories
 - Code shortcode
 - Customizable

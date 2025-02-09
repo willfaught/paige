@@ -6,6 +6,7 @@ features = [
   "authors",
   "blog",
   "bootstrap styles and icons",
+  "breadcrumbs",
   "categories",
   "code shortcode",
   "customizable",
