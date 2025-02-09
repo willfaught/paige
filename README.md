@@ -25,7 +25,6 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Facebook sharing
 - Figure shortcode
 - Gallery shortcode
-- Header links
 - Icon shortcode
 - Image pixel densities
 - Image shortcode
@@ -52,6 +51,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Table of contents
 - Tab shortcode
 - Tags
+- Title links
 - Twitter sharing
 - Validated with [PageSpeed](https://pagespeed.web.dev/report?url=https%3A%2F%2Fwillfaught.com%2Fpaige%2F&form_factor=desktop) and [Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwillfaught.com%2Fpaige%2F)
 - Vimeo shortcode
