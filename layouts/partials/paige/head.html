@@ -1,26 +1,36 @@
 {{ $page := . }}
 
-{{ $title := $page.Title }}
+{{ $titles := slice }}
 
-{{ if and $page.IsHome (not $title) }}
-    {{ $title = site.Title }}
-{{ end }}
+{{ if $page.IsHome }}
+    {{ if and $page.Title site.Title (eq $page.Title site.Title) }}
+        {{ $titles = slice (site.Title | markdownify | plainify | htmlUnescape) }}
+    {{ else }}
+        {{ if $page.Title }}
+            {{ $titles = $titles | append ($page.Title | markdownify | plainify | htmlUnescape) }}
+        {{ end }}
 
-{{ $title = $title | markdownify | plainify | htmlUnescape }}
-
-{{ $titles := slice $title }}
-
-{{ range .Ancestors }}
-    {{ $title := .Title }}
-
-    {{ if and .IsHome (not $title) }}
-        {{ $title = site.Title }}
+        {{ if site.Title }}
+            {{ $titles = $titles | append (site.Title | markdownify | plainify | htmlUnescape) }}
+        {{ end }}
+    {{ end }}
+{{ else }}
+    {{ with $page.Title }}
+        {{ $titles = slice (. | markdownify | plainify | htmlUnescape) }}
     {{ end }}
 
-    {{ $titles = $titles | append ($title | markdownify | plainify | htmlUnescape) }}
+    {{ range .Ancestors }}
+        {{ $title := .Title }}
+
+        {{ if and .IsHome (not $title) }}
+            {{ $title = site.Title }}
+        {{ end }}
+
+        {{ $titles = $titles | append ($title | markdownify | plainify | htmlUnescape) }}
+    {{ end }}
 {{ end }}
 
-{{ $title = delimit $titles " · " }}
+{{ $title := delimit $titles " · " }}
 
 <head>
     {{ partial "paige/func-include.html" (dict "name" "head-first%s.html" "page" $page) }}
