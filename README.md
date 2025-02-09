@@ -31,9 +31,10 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Image shortcode
 - Image size breakpoints
 - Image thumbnails
+- Internationalization
 - Landing page
-- Languages
 - Light color scheme
+- Localizations
 - Math typesetting
 - Menu
 - Minimal design
