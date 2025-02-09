@@ -3,16 +3,16 @@
 <style>
 {{ partial "paige/func-include.html" (dict "name" "style-first%s.html" "page" $page) }}
 
-.paige-figure-numbered {
-    counter-increment: paige-figure-numbered;
+.paige-shortcode-figure-numbered {
+    counter-increment: paige-shortcode-figure-numbered;
 }
 
-.paige-figure-numbered > div > figure > figcaption::before {
-    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure-numbered) ": ";
+.paige-shortcode-figure-numbered > div > figure > figcaption::before {
+    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-shortcode-figure-numbered) ": ";
 }
 
-.paige-figure-numbered > div > figure > figcaption:empty::before {
-    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-figure-numbered);
+.paige-shortcode-figure-numbered > div > figure > figcaption:empty::before {
+    content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-shortcode-figure-numbered);
 }
 
 .paige-header-link {
@@ -26,11 +26,11 @@
     content: "#";
 }
 
-.paige-quote .blockquote-footer {
+.paige-shortcode-quote .blockquote-footer {
     margin-top: 0;
 }
 
-.paige-quote blockquote {
+.paige-shortcode-quote blockquote {
     border-left: 0;
     border-right: 0;
     margin-bottom: 0;
@@ -54,22 +54,22 @@ th {
 }
 
 .paige-row-short:not(:last-child),
-.paige-figure .paige-quote,
-.paige-figure .paige-video,
-.paige-figure .highlight pre.chroma,
-.paige-figure .highlight .chroma pre,
-.paige-figure .paige-quote blockquote,
-.paige-figure figure > div > :last-child,
-.paige-gallery .paige-figure,
-.paige-gallery .paige-image,
+.paige-shortcode-figure .paige-shortcode-quote,
+.paige-shortcode-figure .paige-video,
+.paige-shortcode-figure .highlight pre.chroma,
+.paige-shortcode-figure .highlight .chroma pre,
+.paige-shortcode-figure .paige-shortcode-quote blockquote,
+.paige-shortcode-figure figure > div > :last-child,
+.paige-shortcode-gallery .paige-shortcode-figure,
+.paige-shortcode-gallery .paige-shortcode-image,
 blockquote > p:last-of-type {
     margin-bottom: 0;
 }
 
-.paige-figure,
-.paige-gallery,
-.paige-image,
-.paige-quote,
+.paige-shortcode-figure,
+.paige-shortcode-gallery,
+.paige-shortcode-image,
+.paige-shortcode-quote,
 .paige-row-short:last-child,
 .paige-row-tall,
 .paige-video,

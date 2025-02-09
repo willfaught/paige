@@ -1187,23 +1187,23 @@ Page status classes:
 Shortcode classes:
 
 <dl>
-    <dt><code>.paige-code</code></dt>
+    <dt><code>.paige-shortcode-code</code></dt>
     <dd>The container element of <code>paige/code</code> shortcodes.</dd>
-    <dt><code>.paige-email</code></dt>
+    <dt><code>.paige-shortcode-email</code></dt>
     <dd>The container element of <code>paige/email</code> shortcodes.</dd>
-    <dt><code>.paige-figure</code></dt>
+    <dt><code>.paige-shortcode-figure</code></dt>
     <dd>The container element of <code>paige/figure</code> shortcodes.</dd>
-    <dt><code>.paige-gallery</code></dt>
+    <dt><code>.paige-shortcode-gallery</code></dt>
     <dd>The container element of <code>paige/gallery</code> shortcodes.</dd>
-    <dt><code>.paige-icon</code></dt>
+    <dt><code>.paige-shortcode-icon</code></dt>
     <dd>The container element of <code>paige/icon</code> shortcodes.</dd>
-    <dt><code>.paige-image</code></dt>
+    <dt><code>.paige-shortcode-image</code></dt>
     <dd>The container element of <code>paige/image</code> shortcodes.</dd>
-    <dt><code>.paige-quote</code></dt>
+    <dt><code>.paige-shortcode-quote</code></dt>
     <dd>The container element of <code>paige/quote</code> shortcodes.</dd>
-    <dt><code>.paige-vimeo</code></dt>
+    <dt><code>.paige-shortcode-vimeo</code></dt>
     <dd>The container element of <code>paige/vimeo</code> shortcodes.</dd>
-    <dt><code>.paige-youtube</code></dt>
+    <dt><code>.paige-shortcode-youtube</code></dt>
     <dd>The container element of <code>paige/youtube</code> shortcodes.</dd>
 </dl>
 
@@ -1262,9 +1262,9 @@ try the following in `yoursite/hugo.toml`:
 style = """
 #paige-page-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
 #paige-page-content > img,
-#paige-page-content > .paige-image,
-#paige-page-content > .paige-vimeo,
-#paige-page-content > .paige-youtube { max-width: 100%; }
+#paige-page-content > .paige-shortcode-image,
+#paige-page-content > .paige-shortcode-vimeo,
+#paige-page-content > .paige-shortcode-youtube { max-width: 100%; }
 """
 ```
 

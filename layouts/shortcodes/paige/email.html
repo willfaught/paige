@@ -9,4 +9,4 @@
     {{ errorf "layouts/shortcodes/paige/email.html: no content" }}
 {{ end }}
 
-<span class="paige-email"><a href="" data-a="{{ base64Encode (index (split $address `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $address `@`) 1) }}" onclick="this.href = 'mailto:' + atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)">{{ $content }}</a></span>
+<span class="paige-shortcode-email"><a href="" data-a="{{ base64Encode (index (split $address `@`) 0) }}" data-b="{{ base64Encode `@` }}" data-c="{{ base64Encode (index (split $address `@`) 1) }}" onclick="this.href = 'mailto:' + atob(this.dataset.a) + atob(this.dataset.b) + atob(this.dataset.c)">{{ $content }}</a></span>
