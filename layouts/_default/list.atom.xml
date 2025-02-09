@@ -89,7 +89,7 @@
     {{ end }}
 
     {{ with $subtitle }}
-        <subtitle type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML}}</subtitle>
+        <subtitle type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</subtitle>
     {{ end }}
 
     {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
@@ -116,7 +116,7 @@
             {{ end }}
 
             {{ if not $content }}
-                {{ $content = .Description | markdownify}}
+                {{ $content = .Description | markdownify }}
             {{ end }}
 
             {{ if not $title }}

@@ -13,7 +13,7 @@
 {{ end }}
 
 {{ if $auto }}
-    {{ $audio := $page.Params.audio | default slice}}
+    {{ $audio := $page.Params.audio | default slice }}
     {{ $authors := partial "paige/func-authors.html" $page }}
     {{ $images := $page.Params.images | default slice }}
     {{ $keywords := sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories) }}
