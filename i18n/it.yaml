@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Briciole di pane
+
+paige_collections:
+  other: Collezioni
+
+paige_figure:
+  other: Figura
+
+paige_aria_section_link:
+  other: Link a questa sezione
+
+paige_edit_history:
+  other: Cronologia delle modifiche
+
+paige_edit_this_page:
+  other: Modifica questa pagina
+
+paige_first:
+  other: Prima
+
+paige_last:
+  other: Ultima
+
+paige_menu:
+  other: Menu
+
+paige_minutes:
+  one: minuto
+  other: minuti
+
+paige_next:
+  other: Successivo
+
+paige_noscript:
+  other: È richiesto JavaScript
+
+paige_page_list_navigation:
+  other: Navigazione elenco pagine
+
+paige_pages:
+  other: Pagine
+
+paige_previous:
+  other: Precedente
+
+paige_recent_content:
+  other: Contenuti recenti
+
+paige_search_button:
+  other: Cerca
+
+paige_search_error:
+  other: Errore
+
+paige_search_input:
+  other: Query
+
+paige_search_nothing:
+  other: Nessun risultato trovato
+
+paige_search_searching:
+  other: Ricerca in corso
+
+paige_search_something:
+  other: Qualcosa trovato
+
+paige_sections:
+  other: Sezioni
+
+paige_words:
+  one: parola
+  other: parole

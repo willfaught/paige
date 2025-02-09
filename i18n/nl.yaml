@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Kruimelpad
+
+paige_collections:
+  other: Collecties
+
+paige_figure:
+  other: Figuur
+
+paige_aria_section_link:
+  other: Link naar deze sectie
+
+paige_edit_history:
+  other: Bewerkingsgeschiedenis
+
+paige_edit_this_page:
+  other: Bewerk deze pagina
+
+paige_first:
+  other: Eerste
+
+paige_last:
+  other: Laatste
+
+paige_menu:
+  other: Menu
+
+paige_minutes:
+  one: minuut
+  other: minuten
+
+paige_next:
+  other: Volgende
+
+paige_noscript:
+  other: JavaScript is vereist
+
+paige_page_list_navigation:
+  other: Pagina lijst navigatie
+
+paige_pages:
+  other: Pagina's
+
+paige_previous:
+  other: Vorige
+
+paige_recent_content:
+  other: Recente inhoud
+
+paige_search_button:
+  other: Zoeken
+
+paige_search_error:
+  other: Fout
+
+paige_search_input:
+  other: Zoekopdracht
+
+paige_search_nothing:
+  other: Niets gevonden
+
+paige_search_searching:
+  other: Zoeken
+
+paige_search_something:
+  other: Iets gevonden
+
+paige_sections:
+  other: Secties
+
+paige_words:
+  one: woord
+  other: woorden

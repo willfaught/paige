@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Drobtine
+
+paige_collections:
+  other: Zbirke
+
+paige_figure:
+  other: Slika
+
+paige_aria_section_link:
+  other: Povezava na to poglavje
+
+paige_edit_history:
+  other: Zgodovina urejanja
+
+paige_edit_this_page:
+  other: Uredi to stran
+
+paige_first:
+  other: Prva
+
+paige_last:
+  other: Zadnja
+
+paige_menu:
+  other: Meni
+
+paige_minutes:
+  one: minuta
+  other: minute
+
+paige_next:
+  other: Naslednje
+
+paige_noscript:
+  other: Potreben je JavaScript
+
+paige_page_list_navigation:
+  other: Navigacija po seznamu strani
+
+paige_pages:
+  other: Strani
+
+paige_previous:
+  other: Prejšnja
+
+paige_recent_content:
+  other: Nedavni vsebini
+
+paige_search_button:
+  other: Iskanje
+
+paige_search_error:
+  other: Napaka
+
+paige_search_input:
+  other: Poizvedba
+
+paige_search_nothing:
+  other: Ničesar ni bilo najdeno
+
+paige_search_searching:
+  other: Iskanje
+
+paige_search_something:
+  other: Nekaj je bilo najdeno
+
+paige_sections:
+  other: Poglavja
+
+paige_words:
+  one: beseda
+  other: besede

@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Brödsmulor
+
+paige_collections:
+  other: Samlingar
+
+paige_figure:
+  other: Figur
+
+paige_aria_section_link:
+  other: Länk till denna sektion
+
+paige_edit_history:
+  other: Redigeringshistorik
+
+paige_edit_this_page:
+  other: Redigera denna sida
+
+paige_first:
+  other: Första
+
+paige_last:
+  other: Sista
+
+paige_menu:
+  other: Meny
+
+paige_minutes:
+  one: minut
+  other: minuter
+
+paige_next:
+  other: Nästa
+
+paige_noscript:
+  other: JavaScript krävs
+
+paige_page_list_navigation:
+  other: Navigering av sidlistan
+
+paige_pages:
+  other: Sidor
+
+paige_previous:
+  other: Föregående
+
+paige_recent_content:
+  other: Senaste innehåll
+
+paige_search_button:
+  other: Sök
+
+paige_search_error:
+  other: Fel
+
+paige_search_input:
+  other: Fråga
+
+paige_search_nothing:
+  other: Inget hittades
+
+paige_search_searching:
+  other: Söker
+
+paige_search_something:
+  other: Något hittades
+
+paige_sections:
+  other: Sektioner
+
+paige_words:
+  one: ord
+  other: ord

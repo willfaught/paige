@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Zsemlemorzsa
+
+paige_collections:
+  other: Gyűjtemények
+
+paige_figure:
+  other: Ábra
+
+paige_aria_section_link:
+  other: Link erre a szakaszra
+
+paige_edit_history:
+  other: Módosítási előzmények
+
+paige_edit_this_page:
+  other: Oldal szerkesztése
+
+paige_first:
+  other: Első
+
+paige_last:
+  other: Utolsó
+
+paige_menu:
+  other: Menü
+
+paige_minutes:
+  one: perc
+  other: perc
+
+paige_next:
+  other: Következő
+
+paige_noscript:
+  other: A JavaScript használata szükséges
+
+paige_page_list_navigation:
+  other: Oldalak listájának navigálása
+
+paige_pages:
+  other: Oldalak
+
+paige_previous:
+  other: Előző
+
+paige_recent_content:
+  other: Legutóbbi tartalom
+
+paige_search_button:
+  other: Keresés
+
+paige_search_error:
+  other: Hiba
+
+paige_search_input:
+  other: Kérdés
+
+paige_search_nothing:
+  other: Nincs találat
+
+paige_search_searching:
+  other: Keresés folyamatban
+
+paige_search_something:
+  other: Talált valamit
+
+paige_sections:
+  other: Szakaszok
+
+paige_words:
+  one: szó
+  other: szavak

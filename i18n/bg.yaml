@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Хлебни трохи
+
+paige_collections:
+  other: Колекции
+
+paige_figure:
+  other: Изображение
+
+paige_aria_section_link:
+  other: Връзка към тази секция
+
+paige_edit_history:
+  other: История на редакциите
+
+paige_edit_this_page:
+  other: Редактиране на тази страница
+
+paige_first:
+  other: Първа
+
+paige_last:
+  other: Последна
+
+paige_menu:
+  other: Меню
+
+paige_minutes:
+  one: минута
+  other: минути
+
+paige_next:
+  other: Следваща
+
+paige_noscript:
+  other: Изисква се JavaScript
+
+paige_page_list_navigation:
+  other: Навигация по списъка със страници
+
+paige_pages:
+  other: Страници
+
+paige_previous:
+  other: Предишна
+
+paige_recent_content:
+  other: Последно съдържание
+
+paige_search_button:
+  other: Търсене
+
+paige_search_error:
+  other: Грешка
+
+paige_search_input:
+  other: Запитване
+
+paige_search_nothing:
+  other: Нищо не е намерено
+
+paige_search_searching:
+  other: Търсене
+
+paige_search_something:
+  other: Намерено е нещо
+
+paige_sections:
+  other: Секции
+
+paige_words:
+  one: дума
+  other: думи

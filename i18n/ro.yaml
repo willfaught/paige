@@ -1,0 +1,73 @@
+paige_breadcrumbs:
+  other: Firimituri
+
+paige_collections:
+  other: Colecții
+
+paige_figure:
+  other: Figură
+
+paige_aria_section_link:
+  other: Link către această secțiune
+
+paige_edit_history:
+  other: Istoricul editărilor
+
+paige_edit_this_page:
+  other: Editează această pagină
+
+paige_first:
+  other: Prima
+
+paige_last:
+  other: Ultima
+
+paige_menu:
+  other: Meniu
+
+paige_minutes:
+  one: minut
+  other: minute
+
+paige_next:
+  other: Următoarea
+
+paige_noscript:
+  other: Este necesar JavaScript
+
+paige_page_list_navigation:
+  other: Navigare listă pagini
+
+paige_pages:
+  other: Pagini
+
+paige_previous:
+  other: Precedenta
+
+paige_recent_content:
+  other: Conținut recent
+
+paige_search_button:
+  other: Căutare
+
+paige_search_error:
+  other: Eroare
+
+paige_search_input:
+  other: Interogare
+
+paige_search_nothing:
+  other: Nimic găsit
+
+paige_search_searching:
+  other: Se caută
+
+paige_search_something:
+  other: Ceva găsit
+
+paige_sections:
+  other: Secțiuni
+
+paige_words:
+  one: cuvânt
+  other: cuvinte
