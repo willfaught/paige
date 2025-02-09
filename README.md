@@ -1130,23 +1130,23 @@ Page classes:
 Subpage classes:
 
 <dl>
+    <dt><code>.paige-page</code></dt>
+    <dd>A page.</dd>
     <dt><code>.paige-page-authors</code></dt>
     <dd>The page authors.</dd>
     <dt><code>.paige-page-date</code></dt>
     <dd>The page date.</dd>
-    <dt><code>.paige-description</code></dt>
+    <dt><code>.paige-page-description</code></dt>
     <dd>The page description.</dd>
     <dt><code>.paige-page-metadata</code></dt>
     <dd>The page metadata.</dd>
-    <dt><code>.paige-page</code></dt>
-    <dd>A page.</dd>
     <dt><code>.paige-page-reading-time</code></dt>
     <dd>The page reading time.</dd>
     <dt><code>.paige-page-series</code></dt>
     <dd>The page series.</dd>
-    <dt><code>.paige-summary</code></dt>
+    <dt><code>.paige-page-summary</code></dt>
     <dd>The page summary.</dd>
-    <dt><code>.paige-title</code></dt>
+    <dt><code>.paige-page-title</code></dt>
     <dd>The page title.</dd>
     <dt><code>.paige-page-word-count</code></dt>
     <dd>The page word count.</dd>

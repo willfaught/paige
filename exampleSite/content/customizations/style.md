@@ -8,7 +8,6 @@ tags = ["singles", "style"]
 title = "Style Data"
 [paige]
 style = """
-#paige-description,
 #paige-page-authors,
 #paige-page-content,
 #paige-page-date,
@@ -102,7 +101,6 @@ This page has the following parameters:
 [paige]
 
 style = """
-#paige-description,
 #paige-page-authors,
 #paige-page-content,
 #paige-page-date,

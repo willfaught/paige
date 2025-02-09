@@ -44,15 +44,15 @@
 
 <div class="{{ $class }}">
     {{ with $title }}
-        <p class="paige-row-short paige-title text-center"><a href="{{ $link }}">{{ . }}</a></p>
+        <p class="paige-row-short paige-page-title text-center"><a href="{{ $link }}">{{ . }}</a></p>
     {{ end }}
 
     {{ with $description }}
-        <p class="paige-description paige-row-short text-center">{{ . }}</p>
+        <p class="paige-page-description paige-row-short text-center">{{ . }}</p>
     {{ end }}
 
     {{ with $summary }}
-        <p class="fst-italic paige-row-short paige-summary text-center">{{ . }}</p>
+        <p class="fst-italic paige-row-short paige-page-summary text-center">{{ . }}</p>
     {{ end }}
 
     {{ with $keywords }}
