@@ -1119,8 +1119,6 @@ Site identifiers:
 Page classes:
 
 <dl>
-    <dt><code>.paige-page-keyword</code></dt>
-    <dd>A keyword.</dd>
     <dt><code>.paige-page-keyword-category</code></dt>
     <dd>A category keyword.</dd>
     <dt><code>.paige-page-keyword-tag</code></dt>
