@@ -1,9 +1,7 @@
 {{ $page := . }}
 
 <style>
-{{ if templates.Exists "partials/paige/style-first.css" }}
-    {{ partial "paige/style-first.css" $page | safeCSS }}
-{{ end }}
+{{ partial "paige/func-include.html" (dict "name" "style-first%s.html" "page" $page) }}
 
 .paige-figure-numbered {
     counter-increment: paige-figure-numbered;
@@ -113,7 +111,5 @@ table {
     {{ . | safeCSS }}
 {{ end }}
 
-{{ if templates.Exists "partials/paige/style-last.css" }}
-    {{ partial "paige/style-last.css" $page | safeCSS }}
-{{ end }}
+{{ partial "paige/func-include.html" (dict "name" "style-last%s.html" "page" $page) }}
 </style>
