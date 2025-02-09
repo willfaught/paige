@@ -241,11 +241,11 @@ disable_auto_schema = false # Disables the automatic JSON-LD schema generation
 microdata = {} # Microdata non-property attributes (all except itemprop) for the web page
 # Example:
 # [paige.pages.microdata]
-# itemid = "123"
-# itemref = "foo"
+# itemid = "foo"
+# itemref = "bar"
 # itemscope = ""
 # itemtype = "https://schema.org/Chapter
-schemas = [] # Page JSON-LD schemas
+schemas = [] # JSON-LD schemas
 # Example:
 # [[paige.pages.schemas]]
 # "@context" = "https://schema.org"
@@ -286,7 +286,7 @@ base_schema = {} # JSON-LD schema that all site schemas override
 # "@type" = "Organization"
 # name = "John Doe"
 # url = "https://example.com"
-schemas = [] # Site JSON-LD schemas
+schemas = [] # JSON-LD schemas
 # Example:
 # [[paige.site.schemas]]
 # "@context" = "https://schema.org"
