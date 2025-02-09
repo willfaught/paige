@@ -9,23 +9,23 @@
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
 
 {{ if $draft }}
-    {{ $class = $class | append "paige-draft" "paige-unpublished" }}
+    {{ $class = $class | append "paige-status-draft" "paige-status-unpublished" }}
 {{ end }}
 
 {{ if $expired }}
-    {{ $class = $class | append "paige-expired" "paige-unpublished" }}
+    {{ $class = $class | append "paige-status-expired" "paige-status-unpublished" }}
 {{ end }}
 
 {{ if $future }}
-    {{ $class = $class | append "paige-future" "paige-unpublished" }}
+    {{ $class = $class | append "paige-status-future" "paige-status-unpublished" }}
 {{ end }}
 
 {{ if $modified }}
-    {{ $class = $class | append "paige-modified" }}
+    {{ $class = $class | append "paige-status-modified" }}
 {{ end }}
 
 {{ if not (or $draft $expired $future) }}
-    {{ $class = $class | append "paige-published" }}
+    {{ $class = $class | append "paige-status-published" }}
 {{ end }}
 
 {{ with $page.Kind }}

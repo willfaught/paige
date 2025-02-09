@@ -1170,17 +1170,17 @@ Page kind classes:
 Page status classes:
 
 <dl>
-    <dt><code>.paige-draft</code></dt>
+    <dt><code>.paige-status-draft</code></dt>
     <dd>The container element of draft pages.</dd>
-    <dt><code>.paige-expired</code></dt>
+    <dt><code>.paige-status-expired</code></dt>
     <dd>The container element of expired pages.</dd>
-    <dt><code>.paige-future</code></dt>
+    <dt><code>.paige-status-future</code></dt>
     <dd>The container element of future pages.</dd>
-    <dt><code>.paige-modified</code></dt>
+    <dt><code>.paige-status-modified</code></dt>
     <dd>The container element of modified pages.</dd>
-    <dt><code>.paige-published</code></dt>
+    <dt><code>.paige-status-published</code></dt>
     <dd>The container element of published pages.</dd>
-    <dt><code>.paige-unpublished</code></dt>
+    <dt><code>.paige-status-unpublished</code></dt>
     <dd>The container element of unpublished pages.</dd>
 </dl>
 

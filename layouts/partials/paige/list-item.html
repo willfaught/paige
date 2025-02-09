@@ -20,23 +20,23 @@
 {{ $words := $page.WordCount | and ($page.Parent.Param "paige.subpages.disable_word_count" | not) }}
 
 {{ if $draft }}
-    {{ $flags = $flags | append "paige-draft" "paige-unpublished" }}
+    {{ $flags = $flags | append "paige-status-draft" "paige-status-unpublished" }}
 {{ end }}
 
 {{ if $expired }}
-    {{ $flags = $flags | append "paige-expired" "paige-unpublished" }}
+    {{ $flags = $flags | append "paige-status-expired" "paige-status-unpublished" }}
 {{ end }}
 
 {{ if $future }}
-    {{ $flags = $flags | append "paige-future" "paige-unpublished" }}
+    {{ $flags = $flags | append "paige-status-future" "paige-status-unpublished" }}
 {{ end }}
 
 {{ if $modified }}
-    {{ $flags = $flags | append "paige-modified" }}
+    {{ $flags = $flags | append "paige-status-modified" }}
 {{ end }}
 
 {{ if not (or $draft $expired $future) }}
-    {{ $flags = $flags | append "paige-published" }}
+    {{ $flags = $flags | append "paige-status-published" }}
 {{ end }}
 
 {{ $class := delimit (slice "paige-page" "w-100" | append $flags | uniq | sort) " " }}
