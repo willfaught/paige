@@ -9,6 +9,7 @@
 {{ $page := $params.page }}
 {{ $paths := $params.includepaths }}
 {{ $policy := $params.referrerpolicy | default "no-referrer" }}
+{{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
 {{ $sass := $params.sass }}
 {{ $template := $params.template }}
 
@@ -16,9 +17,7 @@
     {{ errorf "layouts/partials/paige/tag-link.html: no href" }}
 {{ end }}
 
-{{ with partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
-    {{ $resource := . }}
-
+{{ if $resource  }}
     {{ if $template }}
         {{ $split := path.Split $href }}
         {{ $join := path.Join $split.Dir (print (printf "%#v" $context | sha1) "-" $split.File) }}
