@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ $basePath := path.Clean (urls.Parse (relLangURL "")).Path }}
-{{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.disable_breadcrumbs" | not) }}
+{{ $breadcrumbs := $page.Ancestors.Reverse | and ($page.Param "paige.site.disable_breadcrumbs" | not) }}
 {{ $description := $page.Param "paige.site.description" | markdownify | and ($page.Param "paige.site.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/site-header-first.html" }}
 {{ $last := templates.Exists "partials/paige/site-header-last.html" }}
@@ -142,14 +142,10 @@
             <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-tall" id="paige-site-breadcrumbs">
                 <div class="d-flex justify-content-center">
                     <ol class="breadcrumb mb-0">
-                        {{ $reverse := .Reverse }}
-
-                        {{ $last := sub (len $reverse) 1 }}
-
-                        {{ range $i, $ancestor := $reverse }}
+                        {{ range $i, $ancestor := . }}
                             {{ $title := $ancestor.LinkTitle }}
 
-                            {{ if and (eq $i $last) (not $title) }}
+                            {{ if and (not $i) (not $title) }}
                                 {{ $title = site.Title }}
                             {{ end }}
 
