@@ -34,6 +34,10 @@ style = """
     font-style: italic;
 }
 """
+[paige.site]
+disable_breadcrumbs = false
+disable_credit = false
+disable_license = false
 [paige.subpages]
 disable_authors = false
 disable_date = false
@@ -50,10 +54,6 @@ disable_prev = false
 disable_reading_time = false
 disable_series = false
 disable_toc = false
-[paige.site]
-disable_breadcrumbs = false
-disable_credit = false
-disable_license = false
 +++
 
 This page styles some data differently than the rest of the site.

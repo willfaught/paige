@@ -11,13 +11,6 @@ credit = "Paige Theme"
 edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
-[paige.subpages]
-disable_authors = false
-disable_date = false
-disable_keywords = false
-disable_reading_time = false
-disable_series = false
-disable_summary = false
 [paige.pages]
 disable_authors = false
 disable_date = false
@@ -31,6 +24,13 @@ disable_toc = false
 disable_breadcrumbs = false
 disable_credit = false
 disable_license = false
+[paige.subpages]
+disable_authors = false
+disable_date = false
+disable_keywords = false
+disable_reading_time = false
+disable_series = false
+disable_summary = false
 +++
 
 This page shows some data that the rest of the site hides.
@@ -47,13 +47,6 @@ credit = "Paige Theme"
 edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
 history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 license = "MIT License"
-[paige.subpages]
-disable_authors = false
-disable_date = false
-disable_keywords = false
-disable_reading_time = false
-disable_series = false
-disable_summary = false
 [paige.pages]
 disable_authors = false
 disable_date = false
@@ -67,4 +60,11 @@ disable_toc = false
 disable_breadcrumbs = false
 disable_credit = false
 disable_license = false
+[paige.subpages]
+disable_authors = false
+disable_date = false
+disable_keywords = false
+disable_reading_time = false
+disable_series = false
+disable_summary = false
 ```
