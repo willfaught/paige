@@ -37,7 +37,9 @@
         {{ partial "paige/func-include.html" (dict "name" "site-header-first%s.html" "page" $page) }}
 
         {{ with $title }}
-            <div class="display-1 fw-bold {{ if $description }} mb-2 {{ end }} paige-row-tall text-center" id="paige-site-title">{{ . }}</div>
+            <div class="display-1 fw-bold {{ if $description }} mb-2 {{ end }} paige-row-tall text-center" id="paige-site-title">
+                <a class="text-body text-decoration-none" href="{{ relLangURL `` }}">{{ . }}</a>
+            </div>
         {{ end }}
 
         {{ with $description }}
