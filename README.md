@@ -247,7 +247,7 @@ microdata = {} # Microdata non-property attributes (all except itemprop) for the
 # itemtype = "https://schema.org/Chapter
 schemas = [] # Page JSON-LD schemas
 # Example:
-# [paige.pages.schemas]
+# [[paige.pages.schemas]]
 # "@context" = "https://schema.org"
 # "@type" = "Book"
 # name = "My Book"
@@ -288,7 +288,7 @@ base_schema = {} # JSON-LD schema that all site schemas override
 # url = "https://example.com"
 schemas = [] # Site JSON-LD schemas
 # Example:
-# [paige.site.schemas]
+# [[paige.site.schemas]]
 # "@context" = "https://schema.org"
 # "@type" = "Organization"
 # name = "Acme"
