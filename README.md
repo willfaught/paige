@@ -1120,51 +1120,51 @@ Page classes:
 
 <dl>
     <dt><code>.paige-page-keyword-category</code></dt>
-    <dd>A category keyword.</dd>
+    <dd>A page category keyword.</dd>
     <dt><code>.paige-page-keyword-tag</code></dt>
-    <dd>A tag keyword.</dd>
+    <dd>A page tag keyword.</dd>
     <dt><code>.paige-page-keywords</code></dt>
-    <dd>The keywords.</dd>
+    <dd>The page keywords.</dd>
 </dl>
 
 Subpage classes:
 
 <dl>
     <dt><code>.paige-page-authors</code></dt>
-    <dd>The authors.</dd>
+    <dd>The page authors.</dd>
     <dt><code>.paige-page-date</code></dt>
-    <dd>The date.</dd>
+    <dd>The page date.</dd>
     <dt><code>.paige-description</code></dt>
-    <dd>The description.</dd>
+    <dd>The page description.</dd>
     <dt><code>.paige-page-metadata</code></dt>
-    <dd>The metadata.</dd>
+    <dd>The page metadata.</dd>
     <dt><code>.paige-page</code></dt>
     <dd>A page.</dd>
     <dt><code>.paige-page-reading-time</code></dt>
-    <dd>The reading time.</dd>
+    <dd>The page reading time.</dd>
     <dt><code>.paige-page-series</code></dt>
-    <dd>The series.</dd>
+    <dd>The page series.</dd>
     <dt><code>.paige-summary</code></dt>
-    <dd>The summary.</dd>
+    <dd>The page summary.</dd>
     <dt><code>.paige-title</code></dt>
-    <dd>The title.</dd>
+    <dd>The page title.</dd>
     <dt><code>.paige-page-word-count</code></dt>
-    <dd>The word count.</dd>
+    <dd>The page word count.</dd>
 </dl>
 
 Page kind classes:
 
 <dl>
     <dt><code>.paige-kind-home</code></dt>
-    <dd>The container element of pages with kind "home".</dd>
+    <dd>The container of pages with kind "home".</dd>
     <dt><code>.paige-kind-section</code></dt>
-    <dd>The container element of pages with kind "section".</dd>
+    <dd>The container of pages with kind "section".</dd>
     <dt><code>.paige-kind-page</code></dt>
-    <dd>The container element of pages with kind "page".</dd>
+    <dd>The container of pages with kind "page".</dd>
     <dt><code>.paige-kind-taxonomy</code></dt>
-    <dd>The container element of pages with kind "taxonomy".</dd>
+    <dd>The container of pages with kind "taxonomy".</dd>
     <dt><code>.paige-kind-term</code></dt>
-    <dd>The container element of pages with kind "term".</dd>
+    <dd>The container of pages with kind "term".</dd>
 </dl>
 
 Page status classes:
