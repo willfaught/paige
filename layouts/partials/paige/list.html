@@ -72,13 +72,13 @@
 
         {{ if or $sections $pages }}
             {{ range . }}
-                {{ partial "paige/list-item.html" . }}
+                {{ partial "paige/list-item.html" (dict "item" . "list" $page) }}
             {{ end }}
         {{ else }}
             {{ $pager := $page.Paginate . }}
 
             {{ range $pager.Pages }}
-                {{ partial "paige/list-item.html" . }}
+                {{ partial "paige/list-item.html" (dict "item" . "list" $page) }}
             {{ end }}
 
             {{ template "pagination" (dict "page" $page "pager" $pager) }}
@@ -94,13 +94,13 @@
 
         {{ if $pages }}
             {{ range . }}
-                {{ partial "paige/list-item.html" . }}
+                {{ partial "paige/list-item.html" (dict "item" . "list" $page) }}
             {{ end }}
         {{ else }}
             {{ $pager := $page.Paginate . }}
 
             {{ range $pager.Pages }}
-                {{ partial "paige/list-item.html" . }}
+                {{ partial "paige/list-item.html" (dict "item" . "list" $page) }}
             {{ end }}
 
             {{ template "pagination" (dict "page" $page "pager" $pager) }}
@@ -117,7 +117,7 @@
         {{ $pager := $page.Paginate . }}
 
         {{ range $pager.Pages }}
-            {{ partial "paige/list-item.html" . }}
+            {{ partial "paige/list-item.html" (dict "item" . "list" $page) }}
         {{ end }}
 
         {{ template "pagination" (dict "page" $page "pager" $pager) }}

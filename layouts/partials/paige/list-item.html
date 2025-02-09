@@ -1,23 +1,26 @@
-{{ $page := . }}
+{{ $params := . }}
 
-{{ $authors := partial "paige/func-authors.html" $page | and ($page.Parent.Param "paige.subpages.disable_authors" | not) }}
-{{ $categories := $page.GetTerms "categories" }}
-{{ $date := $page.PublishDate | and ($page.Parent.Param "paige.subpages.disable_date" | not) }}
-{{ $description := $page.Description | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_description" | not) }}
-{{ $draft := $page.Draft }}
-{{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
+{{ $item := $params.item }}
+{{ $list := $params.list }}
+
+{{ $authors := partial "paige/func-authors.html" $item | and ($list.Param "paige.subpages.disable_authors" | not) }}
+{{ $categories := $item.GetTerms "categories" }}
+{{ $date := $item.PublishDate | and ($list.Param "paige.subpages.disable_date" | not) }}
+{{ $description := $item.Description | markdownify | plainify | htmlUnescape | and ($list.Param "paige.subpages.disable_description" | not) }}
+{{ $draft := $item.Draft }}
+{{ $expired := and $item.ExpiryDate (lt $item.ExpiryDate now) }}
 {{ $flags := slice }}
-{{ $format := $page.Parent.Param "paige.site.date_format" | default ":date_long" }}
-{{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
-{{ $link := $page.RelPermalink }}
-{{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
-{{ $normal := eq ($page.Parent.Param "paige.site.keyword_style" | default "text") "text" }}
-{{ $series := $page.GetTerms "series" | and ($page.Parent.Param "paige.subpages.disable_series" | not) }}
-{{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_summary" | not) }}
-{{ $tags := $page.GetTerms "tags" }}
-{{ $time := $page.ReadingTime | and ($page.Parent.Param "paige.subpages.disable_reading_time" | not) }}
-{{ $title := $page.LinkTitle | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_title" | not) }}
-{{ $words := $page.WordCount | and ($page.Parent.Param "paige.subpages.disable_word_count" | not) }}
+{{ $format := $list.Param "paige.site.date_format" | default ":date_long" }}
+{{ $future := and $item.PublishDate (gt $item.PublishDate now) }}
+{{ $link := $item.RelPermalink }}
+{{ $modified := and $item.PublishDate $item.Lastmod (lt $item.PublishDate $item.Lastmod) }}
+{{ $normal := eq ($list.Param "paige.site.keyword_style" | default "text") "text" }}
+{{ $series := $item.GetTerms "series" | and ($list.Param "paige.subpages.disable_series" | not) }}
+{{ $summary := $item.Summary | markdownify | plainify | htmlUnescape | and ($list.Param "paige.subpages.disable_summary" | not) }}
+{{ $tags := $item.GetTerms "tags" }}
+{{ $time := $item.ReadingTime | and ($list.Param "paige.subpages.disable_reading_time" | not) }}
+{{ $title := $item.LinkTitle | markdownify | plainify | htmlUnescape | and ($list.Param "paige.subpages.disable_title" | not) }}
+{{ $words := $item.WordCount | and ($list.Param "paige.subpages.disable_word_count" | not) }}
 
 {{ if $draft }}
     {{ $flags = $flags | append "paige-status-draft" "paige-status-unpublished" }}
@@ -40,7 +43,7 @@
 {{ end }}
 
 {{ $class := delimit (slice "paige-page" "w-100" | append $flags | uniq | sort) " " }}
-{{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Parent.Param "paige.subpages.disable_keywords" | not) }}
+{{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($list.Param "paige.subpages.disable_keywords" | not) }}
 
 <div class="{{ $class }}">
     {{ with $title }}
