@@ -1,4 +1,7 @@
-{{ $page := . }}
+{{ $params := . }}
+
+{{ $page := $params.page }}
+{{ $sort := $params.sort }}
 
 {{ define "pagination" }}
     {{ $params := . }}
@@ -55,6 +58,10 @@
 
 {{ if and (not $pages) (in (slice "taxonomy" "term") $page.Kind) }}
     {{ $pages = $page.Pages }}
+{{ end }}
+
+{{ if and $pages $sort }}
+    {{ $pages = sort $pages "LinkTitle" }}
 {{ end }}
 
 {{ with $collections }}

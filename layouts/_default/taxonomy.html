@@ -2,5 +2,5 @@
 {{ $page := . }}
 
 {{ partial "paige/page.html" $page }}
-{{ partial "paige/list.html" (dict "page" $page) }}
+{{ partial "paige/list.html" (dict "page" $page "sort" true) }}
 {{ end }}
