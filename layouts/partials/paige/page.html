@@ -5,6 +5,7 @@
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
+{{ $microdata := $page.Params.paige.pages.microdata }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
 
 {{ if $draft }}
@@ -48,7 +49,7 @@
         {{ partial "paige/page-header.html" $page }}
 
         {{ with $content }}
-            <main class="mw-100" id="paige-page-content">{{ . | safeHTML }}</main>
+            <main class="mw-100" id="paige-page-content" {{ if $microdata }} itemprop="articleBody" {{ end }}>{{ . | safeHTML }}</main>
         {{ end }}
 
         {{ partial "paige/page-footer.html" $page }}
