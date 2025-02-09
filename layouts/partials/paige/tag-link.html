@@ -22,6 +22,7 @@
     {{ if $template }}
         {{ $split := path.Split $href }}
         {{ $join := path.Join $split.Dir (print (printf "%#v" $context | sha1) "-" $split.File) }}
+
         {{ $resource = resources.ExecuteAsTemplate $join $context $resource }}
     {{ end }}
 
