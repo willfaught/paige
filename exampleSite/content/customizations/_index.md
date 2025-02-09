@@ -7,19 +7,61 @@ tags = ["sections"]
 title = "Customizations"
 [paige.pages]
 disable_authors = false
+disable_auto_schema = true
 disable_date = false
+disable_description = false
+disable_edit = false
+disable_history = false
 disable_keywords = false
+disable_next = false
+disable_prev = false
 disable_reading_time = false
 disable_series = false
+disable_title = false
 disable_toc = false
+[paige.pages.base_schema]
+isAccessibleForFree = true
+isFamilyFriendly = true
+[paige.pages.base_schema.publisher]
+"@type" = "Organization"
+name = "Paige"
+url = "https://github.com/willfaught/paige"
+[paige.pages.microdata]
+itemid = "https://willfaught.com/paige/customizations/"
+itemscope = ""
+itemtype = "https://schema.org/HowTo"
+[[paige.pages.schemas]]
+"@context" = "https://schema.org"
+"@type" = "WebPage"
+name = "Customization"
+url = "https://willfaught.com/paige/customizations/"
 [paige.site]
-credit = "Paige Theme"
+color = "#df4655"
+color_scheme = "dark"
+credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
+date_format = ":date_full"
+description = "Mighty, malleable media mastery"
 disable_breadcrumbs = false
 disable_credit = false
 disable_license = false
 edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+external_link_new_tab = true
 history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+keyword_style = "pills"
 license = "MIT License"
+menu_style = "tabs"
+[paige.site.base_schema]
+isAccessibleForFree = true
+isFamilyFriendly = true
+[paige.site.base_schema.publisher]
+"@type" = "Organization"
+name = "Paige"
+url = "https://github.com/willfaught/paige"
+[[paige.site.schemas]]
+"@context" = "https://schema.org"
+"@type" = "WebSite"
+name = "Paige"
+url = "https://willfaught.com/paige/"
 [paige.subpages]
 disable_authors = false
 disable_date = false
@@ -39,21 +81,82 @@ This page has the following parameters:
 
 ```toml
 [paige.pages]
+
 disable_authors = false
+disable_auto_schema = true
 disable_date = false
+disable_description = false
+disable_edit = false
+disable_history = false
 disable_keywords = false
+disable_next = false
+disable_prev = false
 disable_reading_time = false
 disable_series = false
+disable_title = false
 disable_toc = false
+
+[paige.pages.base_schema]
+
+isAccessibleForFree = true
+isFamilyFriendly = true
+
+[paige.pages.base_schema.publisher]
+
+"@type" = "Organization"
+name = "Paige"
+url = "https://github.com/willfaught/paige"
+
+[paige.pages.microdata]
+
+itemid = "https://willfaught.com/paige/customizations/"
+itemscope = ""
+itemtype = "https://schema.org/HowTo"
+
+[[paige.pages.schemas]]
+
+"@context" = "https://schema.org"
+"@type" = "WebPage"
+name = "Customization"
+url = "https://willfaught.com/paige/customizations/"
+
 [paige.site]
-credit = "Paige Theme"
+
+color = "#df4655"
+color_scheme = "dark"
+credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
+date_format = ":date_full"
+description = "Mighty, malleable media mastery"
 disable_breadcrumbs = false
 disable_credit = false
 disable_license = false
 edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+external_link_new_tab = true
 history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+keyword_style = "pills"
 license = "MIT License"
+menu_style = "tabs"
+
+[paige.site.base_schema]
+
+isAccessibleForFree = true
+isFamilyFriendly = true
+
+[paige.site.base_schema.publisher]
+
+"@type" = "Organization"
+name = "Paige"
+url = "https://github.com/willfaught/paige"
+
+[[paige.site.schemas]]
+
+"@context" = "https://schema.org"
+"@type" = "WebSite"
+name = "Paige"
+url = "https://willfaught.com/paige/"
+
 [paige.subpages]
+
 disable_authors = false
 disable_date = false
 disable_keywords = false
