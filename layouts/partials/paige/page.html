@@ -48,7 +48,7 @@
         {{ partial "paige/page-header.html" $page }}
 
         {{ with $content }}
-            <main class="mw-100" id="paige-content">{{ . | safeHTML }}</main>
+            <main class="mw-100" id="paige-page-content">{{ . | safeHTML }}</main>
         {{ end }}
 
         {{ partial "paige/page-footer.html" $page }}

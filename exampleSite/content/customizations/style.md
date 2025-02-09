@@ -8,25 +8,25 @@ tags = ["singles", "style"]
 title = "Style Data"
 [paige]
 style = """
-#paige-authors,
-#paige-breadcrumbs,
-#paige-content,
-#paige-copyright,
-#paige-credit,
-#paige-date,
 #paige-description,
-#paige-file,
-#paige-keywords,
-#paige-license,
-#paige-menu,
-#paige-page-title,
+#paige-page-authors,
+#paige-page-content,
+#paige-page-date,
 #paige-page-description,
-#paige-reading-time,
-#paige-series,
-#paige-siblings,
-#paige-site-title,
+#paige-page-file,
+#paige-page-keywords,
+#paige-page-reading-time,
+#paige-page-series,
+#paige-page-siblings,
+#paige-page-title,
+#paige-page-toc,
+#paige-site-breadcrumbs,
+#paige-site-copyright,
+#paige-site-credit,
 #paige-site-description,
-#paige-toc {
+#paige-site-license,
+#paige-site-menu,
+#paige-site-title {
     font-style: italic;
 }
 """
@@ -101,25 +101,25 @@ This page has the following parameters:
 [paige]
 
 style = """
-#paige-authors,
-#paige-breadcrumbs,
-#paige-content,
-#paige-copyright,
-#paige-credit,
-#paige-date,
 #paige-description,
-#paige-file,
-#paige-keywords,
-#paige-license,
-#paige-menu,
-#paige-page-title,
+#paige-page-authors,
+#paige-page-content,
+#paige-page-date,
 #paige-page-description,
-#paige-reading-time,
-#paige-series,
-#paige-siblings,
-#paige-site-title,
+#paige-page-file,
+#paige-page-keywords,
+#paige-page-reading-time,
+#paige-page-series,
+#paige-page-siblings,
+#paige-page-title,
+#paige-page-toc,
+#paige-site-breadcrumbs,
+#paige-site-copyright,
+#paige-site-credit,
 #paige-site-description,
-#paige-toc {
+#paige-site-license,
+#paige-site-menu,
+#paige-site-title {
     font-style: italic;
 }
 """

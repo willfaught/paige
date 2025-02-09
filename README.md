@@ -1035,107 +1035,112 @@ Use CSS selectors to extend the default styling.
 Page identifiers:
 
 <dl>
-    <dt><code>#paige-alert</code></dt>
+    <dt><code>#paige-page-alert</code></dt>
     <dd>The page alert.</dd>
-    <dt><code>#paige-authors</code></dt>
+    <dt><code>#paige-page-authors</code></dt>
     <dd>The page authors.</dd>
-    <dt><code>#paige-breadcrumbs</code></dt>
-    <dd>The site breadcrumbs.</dd>
-    <dt><code>#paige-collections</code></dt>
-    <dd>The site collection pages.</dd>
-    <dt><code>#paige-collections-header</code></dt>
-    <dd>The site collection pages header.</dd>
-    <dt><code>#paige-content</code></dt>
+    <dt><code>#paige-page-collections</code></dt>
+    <dd>The page collections.</dd>
+    <dt><code>#paige-page-collections-header</code></dt>
+    <dd>The page collections header.</dd>
+    <dt><code>#paige-page-content</code></dt>
     <dd>The page content.</dd>
-    <dt><code>#paige-copyright</code></dt>
-    <dd>The site copyright.</dd>
-    <dt><code>#paige-credit</code></dt>
-    <dd>The site credit.</dd>
-    <dt><code>#paige-date</code></dt>
+    <dt><code>#paige-page-date</code></dt>
     <dd>The page date.</dd>
-    <dt><code>#paige-edit</code></dt>
-    <dd>The page edit link.</dd>
-    <dt><code>#paige-file</code></dt>
-    <dd>The page edit and history links.</dd>
-    <dt><code>#paige-history</code></dt>
-    <dd>The page history link.</dd>
-    <dt><code>#paige-keywords</code></dt>
-    <dd>The page keywords.</dd>
-    <dt><code>#paige-license</code></dt>
-    <dd>The site license.</dd>
-    <dt><code>#paige-menu</code></dt>
-    <dd>The site menu.</dd>
-    <dt><code>#paige-metadata</code></dt>
-    <dd>The page metadata.</dd>
-    <dt><code>#paige-next</code></dt>
-    <dd>The next page link.</dd>
     <dt><code>#paige-page-description</code></dt>
     <dd>The page description.</dd>
+    <dt><code>#paige-page-edit</code></dt>
+    <dd>The page edit link.</dd>
+    <dt><code>#paige-page-file</code></dt>
+    <dd>The container of the page edit and history links.</dd>
     <dt><code>#paige-page-footer</code></dt>
     <dd>The page footer that contains the page edit, history, next, and previous links.</dd>
     <dt><code>#paige-page-header</code></dt>
     <dd>The page header that contains the page title, description, metadata, and table of contents.</dd>
+    <dt><code>#paige-page-history</code></dt>
+    <dd>The page history link.</dd>
+    <dt><code>#paige-page-keywords</code></dt>
+    <dd>The page keywords.</dd>
+    <dt><code>#paige-page-metadata</code></dt>
+    <dd>The page metadata.</dd>
+    <dt><code>#paige-page-next</code></dt>
+    <dd>The next page link.</dd>
+    <dt><code>#paige-page-pages</code></dt>
+    <dd>The page pages.</dd>
+    <dt><code>#paige-page-pages-header</code></dt>
+    <dd>The page pages header.</dd>
+    <dt><code>#paige-page-pagination</code></dt>
+    <dd>The pagination of sub-pages.</dd>
+    <dt><code>#paige-page-prev</code></dt>
+    <dd>The previous page link.</dd>
+    <dt><code>#paige-page-reading-time</code></dt>
+    <dd>The page reading time.</dd>
+    <dt><code>#paige-page-sections</code></dt>
+    <dd>The page sections.</dd>
+    <dt><code>#paige-page-sections-header</code></dt>
+    <dd>The page sections header.</dd>
+    <dt><code>#paige-page-series</code></dt>
+    <dd>The page series.</dd>
+    <dt><code>#paige-page-siblings</code></dt>
+    <dd>The container of the page next and previous links.</dd>
     <dt><code>#paige-page-title</code></dt>
     <dd>The page title.</dd>
-    <dt><code>#paige-subpages</code></dt>
-    <dd>The page sub-pages.</dd>
-    <dt><code>#paige-subpages-header</code></dt>
-    <dd>The page subpages header.</dd>
-    <dt><code>#paige-pagination</code></dt>
-    <dd>The pagination of sub-pages.</dd>
-    <dt><code>#paige-prev</code></dt>
-    <dd>The previous page link.</dd>
-    <dt><code>#paige-reading-time</code></dt>
-    <dd>The page reading time.</dd>
-    <dt><code>#paige-sections</code></dt>
-    <dd>The page section sub-pages.</dd>
-    <dt><code>#paige-sections-header</code></dt>
-    <dd>The page section sub-pages header.</dd>
-    <dt><code>#paige-series</code></dt>
-    <dd>The page series.</dd>
-    <dt><code>#paige-siblings</code></dt>
-    <dd>The page next and previous links.</dd>
+    <dt><code>#paige-page-toc</code></dt>
+    <dd>The page table of contents.</dd>
+</dl>
+
+Site identifiers:
+
+<dl>
+    <dt><code>#paige-site-breadcrumbs</code></dt>
+    <dd>The site breadcrumbs.</dd>
+    <dt><code>#paige-site-copyright</code></dt>
+    <dd>The site copyright.</dd>
+    <dt><code>#paige-site-credit</code></dt>
+    <dd>The site credit.</dd>
     <dt><code>#paige-site-description</code></dt>
     <dd>The site description.</dd>
     <dt><code>#paige-site-footer</code></dt>
     <dd>The site footer that contains the site copyright, license, and credit.</dd>
     <dt><code>#paige-site-header</code></dt>
     <dd>The site header that contains the site title, description, menu, and breadcrumbs.</dd>
+    <dt><code>#paige-site-license</code></dt>
+    <dd>The site license.</dd>
+    <dt><code>#paige-site-menu</code></dt>
+    <dd>The site menu.</dd>
     <dt><code>#paige-site-title</code></dt>
     <dd>The site title.</dd>
-    <dt><code>#paige-toc</code></dt>
-    <dd>The table of contents.</dd>
 </dl>
 
 Page classes:
 
 <dl>
-    <dt><code>.paige-keyword</code></dt>
+    <dt><code>.paige-page-keyword</code></dt>
     <dd>A keyword.</dd>
-    <dt><code>.paige-keyword-category</code></dt>
+    <dt><code>.paige-page-keyword-category</code></dt>
     <dd>A category keyword.</dd>
-    <dt><code>.paige-keyword-tag</code></dt>
+    <dt><code>.paige-page-keyword-tag</code></dt>
     <dd>A tag keyword.</dd>
-    <dt><code>.paige-keywords</code></dt>
+    <dt><code>.paige-page-keywords</code></dt>
     <dd>The keywords.</dd>
 </dl>
 
 Sub-page classes:
 
 <dl>
-    <dt><code>.paige-authors</code></dt>
+    <dt><code>.paige-page-authors</code></dt>
     <dd>The authors.</dd>
-    <dt><code>.paige-date</code></dt>
+    <dt><code>.paige-page-date</code></dt>
     <dd>The date.</dd>
     <dt><code>.paige-description</code></dt>
     <dd>The description.</dd>
-    <dt><code>.paige-metadata</code></dt>
+    <dt><code>.paige-page-metadata</code></dt>
     <dd>The metadata.</dd>
     <dt><code>.paige-page</code></dt>
     <dd>A page.</dd>
-    <dt><code>.paige-reading-time</code></dt>
+    <dt><code>.paige-page-reading-time</code></dt>
     <dd>The reading time.</dd>
-    <dt><code>.paige-series</code></dt>
+    <dt><code>.paige-page-series</code></dt>
     <dd>The series.</dd>
     <dt><code>.paige-summary</code></dt>
     <dd>The summary.</dd>
@@ -1234,7 +1239,7 @@ try the following in `yoursite/hugo.toml`:
 ```toml
 [params.paige]
 style = """
-#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
+#paige-page-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
 """
 ```
 
@@ -1249,11 +1254,11 @@ try the following in `yoursite/hugo.toml`:
 ```toml
 [params.paige]
 style = """
-#paige-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
-#paige-content > img,
-#paige-content > .paige-image,
-#paige-content > .paige-vimeo,
-#paige-content > .paige-youtube { max-width: 100%; }
+#paige-page-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
+#paige-page-content > img,
+#paige-page-content > .paige-image,
+#paige-page-content > .paige-vimeo,
+#paige-page-content > .paige-youtube { max-width: 100%; }
 """
 ```
 

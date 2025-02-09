@@ -22,15 +22,15 @@
         {{ partial "paige/func-include.html" (dict "name" "page-footer-first%s.html" "page" $page) }}
 
         {{ if or $edit $history }}
-            <div id="paige-file">
+            <div id="paige-page-file">
                 {{ with $edit }}
-                    <div class="paige-row-short text-center text-secondary" id="paige-edit">
+                    <div class="paige-row-short text-center text-secondary" id="paige-page-edit">
                         <a class="link-secondary" href="{{ . }}">{{ i18n "paige_edit_this_page" }}</a>
                     </div>
                 {{ end }}
 
                 {{ with $history }}
-                    <div class="paige-row-short text-center text-secondary" id="paige-history">
+                    <div class="paige-row-short text-center text-secondary" id="paige-page-history">
                         <a class="link-secondary" href="{{ . }}">{{ i18n "paige_edit_history" }}</a>
                     </div>
                 {{ end }}
@@ -38,13 +38,13 @@
         {{ end }}
 
         {{ if or $next $prev }}
-            <div id="paige-siblings">
+            <div id="paige-page-siblings">
                 {{ with $prev }}
-                    <div class="paige-row-short text-center text-secondary" id="paige-next"><a class="link-secondary" href="{{ .Permalink }}">{{ .LinkTitle }}</a> &rsaquo;</div>
+                    <div class="paige-row-short text-center text-secondary" id="paige-page-next"><a class="link-secondary" href="{{ .Permalink }}">{{ .LinkTitle }}</a> &rsaquo;</div>
                 {{ end }}
 
                 {{ with $next }}
-                    <div class="paige-row-short text-center text-secondary" id="paige-prev">&lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .LinkTitle }}</a></div>
+                    <div class="paige-row-short text-center text-secondary" id="paige-page-prev">&lsaquo; <a class="link-secondary" href="{{ .Permalink }}">{{ .LinkTitle }}</a></div>
                 {{ end }}
             </div>
         {{ end }}

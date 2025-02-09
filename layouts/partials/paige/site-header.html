@@ -48,7 +48,7 @@
 
         {{ if $menu }}
             {{ with site.Menus.main }}
-                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-menu">
+                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-site-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                         {{ range . }}
                             {{ $menuPath := strings.TrimPrefix $basePath .URL }}
@@ -110,7 +110,7 @@
 
                 {{ $pages = sort $pages "LinkTitle" }}
 
-                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-menu">
+                <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-site-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
                         {{ with $title }}
                             {{ $active := eq $page.Section "" }}
@@ -139,7 +139,7 @@
         {{ end }}
 
         {{ with $breadcrumbs }}
-            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-tall" id="paige-breadcrumbs">
+            <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-tall" id="paige-site-breadcrumbs">
                 <div class="d-flex justify-content-center">
                     <ol class="breadcrumb mb-0">
                         {{ $reverse := .Reverse }}

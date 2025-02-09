@@ -7,7 +7,7 @@
     {{ $pager := .pager }}
 
     {{ if or $pager.HasPrev $pager.HasNext }}
-        <div id="paige-pagination">
+        <div id="paige-page-pagination">
             <div class="d-flex justify-content-center">
                 <nav aria-label="{{ i18n `paige_page_list_navigation` }}">
                     <ul class="pagination">
@@ -58,9 +58,9 @@
 {{ end }}
 
 {{ with $collections }}
-    <div id="paige-collections">
+    <div id="paige-page-collections">
         {{ if or $sections $pages }}
-            <h2 class="h5 text-center" id="paige-collections-header">{{ i18n "paige_collections" }}</h2>
+            <h2 class="h5 text-center" id="paige-page-collections-header">{{ i18n "paige_collections" }}</h2>
         {{ end }}
 
         {{ if or $sections $pages }}
@@ -80,9 +80,9 @@
 {{ end }}
 
 {{ with $sections }}
-    <div id="paige-sections">
+    <div id="paige-page-sections">
         {{ if or $collections $pages }}
-            <h2 class="h5 text-center" id="paige-sections-header">{{ i18n "paige_sections" }}</h2>
+            <h2 class="h5 text-center" id="paige-page-sections-header">{{ i18n "paige_sections" }}</h2>
         {{ end }}
 
         {{ if $pages }}
@@ -102,9 +102,9 @@
 {{ end }}
 
 {{ with $pages }}
-    <div id="paige-subpages">
+    <div id="paige-page-pages">
         {{ if or $collections $sections }}
-            <h2 class="h5 text-center" id="paige-subpages-header">{{ i18n "paige_pages" }}</h2>
+            <h2 class="h5 text-center" id="paige-page-pages-header">{{ i18n "paige_pages" }}</h2>
         {{ end }}
 
         {{ $pager := $page.Paginate . }}
