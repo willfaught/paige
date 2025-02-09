@@ -1,10 +1,10 @@
 {{ $page := . }}
 
 {{ $copyright := site.Copyright | markdownify | and ($page.Param "paige.site.disable_copyright" | not) }}
-{{ $credit := $page.Param "paige.credit" }}
+{{ $credit := $page.Param "paige.site.credit" }}
 {{ $first := templates.Exists "partials/paige/footer-first.html" }}
 {{ $last := templates.Exists "partials/paige/footer-last.html" }}
-{{ $license := $page.Param "paige.license" | markdownify | and ($page.Param "paige.site.disable_license" | not) }}
+{{ $license := $page.Param "paige.site.license" | markdownify | and ($page.Param "paige.site.disable_license" | not) }}
 {{ $microdata := $page.Params.paige.pages.microdata }}
 
 {{ if $credit }}

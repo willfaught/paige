@@ -87,7 +87,7 @@ table {
     opacity: 1;
 }
 
-{{ $colorscheme := $page.Param "paige.color_scheme" }}
+{{ $colorscheme := $page.Param "paige.site.color_scheme" }}
 
 {{ if eq $colorscheme "dark" }}
     {{ partial "paige/dark.css" $page | safeCSS }}

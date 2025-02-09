@@ -7,11 +7,11 @@
 {{ $draft := $page.Draft }}
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $flags := slice }}
-{{ $format := $page.Parent.Param "paige.date_format" | default ":date_long" }}
+{{ $format := $page.Parent.Param "paige.site.date_format" | default ":date_long" }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
 {{ $link := $page.RelPermalink }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
-{{ $normal := eq ($page.Parent.Param "paige.keyword_style" | default "text") "text" }}
+{{ $normal := eq ($page.Parent.Param "paige.site.keyword_style" | default "text") "text" }}
 {{ $series := $page.GetTerms "series" | and ($page.Parent.Param "paige.subpages.disable_series" | not) }}
 {{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | and ($page.Parent.Param "paige.subpages.disable_summary" | not) }}
 {{ $tags := $page.GetTerms "tags" }}

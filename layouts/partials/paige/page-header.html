@@ -6,11 +6,11 @@
 {{ $date := and $page.IsPage $page.PublishDate | and ($page.Param "paige.pages.disable_date" | not) }}
 {{ $description := $page.Description | markdownify | and ($page.Param "paige.pages.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/page-header-first.html" }}
-{{ $format := $page.Param "paige.date_format" | default ":date_long" }}
+{{ $format := $page.Param "paige.site.date_format" | default ":date_long" }}
 {{ $last := templates.Exists "partials/paige/page-header-last.html" }}
 {{ $link := $page.Params.link }}
 {{ $microdata := $page.Params.paige.pages.microdata }}
-{{ $normal := eq ($page.Param "paige.keyword_style" | default "text") "text" }}
+{{ $normal := eq ($page.Param "paige.site.keyword_style" | default "text") "text" }}
 {{ $series := $page.GetTerms "series" | and ($page.Param "paige.pages.disable_series" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
 {{ $time := $page.ReadingTime | and ($page.Param "paige.pages.disable_reading_time" | not) }}

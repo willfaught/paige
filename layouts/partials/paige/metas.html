@@ -20,14 +20,14 @@
     <meta content="{{ delimit (sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories)) `, ` }}" name="keywords">
 {{ end }}
 
-<meta content="{{ $page.Param `paige.color` | default `#0d6efd` }}" name="msapplication-TileColor">
+<meta content="{{ $page.Param `paige.site.color` | default `#0d6efd` }}" name="msapplication-TileColor">
 
 {{ if fileExists "assets/browserconfig.xml" }}
     <meta content="{{ (resources.Get `browserconfig.xml` | resources.ExecuteAsTemplate `browserconfig.xml` .).RelPermalink }}" name="msapplication-config">
 {{ end }}
 
 <meta content="https://github.com/willfaught/paige" name="theme">
-<meta content="{{ $page.Param `paige.color` | default `#0d6efd` }}" name="theme-color">
+<meta content="{{ $page.Param `paige.site.color` | default `#0d6efd` }}" name="theme-color">
 <meta content="width=device-width, initial-scale=1" name="viewport">
 
 {{ template "_internal/opengraph.html" $page }}

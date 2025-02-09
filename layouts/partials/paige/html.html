@@ -1,6 +1,6 @@
 {{ $page := . }}
 
-{{ $dark := eq ($page.Param "paige.color_scheme") "dark" }}
+{{ $dark := eq ($page.Param "paige.site.color_scheme") "dark" }}
 {{ $lang := site.Language.LanguageCode | default site.LanguageCode }}
 {{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
 

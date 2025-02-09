@@ -2,7 +2,7 @@
 
 {{ $basePath := path.Clean (urls.Parse (relLangURL "")).Path }}
 {{ $breadcrumbs := $page.Ancestors | and ($page.Param "paige.site.disable_breadcrumbs" | not) }}
-{{ $description := $page.Param "paige.description" | markdownify | and ($page.Param "paige.site.disable_description" | not) }}
+{{ $description := $page.Param "paige.site.description" | markdownify | and ($page.Param "paige.site.disable_description" | not) }}
 {{ $first := templates.Exists "partials/paige/site-header-first.html" }}
 {{ $last := templates.Exists "partials/paige/site-header-last.html" }}
 {{ $links := false }}
@@ -18,7 +18,7 @@
 
 {{ $pagePath := strings.TrimPrefix $basePath $page.RelPermalink }}
 
-{{ with $page.Param "paige.menu_style" }}
+{{ with $page.Param "paige.site.menu_style" }}
     {{ if eq . "pills" }}
         {{ $pills = true }}
     {{ else if eq . "tabs" }}
