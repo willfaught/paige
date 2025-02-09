@@ -1056,7 +1056,7 @@ Page identifiers:
     <dt><code>#paige-page-footer</code></dt>
     <dd>The page footer that contains the page edit, history, next, and previous links.</dd>
     <dt><code>#paige-page-header</code></dt>
-    <dd>The page header that contains the page title, description, metadata, and table of contents.</dd>
+    <dd>The page header that contains the page metadata and table of contents.</dd>
     <dt><code>#paige-page-history</code></dt>
     <dd>The page history link.</dd>
     <dt><code>#paige-page-keywords</code></dt>
@@ -1064,7 +1064,7 @@ Page identifiers:
     <dt><code>#paige-page-metadata</code></dt>
     <dd>The page metadata.</dd>
     <dt><code>#paige-page-next</code></dt>
-    <dd>The next page link.</dd>
+    <dd>The page next link.</dd>
     <dt><code>#paige-page-pages</code></dt>
     <dd>The page pages.</dd>
     <dt><code>#paige-page-pages-header</code></dt>
@@ -1072,7 +1072,7 @@ Page identifiers:
     <dt><code>#paige-page-pagination</code></dt>
     <dd>The pagination of subpages.</dd>
     <dt><code>#paige-page-prev</code></dt>
-    <dd>The previous page link.</dd>
+    <dd>The page previous link.</dd>
     <dt><code>#paige-page-reading-time</code></dt>
     <dd>The page reading time.</dd>
     <dt><code>#paige-page-sections</code></dt>
