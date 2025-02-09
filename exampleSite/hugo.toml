@@ -56,6 +56,10 @@ disable_reading_time = true
 disable_series = true
 disable_toc = true
 
+[paige.pages.base_schema]
+isAccessibleForFree = true
+isFamilyFriendly = true
+
 [params.paige.site]
 disable_breadcrumbs = true
 disable_credit = true
