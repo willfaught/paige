@@ -394,7 +394,7 @@ if the non-property attributes are specified in `paige.pages.microdata`.
 
 ### Cloud
 
-The `paige/cloud` layout provides a link cloud for sub-pages.
+The `paige/cloud` layout provides a link cloud for subpages.
 
 Example configuration in `yoursite/content/tags/_index.md`:
 
@@ -1070,7 +1070,7 @@ Page identifiers:
     <dt><code>#paige-page-pages-header</code></dt>
     <dd>The page pages header.</dd>
     <dt><code>#paige-page-pagination</code></dt>
-    <dd>The pagination of sub-pages.</dd>
+    <dd>The pagination of subpages.</dd>
     <dt><code>#paige-page-prev</code></dt>
     <dd>The previous page link.</dd>
     <dt><code>#paige-page-reading-time</code></dt>
@@ -1125,7 +1125,7 @@ Page classes:
     <dd>The keywords.</dd>
 </dl>
 
-Sub-page classes:
+Subpage classes:
 
 <dl>
     <dt><code>.paige-page-authors</code></dt>
