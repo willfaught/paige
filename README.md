@@ -13,7 +13,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 ## Features
 
 - Accessibility
-- Atom feed
+- Atom feeds
 - Authors
 - Blog
 - Bootstrap styles and icons
@@ -40,7 +40,7 @@ Paige is designed to put your content front and center, avoiding the typical clu
 - Quote shortcode
 - Responsive
 - Right-to-left languages
-- RSS feed
+- RSS feeds
 - Safari and Firefox Reader View support
 - Search
 - Sections

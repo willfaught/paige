@@ -2,7 +2,7 @@ demosite = "https://willfaught.com/paige"
 description = "Powerful, pliable pixel perfection. An advanced Hugo theme."
 features = [
   "accessibility",
-  "atom feed",
+  "atom feeds",
   "authors",
   "blog",
   "bootstrap styles and icons",
@@ -29,7 +29,7 @@ features = [
   "quote shortcode",
   "responsive",
   "right-to-left languages",
-  "rss feed",
+  "rss feeds",
   "safari and firefox reader view support",
   "search",
   "sections",
