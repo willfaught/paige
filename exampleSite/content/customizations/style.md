@@ -7,10 +7,6 @@ series = ["series-demo"]
 tags = ["singles", "style"]
 title = "Style Data"
 [paige]
-credit = "Paige Theme"
-edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
-history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
-license = "MIT License"
 style = """
 #paige-authors,
 #paige-breadcrumbs,
@@ -34,26 +30,21 @@ style = """
     font-style: italic;
 }
 """
-[paige.site]
-disable_breadcrumbs = false
-disable_credit = false
-disable_license = false
-[paige.subpages]
-disable_authors = false
-disable_date = false
-disable_keywords = false
-disable_reading_time = false
-disable_series = false
-disable_summary = false
 [paige.pages]
 disable_authors = false
 disable_date = false
 disable_keywords = false
-disable_next = false
-disable_prev = false
 disable_reading_time = false
 disable_series = false
 disable_toc = false
+[paige.site]
+credit = "Paige Theme"
+disable_breadcrumbs = false
+disable_credit = false
+disable_license = false
+edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+license = "MIT License"
 +++
 
 This page styles some data differently than the rest of the site.
@@ -66,10 +57,6 @@ This page has the following parameters:
 
 ```toml
 [paige]
-credit = "Paige Theme"
-edit = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
-history = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
-license = "MIT License"
 style = """
 #paige-authors,
 #paige-breadcrumbs,
@@ -93,24 +80,19 @@ style = """
     font-style: italic;
 }
 """
-[paige.subpages]
-disable_authors = false
-disable_date = false
-disable_keywords = false
-disable_reading_time = false
-disable_series = false
-disable_summary = false
 [paige.pages]
 disable_authors = false
 disable_date = false
 disable_keywords = false
-disable_next = false
-disable_prev = false
 disable_reading_time = false
 disable_series = false
 disable_toc = false
 [paige.site]
+credit = "Paige Theme"
 disable_breadcrumbs = false
 disable_credit = false
 disable_license = false
+edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/%s"
+history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
+license = "MIT License"
 ```
