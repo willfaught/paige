@@ -40,8 +40,8 @@
 {{ end }}
 
 {{ $collections := slice }}
-{{ $pages := $page.RegularPages | and ($page.Param "paige.pages.disable_pages" | not) }}
-{{ $sections := $page.Sections | and ($page.Param "paige.pages.disable_sections" | not) }}
+{{ $pages := slice }}
+{{ $sections := slice }}
 
 {{ if $page.IsHome }}
     {{ range $name, $taxonomy := site.Taxonomies }}
@@ -54,11 +54,19 @@
 {{ $collections = $collections | and ($page.Param "paige.pages.disable_collections" | not) }}
 
 {{ if in (slice "taxonomy" "term") $page.Kind }}
-    {{ if not $pages }}
-        {{ $pages = $page.Pages }}
+    {{ range $page.Pages }}
+        {{ if .IsSection }}
+            {{ $pages = $pages | append . }}
+        {{ else }}
+            {{ $sections = $sections | append . }}
+        {{ end }}
     {{ end }}
 
-    {{ $pages = sort $pages "LinkTitle" }}
+    {{ $pages = sort $pages "LinkTitle" | and ($page.Param "paige.pages.disable_pages" | not) }}
+    {{ $sections = sort $sections "LinkTitle" | and ($page.Param "paige.pages.disable_sections" | not) }}
+{{ else }}
+    {{ $pages = $page.Pages | and ($page.Param "paige.pages.disable_pages" | not) }}
+    {{ $sections = $page.Sections | and ($page.Param "paige.pages.disable_sections" | not) }}
 {{ end }}
 
 {{ with $collections }}
