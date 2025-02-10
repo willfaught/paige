@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Навигационная цепочка
 paige_collections:
   other: Коллекции
+paige_edit:
+  other: Редактировать
 paige_edit_history:
   other: История изменений
-paige_edit_this_page:
-  other: Редактировать эту страницу
 paige_error:
   other: Ошибка
 paige_figure:

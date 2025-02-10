@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Brotkrumen
 paige_collections:
   other: Sammlungen
+paige_edit:
+  other: Bearbeiten
 paige_edit_history:
   other: Bearbeitungshistorie
-paige_edit_this_page:
-  other: Diese Seite bearbeiten
 paige_error:
   other: Fehler
 paige_figure:

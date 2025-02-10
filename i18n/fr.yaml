@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Fil d'Ariane
 paige_collections:
   other: Collections
+paige_edit:
+  other: Modifier
 paige_edit_history:
   other: Historique des modifications
-paige_edit_this_page:
-  other: Modifier cette page
 paige_error:
   other: Erreur
 paige_figure:

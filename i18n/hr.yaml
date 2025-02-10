@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Mrvice
 paige_collections:
   other: Kolekcije
+paige_edit:
+  other: Uredi
 paige_edit_history:
   other: Povijest uređivanja
-paige_edit_this_page:
-  other: Uredi ovu stranicu
 paige_error:
   other: Pogreška
 paige_figure:

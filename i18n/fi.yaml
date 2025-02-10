@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Leipämurut
 paige_collections:
   other: Kokoelmat
+paige_edit:
+  other: Muokkaa
 paige_edit_history:
   other: Muokkaushistoria
-paige_edit_this_page:
-  other: Muokkaa tätä sivua
 paige_error:
   other: Virhe
 paige_figure:

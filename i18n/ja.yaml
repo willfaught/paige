@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: パンくずリスト
 paige_collections:
   other: コレクション
+paige_edit:
+  other: 編集
 paige_edit_history:
   other: 編集履歴
-paige_edit_this_page:
-  other: このページを編集
 paige_error:
   other: エラー
 paige_figure:

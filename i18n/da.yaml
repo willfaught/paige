@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Brødkrummer
 paige_collections:
   other: Samlinger
+paige_edit:
+  other: Rediger
 paige_edit_history:
   other: Redigeringshistorik
-paige_edit_this_page:
-  other: Rediger denne side
 paige_error:
   other: Fejl
 paige_figure:

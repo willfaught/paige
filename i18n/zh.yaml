@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: 面包屑
 paige_collections:
   other: 收藏品
+paige_edit:
+  other: 编辑
 paige_edit_history:
   other: 编辑历史
-paige_edit_this_page:
-  other: 编辑此页
 paige_error:
   other: 错误
 paige_figure:

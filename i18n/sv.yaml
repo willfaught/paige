@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Brödsmulor
 paige_collections:
   other: Samlingar
+paige_edit:
+  other: Redigera
 paige_edit_history:
   other: Redigeringshistorik
-paige_edit_this_page:
-  other: Redigera denna sida
 paige_error:
   other: Fel
 paige_figure:

@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Kruimelpad
 paige_collections:
   other: Collecties
+paige_edit:
+  other: Bewerken
 paige_edit_history:
   other: Bewerkingsgeschiedenis
-paige_edit_this_page:
-  other: Bewerk deze pagina
 paige_error:
   other: Fout
 paige_figure:

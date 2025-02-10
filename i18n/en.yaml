@@ -2,10 +2,10 @@ paige_breadcrumbs:
   other: Breadcrumbs
 paige_collections:
   other: Collections
+paige_edit:
+  other: Edit
 paige_edit_history:
   other: Edit history
-paige_edit_this_page:
-  other: Edit this page
 paige_error:
   other: Error
 paige_figure:
