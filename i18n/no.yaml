@@ -62,7 +62,7 @@ paige_nothing_found:
 paige_searching:
   other: Søker
 
-paige_search_something:
+paige_something_found:
   other: Funnet noe
 
 paige_sections:

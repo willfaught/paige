@@ -62,7 +62,7 @@ paige_nothing_found:
 paige_searching:
   other: Wyszukiwanie
 
-paige_search_something:
+paige_something_found:
   other: Znaleziono coś
 
 paige_sections:

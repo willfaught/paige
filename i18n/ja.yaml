@@ -62,7 +62,7 @@ paige_nothing_found:
 paige_searching:
   other: 検索中...
 
-paige_search_something:
+paige_something_found:
   other: 何か見つかりました
 
 paige_sections:
