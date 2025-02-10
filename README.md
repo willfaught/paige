@@ -1303,5 +1303,5 @@ disable_sections = true
 ## Project
 
 Created by [Will Faught](https://willfaught.com).
-Released under the [MIT License](https://spdx.org/licenses/MIT.html).
+Licensed under the [EUPL](https://spdx.org/licenses/EUPL-1.2.html).
 Hosted at https://github.com/willfaught/paige.
