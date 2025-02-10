@@ -107,11 +107,84 @@
     {{ end }}
 
     {{ with $images }}
-        {{ $objects := slice }}
+        {{ $originals := slice }}
+        {{ $resizes := slice }}
 
         {{ range $images }}
-            {{ $objects = $objects | append (dict "@type" "ImageObject" "url" .) }}
+            {{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" .) }}
+
+            {{ $full := $resource.Process "webp" }}
+
+            {{ $originals = $originals | append (dict
+                "@type" "ImageObject"
+                "height" $full.Height
+                "url" $full.RelPermalink
+                "width" $full.Width
+            ) }}
+
+            {{ $ratio := div (float $resource.Width) (float $resource.Height) }}
+
+            {{ if ne $ratio 1.0 }}
+                {{ $min := int (math.Min $resource.Width $resource.Height) }}
+                {{ $spec1x1 := printf "%dx%d webp" $min $min }}
+                {{ $resource1x1 := $resource.Fill $spec1x1 }}
+
+                {{ $resizes = $resizes | append (dict
+                    "@type" "ImageObject"
+                    "height" $resource1x1.Height
+                    "url" $resource1x1.RelPermalink
+                    "width" $resource1x1.Width
+                ) }}
+            {{ end }}
+
+            {{ if ne $ratio (div 4.0 3.0) }}
+                {{ $spec4x3 := printf "%dx%d" }}
+
+                {{ if gt $resource.Width $resource.Height }}
+                    {{ $width := int (mul (div (float $resource.Height) 3.0) 4.0) }}
+
+                    {{ $spec4x3 = printf "%dx%d webp" $width $resource.Height }}
+                {{ else }}
+                    {{ $height := int (mul (div (float $resource.Width) 4.0) 3.0) }}
+
+                    {{ $spec4x3 = printf "%dx%d webp" $resource.Width $height }}
+                {{ end }}
+
+                {{ $resource4x3 := $resource.Fill $spec4x3 }}
+
+                {{ $resizes = $resizes | append (dict
+                    "@type" "ImageObject"
+                    "height" $resource4x3.Height
+                    "url" $resource4x3.RelPermalink
+                    "width" $resource4x3.Width
+                ) }}
+            {{ end }}
+
+            {{ if ne $ratio (div 16.0 9.0) }}
+                {{ $spec16x9 := printf "%dx%d" }}
+
+                {{ if gt $resource.Width $resource.Height }}
+                    {{ $width := int (mul (div (float $resource.Height) 9.0) 16.0) }}
+
+                    {{ $spec16x9 = printf "%dx%d webp" $width $resource.Height }}
+                {{ else }}
+                    {{ $height := int (mul (div (float $resource.Width) 4.0) 3.0) }}
+
+                    {{ $spec16x9 = printf "%dx%d webp" $resource.Width $height }}
+                {{ end }}
+
+                {{ $resource16x9 := $resource.Fill $spec16x9 }}
+
+                {{ $resizes = $resizes | append (dict
+                    "@type" "ImageObject"
+                    "height" $resource16x9.Height
+                    "url" $resource16x9.RelPermalink
+                    "width" $resource16x9.Width
+                ) }}
+            {{ end }}
         {{ end }}
+
+        {{ $objects := append $resizes $originals }}
 
         {{ $schema.Set "image" $objects }}
     {{ end }}
