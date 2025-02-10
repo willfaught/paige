@@ -106,16 +106,16 @@
             {{ $size = print $resource.Width "x" $resource.Height }}
         {{ end }}
 
-        {{ $smalleroptions := print $size " " $quality " " $options }}
+        {{ $smallerOptions := print $size " " $quality " " $options }}
 
         {{ if eq $method "crop" }}
-            {{ $smallerResource = $resource.Crop $smalleroptions }}
+            {{ $smallerResource = $resource.Crop $smallerOptions }}
         {{ else if eq $method "fill" }}
-            {{ $smallerResource = $resource.Fill $smalleroptions }}
+            {{ $smallerResource = $resource.Fill $smallerOptions }}
         {{ else if eq $method "fit" }}
-            {{ $smallerResource = $resource.Fit $smalleroptions }}
+            {{ $smallerResource = $resource.Fit $smallerOptions }}
         {{ else if eq $method "resize" }}
-            {{ $smallerResource = $resource.Resize $smalleroptions }}
+            {{ $smallerResource = $resource.Resize $smallerOptions }}
         {{ end }}
     {{ end }}
 
