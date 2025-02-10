@@ -13,38 +13,38 @@ paige_figure:
 paige_first:
   other: Erste
 paige_javascript_is_required:
-  other: JavaScript erforderlich
+  other: JavaScript wird benötigt
 paige_last:
   other: Letzte
 paige_link_to_this_section:
-  other: Verweis auf diesen Abschnitt
+  other: Link zu diesem Abschnitt
 paige_menu:
   other: Menü
 paige_minutes:
   one: Minute
   other: Minuten
 paige_next:
-  other: Nächste
+  other: Weiter
 paige_nothing_found:
-  other: Keine Ergebnisse gefunden
+  other: Nichts gefunden
 paige_page_list_navigation:
   other: Seitenlisten-Navigation
 paige_pages:
   other: Seiten
 paige_previous:
-  other: Vorherige
+  other: Zurück
 paige_query:
-  other: Suchbegriff
+  other: Suchanfrage
 paige_recent_content:
   other: Neueste Inhalte
 paige_search:
-  other: Suchen
+  other: Suche
 paige_searching:
-  other: Suche ...
+  other: Suche läuft
 paige_sections:
   other: Abschnitte
 paige_something_found:
-  other: Einige Treffer gefunden
+  other: Etwas gefunden
 paige_words:
   one: Wort
   other: Wörter
