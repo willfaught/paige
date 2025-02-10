@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: بریڈ کرمب
-
 paige_collections:
   other: کلیکشنز
-
-paige_figure:
-  other: تصویر
-
-paige_link_to_this_section:
-  other: اس سیکشن توں لنک
-
 paige_edit_history:
   other: ترمیم دی تاریخ
-
 paige_edit_this_page:
   other: اے صفحہ ترمیم کرو
-
+paige_error:
+  other: غلطی
+paige_figure:
+  other: تصویر
 paige_first:
   other: پہلا
-
+paige_javascript_is_required:
+  other: جاوا اسکرپٹ ضروری اے
 paige_last:
   other: آخری
-
+paige_link_to_this_section:
+  other: اس سیکشن توں لنک
 paige_menu:
   other: مینو
-
 paige_minutes:
   one: منٹ
   other: منٹ
-
 paige_next:
   other: اگلا
-
-paige_javascript_is_required:
-  other: جاوا اسکرپٹ ضروری اے
-
-paige_page_list_navigation:
-  other: صفحہ فہرست سمت بدل
-
-paige_pages:
-  other: صفحے
-
-paige_previous:
-  other: پچھلا
-
-paige_recent_content:
-  other: حالیہ مواد
-
-paige_search:
-  other: تلاش کرو
-
-paige_error:
-  other: غلطی
-
-paige_query:
-  other: سوال
-
 paige_nothing_found:
   other: کج کوئی نہیں لبھیا
-
+paige_page_list_navigation:
+  other: صفحہ فہرست سمت بدل
+paige_pages:
+  other: صفحے
+paige_previous:
+  other: پچھلا
+paige_query:
+  other: سوال
+paige_recent_content:
+  other: حالیہ مواد
+paige_search:
+  other: تلاش کرو
 paige_searching:
   other: تلاش جاری آے...
-
-paige_something_found:
-  other: کج لبھیا اے
-
 paige_sections:
   other: سیکشنز
-
+paige_something_found:
+  other: کج لبھیا اے
 paige_words:
   one: لفظ
   other: الفاظ

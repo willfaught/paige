@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: ব্রেডক্রাম্বস
-
 paige_collections:
   other: সংগ্রহ
-
-paige_figure:
-  other: চিত্র
-
-paige_link_to_this_section:
-  other: এই বিভাগের লিঙ্ক
-
 paige_edit_history:
   other: সম্পাদনা ইতিহাস
-
 paige_edit_this_page:
   other: এই পাতা সম্পাদনা করুন
-
+paige_error:
+  other: ত্রুটি
+paige_figure:
+  other: চিত্র
 paige_first:
   other: প্রথম
-
+paige_javascript_is_required:
+  other: জাভাস্ক্রিপ্ট প্রয়োজন
 paige_last:
   other: শেষ
-
+paige_link_to_this_section:
+  other: এই বিভাগের লিঙ্ক
 paige_menu:
   other: মেনু
-
 paige_minutes:
   one: মিনিট
   other: মিনিট
-
 paige_next:
   other: পরবর্তী
-
-paige_javascript_is_required:
-  other: জাভাস্ক্রিপ্ট প্রয়োজন
-
-paige_page_list_navigation:
-  other: পৃষ্ঠা তালিকা নেভিগেশন
-
-paige_pages:
-  other: পৃষ্ঠাসমূহ
-
-paige_previous:
-  other: পূর্ববর্তী
-
-paige_recent_content:
-  other: সাম্প্রতিক কন্টেন্ট
-
-paige_search:
-  other: অনুসন্ধান করুন
-
-paige_error:
-  other: ত্রুটি
-
-paige_query:
-  other: অনুসন্ধান
-
 paige_nothing_found:
   other: কিছুই পাওয়া যায়নি
-
+paige_page_list_navigation:
+  other: পৃষ্ঠা তালিকা নেভিগেশন
+paige_pages:
+  other: পৃষ্ঠাসমূহ
+paige_previous:
+  other: পূর্ববর্তী
+paige_query:
+  other: অনুসন্ধান
+paige_recent_content:
+  other: সাম্প্রতিক কন্টেন্ট
+paige_search:
+  other: অনুসন্ধান করুন
 paige_searching:
   other: অনুসন্ধান চলছে...
-
-paige_something_found:
-  other: কিছু পাওয়া গেছে
-
 paige_sections:
   other: বিভাগ
-
+paige_something_found:
+  other: কিছু পাওয়া গেছে
 paige_words:
   one: শব্দ
   other: শব্দগুলি

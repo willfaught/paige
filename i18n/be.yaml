@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Хлебныя крошкі
-
 paige_collections:
   other: Калекцыі
-
-paige_figure:
-  other: Фігура
-
-paige_link_to_this_section:
-  other: Спасылка на гэты раздзел
-
 paige_edit_history:
   other: Гісторыя рэдагавання
-
 paige_edit_this_page:
   other: Рэдагаваць гэтую старонку
-
+paige_error:
+  other: Памылка
+paige_figure:
+  other: Фігура
 paige_first:
   other: Першы
-
+paige_javascript_is_required:
+  other: Патрабуецца JavaScript
 paige_last:
   other: Апошні
-
+paige_link_to_this_section:
+  other: Спасылка на гэты раздзел
 paige_menu:
   other: Меню
-
 paige_minutes:
   one: хвіліна
   other: хвіліны
-
 paige_next:
   other: Наступны
-
-paige_javascript_is_required:
-  other: Патрабуецца JavaScript
-
-paige_page_list_navigation:
-  other: Навігацыя па спісе старонак
-
-paige_pages:
-  other: Старонкі
-
-paige_previous:
-  other: Папярэдняя
-
-paige_recent_content:
-  other: Апошні кантэнт
-
-paige_search:
-  other: Пошук
-
-paige_error:
-  other: Памылка
-
-paige_query:
-  other: Запыт
-
 paige_nothing_found:
   other: Нічога не знойдзена
-
+paige_page_list_navigation:
+  other: Навігацыя па спісе старонак
+paige_pages:
+  other: Старонкі
+paige_previous:
+  other: Папярэдняя
+paige_query:
+  other: Запыт
+paige_recent_content:
+  other: Апошні кантэнт
+paige_search:
+  other: Пошук
 paige_searching:
   other: Пошук
-
-paige_something_found:
-  other: Штосьці знойдзена
-
 paige_sections:
   other: Раздзелы
-
+paige_something_found:
+  other: Штосьці знойдзена
 paige_words:
   one: слова
   other: словы

@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Leipämurut
-
 paige_collections:
   other: Kokoelmat
-
-paige_figure:
-  other: Kuva
-
-paige_link_to_this_section:
-  other: Linkki tähän osioon
-
 paige_edit_history:
   other: Muokkaushistoria
-
 paige_edit_this_page:
   other: Muokkaa tätä sivua
-
+paige_error:
+  other: Virhe
+paige_figure:
+  other: Kuva
 paige_first:
   other: Ensimmäinen
-
+paige_javascript_is_required:
+  other: JavaScript on vaadittu
 paige_last:
   other: Viimeinen
-
+paige_link_to_this_section:
+  other: Linkki tähän osioon
 paige_menu:
   other: Valikko
-
 paige_minutes:
   one: minuutti
   other: minuuttia
-
 paige_next:
   other: Seuraava
-
-paige_javascript_is_required:
-  other: JavaScript on vaadittu
-
-paige_page_list_navigation:
-  other: Sivuluettelon navigointi
-
-paige_pages:
-  other: Sivut
-
-paige_previous:
-  other: Edellinen
-
-paige_recent_content:
-  other: Uusin sisältö
-
-paige_search:
-  other: Haku
-
-paige_error:
-  other: Virhe
-
-paige_query:
-  other: Kysely
-
 paige_nothing_found:
   other: Ei löytynyt mitään
-
+paige_page_list_navigation:
+  other: Sivuluettelon navigointi
+paige_pages:
+  other: Sivut
+paige_previous:
+  other: Edellinen
+paige_query:
+  other: Kysely
+paige_recent_content:
+  other: Uusin sisältö
+paige_search:
+  other: Haku
 paige_searching:
   other: Etsitään
-
-paige_something_found:
-  other: Jotain löytyi
-
 paige_sections:
   other: Osat
-
+paige_something_found:
+  other: Jotain löytyi
 paige_words:
   one: sana
   other: sanat

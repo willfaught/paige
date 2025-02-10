@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Okruszki chleba
-
 paige_collections:
   other: Kolekcje
-
-paige_figure:
-  other: Ilustracja
-
-paige_link_to_this_section:
-  other: Link do tej sekcji
-
 paige_edit_history:
   other: Historia edycji
-
 paige_edit_this_page:
   other: Edytuj tę stronę
-
+paige_error:
+  other: Błąd
+paige_figure:
+  other: Ilustracja
 paige_first:
   other: Pierwsza
-
+paige_javascript_is_required:
+  other: JavaScript jest wymagany
 paige_last:
   other: Ostatnia
-
+paige_link_to_this_section:
+  other: Link do tej sekcji
 paige_menu:
   other: Menu
-
 paige_minutes:
   one: minuta
   other: minuty
-
 paige_next:
   other: Następna
-
-paige_javascript_is_required:
-  other: JavaScript jest wymagany
-
-paige_page_list_navigation:
-  other: Nawigacja listy stron
-
-paige_pages:
-  other: Strony
-
-paige_previous:
-  other: Poprzednia
-
-paige_recent_content:
-  other: Ostatnia zawartość
-
-paige_search:
-  other: Szukaj
-
-paige_error:
-  other: Błąd
-
-paige_query:
-  other: Zapytanie
-
 paige_nothing_found:
   other: Nic nie znaleziono
-
+paige_page_list_navigation:
+  other: Nawigacja listy stron
+paige_pages:
+  other: Strony
+paige_previous:
+  other: Poprzednia
+paige_query:
+  other: Zapytanie
+paige_recent_content:
+  other: Ostatnia zawartość
+paige_search:
+  other: Szukaj
 paige_searching:
   other: Wyszukiwanie
-
-paige_something_found:
-  other: Znaleziono coś
-
 paige_sections:
   other: Sekcje
-
+paige_something_found:
+  other: Znaleziono coś
 paige_words:
   one: słowo
   other: słowa

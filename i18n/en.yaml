@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Breadcrumbs
-
 paige_collections:
   other: Collections
-
-paige_figure:
-  other: Figure
-
-paige_link_to_this_section:
-  other: Link to this section
-
 paige_edit_history:
   other: Edit history
-
 paige_edit_this_page:
   other: Edit this page
-
+paige_error:
+  other: Error
+paige_figure:
+  other: Figure
 paige_first:
   other: First
-
+paige_javascript_is_required:
+  other: JavaScript is required
 paige_last:
   other: Last
-
+paige_link_to_this_section:
+  other: Link to this section
 paige_menu:
   other: Menu
-
 paige_minutes:
   one: minute
   other: minutes
-
 paige_next:
   other: Next
-
-paige_javascript_is_required:
-  other: JavaScript is required
-
-paige_page_list_navigation:
-  other: Page list navigation
-
-paige_pages:
-  other: Pages
-
-paige_previous:
-  other: Previous
-
-paige_recent_content:
-  other: Recent content
-
-paige_search:
-  other: Search
-
-paige_error:
-  other: Error
-
-paige_query:
-  other: Query
-
 paige_nothing_found:
   other: Nothing found
-
+paige_page_list_navigation:
+  other: Page list navigation
+paige_pages:
+  other: Pages
+paige_previous:
+  other: Previous
+paige_query:
+  other: Query
+paige_recent_content:
+  other: Recent content
+paige_search:
+  other: Search
 paige_searching:
   other: Searching
-
-paige_something_found:
-  other: Something found
-
 paige_sections:
   other: Sections
-
+paige_something_found:
+  other: Something found
 paige_words:
   one: word
   other: words

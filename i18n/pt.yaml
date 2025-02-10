@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Migalhas de pão
-
 paige_collections:
   other: Coleções
-
-paige_figure:
-  other: Figura
-
-paige_link_to_this_section:
-  other: Link para esta seção
-
 paige_edit_history:
   other: Histórico de edições
-
 paige_edit_this_page:
   other: Editar esta página
-
+paige_error:
+  other: Erro
+paige_figure:
+  other: Figura
 paige_first:
   other: Primeiro
-
+paige_javascript_is_required:
+  other: JavaScript é necessário
 paige_last:
   other: Último
-
+paige_link_to_this_section:
+  other: Link para esta seção
 paige_menu:
   other: Menu
-
 paige_minutes:
   one: minuto
   other: minutos
-
 paige_next:
   other: Próximo
-
-paige_javascript_is_required:
-  other: JavaScript é necessário
-
-paige_page_list_navigation:
-  other: Navegação na lista de páginas
-
-paige_pages:
-  other: Páginas
-
-paige_previous:
-  other: Anterior
-
-paige_recent_content:
-  other: Conteúdo recente
-
-paige_search:
-  other: Buscar
-
-paige_error:
-  other: Erro
-
-paige_query:
-  other: Consulta
-
 paige_nothing_found:
   other: Nada encontrado
-
+paige_page_list_navigation:
+  other: Navegação na lista de páginas
+paige_pages:
+  other: Páginas
+paige_previous:
+  other: Anterior
+paige_query:
+  other: Consulta
+paige_recent_content:
+  other: Conteúdo recente
+paige_search:
+  other: Buscar
 paige_searching:
   other: Buscando...
-
-paige_something_found:
-  other: Algo encontrado
-
 paige_sections:
   other: Seções
-
+paige_something_found:
+  other: Algo encontrado
 paige_words:
   one: palavra
   other: palavras

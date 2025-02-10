@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Brødkrummer
-
 paige_collections:
   other: Samlinger
-
-paige_figure:
-  other: Figur
-
-paige_link_to_this_section:
-  other: Link til denne sektion
-
 paige_edit_history:
   other: Redigeringshistorik
-
 paige_edit_this_page:
   other: Rediger denne side
-
+paige_error:
+  other: Fejl
+paige_figure:
+  other: Figur
 paige_first:
   other: Første
-
+paige_javascript_is_required:
+  other: JavaScript er påkrævet
 paige_last:
   other: Sidste
-
+paige_link_to_this_section:
+  other: Link til denne sektion
 paige_menu:
   other: Menu
-
 paige_minutes:
   one: minut
   other: minutter
-
 paige_next:
   other: Næste
-
-paige_javascript_is_required:
-  other: JavaScript er påkrævet
-
-paige_page_list_navigation:
-  other: Navigering af sidernes liste
-
-paige_pages:
-  other: Sider
-
-paige_previous:
-  other: Forrige
-
-paige_recent_content:
-  other: Seneste indhold
-
-paige_search:
-  other: Søg
-
-paige_error:
-  other: Fejl
-
-paige_query:
-  other: Spørgsmål
-
 paige_nothing_found:
   other: Intet fundet
-
+paige_page_list_navigation:
+  other: Navigering af sidernes liste
+paige_pages:
+  other: Sider
+paige_previous:
+  other: Forrige
+paige_query:
+  other: Spørgsmål
+paige_recent_content:
+  other: Seneste indhold
+paige_search:
+  other: Søg
 paige_searching:
   other: Søger
-
-paige_something_found:
-  other: Noget fundet
-
 paige_sections:
   other: Sektioner
-
+paige_something_found:
+  other: Noget fundet
 paige_words:
   one: ord
   other: ord

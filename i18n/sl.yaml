@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Drobtine
-
 paige_collections:
   other: Zbirke
-
-paige_figure:
-  other: Slika
-
-paige_link_to_this_section:
-  other: Povezava na to poglavje
-
 paige_edit_history:
   other: Zgodovina urejanja
-
 paige_edit_this_page:
   other: Uredi to stran
-
+paige_error:
+  other: Napaka
+paige_figure:
+  other: Slika
 paige_first:
   other: Prva
-
+paige_javascript_is_required:
+  other: Potreben je JavaScript
 paige_last:
   other: Zadnja
-
+paige_link_to_this_section:
+  other: Povezava na to poglavje
 paige_menu:
   other: Meni
-
 paige_minutes:
   one: minuta
   other: minute
-
 paige_next:
   other: Naslednje
-
-paige_javascript_is_required:
-  other: Potreben je JavaScript
-
-paige_page_list_navigation:
-  other: Navigacija po seznamu strani
-
-paige_pages:
-  other: Strani
-
-paige_previous:
-  other: Prejšnja
-
-paige_recent_content:
-  other: Nedavni vsebini
-
-paige_search:
-  other: Iskanje
-
-paige_error:
-  other: Napaka
-
-paige_query:
-  other: Poizvedba
-
 paige_nothing_found:
   other: Ničesar ni bilo najdeno
-
+paige_page_list_navigation:
+  other: Navigacija po seznamu strani
+paige_pages:
+  other: Strani
+paige_previous:
+  other: Prejšnja
+paige_query:
+  other: Poizvedba
+paige_recent_content:
+  other: Nedavni vsebini
+paige_search:
+  other: Iskanje
 paige_searching:
   other: Iskanje
-
-paige_something_found:
-  other: Nekaj je bilo najdeno
-
 paige_sections:
   other: Poglavja
-
+paige_something_found:
+  other: Nekaj je bilo najdeno
 paige_words:
   one: beseda
   other: besede

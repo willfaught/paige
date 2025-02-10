@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: فتات الخبز
-
 paige_collections:
   other: مجموعات
-
-paige_figure:
-  other: شكل
-
-paige_link_to_this_section:
-  other: رابط إلى هذا القسم
-
 paige_edit_history:
   other: تاريخ التحرير
-
 paige_edit_this_page:
   other: تحرير هذه الصفحة
-
+paige_error:
+  other: خطأ
+paige_figure:
+  other: شكل
 paige_first:
   other: الأول
-
+paige_javascript_is_required:
+  other: يتطلب تشغيل JavaScript
 paige_last:
   other: الأخير
-
+paige_link_to_this_section:
+  other: رابط إلى هذا القسم
 paige_menu:
   other: قائمة
-
 paige_minutes:
   one: دقيقة
   other: دقائق
-
 paige_next:
   other: التالي
-
-paige_javascript_is_required:
-  other: يتطلب تشغيل JavaScript
-
-paige_page_list_navigation:
-  other: تصفح قائمة الصفحات
-
-paige_pages:
-  other: الصفحات
-
-paige_previous:
-  other: السابق
-
-paige_recent_content:
-  other: المحتوى الأخير
-
-paige_search:
-  other: بحث
-
-paige_error:
-  other: خطأ
-
-paige_query:
-  other: الاستعلام
-
 paige_nothing_found:
   other: لم يتم العثور على شيء
-
+paige_page_list_navigation:
+  other: تصفح قائمة الصفحات
+paige_pages:
+  other: الصفحات
+paige_previous:
+  other: السابق
+paige_query:
+  other: الاستعلام
+paige_recent_content:
+  other: المحتوى الأخير
+paige_search:
+  other: بحث
 paige_searching:
   other: جاري البحث...
-
-paige_something_found:
-  other: تم العثور على شيء
-
 paige_sections:
   other: الأقسام
-
+paige_something_found:
+  other: تم العثور على شيء
 paige_words:
   one: كلمة
   other: كلمات

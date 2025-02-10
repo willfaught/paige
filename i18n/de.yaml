@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Brotkrumen
-
 paige_collections:
   other: Sammlungen
-
-paige_figure:
-  other: Abbildung
-
-paige_link_to_this_section:
-  other: Verweis auf diesen Abschnitt
-
 paige_edit_history:
   other: Bearbeitungshistorie
-
 paige_edit_this_page:
   other: Diese Seite bearbeiten
-
+paige_error:
+  other: Fehler
+paige_figure:
+  other: Abbildung
 paige_first:
   other: Erste
-
+paige_javascript_is_required:
+  other: JavaScript erforderlich
 paige_last:
   other: Letzte
-
+paige_link_to_this_section:
+  other: Verweis auf diesen Abschnitt
 paige_menu:
   other: Menü
-
 paige_minutes:
   one: Minute
   other: Minuten
-
 paige_next:
   other: Nächste
-
-paige_javascript_is_required:
-  other: JavaScript erforderlich
-
-paige_page_list_navigation:
-  other: Seitenlisten-Navigation
-
-paige_pages:
-  other: Seiten
-
-paige_previous:
-  other: Vorherige
-
-paige_recent_content:
-  other: Neueste Inhalte
-
-paige_search:
-  other: Suchen
-
-paige_error:
-  other: Fehler
-
-paige_query:
-  other: Suchbegriff
-
 paige_nothing_found:
   other: Keine Ergebnisse gefunden
-
+paige_page_list_navigation:
+  other: Seitenlisten-Navigation
+paige_pages:
+  other: Seiten
+paige_previous:
+  other: Vorherige
+paige_query:
+  other: Suchbegriff
+paige_recent_content:
+  other: Neueste Inhalte
+paige_search:
+  other: Suchen
 paige_searching:
   other: Suche ...
-
-paige_something_found:
-  other: Einige Treffer gefunden
-
 paige_sections:
   other: Abschnitte
-
+paige_something_found:
+  other: Einige Treffer gefunden
 paige_words:
   one: Wort
   other: Wörter

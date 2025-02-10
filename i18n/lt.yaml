@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Duonos trupiniai
-
 paige_collections:
   other: Kolekcijos
-
-paige_figure:
-  other: Paveikslėlis
-
-paige_link_to_this_section:
-  other: Nuoroda į šį skyrių
-
 paige_edit_history:
   other: Redagavimo istorija
-
 paige_edit_this_page:
   other: Redaguoti šį puslapį
-
+paige_error:
+  other: Klaida
+paige_figure:
+  other: Paveikslėlis
 paige_first:
   other: Pirmas
-
+paige_javascript_is_required:
+  other: Reikalingas JavaScript
 paige_last:
   other: Paskutinis
-
+paige_link_to_this_section:
+  other: Nuoroda į šį skyrių
 paige_menu:
   other: Meniu
-
 paige_minutes:
   one: minutė
   other: minutės
-
 paige_next:
   other: Kitas
-
-paige_javascript_is_required:
-  other: Reikalingas JavaScript
-
-paige_page_list_navigation:
-  other: Puslapių sąrašo naršymas
-
-paige_pages:
-  other: Puslapiai
-
-paige_previous:
-  other: Ankstesnis
-
-paige_recent_content:
-  other: Naujausias turinys
-
-paige_search:
-  other: Ieškoti
-
-paige_error:
-  other: Klaida
-
-paige_query:
-  other: Klausimas
-
 paige_nothing_found:
   other: Nieko nerasta
-
+paige_page_list_navigation:
+  other: Puslapių sąrašo naršymas
+paige_pages:
+  other: Puslapiai
+paige_previous:
+  other: Ankstesnis
+paige_query:
+  other: Klausimas
+paige_recent_content:
+  other: Naujausias turinys
+paige_search:
+  other: Ieškoti
 paige_searching:
   other: Ieškoma
-
-paige_something_found:
-  other: Rasta kažkas
-
 paige_sections:
   other: Sekcijos
-
+paige_something_found:
+  other: Rasta kažkas
 paige_words:
   one: žodis
   other: žodžiai

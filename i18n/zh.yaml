@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: 面包屑
-
 paige_collections:
   other: 收藏品
-
-paige_figure:
-  other: 图表
-
-paige_link_to_this_section:
-  other: 链接至本节
-
 paige_edit_history:
   other: 编辑历史
-
 paige_edit_this_page:
   other: 编辑此页
-
+paige_error:
+  other: 错误
+paige_figure:
+  other: 图表
 paige_first:
   other: 第一
-
+paige_javascript_is_required:
+  other: 需要 JavaScript
 paige_last:
   other: 最后
-
+paige_link_to_this_section:
+  other: 链接至本节
 paige_menu:
   other: 菜单
-
 paige_minutes:
   one: 分钟
   other: 几分钟
-
 paige_next:
   other: 下一页
-
-paige_javascript_is_required:
-  other: 需要 JavaScript
-
-paige_page_list_navigation:
-  other: 页面列表导航
-
-paige_pages:
-  other: 页面
-
-paige_previous:
-  other: 上一页
-
-paige_recent_content:
-  other: 最新内容
-
-paige_search:
-  other: 搜索
-
-paige_error:
-  other: 错误
-
-paige_query:
-  other: 输入
-
 paige_nothing_found:
   other: 没有搜索结果
-
+paige_page_list_navigation:
+  other: 页面列表导航
+paige_pages:
+  other: 页面
+paige_previous:
+  other: 上一页
+paige_query:
+  other: 输入
+paige_recent_content:
+  other: 最新内容
+paige_search:
+  other: 搜索
 paige_searching:
   other: 搜索中...
-
-paige_something_found:
-  other: 搜索到一些结果
-
 paige_sections:
   other: 部分
-
+paige_something_found:
+  other: 搜索到一些结果
 paige_words:
   one: 词
   other: 词

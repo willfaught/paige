@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Kërpudha
-
 paige_collections:
   other: Koleksione
-
-paige_figure:
-  other: Figurë
-
-paige_link_to_this_section:
-  other: Lidhje me këtë seksion
-
 paige_edit_history:
   other: Historia e redaktimeve
-
 paige_edit_this_page:
   other: Redakto këtë faqe
-
+paige_error:
+  other: Gabim
+paige_figure:
+  other: Figurë
 paige_first:
   other: E para
-
+paige_javascript_is_required:
+  other: JavaScript është i nevojshëm
 paige_last:
   other: E fundit
-
+paige_link_to_this_section:
+  other: Lidhje me këtë seksion
 paige_menu:
   other: Meniu
-
 paige_minutes:
   one: minutë
   other: minuta
-
 paige_next:
   other: E ardhshme
-
-paige_javascript_is_required:
-  other: JavaScript është i nevojshëm
-
-paige_page_list_navigation:
-  other: Navigimi i listës së faqeve
-
-paige_pages:
-  other: Faqet
-
-paige_previous:
-  other: E mëparshme
-
-paige_recent_content:
-  other: Përmbajtje e fundit
-
-paige_search:
-  other: Kërko
-
-paige_error:
-  other: Gabim
-
-paige_query:
-  other: Pyetje
-
 paige_nothing_found:
   other: Asgjë e gjetur
-
+paige_page_list_navigation:
+  other: Navigimi i listës së faqeve
+paige_pages:
+  other: Faqet
+paige_previous:
+  other: E mëparshme
+paige_query:
+  other: Pyetje
+paige_recent_content:
+  other: Përmbajtje e fundit
+paige_search:
+  other: Kërko
 paige_searching:
   other: Po kërkohet
-
-paige_something_found:
-  other: Diçka u gjet
-
 paige_sections:
   other: Seksione
-
+paige_something_found:
+  other: Diçka u gjet
 paige_words:
   one: fjalë
   other: fjalë

@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: रोटीचे अवधान
-
 paige_collections:
   other: संग्रह
-
-paige_figure:
-  other: चित्र
-
-paige_link_to_this_section:
-  other: ह्या विभागातील लिंक
-
 paige_edit_history:
   other: संपादन इतिहास
-
 paige_edit_this_page:
   other: ही पृष्ठ संपादित करा
-
+paige_error:
+  other: त्रुटी
+paige_figure:
+  other: चित्र
 paige_first:
   other: पहिला
-
+paige_javascript_is_required:
+  other: जावास्क्रिप्ट आवश्यक आहे
 paige_last:
   other: शेवटचा
-
+paige_link_to_this_section:
+  other: ह्या विभागातील लिंक
 paige_menu:
   other: मेनू
-
 paige_minutes:
   one: मिनिट
   other: मिनिट
-
 paige_next:
   other: पुढे
-
-paige_javascript_is_required:
-  other: जावास्क्रिप्ट आवश्यक आहे
-
-paige_page_list_navigation:
-  other: पृष्ठ सूची नेव्हिगेशन
-
-paige_pages:
-  other: पृष्ठे
-
-paige_previous:
-  other: आधीचा
-
-paige_recent_content:
-  other: अलीकडील सामग्री
-
-paige_search:
-  other: शोधा
-
-paige_error:
-  other: त्रुटी
-
-paige_query:
-  other: प्रश्न
-
 paige_nothing_found:
   other: काहीही सापडलं नाही
-
+paige_page_list_navigation:
+  other: पृष्ठ सूची नेव्हिगेशन
+paige_pages:
+  other: पृष्ठे
+paige_previous:
+  other: आधीचा
+paige_query:
+  other: प्रश्न
+paige_recent_content:
+  other: अलीकडील सामग्री
+paige_search:
+  other: शोधा
 paige_searching:
   other: शोधत आहे...
-
-paige_something_found:
-  other: काही सापडलं
-
 paige_sections:
   other: विभागे
-
+paige_something_found:
+  other: काही सापडलं
 paige_words:
   one: शब्द
   other: शब्द

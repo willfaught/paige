@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Навигационная цепочка
-
 paige_collections:
   other: Коллекции
-
-paige_figure:
-  other: Рисунок
-
-paige_link_to_this_section:
-  other: Ссылка на этот раздел
-
 paige_edit_history:
   other: История изменений
-
 paige_edit_this_page:
   other: Редактировать эту страницу
-
+paige_error:
+  other: Ошибка
+paige_figure:
+  other: Рисунок
 paige_first:
   other: Первый
-
+paige_javascript_is_required:
+  other: Требуется JavaScript
 paige_last:
   other: Последний
-
+paige_link_to_this_section:
+  other: Ссылка на этот раздел
 paige_menu:
   other: Меню
-
 paige_minutes:
   one: минута
   other: минуты
-
 paige_next:
   other: Следующий
-
-paige_javascript_is_required:
-  other: Требуется JavaScript
-
-paige_page_list_navigation:
-  other: Навигация по списку страниц
-
-paige_pages:
-  other: Страницы
-
-paige_previous:
-  other: Предыдущий
-
-paige_recent_content:
-  other: Недавнее содержимое
-
-paige_search:
-  other: Искать
-
-paige_error:
-  other: Ошибка
-
-paige_query:
-  other: Запрос
-
 paige_nothing_found:
   other: Ничего не найдено
-
+paige_page_list_navigation:
+  other: Навигация по списку страниц
+paige_pages:
+  other: Страницы
+paige_previous:
+  other: Предыдущий
+paige_query:
+  other: Запрос
+paige_recent_content:
+  other: Недавнее содержимое
+paige_search:
+  other: Искать
 paige_searching:
   other: Поиск...
-
-paige_something_found:
-  other: Что-то найдено
-
 paige_sections:
   other: Разделы
-
+paige_something_found:
+  other: Что-то найдено
 paige_words:
   one: слово
   other: слова

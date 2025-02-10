@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Mrvica hleba
-
 paige_collections:
   other: Kolekcije
-
-paige_figure:
-  other: Slika
-
-paige_link_to_this_section:
-  other: Link ka ovom odeljku
-
 paige_edit_history:
   other: Istorija uređivanja
-
 paige_edit_this_page:
   other: Uredi ovu stranu
-
+paige_error:
+  other: Greška
+paige_figure:
+  other: Slika
 paige_first:
   other: Prva
-
+paige_javascript_is_required:
+  other: Potreban je JavaScript
 paige_last:
   other: Poslednja
-
+paige_link_to_this_section:
+  other: Link ka ovom odeljku
 paige_menu:
   other: Meni
-
 paige_minutes:
   one: minut
   other: minuti
-
 paige_next:
   other: Sledeća
-
-paige_javascript_is_required:
-  other: Potreban je JavaScript
-
-paige_page_list_navigation:
-  other: Navigacija liste stranica
-
-paige_pages:
-  other: Stranice
-
-paige_previous:
-  other: Prethodna
-
-paige_recent_content:
-  other: Nedavni sadržaj
-
-paige_search:
-  other: Pretraga
-
-paige_error:
-  other: Greška
-
-paige_query:
-  other: Upit
-
 paige_nothing_found:
   other: Ništa nije pronađeno
-
+paige_page_list_navigation:
+  other: Navigacija liste stranica
+paige_pages:
+  other: Stranice
+paige_previous:
+  other: Prethodna
+paige_query:
+  other: Upit
+paige_recent_content:
+  other: Nedavni sadržaj
+paige_search:
+  other: Pretraga
 paige_searching:
   other: Tražim
-
-paige_something_found:
-  other: Nešto je pronađeno
-
 paige_sections:
   other: Sekcije
-
+paige_something_found:
+  other: Nešto je pronađeno
 paige_words:
   one: reč
   other: reči

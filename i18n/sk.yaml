@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Strúhanka
-
 paige_collections:
   other: Kolekcie
-
-paige_figure:
-  other: Obrázok
-
-paige_link_to_this_section:
-  other: Odkaz na túto sekciu
-
 paige_edit_history:
   other: História úprav
-
 paige_edit_this_page:
   other: Upravte túto stránku
-
+paige_error:
+  other: Chyba
+paige_figure:
+  other: Obrázok
 paige_first:
   other: Prvá
-
+paige_javascript_is_required:
+  other: JavaScript je potrebný
 paige_last:
   other: Posledná
-
+paige_link_to_this_section:
+  other: Odkaz na túto sekciu
 paige_menu:
   other: Menu
-
 paige_minutes:
   one: minúta
   other: minúty
-
 paige_next:
   other: Ďalšia
-
-paige_javascript_is_required:
-  other: JavaScript je potrebný
-
-paige_page_list_navigation:
-  other: Navigácia zoznamom stránok
-
-paige_pages:
-  other: Stránky
-
-paige_previous:
-  other: Predchádzajúca
-
-paige_recent_content:
-  other: Nedávny obsah
-
-paige_search:
-  other: Hľadať
-
-paige_error:
-  other: Chyba
-
-paige_query:
-  other: Dopyt
-
 paige_nothing_found:
   other: Nič nenájdené
-
+paige_page_list_navigation:
+  other: Navigácia zoznamom stránok
+paige_pages:
+  other: Stránky
+paige_previous:
+  other: Predchádzajúca
+paige_query:
+  other: Dopyt
+paige_recent_content:
+  other: Nedávny obsah
+paige_search:
+  other: Hľadať
 paige_searching:
   other: Hľadám
-
-paige_something_found:
-  other: Niečo nájdené
-
 paige_sections:
   other: Sekcie
-
+paige_something_found:
+  other: Niečo nájdené
 paige_words:
   one: slovo
   other: slová

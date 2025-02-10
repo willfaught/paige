@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Zsemlemorzsa
-
 paige_collections:
   other: Gyűjtemények
-
-paige_figure:
-  other: Ábra
-
-paige_link_to_this_section:
-  other: Link erre a szakaszra
-
 paige_edit_history:
   other: Módosítási előzmények
-
 paige_edit_this_page:
   other: Oldal szerkesztése
-
+paige_error:
+  other: Hiba
+paige_figure:
+  other: Ábra
 paige_first:
   other: Első
-
+paige_javascript_is_required:
+  other: A JavaScript használata szükséges
 paige_last:
   other: Utolsó
-
+paige_link_to_this_section:
+  other: Link erre a szakaszra
 paige_menu:
   other: Menü
-
 paige_minutes:
   one: perc
   other: perc
-
 paige_next:
   other: Következő
-
-paige_javascript_is_required:
-  other: A JavaScript használata szükséges
-
-paige_page_list_navigation:
-  other: Oldalak listájának navigálása
-
-paige_pages:
-  other: Oldalak
-
-paige_previous:
-  other: Előző
-
-paige_recent_content:
-  other: Legutóbbi tartalom
-
-paige_search:
-  other: Keresés
-
-paige_error:
-  other: Hiba
-
-paige_query:
-  other: Kérdés
-
 paige_nothing_found:
   other: Nincs találat
-
+paige_page_list_navigation:
+  other: Oldalak listájának navigálása
+paige_pages:
+  other: Oldalak
+paige_previous:
+  other: Előző
+paige_query:
+  other: Kérdés
+paige_recent_content:
+  other: Legutóbbi tartalom
+paige_search:
+  other: Keresés
 paige_searching:
   other: Keresés folyamatban
-
-paige_something_found:
-  other: Talált valamit
-
 paige_sections:
   other: Szakaszok
-
+paige_something_found:
+  other: Talált valamit
 paige_words:
   one: szó
   other: szavak

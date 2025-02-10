@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Briciole di pane
-
 paige_collections:
   other: Collezioni
-
-paige_figure:
-  other: Figura
-
-paige_link_to_this_section:
-  other: Link a questa sezione
-
 paige_edit_history:
   other: Cronologia delle modifiche
-
 paige_edit_this_page:
   other: Modifica questa pagina
-
+paige_error:
+  other: Errore
+paige_figure:
+  other: Figura
 paige_first:
   other: Prima
-
+paige_javascript_is_required:
+  other: È richiesto JavaScript
 paige_last:
   other: Ultima
-
+paige_link_to_this_section:
+  other: Link a questa sezione
 paige_menu:
   other: Menu
-
 paige_minutes:
   one: minuto
   other: minuti
-
 paige_next:
   other: Successivo
-
-paige_javascript_is_required:
-  other: È richiesto JavaScript
-
-paige_page_list_navigation:
-  other: Navigazione elenco pagine
-
-paige_pages:
-  other: Pagine
-
-paige_previous:
-  other: Precedente
-
-paige_recent_content:
-  other: Contenuti recenti
-
-paige_search:
-  other: Cerca
-
-paige_error:
-  other: Errore
-
-paige_query:
-  other: Query
-
 paige_nothing_found:
   other: Nessun risultato trovato
-
+paige_page_list_navigation:
+  other: Navigazione elenco pagine
+paige_pages:
+  other: Pagine
+paige_previous:
+  other: Precedente
+paige_query:
+  other: Query
+paige_recent_content:
+  other: Contenuti recenti
+paige_search:
+  other: Cerca
 paige_searching:
   other: Ricerca in corso
-
-paige_something_found:
-  other: Qualcosa trovato
-
 paige_sections:
   other: Sezioni
-
+paige_something_found:
+  other: Qualcosa trovato
 paige_words:
   one: parola
   other: parole

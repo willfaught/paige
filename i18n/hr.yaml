@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Mrvice
-
 paige_collections:
   other: Kolekcije
-
-paige_figure:
-  other: Slika
-
-paige_link_to_this_section:
-  other: Poveznica na ovaj odjeljak
-
 paige_edit_history:
   other: Povijest uređivanja
-
 paige_edit_this_page:
   other: Uredi ovu stranicu
-
+paige_error:
+  other: Pogreška
+paige_figure:
+  other: Slika
 paige_first:
   other: Prva
-
+paige_javascript_is_required:
+  other: JavaScript je potreban
 paige_last:
   other: Posljednja
-
+paige_link_to_this_section:
+  other: Poveznica na ovaj odjeljak
 paige_menu:
   other: Izbornik
-
 paige_minutes:
   one: minuta
   other: minute
-
 paige_next:
   other: Sljedeća
-
-paige_javascript_is_required:
-  other: JavaScript je potreban
-
-paige_page_list_navigation:
-  other: Navigacija popisom stranica
-
-paige_pages:
-  other: Stranice
-
-paige_previous:
-  other: Prethodna
-
-paige_recent_content:
-  other: Nedavni sadržaj
-
-paige_search:
-  other: Traži
-
-paige_error:
-  other: Pogreška
-
-paige_query:
-  other: Upit
-
 paige_nothing_found:
   other: Ništa nije pronađeno
-
+paige_page_list_navigation:
+  other: Navigacija popisom stranica
+paige_pages:
+  other: Stranice
+paige_previous:
+  other: Prethodna
+paige_query:
+  other: Upit
+paige_recent_content:
+  other: Nedavni sadržaj
+paige_search:
+  other: Traži
 paige_searching:
   other: Traženje
-
-paige_something_found:
-  other: Nešto je pronađeno
-
 paige_sections:
   other: Sekcije
-
+paige_something_found:
+  other: Nešto je pronađeno
 paige_words:
   one: riječ
   other: riječi

@@ -1,73 +1,50 @@
 paige_breadcrumbs:
   other: Хлібні крихти
-
 paige_collections:
   other: Колекції
-
-paige_figure:
-  other: Малюнок
-
-paige_link_to_this_section:
-  other: Посилання на цей розділ
-
 paige_edit_history:
   other: Історія редагувань
-
 paige_edit_this_page:
   other: Редагувати цю сторінку
-
+paige_error:
+  other: Помилка
+paige_figure:
+  other: Малюнок
 paige_first:
   other: Перша
-
+paige_javascript_is_required:
+  other: Потрібен JavaScript
 paige_last:
   other: Остання
-
+paige_link_to_this_section:
+  other: Посилання на цей розділ
 paige_menu:
   other: Меню
-
 paige_minutes:
   one: хвилина
   other: хвилини
-
 paige_next:
   other: Наступна
-
-paige_javascript_is_required:
-  other: Потрібен JavaScript
-
-paige_page_list_navigation:
-  other: Навігація по сторінках
-
-paige_pages:
-  other: Сторінки
-
-paige_previous:
-  other: Попередня
-
-paige_recent_content:
-  other: Останній вміст
-
-paige_search:
-  other: Пошук
-
-paige_error:
-  other: Помилка
-
-paige_query:
-  other: Запит
-
 paige_nothing_found:
   other: Нічого не знайдено
-
+paige_page_list_navigation:
+  other: Навігація по сторінках
+paige_pages:
+  other: Сторінки
+paige_previous:
+  other: Попередня
+paige_query:
+  other: Запит
+paige_recent_content:
+  other: Останній вміст
+paige_search:
+  other: Пошук
 paige_searching:
   other: Виконується пошук
-
-paige_something_found:
-  other: Щось знайдено
-
 paige_sections:
   other: Розділи
-
+paige_something_found:
+  other: Щось знайдено
 paige_words:
   one: слово
   other: слова
