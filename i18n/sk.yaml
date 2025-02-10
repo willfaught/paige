@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Chyba
 
-paige_search_input:
+paige_query:
   other: Dopyt
 
 paige_search_nothing:

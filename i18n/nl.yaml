@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Fout
 
-paige_search_input:
+paige_query:
   other: Zoekopdracht
 
 paige_search_nothing:

@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Грешка
 
-paige_search_input:
+paige_query:
   other: Запитване
 
 paige_search_nothing:

@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Napaka
 
-paige_search_input:
+paige_query:
   other: Poizvedba
 
 paige_search_nothing:

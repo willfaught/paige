@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: エラー
 
-paige_search_input:
+paige_query:
   other: クエリ
 
 paige_search_nothing:

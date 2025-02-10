@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Σφάλμα
 
-paige_search_input:
+paige_query:
   other: Ερώτημα
 
 paige_search_nothing:

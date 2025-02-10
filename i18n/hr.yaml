@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Pogreška
 
-paige_search_input:
+paige_query:
   other: Upit
 
 paige_search_nothing:

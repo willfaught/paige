@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Virhe
 
-paige_search_input:
+paige_query:
   other: Kysely
 
 paige_search_nothing:

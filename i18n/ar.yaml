@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: خطأ
 
-paige_search_input:
+paige_query:
   other: الاستعلام
 
 paige_search_nothing:

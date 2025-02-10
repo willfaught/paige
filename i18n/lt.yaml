@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Klaida
 
-paige_search_input:
+paige_query:
   other: Klausimas
 
 paige_search_nothing:

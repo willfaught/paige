@@ -53,7 +53,7 @@ paige_search:
 paige_error:
   other: Error
 
-paige_search_input:
+paige_query:
   other: Consulta
 
 paige_search_nothing:
