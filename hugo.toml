@@ -2,7 +2,7 @@
 suffixes = ["xml"]
 
 [module.hugoversion]
-min = "0.123.0"
+min = "0.141.0"
 extended = true
 
 # Default mounts
