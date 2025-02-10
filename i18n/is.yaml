@@ -1,0 +1,50 @@
+paige_breadcrumbs:
+  other: Brauðmylsnur
+paige_collections:
+  other: Safn
+paige_edit:
+  other: Breyta
+paige_error:
+  other: Villa
+paige_figure:
+  other: Mynd
+paige_first:
+  other: Fyrsti
+paige_history:
+  other: Saga
+paige_javascript_is_required:
+  other: JavaScript er nauðsynlegt
+paige_last:
+  other: Síðasti
+paige_link_to_this_section:
+  other: Hlekkur á þessa kafla
+paige_menu:
+  other: Valmynd
+paige_minutes:
+  one: mínúta
+  other: mínútur
+paige_next:
+  other: Næsti
+paige_nothing_found:
+  other: Ekkert fannst
+paige_page_list_navigation:
+  other: Vísitöflu viðskipti
+paige_pages:
+  other: Síður
+paige_previous:
+  other: Fyrri
+paige_query:
+  other: Forespurn
+paige_recent_content:
+  other: Nýlegur efni
+paige_search:
+  other: Leita
+paige_searching:
+  other: Leita
+paige_sections:
+  other: Kaflar
+paige_something_found:
+  other: Eitthvað fannst
+paige_words:
+  one: orð
+  other: orð

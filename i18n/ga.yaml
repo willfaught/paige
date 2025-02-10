@@ -1,0 +1,50 @@
+paige_breadcrumbs:
+  other: Cróineoga arán
+paige_collections:
+  other: Bailiúcháin
+paige_edit:
+  other: Cuir in eagar
+paige_error:
+  other: Earráid
+paige_figure:
+  other: Figiúr
+paige_first:
+  other: Ar dtús
+paige_history:
+  other: Stair
+paige_javascript_is_required:
+  other: Taispeántar JavaScript
+paige_last:
+  other: Deireanach
+paige_link_to_this_section:
+  other: Ceangal chuig an gcaibidil seo
+paige_menu:
+  other: Méarchlár
+paige_minutes:
+  one: nóiméad
+  other: nóiméid
+paige_next:
+  other: An chéad
+paige_nothing_found:
+  other: Ní raibh rud ar bith le fáil
+paige_page_list_navigation:
+  other: Siamsaíocht le liosta leathanach
+paige_pages:
+  other: Leathanaigh
+paige_previous:
+  other: Roimhe seo
+paige_query:
+  other: Fiosrúchán
+paige_recent_content:
+  other: Ábhar déanaí
+paige_search:
+  other: Cuardach
+paige_searching:
+  other: Á lorg
+paige_sections:
+  other: Roinn
+paige_something_found:
+  other: Rudaí faighte
+paige_words:
+  one: focal
+  other: focail

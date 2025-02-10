@@ -1,0 +1,50 @@
+paige_breadcrumbs:
+  other: Leiva purud
+paige_collections:
+  other: Kogud
+paige_edit:
+  other: Redigeeri
+paige_error:
+  other: Viga
+paige_figure:
+  other: Kujutis
+paige_first:
+  other: Esimene
+paige_history:
+  other: Ajalugu
+paige_javascript_is_required:
+  other: JavaScript on vajalik
+paige_last:
+  other: Viimane
+paige_link_to_this_section:
+  other: Link sellele sektsioonile
+paige_menu:
+  other: Menüü
+paige_minutes:
+  one: minut
+  other: minutit
+paige_next:
+  other: Järgmine
+paige_nothing_found:
+  other: Mitte midagi ei leitud
+paige_page_list_navigation:
+  other: Lehtede loendi navigeerimine
+paige_pages:
+  other: Lehed
+paige_previous:
+  other: Eelmine
+paige_query:
+  other: Päring
+paige_recent_content:
+  other: Hiljutine sisu
+paige_search:
+  other: Otsing
+paige_searching:
+  other: Otsimine
+paige_sections:
+  other: Sektsioonid
+paige_something_found:
+  other: Midagi leiti
+paige_words:
+  one: sõna
+  other: sõnad

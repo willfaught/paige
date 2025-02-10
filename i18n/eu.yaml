@@ -1,0 +1,50 @@
+paige_breadcrumbs:
+  other: Ogia puskak
+paige_collections:
+  other: Bildumak
+paige_edit:
+  other: Editatu
+paige_error:
+  other: Akatsa
+paige_figure:
+  other: Irudia
+paige_first:
+  other: Lehenengo
+paige_history:
+  other: Historia
+paige_javascript_is_required:
+  other: JavaScript beharrezkoa da
+paige_last:
+  other: Azkena
+paige_link_to_this_section:
+  other: Lotura atal honetara
+paige_menu:
+  other: Menua
+paige_minutes:
+  one: minutua
+  other: minutuak
+paige_next:
+  other: Hurrengoa
+paige_nothing_found:
+  other: Ez da ezer aurkitu
+paige_page_list_navigation:
+  other: Orri zerrenda nabigazioa
+paige_pages:
+  other: Orriak
+paige_previous:
+  other: Aurrekoa
+paige_query:
+  other: Galdera
+paige_recent_content:
+  other: Eduki berriak
+paige_search:
+  other: Bilatu
+paige_searching:
+  other: Bilatzen
+paige_sections:
+  other: Atalak
+paige_something_found:
+  other: Zerbait aurkitu da
+paige_words:
+  one: hitza
+  other: hitzak

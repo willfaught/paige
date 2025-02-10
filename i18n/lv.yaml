@@ -1,0 +1,50 @@
+paige_breadcrumbs:
+  other: Maizes drupatas
+paige_collections:
+  other: Kolekcijas
+paige_edit:
+  other: Rediģēt
+paige_error:
+  other: Kļūda
+paige_figure:
+  other: Attēls
+paige_first:
+  other: Pirmais
+paige_history:
+  other: Vēsture
+paige_javascript_is_required:
+  other: Nepieciešams JavaScript
+paige_last:
+  other: Pēdējais
+paige_link_to_this_section:
+  other: Saite uz šo sadaļu
+paige_menu:
+  other: izvēlne
+paige_minutes:
+  one: minūte
+  other: minūtes
+paige_next:
+  other: Nākamais
+paige_nothing_found:
+  other: Nekas netika atrasts
+paige_page_list_navigation:
+  other: Lappušu saraksta navigācija
+paige_pages:
+  other: Lappuses
+paige_previous:
+  other: Iepriekšējais
+paige_query:
+  other: Vaicājums
+paige_recent_content:
+  other: Pēdējais saturs
+paige_search:
+  other: Meklēt
+paige_searching:
+  other: Meklēšana
+paige_sections:
+  other: Sadaļas
+paige_something_found:
+  other: Kaut kas atrasts
+paige_words:
+  one: vārds
+  other: vārdi
