@@ -50,7 +50,7 @@ paige_recent_content:
 paige_search:
   other: 搜索
 
-paige_search_error:
+paige_error:
   other: 错误
 
 paige_search_input:

@@ -50,7 +50,7 @@ paige_recent_content:
 paige_search:
   other: 検索
 
-paige_search_error:
+paige_error:
   other: エラー
 
 paige_search_input:
