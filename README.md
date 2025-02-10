@@ -939,34 +939,34 @@ Body: None.
 
 Files can be included in many places in HTML.
 
-| If this file exists                                      | It is included at                    |
-| ---------------------------------------------------------| -------------------------------------|
-| `yoursite/layouts/partials/paige/body-first.html`        | The beginning of the body tag        |
-| `yoursite/layouts/partials/paige/body-last.html`         | The end of the body tag              |
-| `yoursite/layouts/partials/paige/head-first.html`        | The beginning of the head tag        |
-| `yoursite/layouts/partials/paige/head-last.html`         | The end of the head tag              |
-| `yoursite/layouts/partials/paige/page-footer-first.html` | The beginning of the page footer tag |
-| `yoursite/layouts/partials/paige/page-footer-last.html`  | The end of the page footer tag       |
-| `yoursite/layouts/partials/paige/page-header-first.html` | The beginning of the page header tag |
-| `yoursite/layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
-| `yoursite/layouts/partials/paige/site-first.html`        | The beginning of the main tag        |
-| `yoursite/layouts/partials/paige/site-last.html`         | The end of the main tag              |
-| `yoursite/layouts/partials/paige/site-footer-first.html` | The beginning of the site footer tag |
-| `yoursite/layouts/partials/paige/site-footer-last.html`  | The end of the site footer tag       |
-| `yoursite/layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
-| `yoursite/layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
-| `yoursite/layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
-| `yoursite/layouts/partials/paige/style-last.css`         | The end of the style tag             |
+| If this file exists in your site                | It is included at                    |
+| ------------------------------------------------| -------------------------------------|
+| `layouts/partials/paige/body-first.html`        | The beginning of the body tag        |
+| `layouts/partials/paige/body-last.html`         | The end of the body tag              |
+| `layouts/partials/paige/head-first.html`        | The beginning of the head tag        |
+| `layouts/partials/paige/head-last.html`         | The end of the head tag              |
+| `layouts/partials/paige/page-footer-first.html` | The beginning of the page footer tag |
+| `layouts/partials/paige/page-footer-last.html`  | The end of the page footer tag       |
+| `layouts/partials/paige/page-header-first.html` | The beginning of the page header tag |
+| `layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
+| `layouts/partials/paige/site-first.html`        | The beginning of the main tag        |
+| `layouts/partials/paige/site-last.html`         | The end of the main tag              |
+| `layouts/partials/paige/site-footer-first.html` | The beginning of the site footer tag |
+| `layouts/partials/paige/site-footer-last.html`  | The end of the site footer tag       |
+| `layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
+| `layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
+| `layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
+| `layouts/partials/paige/style-last.css`         | The end of the style tag             |
 
 There are kind variants of include files that are included only when the file kind matches the page kind.
 
-| If this file exists                                     | It is included when         |
-| --------------------------------------------------------| ----------------------------|
-| `yoursite/layouts/partials/paige/[PLACE]-home.html`     | The page kind is "home"     |
-| `yoursite/layouts/partials/paige/[PLACE]-page.html`     | The page kind is "page"     |
-| `yoursite/layouts/partials/paige/[PLACE]-section.html`  | The page kind is "section"  |
-| `yoursite/layouts/partials/paige/[PLACE]-taxonomy.html` | The page kind is "taxonomy" |
-| `yoursite/layouts/partials/paige/[PLACE]-term.html`     | The page kind is "term"     |
+| If this file exists in your site               | It is included when         |
+| -----------------------------------------------| ----------------------------|
+| `layouts/partials/paige/[PLACE]-home.html`     | The page kind is "home"     |
+| `layouts/partials/paige/[PLACE]-page.html`     | The page kind is "page"     |
+| `layouts/partials/paige/[PLACE]-section.html`  | The page kind is "section"  |
+| `layouts/partials/paige/[PLACE]-taxonomy.html` | The page kind is "taxonomy" |
+| `layouts/partials/paige/[PLACE]-term.html`     | The page kind is "term"     |
 
 Above, the place placeholder must be "body-first", "body-last", "head-first", etc.
 
@@ -1172,40 +1172,40 @@ Page status classes:
 
 <dl>
     <dt><code>.paige-status-draft</code></dt>
-    <dd>The container element of draft pages.</dd>
+    <dd>The container of draft pages.</dd>
     <dt><code>.paige-status-expired</code></dt>
-    <dd>The container element of expired pages.</dd>
+    <dd>The container of expired pages.</dd>
     <dt><code>.paige-status-future</code></dt>
-    <dd>The container element of future pages.</dd>
+    <dd>The container of future pages.</dd>
     <dt><code>.paige-status-modified</code></dt>
-    <dd>The container element of modified pages.</dd>
+    <dd>The container of modified pages.</dd>
     <dt><code>.paige-status-published</code></dt>
-    <dd>The container element of published pages.</dd>
+    <dd>The container of published pages.</dd>
     <dt><code>.paige-status-unpublished</code></dt>
-    <dd>The container element of unpublished pages.</dd>
+    <dd>The container of unpublished pages.</dd>
 </dl>
 
 Shortcode classes:
 
 <dl>
     <dt><code>.paige-shortcode-code</code></dt>
-    <dd>The container element of <code>paige/code</code> shortcodes.</dd>
+    <dd>The container of <code>paige/code</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-email</code></dt>
-    <dd>The container element of <code>paige/email</code> shortcodes.</dd>
+    <dd>The container of <code>paige/email</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-figure</code></dt>
-    <dd>The container element of <code>paige/figure</code> shortcodes.</dd>
+    <dd>The container of <code>paige/figure</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-gallery</code></dt>
-    <dd>The container element of <code>paige/gallery</code> shortcodes.</dd>
+    <dd>The container of <code>paige/gallery</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-icon</code></dt>
-    <dd>The container element of <code>paige/icon</code> shortcodes.</dd>
+    <dd>The container of <code>paige/icon</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-image</code></dt>
-    <dd>The container element of <code>paige/image</code> shortcodes.</dd>
+    <dd>The container of <code>paige/image</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-quote</code></dt>
-    <dd>The container element of <code>paige/quote</code> shortcodes.</dd>
+    <dd>The container of <code>paige/quote</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-vimeo</code></dt>
-    <dd>The container element of <code>paige/vimeo</code> shortcodes.</dd>
+    <dd>The container of <code>paige/vimeo</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-youtube</code></dt>
-    <dd>The container element of <code>paige/youtube</code> shortcodes.</dd>
+    <dd>The container of <code>paige/youtube</code> shortcodes.</dd>
 </dl>
 
 ### Minimal look
