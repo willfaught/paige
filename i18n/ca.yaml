@@ -32,7 +32,7 @@ paige_minutes:
 paige_next:
   other: Següent
 
-paige_noscript:
+paige_javascript_is_required:
   other: Es requereix JavaScript
 
 paige_page_list_navigation:

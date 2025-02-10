@@ -32,7 +32,7 @@ paige_minutes:
 paige_next:
   other: পরবর্তী
 
-paige_noscript:
+paige_javascript_is_required:
   other: জাভাস্ক্রিপ্ট প্রয়োজন
 
 paige_page_list_navigation:

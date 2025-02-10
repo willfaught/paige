@@ -32,7 +32,7 @@ paige_minutes:
 paige_next:
   other: 次へ
 
-paige_noscript:
+paige_javascript_is_required:
   other: JavaScriptが必要です
 
 paige_page_list_navigation:

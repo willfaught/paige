@@ -32,7 +32,7 @@ paige_minutes:
 paige_next:
   other: Наступна
 
-paige_noscript:
+paige_javascript_is_required:
   other: Потрібен JavaScript
 
 paige_page_list_navigation:

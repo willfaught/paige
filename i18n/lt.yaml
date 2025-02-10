@@ -32,7 +32,7 @@ paige_minutes:
 paige_next:
   other: Kitas
 
-paige_noscript:
+paige_javascript_is_required:
   other: Reikalingas JavaScript
 
 paige_page_list_navigation:
