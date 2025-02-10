@@ -1289,7 +1289,7 @@ To hide the collection, section, and page lists on the home page,
 try the following in `yoursite/content/_index.md`:
 
 ```toml
-[params.paige.subpages]
+[params.paige.pages]
 disable_collections = true
 disable_pages = true
 disable_sections = true
