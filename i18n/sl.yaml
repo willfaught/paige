@@ -4,14 +4,14 @@ paige_collections:
   other: Zbirke
 paige_edit:
   other: Uredi
-paige_edit_history:
-  other: Zgodovina urejanja
 paige_error:
   other: Napaka
 paige_figure:
   other: Slika
 paige_first:
   other: Prva
+paige_history:
+  other: Zgodovina
 paige_javascript_is_required:
   other: Potreben je JavaScript
 paige_last:

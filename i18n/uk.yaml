@@ -4,14 +4,14 @@ paige_collections:
   other: Колекції
 paige_edit:
   other: Редагувати
-paige_edit_history:
-  other: Історія редагувань
 paige_error:
   other: Помилка
 paige_figure:
   other: Малюнок
 paige_first:
   other: Перша
+paige_history:
+  other: Історія
 paige_javascript_is_required:
   other: Потрібен JavaScript
 paige_last:

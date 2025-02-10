@@ -4,14 +4,14 @@ paige_collections:
   other: مجموعات
 paige_edit:
   other: تعديل
-paige_edit_history:
-  other: تاريخ التحرير
 paige_error:
   other: خطأ
 paige_figure:
   other: شكل
 paige_first:
   other: الأول
+paige_history:
+  other: التاريخ
 paige_javascript_is_required:
   other: يتطلب تشغيل JavaScript
 paige_last:

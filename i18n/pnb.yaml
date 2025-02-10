@@ -4,14 +4,14 @@ paige_collections:
   other: کلیکشنز
 paige_edit:
   other: ترمیم کریں
-paige_edit_history:
-  other: ترمیم دی تاریخ
 paige_error:
   other: غلطی
 paige_figure:
   other: تصویر
 paige_first:
   other: پہلا
+paige_history:
+  other: تاریخ
 paige_javascript_is_required:
   other: جاوا اسکرپٹ ضروری اے
 paige_last:

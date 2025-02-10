@@ -4,14 +4,14 @@ paige_collections:
   other: Gyűjtemények
 paige_edit:
   other: Szerkesztés
-paige_edit_history:
-  other: Módosítási előzmények
 paige_error:
   other: Hiba
 paige_figure:
   other: Ábra
 paige_first:
   other: Első
+paige_history:
+  other: Történelem
 paige_javascript_is_required:
   other: A JavaScript használata szükséges
 paige_last:

@@ -4,14 +4,14 @@ paige_collections:
   other: 收藏品
 paige_edit:
   other: 编辑
-paige_edit_history:
-  other: 编辑历史
 paige_error:
   other: 错误
 paige_figure:
   other: 图表
 paige_first:
   other: 第一
+paige_history:
+  other: 历史
 paige_javascript_is_required:
   other: 需要 JavaScript
 paige_last:

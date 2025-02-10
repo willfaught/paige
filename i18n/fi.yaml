@@ -4,14 +4,14 @@ paige_collections:
   other: Kokoelmat
 paige_edit:
   other: Muokkaa
-paige_edit_history:
-  other: Muokkaushistoria
 paige_error:
   other: Virhe
 paige_figure:
   other: Kuva
 paige_first:
   other: Ensimmäinen
+paige_history:
+  other: Historia
 paige_javascript_is_required:
   other: JavaScript on vaadittu
 paige_last:

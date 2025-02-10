@@ -4,14 +4,14 @@ paige_collections:
   other: Collecties
 paige_edit:
   other: Bewerken
-paige_edit_history:
-  other: Bewerkingsgeschiedenis
 paige_error:
   other: Fout
 paige_figure:
   other: Figuur
 paige_first:
   other: Eerste
+paige_history:
+  other: Geschiedenis
 paige_javascript_is_required:
   other: JavaScript is vereist
 paige_last:

@@ -4,14 +4,14 @@ paige_collections:
   other: Collections
 paige_edit:
   other: Edit
-paige_edit_history:
-  other: Edit history
 paige_error:
   other: Error
 paige_figure:
   other: Figure
 paige_first:
   other: First
+paige_history:
+  other: History
 paige_javascript_is_required:
   other: JavaScript is required
 paige_last:

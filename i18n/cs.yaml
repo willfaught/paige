@@ -4,14 +4,14 @@ paige_collections:
   other: Kolekce
 paige_edit:
   other: Upravit
-paige_edit_history:
-  other: Historie úprav
 paige_error:
   other: Chyba
 paige_figure:
   other: Obrázek
 paige_first:
   other: První
+paige_history:
+  other: Historie
 paige_javascript_is_required:
   other: Je vyžadován JavaScript
 paige_last:

@@ -4,14 +4,14 @@ paige_collections:
   other: Колекции
 paige_edit:
   other: Уреди
-paige_edit_history:
-  other: Историја на уредувања
 paige_error:
   other: Грешка
 paige_figure:
   other: Фигура
 paige_first:
   other: Прва
+paige_history:
+  other: Историја
 paige_javascript_is_required:
   other: JavaScript е потребен
 paige_last:

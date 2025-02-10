@@ -4,14 +4,14 @@ paige_collections:
   other: Colecții
 paige_edit:
   other: Editează
-paige_edit_history:
-  other: Istoricul editărilor
 paige_error:
   other: Eroare
 paige_figure:
   other: Figură
 paige_first:
   other: Prima
+paige_history:
+  other: Istoric
 paige_javascript_is_required:
   other: Este necesar JavaScript
 paige_last:

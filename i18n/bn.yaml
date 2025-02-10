@@ -4,14 +4,14 @@ paige_collections:
   other: সংগ্রহ
 paige_edit:
   other: সম্পাদনা
-paige_edit_history:
-  other: সম্পাদনা ইতিহাস
 paige_error:
   other: ত্রুটি
 paige_figure:
   other: চিত্র
 paige_first:
   other: প্রথম
+paige_history:
+  other: ইতিহাস
 paige_javascript_is_required:
   other: জাভাস্ক্রিপ্ট প্রয়োজন
 paige_last:

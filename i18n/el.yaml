@@ -4,14 +4,14 @@ paige_collections:
   other: Συλλογές
 paige_edit:
   other: Επεξεργασία
-paige_edit_history:
-  other: Ιστορικό επεξεργασίας
 paige_error:
   other: Σφάλμα
 paige_figure:
   other: Εικόνα
 paige_first:
   other: Πρώτη
+paige_history:
+  other: Ιστορικό
 paige_javascript_is_required:
   other: Απαιτείται JavaScript
 paige_last:

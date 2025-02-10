@@ -4,14 +4,14 @@ paige_collections:
   other: Samlinger
 paige_edit:
   other: Rediger
-paige_edit_history:
-  other: Redigeringshistorik
 paige_error:
   other: Fejl
 paige_figure:
   other: Figur
 paige_first:
   other: Første
+paige_history:
+  other: Historik
 paige_javascript_is_required:
   other: JavaScript er påkrævet
 paige_last:

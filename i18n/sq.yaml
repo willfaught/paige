@@ -4,14 +4,14 @@ paige_collections:
   other: Koleksione
 paige_edit:
   other: Redakto
-paige_edit_history:
-  other: Historia e redaktimeve
 paige_error:
   other: Gabim
 paige_figure:
   other: Figurë
 paige_first:
   other: E para
+paige_history:
+  other: Historia
 paige_javascript_is_required:
   other: JavaScript është i nevojshëm
 paige_last:

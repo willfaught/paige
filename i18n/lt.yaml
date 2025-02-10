@@ -4,14 +4,14 @@ paige_collections:
   other: Kolekcijos
 paige_edit:
   other: Redaguoti
-paige_edit_history:
-  other: Redagavimo istorija
 paige_error:
   other: Klaida
 paige_figure:
   other: Paveikslėlis
 paige_first:
   other: Pirmas
+paige_history:
+  other: Istorija
 paige_javascript_is_required:
   other: Reikalingas JavaScript
 paige_last:

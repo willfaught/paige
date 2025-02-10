@@ -4,14 +4,14 @@ paige_collections:
   other: संग्रह
 paige_edit:
   other: संपादित करा
-paige_edit_history:
-  other: संपादन इतिहास
 paige_error:
   other: त्रुटी
 paige_figure:
   other: चित्र
 paige_first:
   other: पहिला
+paige_history:
+  other: इतिहास
 paige_javascript_is_required:
   other: जावास्क्रिप्ट आवश्यक आहे
 paige_last:
