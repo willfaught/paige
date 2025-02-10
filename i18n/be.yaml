@@ -59,7 +59,7 @@ paige_query:
 paige_nothing_found:
   other: Нічога не знойдзена
 
-paige_search_searching:
+paige_searching:
   other: Пошук
 
 paige_search_something:

@@ -59,7 +59,7 @@ paige_query:
 paige_nothing_found:
   other: Asgjë e gjetur
 
-paige_search_searching:
+paige_searching:
   other: Po kërkohet
 
 paige_search_something:

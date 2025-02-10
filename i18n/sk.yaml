@@ -59,7 +59,7 @@ paige_query:
 paige_nothing_found:
   other: Nič nenájdené
 
-paige_search_searching:
+paige_searching:
   other: Hľadám
 
 paige_search_something:

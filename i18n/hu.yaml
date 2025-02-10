@@ -59,7 +59,7 @@ paige_query:
 paige_nothing_found:
   other: Nincs találat
 
-paige_search_searching:
+paige_searching:
   other: Keresés folyamatban
 
 paige_search_something:

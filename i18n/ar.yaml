@@ -59,7 +59,7 @@ paige_query:
 paige_nothing_found:
   other: لم يتم العثور على شيء
 
-paige_search_searching:
+paige_searching:
   other: جاري البحث...
 
 paige_search_something:
