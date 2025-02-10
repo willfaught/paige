@@ -56,7 +56,7 @@ paige_error:
 paige_query:
   other: Requête
 
-paige_search_nothing:
+paige_nothing_found:
   other: Aucun résultat
 
 paige_search_searching:

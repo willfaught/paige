@@ -56,7 +56,7 @@ paige_error:
 paige_query:
   other: Interogare
 
-paige_search_nothing:
+paige_nothing_found:
   other: Nimic găsit
 
 paige_search_searching:

@@ -56,7 +56,7 @@ paige_error:
 paige_query:
   other: Spørgsmål
 
-paige_search_nothing:
+paige_nothing_found:
   other: Intet fundet
 
 paige_search_searching:

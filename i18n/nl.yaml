@@ -56,7 +56,7 @@ paige_error:
 paige_query:
   other: Zoekopdracht
 
-paige_search_nothing:
+paige_nothing_found:
   other: Niets gevonden
 
 paige_search_searching:

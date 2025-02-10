@@ -56,7 +56,7 @@ paige_error:
 paige_query:
   other: Poizvedba
 
-paige_search_nothing:
+paige_nothing_found:
   other: Ničesar ni bilo najdeno
 
 paige_search_searching:

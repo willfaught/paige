@@ -56,7 +56,7 @@ paige_error:
 paige_query:
   other: অনুসন্ধান
 
-paige_search_nothing:
+paige_nothing_found:
   other: কিছুই পাওয়া যায়নি
 
 paige_search_searching:
