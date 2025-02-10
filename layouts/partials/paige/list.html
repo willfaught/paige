@@ -1,7 +1,4 @@
-{{ $params := . }}
-
-{{ $page := $params.page }}
-{{ $sort := $params.sort }}
+{{ $page := . }}
 
 {{ define "pagination" }}
     {{ $params := . }}
@@ -56,11 +53,11 @@
 
 {{ $collections = $collections | and ($page.Param "paige.pages.disable_collections" | not) }}
 
-{{ if and (not $pages) (in (slice "taxonomy" "term") $page.Kind) }}
-    {{ $pages = $page.Pages }}
-{{ end }}
+{{ if in (slice "taxonomy" "term") $page.Kind }}
+    {{ if not $pages }}
+        {{ $pages = $page.Pages }}
+    {{ end }}
 
-{{ if and $pages $sort }}
     {{ $pages = sort $pages "LinkTitle" }}
 {{ end }}
 
