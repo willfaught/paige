@@ -93,7 +93,7 @@
                 {{ $author := "" }}
                 {{ $authors := partial "paige/func-authors.html" . }}
                 {{ $description := .Content }}
-                {{ $external := and .Params.link (not (.Param "paige.feeds.link_to_page")) | not | not }}
+                {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
                 {{ $guid := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
                 {{ $published := .PublishDate.Format $format }}
                 {{ $title := .Title | markdownify | plainify | htmlUnescape }}
