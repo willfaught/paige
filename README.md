@@ -766,28 +766,28 @@ Body: None.
 
 Files can be included in many places in HTML.
 
-| If this file exists in your site                | It is included at                    |
-| ------------------------------------------------| -------------------------------------|
-| `layouts/partials/paige/body-first.html`        | The beginning of the body tag        |
-| `layouts/partials/paige/body-last.html`         | The end of the body tag              |
-| `layouts/partials/paige/head-first.html`        | The beginning of the head tag        |
-| `layouts/partials/paige/head-last.html`         | The end of the head tag              |
-| `layouts/partials/paige/page-body-first.html`   | The beginning of the page body       |
-| `layouts/partials/paige/page-body-last.html`    | The end of the page body             |
-| `layouts/partials/paige/page-first.html`        | The beginning of the page tag        |
-| `layouts/partials/paige/page-footer-first.html` | The beginning of the page footer tag |
-| `layouts/partials/paige/page-footer-last.html`  | The end of the page footer tag       |
-| `layouts/partials/paige/page-header-first.html` | The beginning of the page header tag |
-| `layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
-| `layouts/partials/paige/page-last.html`         | The end of the page tag              |
-| `layouts/partials/paige/site-first.html`        | The beginning of the main tag        |
-| `layouts/partials/paige/site-footer-first.html` | The beginning of the site footer tag |
-| `layouts/partials/paige/site-footer-last.html`  | The end of the site footer tag       |
-| `layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
-| `layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
-| `layouts/partials/paige/site-last.html`         | The end of the main tag              |
-| `layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
-| `layouts/partials/paige/style-last.css`         | The end of the style tag             |
+| If this file exists in your site                | It is included at                |
+| ------------------------------------------------| ---------------------------------|
+| `layouts/partials/paige/body-first.html`        | The beginning of the body        |
+| `layouts/partials/paige/body-last.html`         | The ending of the body           |
+| `layouts/partials/paige/head-first.html`        | The beginning of the head        |
+| `layouts/partials/paige/head-last.html`         | The ending of the head           |
+| `layouts/partials/paige/page-body-first.html`   | The beginning of the page body   |
+| `layouts/partials/paige/page-body-last.html`    | The ending of the page body      |
+| `layouts/partials/paige/page-first.html`        | The beginning of the page        |
+| `layouts/partials/paige/page-footer-first.html` | The beginning of the page footer |
+| `layouts/partials/paige/page-footer-last.html`  | The ending of the page footer    |
+| `layouts/partials/paige/page-header-first.html` | The beginning of the page header |
+| `layouts/partials/paige/page-header-last.html`  | The ending of the page header    |
+| `layouts/partials/paige/page-last.html`         | The ending of the page           |
+| `layouts/partials/paige/site-first.html`        | The beginning of the site        |
+| `layouts/partials/paige/site-footer-first.html` | The beginning of the site footer |
+| `layouts/partials/paige/site-footer-last.html`  | The ending of the site footer    |
+| `layouts/partials/paige/site-header-first.html` | The beginning of the site header |
+| `layouts/partials/paige/site-header-last.html`  | The ending of the site header    |
+| `layouts/partials/paige/site-last.html`         | The ending of the site           |
+| `layouts/partials/paige/style-first.css`        | The beginning of the styles      |
+| `layouts/partials/paige/style-last.css`         | The ending of the styles         |
 
 There are kind variants of include files that are included only when the file kind matches the page kind.
 
