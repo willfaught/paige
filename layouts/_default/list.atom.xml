@@ -10,6 +10,7 @@
 {{ $rights := site.Copyright | markdownify }}
 {{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
+
 {{ $updated := site.Lastmod.Format $format }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
@@ -35,6 +36,7 @@
 {{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+
 <feed {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns="http://www.w3.org/2005/Atom">
     {{ range $authors }}
         <author>
@@ -93,6 +95,7 @@
     {{ end }}
 
     {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+
     <updated>{{ $updated }}</updated>
 
     {{ range $subpage := $subpages }}
@@ -182,6 +185,7 @@
             {{ end }}
 
             {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+
             <updated>{{ $updated }}</updated>
         </entry>
     {{ end }}
