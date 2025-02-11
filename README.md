@@ -197,13 +197,13 @@ There is a single parameter object with sensible defaults that can be overridden
 
 enable_math = false # Enables math typesetting for this page
 exclude_feeds = false # Exclude this page from feeds
-exclude_search = false # Exclude the page from search
+exclude_search = false # Exclude this page from search
 style = "" # CSS included at the end of the stylesheet, before style-last.css, for this page
 
 [paige.alert]
 
-message = "" # Markdown displayed before the page body
-type = "primary" # Bootstrap alert class
+message = "" # Markdown displayed before the page body for this page
+type = "primary" # Bootstrap alert class for this page
 
 [paige.feeds]
 
