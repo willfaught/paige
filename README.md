@@ -779,11 +779,11 @@ Files can be included in many places in HTML.
 | `layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
 | `layouts/partials/paige/page-last.html`         | The end of the page tag              |
 | `layouts/partials/paige/site-first.html`        | The beginning of the main tag        |
-| `layouts/partials/paige/site-last.html`         | The end of the main tag              |
 | `layouts/partials/paige/site-footer-first.html` | The beginning of the site footer tag |
 | `layouts/partials/paige/site-footer-last.html`  | The end of the site footer tag       |
 | `layouts/partials/paige/site-header-first.html` | The beginning of the site header tag |
 | `layouts/partials/paige/site-header-last.html`  | The end of the site header tag       |
+| `layouts/partials/paige/site-last.html`         | The end of the main tag              |
 | `layouts/partials/paige/style-first.css`        | The beginning of the style tag       |
 | `layouts/partials/paige/style-last.css`         | The end of the style tag             |
 
