@@ -1,19 +1,19 @@
 {{ $page := . }}
 
-{{ $build := false }}
 {{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
+{{ $date := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $description := or $page.Description (i18n "paige_recent_content") }}
 {{ $editor := $page.Param "paige.feeds.rss.managing_editor" }}
-{{ $format := "Mon, 02 Jan 2006 15:04:05 MST" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
+{{ $lastmod := false }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $master := $page.Param "paige.feeds.rss.web_master" }}
 {{ $subpages := slice }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
-    {{ if or (and (not $build) (not .Lastmod.IsZero)) (and $build (lt $build .Lastmod)) }}
-        {{ $build = .Lastmod }}
+    {{ if or (and (not $lastmod) (not .Lastmod.IsZero)) (and $lastmod (lt $lastmod .Lastmod)) }}
+        {{ $lastmod = .Lastmod }}
     {{ end }}
 
     {{ if not (.Param "paige.exclude_feeds") }}
@@ -73,7 +73,7 @@
             <language>{{ . }}</language>
         {{ end }}
 
-        {{ with $build }}
+        {{ with $lastmod }}
             <lastBuildDate>{{ . }}</lastBuildDate>
         {{ end }}
 
@@ -96,7 +96,7 @@
                 {{ $description := .Content }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
                 {{ $guid := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
-                {{ $published := .PublishDate.Format $format }}
+                {{ $published := .PublishDate.Format $date }}
                 {{ $title := .Title | markdownify | plainify | htmlUnescape }}
 
                 {{ $link := cond $external .Params.link .Permalink }}
