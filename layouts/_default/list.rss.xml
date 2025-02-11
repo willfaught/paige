@@ -5,17 +5,14 @@
 {{ $description := or $page.Description (i18n "paige_recent_content") }}
 {{ $editor := $page.Param "paige.feeds.rss.managing_editor" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
-{{ $lastmod := false }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $master := $page.Param "paige.feeds.rss.web_master" }}
 {{ $subpages := slice }}
 
-{{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
-    {{ if or (and (not $lastmod) (not .Lastmod.IsZero)) (and $lastmod (lt $lastmod .Lastmod)) }}
-        {{ $lastmod = .Lastmod }}
-    {{ end }}
+{{ $lastmod := site.Lastmod.Format $date }}
 
+{{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
     {{ if not (.Param "paige.exclude_feeds") }}
         {{ $subpages = $subpages | append . }}
     {{ end }}
