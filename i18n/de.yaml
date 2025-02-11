@@ -11,9 +11,9 @@ paige_figure:
 paige_first:
   other: Erste
 paige_history:
-  other: Historie
+  other: Verlauf
 paige_javascript_is_required:
-  other: JavaScript wird benötigt
+  other: JavaScript ist erforderlich
 paige_last:
   other: Letzte
 paige_link_to_this_section:
@@ -34,7 +34,7 @@ paige_pages:
 paige_previous:
   other: Zurück
 paige_query:
-  other: Suchanfrage
+  other: Anfrage
 paige_recent_content:
   other: Neueste Inhalte
 paige_search:
