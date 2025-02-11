@@ -163,7 +163,28 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
 See Hugo's [installation](https://gohugo.io/installation/), [getting started](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
 
-See the [minimal look](#minimal-look), [narrow look](#narrow-look), [narrow-and-wide look](#narrow-and-wide-look), and [menu navigation only](#menu-navigation-only) sections for common customizations.
+## Kickoff
+
+By default, everything is enabled, which is likely not what you want.
+See the [minimal look](#minimal-look) section for ideas of what to disable.
+
+By default, page body content spans its entire container, which spans most of the window.
+See the [narrow look](#narrow-look) and [narrow-and-wide look](#narrow-and-wide-look) sections
+for ideas of how to customize the presentation.
+
+The breadcrumb, collection, and section links are sufficient to browse any site,
+so you can safely disable the menu.
+However, in sites with only a handful of sections and no nested sections,
+the menu alone can be sufficient for all navigation.
+See the [menu navigation only](#menu-navigation-only) section for how to do that.
+
+To change the favicon, see the [override](#override) section.
+
+To add analytics, put the code in `yoursite/layouts/partials/paige/site-last.html`.
+See the [include](#include) section.
+
+To add comments, put the code in `yoursite/layouts/partials/paige/page-body-last-page.html`.
+See the [include](#include) section.
 
 ## Configure
 
