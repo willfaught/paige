@@ -208,7 +208,7 @@ type = "primary" # Bootstrap alert class
 [paige.feeds]
 
 disable_link = false # Disables using the link parameter for the page URL
-page_link = "⏎" # If a front matter link is present, and disable_link is false, then link to the page with this text
+page_link = "⏎" # Link to the page with this text if the link parameter is set and disable_link is false
 
 [paige.feeds.atom]
 
