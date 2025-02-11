@@ -225,10 +225,6 @@ disable_title = false
 disable_toc = false
 disable_word_count = false
 
-# Navigation
-edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
-history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
-
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override
 # Example:
@@ -267,6 +263,10 @@ disable_credit = false
 disable_description = false
 disable_license = false
 disable_title = false
+
+# Git
+edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
+history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 
 # Navigation
 disable_breadcrumbs = false
