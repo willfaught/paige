@@ -285,10 +285,6 @@ disable_description = false
 disable_license = false
 disable_title = false
 
-# Git
-edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
-history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
-
 # Navigation
 disable_breadcrumbs = false
 disable_menu = false
@@ -298,6 +294,10 @@ color = "#0d6efd" # Bootstrap primary color and theme color for Safari and Windo
 color_scheme = "auto" # Must be "auto", "dark", or "light"
 keyword_style = "text" # Must be "text" or "pills"
 menu_style = "links" # Must be "links", "pills", "tabs", or "underline"
+
+# Repository
+edit_url = "" # Example: "https://github.com/account/project/edit/master/content/%s"
+history_url = "" # Example: "https://github.com/account/project/commits/master/content/%s"
 
 # Schema
 base_schema = {} # JSON-LD schema that all site schemas override
