@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 {{ $authors := $page.Param "paige.feeds.atom.authors" }}
-{{ $format := "2006-01-02T15:04:05Z07:00" }}
+{{ $date := "2006-01-02T15:04:05Z07:00" }}
 {{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
@@ -11,7 +11,7 @@
 {{ $subpages := slice }}
 {{ $subtitle := $page.Description | markdownify }}
 
-{{ $updated := site.Lastmod.Format $format }}
+{{ $lastmod := site.Lastmod.Format $date }}
 
 {{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
     {{ if not (.Param "paige.exclude_feeds") }}
@@ -96,17 +96,17 @@
 
     {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
 
-    <updated>{{ $updated }}</updated>
+    <updated>{{ $lastmod }}</updated>
 
     {{ range $subpage := $subpages }}
         <entry>
             {{ $content := .Content }}
             {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
             {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
-            {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
+            {{ $lastmod := .Lastmod.Format $date }}
+            {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $date) "" }}
             {{ $summary := markdownify .Description }}
             {{ $title := markdownify .Title }}
-            {{ $updated := .Lastmod.Format $format }}
 
             {{ $link := cond $external .Params.link .Permalink }}
 
@@ -186,7 +186,7 @@
 
             {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
 
-            <updated>{{ $updated }}</updated>
+            <updated>{{ $lastmod }}</updated>
         </entry>
     {{ end }}
 </feed>
