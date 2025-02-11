@@ -45,6 +45,7 @@
 {{ $class = delimit ($class | uniq | sort) " " }}
 
 <article class="align-items-center d-flex flex-column {{ $class }}" id="paige-page">
+    {{ partial "paige/func-include.html" (dict "name" "page-first%s.html" "page" $page) }}
     {{ partial "paige/page-header.html" $page }}
 
     {{ with $content }}
@@ -52,4 +53,5 @@
     {{ end }}
 
     {{ partial "paige/page-footer.html" $page }}
+    {{ partial "paige/func-include.html" (dict "name" "page-last%s.html" "page" $page) }}
 </article>

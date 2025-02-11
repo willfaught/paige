@@ -772,10 +772,12 @@ Files can be included in many places in HTML.
 | `layouts/partials/paige/body-last.html`         | The end of the body tag              |
 | `layouts/partials/paige/head-first.html`        | The beginning of the head tag        |
 | `layouts/partials/paige/head-last.html`         | The end of the head tag              |
+| `layouts/partials/paige/page-first.html`        | The beginning of the page tag        |
 | `layouts/partials/paige/page-footer-first.html` | The beginning of the page footer tag |
 | `layouts/partials/paige/page-footer-last.html`  | The end of the page footer tag       |
 | `layouts/partials/paige/page-header-first.html` | The beginning of the page header tag |
 | `layouts/partials/paige/page-header-last.html`  | The end of the page header tag       |
+| `layouts/partials/paige/page-last.html`         | The end of the page tag              |
 | `layouts/partials/paige/site-first.html`        | The beginning of the main tag        |
 | `layouts/partials/paige/site-last.html`         | The end of the main tag              |
 | `layouts/partials/paige/site-footer-first.html` | The beginning of the site footer tag |
