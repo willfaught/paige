@@ -8,15 +8,9 @@
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $link := ($page.AlternativeOutputFormats.Get "html").Permalink }}
 {{ $master := $page.Param "paige.feeds.rss.web_master" }}
-{{ $subpages := slice }}
+{{ $subpages := $page.RegularPagesRecursive.ByPublishDate.Reverse }}
 
 {{ $lastmod := site.Lastmod.Format $date }}
-
-{{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
-    {{ if not (.Param "paige.exclude_feeds") }}
-        {{ $subpages = $subpages | append . }}
-    {{ end }}
-{{ end }}
 
 {{ if gt $limit 0 }}
     {{ $subpages = $subpages | first $limit }}
@@ -87,68 +81,70 @@
         {{ end }}
 
         {{ range $subpages }}
-            <item>
-                {{ $author := "" }}
-                {{ $authors := partial "paige/func-authors.html" . }}
-                {{ $description := .Content }}
-                {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
-                {{ $guid := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
-                {{ $published := .PublishDate.Format $date }}
-                {{ $title := .Title | markdownify | plainify | htmlUnescape }}
+            {{ if not (.Param "paige.exclude_feeds") }}
+                <item>
+                    {{ $author := "" }}
+                    {{ $authors := partial "paige/func-authors.html" . }}
+                    {{ $description := .Content }}
+                    {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
+                    {{ $guid := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") (cond (.Params.id | not) .RelPermalink .Params.id) }}
+                    {{ $published := .PublishDate.Format $date }}
+                    {{ $title := .Title | markdownify | plainify | htmlUnescape }}
 
-                {{ $link := cond $external .Params.link .Permalink }}
+                    {{ $link := cond $external .Params.link .Permalink }}
 
-                {{ with $authors }}
-                    {{ $primary := index . 0 }}
+                    {{ with $authors }}
+                        {{ $primary := index . 0 }}
 
-                    {{ if and $primary.Params.paige.author.email $primary.Params.paige.author.name }}
-                        {{ $author = printf "%s (%s)" $primary.Params.paige.author.email $primary.Params.paige.author.name }}
-                    {{ else if $primary.Params.email }}
-                        {{ $author = $primary.Params.email }}
+                        {{ if and $primary.Params.paige.author.email $primary.Params.paige.author.name }}
+                            {{ $author = printf "%s (%s)" $primary.Params.paige.author.email $primary.Params.paige.author.name }}
+                        {{ else if $primary.Params.email }}
+                            {{ $author = $primary.Params.email }}
+                        {{ end }}
                     {{ end }}
-                {{ end }}
 
-                {{ if and $description $external }}
-                    {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
+                    {{ if and $description $external }}
+                        {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
-                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape $title) $text | safeHTML }}
+                        {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape $title) $text | safeHTML }}
 
-                    {{ $description = print $description $footer }}
-                {{ end }}
+                        {{ $description = print $description $footer }}
+                    {{ end }}
 
-                {{ if not $description }}
-                    {{ $description = .Description | markdownify }}
-                {{ end }}
+                    {{ if not $description }}
+                        {{ $description = .Description | markdownify }}
+                    {{ end }}
 
-                {{ $description = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` .Permalink) $description }}
-                {{ $description = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) $description }}
+                    {{ $description = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` .Permalink) $description }}
+                    {{ $description = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) $description }}
 
-                {{ if and (not $description) (not $title) }}
-                    {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description. The rss output requires a title or description. Either set the page's title or description parameters, or disable the rss output." .RelPermalink }}
-                {{ end }}
+                    {{ if and (not $description) (not $title) }}
+                        {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description. The rss output requires a title or description. Either set the page's title or description parameters, or disable the rss output." .RelPermalink }}
+                    {{ end }}
 
-                {{ with $author }}
-                    <author>{{ . }}</author>
-                {{ end }}
+                    {{ with $author }}
+                        <author>{{ . }}</author>
+                    {{ end }}
 
-                {{ with $description }}
-                    <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
-                {{ end }}
+                    {{ with $description }}
+                        <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
+                    {{ end }}
 
-                <guid isPermaLink="false">{{ $guid }}</guid>
+                    <guid isPermaLink="false">{{ $guid }}</guid>
 
-                {{ with $link }}
-                    <link>{{ . }}</link>
-                {{ end }}
+                    {{ with $link }}
+                        <link>{{ . }}</link>
+                    {{ end }}
 
-                {{ with $published }}
-                    <pubDate>{{ . }}</pubDate>
-                {{ end }}
+                    {{ with $published }}
+                        <pubDate>{{ . }}</pubDate>
+                    {{ end }}
 
-                {{ with $title }}
-                    <title>{{ . }}</title>
-                {{ end }}
-            </item>
+                    {{ with $title }}
+                        <title>{{ . }}</title>
+                    {{ end }}
+                </item>
+            {{ end }}
         {{ end }}
     </channel>
 </rss>

@@ -8,16 +8,10 @@
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := site.Copyright | markdownify }}
-{{ $subpages := slice }}
+{{ $subpages := $page.RegularPagesRecursive.ByPublishDate.Reverse }}
 {{ $subtitle := $page.Description | markdownify }}
 
 {{ $lastmod := site.Lastmod.Format $date }}
-
-{{ range $page.RegularPagesRecursive.ByPublishDate.Reverse }}
-    {{ if not (.Param "paige.exclude_feeds") }}
-        {{ $subpages = $subpages | append . }}
-    {{ end }}
-{{ end }}
 
 {{ if gt $limit 0 }}
     {{ $subpages = first $limit $subpages }}
@@ -99,94 +93,96 @@
     <updated>{{ $lastmod }}</updated>
 
     {{ range $subpage := $subpages }}
-        <entry>
-            {{ $content := .Content }}
-            {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
-            {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
-            {{ $lastmod := .Lastmod.Format $date }}
-            {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $date) "" }}
-            {{ $summary := markdownify .Description }}
-            {{ $title := markdownify .Title }}
+        {{ if not (.Param "paige.exclude_feeds") }}
+            <entry>
+                {{ $content := .Content }}
+                {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
+                {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
+                {{ $lastmod := .Lastmod.Format $date }}
+                {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $date) "" }}
+                {{ $summary := markdownify .Description }}
+                {{ $title := markdownify .Title }}
 
-            {{ $link := cond $external .Params.link .Permalink }}
+                {{ $link := cond $external .Params.link .Permalink }}
 
-            {{ if and $content $external }}
-                {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
+                {{ if and $content $external }}
+                    {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
-                {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape .Title) $text | safeHTML }}
+                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape .Title) $text | safeHTML }}
 
-                {{ $content = print $content $footer }}
-            {{ end }}
-
-            {{ if not $content }}
-                {{ $content = markdownify .Description }}
-            {{ end }}
-
-            {{ if not $title }}
-                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title. The atom output requires a title. Either set the page's title parameter, or disable the atom output." .RelPermalink }}
-            {{ end }}
-
-            {{ if .Lastmod.IsZero }}
-                {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date. The atom output requires a modified date. Either set the page's date parameter, or set the page's paige.feeds.exclude parameter to true, or disable the atom output." .RelPermalink }}
-            {{ end }}
-
-            {{ with partial "paige/func-authors.html" . }}
-                {{ range . }}
-                    <author>
-                        {{ with .Params.paige.author.email }}
-                            <email>{{ . }}</email>
-                        {{ end }}
-
-                        {{ with .Params.paige.author.name }}
-                            <name>{{ . }}</name>
-                        {{ end }}
-
-                        {{ with .Params.paige.author.url }}
-                            <uri>{{ . }}</uri>
-                        {{ end }}
-                    </author>
+                    {{ $content = print $content $footer }}
                 {{ end }}
-            {{ end }}
 
-            {{ with $content }}
-                <content type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</content>
-            {{ end }}
-
-            <id>{{ $id }}</id>
-
-            {{ range .OutputFormats }}
-                {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
-
-                {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "via") }}
-                    {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
-
-                    <link href="{{ $href }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                {{ if not $content }}
+                    {{ $content = markdownify .Description }}
                 {{ end }}
-            {{ end }}
 
-            {{ range $t := .Translations }}
-                {{ range .OutputFormats }}
-                    {{ if or (eq .Rel "alternate") (eq .Rel "enclosure") (eq .Rel "related") (eq .Rel "via") }}
-                        <link href="{{ .Permalink }}" hreflang="{{ $t.Lang }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+                {{ if not $title }}
+                    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title. The atom output requires a title. Either set the page's title parameter, or disable the atom output." .RelPermalink }}
+                {{ end }}
+
+                {{ if .Lastmod.IsZero }}
+                    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date. The atom output requires a modified date. Either set the page's date parameter, or set the page's paige.feeds.exclude parameter to true, or disable the atom output." .RelPermalink }}
+                {{ end }}
+
+                {{ with partial "paige/func-authors.html" . }}
+                    {{ range . }}
+                        <author>
+                            {{ with .Params.paige.author.email }}
+                                <email>{{ . }}</email>
+                            {{ end }}
+
+                            {{ with .Params.paige.author.name }}
+                                <name>{{ . }}</name>
+                            {{ end }}
+
+                            {{ with .Params.paige.author.url }}
+                                <uri>{{ . }}</uri>
+                            {{ end }}
+                        </author>
                     {{ end }}
                 {{ end }}
-            {{ end }}
 
-            {{ with $published }}
-                <published>{{ . }}</published>
-            {{ end }}
+                {{ with $content }}
+                    <content type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</content>
+                {{ end }}
 
-            {{ with $rights }}
-                <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
-            {{ end }}
+                <id>{{ $id }}</id>
 
-            {{ with $summary }}
-                <summary type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</summary>
-            {{ end }}
+                {{ range .OutputFormats }}
+                    {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
-            {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+                    {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "via") }}
+                        {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
 
-            <updated>{{ $lastmod }}</updated>
-        </entry>
+                        <link href="{{ $href }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                    {{ end }}
+                {{ end }}
+
+                {{ range $t := .Translations }}
+                    {{ range .OutputFormats }}
+                        {{ if or (eq .Rel "alternate") (eq .Rel "enclosure") (eq .Rel "related") (eq .Rel "via") }}
+                            <link href="{{ .Permalink }}" hreflang="{{ $t.Lang }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+
+                {{ with $published }}
+                    <published>{{ . }}</published>
+                {{ end }}
+
+                {{ with $rights }}
+                    <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
+                {{ end }}
+
+                {{ with $summary }}
+                    <summary type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</summary>
+                {{ end }}
+
+                {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+
+                <updated>{{ $lastmod }}</updated>
+            </entry>
+        {{ end }}
     {{ end }}
 </feed>
