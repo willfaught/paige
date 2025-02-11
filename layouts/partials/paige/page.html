@@ -49,7 +49,11 @@
     {{ partial "paige/page-header.html" $page }}
 
     {{ with $content }}
-        <main class="mw-100" id="paige-page-content" {{ if $microdata }} itemprop="articleBody" {{ end }}>{{ . | safeHTML }}</main>
+        <main class="mw-100" id="paige-page-content" {{ if $microdata }} itemprop="articleBody" {{ end }}>
+            {{ partial "paige/func-include.html" (dict "name" "page-body-first%s.html" "page" $page) }}
+            {{ . | safeHTML }}
+            {{ partial "paige/func-include.html" (dict "name" "page-body-last%s.html" "page" $page) }}
+        </main>
     {{ end }}
 
     {{ partial "paige/page-footer.html" $page }}
