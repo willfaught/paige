@@ -20,13 +20,13 @@
 {{ end }}
 
 {{ if gt $limit 0 }}
-    {{ $subpages = $subpages | first $limit }}
+    {{ $subpages = first $limit $subpages }}
 {{ end }}
 
-{{ $titles := slice ($page.Title | markdownify) }}
+{{ $titles := slice (markdownify $page.Title) }}
 
 {{ range .Ancestors }}
-    {{ $titles = $titles | append (.Title | markdownify) }}
+    {{ $titles = $titles | append (markdownify .Title) }}
 {{ end }}
 
 {{ $title := delimit $titles " · " }}
@@ -104,8 +104,8 @@
             {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
             {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
             {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $format) "" }}
-            {{ $summary := .Description | markdownify }}
-            {{ $title := .Title | markdownify }}
+            {{ $summary := markdownify .Description }}
+            {{ $title := markdownify .Title }}
             {{ $updated := .Lastmod.Format $format }}
 
             {{ $link := cond $external .Params.link .Permalink }}
@@ -119,7 +119,7 @@
             {{ end }}
 
             {{ if not $content }}
-                {{ $content = .Description | markdownify }}
+                {{ $content = markdownify .Description }}
             {{ end }}
 
             {{ if not $title }}
