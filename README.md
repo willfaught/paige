@@ -186,7 +186,7 @@ See the [include](#include) section.
 To add comments, put the code in `yoursite/layouts/partials/paige/page-body-last-page.html`.
 See the [include](#include) section.
 
-## Configuration
+## Configure
 
 ### Parameters
 
