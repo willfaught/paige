@@ -429,15 +429,6 @@ title = "Search"
 
 The `paige/code` shortcode provides highlighted code.
 
-```
-{{< paige/code
-    lang=""
-    options=""
-    unescape=false >}}
-
-{{< /paige/code >}}
-```
-
 Parameters:
 
 <dl>
@@ -455,13 +446,6 @@ Body: Required. String. The code.
 
 The `paige/email` shortcode hides e-mail addresses from robots.
 
-```
-{{< paige/email
-    address="" >}}
-
-{{< /paige/email >}}
-```
-
 Parameters:
 
 <dl>
@@ -474,21 +458,6 @@ Body: Required. String. Markdown. The content.
 ### Figure
 
 The `paige/figure` shortcode provides a figure.
-
-```
-{{< paige/figure
-    caption=""
-    float=""
-    height=""
-    horizontal=""
-    maxwidth=""
-    number=0
-    numbered=false
-    vertical=""
-    width="" >}}
-
-{{< /paige/figure >}}
-```
 
 Parameters:
 
@@ -518,28 +487,6 @@ Body: Required. String. Markdown. The content.
 ### Gallery
 
 The `paige/gallery` shortcode provides an arrangement of images.
-
-```
-{{< paige/gallery
-    align=""
-    breakpoints=false
-    class=""
-    densities=""
-    fetchpriority=""
-    height=""
-    images=""
-    justify=""
-    linked=""
-    loading=""
-    maxheight=""
-    maxwidth=""
-    process=""
-    style=""
-    type=""
-    width="" >}}
-
-{{< /paige/gallery >}}
-```
 
 Parameters:
 
@@ -584,13 +531,6 @@ Body: Optional. String. HTML. The images.
 
 The `paige/icon` shortcode provides a web font icon.
 
-```
-{{< paige/icon
-    class=""
-    title=""
-    url="" >}}
-```
-
 Parameters:
 
 <dl>
@@ -607,28 +547,6 @@ Body: None.
 ### Image
 
 The `paige/image` shortcode provides an image.
-
-```
-{{< paige/image
-    alt=""
-    breakpoints=false
-    class=""
-    densities=""
-    fetchpriority=""
-    height=""
-    link=""
-    linked=""
-    loading=""
-    maxheight=""
-    maxwidth=""
-    process=""
-    sizes=""
-    src=""
-    srcset=""
-    style=""
-    title=""
-    width="" >}}
-```
 
 Parameters:
 
@@ -677,13 +595,6 @@ Body: None.
 
 The `paige/quote` shortcode provides a quotation.
 
-```
-{{< paige/quote
-    cite="" >}}
-
-{{< /paige/quote >}}
-```
-
 Parameters:
 
 <dl>
@@ -696,12 +607,6 @@ Body: Required. String. Markdown. The quotation.
 ### Request
 
 The `paige/request` shortcode provides the content for a URL.
-
-```
-{{< paige/request
-    method=""
-    url="" >}}
-```
 
 Parameters:
 
@@ -719,12 +624,6 @@ Body: None.
 The `paige/tabs` shortcode provides tab buttons and tab panes.
 It must contain one `paige/tabs/buttons` shortcode, and then one `paige/tabs/panes` shortcode.
 
-```
-{{< paige/tabs >}}
-
-{{< /paige/tabs >}}
-```
-
 Parameters: None.
 
 Body: Required. String. HTML. The tab buttons and tab panes.
@@ -733,23 +632,11 @@ The `paige/tabs/buttons` shortcode provides tab buttons.
 It must contain one or more `paige/tabs/button` shortcodes.
 Each `paige/tabs/button` shortcode corresponds to the `paige/tabs/pane` shortcode in the same position.
 
-```
-{{< paige/tabs/buttons >}}
-
-{{< /paige/tabs/buttons >}}
-```
-
 Parameters: None.
 
 Body: Required. String. HTML. The tab buttons.
 
 The `paige/tabs/button` shortcode provides a tab button.
-
-```
-{{< paige/tabs/button >}}
-
-{{< /paige/tabs/button >}}
-```
 
 Parameters: None.
 
@@ -759,23 +646,11 @@ The `paige/tabs/panes` shortcode provides tab panes.
 It must contain one or more `paige/tabs/pane` shortcodes.
 Each `paige/tabs/pane` shortcode corresponds to the `paige/tabs/button` shortcode in the same position.
 
-```
-{{< paige/tabs/panes >}}
-
-{{< /paige/tabs/panes >}}
-```
-
 Parameters: None.
 
 Body: Required. String. HTML. The tab panes.
 
 The `paige/tabs/pane` shortcode provides a tab pane.
-
-```
-{{< paige/tabs/pane >}}
-
-{{< /paige/tabs/pane >}}
-```
 
 Parameters: None.
 
@@ -784,36 +659,6 @@ Body: Required. String. Markdown. The tab pane content.
 ### Vimeo
 
 The `paige/vimeo` shortcode provides a Vimeo video.
-
-```
-{{< paige/vimeo
-    autopause=false
-    autoplay=false
-    background=false
-    byline=false
-    color=""
-    controls=false
-    description=""
-    dnt=false
-    fullscreen=false
-    height=""
-    keyboard=false
-    loop=false
-    maxheight=""
-    maxwidth=""
-    muted=false
-    pip=false
-    playsinline=false
-    portrait=false
-    quality=""
-    speed=false
-    texttrack=false
-    time=""
-    title=false
-    transparent=false
-    video=""
-    width="" >}}
-```
 
 Parameters:
 
@@ -879,24 +724,6 @@ See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/3600014944
 ### YouTube
 
 The `paige/youtube` shortcode provides a YouTube video.
-
-```
-{{< paige/youtube
-    autoplay=false
-    controls=false
-    description=""
-    end=0
-    fullscreen=false
-    height=""
-    list=""
-    loop=false
-    maxheight=""
-    maxwidth=""
-    mute=false
-    start=0
-    video=""
-    width="" >}}
-```
 
 Parameters:
 
