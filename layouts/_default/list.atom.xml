@@ -92,7 +92,7 @@
 
     <updated>{{ $lastmod }}</updated>
 
-    {{ range $subpage := $subpages }}
+    {{ range $subpages }}
         {{ if not (.Param "paige.exclude_feeds") }}
             <entry>
                 {{ $content := .Content }}
