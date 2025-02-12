@@ -1154,6 +1154,6 @@ disable_sections = true
 
 ## Project
 
-Created by [Will Faught](https://willfaught.com).
+Copyright 2022 [Will Faught](https://willfaught.com).
 Licensed under the [EUPL](https://spdx.org/licenses/EUPL-1.2.html).
 Hosted at https://github.com/willfaught/paige.
