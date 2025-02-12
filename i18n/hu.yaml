@@ -12,6 +12,8 @@ paige_first:
   other: Első
 paige_history:
   other: Történelem
+paige_home:
+  other: Főoldal
 paige_javascript_is_required:
   other: A JavaScript használata szükséges
 paige_last:

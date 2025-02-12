@@ -12,6 +12,8 @@ paige_first:
   other: Ensimmäinen
 paige_history:
   other: Historia
+paige_home:
+  other: Etusivu
 paige_javascript_is_required:
   other: JavaScript on vaadittu
 paige_last:

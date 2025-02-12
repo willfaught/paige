@@ -12,6 +12,8 @@ paige_first:
   other: Erste
 paige_history:
   other: Verlauf
+paige_home:
+  other: Startseite
 paige_javascript_is_required:
   other: JavaScript ist erforderlich
 paige_last:

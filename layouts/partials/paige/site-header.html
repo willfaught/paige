@@ -112,13 +112,11 @@
 
                 <nav aria-label="{{ i18n `paige_menu` }}" class="paige-row-tall" id="paige-site-menu">
                     <ul class="align-items-center justify-content-center nav {{ if $pills }} nav-pills {{ else if $tabs }} nav-tabs {{ else if $underline }} nav-underline {{ end }}">
-                        {{ with $title }}
-                            {{ $active := eq $page.Section "" }}
+                        {{ $active := eq $page.Section "" }}
 
-                            <li class="nav-item">
-                                <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ . }}</a>
-                            </li>
-                        {{ end }}
+                        <li class="nav-item">
+                            <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ i18n "paige_home" }}</a>
+                        </li>
 
                         {{ range $pages }}
                             {{ $menuPath := strings.TrimPrefix $basePath .RelPermalink }}
@@ -142,12 +140,8 @@
             <nav aria-label="{{ i18n `paige_breadcrumbs` }}" class="paige-row-tall" id="paige-site-breadcrumbs">
                 <div class="d-flex justify-content-center">
                     <ol class="breadcrumb mb-0">
-                        {{ range $i, $ancestor := . }}
-                            {{ $title := $ancestor.LinkTitle }}
-
-                            {{ if and (not $i) (not $title) }}
-                                {{ $title = site.Title }}
-                            {{ end }}
+                        {{ range . }}
+                            {{ $title := cond .IsHome (i18n "paige_home") .LinkTitle }}
 
                             <li class="breadcrumb-item">
                                 <a href="{{ .RelPermalink }}">{{ $title | markdownify | plainify | htmlUnescape }}</a>

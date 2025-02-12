@@ -12,6 +12,8 @@ paige_first:
   other: 第一
 paige_history:
   other: 历史
+paige_home:
+  other: 主页
 paige_javascript_is_required:
   other: 需要 JavaScript
 paige_last:

@@ -12,6 +12,8 @@ paige_first:
   other: Первый
 paige_history:
   other: История
+paige_home:
+  other: Главная
 paige_javascript_is_required:
   other: Требуется JavaScript
 paige_last:

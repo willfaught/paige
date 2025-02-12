@@ -12,6 +12,8 @@ paige_first:
   other: Перша
 paige_history:
   other: Історія
+paige_home:
+  other: Головна
 paige_javascript_is_required:
   other: Потрібен JavaScript
 paige_last:
