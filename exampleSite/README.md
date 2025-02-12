@@ -11,5 +11,5 @@ and then run this command:
 
 ```
 $ cd exampleSite
-$ go get github.com/willfaught/paige@latest
+$ hugo mod get github.com/willfaught/paige@latest
 ```
