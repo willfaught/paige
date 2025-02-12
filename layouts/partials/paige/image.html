@@ -86,12 +86,10 @@
             {{ else }}
                 {{ with findRE `q\d+` . 1 }}
                     {{ $quality = index . 0 }}
+                {{ else with findRE `\d+x\d+|\d+x|x\d+` . 1 }}
+                    {{ $size = index . 0 }}
                 {{ else }}
-                    {{ with findRE `\d+x\d+|\d+x|x\d+` . 1 }}
-                        {{ $size = index . 0 }}
-                    {{ else }}
-                        {{ $options = $options | append . }}
-                    {{ end }}
+                    {{ $options = $options | append . }}
                 {{ end }}
             {{ end }}
         {{ end }}
@@ -119,7 +117,7 @@
         {{ end }}
     {{ end }}
 
-    {{ $smallerResource = $smallerResource | fingerprint }}
+    {{ $smallerResource = fingerprint $smallerResource }}
     {{ $intrinsicHeight = $smallerResource.Height }}
     {{ $intrinsicWidth = $smallerResource.Width }}
     {{ $src = $smallerResource.Permalink }}
@@ -182,7 +180,7 @@
                     {{ $resized = $smallerResource.Resize (print $imageWidth "x q100 " $options) }}
                 {{ end }}
 
-                {{ $resized = $resized | fingerprint }}
+                {{ $resized = fingerprint $resized }}
                 {{ $srcset = $srcset | append (printf "%s %gx" $resized.RelPermalink .) }}
             {{ end }}
 
@@ -210,7 +208,7 @@
                     {{ $resized = $smallerResource.Resize (print $imageWidth "x q100 " $options) }}
                 {{ end }}
 
-                {{ $resized = $resized | fingerprint }}
+                {{ $resized = fingerprint $resized }}
                 {{ $maxWidth = math.Max $maxWidth $imageWidth }}
                 {{ $sizes = $sizes | append (printf "(max-width: %dpx) %dpx" $viewWidth $imageWidth) }}
                 {{ $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $imageWidth) }}
@@ -282,7 +280,7 @@
         {{ end }}
     {{ end }}
 
-    {{ $resource = $resource | fingerprint }}
+    {{ $resource = fingerprint $resource }}
     {{ $content = partial "paige/tag-a.html" (dict "content" $content "href" $resource.RelPermalink "page" $page) }}
 {{ else if $link }}
     {{ $content = partial "paige/tag-a.html" (dict "content" $content "href" $link "page" $page) }}

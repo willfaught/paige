@@ -30,12 +30,10 @@
         {{ else }}
             {{ $resources = resources.Match . }}
         {{ end }}
+    {{ else with .Page.Resources.ByType "image" }}
+        {{ $resources = . }}
     {{ else }}
-        {{ with .Page.Resources.ByType "image" }}
-            {{ $resources = . }}
-        {{ else }}
-            {{ $resources = resources.ByType "image" }}
-        {{ end }}
+        {{ $resources = resources.ByType "image" }}
     {{ end }}
 {{ end }}
 
