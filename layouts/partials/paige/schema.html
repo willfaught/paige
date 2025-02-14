@@ -16,7 +16,7 @@
     {{ $audio := $page.Params.audio | default slice }}
     {{ $authors := partial "paige/func-authors.html" $page }}
     {{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
-    {{ $created := cond (and (not $page.Date.IsZero) (ne $page.Date $page.PublishDate)) $page.Date false }}
+    {{ $created := $page.Date }}
     {{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
     {{ $expires := cond (not $page.ExpiryDate.IsZero) $page.ExpiryDate false }}
     {{ $images := $page.Params.images | default slice }}
