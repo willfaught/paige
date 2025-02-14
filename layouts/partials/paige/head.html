@@ -3,7 +3,9 @@
 {{ $titles := slice }}
 
 {{ if $page.IsHome }}
-    {{ if and $page.Title site.Title (eq $page.Title site.Title) }}
+    {{ $same := and $page.Title site.Title (eq $page.Title site.Title) }}
+
+    {{ if $same }}
         {{ $titles = slice (site.Title | markdownify | plainify | htmlUnescape) }}
     {{ else }}
         {{ if $page.Title }}
