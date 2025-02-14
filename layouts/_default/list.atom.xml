@@ -2,6 +2,7 @@
 
 {{ $authors := $page.Param "paige.feeds.atom.authors" }}
 {{ $date := "2006-01-02T15:04:05Z07:00" }}
+{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
 {{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
@@ -9,7 +10,6 @@
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $subpages := $page.RegularPagesRecursive.ByPublishDate }}
-{{ $subtitle := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
 
 {{ $lastmod := site.Lastmod.Format $date }}
 
@@ -92,7 +92,7 @@
         <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
     {{ end }}
 
-    {{ with $subtitle }}
+    {{ with $description }}
         <subtitle type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</subtitle>
     {{ end }}
 
