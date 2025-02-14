@@ -3,7 +3,9 @@
 {{ $color := $params.color }}
 {{ $colorscheme := $params.color_scheme }}
 
-{{ if and (not (eq $colorscheme "dark")) (not (eq $colorscheme "light")) }}
+{{ $auto := and (not (eq $colorscheme "dark")) (not (eq $colorscheme "light")) }}
+
+{{ if $auto }}
     $color-mode-type: media-query;
 {{ end }}
 
