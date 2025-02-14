@@ -26,7 +26,7 @@
     {{ $modified := cond (not $page.Lastmod.IsZero) $page.Lastmod false }}
     {{ $published := cond (and (not $page.PublishDate.IsZero) (ne $page.Date $page.PublishDate)) $page.PublishDate false }}
     {{ $schema := newScratch }}
-    {{ $section := $page.CurrentSection.Title }}
+    {{ $section := $page.CurrentSection.Title | markdownify | plainify | htmlUnescape }}
     {{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | chomp }}
     {{ $time := printf "PT%dM" $page.ReadingTime }}
     {{ $title := $page.Title | markdownify | plainify | htmlUnescape }}
