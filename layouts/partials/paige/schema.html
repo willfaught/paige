@@ -15,25 +15,37 @@
 {{ if $auto }}
     {{ $audio := $page.Params.audio | default slice }}
     {{ $authors := partial "paige/func-authors.html" $page }}
+    {{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
+    {{ $created := cond (and (not $page.Date.IsZero) (ne $page.Date $page.PublishDate)) $page.Date false }}
+    {{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
+    {{ $expires := cond (not $page.ExpiryDate.IsZero) $page.ExpiryDate false }}
     {{ $images := $page.Params.images | default slice }}
     {{ $keywords := sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories) }}
+    {{ $language := site.Language.LanguageCode }}
     {{ $license := $page.Param "paige.site.license" | markdownify | plainify | htmlUnescape }}
+    {{ $modified := cond (not $page.Lastmod.IsZero) $page.Lastmod false }}
+    {{ $published := cond (and (not $page.PublishDate.IsZero) (ne $page.Date $page.PublishDate)) $page.PublishDate false }}
     {{ $schema := newScratch }}
+    {{ $section := $page.CurrentSection.Title }}
+    {{ $summary := $page.Summary | markdownify | plainify | htmlUnescape | chomp }}
+    {{ $time := printf "PT%dM" $page.ReadingTime }}
+    {{ $title := $page.Title | markdownify | plainify | htmlUnescape }}
     {{ $videos := $page.Params.videos | default slice }}
+    {{ $words := $page.WordCount }}
 
     {{ $schema.Set "@context" "https://schema.org" }}
     {{ $schema.Set "@type" "Article" }}
     {{ $schema.Set "url" $page.Permalink }}
 
-    {{ with $page.Summary }}
-        {{ $schema.Set "abstract" (. | markdownify | plainify | htmlUnescape | chomp) }}
+    {{ with $summary }}
+        {{ $schema.Set "abstract" . }}
     {{ end }}
 
-    {{ with $page.Description }}
-        {{ $schema.Set "alternativeHeadline" (. | markdownify | plainify | htmlUnescape) }}
+    {{ with $description }}
+        {{ $schema.Set "alternativeHeadline" . }}
     {{ end }}
 
-    {{ with $page.CurrentSection.Title }}
+    {{ with $section }}
         {{ $schema.Set "articleSection" . }}
     {{ end }}
 
@@ -78,32 +90,32 @@
         {{ $schema.Set "author" $objects }}
     {{ end }}
 
-    {{ with site.Copyright }}
-        {{ $schema.Set "copyrightNotice" (. | markdownify | plainify | htmlUnescape) }}
+    {{ with $copyright }}
+        {{ $schema.Set "copyrightNotice" . }}
     {{ end }}
 
-    {{ if and (not $page.Date.IsZero) (ne $page.Date $page.PublishDate) }}
-        {{ $schema.Set "dateCreated" $page.Date }}
+    {{ with $created }}
+        {{ $schema.Set "dateCreated" . }}
     {{ end }}
 
-    {{ if not $page.Lastmod.IsZero }}
-        {{ $schema.Set "dateModified" $page.Lastmod }}
+    {{ with $modified }}
+        {{ $schema.Set "dateModified" . }}
     {{ end }}
 
-    {{ with and (not $page.PublishDate.IsZero) (ne $page.Date $page.PublishDate) }}
-        {{ $schema.Set "datePublished" $page.PublishDate }}
+    {{ with $published }}
+        {{ $schema.Set "datePublished" . }}
     {{ end }}
 
-    {{ with $page.Description }}
-        {{ $schema.Set "description" (. | markdownify | plainify | htmlUnescape) }}
+    {{ with $description }}
+        {{ $schema.Set "description" . }}
     {{ end }}
 
-    {{ if not $page.ExpiryDate.IsZero }}
-        {{ $schema.Set "expiresAt" $page.ExpiryDate }}
+    {{ with $expires }}
+        {{ $schema.Set "expiresAt" . }}
     {{ end }}
 
-    {{ with $page.Title }}
-        {{ $schema.Set "headline" (. | markdownify | plainify | htmlUnescape) }}
+    {{ with $title }}
+        {{ $schema.Set "headline" . }}
     {{ end }}
 
     {{ with $images }}
@@ -189,8 +201,8 @@
         {{ $schema.Set "image" $objects }}
     {{ end }}
 
-    {{ with site.Language }}
-        {{ $schema.Set "inLanguage" .Lang }}
+    {{ with $language }}
+        {{ $schema.Set "inLanguage" . }}
     {{ end }}
 
     {{ with $keywords }}
@@ -201,12 +213,12 @@
         {{ $schema.Set "license" . }}
     {{ end }}
 
-    {{ with $page.Title }}
-        {{ $schema.Set "name" (. | markdownify | plainify | htmlUnescape) }}
+    {{ with $title }}
+        {{ $schema.Set "name" . }}
     {{ end }}
 
-    {{ with $page.ReadingTime }}
-        {{ $schema.Set "timeRequired" (printf "PT%dM" .) }}
+    {{ with $time }}
+        {{ $schema.Set "timeRequired" . }}
     {{ end }}
 
     {{ with $videos }}
@@ -219,7 +231,7 @@
         {{ $schema.Set "video" $objects }}
     {{ end }}
 
-    {{ with $page.WordCount }}
+    {{ with $words }}
         {{ $schema.Set "wordCount" . }}
     {{ end }}
 
