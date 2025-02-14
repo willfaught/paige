@@ -1,18 +1,20 @@
 {{ $page := . }}
 
+{{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
+
 <meta charset="utf-8">
 
 {{ with partial "paige/func-authors.html" $page }}
     {{ $authors := slice }}
 
     {{ range . }}
-        {{ $authors = $authors | append .Title }}
+        {{ $authors = $authors | append (.Title | markdownify | plainify | htmlUnescape) }}
     {{ end }}
 
     <meta content="{{ delimit $authors `, ` }}" name="author">
 {{ end }}
 
-{{ with $page.Description }}
+{{ with $description }}
     <meta content="{{ . }}" name="description">
 {{ end }}
 
