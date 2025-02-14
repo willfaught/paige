@@ -17,17 +17,25 @@
     {{ $subpages = first $limit $subpages }}
 {{ end }}
 
-{{ $titles := slice (markdownify $page.Title) }}
+{{ $titles := slice }}
 
-{{ range .Ancestors }}
-    {{ $titles = $titles | append (markdownify .Title) }}
+{{ if $page.IsHome }}
+    {{ $titles = slice (site.Title | default $page.Title | markdownify | plainify | htmlUnescape) }}
+{{ else }}
+    {{ with $page.Title }}
+        {{ $titles = slice (. | markdownify | plainify | htmlUnescape) }}
+    {{ end }}
+
+    {{ range .Ancestors }}
+        {{ $title := cond .IsHome (site.Title | default .Title) .Title }}
+
+        {{ with $title }}
+            {{ $titles = $titles | append (. | markdownify | plainify | htmlUnescape) }}
+        {{ end }}
+    {{ end }}
 {{ end }}
 
 {{ $title := delimit $titles " · " }}
-
-{{ if not $title }}
-    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title. The atom output requires a title. Either set the page's title parameter, or disable the atom output." $page.RelPermalink }}
-{{ end }}
 
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 
