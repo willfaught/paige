@@ -9,7 +9,7 @@
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := site.Copyright | markdownify }}
 {{ $subpages := $page.RegularPagesRecursive.ByPublishDate }}
-{{ $subtitle := $page.Description | markdownify }}
+{{ $subtitle := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
 
 {{ $lastmod := site.Lastmod.Format $date }}
 
