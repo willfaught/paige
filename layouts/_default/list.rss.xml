@@ -41,13 +41,7 @@
 <rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         {{ range $page.OutputFormats }}
-            {{ $rel := .Rel }}
-
-            {{ if eq .Permalink $page.Permalink }}
-                {{ $rel = "self" }}
-            {{ else if eq $rel "canonical" }}
-                {{ $rel = "alternate" }}
-            {{ end }}
+            {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
 
             {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
         {{ end }}

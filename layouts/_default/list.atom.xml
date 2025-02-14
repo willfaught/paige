@@ -63,13 +63,7 @@
     <id>{{ $id }}</id>
 
     {{ range $page.OutputFormats }}
-        {{ $rel := .Rel }}
-
-        {{ if eq .Permalink $page.Permalink }}
-            {{ $rel = "self" }}
-        {{ else if eq $rel "canonical" }}
-            {{ $rel = "alternate" }}
-        {{ end }}
+        {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
 
         {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
     {{ end }}
@@ -146,7 +140,7 @@
                 <id>{{ $id }}</id>
 
                 {{ range .OutputFormats }}
-                    {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
+                    {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
 
                     {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
 
