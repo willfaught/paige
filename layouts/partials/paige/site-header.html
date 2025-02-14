@@ -115,7 +115,7 @@
                         {{ $active := eq $page.Section "" }}
 
                         <li class="nav-item">
-                            <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="/">{{ i18n "paige_home" }}</a>
+                            <a {{ if $active }} aria-current="page" {{ end }} class="{{ if $active }} active {{ if $links }} fw-bold text-body {{ end }} {{ end }} nav-link {{ if $links }} text-decoration-underline {{ end }}" href="{{ relLangURL `` }}">{{ i18n "paige_home" }}</a>
                         </li>
 
                         {{ range $pages }}
