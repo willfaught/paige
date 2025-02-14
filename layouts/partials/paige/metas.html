@@ -1,6 +1,29 @@
 {{ $page := . }}
 
 {{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
+{{ $keywords := slice }}
+
+{{ with $page.Keywords }}
+    {{ $keywords = . }}
+{{ end }}
+
+{{ with $page.GetTerms "categories" }}
+    {{ range . }}
+        {{ $keywords = $keywords | append (.Title | markdownify | plainify | htmlUnescape) }}
+    {{ end }}
+{{ else }}
+    {{ $keywords = $keywords | append $page.Params.categories }}
+{{ end }}
+
+{{ with $page.GetTerms "tags" }}
+    {{ range . }}
+        {{ $keywords = $keywords | append (.Title | markdownify | plainify | htmlUnescape) }}
+    {{ end }}
+{{ else }}
+    {{ $keywords = $keywords | append $page.Params.tags }}
+{{ end }}
+
+{{ $keywords = delimit ($keywords | uniq | sort) ", " }}
 
 <meta charset="utf-8">
 
@@ -18,8 +41,8 @@
     <meta content="{{ . }}" name="description">
 {{ end }}
 
-{{ if or $page.Keywords $page.Params.tags $page.Params.categories }}
-    <meta content="{{ delimit (sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories)) `, ` }}" name="keywords">
+{{ with $keywords }}
+    <meta content="{{ . }}" name="keywords">
 {{ end }}
 
 <meta content="{{ $page.Param `paige.site.color` | default `#0d6efd` }}" name="msapplication-TileColor">
