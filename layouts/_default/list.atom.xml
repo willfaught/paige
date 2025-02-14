@@ -140,7 +140,7 @@
                                 <email>{{ . }}</email>
                             {{ end }}
 
-                            {{ with .Params.paige.author.name }}
+                            {{ with .Params.paige.author.name | default .Title }}
                                 <name>{{ . }}</name>
                             {{ end }}
 
