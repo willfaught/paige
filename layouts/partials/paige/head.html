@@ -22,7 +22,9 @@
     {{ range .Ancestors }}
         {{ $title := cond .IsHome (site.Title | default .Title) .Title }}
 
-        {{ $titles = $titles | append ($title | markdownify | plainify | htmlUnescape) }}
+        {{ with $title }}
+            {{ $titles = $titles | append (. | markdownify | plainify | htmlUnescape) }}
+        {{ end }}
     {{ end }}
 {{ end }}
 
