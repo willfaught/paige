@@ -64,7 +64,7 @@
 
         {{ range $authors }}
             {{ $email := .Params.paige.author.email }}
-            {{ $name := .Params.paige.author.name }}
+            {{ $name := .Params.paige.author.name | default (.Title | markdownify | plainify | htmlUnescape) }}
             {{ $url := .Params.paige.author.url }}
 
             {{ if or $email $name $url }}
