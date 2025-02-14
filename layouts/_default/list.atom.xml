@@ -70,7 +70,7 @@
 
     {{ range $t := $page.Translations }}
         {{ range .OutputFormats }}
-            {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
+            <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
         {{ end }}
     {{ end }}
 

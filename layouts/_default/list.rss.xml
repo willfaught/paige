@@ -43,12 +43,12 @@
         {{ range $page.OutputFormats }}
             {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
 
-            {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink .Language.LanguageCode $rel .MediaType | safeHTML }}
+            <link href="{{ .Permalink }}" hreflang="{{ .Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
         {{ end }}
 
         {{ range $t := $page.Translations }}
             {{ range .OutputFormats }}
-                {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
+                <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
             {{ end }}
         {{ end }}
 
