@@ -63,9 +63,9 @@
         {{ $objects := slice }}
 
         {{ range $authors }}
-            {{ $email := cond (. | not | not) .Params.paige.author.email "" }}
-            {{ $name := cond (. | not | not) .Params.paige.author.name "" }}
-            {{ $url := cond (. | not | not) .Params.paige.author.url "" }}
+            {{ $email := .Params.paige.author.email }}
+            {{ $name := .Params.paige.author.name }}
+            {{ $url := .Params.paige.author.url }}
 
             {{ if or $email $name $url }}
                 {{ $object := newScratch }}
