@@ -30,7 +30,9 @@
 <meta content="{{ $color }}" name="msapplication-TileColor">
 
 {{ if $exists }}
-    <meta content="{{ (resources.Get `browserconfig.xml` | resources.ExecuteAsTemplate `browserconfig.xml` .).RelPermalink }}" name="msapplication-config">
+    {{ $content := (resources.Get `browserconfig.xml` | resources.ExecuteAsTemplate `browserconfig.xml` $page).RelPermalink }}
+
+    <meta content="{{ $content }}" name="msapplication-config">
 {{ end }}
 
 <meta content="https://github.com/willfaught/paige" name="theme">
