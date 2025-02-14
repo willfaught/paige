@@ -5,7 +5,7 @@
 {{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify | plainify | htmlUnescape }}
 {{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
-{{ $language := site.LanguageCode | default site.Language.Lang }}
+{{ $language := site.LanguageCode }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := site.Copyright | markdownify }}

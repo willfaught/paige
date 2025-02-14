@@ -28,7 +28,7 @@
     {{ $path = printf "embed/%v" $video }}
 {{ end }}
 
-{{ $params := slice (print "hl=" (site.LanguageCode | default site.Language.Lang)) "modestbranding=1" }}
+{{ $params := slice (print "hl=" site.LanguageCode) "modestbranding=1" }}
 
 {{ if $autoPlay }}
     {{ $params = $params | append "autoplay=1" | append "mute=1" }}

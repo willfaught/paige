@@ -21,7 +21,7 @@
     {{ $expires := cond (not $page.ExpiryDate.IsZero) $page.ExpiryDate false }}
     {{ $images := $page.Params.images | default slice }}
     {{ $keywords := partial "paige/func-keywords.html" $page }}
-    {{ $language := site.Language.LanguageCode }}
+    {{ $language := site.LanguageCode }}
     {{ $license := $page.Param "paige.site.license" | markdownify | plainify | htmlUnescape }}
     {{ $modified := cond (not $page.Lastmod.IsZero) $page.Lastmod false }}
     {{ $published := cond (and (not $page.PublishDate.IsZero) (ne $page.Date $page.PublishDate)) $page.PublishDate false }}
