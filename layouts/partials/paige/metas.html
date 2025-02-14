@@ -6,7 +6,7 @@
 {{ $keywords := slice }}
 
 {{ range $authors }}
-    {{ $author = $author | append (.Title | markdownify | plainify | htmlUnescape) }}
+    {{ $author = $author | append (.Params.name | default .Title | markdownify | plainify | htmlUnescape) }}
 {{ end }}
 
 {{ $author = delimit $author ", " }}
