@@ -105,7 +105,7 @@
                         {{ $primary := index . 0 }}
 
                         {{ if and $primary.Params.paige.author.email $primary.Params.paige.author.name }}
-                            {{ $author = printf "%s (%s)" $primary.Params.paige.author.email ($primary.Params.paige.author.name | default $primary.Title) }}
+                            {{ $author = printf "%s (%s)" $primary.Params.paige.author.email ($primary.Params.paige.author.name | default ($primary.Title | markdownify | plainify | htmlUnescape)) }}
                         {{ else if $primary.Params.email }}
                             {{ $author = $primary.Params.email }}
                         {{ end }}

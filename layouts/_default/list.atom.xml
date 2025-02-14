@@ -140,7 +140,7 @@
                                 <email>{{ . }}</email>
                             {{ end }}
 
-                            {{ with .Params.paige.author.name | default .Title }}
+                            {{ with .Params.paige.author.name | default (.Title | markdownify | plainify | htmlUnescape) }}
                                 <name>{{ . }}</name>
                             {{ end }}
 
