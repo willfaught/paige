@@ -20,7 +20,7 @@
     {{ end }}
 
     {{ range .Ancestors }}
-        {{ $title := cond (and .IsHome (not .Title)) site.Title .Title }}
+        {{ $title := cond .IsHome (site.Title | default .Title) .Title }}
 
         {{ $titles = $titles | append ($title | markdownify | plainify | htmlUnescape) }}
     {{ end }}
