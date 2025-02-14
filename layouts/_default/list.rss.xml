@@ -49,16 +49,12 @@
                 {{ $rel = "alternate" }}
             {{ end }}
 
-            {{ if or (eq $rel "alternate") (eq $rel "enclosure") (eq $rel "related") (eq $rel "self") (eq $rel "via") }}
-                {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
-            {{ end }}
+            {{ printf `<link href="%s" rel="%s" type="%s"/>` .Permalink $rel .MediaType | safeHTML }}
         {{ end }}
 
         {{ range $t := $page.Translations }}
             {{ range .OutputFormats }}
-                {{ if or (eq .Rel "alternate") (eq .Rel "enclosure") (eq .Rel "related") (eq .Rel "via") }}
-                    {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
-                {{ end }}
+                {{ printf `<link href="%s" hreflang="%s" rel="%s" type="%s"/>` .Permalink $t.Lang .Rel .MediaType | safeHTML }}
             {{ end }}
         {{ end }}
 
