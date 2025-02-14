@@ -8,7 +8,7 @@
 {{ $keywords := partial "paige/func-keywords.html" $page }}
 
 {{ range $authors }}
-    {{ $author = $author | append (.Params.name | default .Title | markdownify | plainify | htmlUnescape) }}
+    {{ $author = $author | append (.Params.name | default (.Title | markdownify | plainify | htmlUnescape)) }}
 {{ end }}
 
 {{ $author = delimit $author ", " }}
