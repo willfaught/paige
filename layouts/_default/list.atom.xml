@@ -125,14 +125,6 @@
                     {{ $content = markdownify .Description }}
                 {{ end }}
 
-                {{ if not $title }}
-                    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a title. The atom output requires a title. Either set the page's title parameter, or disable the atom output." .RelPermalink }}
-                {{ end }}
-
-                {{ if .Lastmod.IsZero }}
-                    {{ warnf "layouts/_default/list.atom.xml: Page %s does not have a modified date. The atom output requires a modified date. Either set the page's date parameter, or set the page's paige.feeds.exclude parameter to true, or disable the atom output." .RelPermalink }}
-                {{ end }}
-
                 {{ with partial "paige/func-authors.html" . }}
                     {{ range . }}
                         <author>

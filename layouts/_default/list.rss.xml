@@ -126,10 +126,6 @@
                     {{ $description = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` .Permalink) $description }}
                     {{ $description = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) $description }}
 
-                    {{ if and (not $description) (not $title) }}
-                        {{ warnf "layouts/_default/rss.xml: Page %s does not have a title or description. The rss output requires a title or description. Either set the page's title or description parameters, or disable the rss output." .RelPermalink }}
-                    {{ end }}
-
                     {{ with $author }}
                         <author>{{ . }}</author>
                     {{ end }}
