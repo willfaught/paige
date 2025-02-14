@@ -2,7 +2,7 @@
 
 {{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
 {{ $date := "Mon, 02 Jan 2006 15:04:05 MST" }}
-{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
+{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify | plainify | htmlUnescape }}
 {{ $editor := $page.Param "paige.feeds.rss.managing_editor" }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
 {{ $limit := site.Config.Services.RSS.Limit }}

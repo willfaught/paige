@@ -2,7 +2,7 @@
 
 {{ $authors := $page.Param "paige.feeds.atom.authors" }}
 {{ $date := "2006-01-02T15:04:05Z07:00" }}
-{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
+{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify | plainify | htmlUnescape }}
 {{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode | default site.Language.Lang }}
