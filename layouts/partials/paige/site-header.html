@@ -8,9 +8,12 @@
 {{ $links := false }}
 {{ $menu := $page.Param "paige.site.disable_menu" | not }}
 {{ $pills := false }}
+{{ $style := $page.Param "paige.site.menu_style" }}
 {{ $tabs := false }}
 {{ $title := site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
 {{ $underline := false }}
+
+{{ $header := or $breadcrumbs $description $first $last $menu $title }}
 
 {{ if eq $basePath "/" }}
     {{ $basePath = "" }}
@@ -18,7 +21,7 @@
 
 {{ $pagePath := strings.TrimPrefix $basePath $page.RelPermalink }}
 
-{{ with $page.Param "paige.site.menu_style" }}
+{{ with $style }}
     {{ if eq . "pills" }}
         {{ $pills = true }}
     {{ else if eq . "tabs" }}
@@ -32,7 +35,7 @@
     {{ $links = true }}
 {{ end }}
 
-{{ if or $breadcrumbs $description $first $last $menu $title }}
+{{ if $header }}
     <header id="paige-site-header">
         {{ partial "paige/func-include.html" (dict "name" "site-header-first%s.html" "page" $page) }}
 
