@@ -20,7 +20,7 @@
     {{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
     {{ $expires := cond (not $page.ExpiryDate.IsZero) $page.ExpiryDate false }}
     {{ $images := $page.Params.images | default slice }}
-    {{ $keywords := sort (union (union $page.Keywords $page.Params.tags) $page.Params.categories) }}
+    {{ $keywords := partial "paige/func-keywords.html" $page }}
     {{ $language := site.Language.LanguageCode }}
     {{ $license := $page.Param "paige.site.license" | markdownify | plainify | htmlUnescape }}
     {{ $modified := cond (not $page.Lastmod.IsZero) $page.Lastmod false }}

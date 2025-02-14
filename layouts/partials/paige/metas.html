@@ -4,35 +4,13 @@
 {{ $authors := partial "paige/func-authors.html" $page }}
 {{ $color := $page.Param `paige.site.color` | default `#0d6efd` }}
 {{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
-{{ $keywords := slice }}
+{{ $keywords := partial "paige/func-keywords.html" $page }}
 
 {{ range $authors }}
     {{ $author = $author | append (.Params.name | default .Title | markdownify | plainify | htmlUnescape) }}
 {{ end }}
 
 {{ $author = delimit $author ", " }}
-
-{{ with $page.Keywords }}
-    {{ $keywords = . }}
-{{ end }}
-
-{{ with $page.GetTerms "categories" }}
-    {{ range . }}
-        {{ $keywords = $keywords | append (.Title | markdownify | plainify | htmlUnescape) }}
-    {{ end }}
-{{ else }}
-    {{ $keywords = $keywords | append $page.Params.categories }}
-{{ end }}
-
-{{ with $page.GetTerms "tags" }}
-    {{ range . }}
-        {{ $keywords = $keywords | append (.Title | markdownify | plainify | htmlUnescape) }}
-    {{ end }}
-{{ else }}
-    {{ $keywords = $keywords | append $page.Params.tags }}
-{{ end }}
-
-{{ $keywords = delimit ($keywords | uniq | sort) ", " }}
 
 <meta charset="utf-8">
 

@@ -1,0 +1,27 @@
+{{ $page := . }}
+
+{{ $result := slice }}
+
+{{ with $page.Keywords }}
+    {{ $result = . }}
+{{ end }}
+
+{{ with $page.GetTerms "categories" }}
+    {{ range . }}
+        {{ $result = $result | append (.Title | markdownify | plainify | htmlUnescape) }}
+    {{ end }}
+{{ else }}
+    {{ $result = $result | append $page.Params.categories }}
+{{ end }}
+
+{{ with $page.GetTerms "tags" }}
+    {{ range . }}
+        {{ $result = $result | append (.Title | markdownify | plainify | htmlUnescape) }}
+    {{ end }}
+{{ else }}
+    {{ $result = $result | append $page.Params.tags }}
+{{ end }}
+
+{{ $result = delimit ($result | uniq | sort) ", " }}
+
+{{ return $result }}
