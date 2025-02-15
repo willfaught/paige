@@ -106,7 +106,7 @@
         <updated>{{ . }}</updated>
     {{ end }}
 
-    {{ range $subpages }}
+    {{ range $subpage := $subpages }}
         {{ if not (.Param "paige.exclude_feeds") }}
             <entry>
                 {{ $content := .Content }}
@@ -165,7 +165,7 @@
                     {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
                     {{ if and $kind $valid }}
-                        <link href="{{ $href }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                        <link href="{{ $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                     {{ end }}
                 {{ end }}
 
