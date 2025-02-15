@@ -56,7 +56,9 @@
             <copyright>{{ . }}</copyright>
         {{ end }}
 
-        <description>{{ $description }}</description>
+        {{ with $description }}
+            <description>{{ . }}</description>
+        {{ end }}
 
         {{ with $language }}
             <language>{{ . }}</language>
@@ -66,13 +68,17 @@
             <lastBuildDate>{{ . }}</lastBuildDate>
         {{ end }}
 
-        <link>{{ $link }}</link>
+        {{ with $link }}
+            <link>{{ . }}</link>
+        {{ end }}
 
         {{ with $editor }}
             <managingEditor>{{ . }}</managingEditor>
         {{ end }}
 
-        <title>{{ $title }}</title>
+        {{ with $title }}
+            <title>{{ . }}</title>
+        {{ end }}
 
         {{ with $master }}
             <webMaster>{{ . }}</webMaster>
@@ -126,7 +132,9 @@
                         <description><![CDATA[{{ . }}]]></description>
                     {{ end }}
 
-                    <guid isPermaLink="false">{{ $guid }}</guid>
+                    {{ with $guid }}
+                        <guid isPermaLink="false">{{ . }}</guid>
+                    {{ end }}
 
                     {{ with $link }}
                         <link>{{ . }}</link>
