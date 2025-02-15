@@ -29,10 +29,10 @@ startlevel = 2
 path = "github.com/willfaught/paige"
 
 [outputs]
-home = ["html", "paige-search"]
-section = ["html"]
-taxonomy = ["html"]
-term = ["html"]
+home = ["atom", "html", "paige-search", "rss"]
+section = ["atom", "html", "rss"]
+taxonomy = ["atom", "html", "rss"]
+term = ["atom", "html", "rss"]
 
 [pagination]
 pagersize = 50
