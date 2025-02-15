@@ -122,7 +122,7 @@
                 {{ if and $content $external }}
                     {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
-                    {{ $footer := printf `<p><a href="%s" title="%s">%s</a></p>` .Permalink (htmlEscape .Title) $text | safeHTML }}
+                    {{ $footer := printf `<p><a href="%s">%s</a></p>` .Permalink $text | safeHTML }}
 
                     {{ $content = print $content $footer }}
                 {{ end }}
