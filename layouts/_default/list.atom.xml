@@ -66,13 +66,20 @@
 
     {{ range $page.OutputFormats }}
         {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
+        {{ $suffix := hasSuffix .Permalink "/paige-search.json" }}
 
-        <link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+        {{ if not $suffix }}
+            <link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+        {{ end }}
     {{ end }}
 
     {{ range $t := $page.Translations }}
         {{ range .OutputFormats }}
-            <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+            {{ $suffix := hasSuffix .Permalink "/paige-search.json" }}
+
+            {{ if not $suffix }}
+                <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+            {{ end }}
         {{ end }}
     {{ end }}
 
