@@ -94,7 +94,7 @@
             <webMaster>{{ . }}</webMaster>
         {{ end }}
 
-        {{ range $subpages }}
+        {{ range $subpage := $subpages }}
             {{ if not (.Param "paige.exclude_feeds") }}
                 <item>
                     {{ $author := "" }}
@@ -146,6 +146,29 @@
 
                     {{ with $link }}
                         <link>{{ . }}</link>
+                    {{ end }}
+
+                    {{ range .OutputFormats }}
+                        {{ $kind := not (hasSuffix .Permalink "/paige-search.json") }}
+                        {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
+
+                        {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
+                        {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
+
+                        {{ if and $kind $valid }}
+                            <atom:link href="{{ $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                        {{ end }}
+                    {{ end }}
+
+                    {{ range $t := .Translations }}
+                        {{ range .OutputFormats }}
+                            {{ $kind := not (hasSuffix .Permalink "/paige-search.json") }}
+                            {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
+
+                            {{ if and $kind $valid }}
+                                <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+                            {{ end }}
+                        {{ end }}
                     {{ end }}
 
                     {{ with $published }}
