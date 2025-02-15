@@ -175,7 +175,7 @@
                         {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
 
                         {{ if and $kind $valid }}
-                            <link href="{{ .Permalink }}" hreflang="{{ $t.Lang }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+                            <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
                         {{ end }}
                     {{ end }}
                 {{ end }}
