@@ -842,39 +842,12 @@ then in that, change the page title.
 
 To change the favicon, override these files:
 
-- `static/android-chrome-192x192.png`
-- `static/android-chrome-512x512.png`
-- `static/apple-touch-icon-114x114-precomposed.png`
-- `static/apple-touch-icon-114x114.png`
-- `static/apple-touch-icon-120x120-precomposed.png`
-- `static/apple-touch-icon-120x120.png`
-- `static/apple-touch-icon-144x144-precomposed.png`
-- `static/apple-touch-icon-144x144.png`
-- `static/apple-touch-icon-152x152-precomposed.png`
-- `static/apple-touch-icon-152x152.png`
-- `static/apple-touch-icon-180x180-precomposed.png`
-- `static/apple-touch-icon-180x180.png`
-- `static/apple-touch-icon-57x57-precomposed.png`
-- `static/apple-touch-icon-57x57.png`
-- `static/apple-touch-icon-60x60-precomposed.png`
-- `static/apple-touch-icon-60x60.png`
-- `static/apple-touch-icon-72x72-precomposed.png`
-- `static/apple-touch-icon-72x72.png`
-- `static/apple-touch-icon-76x76-precomposed.png`
-- `static/apple-touch-icon-76x76.png`
-- `static/apple-touch-icon-precomposed.png`
 - `static/apple-touch-icon.png`
-- `static/favicon-16x16.png`
-- `static/favicon-32x32.png`
+- `static/favicon-96x96.png`
 - `static/favicon.ico`
-- `static/favicon.png`
 - `static/favicon.svg`
-- `static/mstile-144x144.png`
-- `static/mstile-150x150.png`
-- `static/mstile-310x150.png`
-- `static/mstile-310x310.png`
-- `static/mstile-70x70.png`
-- `static/safari-pinned-tab.svg`
+- `static/web-app-manifest-192x192.png`
+- `static/web-app-manifest-512x512.png`
 
 You can generate these favicon files [here](https://realfavicongenerator.net).
 
