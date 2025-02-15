@@ -79,7 +79,9 @@
         {{ end }}
 
         {{ range $subpages }}
-            {{ if not (.Param "paige.exclude_feeds") }}
+            {{ $include := not (.Param "paige.exclude_feeds") }}
+
+            {{ if $include }}
                 <item>
                     {{ $author := "" }}
                     {{ $authors := partial "paige/func-authors.html" . }}

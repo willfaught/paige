@@ -91,7 +91,9 @@
     <updated>{{ $lastmod }}</updated>
 
     {{ range $subpages }}
-        {{ if not (.Param "paige.exclude_feeds") }}
+        {{ $include := not (.Param "paige.exclude_feeds") }}
+
+        {{ if $include }}
             <entry>
                 {{ $content := .Content }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
