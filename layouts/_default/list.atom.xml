@@ -79,14 +79,14 @@
     {{ end }}
 
     {{ with $rights }}
-        <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
+        <rights type="html"><![CDATA[{{ . }}]]></rights>
     {{ end }}
 
     {{ with $description }}
-        <subtitle type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</subtitle>
+        <subtitle type="html"><![CDATA[{{ . }}]]></subtitle>
     {{ end }}
 
-    {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+    <title type="html"><![CDATA[{{ $title }}]]></title>
 
     <updated>{{ $lastmod }}</updated>
 
@@ -134,7 +134,7 @@
                 {{ end }}
 
                 {{ with $content }}
-                    <content type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</content>
+                    <content type="html"><![CDATA[{{ . }}]]></content>
                 {{ end }}
 
                 <id>{{ $id }}</id>
@@ -158,14 +158,16 @@
                 {{ end }}
 
                 {{ with $rights }}
-                    <rights type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</rights>
+                    <rights type="html"><![CDATA[{{ . }}]]></rights>
                 {{ end }}
 
                 {{ with $summary }}
-                    <summary type="html">{{ printf "<![CDATA[%s]]>" . | safeHTML }}</summary>
+                    <summary type="html"><![CDATA[{{ . }}]]></summary>
                 {{ end }}
 
-                {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+                {{ with $title }}
+                    <title type="html"><![CDATA[{{ . }}]]></title>
+                {{ end }}
 
                 <updated>{{ $lastmod }}</updated>
             </entry>

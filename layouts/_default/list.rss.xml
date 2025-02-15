@@ -121,7 +121,7 @@
                     {{ end }}
 
                     {{ with $description }}
-                        <description>{{ printf "<![CDATA[%s]]>" . | safeHTML }}</description>
+                        <description><![CDATA[{{ . }}]]></description>
                     {{ end }}
 
                     <guid isPermaLink="false">{{ $guid }}</guid>
