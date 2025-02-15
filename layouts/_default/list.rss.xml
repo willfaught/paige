@@ -47,7 +47,7 @@
             {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
             {{ if and $kind $valid }}
-                <atom:link href="{{ .Permalink }}" hreflang="{{ .Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
             {{ end }}
         {{ end }}
 
