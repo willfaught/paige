@@ -13,8 +13,6 @@
 {{ $title := site.Title | markdownify | and ($page.Param "paige.site.disable_title" | not) }}
 {{ $underline := false }}
 
-{{ $header := or $breadcrumbs $description $first $last $menu $title }}
-
 {{ if eq $basePath "/" }}
     {{ $basePath = "" }}
 {{ end }}
@@ -35,7 +33,7 @@
     {{ $links = true }}
 {{ end }}
 
-{{ if $header }}
+{{ if or $breadcrumbs $description $first $last $menu $title }}
     <header id="paige-site-header">
         {{ partial "paige/func-include.html" (dict "name" "site-header-first%s.html" "page" $page) }}
 
