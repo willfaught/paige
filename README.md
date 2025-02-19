@@ -168,13 +168,13 @@ See Hugo's [installation](https://gohugo.io/installation/), [getting started](ht
 By default, everything is enabled, which is likely not what you want.
 See the [minimal look](#minimal-look) section for ideas of what to disable.
 
-By default, page body spans its entire container, which spans most of the window.
+By default, the page body spans its entire container, which spans most of the window.
 See the [narrow look](#narrow-look) and [narrow-and-wide look](#narrow-and-wide-look) sections
 for ideas of how to customize the presentation.
 
 The breadcrumb, collection, and section links are sufficient to browse any site,
 so you can safely disable the menu.
-However, in sites with only a handful of sections and no nested sections,
+However, for sites with only a handful of pages at the root level,
 the menu alone can be sufficient for all navigation.
 See the [menu navigation only](#menu-navigation-only) section for how to do that.
 
