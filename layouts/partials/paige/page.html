@@ -6,6 +6,7 @@
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
 {{ $microdata := $page.Params.paige.pages.microdata }}
+{{ $min := $page.Param `paige.pages.max_width` | not }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
 
 {{ if $draft }}
@@ -44,7 +45,7 @@
 
 {{ $class = delimit ($class | uniq | sort) " " }}
 
-<article class="align-items-center d-flex flex-column {{ $class }}" id="paige-page">
+<article class="{{ if $min }} align-items-center d-flex flex-column {{ end }} {{ $class }}" id="paige-page">
     {{ partial "paige/func-include.html" (dict "name" "page-first%s.html" "page" $page) }}
     {{ partial "paige/page-header.html" $page }}
 
