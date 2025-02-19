@@ -322,7 +322,7 @@ schemas = [] # JSON-LD schemas
 
 # Values
 credit = '<a class="link-secondary text-decoration-none" href="https://github.com/willfaught/paige">Paige Theme</a>'
-description = "" # Site description. Appears above the menu and below the site title if set.
+description = "" # Site description. Appears above the menu and below the site title. Used in feeds.
 license = "" # Example: "CC BY 4.0 License"
 
 [paige.subpages]
