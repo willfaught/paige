@@ -50,7 +50,7 @@ edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/
 external_link_new_tab = true
 history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 keyword_style = "pills"
-license = "MIT License"
+license = "EUPL License"
 menu_style = "tabs"
 [paige.site.base_schema]
 isAccessibleForFree = true
@@ -130,7 +130,7 @@ edit_url = "https://github.com/willfaught/paige/edit/master/exampleSite/content/
 external_link_new_tab = true
 history_url = "https://github.com/willfaught/paige/commits/master/exampleSite/content/%s"
 keyword_style = "pills"
-license = "MIT License"
+license = "EUPL License"
 menu_style = "tabs"
 
 [paige.site.base_schema]
