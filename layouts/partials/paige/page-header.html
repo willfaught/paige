@@ -49,11 +49,19 @@
                                 {{- if $normal -}}
                                     {{- if gt $i 0 }} · {{ end -}}
 
-                                    <a class="link-secondary paige-page-keyword-{{ $kind }}" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
+                                    {{- if .RelPermalink -}}
+                                        <a class="link-secondary paige-page-keyword-{{ $kind }}" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
+                                    {{- else -}}
+                                        <span class="text-secondary paige-page-keyword-{{ $kind }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</span>
+                                    {{- end -}}
                                 {{- else -}}
                                     {{- if gt $i 0 }} {{ end -}}
 
-                                    <a class="badge paige-page-keyword-{{ $kind }} text-bg-secondary text-decoration-none" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
+                                    {{- if .RelPermalink -}}
+                                        <a class="badge paige-page-keyword-{{ $kind }} text-bg-secondary text-decoration-none" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
+                                    {{- else -}}
+                                        <span class="badge paige-page-keyword-{{ $kind }} text-bg-secondary" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</span>
+                                    {{- end -}}
                                 {{- end -}}
                             {{- end }}
                         </p>
@@ -64,7 +72,11 @@
                             {{ range $i, $series := . -}}
                                 {{- if gt $i 0 }} · {{ end -}}
 
-                                <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</a>
+                                {{ if .RelPermalink }}
+                                    <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</a>
+                                {{ else }}
+                                    <span class="text-secondary" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</span>
+                                {{ end }}
                             {{- end }}
                         </p>
                     {{ end }}
@@ -74,7 +86,11 @@
                             {{ range $i, $author := . -}}
                                 {{- if gt $i 0 }} · {{ end -}}
 
-                                <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</a>
+                                {{ if .RelPermalink }}
+                                    <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</a>
+                                {{ else }}
+                                    <span class="text-secondary" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</span>
+                                {{ end }}
                             {{- end }}
                         </p>
                     {{ end }}
