@@ -5,7 +5,7 @@ description = "A brief guide to setup KaTeX."
 tags = ["katex", "math", "typesetting"]
 title = "Math Typesetting"
 [paige]
-math = true
+enable_math = true
 +++
 
 <!--
