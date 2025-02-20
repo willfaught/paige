@@ -1,3 +1,10 @@
+# Setup:
+# python3 -m venv ./venv
+# bash
+# source ./venv/bin/activate
+# pip3 install pyyaml
+# python3 translate.py
+
 import os
 import yaml
 
