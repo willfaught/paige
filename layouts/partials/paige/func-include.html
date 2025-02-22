@@ -7,7 +7,9 @@
 
 {{ $file := print "partials/" $partial }}
 
-{{ if templates.Exists $file }}
+{{ $exists := templates.Exists $file }}
+
+{{ if $exists }}
     {{ partial $partial $page }}
 {{ end }}
 
