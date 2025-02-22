@@ -14,12 +14,12 @@
 {{ end }}
 
 {{ range slice "home" "page" "section" "taxonomy" "term" }}
+    {{ $matches := eq $page.Kind . }}
     {{ $partial := print "paige/" (printf $name (print "-" .)) }}
 
     {{ $file := print "partials/" $partial }}
 
     {{ $exists := templates.Exists $file }}
-    {{ $matches := eq $page.Kind . }}
 
     {{ if and $exists $matches }}
         {{ partial $partial $page }}
