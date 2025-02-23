@@ -243,7 +243,7 @@
 ) }}
 
 {{ if $linked }}
-    {{ if ne $linked "unprocessed" }}
+    {{ if ne $linked true }}
         {{ $method := "" }}
         {{ $options := slice }}
         {{ $size := "" }}
