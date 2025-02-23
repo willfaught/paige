@@ -71,7 +71,9 @@
     {{ $resource = partial "paige/func-resource.html" (dict "page" $page "url" $src) }}
 {{ end }}
 
-{{ if $resource }}
+{{ $raster := ne $resource.MediaType.SubType "svg" }}
+
+{{ if and $resource $raster }}
     {{ $method := "" }}
     {{ $options := slice }}
     {{ $quality := "" }}
@@ -220,6 +222,8 @@
             {{ end }}
         {{ end }}
     {{ end }}
+{{ else if $resource }}
+    {{ $src = $resource.Permalink }}
 {{ else }}
     {{ $src = absLangURL $src }}
 {{ end }}
