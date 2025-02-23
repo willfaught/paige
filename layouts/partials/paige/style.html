@@ -1,7 +1,7 @@
 {{ $page := . }}
 
 <style>
-{{ partial "paige/func-include.html" (dict "name" "style-first%s.css" "page" $page) }}
+{{ partial "paige/func-include.html" (dict "name" "style-first%s.css" "page" $page) | safeCSS }}
 
 .paige-shortcode-figure-numbered {
     counter-increment: paige-shortcode-figure-numbered;
@@ -111,5 +111,5 @@ table {
     {{ . | safeCSS }}
 {{ end }}
 
-{{ partial "paige/func-include.html" (dict "name" "style-last%s.css" "page" $page) }}
+{{ partial "paige/func-include.html" (dict "name" "style-last%s.css" "page" $page) | safeCSS }}
 </style>

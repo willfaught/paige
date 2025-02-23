@@ -19,7 +19,7 @@
 
 {{ if or $edit $history $first $last $next $prev }}
     <footer class="mw-100" id="paige-page-footer">
-        {{ partial "paige/func-include.html" (dict "name" "page-footer-first%s.html" "page" $page) }}
+        {{ partial "paige/func-include.html" (dict "name" "page-footer-first%s.html" "page" $page) | safeHTML }}
 
         {{ if or $edit $history }}
             <div id="paige-page-file">
@@ -49,6 +49,6 @@
             </div>
         {{ end }}
 
-        {{ partial "paige/func-include.html" (dict "name" "page-footer-last%s.html" "page" $page) }}
+        {{ partial "paige/func-include.html" (dict "name" "page-footer-last%s.html" "page" $page) | safeHTML }}
     </footer>
 {{ end }}

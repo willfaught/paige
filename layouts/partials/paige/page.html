@@ -46,17 +46,17 @@
 {{ $class = delimit ($class | uniq | sort) " " }}
 
 <article class="{{ if $min }} align-items-center d-flex flex-column {{ end }} {{ $class }}" id="paige-page">
-    {{ partial "paige/func-include.html" (dict "name" "page-first%s.html" "page" $page) }}
+    {{ partial "paige/func-include.html" (dict "name" "page-first%s.html" "page" $page) | safeHTML }}
     {{ partial "paige/page-header.html" $page }}
 
     {{ with $content }}
         <main class="mw-100" id="paige-page-content" {{ if $microdata }} itemprop="articleBody" {{ end }}>
-            {{ partial "paige/func-include.html" (dict "name" "page-body-first%s.html" "page" $page) }}
+            {{ partial "paige/func-include.html" (dict "name" "page-body-first%s.html" "page" $page) | safeHTML }}
             {{ . | safeHTML }}
-            {{ partial "paige/func-include.html" (dict "name" "page-body-last%s.html" "page" $page) }}
+            {{ partial "paige/func-include.html" (dict "name" "page-body-last%s.html" "page" $page) | safeHTML }}
         </main>
     {{ end }}
 
     {{ partial "paige/page-footer.html" $page }}
-    {{ partial "paige/func-include.html" (dict "name" "page-last%s.html" "page" $page) }}
+    {{ partial "paige/func-include.html" (dict "name" "page-last%s.html" "page" $page) | safeHTML }}
 </article>

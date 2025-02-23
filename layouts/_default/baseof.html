@@ -14,21 +14,21 @@
     {{ partial "paige/head.html" $page }}
     {{ partial "paige/body.html" $page }}
 
-        {{ partial "paige/func-include.html" (dict "name" "body-first%s.html" "page" $page) }}
+        {{ partial "paige/func-include.html" (dict "name" "body-first%s.html" "page" $page) | safeHTML }}
 
         <div class="container">
             <div class="row">
                 <div class="col mt-3" id="paige-site" {{ with $attrs }} {{ $attrs | safeHTMLAttr }} {{ end }}>
-                    {{ partial "paige/func-include.html" (dict "name" "site-first%s.html" "page" $page) }}
+                    {{ partial "paige/func-include.html" (dict "name" "site-first%s.html" "page" $page) | safeHTML }}
                     {{ partial "paige/site-header.html" $page }}
                     {{ block "main" $page }}{{ end }}
                     {{ partial "paige/site-footer.html" $page }}
-                    {{ partial "paige/func-include.html" (dict "name" "site-last%s.html" "page" $page) }}
+                    {{ partial "paige/func-include.html" (dict "name" "site-last%s.html" "page" $page) | safeHTML }}
                 </div>
             </div>
         </div>
 
         {{ partial "paige/scripts.html" $page }}
-        {{ partial "paige/func-include.html" (dict "name" "body-last%s.html" "page" $page) }}
+        {{ partial "paige/func-include.html" (dict "name" "body-last%s.html" "page" $page) | safeHTML }}
     </body>
 </html>
