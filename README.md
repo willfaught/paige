@@ -457,7 +457,7 @@ Parameters:
 
 <dl>
     <dt><code>lang</code></dt>
-    <dd>Optional. Position 0. String. Chroma <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">language code</a>. Default is <code>plaintext</code>.</dd>
+    <dd>Optional. Position 0. String. Chroma <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">language code</a>. Default is <code>"plaintext"</code>.</dd>
     <dt><code>options</code></dt>
     <dd>Optional. String. Hugo <a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">highlight options</a>.</dd>
     <dt><code>unescape</code></dt>
@@ -489,11 +489,11 @@ Parameters:
     <dt><code>caption</code></dt>
     <dd>Optional. Position 0. String. Markdown. Descriptive text below the content.</dd>
     <dt><code>float</code></dt>
-    <dd>Optional. String. Float to one side of its container. Must be <code>start</code> or <code>end</code>.</dd>
+    <dd>Optional. String. Float to one side of its container. Must be <code>"start"</code> or <code>"end"</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Total height.</dd>
     <dt><code>horizontal</code></dt>
-    <dd>Optional. String. Horizontal alignment. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Horizontal alignment. Must be <code>"start"</code>, <code>"center"</code>, or <code>"end"</code>. Default is <code>"center"</code>.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum total width.</dd>
     <dt><code>number</code></dt>
@@ -501,7 +501,7 @@ Parameters:
     <dt><code>numbered</code></dt>
     <dd>Optional. Boolean. Number the figure automatically. Displayed with the caption.</dd>
     <dt><code>vertical</code></dt>
-    <dd>Optional. String. Vertical alignment. Must be <code>start</code>, <code>center</code>, or <code>end</code>. Default is <code>center</code>.</dd>
+    <dd>Optional. String. Vertical alignment. Must be <code>"start"</code>, <code>"center"</code>, or <code>"end"</code>. Default is <code>"center"</code>.</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Total width.</dd>
 </dl>
@@ -516,35 +516,35 @@ Parameters:
 
 <dl>
     <dt><code>align</code></dt>
-    <dd>Optional. String. Cross axis alignment. Must be <code>baseline</code>, <code>center</code>, <code>end</code>, <code>start</code>, or <code>stretch</code>.</dd>
+    <dd>Optional. String. Cross axis alignment. Must be <code>"baseline"</code>, <code>"center"</code>, <code>"end"</code>, <code>"start"</code>, or <code>"stretch"</code>.</dd>
     <dt><code>breakpoints</code></dt>
     <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not use with <code>densities</code>. Only applies to raster images.</dd>
     <dt><code>class</code></dt>
     <dd>Optional. String. Image class. Merged with implementation.</dd>
     <dt><code>densities</code></dt>
-    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not use with <code>breakpoints</code>. Only applies to raster images.</dd>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>"1x 2x"</code>, <code>"1x 1.5x 2x 2.5x 3x"</code>, and <code>"0.5x 1.33x 6x 10x"</code>. Must not use with <code>breakpoints</code>. Only applies to raster images.</dd>
     <dt><code>fetchpriority</code></dt>
-    <dd>Optional. String. Must be <code>high</code> or <code>low</code>.</dd>
+    <dd>Optional. String. Must be <code>"high"</code> or <code>"low"</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>images</code></dt>
     <dd>Optional. Position 0. String. Page, site, or remote images glob. Default is all image page resources.</dd>
     <dt><code>justify</code></dt>
-    <dd>Optional. String. Main axis space distribution. Must be <code>around</code>, <code>between</code>, <code>center</code>, <code>end</code>, <code>evenly</code>, or <code>start</code>.</dd>
+    <dd>Optional. String. Main axis space distribution. Must be <code>"around"</code>, <code>"between"</code>, <code>"center"</code>, <code>"end"</code>, <code>"evenly"</code>, or <code>"start"</code>.</dd>
     <dt><code>linked</code></dt>
     <dd>Optional. Boolean or string. Wraps the image in an anchor. If it is a string, it is Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. If it is a Boolean, it is unprocessed. Must be a Boolean for raster images.</dd>
     <dt><code>loading</code></dt>
-    <dd>Optional. String. Must be <code>eager</code> (default) or <code>lazy</code>.</dd>
+    <dd>Optional. String. Must be <code>"eager"</code> (default) or <code>"lazy"</code>.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Maximum image height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Maximum image width.</dd>
     <dt><code>process</code></dt>
-    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. Only applies to raster images.</dd>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>"default"</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. Only applies to raster images.</dd>
     <dt><code>style</code></dt>
     <dd>Optional. String. CSS. Image style. Merged with implementation.</dd>
     <dt><code>type</code></dt>
-    <dd>Optional. String. Type of layout. Must be <code>grid</code> or <code>rows</code> (default).</dd>
+    <dd>Optional. String. Type of layout. Must be <code>"grid"</code> or <code>"rows"</code> (default).</dd>
     <dt><code>width</code></dt>
     <dd>Optional. String. CSS value. Image width.</dd>
 </dl>
@@ -559,11 +559,11 @@ Parameters:
 
 <dl>
     <dt><code>class</code></dt>
-    <dd>Required. Position 0. String. <code>&lt;i&gt;</code> class. Example: <code>bi bi-github</code>.</dd>
+    <dd>Required. Position 0. String. Container class. Example: <code>"bi bi-github"</code>.</dd>
     <dt><code>title</code></dt>
-    <dd>Optional. String. The screen reader description and anchor title. Example: <code>GitHub</code>.</dd>
+    <dd>Optional. String. The screen reader description and anchor title. Example: <code>"GitHub"</code>.</dd>
     <dt><code>url</code></dt>
-    <dd>Optional. String. URL. Example: <code>https://github.com/account/project</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
+    <dd>Optional. String. URL. Example: <code>"https://github.com/account/project"</code>. E-mails in URLs with a <code>mailto:</code> scheme are protected from web crawlers.</dd>
 </dl>
 
 Body: None.
@@ -582,23 +582,23 @@ Parameters:
     <dt><code>class</code></dt>
     <dd>Optional. String. Class attribute value.</dd>
     <dt><code>densities</code></dt>
-    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>1x 2x</code>, <code>1x 1.5x 2x 2.5x 3x</code>, and <code>0.5x 1.33x 6x 10x</code>. Must not use with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>"1x 2x"</code>, <code>"1x 1.5x 2x 2.5x 3x"</code>, and <code>"0.5x 1.33x 6x 10x"</code>. Must not use with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
     <dt><code>fetchpriority</code></dt>
-    <dd>Optional. String. Must be <code>high</code> or <code>low</code>.</dd>
+    <dd>Optional. String. Must be <code>"high"</code> or <code>"low"</code>.</dd>
     <dt><code>height</code></dt>
     <dd>Optional. String. CSS value. Image height.</dd>
     <dt><code>link</code></dt>
     <dd>Optional. String. URL. Image link. Must not use with <code>linked</code>.</dd>
     <dt><code>linked</code></dt>
-    <dd>Optional. Boolean or string. Wraps the image in an anchor. If it is a string, it is Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. If it is a Boolean, it is unprocessed. Must be a Boolean for raster images. Must not use with <code>link</code>.</dd>
+    <dd>Optional. Boolean or string. Wraps the image in an anchor. If it is a string, it is Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the linked image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>"default"</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. If it is a Boolean, it is unprocessed. Must be a Boolean for raster images. Must not use with <code>link</code>.</dd>
     <dt><code>loading</code></dt>
-    <dd>Optional. String. Must be <code>eager</code> (default) or <code>lazy</code>.</dd>
+    <dd>Optional. String. Must be <code>"eager"</code> (default) or <code>"lazy"</code>.</dd>
     <dt><code>maxheight</code></dt>
     <dd>Optional. String. CSS value. Image maximum height.</dd>
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Image maximum width.</dd>
     <dt><code>process</code></dt>
-    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>default</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>"default"</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
     <dt><code>sizes</code></dt>
     <dd>Optional. String. Image <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes">sizes</a>. Must not be set with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>src</code></dt>
@@ -636,7 +636,7 @@ Parameters:
 
 <dl>
     <dt><code>method</code></dt>
-    <dd>Optional. String. HTTP method. Default is <code>get</code>.</dd>
+    <dd>Optional. String. HTTP method. Default is <code>"get"</code>.</dd>
     <dt><code>url</code></dt>
     <dd>Required. String. URL.</dd>
 </dl>
@@ -696,11 +696,11 @@ Parameters:
     <dt><code>byline</code></dt>
     <dd>Optional. Boolean. Show the author. Default is configured per video.</dd>
     <dt><code>color</code></dt>
-    <dd>Optional. String. Hex code. Control color. Default is <code>00adef</code>.</dd>
+    <dd>Optional. String. Hex code. Control color. Default is <code>"00adef"</code>.</dd>
     <dt><code>controls</code></dt>
     <dd>Optional. Boolean. Show the controls. Default is <code>true</code>.</dd>
     <dt><code>description</code></dt>
-    <dd>Optional. String. Plain text. Screen reader content. Default is <code>Vimeo video</code>.</dd>
+    <dd>Optional. String. Plain text. Screen reader content. Default is <code>"Vimeo video"</code>.</dd>
     <dt><code>dnt</code></dt>
     <dd>Optional. Boolean. Do not track session data. Default is <code>false</code>.</dd>
     <dt><code>fullscreen</code></dt>
@@ -724,13 +724,13 @@ Parameters:
     <dt><code>portrait</code></dt>
     <dd>Optional. Boolean. Show the author's profile image. Default is configured per video.</dd>
     <dt><code>quality</code></dt>
-    <dd>Optional. String. The resolution. Must be <code>auto</code>, <code>240p</code>, <code>360p</code>, <code>540p</code>, <code>720p</code>, <code>1080p</code>, <code>2k</code>, or <code>4k</code>. Default is <code>auto</code>.</dd>
+    <dd>Optional. String. The resolution. Must be <code>"auto"</code>, <code>"240p"</code>, <code>"360p"</code>, <code>"540p"</code>, <code>"720p"</code>, <code>"1080p"</code>, <code>"2k"</code>, or <code>"4k"</code>. Default is <code>"auto"</code>.</dd>
     <dt><code>speed</code></dt>
     <dd>Optional. Boolean. Show the speed controls. Default is <code>false</code>.</dd>
     <dt><code>texttrack</code></dt>
-    <dd>Optional. String. Language code and optionally a locale code (e.g. <code>en</code>, <code>en-US</code>). Use the corresponding subtitles. Default is <code>false</code>.</dd>
+    <dd>Optional. String. Language code and optionally a locale code (e.g. <code>"en"</code>, <code>"en-US"</code>). Use the corresponding subtitles. Default is <code>false</code>.</dd>
     <dt><code>time</code></dt>
-    <dd>Optional. String. Duration (e.g. <code>0m</code>, <code>1m2s</code>). Start time. Default is <code>0m</code>.</dd>
+    <dd>Optional. String. Duration (e.g. <code>"0m"</code>, <code>"1m2s"</code>). Start time. Default is <code>"0m"</code>.</dd>
     <dt><code>title</code></dt>
     <dd>Optional. Boolean. Show the title. Default is configured per video.</dd>
     <dt><code>transparent</code></dt>
@@ -757,7 +757,7 @@ Parameters:
     <dt><code>controls</code></dt>
     <dd>Optional. Boolean. Show video controls. Default is <code>true</code>.</dd>
     <dt><code>description</code></dt>
-    <dd>Optional. String. Plain text. Screen reader content. Default is <code>YouTube video</code>.</dd>
+    <dd>Optional. String. Plain text. Screen reader content. Default is <code>"YouTube video"</code>.</dd>
     <dt><code>end</code></dt>
     <dd>Optional. Integer. Elapsed seconds. Stop the video here.</dd>
     <dt><code>fullscreen</code></dt>
@@ -1017,23 +1017,23 @@ Shortcode classes:
 
 <dl>
     <dt><code>.paige-shortcode-code</code></dt>
-    <dd>The container of <code>paige/code</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/code"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-email</code></dt>
-    <dd>The container of <code>paige/email</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/email"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-figure</code></dt>
-    <dd>The container of <code>paige/figure</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/figure"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-gallery</code></dt>
-    <dd>The container of <code>paige/gallery</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/gallery"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-icon</code></dt>
-    <dd>The container of <code>paige/icon</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/icon"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-image</code></dt>
-    <dd>The container of <code>paige/image</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/image"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-quote</code></dt>
-    <dd>The container of <code>paige/quote</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/quote"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-vimeo</code></dt>
-    <dd>The container of <code>paige/vimeo</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/vimeo"</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-youtube</code></dt>
-    <dd>The container of <code>paige/youtube</code> shortcodes.</dd>
+    <dd>The container of <code>"paige/youtube"</code> shortcodes.</dd>
 </dl>
 
 ### Minimal look
