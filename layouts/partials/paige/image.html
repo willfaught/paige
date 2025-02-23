@@ -6,6 +6,8 @@
 {{ $densities := $params.densities }}
 {{ $fetchPriority := $params.fetchpriority }}
 {{ $height := $params.height }}
+{{ $intrinsicHeight := "" }}
+{{ $intrinsicWidth := "" }}
 {{ $link := $params.link }}
 {{ $linked := $params.linked }}
 {{ $loading := $params.loading }}
@@ -20,9 +22,6 @@
 {{ $style := $params.style }}
 {{ $title := $params.title }}
 {{ $width := $params.width }}
-
-{{ $intrinsicHeight := "" }}
-{{ $intrinsicWidth := "" }}
 
 {{ if and (or $height $maxHeight) (not (or $maxWidth $width)) }}
     {{ $width = "auto" }}
