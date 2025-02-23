@@ -623,7 +623,7 @@ Parameters:
 
 <dl>
     <dt><code>cite</code></dt>
-    <dd>Optional. String. Plain text. Citation.</dd>
+    <dd>Optional. String. Markdown. Citation.</dd>
 </dl>
 
 Body: Required. String. Markdown. The quotation.

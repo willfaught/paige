@@ -1,4 +1,4 @@
-{{ $cite := .Get 0 | default (.Get "cite") }}
+{{ $cite := .Get 0 | default (.Get "cite") | markdownify }}
 {{ $content := trim .InnerDeindent "\f\n\r\v" | markdownify }}
 
 {{ if not $content }}
