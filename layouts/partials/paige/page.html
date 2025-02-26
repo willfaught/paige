@@ -6,7 +6,7 @@
 {{ $expired := and $page.ExpiryDate (lt $page.ExpiryDate now) }}
 {{ $future := and $page.PublishDate (gt $page.PublishDate now) }}
 {{ $microdata := $page.Params.paige.pages.microdata }}
-{{ $min := $page.Param `paige.pages.max_width` | not }}
+{{ $min := $page.Param `paige.pages.full_width` | not }}
 {{ $modified := and $page.PublishDate $page.Lastmod (lt $page.PublishDate $page.Lastmod) }}
 
 {{ if $draft }}

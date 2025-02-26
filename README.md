@@ -247,7 +247,7 @@ disable_toc = false
 disable_word_count = false
 
 # Presentation
-max_width = false # Whether the page body has the maximum width
+full_width = false # Whether the page body fills the page width
 
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override
