@@ -21,21 +21,21 @@
 {{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Param "paige.pages.disable_keywords" | not) }}
 
 {{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc $words }}
-    <header class="align-items-center d-flex flex-column mw-100" id="paige-page-header">
+    <header class="mw-100 text-center" id="paige-page-header">
         {{ partial "paige/func-include.html" (dict "name" "page-header-first%s.html" "page" $page) | safeHTML }}
 
         {{ with $title }}
-            <h1 class="fw-bold text-center" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
+            <h1 class="fw-bold" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
         {{ end }}
 
         {{ with $description }}
-            <p class="lead paige-row-tall text-center" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
+            <p class="lead paige-row-tall" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
         {{ end }}
 
         {{ if or $authors $date $keywords $time $series }}
             <div>
                 {{ with $keywords }}
-                    <p class="{{ if $normal }} paige-row-short {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-page-keywords">
+                    <p class="{{ if $normal }} paige-row-short {{ end }} {{ if $normal }} text-secondary {{ end }}" id="paige-page-keywords">
                         {{ range $i, $term := . }}
                             {{ $kind := false }}
 
@@ -67,7 +67,7 @@
                 {{ end }}
 
                 {{ with $series }}
-                    <p class="paige-row-short text-center text-secondary" id="paige-page-series">
+                    <p class="paige-row-short text-secondary" id="paige-page-series">
                         {{ range $i, $series := . }}
                             {{ if gt $i 0 }} · {{ end }}
 
@@ -81,7 +81,7 @@
                 {{ end }}
 
                 {{ with $authors }}
-                    <p class="paige-row-short text-center text-secondary" id="paige-page-authors">
+                    <p class="paige-row-short text-secondary" id="paige-page-authors">
                         {{ range $i, $author := . }}
                             {{ if gt $i 0 }} · {{ end }}
 
@@ -95,17 +95,17 @@
                 {{ end }}
 
                 {{ with $date }}
-                    <p class="paige-row-short text-center text-secondary" id="paige-page-date">
+                    <p class="paige-row-short text-secondary" id="paige-page-date">
                         <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $format . }}</time>
                     </p>
                 {{ end }}
 
                 {{ with $words }}
-                    <p class="paige-row-short text-center text-secondary" id="paige-page-word-count" {{ if $microdata }} itemprop="wordCount" {{ end }}>{{ . }} {{ i18n "paige_words" . }}</p>
+                    <p class="paige-row-short text-secondary" id="paige-page-word-count" {{ if $microdata }} itemprop="wordCount" {{ end }}>{{ . }} {{ i18n "paige_words" . }}</p>
                 {{ end }}
 
                 {{ with $time }}
-                    <p class="paige-row-short text-center text-secondary" id="paige-page-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
+                    <p class="paige-row-short text-secondary" id="paige-page-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
                 {{ end }}
             </div>
         {{ end }}
@@ -115,7 +115,7 @@
         {{ end }}
 
         {{ if $toc }}
-            <div class="paige-row-tall" id="paige-page-toc">
+            <div class="align-items-center d-flex flex-column paige-row-tall text-start" id="paige-page-toc">
                 <div class="border pe-3 ps-3 pt-3 rounded">
                     {{ $page.TableOfContents }}
                 </div>
