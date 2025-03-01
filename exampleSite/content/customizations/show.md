@@ -21,6 +21,7 @@ disable_series = false
 disable_title = false
 disable_toc = false
 disable_word_count = false
+full_width = true
 [paige.pages.base_schema]
 isAccessibleForFree = true
 isFamilyFriendly = true
@@ -91,6 +92,7 @@ disable_series = false
 disable_title = false
 disable_toc = false
 disable_word_count = false
+full_width = true
 
 [paige.pages.base_schema]
 
