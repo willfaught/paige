@@ -21,109 +21,107 @@
 {{ $keywords := sort (append $categories $tags) "LinkTitle" | and ($page.Param "paige.pages.disable_keywords" | not) }}
 
 {{ if or $alert $authors $date $description $first $keywords $last $time $series $title $toc $words }}
-    <header class="mw-100" id="paige-page-header">
-        <div class="align-items-center d-flex flex-column">
-            {{ partial "paige/func-include.html" (dict "name" "page-header-first%s.html" "page" $page) | safeHTML }}
+    <header class="align-items-center d-flex flex-column mw-100" id="paige-page-header">
+        {{ partial "paige/func-include.html" (dict "name" "page-header-first%s.html" "page" $page) | safeHTML }}
 
-            {{ with $title }}
-                <h1 class="fw-bold text-center" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
-            {{ end }}
+        {{ with $title }}
+            <h1 class="fw-bold text-center" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
+        {{ end }}
 
-            {{ with $description }}
-                <p class="lead paige-row-tall text-center" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
-            {{ end }}
+        {{ with $description }}
+            <p class="lead paige-row-tall text-center" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
+        {{ end }}
 
-            {{ if or $authors $date $keywords $time $series }}
-                <div id="paige-page-metadata">
-                    {{ with $keywords }}
-                        <p class="{{ if $normal }} paige-row-short {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-page-keywords">
-                            {{ range $i, $term := . }}
-                                {{ $kind := false }}
+        {{ if or $authors $date $keywords $time $series }}
+            <div id="paige-page-metadata">
+                {{ with $keywords }}
+                    <p class="{{ if $normal }} paige-row-short {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-page-keywords">
+                        {{ range $i, $term := . }}
+                            {{ $kind := false }}
 
-                                {{ if in $categories $term }}
-                                    {{ $kind = "category" }}
-                                {{ else }}
-                                    {{ $kind = "tag" }}
-                                {{ end }}
-
-                                {{ if $normal }}
-                                    {{ if gt $i 0 }} · {{ end }}
-
-                                    {{ if .RelPermalink }}
-                                        <a class="link-secondary paige-page-keyword-{{ $kind }}" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
-                                    {{ else }}
-                                        <span class="text-secondary paige-page-keyword-{{ $kind }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</span>
-                                    {{ end }}
-                                {{ else }}
-                                    {{ if gt $i 0 }} {{ end }}
-
-                                    {{ if .RelPermalink }}
-                                        <a class="badge paige-page-keyword-{{ $kind }} text-bg-secondary text-decoration-none" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
-                                    {{ else }}
-                                        <span class="badge paige-page-keyword-{{ $kind }} text-bg-secondary" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</span>
-                                    {{ end }}
-                                {{ end }}
+                            {{ if in $categories $term }}
+                                {{ $kind = "category" }}
+                            {{ else }}
+                                {{ $kind = "tag" }}
                             {{ end }}
-                        </p>
-                    {{ end }}
 
-                    {{ with $series }}
-                        <p class="paige-row-short text-center text-secondary" id="paige-page-series">
-                            {{ range $i, $series := . }}
+                            {{ if $normal }}
                                 {{ if gt $i 0 }} · {{ end }}
 
                                 {{ if .RelPermalink }}
-                                    <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</a>
+                                    <a class="link-secondary paige-page-keyword-{{ $kind }}" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
                                 {{ else }}
-                                    <span class="text-secondary" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</span>
+                                    <span class="text-secondary paige-page-keyword-{{ $kind }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</span>
                                 {{ end }}
-                            {{ end }}
-                        </p>
-                    {{ end }}
-
-                    {{ with $authors }}
-                        <p class="paige-row-short text-center text-secondary" id="paige-page-authors">
-                            {{ range $i, $author := . }}
-                                {{ if gt $i 0 }} · {{ end }}
+                            {{ else }}
+                                {{ if gt $i 0 }} {{ end }}
 
                                 {{ if .RelPermalink }}
-                                    <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</a>
+                                    <a class="badge paige-page-keyword-{{ $kind }} text-bg-secondary text-decoration-none" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</a>
                                 {{ else }}
-                                    <span class="text-secondary" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</span>
+                                    <span class="badge paige-page-keyword-{{ $kind }} text-bg-secondary" {{ if $microdata }} itemprop="keywords" {{ end }}>{{ .LinkTitle }}</span>
                                 {{ end }}
                             {{ end }}
-                        </p>
-                    {{ end }}
+                        {{ end }}
+                    </p>
+                {{ end }}
 
-                    {{ with $date }}
-                        <p class="paige-row-short text-center text-secondary" id="paige-page-date">
-                            <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $format . }}</time>
-                        </p>
-                    {{ end }}
+                {{ with $series }}
+                    <p class="paige-row-short text-center text-secondary" id="paige-page-series">
+                        {{ range $i, $series := . }}
+                            {{ if gt $i 0 }} · {{ end }}
 
-                    {{ with $words }}
-                        <p class="paige-row-short text-center text-secondary" id="paige-page-word-count" {{ if $microdata }} itemprop="wordCount" {{ end }}>{{ . }} {{ i18n "paige_words" . }}</p>
-                    {{ end }}
+                            {{ if .RelPermalink }}
+                                <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</a>
+                            {{ else }}
+                                <span class="text-secondary" {{ if $microdata }} itemprop="isPartOf" {{ end }}>{{ .LinkTitle }}</span>
+                            {{ end }}
+                        {{ end }}
+                    </p>
+                {{ end }}
 
-                    {{ with $time }}
-                        <p class="paige-row-short text-center text-secondary" id="paige-page-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
-                    {{ end }}
+                {{ with $authors }}
+                    <p class="paige-row-short text-center text-secondary" id="paige-page-authors">
+                        {{ range $i, $author := . }}
+                            {{ if gt $i 0 }} · {{ end }}
+
+                            {{ if .RelPermalink }}
+                                <a class="link-secondary" href="{{ .RelPermalink }}" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</a>
+                            {{ else }}
+                                <span class="text-secondary" {{ if $microdata }} itemprop="author" {{ end }}>{{ .LinkTitle }}</span>
+                            {{ end }}
+                        {{ end }}
+                    </p>
+                {{ end }}
+
+                {{ with $date }}
+                    <p class="paige-row-short text-center text-secondary" id="paige-page-date">
+                        <time datetime="{{ .Format `2006-01-02` }}" {{ if $microdata }} itemprop="datePublished" {{ end }}>{{ time.Format $format . }}</time>
+                    </p>
+                {{ end }}
+
+                {{ with $words }}
+                    <p class="paige-row-short text-center text-secondary" id="paige-page-word-count" {{ if $microdata }} itemprop="wordCount" {{ end }}>{{ . }} {{ i18n "paige_words" . }}</p>
+                {{ end }}
+
+                {{ with $time }}
+                    <p class="paige-row-short text-center text-secondary" id="paige-page-reading-time" {{ if $microdata }} itemprop="timeRequired" {{ end }}>{{ . }} {{ i18n "paige_minutes" . }}</p>
+                {{ end }}
+            </div>
+        {{ end }}
+
+        {{ with $alert }}
+            <div class="alert alert-{{ .type }} paige-row-tall" id="paige-page-alert" role="alert">{{ .message | markdownify }}</div>
+        {{ end }}
+
+        {{ if $toc }}
+            <div class="paige-row-tall" id="paige-page-toc">
+                <div class="border pe-3 ps-3 pt-3 rounded">
+                    {{ $page.TableOfContents }}
                 </div>
-            {{ end }}
+            </div>
+        {{ end }}
 
-            {{ with $alert }}
-                <div class="alert alert-{{ .type }} paige-row-tall" id="paige-page-alert" role="alert">{{ .message | markdownify }}</div>
-            {{ end }}
-
-            {{ if $toc }}
-                <div class="paige-row-tall" id="paige-page-toc">
-                    <div class="border pe-3 ps-3 pt-3 rounded">
-                        {{ $page.TableOfContents }}
-                    </div>
-                </div>
-            {{ end }}
-
-            {{ partial "paige/func-include.html" (dict "name" "page-header-last%s.html" "page" $page) | safeHTML }}
-        </div>
+        {{ partial "paige/func-include.html" (dict "name" "page-header-last%s.html" "page" $page) | safeHTML }}
     </header>
 {{ end }}
