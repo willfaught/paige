@@ -33,7 +33,7 @@
         {{ end }}
 
         {{ if or $authors $date $keywords $time $series }}
-            <div id="paige-page-metadata">
+            <div>
                 {{ with $keywords }}
                     <p class="{{ if $normal }} paige-row-short {{ end }} text-center {{ if $normal }} text-secondary {{ end }}" id="paige-page-keywords">
                         {{ range $i, $term := . }}

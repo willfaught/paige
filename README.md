@@ -892,8 +892,6 @@ Page identifiers:
     <dd>The page history link.</dd>
     <dt><code>#paige-page-keywords</code></dt>
     <dd>The page keywords.</dd>
-    <dt><code>#paige-page-metadata</code></dt>
-    <dd>The page metadata.</dd>
     <dt><code>#paige-page-next</code></dt>
     <dd>The page next link.</dd>
     <dt><code>#paige-page-pages</code></dt>
