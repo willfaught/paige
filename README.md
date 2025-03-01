@@ -967,8 +967,6 @@ Subpage classes:
     <dd>The page date.</dd>
     <dt><code>.paige-page-description</code></dt>
     <dd>The page description.</dd>
-    <dt><code>.paige-page-metadata</code></dt>
-    <dd>The page metadata.</dd>
     <dt><code>.paige-page-reading-time</code></dt>
     <dd>The page reading time.</dd>
     <dt><code>.paige-page-series</code></dt>
