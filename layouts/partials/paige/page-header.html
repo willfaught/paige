@@ -26,11 +26,11 @@
             {{ partial "paige/func-include.html" (dict "name" "page-header-first%s.html" "page" $page) | safeHTML }}
 
             {{ with $title }}
-                <h1 class="fw-bold" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
+                <h1 class="fw-bold text-center" id="paige-page-title" {{ if $microdata }} itemprop="headline name" {{ end }}>{{ if $link }}<a href="{{ $link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}</h1>
             {{ end }}
 
             {{ with $description }}
-                <p class="lead paige-row-tall" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
+                <p class="lead paige-row-tall text-center" id="paige-page-description" {{ if $microdata }} itemprop="alternativeHeadline description" {{ end }}>{{ . }}</p>
             {{ end }}
 
             {{ if or $authors $date $keywords $time $series }}
