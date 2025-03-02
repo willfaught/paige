@@ -56,9 +56,9 @@
 {{ if in (slice "taxonomy" "term") $page.Kind }}
     {{ range $page.Pages }}
         {{ if .IsSection }}
-            {{ $pages = $pages | append . }}
-        {{ else }}
             {{ $sections = $sections | append . }}
+        {{ else }}
+            {{ $pages = $pages | append . }}
         {{ end }}
     {{ end }}
 
