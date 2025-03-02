@@ -35,7 +35,7 @@ target = "layouts"
 source = "static"
 target = "static"
 
-# Bootstrap
+# Bootstrap mounts
 
 [[module.mounts]]
 source = "paige/node_modules/bootstrap/dist/css"
@@ -55,7 +55,7 @@ target = "assets/js/paige/bootstrap"
 source = "paige/node_modules/bootstrap/scss"
 target = "assets/css/paige/bootstrap"
 
-# Bootstrap Icons
+# Bootstrap Icons mounts
 
 [[module.mounts]]
 source = "paige/node_modules/bootstrap-icons/font/fonts"
@@ -66,14 +66,14 @@ source = "paige/node_modules/bootstrap-icons/font"
 target = "assets/css/paige/bootstrap-icons"
 includefiles = ["bootstrap-icons.css"]
 
-# FlexSearch
+# FlexSearch mounts
 
 [[module.mounts]]
 source = "paige/node_modules/flexsearch/dist"
 target = "assets/js/paige/flexsearch"
 includefiles = ["flexsearch.bundle.min.js"]
 
-# Katex
+# Katex mounts
 
 [[module.mounts]]
 source = "paige/node_modules/katex/dist/contrib"
