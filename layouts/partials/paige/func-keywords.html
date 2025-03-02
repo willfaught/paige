@@ -10,16 +10,16 @@
     {{ range . }}
         {{ $result = $result | append (.Title | markdownify | plainify | htmlUnescape) }}
     {{ end }}
-{{ else }}
-    {{ $result = $result | append $page.Params.categories }}
+{{ else with $page.Params.categories}}
+    {{ $result = $result | append . }}
 {{ end }}
 
 {{ with $page.GetTerms "tags" }}
     {{ range . }}
         {{ $result = $result | append (.Title | markdownify | plainify | htmlUnescape) }}
     {{ end }}
-{{ else }}
-    {{ $result = $result | append $page.Params.tags }}
+{{ else with $page.Params.tags }}
+    {{ $result = $result | append . }}
 {{ end }}
 
 {{ $result = delimit ($result | uniq | sort) ", " }}
