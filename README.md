@@ -368,8 +368,8 @@ Parameters specific to menus:
 disabled = false
 divider_above = false
 divider_below = false
-header_above = ""
-header_below = ""
+header_above = "" # Example: "My Header"
+header_below = "" # Example: "My Other Header"
 ```
 
 The assigned values shown are the default values.
