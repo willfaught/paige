@@ -1,5 +1,9 @@
+# Media types
+
 [mediatypes."application/atom+xml"]
 suffixes = ["xml"]
+
+# Hugo
 
 [module.hugoversion]
 min = "0.141.0"
@@ -93,6 +97,8 @@ includefiles = ["katex.min.css"]
 source = "paige/node_modules/katex/dist"
 target = "assets/js/paige/katex"
 includefiles = ["katex.min.js"]
+
+# Output formats
 
 [outputformats.atom]
 basename = "atom"
