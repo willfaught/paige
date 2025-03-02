@@ -41,5 +41,5 @@
 {{ end }}
 
 {{ range $page.AlternativeOutputFormats }}
-    {{ printf `<link href="%s" rel="%s" type="%s">` .Permalink .Rel .MediaType | safeHTML }}
+    <link href="{{ .Permalink }}" rel="{{ .Rel }}" type="{{ .MediaType }}">
 {{ end }}
