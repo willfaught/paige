@@ -66,6 +66,13 @@ source = "paige/node_modules/bootstrap-icons/font"
 target = "assets/css/paige/bootstrap-icons"
 includeFiles = ["bootstrap-icons.css"]
 
+# FlexSearch
+
+[[module.mounts]]
+source = "paige/node_modules/flexsearch/dist"
+target = "assets/js/paige/flexsearch"
+includeFiles = ["flexsearch.bundle.min.js"]
+
 # Katex
 
 [[module.mounts]]

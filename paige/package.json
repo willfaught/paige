@@ -2,6 +2,7 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.0",
+    "flexsearch": "^0.7.43",
     "katex": "^0.16.10"
   }
 }

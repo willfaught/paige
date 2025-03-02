@@ -45,7 +45,7 @@
     </div>
 </div>
 <div id="paige-results" style="display: none"></div>
-<script crossorigin="anonymous" defer integrity="sha384-1LalyFI+BycKouEClZE5CoFnlLr+Kx8Wslc45o5NATVo+c2mEh02i8HNaaT7XOdQ" referrerpolicy="no-referrer" src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+{{ partial "paige/tag-script.html" (dict "page" $page "src" "js/paige/flexsearch/flexsearch.bundle.min.js") }}
 <script>
 var paigeErrorElement = document.getElementById("paige-error");
 var paigeNothingElement = document.getElementById("paige-nothing");
