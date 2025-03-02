@@ -65,7 +65,7 @@
     {{ $pages = sort $pages "LinkTitle" | and ($page.Param "paige.pages.disable_pages" | not) }}
     {{ $sections = sort $sections "LinkTitle" | and ($page.Param "paige.pages.disable_sections" | not) }}
 {{ else }}
-    {{ $pages = $page.Pages | and ($page.Param "paige.pages.disable_pages" | not) }}
+    {{ $pages = complement $page.Sections $page.Pages | and ($page.Param "paige.pages.disable_pages" | not) }}
     {{ $sections = $page.Sections | and ($page.Param "paige.pages.disable_sections" | not) }}
 {{ end }}
 
