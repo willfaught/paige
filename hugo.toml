@@ -116,4 +116,5 @@ name = "rss"
 basename = "paige-search"
 isplaintext = true
 mediatype = "application/json"
+name = "paige-search"
 notalternative = true
