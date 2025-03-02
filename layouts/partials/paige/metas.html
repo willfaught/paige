@@ -4,7 +4,6 @@
 {{ $authors := partial "paige/func-authors.html" $page }}
 {{ $color := $page.Param `paige.site.color` | default `#0d6efd` }}
 {{ $description := $page.Description | markdownify | plainify | htmlUnescape }}
-{{ $exists := fileExists "assets/browserconfig.xml" }}
 {{ $keywords := partial "paige/func-keywords.html" $page }}
 
 {{ range $authors }}
@@ -25,14 +24,6 @@
 
 {{ with $keywords }}
     <meta content="{{ . }}" name="keywords">
-{{ end }}
-
-<meta content="{{ $color }}" name="msapplication-TileColor">
-
-{{ if $exists }}
-    {{ $content := (resources.Get `browserconfig.xml` | resources.ExecuteAsTemplate `browserconfig.xml` $page).RelPermalink }}
-
-    <meta content="{{ $content }}" name="msapplication-config">
 {{ end }}
 
 <meta content="https://github.com/willfaught/paige" name="theme">
