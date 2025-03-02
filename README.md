@@ -354,9 +354,9 @@ Parameters specific to author term pages (if the "authors" taxonomy is configure
 
 ```toml
 [paige.author]
-email = "" # Example: example@example.com
-name = "" # Example: John Doe
-url = "" # Example: https://example.com
+email = "" # Example: "example@example.com"
+name = "" # Example: "John Doe"
+url = "" # Example: "https://example.com"
 ```
 
 The assigned values shown are the default values.
