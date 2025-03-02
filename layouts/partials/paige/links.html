@@ -1,5 +1,10 @@
 {{ $page := . }}
 
+{{ $color := $page.Param "paige.site.color" | default "#0d6efd" }}
+{{ $colorScheme := $page.Param "paige.site.color_scheme" | default "auto" }}
+
+{{ $context := dict "color" $color "color_scheme" $colorScheme }}
+
 {{ if fileExists "static/apple-touch-icon.png" }}
     <link href="{{ relLangURL `apple-touch-icon.png` }}" rel="apple-touch-icon" sizes="180x180">
 {{ end }}
@@ -27,11 +32,6 @@
 {{ if fileExists "assets/site.webmanifest" }}
     <link href="{{ (resources.Get `site.webmanifest` | resources.ExecuteAsTemplate `site.webmanifest` .).RelPermalink }}" rel="manifest">
 {{ end }}
-
-{{ $color := $page.Param "paige.site.color" | default "#0d6efd" }}
-{{ $colorScheme := $page.Param "paige.site.color_scheme" | default "auto" }}
-
-{{ $context := dict "color" $color "color_scheme" $colorScheme }}
 
 {{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true "context" $context) }}
 {{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css" "page" $page) }}
