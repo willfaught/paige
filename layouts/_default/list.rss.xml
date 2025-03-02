@@ -41,22 +41,20 @@
 <rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         {{ range $page.OutputFormats }}
-            {{ $kind := not (hasSuffix .Permalink "/paige-search.json") }}
             {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
 
             {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
-            {{ if and $kind $valid }}
+            {{ if $valid }}
                 <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
             {{ end }}
         {{ end }}
 
         {{ range $t := $page.Translations }}
             {{ range .OutputFormats }}
-                {{ $kind := not (hasSuffix .Permalink "/paige-search.json") }}
                 {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
 
-                {{ if and $kind $valid }}
+                {{ if $valid }}
                     <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
                 {{ end }}
             {{ end }}
@@ -149,23 +147,21 @@
                     {{ end }}
 
                     {{ range .OutputFormats }}
-                        {{ $kind := not (hasSuffix .Permalink "/paige-search.json") }}
                         {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
 
                         {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
                         {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
-                        {{ if and $kind $valid }}
+                        {{ if $valid }}
                             <atom:link href="{{ $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                         {{ end }}
                     {{ end }}
 
                     {{ range $t := .Translations }}
                         {{ range .OutputFormats }}
-                            {{ $kind := not (hasSuffix .Permalink "/paige-search.json") }}
                             {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
 
-                            {{ if and $kind $valid }}
+                            {{ if $valid }}
                                 <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
                             {{ end }}
                         {{ end }}
