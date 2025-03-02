@@ -1,9 +1,9 @@
 {{ $page := . }}
 
 {{ $color := $page.Param "paige.site.color" | default "#0d6efd" }}
-{{ $colorScheme := $page.Param "paige.site.color_scheme" | default "auto" }}
+{{ $scheme := $page.Param "paige.site.color_scheme" | default "auto" }}
 
-{{ $context := dict "color" $color "color_scheme" $colorScheme }}
+{{ $context := dict "color" $color "color_scheme" $scheme }}
 
 {{ if fileExists "static/apple-touch-icon.png" }}
     <link href="{{ relLangURL `apple-touch-icon.png` }}" rel="apple-touch-icon" sizes="180x180">
