@@ -2,7 +2,7 @@
 
 {{ $context := $params.context }}
 {{ $enablesourcemap := not hugo.IsProduction }}
-{{ $href := $params.href }}
+{{ $href := relLangURL $params.href }}
 {{ $integrity := $params.integrity }}
 {{ $origin := $params.crossorigin | default "anonymous" }}
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
@@ -35,8 +35,6 @@
 
     {{ $href = $resource.RelPermalink }}
     {{ $integrity = $resource.Data.Integrity }}
-{{ else }}
-    {{ $href = relLangURL $href }}
 {{ end }}
 
 <link {{ with $origin }} crossorigin="{{ . }}" {{ end }} href="{{ $href }}" {{ with $integrity }} integrity="{{ . }}" {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} rel="stylesheet">
