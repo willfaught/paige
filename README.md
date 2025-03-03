@@ -198,7 +198,7 @@ There is a single parameter object with sensible defaults that can be overridden
 enable_math = false # Enables math typesetting for this page
 exclude_feeds = false # Excludes this page from feeds
 exclude_search = false # Excludes this page from search
-style = "" # CSS included at the end of the stylesheet for this page
+style = "" # CSS included in a stylesheet for this page
 
 [paige.alert]
 

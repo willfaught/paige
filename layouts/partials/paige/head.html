@@ -41,5 +41,10 @@
     {{ end }}
 
     {{ partial "paige/links.html" $page }}
+
+    {{ with $page.Param "paige.style" }}
+        <style>{{ . | safeCSS }}</style>
+    {{ end }}
+
     {{ partial "paige/func-include.html" (dict "name" "head-last%s.html" "page" $page) | safeHTML }}
 </head>

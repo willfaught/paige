@@ -103,7 +103,3 @@ table {
         transition: none;
     }
 }
-
-{{ with $page.Param "paige.style" }}
-    {{ . | safeCSS }}
-{{ end }}
