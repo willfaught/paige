@@ -17,7 +17,7 @@
     {{ errorf "layouts/partials/paige/tag-link.html: no href" }}
 {{ end }}
 
-{{ if $resource  }}
+{{ if $resource }}
     {{ if $template }}
         {{ $split := path.Split $href }}
         {{ $join := path.Join $split.Dir (print (printf "%#v" $context | sha1) "-" $split.File) }}
