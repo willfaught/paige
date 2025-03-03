@@ -198,7 +198,7 @@ There is a single parameter object with sensible defaults that can be overridden
 enable_math = false # Enables math typesetting for this page
 exclude_feeds = false # Excludes this page from feeds
 exclude_search = false # Excludes this page from search
-style = "" # CSS included at the end of the stylesheet, before style-last.css, for this page
+style = "" # CSS included at the end of the stylesheet for this page
 
 [paige.alert]
 
@@ -810,8 +810,6 @@ Files can be included in many places in HTML.
 | `layouts/partials/paige/site-header-first.html` | The beginning of the site header |
 | `layouts/partials/paige/site-header-last.html`  | The ending of the site header    |
 | `layouts/partials/paige/site-last.html`         | The ending of the site           |
-| `layouts/partials/paige/style-first.css`        | The beginning of the styles      |
-| `layouts/partials/paige/style-last.css`         | The ending of the styles         |
 
 There are kind variants of include files that are included only when the file kind matches the page kind.
 
