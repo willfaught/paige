@@ -147,7 +147,7 @@
                     {{ end }}
 
                     {{ range .OutputFormats }}
-                        {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
+                        {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
                         {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
                         {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
