@@ -41,6 +41,5 @@
     {{ end }}
 
     {{ partial "paige/links.html" $page }}
-    {{ partial "paige/style.html" $page }}
     {{ partial "paige/func-include.html" (dict "name" "head-last%s.html" "page" $page) | safeHTML }}
 </head>

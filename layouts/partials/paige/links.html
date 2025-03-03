@@ -33,6 +33,7 @@
     <link href="{{ (resources.Get `site.webmanifest` | resources.ExecuteAsTemplate `site.webmanifest` .).RelPermalink }}" rel="manifest">
 {{ end }}
 
+{{ partial "paige/tag-link.html" (dict "href" "css/paige/paige.css" "page" $page "template" true "context" $page) }}
 {{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap/paige.scss" "page" $page "sass" true "template" true "context" $context) }}
 {{ partial "paige/tag-link.html" (dict "href" "css/paige/bootstrap-icons/bootstrap-icons.css" "page" $page) }}
 
