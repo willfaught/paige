@@ -19,6 +19,7 @@ unsafe = true
 
 [markup.highlight]
 noclasses = false
+style = "github"
 
 [markup.tableofcontents]
 endlevel = 6
