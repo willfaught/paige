@@ -2,7 +2,7 @@
 
 {{ $fullscreen := $params.fullscreen }}
 {{ $policy := $params.referrerpolicy | default "no-referrer" }}
-{{ $src := $params.src }}
+{{ $src := relLangURL $params.src }}
 {{ $title := $params.title }}
 
 <iframe {{ if $fullscreen }} allowfullscreen {{ end }} {{ with $policy }} referrerpolicy="{{ . }}" {{ end }} {{ with $src }} src="{{ . }}" {{ end }} {{ with $title }} title="{{ . }}" {{ end }}></iframe>
