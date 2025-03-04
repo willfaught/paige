@@ -33,7 +33,15 @@
     {{ end }}
 {{ end }}
 
-{{ if not $result }}
+{{ if $result }}
+    {{ with urls.Parse $url }}
+        {{ if .Scheme }}
+            {{ $path := print ($result.MediaType.SubType) "/paige" $result.RelPermalink }}
+
+            {{ $result = resources.Copy $path $result }}
+        {{ end }}
+    {{ end }}
+{{ else }}
     {{ errorf "layouts/partials/paige/func-resource.html: cannot find resource %q" $url }}
 {{ end }}
 
