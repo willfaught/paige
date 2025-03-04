@@ -1,0 +1,10 @@
+{{ $params := . }}
+
+{{ $content := $params.content }}
+{{ $extension := $params.extension | default "html" }}
+
+{{ $path := print (sha1 $content) ".paige.tmp." $extension }}
+
+{{ $result := (resources.FromString $path $content | minify).Content }}
+
+{{ return $result }}

@@ -107,7 +107,7 @@
     {{ range $subpage := $subpages }}
         {{ if not (.Param "paige.exclude_feeds") }}
             <entry>
-                {{ $content := .Content }}
+                {{ $content := partial "paige/func-minify.html" (dict "content" .Content) }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
                 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
                 {{ $lastmod := .Lastmod.Format $date }}
