@@ -19,10 +19,14 @@
 
 {{ if $resource }}
     {{ if $template }}
-        {{ $split := path.Split $href }}
-        {{ $join := path.Join $split.Dir (print (printf "%#v" $context | sha1) "-" $split.File) }}
+        {{ $dir := path.Dir $resource.RelPermalink }}
+        {{ $ext := path.Ext $resource.RelPermalink }}
+        {{ $hash := printf "%v%s" $context $resource.Content | sha1 }}
+        {{ $name := path.BaseName $resource.RelPermalink }}
 
-        {{ $resource = resources.ExecuteAsTemplate $join $context $resource }}
+        {{ $path := printf "%s/%s.%s%s" $dir $name $hash $ext }}
+
+        {{ $resource = resources.ExecuteAsTemplate $path $context $resource }}
     {{ end }}
 
     {{ if $sass }}
