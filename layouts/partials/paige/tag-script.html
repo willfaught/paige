@@ -6,7 +6,7 @@
 {{ $origin := $params.crossorigin | default "anonymous" }}
 {{ $page := $params.page }}
 {{ $policy := $params.referrerpolicy | default "no-referrer" }}
-{{ $src := relLangURL $params.src }}
+{{ $src := $params.src }}
 {{ $type := $params.type }}
 
 {{ if not $src }}

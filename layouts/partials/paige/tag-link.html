@@ -2,16 +2,17 @@
 
 {{ $context := $params.context }}
 {{ $enablesourcemap := not hugo.IsProduction }}
-{{ $href := relLangURL $params.href }}
+{{ $href := $params.href }}
 {{ $integrity := $params.integrity }}
 {{ $origin := $params.crossorigin | default "anonymous" }}
 {{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
 {{ $paths := $params.includepaths }}
 {{ $policy := $params.referrerpolicy | default "no-referrer" }}
-{{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
 {{ $sass := $params.sass }}
 {{ $template := $params.template }}
+
+{{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
 
 {{ if not $href }}
     {{ errorf "layouts/partials/paige/tag-link.html: no href" }}
