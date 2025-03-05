@@ -108,11 +108,11 @@
         {{ if not (.Param "paige.exclude_feeds") }}
             <entry>
                 {{ $content := partial "paige/func-content.html" $subpage }}
+                {{ $description := markdownify .Description }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
                 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
                 {{ $lastmod := .Lastmod.Format $date }}
                 {{ $published := cond (not .PublishDate.IsZero) (.PublishDate.Format $date) "" }}
-                {{ $summary := markdownify .Description }}
                 {{ $title := markdownify .Title }}
 
                 {{ $link := cond $external .Params.link .Permalink }}
@@ -188,7 +188,7 @@
                     <rights type="html"><![CDATA[{{ . }}]]></rights>
                 {{ end }}
 
-                {{ with $summary }}
+                {{ with $description }}
                     <summary type="html"><![CDATA[{{ . }}]]></summary>
                 {{ end }}
 
