@@ -111,7 +111,7 @@
                 {{ $content := partial "paige/func-content.html" $subpage }}
                 {{ $description := markdownify $subpage.Description }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
-                {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host ($subpage.PublishDate.Format "2006-01-02") (cond ($subpage.Params.id | not) $subpage.RelPermalink $subpage.Params.id) }}
+                {{ $id := cond ($subpage.Params.id | not) $subpage.RelPermalink $subpage.Params.id }}
                 {{ $lastmod := $subpage.Lastmod.Format $date }}
                 {{ $published := $subpage.PublishDate.Format $date }}
                 {{ $title := $subpage.Title | markdownify | plainify | htmlUnescape }}
