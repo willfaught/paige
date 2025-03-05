@@ -105,32 +105,32 @@
     {{ end }}
 
     {{ range $subpage := $subpages }}
-        {{ if not (.Param "paige.exclude_feeds") }}
+        {{ if not ($subpage.Param "paige.exclude_feeds") }}
             <entry>
                 {{ $content := partial "paige/func-content.html" $subpage }}
-                {{ $description := markdownify .Description }}
+                {{ $description := markdownify $subpage.Description }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
-                {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
-                {{ $lastmod := .Lastmod.Format $date }}
-                {{ $published := .PublishDate.Format $date }}
-                {{ $title := .Title | markdownify | plainify | htmlUnescape }}
+                {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host ($subpage.PublishDate.Format "2006-01-02") $subpage.RelPermalink }}
+                {{ $lastmod := $subpage.Lastmod.Format $date }}
+                {{ $published := $subpage.PublishDate.Format $date }}
+                {{ $title := $subpage.Title | markdownify | plainify | htmlUnescape }}
 
-                {{ $link := cond $external .Params.link .Permalink }}
+                {{ $link := cond $external $subpage.Params.link $subpage.Permalink }}
 
                 {{ if and $content $external }}
-                    {{ $text := or (.Param "paige.feeds.page_link" | markdownify) "⏎" }}
+                    {{ $text := or ($subpage.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
-                    {{ $footer := printf `<p><a href="%s">%s</a></p>` .Permalink $text | safeHTML }}
+                    {{ $footer := printf `<p><a href="%s">%s</a></p>` $subpage.Permalink $text | safeHTML }}
 
                     {{ $content = print $content $footer }}
                 {{ end }}
 
                 {{ if not $content }}
-                    {{ $content = markdownify .Description }}
+                    {{ $content = markdownify $subpage.Description }}
                 {{ end }}
 
-                {{ $content = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` .Permalink) $content }}
-                {{ $content = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) $content }}
+                {{ $content = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` $subpage.Permalink) $content }}
+                {{ $content = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` $subpage.Permalink) $content }}
                 {{ $content = partial "paige/func-minify.html" (dict "content" $content) }}
 
                 {{ with partial "paige/func-authors.html" . }}
@@ -159,7 +159,7 @@
                     <id>{{ . }}</id>
                 {{ end }}
 
-                {{ range .OutputFormats }}
+                {{ range $subpage.OutputFormats }}
                     {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
                     {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
@@ -170,7 +170,7 @@
                     {{ end }}
                 {{ end }}
 
-                {{ range $t := .Translations }}
+                {{ range $t := $subpage.Translations }}
                     {{ range .OutputFormats }}
                         {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
 
