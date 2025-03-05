@@ -124,7 +124,7 @@
                     {{ end }}
 
                     {{ if not $content }}
-                        {{ $content = $subpage.Description | markdownify }}
+                        {{ $content = markdownify $subpage.Description }}
                     {{ end }}
 
                     {{ $content = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` $subpage.Permalink) $content }}
