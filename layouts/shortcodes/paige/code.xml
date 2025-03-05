@@ -1,0 +1,20 @@
+{{ $content := .InnerDeindent | strings.TrimLeft "\f\n\r\v" | strings.TrimRight "\f\n\r\t\v " }}
+{{ $lang := .Get 0 | default (.Get "lang") | default "plaintext" }}
+{{ $options := .Get "options" }}
+{{ $unescape := .Get "unescape" }}
+
+{{ if not $content }}
+    {{ errorf "layouts/shortcodes/paige/code.xml: no content" }}
+{{ end }}
+
+{{ if $options }}
+    {{ $options = printf "%s,noclasses=true" $options }}
+{{ else }}
+    {{ $options = "noclasses=true" }}
+{{ end }}
+
+{{ if $unescape }}
+    {{ $content = htmlUnescape $content }}
+{{ end }}
+
+<div class="paige-shortcode-code">{{ highlight $content $lang $options }}</div>
