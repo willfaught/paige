@@ -20,12 +20,12 @@ jobs:
         uses: "actions/configure-pages@v5"
       - name: "Build"
         run: |
-          cd exampleSite
+          cd example
           hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify
       - name: "Upload artifact"
         uses: "actions/upload-pages-artifact@v3"
         with:
-          path: "./exampleSite/public"
+          path: "./example/public"
   # build-windows:
   #   name: "Build Windows"
   #   runs-on: "windows-latest"
@@ -41,7 +41,7 @@ jobs:
   #       uses: "actions/configure-pages@v5"
   #     - name: "Build"
   #       run: |
-  #         cd exampleSite
+  #         cd example
   #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --minify
   deploy:
     environment:
