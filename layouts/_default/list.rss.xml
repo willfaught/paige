@@ -105,8 +105,6 @@
 
                     {{ $link := cond $external .Params.link .Permalink }}
 
-                    {{ $content = partial "paige/func-minify.html" (dict "content" $content) }}
-
                     {{ with $authors }}
                         {{ $primary := index . 0 }}
 
@@ -131,6 +129,7 @@
 
                     {{ $content = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` .Permalink) $content }}
                     {{ $content = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) $content }}
+                    {{ $content = partial "paige/func-minify.html" (dict "content" $content) }}
 
                     {{ with $author }}
                         <author>{{ . }}</author>

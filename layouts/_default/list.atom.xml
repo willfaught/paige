@@ -129,9 +129,9 @@
                     {{ $content = markdownify .Description }}
                 {{ end }}
 
-                {{ $content = partial "paige/func-minify.html" (dict "content" $content) }}
                 {{ $content = replaceRE `<a href="#fn:(\d+)" class="footnote-ref" role="doc-noteref">` (printf `<a href="%s#fn:$1" class="footnote-ref" role="doc-noteref">` .Permalink) $content }}
                 {{ $content = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` .Permalink) $content }}
+                {{ $content = partial "paige/func-minify.html" (dict "content" $content) }}
 
                 {{ with partial "paige/func-authors.html" . }}
                     {{ range . }}
