@@ -107,6 +107,7 @@
     {{ range $subpage := $subpages }}
         {{ if not ($subpage.Param "paige.exclude_feeds") }}
             <entry>
+                {{ $authors := partial "paige/func-authors.html" $subpage }}
                 {{ $content := partial "paige/func-content.html" $subpage }}
                 {{ $description := markdownify $subpage.Description }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
@@ -133,7 +134,7 @@
                 {{ $content = replaceRE `<a href="#fnref:(\d+)" class="footnote-backref" role="doc-backlink">` (printf `<a href="%s#fnref:$1" class="footnote-backref" role="doc-backlink">` $subpage.Permalink) $content }}
                 {{ $content = partial "paige/func-minify.html" (dict "content" $content) }}
 
-                {{ with partial "paige/func-authors.html" . }}
+                {{ with $authors }}
                     {{ range . }}
                         <author>
                             {{ with .Params.paige.author.email }}
