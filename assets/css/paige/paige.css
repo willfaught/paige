@@ -12,17 +12,6 @@
     content: "{{ i18n `paige_figure` | safeCSS }} " counter(paige-shortcode-figure-numbered);
 }
 
-.paige-header-link {
-    opacity: 0;
-    margin-left: 0.5rem;
-    position: absolute;
-    transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
-}
-
-.paige-header-link::after {
-    content: "#";
-}
-
 .paige-shortcode-quote .blockquote-footer {
     margin-top: 0;
 }
@@ -75,13 +64,6 @@ table {
     margin-bottom: 1rem;
 }
 
-.paige-header-link:focus,
-.paige-header-link:hover,
-:hover > .paige-header-link,
-:target > .paige-header-link {
-    opacity: 1;
-}
-
 {{ $colorscheme := $page.Param "paige.site.color_scheme" }}
 
 {{ if eq $colorscheme "dark" }}
@@ -97,9 +79,3 @@ table {
         {{ partial "paige/light.css" $page | safeCSS }}
     }
 {{ end }}
-
-@media (prefers-reduced-motion: reduce) {
-    .paige-header-link {
-        transition: none;
-    }
-}
