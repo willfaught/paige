@@ -1,0 +1,31 @@
+{{ $page := . }}
+
+{{ $result := $page.Content }}
+
+{{ $matches := findRESubmatch "<h([1-6])[ >]" $result }}
+
+{{ with $matches }}
+    {{ $max := 0 }}
+
+    {{ range . }}
+        {{ $level := index . 1 | int }}
+
+        {{ if gt $level $max }}
+            {{ $max = $level }}
+        {{ end }}
+    {{ end }}
+
+    {{ if and $max (lt $max 6) }}
+        {{ $shift := sub 6 $max }}
+
+        {{ range seq $max | collections.Reverse }}
+            {{ $old := . }}
+            {{ $new := add $old $shift }}
+
+            {{ $result = replaceRE (printf "<h%d([ >])" $old) (printf "<h%d$1" $new) $result }}
+            {{ $result = replaceRE (printf "</h%d>" $old) (printf "</h%d>" $new) $result }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $result }}
