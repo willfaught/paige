@@ -1,9 +1,22 @@
 {{ $context := . }}
 
 {{ $defaults := dict "id" $context.Anchor }}
+{{ $max := 0 }}
 
 {{ $attrs := merge .Attributes $defaults }}
 
-<h{{ .Level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
+{{ range $k, $v := .Page.Fragments.HeadingsMap }}
+    {{ if gt $v.Level $max }}
+        {{ $max = $v.Level }}
+    {{ end }}
+{{ end }}
+
+{{ $level := $context.Level }}
+
+{{ if and $max (lt $max 6) }}
+    {{ $level = add $context.Level (sub 6 $max) }}
+{{ end }}
+
+<h{{ $level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
     <a aria-label="{{ i18n "paige_link_to_this_section" }}" class="text-body text-decoration-none" href="#{{ .Anchor }}">{{ .Text }}</a>
-</h{{ .Level }}>
+</h{{ $level }}>
