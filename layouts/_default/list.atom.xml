@@ -8,7 +8,7 @@
 {{ $language := site.LanguageCode }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
-{{ $rights := site.Copyright | markdownify }}
+{{ $rights := markdownify site.Copyright }}
 {{ $subpages := $page.RegularPagesRecursive.ByPublishDate }}
 
 {{ $lastmod := site.Lastmod.Format $date }}
