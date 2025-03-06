@@ -2,7 +2,7 @@
 
 {{ $authors := $page.Param "paige.feeds.atom.authors" }}
 {{ $date := "2006-01-02T15:04:05Z07:00" }}
-{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify | plainify | htmlUnescape }}
+{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
 {{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host (.PublishDate.Format "2006-01-02") .RelPermalink }}
 {{ $language := site.LanguageCode }}
@@ -20,17 +20,17 @@
 {{ $titles := slice }}
 
 {{ if $page.IsHome }}
-    {{ $titles = slice (site.Title | default $page.Title | markdownify | plainify | htmlUnescape) }}
+    {{ $titles = slice (site.Title | default $page.Title | markdownify) }}
 {{ else }}
     {{ with $page.Title }}
-        {{ $titles = slice (. | markdownify | plainify | htmlUnescape) }}
+        {{ $titles = slice (markdownify .) }}
     {{ end }}
 
     {{ range .Ancestors }}
-        {{ $title := cond .IsHome (site.Title | default .Title) .Title }}
+        {{ $title := cond .IsHome (site.Title | default .Title) .Title | markdownify }}
 
         {{ with $title }}
-            {{ $titles = $titles | append (. | markdownify | plainify | htmlUnescape) }}
+            {{ $titles = append . $titles }}
         {{ end }}
     {{ end }}
 {{ end }}
@@ -114,7 +114,7 @@
                 {{ $id := cond ($subpage.Params.id | not) $subpage.RelPermalink $subpage.Params.id }}
                 {{ $lastmod := $subpage.Lastmod.Format $date }}
                 {{ $published := $subpage.PublishDate.Format $date }}
-                {{ $title := $subpage.Title | markdownify | plainify | htmlUnescape }}
+                {{ $title := markdownify $subpage.Title }}
 
                 {{ $link := cond $external $subpage.Params.link $subpage.Permalink }}
 
