@@ -578,11 +578,11 @@ Parameters:
     <dt><code>alt</code></dt>
     <dd>Optional. String. Plain text. Image alt.</dd>
     <dt><code>breakpoints</code></dt>
-    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not use with <code>densities</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dd>Optional. Boolean. Whether to generate copies of the image sized to each Bootstrap breakpoint. Must not use with <code>densities</code>, <code>sizes</code>, or <code>srcset</code>. Only applies to raster images.</dd>
     <dt><code>class</code></dt>
     <dd>Optional. String. Class attribute value.</dd>
     <dt><code>densities</code></dt>
-    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>"1x 2x"</code>, <code>"1x 1.5x 2x 2.5x 3x"</code>, and <code>"0.5x 1.33x 6x 10x"</code>. Must not use with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>.</dd>
+    <dd>Optional. String. Float numbers suffixed with an "x", delimited by spaces. The pixel densities of the image to generate. There must be at least two. The largest density matches the original image. Examples are <code>"1x 2x"</code>, <code>"1x 1.5x 2x 2.5x 3x"</code>, and <code>"0.5x 1.33x 6x 10x"</code>. Must not use with <code>breakpoints</code>, <code>sizes</code>, or <code>srcset</code>. Only applies to raster images.</dd>
     <dt><code>fetchpriority</code></dt>
     <dd>Optional. String. Must be <code>"high"</code> or <code>"low"</code>.</dd>
     <dt><code>height</code></dt>
@@ -598,7 +598,7 @@ Parameters:
     <dt><code>maxwidth</code></dt>
     <dd>Optional. String. CSS value. Image maximum width.</dd>
     <dt><code>process</code></dt>
-    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>"default"</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used.</dd>
+    <dd>Optional. String. Hugo image processing <a href="https://gohugo.io/content-management/image-processing/#image-processing-methods">methods</a> and <a href="https://gohugo.io/content-management/image-processing/#image-processing-options">options</a>, mixed together, for the displayed image. If no method is specified, resize is used. If no image dimensions are specified, the originals are used. If it is <code>"default"</code>, the <a href="https://gohugo.io/content-management/image-processing/#processing-options">default options</a> are used. Only applies to raster images.</dd>
     <dt><code>sizes</code></dt>
     <dd>Optional. String. Image <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes">sizes</a>. Must not use with <code>breakpoints</code> or <code>densities</code>.</dd>
     <dt><code>src</code></dt>
