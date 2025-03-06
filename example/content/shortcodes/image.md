@@ -99,12 +99,12 @@ Result:
 Code:
 
 ```go-html-template
-{{</* paige/image linked="unprocessed" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+{{</* paige/image linked=true src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
 ```
 
 Result:
 
-{{< paige/image linked="unprocessed" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+{{< paige/image linked=true src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
 
 ---
 
