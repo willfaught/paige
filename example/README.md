@@ -1,7 +1,7 @@
 # Paige example site
 
-If you move the directory exampleSite out of its parent directory,
-you must remove this line from the file exampleSite/go.mod:
+If you move the directory example out of its parent directory,
+you must remove this line from the file example/go.mod:
 
 ```
 replace github.com/willfaught/paige => ../
@@ -10,6 +10,6 @@ replace github.com/willfaught/paige => ../
 and then run this command:
 
 ```
-$ cd exampleSite
+$ cd example
 $ hugo mod get github.com/willfaught/paige@latest
 ```

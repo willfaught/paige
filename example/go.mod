@@ -1,4 +1,4 @@
-module github.com/willfaught/paige/exampleSite
+module github.com/willfaught/paige/example
 
 go 1.20
 
