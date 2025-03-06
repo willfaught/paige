@@ -1,3 +1,9 @@
-<h{{ .Level }} id="{{ .Anchor }}" {{ range $k, $v := .Attributes }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
+{{ $context := . }}
+
+{{ $defaults := dict "id" $context.Anchor }}
+
+{{ $attrs := merge .Attributes $defaults }}
+
+<h{{ .Level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
     <a aria-label="{{ i18n "paige_link_to_this_section" }}" class="text-body text-decoration-none" href="#{{ .Anchor }}">{{ .Text }}</a>
 </h{{ .Level }}>
