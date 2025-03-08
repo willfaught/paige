@@ -2,21 +2,59 @@
 
 {{ $defaults := dict "id" $context.Anchor }}
 {{ $max := 0 }}
+{{ $new := $context.Level }}
+{{ $old := $context.Level }}
+{{ $page := $context.Page }}
 
-{{ $attrs := merge .Attributes $defaults }}
+{{ $attrs := merge $context.Attributes $defaults }}
 
-{{ range $k, $v := .Page.Fragments.HeadingsMap }}
-    {{ if gt $v.Level $max }}
-        {{ $max = $v.Level }}
+{{ $store := 0 }}
+
+{{ with $page.Store.Get "paige-render-heading" }}
+    {{ $max = .max }}
+{{ else }}
+    {{ range $k, $v := $context.Page.Fragments.HeadingsMap }}
+        {{ if gt $v.Level $max }}
+            {{ $max = $v.Level }}
+        {{ end }}
     {{ end }}
-{{ end }}
 
-{{ $level := $context.Level }}
+    {{ $page.Store.Set "paige-render-heading" (dict "max" $max) }}
+{{ end }}
 
 {{ if and $max (lt $max 6) }}
-    {{ $level = add $context.Level (sub 6 $max) }}
+    {{ $new = add $old (sub 6 $max) }}
 {{ end }}
 
-<h{{ $level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
-    <a aria-label="{{ i18n "paige_link_to_this_section" }}" class="text-body text-decoration-none" href="#{{ .Anchor }}">{{ .Text }}</a>
-</h{{ $level }}>
+{{ if ne $old $new }}
+    {{ $class := slice }}
+    {{ $found := false }}
+
+    {{ range $k, $v := $attrs }}
+        {{ if eq $k "class" }}
+            {{ range split $v " " }}
+                {{ if . }}
+                    {{ $class = $class | append . }}
+
+                    {{ if in (slice "h1" "h2" "h3" "h4" "h5" "h6") . }}
+                        {{ $found = true }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ break }}
+        {{ end }}
+    {{ end }}
+
+    {{ if not $found }}
+        {{ $class = $class | append (print "h" $new) }}
+    {{ end }}
+
+    {{ $class = delimit (sort $class) " " }}
+
+    {{ $attrs = merge (dict "class" $class) $attrs }}
+{{ end }}
+
+<h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
+    <a aria-label="{{ i18n "paige_link_to_this_section" }}" class="text-body text-decoration-none" href="#{{ $context.Anchor }}">{{ $context.Text }}</a>
+</h{{ $old }}>
