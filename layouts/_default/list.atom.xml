@@ -108,7 +108,7 @@
         {{ if not ($subpage.Param "paige.exclude_feeds") }}
             <entry>
                 {{ $authors := partial "paige/func-authors.html" $subpage }}
-                {{ $content := partial "paige/func-content.html" $subpage }}
+                {{ $content := $subpage.Content }}
                 {{ $description := markdownify $subpage.Description }}
                 {{ $external := and .Params.link (not (.Param "paige.feeds.disable_link")) | not | not }}
                 {{ $id := cond ($subpage.Params.id | not) $subpage.RelPermalink $subpage.Params.id }}

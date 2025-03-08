@@ -97,7 +97,7 @@
                 <item>
                     {{ $author := "" }}
                     {{ $authors := partial "paige/func-authors.html" $subpage }}
-                    {{ $content := partial "paige/func-content.html" $subpage }}
+                    {{ $content := $subpage.Content }}
                     {{ $external := and $subpage.Params.link (not ($subpage.Param "paige.feeds.disable_link")) | not | not }}
                     {{ $id := cond ($subpage.Params.id | not) $subpage.RelPermalink $subpage.Params.id }}
                     {{ $published := $subpage.PublishDate.Format $date }}
