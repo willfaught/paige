@@ -129,19 +129,22 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ hugo new yourpost.md
     ```
 
-5. Install the Paige module:
+5. Configure your module:
 
     ```sh
     $ cd yoursite
     $ hugo mod init github.com/youraccount/yoursite
-    $ hugo mod get github.com/willfaught/paige@latest
     ```
 
-6. Import the Paige module:
+6. Configure the Paige module:
 
     ```sh
     $ cd yoursite
+    $ hugo mod get github.com/willfaught/paige@latest
     $ cat >>hugo.toml <<EOF
+    [markup.highlight]
+    noclasses = false
+    style = "github"
     [[module.imports]]
     path = "github.com/willfaught/paige"
     EOF
