@@ -56,5 +56,5 @@
 {{ end }}
 
 <h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
-    <a aria-label="{{ i18n "paige_link_to_this_section" }}" class="text-body text-decoration-none" href="#{{ $context.Anchor }}">{{ $context.Text }}</a>
+    <a class="text-body text-decoration-none" href="#{{ $context.Anchor }}">{{ $context.Text }}</a>
 </h{{ $old }}>
