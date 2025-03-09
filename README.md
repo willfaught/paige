@@ -358,6 +358,7 @@ Parameters specific to author term pages (if the "authors" taxonomy is configure
 
 ```toml
 [paige.author]
+default = false # Whether to attribute pages without explicit authors to this author
 email = "" # Example: "example@example.com"
 name = "" # Example: "John Doe"
 url = "" # Example: "https://example.com"

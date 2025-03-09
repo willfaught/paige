@@ -4,7 +4,7 @@
 
 {{ if and (not $result) $page.IsPage site.Taxonomies.authors }}
     {{ range $id, $taxonomy := site.Taxonomies.authors }}
-        {{ if eq $taxonomy.Page.Params.default true }}
+        {{ if eq $taxonomy.Page.Params.paige.author.default true }}
             {{ $result = $result | append $taxonomy.Page }}
         {{ end }}
     {{ end }}
