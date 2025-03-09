@@ -359,9 +359,9 @@ Parameters specific to author term pages (if the authors taxonomy is configured)
 ```toml
 [paige.author]
 default = false # Whether to attribute pages without explicit authors to this author
-email = "" # Example: "example@example.com"
-name = "" # Example: "John Doe"
-url = "" # Example: "https://example.com"
+email = "" # Used in feeds. Example: "example@example.com".
+name = "" # Used in feeds. Example: "John Doe".
+url = "" # Used in Atom feeds. Example: "https://example.com".
 ```
 
 The assigned values shown are the default values unless otherwise specified.
@@ -404,8 +404,6 @@ path = "{/authors,/authors/**}"
 [cascade.build]
 render = "never"
 ```
-
-The `email` and `url` parameters in the front matter of an author term page are used in feeds if present.
 
 ### SEO
 
