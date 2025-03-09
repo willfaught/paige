@@ -352,7 +352,7 @@ id = "" # ID used in feeds. Defaults to the relative permalink.
 link = "" # URL for an anchor around the title. Example: "https://youtu.be/dQw4w9WgXcQ".
 ```
 
-The assigned values shown are the default values.
+The assigned values shown are the default values unless otherwise specified.
 
 Parameters specific to author term pages (if the "authors" taxonomy is configured):
 
@@ -363,7 +363,7 @@ name = "" # Example: "John Doe"
 url = "" # Example: "https://example.com"
 ```
 
-The assigned values shown are the default values.
+The assigned values shown are the default values unless otherwise specified.
 
 Parameters specific to menus:
 
@@ -376,7 +376,7 @@ header_above = "" # Example: "My Header"
 header_below = "" # Example: "My Other Header"
 ```
 
-The assigned values shown are the default values.
+The assigned values shown are the default values unless otherwise specified.
 
 ### Menu
 
