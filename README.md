@@ -392,7 +392,7 @@ see [how to hide other navigation features](#menu-navigation-only).
 
 Support for authors, categories, series, and tags taxonomies is built in.
 
-A default author must be referenced at least once explicitly in a regular page.
+A default author must be referenced in the authors parameter of at least one page.
 
 To disable the rendering of author pages, add this to `yoursite/hugo.toml`:
 
