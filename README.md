@@ -175,7 +175,7 @@ By default, the page body spans its entire container, which spans most of the wi
 See the [narrow look](#narrow-look) and [narrow-and-wide look](#narrow-and-wide-look) sections
 for ideas of how to customize the presentation.
 
-The breadcrumb, collection, and section links are sufficient to browse any site,
+The breadcrumb, collection, section, and page links are sufficient to browse any site,
 so you can safely disable the menu.
 However, for sites with only a handful of pages at the root level,
 the menu alone can be sufficient for all navigation.
