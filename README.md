@@ -1015,23 +1015,23 @@ Shortcode classes:
 
 <dl>
     <dt><code>.paige-shortcode-code</code></dt>
-    <dd>The container of <code>"paige/code"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/code</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-email</code></dt>
-    <dd>The container of <code>"paige/email"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/email</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-figure</code></dt>
-    <dd>The container of <code>"paige/figure"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/figure</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-gallery</code></dt>
-    <dd>The container of <code>"paige/gallery"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/gallery</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-icon</code></dt>
-    <dd>The container of <code>"paige/icon"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/icon</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-image</code></dt>
-    <dd>The container of <code>"paige/image"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/image</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-quote</code></dt>
-    <dd>The container of <code>"paige/quote"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/quote</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-vimeo</code></dt>
-    <dd>The container of <code>"paige/vimeo"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/vimeo</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-youtube</code></dt>
-    <dd>The container of <code>"paige/youtube"</code> shortcodes.</dd>
+    <dd>The container of <code>paige/youtube</code> shortcodes.</dd>
 </dl>
 
 ### Minimal look
