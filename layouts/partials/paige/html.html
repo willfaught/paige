@@ -4,4 +4,4 @@
 {{ $lang := site.LanguageCode }}
 {{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
 
-<html {{ if $dark }} data-bs-theme="dark" {{ end }} data-paige="Paige theme from https://github.com/willfaught/paige" {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
+<html {{ if $dark }} data-bs-theme="dark" {{ end }} {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
