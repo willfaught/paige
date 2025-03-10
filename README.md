@@ -171,6 +171,11 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ hugo mod get github.com/willfaught/paige@latest
     ```
 
+Paige uses [Semantic Versioning](https://semver.org).
+The current major version is 0.
+From time to time, breaking changes are made.
+When you update Paige, you must test your site.
+
 See Hugo's [installation](https://gohugo.io/installation/), [getting started](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
 
 ## Kickoff
