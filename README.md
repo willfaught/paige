@@ -414,8 +414,8 @@ render = "never"
 
 ### SEO
 
-The "author", "description", and "keywords" meta tags are generated from the page parameters.
-The keywords are the page parameters "keywords", "categories", and "tags".
+The `author`, `description`, and `keywords` meta tags are generated from the page parameters.
+The keywords are the page parameters `keywords`, `categories`, and `tags`.
 
 A JSON-LD script is generated from the page parameters,
 which can be disabled with `paige.pages.disable_auto_schema`.
