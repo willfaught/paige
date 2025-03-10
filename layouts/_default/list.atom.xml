@@ -167,7 +167,7 @@
                     {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
                     {{ if $valid }}
-                        <link href="{{ $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                        <link href="{{ htmlEscape $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                     {{ end }}
                 {{ end }}
 
