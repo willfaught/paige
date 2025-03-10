@@ -177,7 +177,7 @@ for ideas of how to customize the presentation.
 
 The breadcrumb, collection, section, and page links are sufficient to browse any site,
 so you can safely disable the menu.
-However, for sites with only a handful of sections and pages at the root level,
+However, for sites with only a couple handfuls of sections and pages at the root level,
 the menu alone can be sufficient for all navigation.
 See the [menu navigation only](#menu-navigation-only) section for how to do that.
 
