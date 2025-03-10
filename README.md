@@ -154,7 +154,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
     ```sh
     $ cd yoursite
-    $ hugo server -D
+    $ hugo server --buildDrafts
     ```
 
 8. Update the Paige module:
