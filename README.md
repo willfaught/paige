@@ -356,14 +356,14 @@ disable_word_count = false
 
 The parameter object is accessed in site parameters as `[params.paige]`, and in page parameters as `[paige]`.
 
-Parameters specific to pages:
+Parameters for pages:
 
 ```toml
 id = "" # ID used in feeds. Defaults to the relative permalink.
 link = "" # URL for an anchor around the title. Example: "https://youtu.be/dQw4w9WgXcQ".
 ```
 
-Parameters specific to terms of the authors taxonomy:
+Parameters for terms of the authors taxonomy:
 
 ```toml
 [paige.author]
@@ -373,7 +373,7 @@ name = "" # Used in feeds. Example: "John Doe".
 url = "" # Used in Atom feeds. Example: "https://example.com".
 ```
 
-Parameters specific to menus:
+Parameters for menus:
 
 ```toml
 [paige]
