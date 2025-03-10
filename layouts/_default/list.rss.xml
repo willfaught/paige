@@ -43,20 +43,12 @@
         {{ range $page.OutputFormats }}
             {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
-            {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
-
-            {{ if $valid }}
-                <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
-            {{ end }}
+            <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
         {{ end }}
 
         {{ range $t := $page.Translations }}
             {{ range .OutputFormats }}
-                {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
-
-                {{ if $valid }}
-                    <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
-                {{ end }}
+                <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
             {{ end }}
         {{ end }}
 
@@ -151,20 +143,13 @@
                         {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
                         {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
-                        {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
-                        {{ if $valid }}
-                            <atom:link href="{{ htmlEscape $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
-                        {{ end }}
+                        <atom:link href="{{ htmlEscape $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                     {{ end }}
 
                     {{ range $t := $subpage.Translations }}
                         {{ range .OutputFormats }}
-                            {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") .Rel }}
-
-                            {{ if $valid }}
-                                <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
-                            {{ end }}
+                            <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
                         {{ end }}
                     {{ end }}
 
