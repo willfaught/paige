@@ -1035,11 +1035,10 @@ Shortcode classes:
 ### Minimal look
 
 By default, everything is shown.
-If you want a more minimal look,
-try the following in `yoursite/hugo.toml`:
+If you want a more minimal look, try the following parameter values:
 
 ```toml
-[params.paige.pages]
+[paige.pages]
 disable_authors = true
 disable_date = true
 disable_keywords = true
@@ -1050,7 +1049,7 @@ disable_series = true
 disable_toc = true
 disable_word_count = true
 
-[params.paige.subpages]
+[paige.subpages]
 disable_authors = true
 disable_date = true
 disable_keywords = true
