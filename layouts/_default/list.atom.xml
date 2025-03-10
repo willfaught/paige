@@ -9,7 +9,7 @@
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := markdownify site.Copyright }}
-{{ $subpages := $page.RegularPagesRecursive.ByPublishDate }}
+{{ $subpages := $page.RegularPagesRecursive }}
 
 {{ $lastmod := site.Lastmod.Format $date }}
 
