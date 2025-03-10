@@ -362,7 +362,7 @@ link = "" # URL for an anchor around the title. Example: "https://youtu.be/dQw4w
 
 The assigned values shown are the default values unless otherwise specified.
 
-Parameters specific to author term pages (if the authors taxonomy is configured):
+Parameters specific to terms of the authors taxonomy:
 
 ```toml
 [paige.author]
