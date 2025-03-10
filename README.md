@@ -157,7 +157,14 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ hugo server --buildDrafts
     ```
 
-8. Update the Paige module:
+8. Build the site for production:
+
+    ```sh
+    $ cd yoursite
+    $ hugo --environment production --minify
+    ```
+
+9. Update the Paige module:
 
     ```sh
     $ cd yoursite
