@@ -150,7 +150,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     EOF
     ```
 
-7. Build and run the site:
+7. Build and run the site for development:
 
     ```sh
     $ cd yoursite
