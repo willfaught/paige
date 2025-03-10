@@ -402,7 +402,7 @@ Support for authors, categories, series, and tags taxonomies is built in.
 
 A default author must be referenced in the authors parameter of at least one page.
 
-To disable the rendering of author pages, add this to `yoursite/hugo.toml`:
+To disable the rendering of the authors taxonomy, add this to `yoursite/hugo.toml`:
 
 ```toml
 [[cascade]]
