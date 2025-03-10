@@ -65,7 +65,7 @@
     {{ end }}
 
     {{ range $page.OutputFormats }}
-        {{ $rel := cond (eq .Rel "canonical") "self" .Rel }}
+        {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
         {{ $valid := in (slice "alternate" "enclosure" "related" "self" "via") $rel }}
 
