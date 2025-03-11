@@ -64,6 +64,10 @@
         <id>{{ . }}</id>
     {{ end }}
 
+    {{ with $page.OutputFormats.Get "atom" }}
+        <link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="self" type="application/atom+xml"/>
+    {{ end }}
+
     {{ range $page.OutputFormats }}
         {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
@@ -151,6 +155,8 @@
                 {{ with $id }}
                     <id>{{ . }}</id>
                 {{ end }}
+
+                <link href="{{ $subpage.Permalink }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="self" type="text/html"/>
 
                 {{ range $subpage.OutputFormats }}
                     {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}

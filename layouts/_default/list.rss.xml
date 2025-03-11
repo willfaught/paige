@@ -40,6 +40,10 @@
 
 <rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
+        {{ with $page.OutputFormats.Get "rss" }}
+            <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="self" type="application/rss+xml"/>
+        {{ end }}
+
         {{ range $page.OutputFormats }}
             {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
@@ -138,6 +142,8 @@
                     {{ with $link }}
                         <link>{{ . }}</link>
                     {{ end }}
+
+                    <atom:link href="{{ $subpage.Permalink }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="self" type="text/html"/>
 
                     {{ range $subpage.OutputFormats }}
                         {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
