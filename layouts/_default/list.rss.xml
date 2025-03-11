@@ -40,22 +40,6 @@
 
 <rss version="2.0" {{ with $language }} xml:lang="{{ . }}" {{ end }} xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        {{ with $page.OutputFormats.Get "rss" }}
-            <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="self" type="application/rss+xml"/>
-        {{ end }}
-
-        {{ range $page.OutputFormats }}
-            {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
-
-            <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
-        {{ end }}
-
-        {{ range $t := $page.Translations }}
-            {{ range .OutputFormats }}
-                <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
-            {{ end }}
-        {{ end }}
-
         {{ with $copyright }}
             <copyright>{{ . }}</copyright>
         {{ end }}
@@ -74,6 +58,22 @@
 
         {{ with $link }}
             <link>{{ . }}</link>
+        {{ end }}
+
+        {{ with $page.OutputFormats.Get "rss" }}
+            <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="self" type="application/rss+xml"/>
+        {{ end }}
+
+        {{ range $page.OutputFormats }}
+            {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
+
+            <atom:link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+        {{ end }}
+
+        {{ range $t := $page.Translations }}
+            {{ range .OutputFormats }}
+                <atom:link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+            {{ end }}
         {{ end }}
 
         {{ with $editor }}
