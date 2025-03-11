@@ -1,8 +1,8 @@
 {{ $page := . }}
 
-{{ $copyright := site.Copyright | markdownify | plainify | htmlUnescape }}
+{{ $copyright := site.Copyright | markdownify | plainify }}
 {{ $date := "Mon, 02 Jan 2006 15:04:05 MST" }}
-{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify | plainify | htmlUnescape }}
+{{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify | plainify }}
 {{ $editor := $page.Param "paige.feeds.rss.managing_editor" }}
 {{ $language := $page.Language.LanguageCode }}
 {{ $limit := site.Config.Services.RSS.Limit }}
@@ -19,17 +19,17 @@
 {{ $titles := slice }}
 
 {{ if $page.IsHome }}
-    {{ $titles = slice (site.Title | default $page.Title | markdownify | plainify | htmlUnescape) }}
+    {{ $titles = slice (site.Title | default $page.Title | markdownify | plainify) }}
 {{ else }}
     {{ with $page.Title }}
-        {{ $titles = slice (. | markdownify | plainify | htmlUnescape) }}
+        {{ $titles = slice (. | markdownify | plainify) }}
     {{ end }}
 
     {{ range .Ancestors }}
         {{ $title := cond .IsHome (site.Title | default .Title) .Title }}
 
         {{ with $title }}
-            {{ $titles = $titles | append (. | markdownify | plainify | htmlUnescape) }}
+            {{ $titles = $titles | append (. | markdownify | plainify) }}
         {{ end }}
     {{ end }}
 {{ end }}
@@ -97,7 +97,7 @@
                     {{ $external := and $subpage.Params.link (not ($subpage.Param "paige.feeds.disable_link")) | not | not }}
                     {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host ($subpage.PublishDate.Format "2006-01-02") (cond ($subpage.Params.id | not) $subpage.RelPermalink $subpage.Params.id) }}
                     {{ $published := $subpage.PublishDate.Format $date }}
-                    {{ $title := $subpage.Title | markdownify | plainify | htmlUnescape }}
+                    {{ $title := $subpage.Title | markdownify | plainify }}
 
                     {{ $link := cond $external (htmlEscape $subpage.Params.link) $subpage.Permalink }}
 
@@ -105,7 +105,7 @@
                         {{ $primary := index . 0 }}
 
                         {{ if and $primary.Params.paige.author.email $primary.Params.paige.author.name }}
-                            {{ $author = printf "%s (%s)" $primary.Params.paige.author.email ($primary.Params.paige.author.name | default ($primary.Title | markdownify | plainify | htmlUnescape)) }}
+                            {{ $author = printf "%s (%s)" $primary.Params.paige.author.email ($primary.Params.paige.author.name | default ($primary.Title | markdownify | plainify)) }}
                         {{ else if $primary.Params.email }}
                             {{ $author = $primary.Params.email }}
                         {{ end }}
@@ -114,7 +114,7 @@
                     {{ if and $content $external }}
                         {{ $text := or ($subpage.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
-                        {{ $footer := printf `<p><a href="%s">%s</a></p>` $subpage.Permalink $text | safeHTML }}
+                        {{ $footer := printf `<p><a href="%s">%s</a></p>` $subpage.Permalink $text }}
 
                         {{ $content = print $content $footer }}
                     {{ end }}
