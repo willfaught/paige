@@ -108,7 +108,7 @@
                 {{ $published := $subpage.PublishDate.Format $date }}
                 {{ $title := markdownify $subpage.Title }}
 
-                {{ $link := cond $external $subpage.Params.link $subpage.Permalink }}
+                {{ $link := cond $external (htmlEscape $subpage.Params.link) $subpage.Permalink }}
 
                 {{ if and $content $external }}
                     {{ $text := or ($subpage.Param "paige.feeds.page_link" | markdownify) "⏎" }}
@@ -157,7 +157,7 @@
 
                     {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
 
-                    <link href="{{ htmlEscape $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                    <link href="{{ $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                 {{ end }}
 
                 {{ range $t := $subpage.Translations }}
