@@ -117,7 +117,7 @@
                 {{ if and $content $external }}
                     {{ $text := or ($subpage.Param "paige.feeds.page_link" | markdownify) "⏎" }}
 
-                    {{ $footer := printf `<p><a href="%s">%s</a></p>` $subpage.Permalink $text | safeHTML }}
+                    {{ $footer := printf `<p><a href="%s">%s</a></p>` $subpage.Permalink $text }}
 
                     {{ $content = print $content $footer }}
                 {{ end }}
