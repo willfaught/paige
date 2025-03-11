@@ -143,8 +143,6 @@
                         <link>{{ . }}</link>
                     {{ end }}
 
-                    <atom:link href="{{ $subpage.Permalink }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="self" type="text/html"/>
-
                     {{ range $subpage.OutputFormats }}
                         {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
