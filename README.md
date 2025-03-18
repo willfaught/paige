@@ -134,6 +134,11 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     ```sh
     $ cd yoursite
     $ hugo mod init github.com/youraccount/yoursite
+    $ cat >>hugo.toml <<EOF
+    [markup.highlight]
+    noclasses = false
+    style = "github"
+    EOF
     ```
 
 6. Configure the Paige module:
@@ -142,9 +147,6 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ cd yoursite
     $ hugo mod get github.com/willfaught/paige@latest
     $ cat >>hugo.toml <<EOF
-    [markup.highlight]
-    noclasses = false
-    style = "github"
     [[module.imports]]
     path = "github.com/willfaught/paige"
     EOF
