@@ -361,7 +361,7 @@ The parameter object is accessed in site parameters as `[params.paige]`, and in 
 Parameters for pages:
 
 ```toml
-id = "" # ID used in feeds. Defaults to the relative permalink.
+id = "" # Unique URI used in feeds. Defaults to a tag URN with the relative permalink.
 link = "" # URL for an anchor around the title. Example: "https://youtu.be/dQw4w9WgXcQ".
 ```
 
