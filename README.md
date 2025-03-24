@@ -110,26 +110,28 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ choco install sass
     ```
 
-    For Snap on Linux:
+    For Linux users:
+   - If you installed Hugo via Snap, Dart Sass is already included. No additional installation is needed.
+   - For other Linux users, install Dart Sass manually:
 
     ```sh
-    $ sudo snap install dart-sass
+    $ sudo apt install dart-sass
     ```
 
-3. Create a site:
+4. Create a site:
 
     ```sh
     $ hugo new site yoursite
     ```
 
-4. Create a post:
+5. Create a post:
 
     ```sh
     $ cd yoursite
     $ hugo new yourpost.md
     ```
 
-5. Configure your module:
+6. Configure your module:
 
     ```sh
     $ cd yoursite
@@ -141,7 +143,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     EOF
     ```
 
-6. Configure the Paige module:
+7. Configure the Paige module:
 
     ```sh
     $ cd yoursite
@@ -152,21 +154,21 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     EOF
     ```
 
-7. Build and run the site for development:
+8. Build and run the site for development:
 
     ```sh
     $ cd yoursite
     $ hugo server --buildDrafts
     ```
 
-8. Build the site for production:
+9. Build the site for production:
 
     ```sh
     $ cd yoursite
     $ hugo --environment production --minify
     ```
 
-9. Update the Paige module:
+10. Update the Paige module:
 
     ```sh
     $ cd yoursite
