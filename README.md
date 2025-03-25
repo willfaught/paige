@@ -110,14 +110,6 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ choco install sass
     ```
 
-    For Linux users:
-   - If you installed Hugo via Snap, Dart Sass is already included. No additional installation is needed.
-   - For other Linux users, install Dart Sass manually:
-
-    ```sh
-    $ sudo apt install dart-sass
-    ```
-
 4. Create a site:
 
     ```sh
