@@ -110,6 +110,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ choco install sass
     ```
 
+<<<<<<< HEAD
     For Snap on Linux:
 
     ```sh
@@ -117,6 +118,9 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     ```
 
 3. Create a site:
+=======
+4. Create a site:
+>>>>>>> f794b5e0 (Remove separate Sass installation for Snap)
 
     ```sh
     $ hugo new site yoursite
