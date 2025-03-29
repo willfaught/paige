@@ -56,5 +56,5 @@
 {{ end }}
 
 <h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
-    <a class="text-body text-decoration-none" href="#{{ $context.Anchor }}">{{ $context.Text }}</a>
+    <a href="#{{ $context.Anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $context.Text }}</a>
 </h{{ $old }}>
