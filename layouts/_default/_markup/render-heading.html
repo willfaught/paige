@@ -5,6 +5,7 @@
 {{ $new := $context.Level }}
 {{ $old := $context.Level }}
 {{ $page := $context.Page }}
+{{ $text := $context.Text }}
 
 {{ $attrs := merge $context.Attributes $defaults }}
 
@@ -56,5 +57,5 @@
 {{ end }}
 
 <h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
-    <a href="#{{ $context.Anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $context.Text }}</a>
+    <a href="#{{ $context.Anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $text }}</a>
 </h{{ $old }}>
