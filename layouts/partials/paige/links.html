@@ -22,11 +22,11 @@
 {{ end }}
 
 {{ if fileExists "static/web-app-manifest-192x192.png" }}
-    <link href="{{ relLangURL `web-app-manifest-192x192.png` }}" rel="icon" type="image/svg+xml">
+    <link href="{{ relLangURL `web-app-manifest-192x192.png` }}" rel="icon" type="image/png">
 {{ end }}
 
 {{ if fileExists "static/web-app-manifest-512x512.png" }}
-    <link href="{{ relLangURL `web-app-manifest-512x512.png` }}" rel="icon" type="image/svg+xml">
+    <link href="{{ relLangURL `web-app-manifest-512x512.png` }}" rel="icon" type="image/png">
 {{ end }}
 
 {{ if fileExists "assets/site.webmanifest" }}
