@@ -109,13 +109,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     ```sh
     $ choco install sass
     ```
-
-    For Snap on Linux:
-
-    ```sh
-    $ sudo snap install dart-sass
-    ```
-
+    
 3. Create a site:
 
     ```sh
