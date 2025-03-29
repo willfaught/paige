@@ -1,15 +1,15 @@
 {{ $params := . }}
 
 {{ $context := $params.context }}
-{{ $enablesourcemap := not hugo.IsProduction }}
 {{ $href := $params.href }}
 {{ $integrity := $params.integrity }}
+{{ $map := not hugo.IsProduction }}
 {{ $origin := $params.crossorigin | default "anonymous" }}
-{{ $outputstyle := cond hugo.IsProduction "compressed" "" }}
 {{ $page := $params.page }}
 {{ $paths := $params.includepaths }}
 {{ $policy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
+{{ $style := cond hugo.IsProduction "compressed" "" }}
 {{ $template := $params.template }}
 
 {{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
@@ -33,7 +33,7 @@
     {{ if $sass }}
         {{/* TODO: Remove the silenceDeprecations option when Bootstrap is updated beyond v5.3.3. */}}
 
-        {{ $resource = $resource | toCSS (dict "enableSourceMap" $enablesourcemap "includePaths" $paths "outputStyle" $outputstyle "silenceDeprecations" (slice "color-functions" "global-builtin" "import" "mixed-decls") "transpiler" "dartsass") }}
+        {{ $resource = $resource | toCSS (dict "enableSourceMap" $map "includePaths" $paths "outputStyle" $style "silenceDeprecations" (slice "color-functions" "global-builtin" "import" "mixed-decls") "transpiler" "dartsass") }}
     {{ end }}
 
     {{ $resource = $resource | minify | fingerprint }}
