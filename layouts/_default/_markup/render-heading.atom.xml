@@ -1,0 +1,7 @@
+{{ $context := . }}
+
+{{ $anchor := $context.Anchor }}
+{{ $level := $context.Level }}
+{{ $text := $context.Text }}
+
+<h{{ $level }} {{ with $anchor }} id="{{ . }}" {{ end }}>{{ $text }}</h{{ $level }}>
