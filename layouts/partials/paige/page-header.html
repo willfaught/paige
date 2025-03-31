@@ -14,7 +14,7 @@
 {{ $series := $page.GetTerms "series" | and ($page.Param "paige.pages.disable_series" | not) }}
 {{ $tags := $page.GetTerms "tags" }}
 {{ $time := $page.ReadingTime | and ($page.Param "paige.pages.disable_reading_time" | not) }}
-{{ $title := $page.LinkTitle | markdownify | and ($page.Param "paige.pages.disable_title" | not) }}
+{{ $title := $page.Title | markdownify | and ($page.Param "paige.pages.disable_title" | not) }}
 {{ $toc := and $page.Content (ne $page.TableOfContents `<nav id="TableOfContents"></nav>`) | and ($page.Param "paige.pages.disable_toc" | not) }}
 {{ $words := $page.WordCount | and ($page.Param "paige.pages.disable_word_count" | not) }}
 
