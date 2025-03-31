@@ -86,18 +86,18 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 
 ## Setup
 
-1. [Install Hugo](https://gohugo.io/installation/) (the extended version, and at least v0.141.0).
+1. Install [Hugo](https://gohugo.io/installation/) and [Dart Sass](https://github.com/sass/dart-sass):
 
     For Homebrew on Mac:
 
     ```sh
-    $ brew install hugo
+    $ brew install hugo sass/sass/sass
     ```
 
     For Chocolatey on Windows:
 
     ```sh
-    $ choco install hugo-extended
+    $ choco install hugo-extended sass
     ```
 
     For Snap on Linux:
@@ -106,34 +106,22 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ sudo snap install hugo
     ```
 
-2. [Install Dart Sass](https://github.com/sass/dart-sass/releases).
+    Hugo must be the extended version, and at least version v0.141.0.
 
-    For Homebrew on Mac:
-
-    ```sh
-    $ brew install sass/sass/sass
-    ```
-
-    For Chocolatey on Windows:
-
-    ```sh
-    $ choco install sass
-    ```
-    
-3. Create a site:
+2. Create a site:
 
     ```sh
     $ hugo new site yoursite
     ```
 
-4. Create a post:
+3. Create a post:
 
     ```sh
     $ cd yoursite
     $ hugo new yourpost.md
     ```
 
-5. Configure your module:
+4. Configure your module:
 
     ```sh
     $ cd yoursite
@@ -145,7 +133,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     EOF
     ```
 
-6. Configure the Paige module:
+5. Configure the Paige module:
 
     ```sh
     $ cd yoursite
@@ -156,21 +144,21 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     EOF
     ```
 
-7. Build and run the site for development:
+6. Build and run the site for development:
 
     ```sh
     $ cd yoursite
     $ hugo server --buildDrafts
     ```
 
-8. Build the site for production:
+7. Build the site for production:
 
     ```sh
     $ cd yoursite
     $ hugo --environment production --minify
     ```
 
-9. Update the Paige module:
+8. Update the Paige module:
 
     ```sh
     $ cd yoursite
