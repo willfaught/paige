@@ -1,6 +1,8 @@
 # Paige
 
-Powerful, pliable pixel perfection. An advanced Hugo theme. [Try it out.](https://willfaught.com/paige)
+Powerful, pliable pixel perfection.
+An advanced Hugo theme.
+[Try it out.](https://willfaught.com/paige)
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/willfaught/paige/raw/master/images/screenshot-dark.jpg">
@@ -8,7 +10,15 @@ Powerful, pliable pixel perfection. An advanced Hugo theme. [Try it out.](https:
     <img alt="Screenshot" src="https://github.com/willfaught/paige/raw/master/images/screenshot.jpg">
 </picture>
 
-Paige is designed to put your content front and center, avoiding the typical clutter. The look is seamless and smooth, scalable and readable, portable and efficient. The layout is minimal and responsive, using verticality and white space to delineate and highlight each part of the page. The implementation is flexible and extensible. It’s a versatile canvas that serves most needs.
+Paige is designed to put your content front and center,
+avoiding the typical clutter.
+The look is seamless and smooth,
+scalable and readable,
+portable and efficient.
+The layout is minimal and responsive,
+using verticality and white space to delineate and highlight each part of the page.
+The implementation is flexible and extensible.
+It’s a versatile canvas that serves most needs.
 
 ## Features
 
@@ -172,7 +182,9 @@ The current major version is 0.
 From time to time, breaking changes are made.
 When you update Paige, you must test your site.
 
-See Hugo's [installation](https://gohugo.io/installation/), [getting started](https://gohugo.io/getting-started/), and [module](https://gohugo.io/hugo-modules/) guides for more information.
+See Hugo's [installation](https://gohugo.io/installation/),
+[getting started](https://gohugo.io/getting-started/),
+and [module](https://gohugo.io/hugo-modules/) guides for more information.
 
 ## Kickoff
 
