@@ -1072,7 +1072,8 @@ try the following in `yoursite/hugo.toml`:
 ```toml
 [params.paige]
 style = """
-#paige-page-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
+#paige-page-content,
+#paige-page-pages > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
 """
 ```
 
@@ -1087,7 +1088,8 @@ try the following in `yoursite/hugo.toml`:
 ```toml
 [params.paige]
 style = """
-#paige-page-content > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
+#paige-page-content,
+#paige-page-pages > * { margin-left: auto; margin-right: auto; max-width: 40rem; }
 #paige-page-content > img,
 #paige-page-content > .paige-shortcode-image,
 #paige-page-content > .paige-shortcode-vimeo,
