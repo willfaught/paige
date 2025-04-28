@@ -12,11 +12,11 @@
 {{ $style := cond hugo.IsProduction "compressed" "" }}
 {{ $template := $params.template }}
 
-{{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
-
 {{ if not $href }}
     {{ errorf "layouts/partials/paige/tag-link.html: no href" }}
 {{ end }}
+
+{{ $resource := partial "paige/func-resource.html" (dict "page" $page "url" $href) }}
 
 {{ if $resource }}
     {{ if $template }}
