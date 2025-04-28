@@ -20,7 +20,9 @@
 
 {{ if $resource }}
     {{ if $template }}
-        {{ $dir := path.Dir $resource.RelPermalink }}
+        {{ $base := (urls.Parse site.BaseURL).Path }}
+
+        {{ $dir := path.Dir $resource.RelPermalink | strings.TrimPrefix $base }}
         {{ $ext := path.Ext $resource.RelPermalink }}
         {{ $hash := printf "%v%s" $context $resource.Content | sha1 }}
         {{ $name := path.BaseName $resource.RelPermalink }}
