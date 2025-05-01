@@ -16,7 +16,7 @@
     {{ with $page.Store.Get "paige-render-heading" }}
         {{ $max = .max }}
     {{ else }}
-        {{ range $k, $v := $context.Page.Fragments.HeadingsMap }}
+        {{ range $k, $v := $page.Fragments.HeadingsMap }}
             {{ if gt $v.Level $max }}
                 {{ $max = $v.Level }}
             {{ end }}
