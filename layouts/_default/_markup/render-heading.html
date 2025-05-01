@@ -1,11 +1,9 @@
 {{ $context := . }}
 
-{{ $defaults := dict "id" $context.Anchor }}
+{{ $attrs := merge $context.Attributes (dict "id" $context.Anchor) }}
 {{ $old := $context.Level }}
 {{ $page := $context.Page }}
 {{ $text := $context.Text }}
-
-{{ $attrs := merge $context.Attributes $defaults }}
 
 {{ if $page.Param "paige.pages.minimize_heading_sizes" }}
     {{ $max := 0 }}
