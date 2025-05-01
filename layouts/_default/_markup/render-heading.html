@@ -1,9 +1,12 @@
 {{ $context := . }}
 
-{{ $attrs := merge $context.Attributes (dict "id" $context.Anchor) }}
+{{ $anchor := $context.Anchor }}
+{{ $attrs := $context.Attributes }}
 {{ $old := $context.Level }}
 {{ $page := $context.Page }}
 {{ $text := $context.Text }}
+
+{{ $attrs = merge $attrs (dict "id" $anchor) }}
 
 {{ if $page.Param "paige.pages.minimize_heading_sizes" }}
     {{ $max := 0 }}
@@ -57,5 +60,5 @@
 {{ end }}
 
 <h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
-    <a href="#{{ $context.Anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $text }}</a>
+    <a href="#{{ $anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $text }}</a>
 </h{{ $old }}>
