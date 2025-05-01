@@ -1,59 +1,61 @@
 {{ $context := . }}
 
 {{ $defaults := dict "id" $context.Anchor }}
-{{ $max := 0 }}
-{{ $new := $context.Level }}
 {{ $old := $context.Level }}
 {{ $page := $context.Page }}
 {{ $text := $context.Text }}
 
 {{ $attrs := merge $context.Attributes $defaults }}
 
-{{ $store := 0 }}
+{{ if $page.Param "paige.pages.minimize_heading_sizes" }}
+    {{ $max := 0 }}
+    {{ $new := $old }}
+    {{ $store := 0 }}
 
-{{ with $page.Store.Get "paige-render-heading" }}
-    {{ $max = .max }}
-{{ else }}
-    {{ range $k, $v := $context.Page.Fragments.HeadingsMap }}
-        {{ if gt $v.Level $max }}
-            {{ $max = $v.Level }}
+    {{ with $page.Store.Get "paige-render-heading" }}
+        {{ $max = .max }}
+    {{ else }}
+        {{ range $k, $v := $context.Page.Fragments.HeadingsMap }}
+            {{ if gt $v.Level $max }}
+                {{ $max = $v.Level }}
+            {{ end }}
         {{ end }}
+
+        {{ $page.Store.Set "paige-render-heading" (dict "max" $max) }}
     {{ end }}
 
-    {{ $page.Store.Set "paige-render-heading" (dict "max" $max) }}
-{{ end }}
+    {{ if and $max (lt $max 6) }}
+        {{ $new = add $old (sub 6 $max) }}
+    {{ end }}
 
-{{ if and $max (lt $max 6) }}
-    {{ $new = add $old (sub 6 $max) }}
-{{ end }}
+    {{ if ne $old $new }}
+        {{ $class := slice }}
+        {{ $found := false }}
 
-{{ if ne $old $new }}
-    {{ $class := slice }}
-    {{ $found := false }}
+        {{ range $k, $v := $attrs }}
+            {{ if eq $k "class" }}
+                {{ range split $v " " }}
+                    {{ if . }}
+                        {{ $class = $class | append . }}
 
-    {{ range $k, $v := $attrs }}
-        {{ if eq $k "class" }}
-            {{ range split $v " " }}
-                {{ if . }}
-                    {{ $class = $class | append . }}
-
-                    {{ if in (slice "h1" "h2" "h3" "h4" "h5" "h6") . }}
-                        {{ $found = true }}
+                        {{ if in (slice "h1" "h2" "h3" "h4" "h5" "h6") . }}
+                            {{ $found = true }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
+
+                {{ break }}
             {{ end }}
-
-            {{ break }}
         {{ end }}
+
+        {{ if not $found }}
+            {{ $class = $class | append (print "h" $new) }}
+        {{ end }}
+
+        {{ $class = delimit (sort $class) " " }}
+
+        {{ $attrs = merge (dict "class" $class) $attrs }}
     {{ end }}
-
-    {{ if not $found }}
-        {{ $class = $class | append (print "h" $new) }}
-    {{ end }}
-
-    {{ $class = delimit (sort $class) " " }}
-
-    {{ $attrs = merge (dict "class" $class) $attrs }}
 {{ end }}
 
 <h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
