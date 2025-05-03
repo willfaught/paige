@@ -9,6 +9,7 @@
 {{ $attrs = merge $attrs (dict "id" $anchor) }}
 
 {{ if $page.Param "paige.pages.minimize_heading_sizes" }}
+    {{ $cap := $page.Param "paige.pages.maximum_heading_level" }}
     {{ $max := 0 }}
     {{ $new := $old }}
     {{ $store := 0 }}
@@ -25,8 +26,10 @@
         {{ $page.Store.Set "paige-render-heading" (dict "max" $max) }}
     {{ end }}
 
-    {{ if and $max (lt $max 6) }}
-        {{ $new = add $old (sub 6 $max) }}
+    {{ $highest := cond (and $cap (le $max $cap)) $cap 6 }}
+
+    {{ if and $max (lt $max $highest) }}
+        {{ $new = add $old (sub $highest $max) }}
     {{ end }}
 
     {{ if ne $old $new }}

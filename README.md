@@ -260,6 +260,7 @@ disable_word_count = false
 
 # Presentation
 full_width = false # Whether the page body fills the page width
+maximum_heading_level = 6 # Heading level used for the maximum size for minimize_heading_sizes
 minimize_heading_sizes = false # Whether to minimize heading sizes for heading levels over 1
 
 # Schema
