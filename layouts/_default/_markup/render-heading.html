@@ -18,13 +18,13 @@
         {{ $levels = .levels }}
     {{ else }}
         {{ $cap := $page.Param "paige.pages.maximum_heading_level" }}
-        {{ $max := 0 }}
+        {{ $largest := 0 }}
 
         {{ range $k, $v := $page.Fragments.HeadingsMap }}
             {{ $levels = merge $levels (dict (string $v.Level) $v.Level) }}
 
-            {{ if gt $v.Level $max }}
-                {{ $max = $v.Level }}
+            {{ if gt $v.Level $largest }}
+                {{ $largest = $v.Level }}
             {{ end }}
         {{ end }}
 
@@ -42,15 +42,15 @@
                 {{ end }}
             {{ end }}
 
-            {{ $max = add (len $levels) 1 }}
+            {{ $largest = add (len $levels) 1 }}
         {{ end }}
 
         {{ if $minimize }}
-            {{ $highest := cond (and $cap $max (le $max $cap)) $cap 6 }}
+            {{ $highest := cond (and $cap $largest (le $largest $cap)) $cap 6 }}
 
-            {{ $diff := sub $highest $max }}
+            {{ $diff := sub $highest $largest }}
 
-            {{ if and $max (lt $max $highest) }}
+            {{ if and $largest (lt $largest $highest) }}
                 {{ range $old, $new := $levels }}
                     {{ $levels = merge $levels (dict $old (add $new $diff)) }}
                 {{ end }}
