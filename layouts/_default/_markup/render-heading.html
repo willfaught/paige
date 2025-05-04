@@ -6,31 +6,61 @@
 {{ $page := $context.Page }}
 {{ $text := $context.Text }}
 
+{{ $minimize := $page.Param "paige.pages.minimize_heading_sizes" }}
+{{ $normalize := $page.Param "paige.pages.normalize_heading_sizes" }}
+
 {{ $attrs = merge $attrs (dict "id" $anchor) }}
 
-{{ if $page.Param "paige.pages.minimize_heading_sizes" }}
-    {{ $cap := $page.Param "paige.pages.maximum_heading_level" }}
-    {{ $max := 0 }}
-    {{ $new := $old }}
-    {{ $store := 0 }}
+{{ if or $minimize $normalize }}
+    {{ $levels := dict }}
 
     {{ with $page.Store.Get "paige-render-heading" }}
-        {{ $max = .max }}
+        {{ $levels = .levels }}
     {{ else }}
+        {{ $cap := $page.Param "paige.pages.maximum_heading_level" }}
+        {{ $max := 0 }}
+
         {{ range $k, $v := $page.Fragments.HeadingsMap }}
+            {{ $levels = merge $levels (dict (string $v.Level) $v.Level) }}
+
             {{ if gt $v.Level $max }}
                 {{ $max = $v.Level }}
             {{ end }}
         {{ end }}
 
-        {{ $page.Store.Set "paige-render-heading" (dict "max" $max) }}
+        {{ if $normalize }}
+            {{ range $x := seq 2 5 }}
+                {{ if isset $levels (string $x) | not }}
+                    {{ range $y := seq (add $x 1) 6 }}
+                        {{ $key := string $y }}
+
+                        {{ if isset $levels $key }}
+                            {{ $old := index $levels $key }}
+                            {{ $levels = merge $levels (dict $key (sub $old 1)) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ $max = add (len $levels) 1 }}
+        {{ end }}
+
+        {{ if $minimize }}
+            {{ $highest := cond (and $cap $max (le $max $cap)) $cap 6 }}
+
+            {{ $diff := sub $highest $max }}
+
+            {{ if and $max (lt $max $highest) }}
+                {{ range $old, $new := $levels }}
+                    {{ $levels = merge $levels (dict $old (add $new $diff)) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ $page.Store.Set "paige-render-heading" (dict "levels" $levels) }}
     {{ end }}
 
-    {{ $highest := cond (and $cap (le $max $cap)) $cap 6 }}
-
-    {{ if and $max (lt $max $highest) }}
-        {{ $new = add $old (sub $highest $max) }}
-    {{ end }}
+    {{ $new := index $levels (string $old) }}
 
     {{ if ne $old $new }}
         {{ $class := slice }}
@@ -58,7 +88,7 @@
 
         {{ $class = delimit (sort $class) " " }}
 
-        {{ $attrs = merge (dict "class" $class) $attrs }}
+        {{ $attrs = merge $attrs (dict "class" $class) }}
     {{ end }}
 {{ end }}
 
