@@ -2,7 +2,7 @@
 
 {{ $anchor := $context.Anchor }}
 {{ $attrs := $context.Attributes }}
-{{ $old := $context.Level }}
+{{ $level := $context.Level }}
 {{ $page := $context.Page }}
 {{ $text := $context.Text }}
 
@@ -60,9 +60,9 @@
         {{ $page.Store.Set "paige-render-heading" (dict "levels" $levels) }}
     {{ end }}
 
-    {{ $new := index $levels (string $old) }}
+    {{ $new := index $levels (string $level) }}
 
-    {{ if ne $old $new }}
+    {{ if ne $level $new }}
         {{ $class := slice }}
         {{ $found := false }}
 
@@ -92,6 +92,6 @@
     {{ end }}
 {{ end }}
 
-<h{{ $old }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
+<h{{ $level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
     <a href="#{{ $anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $text }}</a>
-</h{{ $old }}>
+</h{{ $level }}>
