@@ -17,8 +17,8 @@
     {{ with $page.Store.Get "paige-render-heading" }}
         {{ $levels = .levels }}
     {{ else }}
-        {{ $cap := $page.Param "paige.pages.maximum_heading_level" }}
         {{ $largest := 0 }}
+        {{ $max := $page.Param "paige.pages.maximum_heading_level" }}
 
         {{ range $k, $v := $page.Fragments.HeadingsMap }}
             {{ $levels = merge $levels (dict (string $v.Level) $v.Level) }}
@@ -46,7 +46,7 @@
         {{ end }}
 
         {{ if $minimize }}
-            {{ $highest := cond (and $cap $largest (le $largest $cap)) $cap 6 }}
+            {{ $highest := cond (and $max $largest (le $largest $max)) $max 6 }}
 
             {{ $diff := sub $highest $largest }}
 
