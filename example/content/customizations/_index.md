@@ -1,5 +1,5 @@
 +++
-authors = ["author-demo"]
+authors = ["计缘工作室"]
 categories = ["customization", "paige"]
 description = "Demonstrations of customizations."
 series = ["series-demo"]
