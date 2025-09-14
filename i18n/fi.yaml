@@ -1,5 +1,5 @@
 paige_breadcrumbs:
-  other: Leipämurut
+  other: Murupolku
 paige_collections:
   other: Kokoelmat
 paige_edit:
@@ -15,7 +15,7 @@ paige_history:
 paige_home:
   other: Etusivu
 paige_javascript_is_required:
-  other: JavaScript on vaadittu
+  other: JavaScript vaaditaan
 paige_last:
   other: Viimeinen
 paige_menu:
@@ -45,4 +45,4 @@ paige_something_found:
   other: Jotain löytyi
 paige_words:
   one: sana
-  other: sanat
+  other: sanaa
