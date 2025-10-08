@@ -260,9 +260,11 @@ disable_word_count = false
 
 # Presentation
 full_width = false # Whether the page body fills the page width
-maximum_heading_level = 6 # Heading level used for the maximum size for minimize_heading_sizes
-minimize_heading_sizes = false # Whether to minimize heading sizes for heading levels over 1
-normalize_heading_sizes = false # Whether to normalize heading sizes for heading levels over 1
+maximize_heading_levels = false # Maximize heading levels up to the maximum heading level
+maximum_heading_level = 6 # The maximum heading level
+minimize_heading_levels = false # Minimize heading levels down to the minimum heading level
+minimum_heading_level = 2 # The minimum heading level
+normalize_heading_levels = false # Minimize heading levels higher than the lowest one used
 
 # Schema
 base_schema = {} # JSON-LD schema that all page schemas override

@@ -6,19 +6,22 @@
 {{ $page := $context.Page }}
 {{ $text := $context.Text }}
 
-{{ $minimize := $page.Param "paige.pages.minimize_heading_sizes" }}
-{{ $normalize := $page.Param "paige.pages.normalize_heading_sizes" }}
+{{ $maximize := $page.Param "paige.pages.maximize_heading_levels" }}
+{{ $minimize := $page.Param "paige.pages.minimize_heading_levels" }}
+{{ $normalize := $page.Param "paige.pages.normalize_heading_levels" }}
 
 {{ $attrs = merge $attrs (dict "id" $anchor) }}
 
-{{ if or $minimize $normalize }}
+{{ if and (or $maximize $minimize $normalize) (len $page.Fragments.HeadingsMap) }}
     {{ $levels := dict }}
 
     {{ with $page.Store.Get "paige-render-heading" }}
         {{ $levels = .levels }}
     {{ else }}
         {{ $largest := 0 }}
-        {{ $max := $page.Param "paige.pages.maximum_heading_level" }}
+        {{ $maximum := $page.Param "paige.pages.maximum_heading_level" }}
+        {{ $minimum := $page.Param "paige.pages.minimum_heading_level" }}
+        {{ $smallest := 7 }}
 
         {{ range $k, $v := $page.Fragments.HeadingsMap }}
             {{ $levels = merge $levels (dict (string $v.Level) $v.Level) }}
@@ -26,34 +29,43 @@
             {{ if gt $v.Level $largest }}
                 {{ $largest = $v.Level }}
             {{ end }}
+
+            {{ if lt $v.Level $smallest }}
+                {{ $smallest = $v.Level }}
+            {{ end }}
         {{ end }}
 
         {{ if $normalize }}
-            {{ range $x := seq 2 5 }}
+            {{ range $x := seq (add $smallest 1) 5 }}
                 {{ if isset $levels (string $x) | not }}
                     {{ range $y := seq (add $x 1) 6 }}
                         {{ $key := string $y }}
 
                         {{ if isset $levels $key }}
-                            {{ $old := index $levels $key }}
-                            {{ $levels = merge $levels (dict $key (sub $old 1)) }}
+                            {{ $levels = merge $levels (dict $key (sub (index $levels $key) 1)) }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
             {{ end }}
 
-            {{ $largest = add (len $levels) 1 }}
+            {{ $largest = sub (add $smallest (len $levels)) 1}}
         {{ end }}
 
-        {{ if $minimize }}
-            {{ $highest := cond (and $max $largest (le $largest $max)) $max 6 }}
+        {{ if $maximize }}
+            {{ $cap := cond (and $maximum (le $largest $maximum)) $maximum 6 }}
 
-            {{ $diff := sub $highest $largest }}
+            {{ $diff := sub $cap $largest }}
 
-            {{ if and $largest (lt $largest $highest) }}
-                {{ range $old, $new := $levels }}
-                    {{ $levels = merge $levels (dict $old (add $new $diff)) }}
-                {{ end }}
+            {{ range $old, $new := $levels }}
+                {{ $levels = merge $levels (dict $old (add $new $diff)) }}
+            {{ end }}
+        {{ else if $minimize }}
+            {{ $cap := cond (and $minimum (ge $smallest $minimum)) $minimum 2 }}
+
+            {{ $diff := sub $smallest $cap }}
+
+            {{ range $old, $new := $levels }}
+                {{ $levels = merge $levels (dict $old (sub $new $diff)) }}
             {{ end }}
         {{ end }}
 
@@ -84,11 +96,11 @@
 
         {{ if not $found }}
             {{ $class = $class | append (print "h" $new) }}
+
+            {{ $class = delimit (sort $class) " " }}
+
+            {{ $attrs = merge $attrs (dict "class" $class) }}
         {{ end }}
-
-        {{ $class = delimit (sort $class) " " }}
-
-        {{ $attrs = merge $attrs (dict "class" $class) }}
     {{ end }}
 {{ end }}
 
