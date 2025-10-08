@@ -36,7 +36,7 @@
 {{ if $result }}
     {{ with urls.Parse $url }}
         {{ if .Scheme }}
-            {{ $path := print $result.MediaType.SubType "/paige" $result.RelPermalink }}
+            {{ $path := print $result.MediaType.SubType "/paige/" $result.RelPermalink }}
 
             {{ $result = resources.Copy $path $result }}
         {{ end }}
