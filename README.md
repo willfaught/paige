@@ -124,6 +124,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 4. Configure your module:
 
     ```sh
+    $ sh
     $ cd yoursite
     $ hugo mod init github.com/youraccount/yoursite
     $ cat >>hugo.toml <<EOF
@@ -136,6 +137,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
 5. Configure the Paige module:
 
     ```sh
+    $ sh
     $ cd yoursite
     $ hugo mod get github.com/willfaught/paige@latest
     $ cat >>hugo.toml <<EOF
