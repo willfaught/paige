@@ -52,6 +52,8 @@ disable_reading_time = true
 disable_series = true
 disable_toc = true
 disable_word_count = true
+maximize_heading_levels = true
+normalize_heading_levels = true
 
 [paige.pages.base_schema]
 isAccessibleForFree = true
