@@ -1130,9 +1130,3 @@ disable_sections = true
 
 - Photos by [Lanty](https://unsplash.com/@photos_by_lanty)
 - Photo by [Sergey Pesterev](https://unsplash.com/photos/JV78PVf3gGI)
-
-## Project
-
-Copyright 2022 [Will Faught](https://willfaught.com).
-Licensed under the [EUPL](https://spdx.org/licenses/EUPL-1.2.html).
-Hosted at https://github.com/willfaught/paige.
