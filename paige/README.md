@@ -19,12 +19,6 @@ If you update Bootstrap:
 
      // Deprecate
      @import "mixins/deprecate";
-    diff --git a/paige/node_modules/bootstrap/scss/vendor/_rfs.scss b/paige/node_modules/bootstrap/scss/_vendor/_rfs.scss
-    similarity index 100%
-    rename from paige/node_modules/bootstrap/scss/vendor/_rfs.scss
-    rename to paige/node_modules/bootstrap/scss/_vendor/_rfs.scss
-    diff --git a/paige/node_modules/bootstrap/scss/bootstrap-grid.scss b/paige/node_modules/bootstrap/scss/bootstrap-grid.scss
-    index 52bd577..c82f6bc 100644
     --- a/paige/node_modules/bootstrap/scss/bootstrap-grid.scss
     +++ b/paige/node_modules/bootstrap/scss/bootstrap-grid.scss
     @@ -13,7 +13,7 @@ $include-column-box-sizing: true !default;
