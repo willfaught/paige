@@ -103,7 +103,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     For Snap on Linux:
 
     ```sh
-    $ sudo snap install hugo
+    $ sudo snap install dart-sass hugo
     ```
 
     Hugo must be the extended version, and at least version v0.141.0.
