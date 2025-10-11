@@ -106,7 +106,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ sudo snap install dart-sass hugo
     ```
 
-    Hugo must be the extended version, and at least version v0.141.0.
+    Hugo must be the extended version, and at least version 0.141.0.
 
 2. Create a site:
 
