@@ -12,7 +12,7 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@v4"
       - name: "Setup Hugo"
-        run: "sudo snap install hugo"
+        run: "sudo snap install --edge hugo"
       - name: "Setup Sass"
         run: "sudo snap install dart-sass"
       - id: "pages"
