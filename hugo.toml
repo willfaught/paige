@@ -42,14 +42,14 @@ target = "static"
 # Bootstrap mounts
 
 [[module.mounts]]
+files = ["bootstrap.css"]
 source = "paige/node_modules/bootstrap/dist/css"
 target = "assets/css/paige/bootstrap"
-includefiles = ["bootstrap.css"]
 
 [[module.mounts]]
+files = ["bootstrap.bundle.js"]
 source = "paige/node_modules/bootstrap/dist/js"
 target = "assets/js/paige/bootstrap"
-includefiles = ["bootstrap.bundle.js"]
 
 [[module.mounts]]
 source = "paige/node_modules/bootstrap/js/dist"
@@ -66,37 +66,37 @@ source = "paige/node_modules/bootstrap-icons/font/fonts"
 target = "static/css/paige/bootstrap-icons/fonts"
 
 [[module.mounts]]
+files = ["bootstrap-icons.css"]
 source = "paige/node_modules/bootstrap-icons/font"
 target = "assets/css/paige/bootstrap-icons"
-includefiles = ["bootstrap-icons.css"]
 
 # FlexSearch mounts
 
 [[module.mounts]]
+files = ["flexsearch.bundle.min.js"]
 source = "paige/node_modules/flexsearch/dist"
 target = "assets/js/paige/flexsearch"
-includefiles = ["flexsearch.bundle.min.js"]
 
 # Katex mounts
 
 [[module.mounts]]
+files = ["auto-render.min.js"]
 source = "paige/node_modules/katex/dist/contrib"
 target = "assets/js/paige/katex"
-includefiles = ["auto-render.min.js"]
 
 [[module.mounts]]
 source = "paige/node_modules/katex/dist/fonts"
 target = "static/css/paige/katex/fonts"
 
 [[module.mounts]]
+files = ["katex.min.css"]
 source = "paige/node_modules/katex/dist"
 target = "assets/css/paige/katex"
-includefiles = ["katex.min.css"]
 
 [[module.mounts]]
+files = ["katex.min.js"]
 source = "paige/node_modules/katex/dist"
 target = "assets/js/paige/katex"
-includefiles = ["katex.min.js"]
 
 # Output formats
 
