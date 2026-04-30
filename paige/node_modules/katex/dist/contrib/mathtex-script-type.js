@@ -86,11 +86,9 @@ scripts.forEach(function (script) {
   if (!script.type || !script.type.match(/math\/tex/i)) {
     return -1;
   }
-
   const display = script.type.match(/mode\s*=\s*display(;|\s|\n|$)/) != null;
   const katexElement = document.createElement(display ? "div" : "span");
   katexElement.setAttribute("class", display ? "equation" : "inline-equation");
-
   try {
     katex__WEBPACK_IMPORTED_MODULE_0___default().render(script.text, katexElement, {
       displayMode: display
@@ -99,7 +97,6 @@ scripts.forEach(function (script) {
     //console.error(err); linter doesn't like this
     katexElement.textContent = script.text;
   }
-
   script.parentNode.replaceChild(katexElement, script);
 });
 __webpack_exports__ = __webpack_exports__["default"];

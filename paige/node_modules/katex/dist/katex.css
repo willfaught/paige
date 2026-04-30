@@ -139,9 +139,11 @@
   font-style: normal;
   font-display: block;
 }
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 .katex {
   font: normal 1.21em KaTeX_Main, Times New Roman, serif;
   line-height: 1.2;
+  position: relative;
   text-indent: 0;
   text-rendering: auto;
 }
@@ -152,7 +154,7 @@
   border-color: currentColor;
 }
 .katex .katex-version::after {
-  content: "0.16.27";
+  content: "0.16.45";
 }
 .katex .katex-mathml {
   /* Accessibility hack to only show to screen readers
@@ -334,6 +336,10 @@
 }
 .katex .mspace {
   display: inline-block;
+}
+.katex .smash {
+  display: inline;
+  line-height: 0;
 }
 .katex .llap,
 .katex .rlap,
@@ -1065,6 +1071,11 @@
   height: inherit;
   fill: currentColor;
   stroke: currentColor;
+}
+.katex svg path {
+  stroke: none;
+}
+.katex svg {
   fill-rule: nonzero;
   fill-opacity: 1;
   stroke-width: 1;
@@ -1074,9 +1085,6 @@
   stroke-dasharray: none;
   stroke-dashoffset: 0;
   stroke-opacity: 1;
-}
-.katex svg path {
-  stroke: none;
 }
 .katex img {
   border-style: none;
