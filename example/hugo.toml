@@ -5,9 +5,9 @@ titlecasestyle = "Go"
 
 [languages.en]
 copyright = "© Will Faught"
-languagecode = "en-us"
-languagedirection = "ltr"
-languagename = "English"
+direction = "ltr"
+label = "English"
+locale = "en-us"
 title = "Paige"
 weight = 10
 
