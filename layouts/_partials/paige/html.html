@@ -2,6 +2,6 @@
 
 {{ $dark := eq ($page.Param "paige.site.color_scheme") "dark" }}
 {{ $lang := site.Language.Locale }}
-{{ $rtl := eq $page.Language.LanguageDirection "rtl" }}
+{{ $rtl := eq $page.Language.Direction "rtl" }}
 
 <html {{ if $dark }} data-bs-theme="dark" {{ end }} {{ if $rtl }} dir="rtl" {{ end }} {{ with $lang }} lang="{{ . }}" {{ end }}>
