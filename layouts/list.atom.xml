@@ -5,7 +5,7 @@
 {{ $description := cond $page.IsHome ($page.Param "paige.site.description") $page.Description | markdownify }}
 {{ $icon := $page.Param "paige.feeds.atom.icon" | absLangURL }}
 {{ $id := printf "tag:%s,%s:%s" (urls.Parse site.BaseURL).Host ($page.PublishDate.Format "2006-01-02") $page.RelPermalink }}
-{{ $language := $page.Language.LanguageCode }}
+{{ $language := $page.Language.Locale }}
 {{ $limit := site.Config.Services.RSS.Limit }}
 {{ $logo := $page.Param "paige.feeds.atom.logo" | absLangURL }}
 {{ $rights := markdownify site.Copyright }}
@@ -65,18 +65,18 @@
     {{ end }}
 
     {{ with $page.OutputFormats.Get "atom" }}
-        <link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="self" type="application/atom+xml"/>
+        <link href="{{ .Permalink }}" hreflang="{{ $page.Language.Locale }}" rel="self" type="application/atom+xml"/>
     {{ end }}
 
     {{ range $page.OutputFormats }}
         {{ $rel := cond (eq .Rel "canonical") "alternate" .Rel }}
 
-        <link href="{{ .Permalink }}" hreflang="{{ $page.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+        <link href="{{ .Permalink }}" hreflang="{{ $page.Language.Locale }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
     {{ end }}
 
     {{ range $t := $page.Translations }}
         {{ range .OutputFormats }}
-            <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+            <link href="{{ .Permalink }}" hreflang="{{ $t.Language.Locale }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
         {{ end }}
     {{ end }}
 
@@ -161,12 +161,12 @@
 
                     {{ $href := cond (and (eq $rel "alternate") (eq .MediaType.Type "text/html")) $link .Permalink }}
 
-                    <link href="{{ $href }}" hreflang="{{ $subpage.Language.LanguageCode }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
+                    <link href="{{ $href }}" hreflang="{{ $subpage.Language.Locale }}" rel="{{ $rel }}" type="{{ .MediaType }}"/>
                 {{ end }}
 
                 {{ range $t := $subpage.Translations }}
                     {{ range .OutputFormats }}
-                        <link href="{{ .Permalink }}" hreflang="{{ $t.Language.LanguageCode }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
+                        <link href="{{ .Permalink }}" hreflang="{{ $t.Language.Locale }}" rel="{{ .Rel }}" type="{{ .MediaType }}"/>
                     {{ end }}
                 {{ end }}
 
