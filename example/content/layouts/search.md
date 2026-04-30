@@ -11,20 +11,18 @@ The `paige-search` layout provides site search.
 
 <!--more-->
 
-Example `config.yaml`:
+Example configuration in `yoursite/hugo.toml`:
 
-```yaml
-outputs:
-  home: ["atom", "html", "paige-search", "rss"]
+```toml
+[outputs]
+home = ["atom", "html", "paige-search", "rss"]
 ```
 
-Example `content/layouts/search.md`:
+Example configuration in `yoursite/content/search.md`:
 
-```yaml
----
-layout: "paige-search"
-title: "Search"
----
+```toml
+layout = "paige-search"
+title = "Search"
 ```
 
 Result:
