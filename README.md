@@ -433,17 +433,17 @@ if the non-property attributes are specified in `paige.pages.microdata`.
 
 ### Cloud
 
-The `paige/cloud` layout provides a link cloud for subpages.
+The `paige-cloud` layout provides a link cloud for subpages.
 
 Example configuration in `yoursite/content/tags/_index.md`:
 
 ```toml
-layout = "paige/cloud"
+layout = "paige-cloud"
 ```
 
 ### Search
 
-The `paige/search` layout provides a search page.
+The `paige-search` layout provides a search page.
 
 Example configuration in `yoursite/hugo.toml`:
 
@@ -455,7 +455,7 @@ home = ["atom", "html", "paige-search", "rss"]
 Example configuration in `yoursite/content/search.md`:
 
 ```toml
-layout = "paige/search"
+layout = "paige-search"
 title = "Search"
 ```
 

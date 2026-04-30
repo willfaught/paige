@@ -7,7 +7,7 @@ tags = ["search"]
 title = "Search"
 +++
 
-The `paige/search` layout provides site search.
+The `paige-search` layout provides site search.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ Example `content/layouts/search.md`:
 
 ```yaml
 ---
-layout: "paige/search"
+layout: "paige-search"
 title: "Search"
 ---
 ```
