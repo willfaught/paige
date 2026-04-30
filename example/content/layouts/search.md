@@ -15,7 +15,7 @@ Example configuration in `yoursite/hugo.toml`:
 
 ```toml
 [outputs]
-home = ["atom", "html", "paige-search", "rss"]
+home = ["html", "paige-search"]
 ```
 
 Example configuration in `yoursite/content/search.md`:
