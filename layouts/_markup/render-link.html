@@ -2,4 +2,5 @@
 {{- $target := partial "paige/func-target.html" (dict "page" .Page "url" .Destination) -}}
 
 <a {{ with .Destination }} href="{{ . }}" {{ end }} {{ if $external }} rel="external" {{ end }} {{ with $target }} target="{{ . }}" {{ end }} {{ with .Title }} title="{{ . }}" {{ end }}>{{ .Text }}</a>
-{{- /* This comment removes trailing newlines. */ -}}
+
+{{- /* Trim whitespace */ -}}
