@@ -1,0 +1,21 @@
+jobs:
+  build-latest:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v6"
+      - run: "sudo snap install --edge hugo"
+      - run: "sudo snap install dart-sass"
+      - run: |
+          set -euo pipefail
+          cd example
+          output="$(hugo --baseURL 'https://example.com' --environment production --minify 2>&1)"
+          echo "$output"
+          if echo "$output" | egrep 'ERROR|WARN'
+          then
+            echo 'Error or warning found'
+            exit 1
+          fi
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
