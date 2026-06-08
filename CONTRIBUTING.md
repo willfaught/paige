@@ -9,4 +9,4 @@ Please do the following:
 - Follow best practices for Git
 - Follow best practices for GitHub
 - Use [atomic commits](https://en.wikipedia.org/wiki/Atomic_commit#Atomic_commit_convention)
-- Use [sentence case](https://en.wiktionary.org/wiki/sentence_case) for commit subjects
+- Commit subjects should use [imperative mood](https://en.wikipedia.org/wiki/Imperative_mood) and [sentence case](https://en.wiktionary.org/wiki/sentence_case)
