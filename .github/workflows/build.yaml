@@ -1,29 +1,14 @@
-concurrency:
-  cancel-in-progress: true
-  group: "pages"
-defaults:
-  run:
-    shell: "bash"
 jobs:
   build:
-    name: "Build"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v4"
-      - name: "Setup Hugo"
-        run: "sudo snap install --edge hugo"
-      - name: "Setup Sass"
-        run: "sudo snap install dart-sass"
+      - uses: "actions/checkout@v6"
+      - run: "sudo snap install --edge hugo"
+      - run: "sudo snap install dart-sass"
       - id: "pages"
-        name: "Setup Pages"
-        uses: "actions/configure-pages@v5"
-      - name: "Build"
-        run: |
-          cd example
-          hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify
-      - name: "Upload artifact"
-        uses: "actions/upload-pages-artifact@v3"
+        uses: "actions/configure-pages@v6"
+      - run: "cd example && hugo --baseURL ${{ steps.pages.outputs.base_url }} --environment production --minify"
+      - uses: "actions/upload-pages-artifact@v5"
         with:
           path: "./example/public"
   deploy:
@@ -31,13 +16,10 @@ jobs:
       name: "github-pages"
       url: "${{ steps.pages.outputs.base_url }}"
     if: "github.ref == 'refs/heads/master'"
-    name: "Deploy"
     needs: "build"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Deploy Pages"
-        uses: "actions/deploy-pages@v4"
-name: "GitHub Pages"
+      - uses: "actions/deploy-pages@v5"
 on:
   push:
     branches: ["**"]
