@@ -26,23 +26,6 @@ jobs:
         uses: "actions/upload-pages-artifact@v3"
         with:
           path: "./example/public"
-  # build-windows:
-  #   name: "Build Windows"
-  #   runs-on: "windows-latest"
-  #   steps:
-  #     - name: "Checkout"
-  #       uses: "actions/checkout@v4"
-  #     - name: "Setup Hugo"
-  #       run: "choco install hugo-extended"
-  #     - name: "Setup Sass"
-  #       run: "choco install dart-sass-embedded"
-  #     - id: "pages"
-  #       name: "Setup Pages"
-  #       uses: "actions/configure-pages@v5"
-  #     - name: "Build"
-  #       run: |
-  #         cd example
-  #         hugo --baseURL ${{ steps.pages.outputs.base_url }} --minify
   deploy:
     environment:
       name: "github-pages"

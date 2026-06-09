@@ -1,0 +1,9 @@
+jobs:
+  build-windows:
+    runs-on: "windows-latest"
+    steps:
+      - uses: "actions/checkout@v6"
+      - run: "choco install sass hugo-extended"
+      - run: "cd example && hugo --baseURL 'https://example.com' --environment production --minify"
+on:
+  workflow_dispatch:
