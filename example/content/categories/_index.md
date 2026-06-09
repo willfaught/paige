@@ -1,5 +1,5 @@
 +++
 description = "Browse by category."
-layout = "paige/cloud"
+layout = "paige-cloud"
 title = "Categories"
 +++
