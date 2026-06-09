@@ -2,7 +2,7 @@
 authors = ["author-demo"]
 categories = ["layouts", "paige"]
 description = "Demonstration of the search layout."
-layout = "paige/search"
+layout = "paige-search"
 tags = ["search"]
 title = "Search"
 +++
