@@ -392,8 +392,7 @@ The assigned values shown are the default values unless otherwise specified.
 ### Menu
 
 The menu can be configured using the `main` menu.
-The active menu item has a URL that is a prefix of the path of the current page.
-A menu item with the URL `/` only matches a `/` path.
+The active menu item has a page path that is a prefix of the path of the current page.
 
 If you intend for the menu to be sufficient for all navigation,
 see [how to hide other navigation features](#menu-navigation-only).
