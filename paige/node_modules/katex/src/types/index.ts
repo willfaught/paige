@@ -1,9 +1,3 @@
-
-/**
- * This file consists only of basic types used in multiple places.
- * For types with javascript, create separate files by themselves.
- */
-
 export type Mode = "math" | "text";
 
 // LaTeX argument type.
@@ -29,7 +23,7 @@ export type StyleStr = "text" | "display" | "script" | "scriptscript";
 export type BreakToken = "]" | "}" | "\\endgroup" | "$" | "\\)" | "\\\\" | "\\end" |
     "EOF";
 
-// Math font variants.
-export type FontVariant = "bold" | "bold-italic" | "bold-sans-serif" |
-    "double-struck" | "fraktur" | "italic" | "monospace" | "normal" | "sans-serif" |
-    "sans-serif-bold-italic" | "sans-serif-italic" | "script";
+export type DelimiterSize = 1 | 2 | 3 | 4;
+
+export type Slice1<S extends string> =
+    S extends `${string}${infer Rest}` ? Rest : "";

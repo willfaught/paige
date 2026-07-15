@@ -1,6 +1,27 @@
 import katex from '../katex.mjs';
 
 /**
+ * Small module for atom-group constants and type guard.  Kept separate from
+ * `symbols.ts` so that consumers (notably `contrib/render-a11y-string`) can
+ * pull in `isAtom` without dragging in the ~870-line symbol tables.
+ */
+// Some of these have a "-token" suffix since these are also used as `ParseNode`
+// types for raw text tokens, and we want to avoid conflicts with higher-level
+// `ParseNode` types. These `ParseNode`s are constructed within `Parser` by
+// looking up the `symbols` map.
+var ATOMS = {
+  "bin": 1,
+  "close": 1,
+  "inner": 1,
+  "open": 1,
+  "punct": 1,
+  "rel": 1
+};
+function isAtom(value) {
+  return value in ATOMS;
+}
+
+/**
  * renderA11yString returns a readable string.
  *
  * In some cases the string will have the proper semantic math
@@ -629,9 +650,13 @@ var handleObject = (tree, a11yStrings, atomType) => {
       {
         // \neq and \ne are macros so we let "htmlmathml" render the mathmal
         // side of things and extract the text from that.
+        // mclass values are prefixed with "m" (e.g. "mrel" -> "rel")
         var _atomType = tree.mclass.slice(1);
-        // TODO(ts): drop the leading "m" from the values in mclass
-        _buildA11yStrings(tree.body, a11yStrings, _atomType);
+        if (_atomType === "normal" || isAtom(_atomType)) {
+          _buildA11yStrings(tree.body, a11yStrings, _atomType);
+        } else {
+          throw new Error("Unexpected mclass atom type: \"" + _atomType + "\"");
+        }
         break;
       }
     case "mathchoice":

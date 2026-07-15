@@ -77,8 +77,45 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__757__;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-/* harmony import */ var katex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(757);
-/* harmony import */ var katex__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(katex__WEBPACK_IMPORTED_MODULE_0__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ render_a11y_string; }
+});
+
+;// ./src/atoms.ts
+/**
+ * Small module for atom-group constants and type guard.  Kept separate from
+ * `symbols.ts` so that consumers (notably `contrib/render-a11y-string`) can
+ * pull in `isAtom` without dragging in the ~870-line symbol tables.
+ */
+
+// Some of these have a "-token" suffix since these are also used as `ParseNode`
+// types for raw text tokens, and we want to avoid conflicts with higher-level
+// `ParseNode` types. These `ParseNode`s are constructed within `Parser` by
+// looking up the `symbols` map.
+const ATOMS = {
+  "bin": 1,
+  "close": 1,
+  "inner": 1,
+  "open": 1,
+  "punct": 1,
+  "rel": 1
+};
+const NON_ATOMS = {
+  "accent-token": 1,
+  "mathord": 1,
+  "op-token": 1,
+  "spacing": 1,
+  "textord": 1
+};
+function isAtom(value) {
+  return value in ATOMS;
+}
+// EXTERNAL MODULE: external "katex"
+var external_katex_ = __webpack_require__(757);
+var external_katex_default = /*#__PURE__*/__webpack_require__.n(external_katex_);
+;// ./contrib/render-a11y-string/render-a11y-string.ts
 /**
  * renderA11yString returns a readable string.
  *
@@ -95,8 +132,6 @@ var __webpack_exports__ = {};
  * when read by a screenreader.
  */
 
-// NOTE: since we're importing types here these files won't actually be
-// included in the build.
 
 
 const stringMap = {
@@ -715,9 +750,13 @@ const handleObject = (tree, a11yStrings, atomType) => {
       {
         // \neq and \ne are macros so we let "htmlmathml" render the mathmal
         // side of things and extract the text from that.
+        // mclass values are prefixed with "m" (e.g. "mrel" -> "rel")
         const atomType = tree.mclass.slice(1);
-        // TODO(ts): drop the leading "m" from the values in mclass
-        buildA11yStrings(tree.body, a11yStrings, atomType);
+        if (atomType === "normal" || isAtom(atomType)) {
+          buildA11yStrings(tree.body, a11yStrings, atomType);
+        } else {
+          throw new Error("Unexpected mclass atom type: \"" + atomType + "\"");
+        }
         break;
       }
     case "mathchoice":
@@ -776,11 +815,11 @@ const flatten = function (array) {
   return result;
 };
 const renderA11yString = function (text, settings) {
-  const tree = katex__WEBPACK_IMPORTED_MODULE_0___default().__parse(text, settings);
+  const tree = external_katex_default().__parse(text, settings);
   const a11yStrings = buildA11yStrings(tree, [], "normal");
   return flatten(a11yStrings).join(", ");
 };
-/* harmony default export */ __webpack_exports__["default"] = (renderA11yString);
+/* harmony default export */ var render_a11y_string = (renderA11yString);
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
