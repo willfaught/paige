@@ -4,8 +4,9 @@
 {{ $url := $params.url }}
 
 {{ $result := "" }}
+{{ $scheme := (urls.Parse $url).Scheme }}
 
-{{ if (urls.Parse $url).Scheme }}
+{{ if $scheme }}
     {{ with try (resources.GetRemote $url) }}
         {{ with .Err }}
             {{ errorf "layouts/partials/paige/func-resource.html: cannot get remote resource %q: %v" $url . }}
@@ -34,12 +35,8 @@
 {{ end }}
 
 {{ if $result }}
-    {{ with urls.Parse $url }}
-        {{ if .Scheme }}
-            {{ $path := print $result.MediaType.SubType "/paige/" $result.RelPermalink }}
-
-            {{ $result = resources.Copy $path $result }}
-        {{ end }}
+    {{ if $scheme }}
+        {{ $result = resources.Copy (print $result.MediaType.SubType "/paige/" $result.RelPermalink) $result }}
     {{ end }}
 {{ else }}
     {{ errorf "layouts/partials/paige/func-resource.html: cannot find resource %q" $url }}
