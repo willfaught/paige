@@ -5,7 +5,7 @@
 {{ $target := partial "paige/func-target.html" (dict "page" .Page "url" $url) }}
 
 {{ if not $class }}
-    {{ errorf "layouts/shortcodes/paige/icon.html: no class" }}
+    {{ errorf "layouts/_shortcodes/paige/icon.html: no class" }}
 {{ end }}
 
 {{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}

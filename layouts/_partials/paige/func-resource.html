@@ -9,11 +9,11 @@
 {{ if $scheme }}
     {{ with try (resources.GetRemote $url) }}
         {{ with .Err }}
-            {{ errorf "layouts/partials/paige/func-resource.html: cannot get remote resource %q: %v" $url . }}
+            {{ errorf "layouts/_partials/paige/func-resource.html: cannot get remote resource %q: %v" $url . }}
         {{ else with .Value }}
             {{ $result = . }}
         {{ else }}
-            {{ errorf "layouts/partials/paige/func-resource.html: cannot find remote resource %q" $url }}
+            {{ errorf "layouts/_partials/paige/func-resource.html: cannot find remote resource %q" $url }}
         {{ end }}
     {{ end }}
 {{ end }}
@@ -39,7 +39,7 @@
         {{ $result = resources.Copy (print $result.MediaType.SubType "/paige/" $result.RelPermalink) $result }}
     {{ end }}
 {{ else }}
-    {{ errorf "layouts/partials/paige/func-resource.html: cannot find resource %q" $url }}
+    {{ errorf "layouts/_partials/paige/func-resource.html: cannot find resource %q" $url }}
 {{ end }}
 
 {{ return $result }}

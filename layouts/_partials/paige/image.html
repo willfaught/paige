@@ -148,14 +148,14 @@
                 {{ with findRE `^(\d+(\.\d+)?x|\.\d+x)$` . 1 }}
                     {{ $parsedDensities = $parsedDensities | append (strings.TrimSuffix "x" (index . 0) | float) }}
                 {{ else }}
-                    {{ errorf "layouts/partials/paige/image.html: invalid pixel density: %q" . }}
+                    {{ errorf "layouts/_partials/paige/image.html: invalid pixel density: %q" . }}
                 {{ end }}
             {{ end }}
 
             {{ $parsedDensities = $parsedDensities | uniq | sort }}
 
             {{ if lt (len $parsedDensities) 2 }}
-                {{ errorf "layouts/partials/paige/image.html: must have at least two unique pixel densities" }}
+                {{ errorf "layouts/_partials/paige/image.html: must have at least two unique pixel densities" }}
             {{ end }}
 
             {{ $base := 0 }}
