@@ -10,7 +10,7 @@
         {{ with .Err }}
             {{ errorf "layouts/_partials/paige/func-resource.html: cannot get remote resource %q: %v" $url . }}
         {{ else with .Value }}
-            {{ $result = . }}
+            {{ $result = resources.Copy (print $page.Path "/" (sha256 (print $url (sha256 .Content))) "." .MediaType.FirstSuffix.Suffix) . }}
         {{ else }}
             {{ errorf "layouts/_partials/paige/func-resource.html: cannot find remote resource %q" $url }}
         {{ end }}
