@@ -9,40 +9,40 @@ paige_error:
 paige_figure:
   other: Figiúr
 paige_first:
-  other: Ar dtús
+  other: An chéad leathanach
 paige_history:
   other: Stair
 paige_home:
   other: Baile
 paige_javascript_is_required:
-  other: Taispeántar JavaScript
+  other: Tá JavaScript riachtanach
 paige_last:
-  other: Deireanach
+  other: An leathanach deiridh
 paige_menu:
-  other: Méarchlár
+  other: Roghchlár
 paige_minutes:
   one: nóiméad
   other: nóiméid
 paige_next:
-  other: An chéad
+  other: An chéad leathanach eile
 paige_nothing_found:
   other: Ní raibh rud ar bith le fáil
 paige_page_list_navigation:
-  other: Siamsaíocht le liosta leathanach
+  other: Nascleanúint ar liosta na leathanach
 paige_pages:
   other: Leathanaigh
 paige_previous:
-  other: Roimhe seo
+  other: An leathanach roimhe seo
 paige_query:
-  other: Fiosrúchán
+  other: Téarma cuardaigh
 paige_search:
-  other: Cuardach
+  other: Cuardaigh
 paige_searching:
   other: Á lorg
 paige_sections:
-  other: Roinn
+  other: Rannóga
 paige_something_found:
-  other: Rudaí faighte
+  other: Fuarthas torthaí
 paige_words:
   one: focal
   other: focail
