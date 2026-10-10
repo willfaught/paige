@@ -171,6 +171,7 @@ Paige uses [Semantic Versioning](https://semver.org).
 The current major version is 0.
 From time to time, breaking changes are made.
 When you update Paige, you must test your site.
+See CHANGES.md for details.
 
 See Hugo's [installation](https://gohugo.io/installation/),
 [getting started](https://gohugo.io/getting-started/),
