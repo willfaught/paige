@@ -1,0 +1,15 @@
+import { EncoderOptions } from "../../type.js";
+import { soundex } from "./balance.js";
+
+export const matcher = new Map([["ae", "a"], ["oe", "o"], ["sh", "s"], ["kh", "k"], ["th", "t"], ["ph", "f"], ["pf", "f"]]);
+
+export const replacer = [/([^aeo])h(.)/g, "$1$2", /([aeo])h([^aeo]|$)/g, "$1$2", /(.)\1+/g, "$1"];
+
+/** @type EncoderOptions */
+const options = {
+
+  mapper: soundex,
+  matcher: matcher,
+  replacer: replacer
+};
+export default options;

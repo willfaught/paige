@@ -1,0 +1,10 @@
+{
+  "public": true,
+  "preferGlobal": false,
+  "name": "flexsearch-redis",
+  "version": "0.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "redis": "^4.7.0"
+  }
+}

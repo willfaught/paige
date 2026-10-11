@@ -1,0 +1,10 @@
+{
+  "public": true,
+  "preferGlobal": false,
+  "name": "flexsearch-sqlite",
+  "version": "0.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
