@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.120.0] - 2026-10-10
+
+### Changed
+
+- Update Bootstrap to 5.3.8.
+- Update Bootstrap Icons to 1.13.2.
+- Update Katex to 0.19.0.
+- Update Flexsearch to 0.8.212.
+
+## [0.119.1] - 2026-10-10
+
+### Changed
+
+- Improve ga, is, sq, zh translations.
+
 ## [0.119.0] - 2026-10-08
 
 ### Changed
@@ -2250,6 +2265,8 @@ No notable user-facing changes.
 - Initial Paige theme release, including its Go module definition.
 
 [Unreleased]: https://github.com/willfaught/paige/compare/v0.119.0...HEAD
+[0.120.0]: https://github.com/willfaught/paige/compare/v0.119.1...v0.120.0
+[0.119.1]: https://github.com/willfaught/paige/compare/v0.119.0...v0.119.1
 [0.119.0]: https://github.com/willfaught/paige/compare/v0.118.0...v0.119.0
 [0.118.0]: https://github.com/willfaught/paige/compare/v0.117.0...v0.118.0
 [0.117.0]: https://github.com/willfaught/paige/compare/v0.116.1...v0.117.0
