@@ -1,32 +1,31 @@
 import defineFunction from "../defineFunction";
 import ParseError from "../ParseError";
-import {assertNodeType} from "../parseNode";
+import {assertCharacterGroup, assertNodeType} from "../parseNode";
 import environments from "../environments";
 
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 
 // Environment delimiters. HTML/MathML rendering is defined in the corresponding
 // defineEnvironment definitions.
 defineFunction({
     type: "environment",
     names: ["\\begin", "\\end"],
-    props: {
-        numArgs: 1,
-        argTypes: ["text"],
-    },
+    numArgs: 1,
+    argTypes: ["text"],
+
     handler({parser, funcName}, args) {
         const nameGroup = args[0];
         if (nameGroup.type !== "ordgroup") {
             throw new ParseError("Invalid environment name", nameGroup);
         }
-        let envName = "";
-        for (let i = 0; i < nameGroup.body.length; ++i) {
-            envName += assertNodeType(nameGroup.body[i], "textord").text;
-        }
+        const envName = assertCharacterGroup(
+            nameGroup,
+            "Environment name should contain only text characters and spaces",
+            true);
 
         if (funcName === "\\begin") {
             // begin...end is similar to left...right
-            if (!environments.hasOwnProperty(envName)) {
+            if (!Object.prototype.hasOwnProperty.call(environments, envName)) {
                 throw new ParseError(
                     "No such environment: " + envName, nameGroup);
             }

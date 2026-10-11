@@ -10,7 +10,7 @@ import {MathNode, TextNode} from "./mathMLTree";
 import {makeEm} from "./units";
 
 import type Options from "./Options";
-import type {ParseNode} from "./parseNode";
+import type {ParseNode} from "./types/nodes";
 import type {DomSpan, HtmlDomNode, SvgSpan} from "./domTree";
 
 const stretchyCodePoint: Record<string, string> = {
@@ -277,7 +277,7 @@ export const stretchySvg = function(
             }
 
             return {
-                span: makeSpan(["stretchy"], spans, options),
+                span: makeSpan(["katex-stretchy"], spans, options),
                 minWidth,
                 height,
             };
@@ -308,7 +308,7 @@ export const stretchyEnclose = function(
     const totalHeight = inner.height + inner.depth + topPad + bottomPad;
 
     if (/fbox|color|angl/.test(label)) {
-        img = makeSpan(["stretchy", label], [], options);
+        img = makeSpan(["katex-stretchy", label], [], options);
 
         if (label === "fbox") {
             const color = options.color && options.getColor();

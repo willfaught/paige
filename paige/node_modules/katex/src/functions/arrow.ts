@@ -6,7 +6,7 @@ import {stretchyMathML, stretchySvg} from "../stretchy";
 import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 import type {MathDomNode} from "../mathMLTree";
 
 // Helper function
@@ -33,10 +33,9 @@ defineFunction({
         // The next 3 functions are here only to support the {CD} environment.
         "\\\\cdrightarrow", "\\\\cdleftarrow", "\\\\cdlongequal",
     ],
-    props: {
-        numArgs: 1,
-        numOptionalArgs: 1,
-    },
+    numArgs: 1,
+    numOptionalArgs: 1,
+
     handler({parser, funcName}, args, optArgs) {
         return {
             type: "xArrow",
@@ -46,6 +45,7 @@ defineFunction({
             below: optArgs[0],
         };
     },
+
     htmlBuilder(group: ParseNode<"xArrow">, options) {
         const style = options.style;
 

@@ -2,6 +2,7 @@ import defineFunction, {ordargument} from "../defineFunction";
 import {makeSpan} from "../buildCommon";
 import {assertNodeType} from "../parseNode";
 import ParseError from "../ParseError";
+import {handleStrict} from "../strict";
 
 import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
@@ -10,18 +11,21 @@ import type {AnyTrustContext} from "../Settings";
 defineFunction({
     type: "html",
     names: ["\\htmlClass", "\\htmlId", "\\htmlStyle", "\\htmlData"],
-    props: {
-        numArgs: 2,
-        argTypes: ["raw", "original"],
-        allowedInText: true,
-    },
+    numArgs: 2,
+    argTypes: ["raw", "original"],
+    allowedInText: true,
+
     handler: ({parser, funcName, token}, args) => {
         const value = assertNodeType(args[0], "raw").string;
         const body = args[1];
 
         if (parser.settings.strict) {
-            parser.settings.reportNonstrict("htmlExtension",
-                "HTML extension is disabled on strict mode");
+            handleStrict({
+                strict: parser.settings.strict,
+                errorCode: "htmlExtension",
+                errorMsg: "HTML extension is disabled on strict mode",
+                report: true,
+            });
         }
 
         let trustContext: AnyTrustContext;
@@ -50,7 +54,24 @@ defineFunction({
                 };
                 break;
             case "\\htmlData": {
-                const data = value.split(",");
+                // `{,}` escapes a literal comma. Braces are used rather than a
+                // backslash because `\,` is a macro (a thin space) that expands
+                // away before this raw argument is ever read.
+                const ESCAPED_COMMA = "{,}";
+                const data: string[] = [];
+                let current = "";
+                for (let i = 0; i < value.length; i++) {
+                    if (value.startsWith(ESCAPED_COMMA, i)) {
+                        current += ",";
+                        i += ESCAPED_COMMA.length - 1;
+                    } else if (value[i] === ",") {
+                        data.push(current);
+                        current = "";
+                    } else {
+                        current += value[i];
+                    }
+                }
+                data.push(current);
                 for (let i = 0; i < data.length; i++) {
                     const item = data[i];
                     const firstEquals = item.indexOf("=");
@@ -83,6 +104,7 @@ defineFunction({
             body: ordargument(body),
         };
     },
+
     htmlBuilder: (group, options) => {
         const elements = html.buildExpression(group.body, options, false);
 
@@ -92,9 +114,9 @@ defineFunction({
         }
 
         const span = makeSpan(classes, elements, options);
-        for (const attr in group.attributes) {
-            if (attr !== "class" && group.attributes.hasOwnProperty(attr)) {
-                span.setAttribute(attr, group.attributes[attr]);
+        for (const [attr, value] of Object.entries(group.attributes)) {
+            if (attr !== "class") {
+                span.setAttribute(attr, value);
             }
         }
         return span;

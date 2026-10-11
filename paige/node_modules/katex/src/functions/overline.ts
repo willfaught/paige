@@ -8,9 +8,8 @@ import * as mml from "../buildMathML";
 defineFunction({
     type: "overline",
     names: ["\\overline"],
-    props: {
-        numArgs: 1,
-    },
+    numArgs: 1,
+
     handler({parser}, args) {
         const body = args[0];
         return {
@@ -19,6 +18,7 @@ defineFunction({
             body,
         };
     },
+
     htmlBuilder(group, options) {
         // Overlines are handled in the TeXbook pg 443, Rule 9.
 
@@ -41,7 +41,7 @@ defineFunction({
             ],
         }, options);
 
-        return makeSpan(["mord", "overline"], [vlist], options);
+        return makeSpan(["mord", "katex-overline"], [vlist], options);
     },
     mathmlBuilder(group, options) {
         const operator = new MathNode(

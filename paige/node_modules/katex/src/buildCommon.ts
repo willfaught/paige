@@ -1,4 +1,3 @@
-/* eslint no-console:0 */
 /**
  * This module contains general functions that can be used for building
  * different kinds of domTree nodes in a consistent manner.
@@ -10,13 +9,13 @@ import symbols, {ligatures} from "./symbols";
 import {wideCharacterFont} from "./wide-character";
 import {calculateSize, makeEm} from "./units";
 import {DocumentFragment} from "./tree";
+import {handleStrict} from "./strict";
 
 import type Options from "./Options";
-import type {ParseNode} from "./parseNode";
-import type {Mode} from "./types";
+import type {Measurement, Mode} from "./types";
+import type {ParseNode} from "./types/nodes";
 import type {documentFragment as HtmlDocumentFragment} from "./domTree";
 import type {HtmlDomNode, DomSpan, SvgSpan, CssStyle} from "./domTree";
-import type {Measurement} from "./units";
 import type {
     CharacterMetrics,
     FontName,
@@ -60,13 +59,12 @@ const lookupSymbol = function(
  * TODO: make argument order closer to makeSpan
  * TODO: add a separate argument for math class (e.g. `mop`, `mbin`), which
  * should if present come first in `classes`.
- * TODO(#953): Make `options` mandatory and always pass it in.
  */
 export const makeSymbol = function(
     value: string,
     fontName: FontName,
     mode: Mode,
-    options?: Options,
+    options: Options,
     classes?: string[],
 ): SymbolNode {
     const lookup = lookupSymbol(value, fontName, mode);
@@ -83,21 +81,22 @@ export const makeSymbol = function(
             value, metrics.height, metrics.depth, italic, metrics.skew,
             metrics.width, classes);
     } else {
-        // TODO(emily): Figure out a good way to only print this in development
-        typeof console !== "undefined" && console.warn("No character metrics " +
-            `for '${value}' in style '${fontName}' and mode '${mode}'`);
+        handleStrict({
+            strict: options.strict,
+            errorCode: "symbolNotInFont",
+            errorMsg: `No character metrics for '${value}' in style '${fontName}' and mode '${mode}'`,
+            report: true,
+        });
         symbolNode = new SymbolNode(value, 0, 0, 0, 0, 0, classes);
     }
 
-    if (options) {
-        symbolNode.maxFontSize = options.sizeMultiplier;
-        if (options.style.isTight()) {
-            symbolNode.classes.push("mtight");
-        }
-        const color = options.getColor();
-        if (color) {
-            symbolNode.style.color = color;
-        }
+    symbolNode.maxFontSize = options.sizeMultiplier;
+    if (options.style.isTight()) {
+        symbolNode.classes.push("mtight");
+    }
+    const color = options.getColor();
+    if (color) {
+        symbolNode.style.color = color;
     }
 
     return symbolNode;
@@ -121,7 +120,7 @@ export const mathsym = function(
     // table for text, as well as a special case for boldsymbol because it
     // can be used for bold + and -
     if (options.font === "boldsymbol" &&
-            lookupSymbol(value, "Main-Bold", mode).metrics) {
+        lookupSymbol(value, "Main-Bold", mode).metrics) {
         return makeSymbol(value, "Main-Bold", mode, options,
             classes.concat(["mathbf"]));
     } else if (value === "\\" || symbols[mode][value].font === "main") {
@@ -167,11 +166,12 @@ const boldSymbol = function(
 /**
  * Makes either a mathord or textord in the correct font and color.
  */
-export const makeOrd = function<NODETYPE extends "spacing" | "mathord" | "textord">(
-    group: ParseNode<NODETYPE>,
+export const makeOrd = function(
+    group: ParseNode<"spacing"> | ParseNode<"mathord"> | ParseNode<"textord">,
     options: Options,
-    type: "mathord" | "textord",
 ): HtmlDocumentFragment | SymbolNode {
+    // Spacing nodes are rendered as textord.
+    const type: "mathord" | "textord" = group.type === "mathord" ? "mathord" : "textord";
     const mode = group.mode;
     const text = group.text;
     const classes = ["mord"];
@@ -212,7 +212,7 @@ export const makeOrd = function<NODETYPE extends "spacing" | "mathord" | "textor
         if (lookupSymbol(text, fontName, mode).metrics) {
             return makeSymbol(text, fontName, mode, options,
                 classes.concat(fontClasses));
-        } else if (ligatures.hasOwnProperty(text) &&
+        } else if (Object.prototype.hasOwnProperty.call(ligatures, text) &&
                    fontName.slice(0, 10) === "Typewriter") {
             // Deconstruct ligatures in monospace fonts (\texttt, \tt).
             const parts = [];
@@ -775,7 +775,7 @@ export const staticSvg = function(value: string, options: Options): SvgSpan {
         "viewBox": "0 0 " + 1000 * width + " " + 1000 * height,
         "preserveAspectRatio": "xMinYMin",
     });
-    const span = makeSvgSpan(["overlay"], [svgNode], options);
+    const span = makeSvgSpan(["katex-overlay"], [svgNode], options);
     span.height = height;
     span.style.height = makeEm(height);
     span.style.width = makeEm(width);

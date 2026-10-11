@@ -6,7 +6,7 @@ import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
 import type Options from "../Options";
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 
 const chooseMathStyle = (group: ParseNode<"mathchoice">, options: Options) => {
     switch (options.style.size) {
@@ -21,10 +21,9 @@ const chooseMathStyle = (group: ParseNode<"mathchoice">, options: Options) => {
 defineFunction({
     type: "mathchoice",
     names: ["\\mathchoice"],
-    props: {
-        numArgs: 4,
-        primitive: true,
-    },
+    numArgs: 4,
+    primitive: true,
+
     handler: ({parser}, args) => {
         return {
             type: "mathchoice",
@@ -35,6 +34,7 @@ defineFunction({
             scriptscript: ordargument(args[3]),
         };
     },
+
     htmlBuilder: (group, options) => {
         const body = chooseMathStyle(group, options);
         const elements = html.buildExpression(

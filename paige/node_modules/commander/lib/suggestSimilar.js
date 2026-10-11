@@ -6,7 +6,8 @@ function editDistance(a, b) {
   // (Simple implementation.)
 
   // Quick early exit, return worst case.
-  if (Math.abs(a.length - b.length) > maxDistance) return Math.max(a.length, b.length);
+  if (Math.abs(a.length - b.length) > maxDistance)
+    return Math.max(a.length, b.length);
 
   // distance between prefix substrings of a and b
   const d = [];
@@ -23,7 +24,7 @@ function editDistance(a, b) {
   // fill matrix
   for (let j = 1; j <= b.length; j++) {
     for (let i = 1; i <= a.length; i++) {
-      let cost = 1;
+      let cost;
       if (a[i - 1] === b[j - 1]) {
         cost = 0;
       } else {
@@ -32,7 +33,7 @@ function editDistance(a, b) {
       d[i][j] = Math.min(
         d[i - 1][j] + 1, // deletion
         d[i][j - 1] + 1, // insertion
-        d[i - 1][j - 1] + cost // substitution
+        d[i - 1][j - 1] + cost, // substitution
       );
       // transposition
       if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
@@ -52,7 +53,7 @@ function editDistance(a, b) {
  * @returns {string}
  */
 
-function suggestSimilar(word, candidates) {
+export function suggestSimilar(word, candidates) {
   if (!candidates || candidates.length === 0) return '';
   // remove possible duplicates
   candidates = Array.from(new Set(candidates));
@@ -60,7 +61,7 @@ function suggestSimilar(word, candidates) {
   const searchingOptions = word.startsWith('--');
   if (searchingOptions) {
     word = word.slice(2);
-    candidates = candidates.map(candidate => candidate.slice(2));
+    candidates = candidates.map((candidate) => candidate.slice(2));
   }
 
   let similar = [];
@@ -85,7 +86,7 @@ function suggestSimilar(word, candidates) {
 
   similar.sort((a, b) => a.localeCompare(b));
   if (searchingOptions) {
-    similar = similar.map(candidate => `--${candidate}`);
+    similar = similar.map((candidate) => `--${candidate}`);
   }
 
   if (similar.length > 1) {
@@ -96,5 +97,3 @@ function suggestSimilar(word, candidates) {
   }
   return '';
 }
-
-exports.suggestSimilar = suggestSimilar;

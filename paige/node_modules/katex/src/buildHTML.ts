@@ -8,15 +8,16 @@
 import ParseError from "./ParseError";
 import Style from "./Style";
 import {makeGlue, makeSpan, tryCombineChars} from "./buildCommon";
-import {Span, Anchor} from "./domTree";
+import type {DomSpan, HtmlDomNode} from "./domTree";
+import {Anchor, Span} from "./domTree";
 import {makeEm} from "./units";
 import {spacings, tightSpacings} from "./spacingData";
 import {_htmlGroupBuilders as groupBuilders} from "./defineFunction";
 import {DocumentFragment} from "./tree";
 
 import type Options from "./Options";
-import type {AnyParseNode} from "./parseNode";
-import type {HtmlDomNode, DomSpan} from "./domTree";
+import type {AnyParseNode} from "./types/nodes";
+import type {Side} from "./types";
 
 // Binary atoms (first class `mbin`) change into ordinary atoms (`mord`)
 // depending on their surroundings. See TeXbook pg. 442-446, Rules 5 and 6,
@@ -34,8 +35,6 @@ const styleMap = {
     "script": Style.SCRIPT,
     "scriptscript": Style.SCRIPTSCRIPT,
 };
-
-type Side = "left" | "right";
 
 const DomEnum = {
     mord: "mord",
@@ -183,7 +182,7 @@ const traverseNonSpaceNodes = function(
 
         if (nonspace) {
             prev.node = node;
-        } else if (isRoot && node.hasClass("newline")) {
+        } else if (isRoot && node.hasClass("katex-newline")) {
             prev.node = makeSpan(["leftmost"]); // treat like beginning of line
         }
         prev.insertAfter = (index => n => {
@@ -293,18 +292,18 @@ export const buildGroup = function(
 
 /**
  * Combine an array of HTML DOM nodes (e.g., the output of `buildExpression`)
- * into an unbreakable HTML node of class .base, with proper struts to
+ * into an unbreakable HTML node of class .katex-base, with proper struts to
  * guarantee correct vertical extent.  `buildHTML` calls this repeatedly to
  * make up the entire expression as a sequence of unbreakable units.
  */
 function buildHTMLUnbreakable(children: HtmlDomNode[], options: Options) {
     // Compute height and depth of this chunk.
-    const body = makeSpan(["base"], children, options);
+    const body = makeSpan(["katex-base"], children, options);
 
     // Add strut, which ensures that the top of the HTML element falls at
     // the height of the expression, and the bottom of the HTML element
     // falls at the depth of the expression.
-    const strut = makeSpan(["strut"]);
+    const strut = makeSpan(["katex-strut"]);
     strut.style.height = makeEm(body.height + body.depth);
     if (body.depth) {
         strut.style.verticalAlign = makeEm(-body.depth);
@@ -330,7 +329,7 @@ export default function buildHTML(tree: AnyParseNode[], options: Options): DomSp
     const expression = buildExpression(tree, options, "root");
 
     let eqnNum;
-    if (expression.length === 2 && expression[1].hasClass("tag")) {
+    if (expression.length === 2 && expression[1].hasClass("katex-tag")) {
         // An environment with automatic equation numbers, e.g. {gather}.
         eqnNum = expression.pop();
     }
@@ -355,7 +354,7 @@ export default function buildHTML(tree: AnyParseNode[], options: Options): DomSp
             let nobreak = false;
             while (i < expression.length - 1 &&
                    expression[i + 1].hasClass("mspace") &&
-                   !expression[i + 1].hasClass("newline")) {
+                   !expression[i + 1].hasClass("katex-newline")) {
                 i++;
                 parts.push(expression[i]);
                 if (expression[i].hasClass("nobreak")) {
@@ -367,7 +366,7 @@ export default function buildHTML(tree: AnyParseNode[], options: Options): DomSp
                 children.push(buildHTMLUnbreakable(parts, options));
                 parts = [];
             }
-        } else if (expression[i].hasClass("newline")) {
+        } else if (expression[i].hasClass("katex-newline")) {
             // Write the line except the newline
             parts.pop();
             if (parts.length > 0) {
@@ -389,7 +388,7 @@ export default function buildHTML(tree: AnyParseNode[], options: Options): DomSp
             buildExpression(tag, options, true),
             options,
         );
-        tagChild.classes = ["tag"];
+        tagChild.classes = ["katex-tag"];
         children.push(tagChild);
     } else if (eqnNum) {
         children.push(eqnNum);

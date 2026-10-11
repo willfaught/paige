@@ -3,15 +3,14 @@ import {makeSpan, makeSymbol, tryCombineChars} from "../buildCommon";
 import {MathNode, TextNode} from "../mathMLTree";
 import ParseError from "../ParseError";
 
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 
 defineFunction({
     type: "verb",
     names: ["\\verb"],
-    props: {
-        numArgs: 0,
-        allowedInText: true,
-    },
+    numArgs: 0,
+    allowedInText: true,
+
     handler(context, args, optArgs) {
         // \verb and \verb* are dealt with directly in Parser.js.
         // If we end up here, it's because of a failure to match the two delimiters
@@ -20,6 +19,7 @@ defineFunction({
         throw new ParseError(
             "\\verb ended by end of line instead of matching delimiter");
     },
+
     htmlBuilder(group, options) {
         const text = makeVerb(group);
         const body = [];

@@ -10,7 +10,7 @@ import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
 import type {HtmlBuilderSupSub, MathMLBuilder} from "../defineFunction";
-import type {AnyParseNode, ParseNode} from "../parseNode";
+import type {AnyParseNode, ParseNode} from "../types/nodes";
 
 // NOTE: Unlike most `htmlBuilder`s, this one handles not only
 // "operatorname", but also  "supsub" since \operatorname* can
@@ -139,9 +139,8 @@ const mathmlBuilder: MathMLBuilder<"operatorname"> = (group, options) => {
 defineFunction({
     type: "operatorname",
     names: ["\\operatorname@", "\\operatornamewithlimits"],
-    props: {
-        numArgs: 1,
-    },
+    numArgs: 1,
+
     handler: ({parser, funcName}, args) => {
         const body = args[0];
         return {
@@ -153,6 +152,7 @@ defineFunction({
             parentIsSupSub: false,
         };
     },
+
     htmlBuilder,
     mathmlBuilder,
 });

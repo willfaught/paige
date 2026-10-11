@@ -23,7 +23,7 @@ import {
 } from "./src/domTree";
 
 import type {SettingsOptions} from "./src/Settings";
-import type {AnyParseNode} from "./src/parseNode";
+import type {AnyParseNode} from "./src/types/nodes";
 import type {DomSpan} from "./src/domTree";
 
 import {defineSymbol} from './src/symbols';
@@ -135,7 +135,7 @@ const renderToHTMLTree = function(
     const settings = new Settings(options);
     try {
         const tree = parseTree(expression, settings);
-        return buildHTMLTree(tree, expression, settings);
+        return buildHTMLTree(tree, settings);
     } catch (error) {
         return renderError(error, expression, settings);
     }

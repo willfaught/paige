@@ -9,10 +9,9 @@ import * as mml from "../buildMathML";
 defineFunction({
     type: "phantom",
     names: ["\\phantom"],
-    props: {
-        numArgs: 1,
-        allowedInText: true,
-    },
+    numArgs: 1,
+    allowedInText: true,
+
     handler: ({parser}, args) => {
         const body = args[0];
         return {
@@ -21,6 +20,7 @@ defineFunction({
             body: ordargument(body),
         };
     },
+
     htmlBuilder: (group, options) => {
         const elements = html.buildExpression(
             group.body,
@@ -43,10 +43,9 @@ defineMacro("\\hphantom", "\\smash{\\phantom{#1}}");
 defineFunction({
     type: "vphantom",
     names: ["\\vphantom"],
-    props: {
-        numArgs: 1,
-        allowedInText: true,
-    },
+    numArgs: 1,
+    allowedInText: true,
+
     handler: ({parser}, args) => {
         const body = args[0];
         return {
@@ -55,11 +54,12 @@ defineFunction({
             body,
         };
     },
+
     htmlBuilder: (group, options) => {
         const inner = makeSpan(
-            ["inner"],
+            ["katex-inner"],
             [html.buildGroup(group.body, options.withPhantom())]);
-        const fix = makeSpan(["fix"], []);
+        const fix = makeSpan(["katex-fix"], []);
         return makeSpan(
             ["mord", "rlap"], [inner, fix], options);
     },

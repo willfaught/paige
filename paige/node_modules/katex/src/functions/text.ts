@@ -5,7 +5,7 @@ import {makeSpan} from "../buildCommon";
 import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 import type Options from "../Options";
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 
 // Non-mathy text, possibly in a font
 const textFontFamilies: Record<string, TextFont | undefined> = {
@@ -54,12 +54,11 @@ defineFunction({
         // Font Shapes
         "\\textit", "\\textup", "\\emph",
     ],
-    props: {
-        numArgs: 1,
-        argTypes: ["text"],
-        allowedInArgument: true,
-        allowedInText: true,
-    },
+    numArgs: 1,
+    argTypes: ["text"],
+    allowedInArgument: true,
+    allowedInText: true,
+
     handler({parser, funcName}, args) {
         const body = args[0];
         return {
@@ -69,6 +68,7 @@ defineFunction({
             font: funcName,
         };
     },
+
     htmlBuilder(group, options) {
         const newOptions = optionsWithFont(group, options);
         const inner = html.buildExpression(group.body, newOptions, true);

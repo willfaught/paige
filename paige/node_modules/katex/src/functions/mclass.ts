@@ -2,13 +2,13 @@ import defineFunction, {ordargument} from "../defineFunction";
 import {makeSpan} from "../buildCommon";
 import {isCharacterBox} from "../utils";
 import {MathNode} from "../mathMLTree";
-import type {AnyParseNode} from "../parseNode";
+import type {AnyParseNode, ParseNode} from "../types/nodes";
 
 import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
 import type Options from "../Options";
-import type {ParseNode} from "../parseNode";
+import type {MathClass, Slice5} from "../types";
 
 function htmlBuilder(group: ParseNode<"mclass">, options: Options) {
     const elements = html.buildExpression(group.body, options, true);
@@ -47,9 +47,6 @@ function mathmlBuilder(group: ParseNode<"mclass">, options: Options) {
         } else if (group.mclass === "mopen" || group.mclass === "mclose") {
             node.attributes.lspace = "0em";
             node.attributes.rspace = "0em";
-        } else if (group.mclass === "minner") {
-            node.attributes.lspace = "0.0556em"; // 1 mu is the most likely option
-            node.attributes.width = "+0.1111em";
         }
         // MathML <mo> default space is 5/18 em, so <mrel> needs no action.
         // Ref: https://developer.mozilla.org/en-US/docs/Web/MathML/Element/mo
@@ -64,32 +61,31 @@ defineFunction({
         "\\mathord", "\\mathbin", "\\mathrel", "\\mathopen",
         "\\mathclose", "\\mathpunct", "\\mathinner",
     ],
-    props: {
-        numArgs: 1,
-        primitive: true,
-    },
+    numArgs: 1,
+    primitive: true,
     handler({parser, funcName}, args) {
         const body = args[0];
         return {
             type: "mclass",
             mode: parser.mode,
-            mclass: "m" + funcName.slice(5), // TODO(kevinb): don't prefix with 'm'
+            mclass: `m${funcName.slice(5) as Slice5<typeof funcName>}`,
             body: ordargument(body),
             isCharacterBox: isCharacterBox(body),
         };
     },
+
     htmlBuilder,
     mathmlBuilder,
 });
 
-export const binrelClass = (arg: AnyParseNode): string => {
+export const binrelClass = (arg: AnyParseNode): MathClass => {
     // \binrel@ spacing varies with (bin|rel|ord) of the atom in the argument.
     // (by rendering separately and with {}s before and after, and measuring
     // the change in spacing).  We'll do roughly the same by detecting the
     // atom type directly.
     const atom = (arg.type === "ordgroup" && arg.body.length ? arg.body[0] : arg);
     if (atom.type === "atom" && (atom.family === "bin" || atom.family === "rel")) {
-        return "m" + atom.family;
+        return `m${atom.family}`;
     } else {
         return "mord";
     }
@@ -100,9 +96,8 @@ export const binrelClass = (arg: AnyParseNode): string => {
 defineFunction({
     type: "mclass",
     names: ["\\@binrel"],
-    props: {
-        numArgs: 2,
-    },
+    numArgs: 2,
+
     handler({parser}, args) {
         return {
             type: "mclass",
@@ -118,14 +113,13 @@ defineFunction({
 defineFunction({
     type: "mclass",
     names: ["\\stackrel", "\\overset", "\\underset"],
-    props: {
-        numArgs: 2,
-    },
+    numArgs: 2,
+
     handler({parser, funcName}, args) {
         const baseArg = args[1];
         const shiftedArg = args[0];
 
-        let mclass;
+        let mclass: MathClass;
         if (funcName !== "\\stackrel") {
             // LaTeX applies \binrel spacing to \overset and \underset.
             mclass = binrelClass(baseArg);
@@ -144,13 +138,9 @@ defineFunction({
             body: ordargument(baseArg),
         };
 
-        const supsub: ParseNode<"supsub"> = {
-            type: "supsub",
-            mode: shiftedArg.mode,
-            base: baseOp,
-            sup: funcName === "\\underset" ? null : shiftedArg,
-            sub: funcName === "\\underset" ? shiftedArg : null,
-        };
+        const supsub: ParseNode<"supsub"> = funcName === "\\underset"
+            ? {type: "supsub", mode: shiftedArg.mode, base: baseOp, sub: shiftedArg}
+            : {type: "supsub", mode: shiftedArg.mode, base: baseOp, sup: shiftedArg};
 
         return {
             type: "mclass",
@@ -160,6 +150,4 @@ defineFunction({
             isCharacterBox: isCharacterBox(supsub),
         };
     },
-    htmlBuilder,
-    mathmlBuilder,
 });

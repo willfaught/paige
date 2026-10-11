@@ -7,7 +7,7 @@ import {stretchyMathML, stretchySvg} from "../stretchy";
 import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 
 defineFunction({
     type: "accentUnder",
@@ -15,9 +15,8 @@ defineFunction({
         "\\underleftarrow", "\\underrightarrow", "\\underleftrightarrow",
         "\\undergroup", "\\underlinesegment", "\\utilde",
     ],
-    props: {
-        numArgs: 1,
-    },
+    numArgs: 1,
+
     handler: ({parser, funcName}, args) => {
         const base = args[0];
         return {
@@ -27,6 +26,7 @@ defineFunction({
             base: base,
         };
     },
+
     htmlBuilder: (group: ParseNode<"accentUnder">, options) => {
         // Treat under accents much like underlines.
         const innerGroup = html.buildGroup(group.base, options);

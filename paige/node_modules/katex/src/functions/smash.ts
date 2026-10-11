@@ -10,11 +10,10 @@ import * as mml from "../buildMathML";
 defineFunction({
     type: "smash",
     names: ["\\smash"],
-    props: {
-        numArgs: 1,
-        numOptionalArgs: 1,
-        allowedInText: true,
-    },
+    numArgs: 1,
+    numOptionalArgs: 1,
+    allowedInText: true,
+
     handler: ({parser}, args, optArgs) => {
         let smashHeight = false;
         let smashDepth = false;
@@ -51,6 +50,7 @@ defineFunction({
             smashDepth,
         };
     },
+
     htmlBuilder: (group, options) => {
         const node = makeSpan(
             [], [html.buildGroup(group.body, options)]);
@@ -69,7 +69,7 @@ defineFunction({
 
         if (group.smashHeight && group.smashDepth) {
             // Symmetric \smash can stay in inline layout.
-            return makeSpan(["mord", "smash"], [node], options);
+            return makeSpan(["mord", "katex-smash"], [node], options);
         }
 
         // In order to influence makeVList for asymmetric smashing, we have to

@@ -90,27 +90,12 @@ __webpack_require__.d(__webpack_exports__, {
  * pull in `isAtom` without dragging in the ~870-line symbol tables.
  */
 
-// Some of these have a "-token" suffix since these are also used as `ParseNode`
-// types for raw text tokens, and we want to avoid conflicts with higher-level
-// `ParseNode` types. These `ParseNode`s are constructed within `Parser` by
-// looking up the `symbols` map.
-const ATOMS = {
-  "bin": 1,
-  "close": 1,
-  "inner": 1,
-  "open": 1,
-  "punct": 1,
-  "rel": 1
-};
-const NON_ATOMS = {
-  "accent-token": 1,
-  "mathord": 1,
-  "op-token": 1,
-  "spacing": 1,
-  "textord": 1
-};
+const atomList = ["bin", "close", "inner", "open", "punct", "rel"];
+const nonAtomList = ["accent-token", "mathord", "op-token", "spacing", "textord"];
+const Atoms = new Set(atomList);
+const NonAtoms = new Set(nonAtomList);
 function isAtom(value) {
-  return value in ATOMS;
+  return Atoms.has(value);
 }
 // EXTERNAL MODULE: external "katex"
 var external_katex_ = __webpack_require__(757);
@@ -320,9 +305,7 @@ const handleObject = (tree, a11yStrings, atomType) => {
       }
     case "atom":
       {
-        const {
-          text
-        } = tree;
+        const text = tree.text;
         switch (tree.family) {
           case "bin":
             {
@@ -390,10 +373,8 @@ const handleObject = (tree, a11yStrings, atomType) => {
       {
         buildRegion(a11yStrings, regionStrings => {
           // genfrac can have unbalanced delimiters
-          const {
-            leftDelim,
-            rightDelim
-          } = tree;
+          const leftDelim = tree.leftDelim,
+            rightDelim = tree.rightDelim;
 
           // NOTE: Not sure if this is a safe assumption
           // hasBarLine true -> fraction, false -> binomial
@@ -454,10 +435,8 @@ const handleObject = (tree, a11yStrings, atomType) => {
       }
     case "op":
       {
-        const {
-          body,
-          name
-        } = tree;
+        const body = tree.body,
+          name = tree.name;
         if (body) {
           buildA11yStrings(body, a11yStrings, atomType);
         } else if (name) {
@@ -524,10 +503,8 @@ const handleObject = (tree, a11yStrings, atomType) => {
     case "sqrt":
       {
         buildRegion(a11yStrings, regionStrings => {
-          const {
-            body,
-            index
-          } = tree;
+          const body = tree.body,
+            index = tree.index;
           if (index) {
             const indexString = flatten(buildA11yStrings(index, [], atomType)).join(",");
             if (indexString === "3") {
@@ -550,11 +527,9 @@ const handleObject = (tree, a11yStrings, atomType) => {
       }
     case "supsub":
       {
-        const {
-          base,
-          sub,
-          sup
-        } = tree;
+        const base = tree.base,
+          sub = tree.sub,
+          sup = tree.sup;
         let isLog = false;
         if (base) {
           buildA11yStrings(base, a11yStrings, atomType);

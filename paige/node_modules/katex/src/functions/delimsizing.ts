@@ -1,5 +1,5 @@
 import {makeSpan} from "../buildCommon";
-import defineFunction from "../defineFunction";
+import defineFunction, {normalizeArgument} from "../defineFunction";
 import {makeLeftRightDelim, makeSizedDelim, sizeToMaxHeight} from "../delimiter";
 import {MathNode} from "../mathMLTree";
 import ParseError from "../ParseError";
@@ -10,15 +10,13 @@ import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
 import type Options from "../Options";
-import type {AnyParseNode, ParseNode, SymbolParseNode} from "../parseNode";
 import type {FunctionContext} from "../defineFunction";
 import type {HtmlDomNode} from "../domTree";
+import type {DelimiterSize, MathClass} from "../types";
+import type {AnyParseNode, ParseNode, SymbolParseNode} from "../types/nodes";
 
 // Extra data needed for the delimiter handler down below
-const delimiterSizes: Record<string, {
-    mclass: "mopen" | "mclose" | "mrel" | "mord";
-    size: 1 | 2 | 3 | 4;
-}> = {
+const delimiterSizes = {
     "\\bigl" : {mclass: "mopen",    size: 1},
     "\\Bigl" : {mclass: "mopen",    size: 2},
     "\\biggl": {mclass: "mopen",    size: 3},
@@ -35,7 +33,10 @@ const delimiterSizes: Record<string, {
     "\\Big"  : {mclass: "mord",     size: 2},
     "\\bigg" : {mclass: "mord",     size: 3},
     "\\Bigg" : {mclass: "mord",     size: 4},
-};
+} as const satisfies Record<string, {
+    mclass: MathClass;
+    size: DelimiterSize;
+}>;
 
 const delimiters = new Set([
     "(", "\\lparen", ")", "\\rparen",
@@ -92,12 +93,11 @@ defineFunction({
         "\\bigm", "\\Bigm", "\\biggm", "\\Biggm",
         "\\big",  "\\Big",  "\\bigg",  "\\Bigg",
     ],
-    props: {
-        numArgs: 1,
-        argTypes: ["primitive"],
-    },
+    numArgs: 1,
+    argTypes: ["primitive"],
+
     handler: (context, args) => {
-        const delim = checkDelimiter(args[0], context);
+        const delim = checkDelimiter(normalizeArgument(args[0]), context);
 
         return {
             type: "delimsizing",
@@ -107,6 +107,7 @@ defineFunction({
             delim: delim.text,
         };
     },
+
     htmlBuilder: (group, options) => {
         if (group.delim === ".") {
             // Empty delimiters still count as elements, even though they don't
@@ -157,10 +158,9 @@ function assertParsed(group: ParseNode<"leftright">) {
 defineFunction({
     type: "leftright-right",
     names: ["\\right"],
-    props: {
-        numArgs: 1,
-        primitive: true,
-    },
+    numArgs: 1,
+    primitive: true,
+
     handler: (context, args) => {
         // \left case below triggers parsing of \right in
         //   `const right = parser.parseFunction();`
@@ -174,7 +174,7 @@ defineFunction({
             type: "leftright-right",
             mode: context.parser.mode,
             delim: checkDelimiter(args[0], context).text,
-            color: color as string | null | undefined, // undefined if not set via \color
+            color, // undefined if not set via \color
         };
     },
 });
@@ -183,10 +183,9 @@ defineFunction({
 defineFunction({
     type: "leftright",
     names: ["\\left"],
-    props: {
-        numArgs: 1,
-        primitive: true,
-    },
+    numArgs: 1,
+    primitive: true,
+
     handler: (context, args) => {
         const delim = checkDelimiter(args[0], context);
 
@@ -208,6 +207,7 @@ defineFunction({
             rightColor: right.color,
         };
     },
+
     htmlBuilder: (group, options) => {
         assertParsed(group);
         // Build the inner expression
@@ -312,10 +312,9 @@ defineFunction({
 defineFunction({
     type: "middle",
     names: ["\\middle"],
-    props: {
-        numArgs: 1,
-        primitive: true,
-    },
+    numArgs: 1,
+    primitive: true,
+
     handler: (context, args) => {
         const delim = checkDelimiter(args[0], context);
         if (!context.parser.leftrightDepth) {
@@ -328,6 +327,7 @@ defineFunction({
             delim: delim.text,
         };
     },
+
     htmlBuilder: (group, options) => {
         let middleDelim;
         if (group.delim === ".") {

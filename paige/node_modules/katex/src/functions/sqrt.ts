@@ -11,10 +11,9 @@ import * as mml from "../buildMathML";
 defineFunction({
     type: "sqrt",
     names: ["\\sqrt"],
-    props: {
-        numArgs: 1,
-        numOptionalArgs: 1,
-    },
+    numArgs: 1,
+    numOptionalArgs: 1,
+
     handler({parser}, args, optArgs) {
         const index = optArgs[0];
         const body = args[0];
@@ -25,6 +24,7 @@ defineFunction({
             index,
         };
     },
+
     htmlBuilder(group, options) {
         // Square roots are handled in the TeXbook pg. 443, Rule 11.
 
@@ -104,7 +104,7 @@ defineFunction({
             }, options);
             // Add a class surrounding it so we can add on the appropriate
             // kerning
-            const rootVListWrap = makeSpan(["root"], [rootVList]);
+            const rootVListWrap = makeSpan(["katex-root"], [rootVList]);
 
             return makeSpan(["mord", "sqrt"],
                 [rootVListWrap, body], options);

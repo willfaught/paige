@@ -7,7 +7,7 @@ import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
 import type Options from "../Options";
-import type {AnyParseNode} from "../parseNode";
+import type {AnyParseNode} from "../types/nodes";
 import type {HtmlBuilder} from "../defineFunction";
 import type {documentFragment as HtmlDocumentFragment} from "../domTree";
 
@@ -22,7 +22,7 @@ export function sizingGroup(
     // Add size-resetting classes to the inner list and set maxFontSize
     // manually. Handle nested size changes.
     for (let i = 0; i < inner.length; i++) {
-        const pos = inner[i].classes.indexOf("sizing");
+        const pos = inner[i].classes.indexOf("katex-sizing");
         if (pos < 0) {
             Array.prototype.push.apply(inner[i].classes,
                 options.sizingClasses(baseOptions));
@@ -43,7 +43,7 @@ export function sizingGroup(
 const sizeFuncs = [
     "\\tiny", "\\sixptsize", "\\scriptsize", "\\footnotesize", "\\small",
     "\\normalsize", "\\large", "\\Large", "\\LARGE", "\\huge", "\\Huge",
-];
+] as const;
 
 export const htmlBuilder: HtmlBuilder<"sizing"> = (group, options) => {
     // Handle sizing operators like \Huge. Real TeX doesn't actually allow
@@ -56,10 +56,9 @@ export const htmlBuilder: HtmlBuilder<"sizing"> = (group, options) => {
 defineFunction({
     type: "sizing",
     names: sizeFuncs,
-    props: {
-        numArgs: 0,
-        allowedInText: true,
-    },
+    numArgs: 0,
+    allowedInText: true,
+
     handler: ({breakOnTokenText, funcName, parser}, args) => {
         const body = parser.parseExpression(false, breakOnTokenText);
 
@@ -71,6 +70,7 @@ defineFunction({
             body,
         };
     },
+
     htmlBuilder,
     mathmlBuilder: (group, options) => {
         const newOptions = options.havingSize(group.size);

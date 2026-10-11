@@ -7,13 +7,12 @@ import {calculateSize, makeEm} from "../units";
 defineFunction({
     type: "rule",
     names: ["\\rule"],
-    props: {
-        numArgs: 2,
-        numOptionalArgs: 1,
-        allowedInText: true,
-        allowedInMath: true,
-        argTypes: ["size", "size", "size"],
-    },
+    numArgs: 2,
+    numOptionalArgs: 1,
+    allowedInText: true,
+    allowedInMath: true,
+    argTypes: ["size", "size", "size"],
+
     handler({parser}, args, optArgs) {
         const shift = optArgs[0];
         const width = assertNodeType(args[0], "size");
@@ -26,9 +25,10 @@ defineFunction({
             height: height.value,
         };
     },
+
     htmlBuilder(group, options) {
         // Make an empty span for the rule
-        const rule = makeSpan(["mord", "rule"], [], options);
+        const rule = makeSpan(["mord", "katex-rule"], [], options);
 
         // Calculate the shift, width, and height of the rule, and account for units
         const width = calculateSize(group.width, options);

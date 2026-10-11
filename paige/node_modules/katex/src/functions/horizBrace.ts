@@ -9,7 +9,7 @@ import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
 import type {HtmlBuilderSupSub, MathMLBuilder} from "../defineFunction";
-import type {ParseNode} from "../parseNode";
+import type {ParseNode} from "../types/nodes";
 
 // NOTE: Unlike most `htmlBuilder`s, this one handles not only "horizBrace", but
 // also "supsub" since an over/underbrace can affect super/subscripting.
@@ -117,9 +117,8 @@ const mathmlBuilder: MathMLBuilder<"horizBrace"> = (group, options) => {
 defineFunction({
     type: "horizBrace",
     names: ["\\overbrace", "\\underbrace", "\\overbracket", "\\underbracket"],
-    props: {
-        numArgs: 1,
-    },
+    numArgs: 1,
+
     handler({parser, funcName}, args) {
         return {
             type: "horizBrace",
@@ -129,6 +128,7 @@ defineFunction({
             base: args[0],
         };
     },
+
     htmlBuilder,
     mathmlBuilder,
 });

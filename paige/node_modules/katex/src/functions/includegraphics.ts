@@ -1,11 +1,11 @@
 import defineFunction from "../defineFunction";
-import type {Measurement} from "../units";
 import {calculateSize, validUnit, makeEm} from "../units";
 import ParseError from "../ParseError";
 import {Img} from "../domTree";
 import {MathNode} from "../mathMLTree";
 import {assertNodeType} from "../parseNode";
 import type {CssStyle} from "../domTree";
+import type {Measurement} from "../types";
 
 const sizeData = function(str: string): Measurement {
     if (/^[-+]? *(\d+(\.\d*)?|\.\d+)$/.test(str)) {
@@ -33,12 +33,11 @@ const sizeData = function(str: string): Measurement {
 defineFunction({
     type: "includegraphics",
     names: ["\\includegraphics"],
-    props: {
-        numArgs: 1,
-        numOptionalArgs: 1,
-        argTypes: ["raw", "url"],
-        allowedInText: false,
-    },
+    numArgs: 1,
+    numOptionalArgs: 1,
+    argTypes: ["raw", "url"],
+    allowedInText: false,
+
     handler: ({parser}, args, optArgs) => {
         let width = {number: 0, unit: "em"};
         let height = {number: 0.9, unit: "em"};    // sorta character sized.
@@ -101,6 +100,7 @@ defineFunction({
             src: src,
         };
     },
+
     htmlBuilder: (group, options) => {
         const height = calculateSize(group.height, options);
         let depth = 0;

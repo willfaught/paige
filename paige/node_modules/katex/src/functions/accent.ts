@@ -6,13 +6,14 @@ import {stretchyMathML, stretchySvg} from "../stretchy";
 import {assertNodeType} from "../parseNode";
 import {assertSpan, assertSymbolDomNode, hasHtmlDomChildren, SymbolNode} from "../domTree";
 import {makeEm} from "../units";
+import {handleStrict} from "../strict";
 
 import * as html from "../buildHTML";
 import * as mml from "../buildMathML";
 
-import type {ParseNode, AnyParseNode} from "../parseNode";
 import type {HtmlBuilderSupSub, MathMLBuilder} from "../defineFunction";
 import type {HtmlDomNode} from "../domTree";
+import type {AnyParseNode, ParseNode} from "../types/nodes";
 
 const getBaseSymbol = (group: HtmlDomNode): SymbolNode | undefined => {
     if (group instanceof SymbolNode) {
@@ -100,7 +101,7 @@ export const htmlBuilder: HtmlBuilderSupSub<"accent"> = (grp, options) => {
             width = svgData.vec[1];
         } else {
             accent = makeOrd({type: "textord", mode: group.mode, text: group.label},
-                options, "textord");
+                options);
             accent = assertSymbolDomNode(accent);
             // Remove the italic correction of the accent, because it only serves to
             // shift the accent over to a place we don't want.
@@ -125,7 +126,7 @@ export const htmlBuilder: HtmlBuilderSupSub<"accent"> = (grp, options) => {
         // Shift the accent over by the skew.
         let left = skew;
 
-        // CSS defines `.katex .accent .accent-body:not(.accent-full) { width: 0 }`
+        // CSS defines `.katex .katex-accent .accent-body:not(.accent-full) { width: 0 }`
         // so that the accent doesn't contribute to the bounding box.
         // We need to shift the character by its width (effectively half
         // its width) to compensate.
@@ -173,7 +174,7 @@ export const htmlBuilder: HtmlBuilderSupSub<"accent"> = (grp, options) => {
     }
 
     const accentWrap =
-        makeSpan(["mord", "accent"], [accentBody], options);
+        makeSpan(["mord", "katex-accent"], [accentBody], options);
 
     if (supSubGroup) {
         // Here, we replace the "base" child of the supsub with our newly
@@ -223,9 +224,8 @@ defineFunction({
         "\\Overrightarrow", "\\overleftrightarrow", "\\overgroup",
         "\\overlinesegment", "\\overleftharpoon", "\\overrightharpoon",
     ],
-    props: {
-        numArgs: 1,
-    },
+    numArgs: 1,
+
     handler: (context, args) => {
         const base = normalizeArgument(args[0]);
 
@@ -244,6 +244,7 @@ defineFunction({
             base: base,
         };
     },
+
     htmlBuilder,
     mathmlBuilder,
 });
@@ -255,19 +256,22 @@ defineFunction({
         "\\'", "\\`", "\\^", "\\~", "\\=", "\\u", "\\.", '\\"',
         "\\c", "\\r", "\\H", "\\v", "\\textcircled",
     ],
-    props: {
-        numArgs: 1,
-        allowedInText: true,
-        allowedInMath: true, // unless in strict mode
-        argTypes: ["primitive"],
-    },
+    numArgs: 1,
+    allowedInText: true,
+    allowedInMath: true, // unless in strict mode
+    argTypes: ["primitive"],
+
     handler: (context, args) => {
         const base = args[0];
         let mode = context.parser.mode;
 
         if (mode === "math") {
-            context.parser.settings.reportNonstrict("mathVsTextAccents",
-                `LaTeX's accent ${context.funcName} works only in text mode`);
+            handleStrict({
+                strict: context.parser.settings.strict,
+                errorCode: "mathVsTextAccents",
+                errorMsg: `LaTeX's accent ${context.funcName} works only in text mode`,
+                report: true,
+            });
             mode = "text";
         }
 
@@ -280,6 +284,4 @@ defineFunction({
             base: base,
         };
     },
-    htmlBuilder,
-    mathmlBuilder,
 });
