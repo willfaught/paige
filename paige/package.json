@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.11.0",
+    "bootstrap-icons": "^1.13.2",
     "flexsearch": "^0.7.43",
     "katex": "^0.19.0"
   }
