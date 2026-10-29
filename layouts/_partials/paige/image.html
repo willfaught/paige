@@ -123,6 +123,43 @@
     {{ $intrinsicWidth = $smallerResource.Width }}
     {{ $src = $smallerResource.RelPermalink }}
 
+    {{ if $srcset }}
+        {{ $images := slice }}
+
+        {{ range split $srcset "," }}
+            {{ with strings.TrimSpace . }}
+                {{ $parts := split . " " }}
+
+                {{ with len $parts }}
+                    {{ $desc := "" }}
+                    {{ $url := index $parts 0 }}
+
+                    {{ if eq . 2 }}
+                        {{ $desc = index $parts 1 }}
+                    {{ else }}
+                        {{ errorf "layouts/_partials/paige/image.html: invalid srcset: %q" $srcset }}
+                    {{ end }}
+
+                    {{ $res := partial "paige/func-resource.html" (dict "page" $page "url" $url) }}
+
+                    {{ $res = resources.Copy (print $page.Path "/" (sha256 $res.Content) "." $res.MediaType.FirstSuffix.Suffix) $res }}
+
+                    {{ $parts = slice $res.RelPermalink }}
+
+                    {{ if $desc }}
+                        {{ $parts = $parts | append $desc }}
+                    {{ end }}
+
+                    {{ $images = $images | append (delimit $parts " ") }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ with $images }}
+            {{ $srcset = delimit . ", " }}
+        {{ end }}
+    {{ end }}
+
     {{ if and (not $sizes) (not $srcset) }}
         {{ $partialResource := "" }}
 
