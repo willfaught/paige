@@ -802,8 +802,8 @@ Body: None.
 
 Files can be included in many places in HTML.
 
-| If this file exists in your site                | It is included at                |
-| ------------------------------------------------| ---------------------------------|
+| If this file exists in your site                 | It is included at                |
+| ------------------------------------------------ | -------------------------------- |
 | `layouts/_partials/paige/body-first.html`        | The beginning of the body        |
 | `layouts/_partials/paige/body-last.html`         | The ending of the body           |
 | `layouts/_partials/paige/head-first.html`        | The beginning of the head        |
@@ -825,8 +825,8 @@ Files can be included in many places in HTML.
 
 There are kind variants of include files that are included only when the file kind matches the page kind.
 
-| If this file exists in your site               | It is included when         |
-| -----------------------------------------------| ----------------------------|
+| If this file exists in your site                | It is included when         |
+| ----------------------------------------------- | --------------------------- |
 | `layouts/_partials/paige/[PLACE]-home.html`     | The page kind is "home"     |
 | `layouts/_partials/paige/[PLACE]-page.html`     | The page kind is "page"     |
 | `layouts/_partials/paige/[PLACE]-section.html`  | The page kind is "section"  |
