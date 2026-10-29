@@ -34,13 +34,13 @@
 
 <head>
     {{ partial "paige/func-include.html" (dict "name" "html-head-first%s.html" "page" $page) | safeHTML }}
-    {{ partial "paige/metas.html" $page }}
+    {{ partial "paige/tags-meta.html" $page }}
 
     {{ with $title }}
         <title>{{ . }}</title>
     {{ end }}
 
-    {{ partial "paige/links.html" $page }}
+    {{ partial "paige/tags-link.html" $page }}
 
     {{ with $page.Param "paige.style" }}
         <style>{{ . | safeCSS }}</style>

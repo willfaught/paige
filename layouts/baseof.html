@@ -10,9 +10,9 @@
 {{ $attrs = delimit (sort $attrs) " " }}
 
 <!doctype html>
-{{ partial "paige/html.html" $page }}
-    {{ partial "paige/head.html" $page }}
-    {{ partial "paige/body.html" $page }}
+{{ partial "paige/tag-html-begin.html" $page }}
+    {{ partial "paige/tag-head.html" $page }}
+    {{ partial "paige/tag-body-begin.html" $page }}
 
         {{ partial "paige/func-include.html" (dict "name" "html-body-first%s.html" "page" $page) | safeHTML }}
 
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        {{ partial "paige/scripts.html" $page }}
+        {{ partial "paige/tags-script.html" $page }}
         {{ partial "paige/func-include.html" (dict "name" "html-body-last%s.html" "page" $page) | safeHTML }}
     </body>
 </html>
