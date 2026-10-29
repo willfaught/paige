@@ -33,7 +33,7 @@
     {{ end }}
 
     {{ if $sass }}
-        {{ $resource = $resource | toCSS (dict "enableSourceMap" $map "includePaths" $paths "outputStyle" $style) }}
+        {{ $resource = $resource | toCSS (dict "enableSourceMap" $map "includePaths" $paths "outputStyle" $style "transpiler" "dartsass") }}
     {{ end }}
 
     {{ $resource = $resource | minify | fingerprint }}
