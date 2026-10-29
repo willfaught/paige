@@ -9,7 +9,7 @@
 {{ $paths := $params.includepaths }}
 {{ $policy := $params.referrerpolicy | default "no-referrer" }}
 {{ $sass := $params.sass }}
-{{ $style := cond hugo.IsProduction "compressed" "" }}
+{{ $style := cond hugo.IsProduction "compressed" "expanded" }}
 {{ $template := $params.template }}
 
 {{ if not $href }}
