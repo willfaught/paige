@@ -198,23 +198,3 @@ Result:
 {{< paige-code unescape=true >}}
 {{< paige-request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
 {{< /paige-code >}}
-
-## Figure
-
-Code:
-
-```go-html-template
-{{</* paige-figure caption="Quine" */>}}
-{{</* paige-code lang="python" */>}}
-q = 'q = %r; print(q %% q)'; print(q % q)
-{{</* /paige-code */>}}
-{{</* /paige-figure */>}}
-```
-
-Result:
-
-{{< paige-figure caption="Quine" >}}
-{{< paige-code lang="python" >}}
-q = 'q = %r; print(q %% q)'; print(q % q)
-{{< /paige-code >}}
-{{< /paige-figure >}}

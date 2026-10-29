@@ -270,19 +270,3 @@ Code:
 Result:
 
 {{< paige-image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="50%" >}}
-
-## Figure
-
-Code:
-
-```go-html-template
-{{</* paige-figure caption="Landscape" */>}}
-{{</* paige-image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
-{{</* /paige-figure */>}}
-```
-
-Result:
-
-{{< paige-figure caption="Landscape" >}}
-{{< paige-image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
-{{< /paige-figure >}}

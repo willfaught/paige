@@ -333,19 +333,3 @@ Code:
 Result:
 
 {{< paige-vimeo video="112836958" width="50%" >}}
-
-## Figure
-
-Code:
-
-```go-html-template
-{{</* paige-figure caption="Vimeo" */>}}
-{{</* paige-vimeo video="112836958" */>}}
-{{</* /paige-figure */>}}
-```
-
-Result:
-
-{{< paige-figure caption="Vimeo" >}}
-{{< paige-vimeo video="112836958" >}}
-{{< /paige-figure >}}

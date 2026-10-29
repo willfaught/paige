@@ -557,3 +557,213 @@ The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
 {{< /paige-figure >}}
+
+## Nested code shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Code shortcode" */>}}
+{{</* paige-code lang="python" */>}}
+q = 'q = %r; print(q %% q)'; print(q % q)
+{{</* /paige-code */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Code shortcode" >}}
+{{< paige-code lang="python" >}}
+q = 'q = %r; print(q %% q)'; print(q % q)
+{{< /paige-code >}}
+{{< /paige-figure >}}
+
+## Nested email shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Email shortcode" */>}}
+{{</* paige-email address="example@example.com" */>}}E-mail me{{</* /paige-email */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Email shortcode" >}}
+{{< paige-email address="example@example.com" >}}E-mail me{{< /paige-email >}}
+{{< /paige-figure >}}
+
+## Nested icon shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Icon shortcode" */>}}
+{{</* paige-icon class="bi bi-github" */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Icon shortcode" >}}
+{{< paige-icon class="bi bi-github" >}}
+{{< /paige-figure >}}
+
+## Nested image shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Image shortcode" */>}}
+{{</* paige-image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Image shortcode" >}}
+{{< paige-image src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" >}}
+{{< /paige-figure >}}
+
+## Nested quote shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Quote shortcode" */>}}
+{{</* paige-quote */>}}
+Hickory dickory dock.<br>
+The mouse ran up the clock.<br>
+The clock struck one,<br>
+The mouse ran down,<br>
+Hickory dickory dock.
+{{</* /paige-quote */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Quote shortcode" >}}
+{{< paige-quote >}}
+Hickory dickory dock.<br>
+The mouse ran up the clock.<br>
+The clock struck one,<br>
+The mouse ran down,<br>
+Hickory dickory dock.
+{{< /paige-quote >}}
+{{< /paige-figure >}}
+
+## Nested request shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Request shortcode" */>}}
+<pre>
+{{</* paige-request "https://raw.githubusercontent.com/willfaught/paige/master/LICENSE" */>}}
+</pre>
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Request shortcode" >}}
+<pre>
+{{< paige-request "https://raw.githubusercontent.com/willfaught/paige/master/LICENSE" >}}
+</pre>
+{{< /paige-figure >}}
+
+## Nested tabs shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Tabs shortcode" */>}}
+{{</* paige-tabs */>}}
+{{</* paige-tabs-buttons */>}}
+{{</* paige-tabs-button */>}}JSON{{</* /paige-tabs-button */>}}
+{{</* paige-tabs-button */>}}TOML{{</* /paige-tabs-button */>}}
+{{</* paige-tabs-button */>}}YAML{{</* /paige-tabs-button */>}}
+{{</* /paige-tabs-buttons */>}}
+{{</* paige-tabs-panes */>}}
+{{</* paige-tabs-pane */>}}
+{{</* paige-code lang="json" */>}}
+{"foo": 123}
+{{</* /paige-code */>}}
+{{</* /paige-tabs-pane */>}}
+{{</* paige-tabs-pane */>}}
+{{</* paige-code lang="toml" */>}}
+foo = 123
+{{</* /paige-code */>}}
+{{</* /paige-tabs-pane */>}}
+{{</* paige-tabs-pane */>}}
+{{</* paige-code lang="yaml" */>}}
+foo: 123
+{{</* /paige-code */>}}
+{{</* /paige-tabs-pane */>}}
+{{</* /paige-tabs-panes */>}}
+{{</* /paige-tabs */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Tabs shortcode" >}}
+{{< paige-tabs >}}
+{{< paige-tabs-buttons >}}
+{{< paige-tabs-button >}}JSON{{< /paige-tabs-button >}}
+{{< paige-tabs-button >}}TOML{{< /paige-tabs-button >}}
+{{< paige-tabs-button >}}YAML{{< /paige-tabs-button >}}
+{{< /paige-tabs-buttons >}}
+{{< paige-tabs-panes >}}
+{{< paige-tabs-pane >}}
+{{< paige-code lang="json" >}}
+{"foo": 123}
+{{< /paige-code >}}
+{{< /paige-tabs-pane >}}
+{{< paige-tabs-pane >}}
+{{< paige-code lang="toml" >}}
+foo = 123
+{{< /paige-code >}}
+{{< /paige-tabs-pane >}}
+{{< paige-tabs-pane >}}
+{{< paige-code lang="yaml" >}}
+foo: 123
+{{< /paige-code >}}
+{{< /paige-tabs-pane >}}
+{{< /paige-tabs-panes >}}
+{{< /paige-tabs >}}
+{{< /paige-figure >}}
+
+## Nested Vimeo shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="Vimeo shortcode" */>}}
+{{</* paige-vimeo video="112836958" */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="Vimeo shortcode" >}}
+{{< paige-vimeo video="112836958" >}}
+{{< /paige-figure >}}
+
+## Nested YouTube shortcode
+
+Code:
+
+```go-html-template
+{{</* paige-figure caption="YouTube shortcode" */>}}
+{{</* paige-youtube video="dQw4w9WgXcQ" */>}}
+{{</* /paige-figure */>}}
+```
+
+Result:
+
+{{< paige-figure caption="YouTube shortcode" >}}
+{{< paige-youtube video="dQw4w9WgXcQ" >}}
+{{< /paige-figure >}}

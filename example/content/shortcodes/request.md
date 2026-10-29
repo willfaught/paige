@@ -57,23 +57,3 @@ Result:
 <pre>
 {{< paige-request url="https://raw.githubusercontent.com/willfaught/paige/master/LICENSE" >}}
 </pre>
-
-## Figure
-
-Code:
-
-```go-html-template
-{{</* paige-figure caption="License" */>}}
-<pre>
-{{</* paige-request "https://raw.githubusercontent.com/willfaught/paige/master/LICENSE" */>}}
-</pre>
-{{</* /paige-figure */>}}
-```
-
-Result:
-
-{{< paige-figure caption="License" >}}
-<pre>
-{{< paige-request "https://raw.githubusercontent.com/willfaught/paige/master/LICENSE" >}}
-</pre>
-{{< /paige-figure >}}

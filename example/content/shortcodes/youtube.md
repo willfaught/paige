@@ -189,19 +189,3 @@ Code:
 Result:
 
 {{< paige-youtube video="dQw4w9WgXcQ" width="50%" >}}
-
-## Figure
-
-Code:
-
-```go-html-template
-{{</* paige-figure caption="YouTube" */>}}
-{{</* paige-youtube video="dQw4w9WgXcQ" */>}}
-{{</* /paige-figure */>}}
-```
-
-Result:
-
-{{< paige-figure caption="YouTube" >}}
-{{< paige-youtube video="dQw4w9WgXcQ" >}}
-{{< /paige-figure >}}
