@@ -816,6 +816,8 @@ Files can be included in many places in HTML.
 | `layouts/_partials/paige/page-header-first.html` | The beginning of the page header |
 | `layouts/_partials/paige/page-header-last.html`  | The ending of the page header    |
 | `layouts/_partials/paige/page-last.html`         | The ending of the page           |
+| `layouts/_partials/paige/site-body-first.html`   | The beginning of the site body   |
+| `layouts/_partials/paige/site-body-last.html`    | The ending of the site body      |
 | `layouts/_partials/paige/site-first.html`        | The beginning of the site        |
 | `layouts/_partials/paige/site-footer-first.html` | The beginning of the site footer |
 | `layouts/_partials/paige/site-footer-last.html`  | The ending of the site footer    |
