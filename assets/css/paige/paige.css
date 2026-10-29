@@ -24,9 +24,9 @@
 }
 
 blockquote {
-    padding: 0.5rem 1rem;
     border-left: 0.25rem solid var(--bs-border-color);
     border-right: 0.25rem solid var(--bs-body-bg);
+    padding: 0.5rem 1rem;
 }
 
 td,
@@ -40,11 +40,11 @@ th {
 }
 
 .paige-row-short:not(:last-child),
+.paige-shortcode-figure .highlight .chroma pre,
+.paige-shortcode-figure .highlight pre.chroma,
+.paige-shortcode-figure .paige-shortcode-quote blockquote,
 .paige-shortcode-figure .paige-shortcode-quote,
 .paige-shortcode-figure .paige-video,
-.paige-shortcode-figure .highlight pre.chroma,
-.paige-shortcode-figure .highlight .chroma pre,
-.paige-shortcode-figure .paige-shortcode-quote blockquote,
 .paige-shortcode-figure figure > div > :last-child,
 .paige-shortcode-gallery .paige-shortcode-figure,
 .paige-shortcode-gallery .paige-shortcode-image,
@@ -52,12 +52,12 @@ blockquote > p:last-of-type {
     margin-bottom: 0;
 }
 
+.paige-row-short:last-child,
+.paige-row-tall,
 .paige-shortcode-figure,
 .paige-shortcode-gallery,
 .paige-shortcode-image,
 .paige-shortcode-quote,
-.paige-row-short:last-child,
-.paige-row-tall,
 .paige-video,
 #paige-page-content > *,
 table {
