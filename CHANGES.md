@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.121.0] - 2026-10-29
+
+### Upgrade
+
+- Rename shortcode templates from `paige/name` to `paige-name`; update custom shortcode calls and template overrides.
+
+### Added
+
+- Download `srcset` images used by the image shortcode.
+- Add hover links to headings.
+
+### Changed
+
+- Use Dart Sass for shortcode style processing.
+- Copy image resources relative to each page's permalink.
+- Update shortcode examples and documentation.
+
 ## [0.120.0] - 2026-10-10
 
 ### Changed
@@ -2264,7 +2281,8 @@ No notable user-facing changes.
 
 - Initial Paige theme release, including its Go module definition.
 
-[Unreleased]: https://github.com/willfaught/paige/compare/v0.119.0...HEAD
+[Unreleased]: https://github.com/willfaught/paige/compare/v0.121.0...HEAD
+[0.121.0]: https://github.com/willfaught/paige/compare/v0.120.0...v0.121.0
 [0.120.0]: https://github.com/willfaught/paige/compare/v0.119.1...v0.120.0
 [0.119.1]: https://github.com/willfaught/paige/compare/v0.119.0...v0.119.1
 [0.119.0]: https://github.com/willfaught/paige/compare/v0.118.0...v0.119.0
