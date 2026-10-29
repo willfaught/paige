@@ -804,10 +804,10 @@ Files can be included in many places in HTML.
 
 | If this file exists in your site                 | It is included at                |
 | ------------------------------------------------ | -------------------------------- |
-| `layouts/_partials/paige/body-first.html`        | The beginning of the body        |
-| `layouts/_partials/paige/body-last.html`         | The ending of the body           |
-| `layouts/_partials/paige/head-first.html`        | The beginning of the head        |
-| `layouts/_partials/paige/head-last.html`         | The ending of the head           |
+| `layouts/_partials/paige/html-body-first.html`   | The beginning of the HTML body   |
+| `layouts/_partials/paige/html-body-last.html`    | The ending of the HTML body      |
+| `layouts/_partials/paige/html-head-first.html`   | The beginning of the HTML head   |
+| `layouts/_partials/paige/html-head-last.html`    | The ending of the HTML head      |
 | `layouts/_partials/paige/page-body-first.html`   | The beginning of the page body   |
 | `layouts/_partials/paige/page-body-last.html`    | The ending of the page body      |
 | `layouts/_partials/paige/page-first.html`        | The beginning of the page        |

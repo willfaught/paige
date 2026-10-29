@@ -33,7 +33,7 @@
 {{ $title := delimit $titles " · " }}
 
 <head>
-    {{ partial "paige/func-include.html" (dict "name" "head-first%s.html" "page" $page) | safeHTML }}
+    {{ partial "paige/func-include.html" (dict "name" "html-head-first%s.html" "page" $page) | safeHTML }}
     {{ partial "paige/metas.html" $page }}
 
     {{ with $title }}
@@ -46,5 +46,5 @@
         <style>{{ . | safeCSS }}</style>
     {{ end }}
 
-    {{ partial "paige/func-include.html" (dict "name" "head-last%s.html" "page" $page) | safeHTML }}
+    {{ partial "paige/func-include.html" (dict "name" "html-head-last%s.html" "page" $page) | safeHTML }}
 </head>

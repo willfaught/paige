@@ -14,7 +14,7 @@
     {{ partial "paige/head.html" $page }}
     {{ partial "paige/body.html" $page }}
 
-        {{ partial "paige/func-include.html" (dict "name" "body-first%s.html" "page" $page) | safeHTML }}
+        {{ partial "paige/func-include.html" (dict "name" "html-body-first%s.html" "page" $page) | safeHTML }}
 
         <div class="container">
             <div class="row">
@@ -29,6 +29,6 @@
         </div>
 
         {{ partial "paige/scripts.html" $page }}
-        {{ partial "paige/func-include.html" (dict "name" "body-last%s.html" "page" $page) | safeHTML }}
+        {{ partial "paige/func-include.html" (dict "name" "html-body-last%s.html" "page" $page) | safeHTML }}
     </body>
 </html>
