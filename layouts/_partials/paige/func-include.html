@@ -5,7 +5,7 @@
 
 {{ $partial := print "paige/" (printf $name "") }}
 
-{{ $file := print "partials/" $partial }}
+{{ $file := print "_partials/" $partial }}
 
 {{ $exists := templates.Exists $file }}
 
