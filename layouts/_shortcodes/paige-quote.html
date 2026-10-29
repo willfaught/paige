@@ -2,7 +2,7 @@
 {{ $content := trim .InnerDeindent "\f\n\r\v" | markdownify }}
 
 {{ if not $content }}
-    {{ errorf "layouts/_shortcodes/paige/quote.html: no content" }}
+    {{ errorf "layouts/_shortcodes/paige-quote.html: no content" }}
 {{ end }}
 
 {{/* The markup below cannot be indented due to nested shortcodes within Markdown. */}}

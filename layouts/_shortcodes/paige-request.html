@@ -2,15 +2,15 @@
 {{- $url := .Get 0 | default (.Get "url") -}}
 
 {{- if not $url -}}
-    {{- errorf "layouts/_shortcodes/paige/request.html: no url" -}}
+    {{- errorf "layouts/_shortcodes/paige-request.html: no url" -}}
 {{- end -}}
 
 {{- with try (resources.GetRemote $url (dict "method" $method)) -}}
     {{- with .Err -}}
-        {{- errorf "layouts/_shortcodes/paige/request.html: cannot request remote resource %q: %v" $url . -}}
+        {{- errorf "layouts/_shortcodes/paige-request.html: cannot request remote resource %q: %v" $url . -}}
     {{- else with .Value -}}
         {{- strings.TrimRight "\f\n\r\t\v " .Content -}}
     {{- else -}}
-        {{- errorf "layouts/_shortcodes/paige/request.html: remote resource %q not found" $url -}}
+        {{- errorf "layouts/_shortcodes/paige-request.html: remote resource %q not found" $url -}}
     {{- end -}}
 {{- end -}}

@@ -2,7 +2,7 @@
 {{ $tabs := .Page.Scratch.Get "paige-tabs" | default 0 }}
 
 {{ if not $content }}
-    {{ errorf "layouts/_shortcodes/paige/tab/button.html: no content" }}
+    {{ errorf "layouts/_shortcodes/paige-tab/button.html: no content" }}
 {{ end }}
 
 {{ .Page.Scratch.Add "paige-tabs-button" 1 }}

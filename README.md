@@ -463,7 +463,7 @@ title = "Search"
 
 ### Code
 
-The `paige/code` shortcode provides highlighted code.
+The `paige-code` shortcode provides highlighted code.
 
 Parameters:
 
@@ -480,7 +480,7 @@ Body: Required. String. The code.
 
 ### Email
 
-The `paige/email` shortcode hides e-mail addresses from robots.
+The `paige-email` shortcode hides e-mail addresses from robots.
 
 Parameters:
 
@@ -493,7 +493,7 @@ Body: Required. String. Markdown. The content.
 
 ### Figure
 
-The `paige/figure` shortcode provides a figure.
+The `paige-figure` shortcode provides a figure.
 
 Parameters:
 
@@ -522,7 +522,7 @@ Body: Required. String. Markdown. The content.
 
 ### Gallery
 
-The `paige/gallery` shortcode provides an arrangement of images.
+The `paige-gallery` shortcode provides an arrangement of images.
 
 Parameters:
 
@@ -565,7 +565,7 @@ Body: Optional. String. HTML. The images.
 
 ### Icon
 
-The `paige/icon` shortcode provides a web font icon.
+The `paige-icon` shortcode provides a web font icon.
 
 Parameters:
 
@@ -582,7 +582,7 @@ Body: None.
 
 ### Image
 
-The `paige/image` shortcode provides an image.
+The `paige-image` shortcode provides an image.
 
 Parameters:
 
@@ -629,7 +629,7 @@ Body: None.
 
 ### Quote
 
-The `paige/quote` shortcode provides a quotation.
+The `paige-quote` shortcode provides a quotation.
 
 Parameters:
 
@@ -642,7 +642,7 @@ Body: Required. String. Markdown. The quotation.
 
 ### Request
 
-The `paige/request` shortcode provides the content for a URL.
+The `paige-request` shortcode provides the content for a URL.
 
 Parameters:
 
@@ -657,36 +657,36 @@ Body: None.
 
 ### Tabs
 
-The `paige/tabs` shortcode provides tab buttons and tab panes.
-It must contain one `paige/tabs/buttons` shortcode, and then one `paige/tabs/panes` shortcode.
+The `paige-tabs` shortcode provides tab buttons and tab panes.
+It must contain one `paige-tabs-buttons` shortcode, and then one `paige-tabs-panes` shortcode.
 
 Parameters: None.
 
 Body: Required. String. HTML. The tab buttons and tab panes.
 
-The `paige/tabs/buttons` shortcode provides tab buttons.
-It must contain one or more `paige/tabs/button` shortcodes.
-Each `paige/tabs/button` shortcode corresponds to the `paige/tabs/pane` shortcode in the same position.
+The `paige-tabs-buttons` shortcode provides tab buttons.
+It must contain one or more `paige-tabs-button` shortcodes.
+Each `paige-tabs-button` shortcode corresponds to the `paige-tabs-pane` shortcode in the same position.
 
 Parameters: None.
 
 Body: Required. String. HTML. The tab buttons.
 
-The `paige/tabs/button` shortcode provides a tab button.
+The `paige-tabs-button` shortcode provides a tab button.
 
 Parameters: None.
 
 Body: Required. String. Markdown. The tab button content.
 
-The `paige/tabs/panes` shortcode provides tab panes.
-It must contain one or more `paige/tabs/pane` shortcodes.
-Each `paige/tabs/pane` shortcode corresponds to the `paige/tabs/button` shortcode in the same position.
+The `paige-tabs-panes` shortcode provides tab panes.
+It must contain one or more `paige-tabs-pane` shortcodes.
+Each `paige-tabs-pane` shortcode corresponds to the `paige-tabs-button` shortcode in the same position.
 
 Parameters: None.
 
 Body: Required. String. HTML. The tab panes.
 
-The `paige/tabs/pane` shortcode provides a tab pane.
+The `paige-tabs-pane` shortcode provides a tab pane.
 
 Parameters: None.
 
@@ -694,7 +694,7 @@ Body: Required. String. Markdown. The tab pane content.
 
 ### Vimeo
 
-The `paige/vimeo` shortcode provides a Vimeo video.
+The `paige-vimeo` shortcode provides a Vimeo video.
 
 Parameters:
 
@@ -759,7 +759,7 @@ See [Vimeo documentation](https://vimeo.zendesk.com/hc/en-us/articles/3600014944
 
 ### YouTube
 
-The `paige/youtube` shortcode provides a YouTube video.
+The `paige-youtube` shortcode provides a YouTube video.
 
 Parameters:
 
@@ -1023,23 +1023,23 @@ Shortcode classes:
 
 <dl>
     <dt><code>.paige-shortcode-code</code></dt>
-    <dd>The container of <code>paige/code</code> shortcodes.</dd>
+    <dd>The container of <code>paige-code</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-email</code></dt>
-    <dd>The container of <code>paige/email</code> shortcodes.</dd>
+    <dd>The container of <code>paige-email</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-figure</code></dt>
-    <dd>The container of <code>paige/figure</code> shortcodes.</dd>
+    <dd>The container of <code>paige-figure</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-gallery</code></dt>
-    <dd>The container of <code>paige/gallery</code> shortcodes.</dd>
+    <dd>The container of <code>paige-gallery</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-icon</code></dt>
-    <dd>The container of <code>paige/icon</code> shortcodes.</dd>
+    <dd>The container of <code>paige-icon</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-image</code></dt>
-    <dd>The container of <code>paige/image</code> shortcodes.</dd>
+    <dd>The container of <code>paige-image</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-quote</code></dt>
-    <dd>The container of <code>paige/quote</code> shortcodes.</dd>
+    <dd>The container of <code>paige-quote</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-vimeo</code></dt>
-    <dd>The container of <code>paige/vimeo</code> shortcodes.</dd>
+    <dd>The container of <code>paige-vimeo</code> shortcodes.</dd>
     <dt><code>.paige-shortcode-youtube</code></dt>
-    <dd>The container of <code>paige/youtube</code> shortcodes.</dd>
+    <dd>The container of <code>paige-youtube</code> shortcodes.</dd>
 </dl>
 
 ### Minimal look

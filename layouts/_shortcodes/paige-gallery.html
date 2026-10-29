@@ -20,7 +20,7 @@
 {{ $resources := slice }}
 
 {{ if and (not $images) (not $inner) }}
-    {{ errorf "layouts/_shortcodes/paige/gallery.html: no content" }}
+    {{ errorf "layouts/_shortcodes/paige-gallery.html: no content" }}
 {{ end }}
 
 {{ if not $inner }}
@@ -93,6 +93,6 @@
 {{ end }}
 </div>
 {{ else }}
-{{ errorf "layouts/_shortcodes/paige/gallery.html: invalid type: %q" $type }}
+{{ errorf "layouts/_shortcodes/paige-gallery.html: invalid type: %q" $type }}
 {{ end }}
 </div>

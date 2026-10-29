@@ -9,7 +9,7 @@
 {{ $width := .Get "width" }}
 
 {{ if not $content }}
-    {{ errorf "layouts/_shortcodes/paige/figure.html: no content" }}
+    {{ errorf "layouts/_shortcodes/paige-figure.html: no content" }}
 {{ end }}
 
 {{ $showCaption := $caption }}
@@ -37,7 +37,7 @@
     {{ else if eq $float "end" }}
         {{ $sideMargin = "ms-4" }}
     {{ else }}
-        {{ errorf "layouts/_shortcodes/paige/figure.html: invalid float: %q" $float }}
+        {{ errorf "layouts/_shortcodes/paige-figure.html: invalid float: %q" $float }}
     {{ end }}
 {{ end }}
 

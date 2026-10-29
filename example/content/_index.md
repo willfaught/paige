@@ -54,7 +54,7 @@ disable_pages = true
 disable_sections = true
 +++
 
-{{< paige/image alt="Landscape" breakpoints=true class="mt-3 object-fit-cover rounded-4 shadow" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" >}}
+{{< paige-image alt="Landscape" breakpoints=true class="mt-3 object-fit-cover rounded-4 shadow" fetchpriority="high" height="20rem" loading="eager" process="webp" src="https://images.unsplash.com/photo-1490604001847-b712b0c2f967?w=1296" width="100%" >}}
 
 <h1 class="fw-bold h1 text-center" style="margin-top: 2rem">An advanced Hugo theme</h1>
 
@@ -71,5 +71,5 @@ disable_sections = true
 </p>
 
 <div class="column-gap-3 d-flex display-6 justify-content-center">
-    {{< paige/icon class="bi bi-github" title="GitHub" url="https://github.com/willfaught/paige" >}}
+    {{< paige-icon class="bi bi-github" title="GitHub" url="https://github.com/willfaught/paige" >}}
 </div>

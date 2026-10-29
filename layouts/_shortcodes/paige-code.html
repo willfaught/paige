@@ -4,13 +4,7 @@
 {{ $unescape := .Get "unescape" }}
 
 {{ if not $content }}
-    {{ errorf "layouts/_shortcodes/paige/code.xml: no content" }}
-{{ end }}
-
-{{ if $options }}
-    {{ $options = printf "%s,noclasses=true" $options }}
-{{ else }}
-    {{ $options = "noclasses=true" }}
+    {{ errorf "layouts/_shortcodes/paige-code.html: no content" }}
 {{ end }}
 
 {{ if $unescape }}

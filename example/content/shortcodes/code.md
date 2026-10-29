@@ -6,7 +6,7 @@ tags = ["code", "figures"]
 title = "Code"
 +++
 
-The `paige/code` shortcode displays code.
+The `paige-code` shortcode displays code.
 
 <!--more-->
 
@@ -15,23 +15,23 @@ The `paige/code` shortcode displays code.
 Code:
 
 ```go-html-template
-{{</* paige/code */>}}
+{{</* paige-code */>}}
 q = 'q = %r; print(q %% q)'; print(q % q)
-{{</* /paige/code */>}}
+{{</* /paige-code */>}}
 ```
 
 Result:
 
-{{< paige/code >}}
+{{< paige-code >}}
 q = 'q = %r; print(q %% q)'; print(q % q)
-{{< /paige/code >}}
+{{< /paige-code >}}
 
 ---
 
 Code:
 
 ```go-html-template
-{{</* paige/code */>}}
+{{</* paige-code */>}}
                        ---
                     -        --
                 --( /     \ )XXXXXXXXXXXXX
@@ -51,12 +51,12 @@ Code:
             --XXXXXXX---------------  XXXXX--
                \XXXXXXXXXXXXXXXXXXXXXXXX-
                  --XXXXXXXXXXXXXXXXXX-
-{{</* /paige/code */>}}
+{{</* /paige-code */>}}
 ```
 
 Result:
 
-{{< paige/code >}}
+{{< paige-code >}}
                        ---
                     -        --
                 --( /     \ )XXXXXXXXXXXXX
@@ -76,14 +76,14 @@ Result:
             --XXXXXXX---------------  XXXXX--
                \XXXXXXXXXXXXXXXXXXXXXXXX-
                  --XXXXXXXXXXXXXXXXXX-
-{{< /paige/code >}}
+{{< /paige-code >}}
 
 ## Lang parameter
 
 Code:
 
 ```go-html-template
-{{</* paige/code lang="c" */>}}
+{{</* paige-code lang="c" */>}}
 float Q_rsqrt( float number )
 {
 	long i;
@@ -99,12 +99,12 @@ float Q_rsqrt( float number )
 
 	return y;
 }
-{{</* /paige/code */>}}
+{{</* /paige-code */>}}
 ```
 
 Result:
 
-{{< paige/code lang="c" >}}
+{{< paige-code lang="c" >}}
 float Q_rsqrt( float number )
 {
 	long i;
@@ -120,7 +120,7 @@ float Q_rsqrt( float number )
 
 	return y;
 }
-{{< /paige/code >}}
+{{< /paige-code >}}
 
 
 ## Options parameter
@@ -128,7 +128,7 @@ float Q_rsqrt( float number )
 Code:
 
 ```go-html-template
-{{</* paige/code options="linenos=true,hl_lines=10" */>}}
+{{</* paige-code options="linenos=true,hl_lines=10" */>}}
 float Q_rsqrt( float number )
 {
 	long i;
@@ -144,12 +144,12 @@ float Q_rsqrt( float number )
 
 	return y;
 }
-{{</* /paige/code */>}}
+{{</* /paige-code */>}}
 ```
 
 Result:
 
-{{< paige/code options="linenos=true,hl_lines=10" >}}
+{{< paige-code options="linenos=true,hl_lines=10" >}}
 float Q_rsqrt( float number )
 {
 	long i;
@@ -165,56 +165,56 @@ float Q_rsqrt( float number )
 
 	return y;
 }
-{{< /paige/code >}}
+{{< /paige-code >}}
 
 ## Unescape parameter
 
 Code:
 
 ```go-html-template
-{{</* paige/code unescape=false */>}}
-{{</* paige/request "[...]" */>}}
-{{</* /paige/code */>}}
+{{</* paige-code unescape=false */>}}
+{{</* paige-request "[...]" */>}}
+{{</* /paige-code */>}}
 ```
 
 Result:
 
-{{< paige/code unescape=false >}}
-{{< paige/request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
-{{< /paige/code >}}
+{{< paige-code unescape=false >}}
+{{< paige-request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
+{{< /paige-code >}}
 
 ---
 
 Code:
 
 ```go-html-template
-{{</* paige/code unescape=true */>}}
-{{</* paige/request "[...]" */>}}
-{{</* /paige/code */>}}
+{{</* paige-code unescape=true */>}}
+{{</* paige-request "[...]" */>}}
+{{</* /paige-code */>}}
 ```
 
 Result:
 
-{{< paige/code unescape=true >}}
-{{< paige/request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
-{{< /paige/code >}}
+{{< paige-code unescape=true >}}
+{{< paige-request "https://gist.githubusercontent.com/willfaught/fe6f6a8b9715e70112b6894935ecbecd/raw/64f41b7eb47ed5a60172217f8ba3868c23f69d21/qrsqrt.c" >}}
+{{< /paige-code >}}
 
 ## Figure
 
 Code:
 
 ```go-html-template
-{{</* paige/figure caption="Quine" */>}}
-{{</* paige/code lang="python" */>}}
+{{</* paige-figure caption="Quine" */>}}
+{{</* paige-code lang="python" */>}}
 q = 'q = %r; print(q %% q)'; print(q % q)
-{{</* /paige/code */>}}
-{{</* /paige/figure */>}}
+{{</* /paige-code */>}}
+{{</* /paige-figure */>}}
 ```
 
 Result:
 
-{{< paige/figure caption="Quine" >}}
-{{< paige/code lang="python" >}}
+{{< paige-figure caption="Quine" >}}
+{{< paige-code lang="python" >}}
 q = 'q = %r; print(q %% q)'; print(q % q)
-{{< /paige/code >}}
-{{< /paige/figure >}}
+{{< /paige-code >}}
+{{< /paige-figure >}}

@@ -6,7 +6,7 @@ tags = ["figures", "quotations"]
 title = "Quote"
 +++
 
-The `paige/quote` shortcode displays a quotation.
+The `paige-quote` shortcode displays a quotation.
 
 <!--more-->
 
@@ -15,73 +15,73 @@ The `paige/quote` shortcode displays a quotation.
 Code:
 
 ```go-html-template
-{{</* paige/quote */>}}
+{{</* paige-quote */>}}
 Hickory dickory dock.<br>
 The mouse ran up the clock.<br>
 The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
-{{</* /paige/quote */>}}
+{{</* /paige-quote */>}}
 ```
 
 Result:
 
-{{< paige/quote >}}
+{{< paige-quote >}}
 Hickory dickory dock.<br>
 The mouse ran up the clock.<br>
 The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
-{{< /paige/quote >}}
+{{< /paige-quote >}}
 
 ## Cite
 
 Code:
 
 ```go-html-template
-{{</* paige/quote cite="Hickory Dickory Dock" */>}}
+{{</* paige-quote cite="Hickory Dickory Dock" */>}}
 Hickory dickory dock.<br>
 The mouse ran up the clock.<br>
 The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
-{{</* /paige/quote */>}}
+{{</* /paige-quote */>}}
 ```
 
 Result:
 
-{{< paige/quote cite="Hickory Dickory Dock" >}}
+{{< paige-quote cite="Hickory Dickory Dock" >}}
 Hickory dickory dock.<br>
 The mouse ran up the clock.<br>
 The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
-{{< /paige/quote >}}
+{{< /paige-quote >}}
 
 ## Figure
 
 Code:
 
 ```go-html-template
-{{</* paige/figure caption="Hickory Dickory Dock" */>}}
-{{</* paige/quote */>}}
+{{</* paige-figure caption="Hickory Dickory Dock" */>}}
+{{</* paige-quote */>}}
 Hickory dickory dock.<br>
 The mouse ran up the clock.<br>
 The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
-{{</* /paige/quote */>}}
-{{</* /paige/figure */>}}
+{{</* /paige-quote */>}}
+{{</* /paige-figure */>}}
 ```
 
 Result:
 
-{{< paige/figure caption="Hickory Dickory Dock" >}}
-{{< paige/quote >}}
+{{< paige-figure caption="Hickory Dickory Dock" >}}
+{{< paige-quote >}}
 Hickory dickory dock.<br>
 The mouse ran up the clock.<br>
 The clock struck one,<br>
 The mouse ran down,<br>
 Hickory dickory dock.
-{{< /paige/quote >}}
-{{< /paige/figure >}}
+{{< /paige-quote >}}
+{{< /paige-figure >}}
