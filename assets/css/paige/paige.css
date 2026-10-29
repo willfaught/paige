@@ -64,6 +64,31 @@ table {
     margin-bottom: 1rem;
 }
 
+.paige-heading-link {
+    color: color-mix(in srgb, var(--bs-link-color), transparent 0.5);
+    margin-left: 0.5rem;
+    opacity: 0;
+    text-decoration: none;
+}
+
+.paige-heading-link::after {
+    content: "#";
+}
+
+:hover > .paige-heading-link,
+:target > .paige-heading-link,
+.paige-heading-link:focus,
+.paige-heading-link:hover {
+    color: var(--bs-link-color);
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .paige-heading-link {
+        transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    }
+}
+
 {{ $colorscheme := $page.Param "paige.site.color_scheme" }}
 
 {{ if eq $colorscheme "dark" }}

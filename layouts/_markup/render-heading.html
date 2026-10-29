@@ -104,6 +104,4 @@
     {{ end }}
 {{ end }}
 
-<h{{ $level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>
-    <a href="#{{ $anchor }}" style="color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)); text-decoration: none">{{ $text }}</a>
-</h{{ $level }}>
+<h{{ $level }} {{ range $k, $v := $attrs }} {{ printf `%s="%s"` $k $v | safeHTMLAttr }} {{ end }}>{{ $text }}<a aria-label="Link to this section: Install" class="paige-heading-link" href="#{{ $anchor }}"></a></h{{ $level }}>
