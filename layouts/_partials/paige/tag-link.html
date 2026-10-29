@@ -33,10 +33,14 @@
     {{ end }}
 
     {{ if $sass }}
+        {{/* TODO: Stop silencing deprecation warnings when Bootstrap 6 is released and fixes them. */}}
+
         {{ $resource = $resource | toCSS (dict
             "enableSourceMap" $map
             "includePaths" $paths
             "outputStyle" $style
+            "silenceDependencyDeprecations" true
+            "silenceDeprecations" (slice "global-builtin" "import")
             "transpiler" "dartsass"
         ) }}
     {{ end }}
