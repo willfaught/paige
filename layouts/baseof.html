@@ -13,7 +13,6 @@
 {{ partial "paige/tag-html-begin.html" $page }}
     {{ partial "paige/tag-head.html" $page }}
     {{ partial "paige/tag-body-begin.html" $page }}
-
         {{ partial "paige/func-include.html" (dict "name" "html-body-first%s.html" "page" $page) | safeHTML }}
 
         <div class="container">
