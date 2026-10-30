@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.122.0] - 2026-10-29
+
+### Upgrade
+
+- Rename custom HTML include files from `head-*` and `body-*` to `html-head-*` and `html-body-*`.
+- Rename Paige partials to use `tag-` or `tags-` prefixes; update custom partial overrides to the new filenames.
+
+### Added
+
+- Add `site-body-first.html` and `site-body-last.html` include files.
+
+### Fixed
+
+- Fix HTML include file lookup.
+
 ## [0.121.0] - 2026-10-29
 
 ### Upgrade
@@ -2281,7 +2296,8 @@ No notable user-facing changes.
 
 - Initial Paige theme release, including its Go module definition.
 
-[Unreleased]: https://github.com/willfaught/paige/compare/v0.121.0...HEAD
+[Unreleased]: https://github.com/willfaught/paige/compare/v0.122.0...HEAD
+[0.122.0]: https://github.com/willfaught/paige/compare/v0.121.0...v0.122.0
 [0.121.0]: https://github.com/willfaught/paige/compare/v0.120.0...v0.121.0
 [0.120.0]: https://github.com/willfaught/paige/compare/v0.119.1...v0.120.0
 [0.119.1]: https://github.com/willfaught/paige/compare/v0.119.0...v0.119.1
