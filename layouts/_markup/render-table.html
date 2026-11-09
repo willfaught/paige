@@ -1,0 +1,38 @@
+{{ $table := . }}
+
+{{ $attrs := dict "class" "table" }}
+
+{{ range $k, $v := $table.Attributes }}
+    {{ if eq $k "class" }}
+        {{ $classes := slice "table" }}
+
+        {{ range split $v " " }}
+            {{ $classes = $classes | append (strings.TrimSpace .) }}
+        {{ end }}
+
+        {{ $v = uniq $classes }}
+    {{ end }}
+
+    {{ $attrs = merge $attrs (dict $k $v) }}
+{{ end }}
+
+<table {{ range $k, $v := $attrs }} {{ if $v }} {{ printf "%s=%q" $k $v | safeHTMLAttr }} {{ end }} {{ end }}>
+    <thead>
+        {{ range $table.THead }}
+            <tr>
+                {{ range . }}
+                    <th {{ with .Alignment }} {{ printf "style=%q" (printf "text-align: %s" .) | safeHTMLAttr }} {{ end }}>{{ .Text }}</th>
+                {{ end }}
+            </tr>
+        {{ end }}
+    </thead>
+    <tbody>
+        {{ range $table.TBody }}
+            <tr>
+                {{ range . }}
+                    <td {{ with .Alignment }} {{ printf "style=%q" (printf "text-align: %s" .) | safeHTMLAttr }} {{ end }}>{{ .Text }}</td>
+                {{ end }}
+            </tr>
+        {{ end }}
+    </tbody>
+</table>

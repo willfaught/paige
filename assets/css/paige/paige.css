@@ -29,11 +29,6 @@ blockquote {
     padding: 0.5rem 1rem;
 }
 
-td,
-th {
-    padding: 0.25rem;
-}
-
 .highlight .chroma .hl,
 .highlight .chroma .lnt {
     display: flex;
