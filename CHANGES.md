@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.123.0] - 2026-11-09
+
+### Added
+
+- Add a table render hook that applies Bootstrap table styling and supports table attributes and column alignment.
+
 ## [0.122.0] - 2026-10-29
 
 ### Upgrade
@@ -2296,7 +2302,8 @@ No notable user-facing changes.
 
 - Initial Paige theme release, including its Go module definition.
 
-[Unreleased]: https://github.com/willfaught/paige/compare/v0.122.0...HEAD
+[Unreleased]: https://github.com/willfaught/paige/compare/v0.123.0...HEAD
+[0.123.0]: https://github.com/willfaught/paige/compare/v0.122.0...v0.123.0
 [0.122.0]: https://github.com/willfaught/paige/compare/v0.121.0...v0.122.0
 [0.121.0]: https://github.com/willfaught/paige/compare/v0.120.0...v0.121.0
 [0.120.0]: https://github.com/willfaught/paige/compare/v0.119.1...v0.120.0
