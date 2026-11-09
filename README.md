@@ -114,14 +114,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     $ hugo new site yoursite
     ```
 
-3. Create a post:
-
-    ```sh
-    $ cd yoursite
-    $ hugo new yourpost.md
-    ```
-
-4. Configure your module:
+3. Configure your module:
 
     ```sh
     $ sh
@@ -134,7 +127,7 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     EOF
     ```
 
-5. Configure the Paige module:
+4. Configure the Paige module:
 
     ```sh
     $ sh
@@ -144,6 +137,13 @@ please share it by [posting a link](https://github.com/willfaught/paige/discussi
     [[module.imports]]
     path = "github.com/willfaught/paige"
     EOF
+    ```
+
+5. Create a post:
+
+    ```sh
+    $ cd yoursite
+    $ hugo new yourpost.md
     ```
 
 6. Build and run the site for development:
