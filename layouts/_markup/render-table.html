@@ -10,7 +10,7 @@
             {{ $classes = $classes | append (strings.TrimSpace .) }}
         {{ end }}
 
-        {{ $v = uniq $classes }}
+        {{ $v = delimit ($classes | uniq | sort) " " }}
     {{ end }}
 
     {{ $attrs = merge $attrs (dict $k $v) }}
